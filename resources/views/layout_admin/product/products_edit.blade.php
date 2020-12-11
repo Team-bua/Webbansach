@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Thêm sách
+            Cập nhật sách
             <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">

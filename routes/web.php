@@ -44,3 +44,6 @@ Route::get('adproduct', function(){
 Route::get('crproduct', function(){
 	return view('layout_admin.product.products_create');
 });
+Route::get('edproduct', function(){
+	return view('layout_admin.product.products_edit');
+});
