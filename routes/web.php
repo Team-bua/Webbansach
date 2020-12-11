@@ -19,6 +19,19 @@ Route::get('/', function () {
 Route::get('trangchu', function(){
 	return view('layout_index.index');
 });
+Route::get('loai', function(){
+	return view('layout_index.product');
+});
+Route::get('chitiet', function(){
+	return view('layout_index.page.product_simgle');
+});
+Route::get('gioithieu', function(){
+	return view('layout_index.about');
+});
+Route::get('tintuc', function(){
+	return view('layout_index.news');
+});
+/*--------------------------------------------------------------------------------*/
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
 });
