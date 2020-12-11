@@ -16,3 +16,6 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('trangchu', function(){
+	return view('bansach.trangchu.index');
+});
