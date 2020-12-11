@@ -22,3 +22,7 @@ Route::get('trangchu', function(){
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
 });
+
+Route::get('adproduct', function(){
+	return view('layout_admin.product.products_list');
+});
