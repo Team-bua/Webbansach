@@ -14,9 +14,9 @@
 </head>
 
 <body>
-@include('header')
+@include('layout_index.header')
 @yield('content')   
-@include('footer')
+@include('layout_index.footer')
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>

@@ -41,11 +41,11 @@
 <body class="skin-blue">
     <div class="wrapper">
 
-        @include('layout.layout_admin.header')
+        @include('layout_admin.header')
         @yield('content')
         <!-- Right side column. Contains the navbar and content of the page -->
         <!-- /.content-wrapper -->
-        @include('layout.layout_admin.footer')
+        @include('layout_admin.footer')
 
     </div><!-- ./wrapper -->
 

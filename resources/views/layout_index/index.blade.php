@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layout_index.master')
 @section('content')
   <section class="recomended-sec">
         <div class="container">
