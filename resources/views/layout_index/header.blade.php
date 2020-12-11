@@ -22,16 +22,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="navbar-item active">
-                                <a href="index.html" class="nav-link">Home</a>
+                                <a href="{{route('trangchu')}}" class="nav-link">Home</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="shop.html" class="nav-link">Shop</a>
+                                <a href="{{route('loai')}}" class="nav-link">Shop</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="about.html" class="nav-link">About</a>
+                                <a href="{{route('chitiet')}}" class="nav-link">About</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="faq.html" class="nav-link">FAQ</a>
+                                <a href="{{route('gioithieu')}}" class="nav-link">FAQ</a>
                             </li>
                             <li class="navbar-item">
                                 <a href="login.html" class="nav-link">Login</a>

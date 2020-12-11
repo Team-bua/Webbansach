@@ -16,21 +16,16 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('trangchu', function(){
-	return view('layout_index.index');
-});
-Route::get('loai', function(){
-	return view('layout_index.product');
-});
-Route::get('chitiet', function(){
-	return view('layout_index.page.product_simgle');
-});
-Route::get('gioithieu', function(){
-	return view('layout_index.about');
-});
-Route::get('tintuc', function(){
-	return view('layout_index.news');
-});
+//----->trang chủ
+Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
+//----->loại
+Route::get('loai',[PageController::class,'getloai'])->name('loai');
+//----->chitiet
+Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
+//----->gioithieu
+Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
+//----->tintuc
+Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
