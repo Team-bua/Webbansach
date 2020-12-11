@@ -12,7 +12,7 @@ use App\Http\Controllers\PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// route cac trang index
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,11 +31,16 @@ Route::get('gioithieu', function(){
 Route::get('tintuc', function(){
 	return view('layout_index.news');
 });
-/*--------------------------------------------------------------------------------*/
+// route cac trang admin
+
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
 });
 
 Route::get('adproduct', function(){
 	return view('layout_admin.product.products_list');
+});
+
+Route::get('crproduct', function(){
+	return view('layout_admin.product.products_create');
 });
