@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('trangchu', function(){
 	return view('bansach.trangchu.index');
 });
+Route::get('admin', function(){
+	return view('layout.layout_admin.index_admin');
+});
