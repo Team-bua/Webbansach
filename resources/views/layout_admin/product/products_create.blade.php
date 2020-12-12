@@ -5,7 +5,7 @@
         <section class="content-header">
           <h1>
             Thêm sách
-            <small>preview of simple tables</small>
+            <small>Nguyễn Văn Tèo</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -18,72 +18,22 @@
         <section class="content">
          
         <div class="box box-info">
+
                 <div class="box-header">
-                  <h3 class="box-title">Input Addon</h3>
                 </div>
                 <div class="box-body">
-                  <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" placeholder="Username">
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon">.00</span>
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon">.00</span>
-                  </div>
 
-                  <h4>With icons</h4>
+                <h4> Tên sách : </h4>
                   <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control" placeholder="Email">
+                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                    <input type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
                   </div>
-                  <br>
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon"><i class="fa fa-check"></i></span>
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon"><i class="fa fa-ambulance"></i></span>
-                  </div><br>
-                  <div class="form-group">
-                      <label for="exampleInputFile">File input</label>
-                      <input type="file" id="exampleInputFile">
-                      <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                  <h4>With checkbox and radio inputs</h4>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <input type="text" class="form-control">
-                      </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="radio">
-                        </span>
-                        <input type="text" class="form-control">
-                      </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                  </div><!-- /.row -->
-
-                  <h4>With buttons</h4>
-                  <p class="margin">Large: <code>.input-group.input-group-lg</code></p>
-                  <div class="input-group input-group-lg">
+                
+                  <h4>Loại sách</h4>
+                  
+                  <div class="input-group input-group">
                     <div class="input-group-btn">
-                      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action <span class="fa fa-caret-down"></span></button>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mời chọn sách <span class="fa fa-caret-down"></span></button>
                       <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
@@ -92,23 +42,55 @@
                         <li><a href="#">Separated link</a></li>
                       </ul>
                     </div><!-- /btn-group -->
-                    <input type="text" class="form-control">
+                    <input disabled type="text" class="form-control">
                   </div><!-- /input-group -->
-                  <p class="margin">Normal</p>
+                  
+                  <h4> Giá : </h4>
                   <div class="input-group">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-danger">Action</button>
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control">
-                  </div><!-- /input-group -->
-                  <p class="margin">Small <code>.input-group.input-group-sm</code></p>
-                  <div class="input-group input-group-sm">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info btn-flat" type="button">Go!</button>
-                    </span>
-                  </div><!-- /input-group -->
-                </div><!-- /.box-body -->
+                  <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                  <input type="text" class="form-control" placeholder="Gía . . . . . . . . .">
+                    <span class="input-group-addon">VNĐ</span>
+                  </div>
+
+                 
+                  <h4> Giá khuyến mãi : </h4>
+                  <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                  <input type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
+                    <span class="input-group-addon">VNĐ</span>
+                  </div>
+
+                  <h4> Số lượng </h4>
+                  <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
+                  <input type="text" class="form-control" placeholder="Số lượng . . . . . . . . .">
+                    <span class="input-group-addon">Quyển</span>
+                  </div>
+
+                  <h4> Miêu tả : </h4>
+                  <div class="input-group">
+                  <span class="input-group-addon"><i class="fa  fa-pencil-square-o"></i></span>
+                  <input type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
+                    
+                  </div>
+                  <br>
+                  <center>
+                  <div class="input-group">
+                  <td><button class="btn btn-block btn-success btn-lg"> Thêm sách </button></td>
+                  </div></center>
+                  
+
+                  
+              
+
+                  
+
+
+                    
+
+                    
+
+                  
               </div>
         </section><!-- /.content -->
       </div>
