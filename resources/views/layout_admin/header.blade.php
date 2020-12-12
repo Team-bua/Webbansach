@@ -249,7 +249,7 @@
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>A lét san đờ rơ</p>
+              <p>Team Bùa</p>
 
               <a href="#"><i class="fa fa-circle text-success"></i> Online </a>
             </div>
@@ -259,15 +259,16 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header" style="font-size: 20px;"><a href="{{url('trangchu')}}">
+              <i class="fa fa-home"></i> HOME </li></a>
             <!-- CRUD sách -->
             <li class=" treeview">
               <a href="#">
                 <i class="fa fa-book"></i> <span> Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="index2.html"><i class="fa fa-plus"></i> Thêm sách</a></li>
+                <li class="active"><a href="{{url('adproduct')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{url('crproduct')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
               </ul>
             </li>
             <!-- CRUD thể loại sách -->
@@ -308,9 +309,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> sds </a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                <li><a href="pages/charts/morris.html"><i class="fa fa-bar-chart-o"></i> Sách </a></li>
+                <li><a href="pages/charts/flot.html"><i class="fa fa-bar-chart-o"></i> Tài Khoản </a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-bar-chart-o"></i> View </a></li>
               </ul>
             </li>
             <!-- Quản lý tài khoản -->
