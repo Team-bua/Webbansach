@@ -6,11 +6,20 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function getIndex(){
+
+   public function getIndex (){
         return view('layout_index.index');
     }
 
-    public function getChitiet(){
+   public function getchitiet (){
         return view('layout_index.page.product_detail');
     }
+
+   public function gettintuc (){
+        return view('layout_index.news');
+    }
+
+    public function gettatcaSP (){
+        return view('layout_index.page.viewall');
+}
 }

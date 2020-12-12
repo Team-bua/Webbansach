@@ -21,7 +21,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Responsive Hover Table</h3>
+                  <h3 class="box-title">Danh sách sản phẩm</h3>
                   <div class="box-tools">
                     <div class="input-group">
                       <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
@@ -33,40 +33,61 @@
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
-                    <tbody><tr>
+                    <tbody><tr style="  font-size:18px; ">
+                    
                       <th>ID</th>
-                      <th>User</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Reason</th>
+                      <th>Tên sách</th>
+                      <th>Loại sách</th>
+                      <th>Giá </th>
+                      <th>Giá Khuyến Mãi</th>
+                      <th>Số lượng</th>
+                      <th>Miêu tả</th>
+                      <th colspan="2"><center>Chức năng</center></th>
+                     
                     </tr>
                     <tr>
-                      <td>183</td>
+                      <td>1</td>
                       <td>John Doe</td>
                       <td>11-7-2014</td>
-                      <td><span class="label label-success">Approved</span></td>
+                      <td>Approved</span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td></td>
+                      <td></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
-                      <td>219</td>
+                      <td>2</td>
                       <td>Alexander Pierce</td>
                       <td>11-7-2014</td>
-                      <td><span class="label label-warning">Pending</span></td>
+                      <td>Pending</span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td></td>
+                      <td></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
-                      <td>657</td>
+                      <td>3</td>
                       <td>Bob Doe</td>
                       <td>11-7-2014</td>
-                      <td><span class="label label-primary">Approved</span></td>
+                      <td>Approved</span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td></td>
+                      <td></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
-                      <td>175</td>
+                      <td>4</td>
                       <td>Mike Doe</td>
                       <td>11-7-2014</td>
-                      <td><span class="label label-danger">Denied</span></td>
+                      <td></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td></td>
+                      <td></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
