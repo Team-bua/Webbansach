@@ -64,9 +64,17 @@
                         </li>
                         <li><span class="save-cost">Save $7.62 (69%)</span></li>
                     </ul>
+
                     <div class="btn-sec">
                         <button class="btn ">Add To cart</button>
                         <button class="btn black">Buy Now</button>
+                    </div>
+                     <div class="rating">
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
+                        <span>&#9734;</span>
                     </div>
                 </div>
             </div>

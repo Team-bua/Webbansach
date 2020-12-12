@@ -21,5 +21,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/jquery.selectBox.js"></script>
+<script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
+<script type="text/JavaScript" src="js/cuties.js"></script>
 </body>
 </html>
