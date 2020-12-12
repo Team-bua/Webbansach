@@ -16,7 +16,10 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1f2f8656ee11194b87198e4fe50808a5a70d0ae
 
 //----->trang chủ
 Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
@@ -31,8 +34,11 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d1f2f8656ee11194b87198e4fe50808a5a70d0ae
 // route cac trang admin
 
 Route::get('admin', function(){
