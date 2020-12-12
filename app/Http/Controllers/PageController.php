@@ -10,19 +10,15 @@ class PageController extends Controller
         return view('layout_index.index');
     }
 
-   public function getloai (){
-        return view('layout_index.product');
-    }
-
    public function getchitiet (){
-        return view('layout_index.product_type');
-    }
-
-   public function getgioithieu (){
-        return view('layout_index.about');
+        return view('layout_index.page.product_simgle');
     }
 
    public function gettintuc (){
         return view('layout_index.news');
+    }
+
+    public function gettatcaSP (){
+        return view('layout_index.page.viewall');
     }
 }
