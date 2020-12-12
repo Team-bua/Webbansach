@@ -30,3 +30,7 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
+
+//----->trang admin
+Route::get('admin',[PageController::class,'getadmin'])->name('admin');
+

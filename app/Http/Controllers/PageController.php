@@ -21,5 +21,9 @@ class PageController extends Controller
 
     public function gettatcaSP (){
         return view('layout_index.page.viewall');
-}
+    }
+
+    public function getadmin (){
+        return view('layout_admin.index_admin');
+    }
 }
