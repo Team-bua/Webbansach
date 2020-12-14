@@ -27,7 +27,7 @@
     <div class="menu">
 
 <ul class="vert-one">
-  <li><a href="{{route('loaisach')}}" class="current">Danh Mục Sách</a></li>
+  <li><a href="#" class="current">Danh Mục Sách</a></li>
   <li><a href="#">loai</a></li>
   <li><a href="#">loai</a></li>
   <li><a href="#">loai</a></li>

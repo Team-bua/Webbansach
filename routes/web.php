@@ -14,6 +14,7 @@ use App\Http\Controllers\PageController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
 
     return view('welcome');
 
@@ -21,12 +22,15 @@ Route::get('/', function () {
 
     return view('');
 
+=======
+    return redirect()->route('trangchu');
+>>>>>>> cfde4878f17f82cf2ec2b0e7e2b713c8bfda6243
 });
 
 //----->trang chủ
 Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
 //----->loại
-Route::get('loaisach',[PageController::class,'getloaisach'])->name('loaisach');
+
 //----->chitiet
 Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
 //----->tất cả sản phẩm
@@ -35,11 +39,8 @@ Route::get('tatcaSP',[PageController::class,'gettatcaSP'])->name('tatcaSP');
 Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
-//-----> giỏ hàng
-Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
-//----->đăng nhập-Đăng ký
-Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 /*--------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 
 // trang admin product
 Route::get('admin', function(){
@@ -66,6 +67,12 @@ Route::get('chartbook', function (){
 	return view('layout_admin.chart.chart_book');
 });
 
+=======
+
+>>>>>>> cfde4878f17f82cf2ec2b0e7e2b713c8bfda6243
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
+Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
+Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
+Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
 

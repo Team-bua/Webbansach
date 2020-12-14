@@ -44,7 +44,7 @@
                             </li>
                             <li class="navbar-item active">
 
-                                <a href="" class="nav-link" >Đăng Nhập</a>
+                                <a href="{{route('dangnhap')}}" class="nav-link" >Đăng Nhập</a>
                                     
                             </li>
                                 <li class="navbar-item active">
