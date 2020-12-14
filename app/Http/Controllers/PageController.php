@@ -21,7 +21,7 @@ class PageController extends Controller
     public function gettatcaSP (){
         return view('layout_index.page.viewall');
     }
-<<<<<<< HEAD
+
 
     public function getgioithieu (){
         return view('layout_index.page.about');
@@ -37,10 +37,9 @@ class PageController extends Controller
 
     public function getdangky (){
         return view('layout_index.page.Register');
-=======
+    }
 
     public function getadmin (){
         return view('layout_admin.index_admin');
->>>>>>> fab6304dd1e8a009f48f6fd4c172f05fd7cba73f
     }
 }
