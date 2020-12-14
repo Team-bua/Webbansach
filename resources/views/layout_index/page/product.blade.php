@@ -9,7 +9,6 @@
     </div>
     <section class="static about-sec">
         <div class="container">
-            <h2>Lâm Vá Lốp Xe</h2>
             <div class="recomended-sec">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
