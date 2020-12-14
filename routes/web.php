@@ -14,7 +14,15 @@ use App\Http\Controllers\PageController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
+=======
+<<<<<<< HEAD
+    return redirect()->route('trangchu');
+=======
+    return view('');
+>>>>>>> fcd7816f627669a7db269fe2497854f5a8eb2fae
+>>>>>>> fab6304dd1e8a009f48f6fd4c172f05fd7cba73f
 });
 
 //----->trang chủ
@@ -34,8 +42,13 @@ Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
 //----->đăng nhập-Đăng ký
 Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 /*--------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 // route cac trang admin
+=======
+>>>>>>> fab6304dd1e8a009f48f6fd4c172f05fd7cba73f
 
+<<<<<<< HEAD
+// trang admin product
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
 });
@@ -50,3 +63,17 @@ Route::get('crproduct', function(){
 Route::get('edproduct', function(){
 	return view('layout_admin.product.products_edit');
 });
+// trang admin product_type
+Route::get('adproduct_type', function (){
+	return view('layout_admin.product_type.create_type');
+});
+//tran admin thong ke
+
+Route::get('chartbook', function (){
+	return view('layout_admin.chart.chart_book');
+});
+=======
+//----->trang admin
+Route::get('admin',[PageController::class,'getadmin'])->name('admin');
+
+>>>>>>> fcd7816f627669a7db269fe2497854f5a8eb2fae

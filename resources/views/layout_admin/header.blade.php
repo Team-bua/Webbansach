@@ -277,8 +277,8 @@
                 <i class="fa fa-edit"></i> <span>Loại Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="index2.html"><i class="fa fa-plus"></i> Thêm sản phẩm</a></li>
+                <li class="active"><a href="{{url('adproduct_type')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                
               </ul>
             </li>
             <!-- CRUD  nhà cung cấp -->
@@ -303,16 +303,12 @@
             </li>
             <!-- Thống kê -->
             <li class="treeview">
-              <a href="#">
+              <a href="{{url('chartbook')}}">
                 <i class="fa fa-pie-chart"></i>
                 <span>Thống kê</span>
-                <i class="fa fa-angle-left pull-right"></i>
+                
               </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/charts/morris.html"><i class="fa fa-bar-chart-o"></i> Sách </a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-bar-chart-o"></i> Tài Khoản </a></li>
-                <li><a href="pages/charts/inline.html"><i class="fa fa-bar-chart-o"></i> View </a></li>
-              </ul>
+              
             </li>
             <!-- Quản lý tài khoản -->
             <li class="treeview">
