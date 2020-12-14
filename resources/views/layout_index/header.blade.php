@@ -36,11 +36,25 @@
                             <li class="navbar-item active">
                                 <a href="{{route('trangchu')}}" class="nav-link">Trang Chủ</a>
                             </li>
+                              <li class="navbar-item active">
+                                <a href="{{route('gioithieu')}}" class="nav-link">Giới thiệu</a>
+                            </li>
+                                <li class="navbar-item active">
+                                <a href="{{route('tintuc')}}" class="nav-link">Tin Tức</a>
+                            </li>
+                            <li class="navbar-item active">
+
+                                <a href="" class="nav-link" >Đăng Nhập</a>
+                                    
+                            </li>
+                                <li class="navbar-item active">
+                                <a href="{{route('dangky')}}" class="nav-link">Đăng Ký</a>
+                            </li>
+                            
                         </ul>
                         <div class="cart my-2 my-lg-0">
-                            <span>
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                            <span class="quntity">3</span>
+                             <a href="{{route('giohang')}}"><span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
                         </div>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
@@ -51,4 +65,5 @@
             </div>
         </div>
     </header>
+
     

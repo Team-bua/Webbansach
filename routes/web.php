@@ -20,7 +20,7 @@ Route::get('/', function () {
 //----->trang chủ
 Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
 //----->loại
-
+Route::get('loaisach',[PageController::class,'getloaisach'])->name('loaisach');
 //----->chitiet
 Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
 //----->tất cả sản phẩm
@@ -29,7 +29,12 @@ Route::get('tatcaSP',[PageController::class,'gettatcaSP'])->name('tatcaSP');
 Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
+//-----> giỏ hàng
+Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+//----->đăng nhập-Đăng ký
+Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 /*--------------------------------------------------------------------------------*/
+// route cac trang admin
 
 // trang admin product
 

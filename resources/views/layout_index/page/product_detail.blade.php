@@ -51,24 +51,25 @@
                     <p>t has survived not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and</p>
                     <ul>
                         <li>
-                            <span class="name">Digital List Price</span><span class="clm">:</span>
-                            <span class="price">$4.71</span>
-                        </li>
-                        <li>
-                            <span class="name">Print List Price</span><span class="clm">:</span>
+                            <span class="name">Giá niêm yết</span><span class="clm">:</span>
                             <span class="price">$10.99</span>
                         </li>
                         <li>
-                            <span class="name">Kindle Price</span><span class="clm">:</span>
+                            <span class="name">Giá Bán</span><span class="clm">:</span>
                             <span class="price final">$3.37</span>
                         </li>
-                        <li><span class="save-cost">Save $7.62 (69%)</span></li>
                     </ul>
-
+                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        </div>
+                                       
+                                    </form>
                     <div class="btn-sec">
-                        <button class="btn ">Add To cart</button>
-                        <button class="btn black">Buy Now</button>
+                        <button class="btn ">Thêm Vào Giỏ Hàng</button>
+                        <button class="btn black">Đọc ONLINE</button>
                     </div>
+                    
                      <div class="rating">
                         <span>&#9734;</span>
                         <span>&#9734;</span>
