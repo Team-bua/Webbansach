@@ -8,7 +8,7 @@
                         <div id="menu">
                    <ul>
       <li class="menu_item down">call : 0779 750 123 
-        <div class="sub_menu" style="">
+        <div class="sub_menu">
           <div class="bubble"></div>
           <div class="sub_menu_block" style="width:326px">
             <ul>

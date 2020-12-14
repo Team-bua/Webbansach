@@ -15,7 +15,17 @@ use App\Http\Controllers\ProductController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
+
+    return view('welcome');
+
     return redirect()->route('trangchu');
+
+    return view('');
+
+=======
+    return redirect()->route('trangchu');
+>>>>>>> cfde4878f17f82cf2ec2b0e7e2b713c8bfda6243
 });
 
 //----->trang chủ
@@ -31,7 +41,36 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 
+// trang admin product
+Route::get('admin', function(){
+	return view('layout_admin.index_admin');
+});
+
+Route::get('adproduct', function(){
+	return view('layout_admin.product.products_list');
+});
+
+Route::get('crproduct', function(){
+	return view('layout_admin.product.products_create');
+});
+Route::get('edproduct', function(){
+	return view('layout_admin.product.products_edit');
+});
+// trang admin product_type
+Route::get('adproduct_type', function (){
+	return view('layout_admin.product_type.create_type');
+});
+//tran admin thong ke
+
+Route::get('chartbook', function (){
+	return view('layout_admin.chart.chart_book');
+});
+
+=======
+
+>>>>>>> cfde4878f17f82cf2ec2b0e7e2b713c8bfda6243
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');

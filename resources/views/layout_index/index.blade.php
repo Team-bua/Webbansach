@@ -43,6 +43,7 @@
 </div>
 </div>
 </section>
+
    <section class="about-sec">
         <div class="container">
             <div class="title">
