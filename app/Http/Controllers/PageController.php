@@ -37,7 +37,11 @@ class PageController extends Controller
     }
 
     public function getdangky(){
-        return view('layout_index.page.Register');
+        return view('layout_index.page.register');
+    }
+
+    public function getdangnhap(){
+        return view('layout_index.page.login');
     }
 
     public function getadmin(){
