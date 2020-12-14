@@ -16,19 +16,26 @@ class PageController extends Controller
     }
 
    public function gettintuc (){
-        return view('layout_index.news');
+        return view('layout_index.page.news');
     }
 
     public function gettatcaSP (){
         return view('layout_index.page.viewall');
-}
-
-<<<<<<< HEAD
-  
-=======
-    public function getChitiet(){
-        return view('layout_index.page.product');
->>>>>>> 280df63ca4e41d7ea85c52c9f1fd9accb265d81b
     }
->>>>>>> d1f2f8656ee11194b87198e4fe50808a5a70d0ae
+
+    public function getgioithieu (){
+        return view('layout_index.page.about');
+    }
+
+    public function getloaisach (){
+        return view('layout_index.page.product_type');
+    }
+
+     public function getcart (){
+        return view('layout_index.page.cart');
+    }
+
+    public function getdangky (){
+        return view('layout_index.page.Register');
+    }
 }

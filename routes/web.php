@@ -16,15 +16,11 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> d1f2f8656ee11194b87198e4fe50808a5a70d0ae
 
 //----->trang chủ
 Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
 //----->loại
-
+Route::get('loaisach',[PageController::class,'getloaisach'])->name('loaisach');
 //----->chitiet
 Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
 //----->tất cả sản phẩm
@@ -33,12 +29,11 @@ Route::get('tatcaSP',[PageController::class,'gettatcaSP'])->name('tatcaSP');
 Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
+//-----> giỏ hàng
+Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+//----->đăng nhập-Đăng ký
+Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 /*--------------------------------------------------------------------------------*/
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d1f2f8656ee11194b87198e4fe50808a5a70d0ae
 // route cac trang admin
 
 Route::get('admin', function(){
