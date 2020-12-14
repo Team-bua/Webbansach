@@ -14,11 +14,7 @@ use App\Http\Controllers\PageController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
     return redirect()->route('trangchu');
-=======
-    return view('');
->>>>>>> fcd7816f627669a7db269fe2497854f5a8eb2fae
 });
 
 //----->trang chủ
@@ -35,11 +31,7 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
 
-<<<<<<< HEAD
 // trang admin product
-Route::get('admin', function(){
-	return view('layout_admin.index_admin');
-});
 
 Route::get('adproduct', function(){
 	return view('layout_admin.product.products_list');
@@ -60,8 +52,6 @@ Route::get('adproduct_type', function (){
 Route::get('chartbook', function (){
 	return view('layout_admin.chart.chart_book');
 });
-=======
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 
->>>>>>> fcd7816f627669a7db269fe2497854f5a8eb2fae
