@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +37,6 @@ Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
 Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+
+Route::resource('list',ProductController::class);
 
