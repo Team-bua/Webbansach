@@ -16,6 +16,9 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return redirect()->route('trangchu');
     return view('');
+
+    return view('welcome');
+    return redirect()->route('trangchu');
 });
 
 //----->trang chủ
@@ -61,3 +64,4 @@ Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
 Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+
