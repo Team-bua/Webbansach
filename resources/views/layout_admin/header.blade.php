@@ -4,14 +4,14 @@
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown messages-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
                   <span class="label label-success">4</span>
                 </a>
@@ -21,7 +21,7 @@
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
                       <li><!-- start message -->
-                        <a href="#">
+                        <a href="">
                           <div class="pull-left">
                             <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
                           </div>
@@ -33,7 +33,7 @@
                         </a>
                       </li><!-- end message -->
                       <li>
-                        <a href="#">
+                        <a href="">
                           <div class="pull-left">
                             <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image"/>
                           </div>
@@ -45,7 +45,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <div class="pull-left">
                             <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image"/>
                           </div>
@@ -57,7 +57,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <div class="pull-left">
                             <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image"/>
                           </div>
@@ -69,7 +69,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <div class="pull-left">
                             <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image"/>
                           </div>
@@ -82,12 +82,12 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
+                  <li class="footer"><a href="">See All Messages</a></li>
                 </ul>
               </li>
               <!-- Notifications: style can be found in dropdown.less -->
               <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning">10</span>
                 </a>
@@ -97,39 +97,39 @@
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
                       <li>
-                        <a href="#">
+                        <a href="">
                           <i class="fa fa-users text-aqua"></i> 5 new members joined today
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <i class="fa fa-users text-red"></i> 5 new members joined
                         </a>
                       </li>
 
                       <li>
-                        <a href="#">
+                        <a href="">
                           <i class="fa fa-shopping-cart text-green"></i> 25 sales made
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <i class="fa fa-user text-red"></i> You changed your username
                         </a>
                       </li>
                     </ul>
                   </li>
-                  <li class="footer"><a href="#">View all</a></li>
+                  <li class="footer"><a href="">View all</a></li>
                 </ul>
               </li>
               <!-- Tasks: style can be found in dropdown.less -->
               <li class="dropdown tasks-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
                   <span class="label label-danger">9</span>
                 </a>
@@ -139,7 +139,7 @@
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
                       <li><!-- Task item -->
-                        <a href="#">
+                        <a href="">
                           <h3>
                             Design some buttons
                             <small class="pull-right">20%</small>
@@ -152,7 +152,7 @@
                         </a>
                       </li><!-- end task item -->
                       <li><!-- Task item -->
-                        <a href="#">
+                        <a href="">
                           <h3>
                             Create a nice theme
                             <small class="pull-right">40%</small>
@@ -165,7 +165,7 @@
                         </a>
                       </li><!-- end task item -->
                       <li><!-- Task item -->
-                        <a href="#">
+                        <a href="">
                           <h3>
                             Some task I need to do
                             <small class="pull-right">60%</small>
@@ -178,7 +178,7 @@
                         </a>
                       </li><!-- end task item -->
                       <li><!-- Task item -->
-                        <a href="#">
+                        <a href="">
                           <h3>
                             Make beautiful transitions
                             <small class="pull-right">80%</small>
@@ -193,13 +193,13 @@
                     </ul>
                   </li>
                   <li class="footer">
-                    <a href="#">View all tasks</a>
+                    <a href="">View all tasks</a>
                   </li>
                 </ul>
               </li>
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Alexander Pierce</span>
                 </a>
@@ -217,10 +217,10 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="{{route('list_user.index')}}" class="btn btn-default btn-flat">Thông tin</a>
+                      <a href="{{route('user.index')}}" class="btn btn-default btn-flat">Thông tin</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Đăng Xuất</a>
+                      <a href="" class="btn btn-default btn-flat">Đăng Xuất</a>
                     </div>
                   </li>
                 </ul>
@@ -241,7 +241,7 @@
             <div class="pull-left info">
               <p>Team Bùa</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online </a>
+              <a href=""><i class="fa fa-circle text-success"></i> Online </a>
             </div>
           </div>
           <!-- search form -->
@@ -253,37 +253,37 @@
               <i class="fa fa-home"></i> HOME </li></a>
             <!-- CRUD sách -->
             <li class=" treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-book"></i> <span> Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{route('list.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="{{route('list.create')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
+                <li class="active"><a href="{{route('book.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('book.create')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
               </ul>
             </li>
             <!-- CRUD thể loại sách -->
             <li class=" treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-edit"></i> <span>Loại Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{route('list_loaisanpham.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li class="active"><a href="{{route('book_type.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
                 
               </ul>
             </li>
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{route('list_nhacungcap.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="{{route('list_nhacungcap.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
+                <li class="active"><a href="{{route('archive.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('archive.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
               </ul>
             </li>
             <!-- Đơn hàng -->
             <li class=" treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-building-o"></i> <span>Đơn hàng</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -302,7 +302,7 @@
             </li>
             <!-- Quản lý tài khoản -->
             <li class="treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-user"></i>
                 <span>Tài Khoản</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -315,7 +315,7 @@
             </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-              <a href="{{route('list_kho.index')}}">
+              <a href="{{route('archive.index')}}">
                 <i class="fa fa-archive"></i>
                 <span>Kho hàng</span>
                 
@@ -325,7 +325,7 @@
 
           <!--
             <li class="treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-files-o"></i>
                 <span>Layout Options</span>
                 <span class="label label-primary pull-right">4</span>
