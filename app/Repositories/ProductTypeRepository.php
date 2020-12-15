@@ -39,7 +39,12 @@ class ProductTypeRepository
      * @return void
      */
     public function update() {
-
+        $product->unit_price=$request->input('unit_price');
+        $product->promotion_price=$request->input('promotion_price');
+        $product->description=$request->input('description');
+        
+        $product->image=$name;
+        $product->save();
         
     }
 
