@@ -212,25 +212,15 @@
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
+                  
+                  
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{{route('thongtin-user')}}" class="btn btn-default btn-flat">Thông tin</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="#" class="btn btn-default btn-flat">Đăng Xuất</a>
                     </div>
                   </li>
                 </ul>
@@ -267,8 +257,8 @@
                 <i class="fa fa-book"></i> <span> Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{url('adproduct')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="{{url('crproduct')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
+                <li class="active"><a href="{{route('danhsach-sanpham')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('them-sanpham')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
               </ul>
             </li>
             <!-- CRUD thể loại sách -->
@@ -287,8 +277,8 @@
                 <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="index2.html"><i class="fa fa-plus"></i> Thêm </a></li>
+                <li class="active"><a href="{{route('danhsach-nhacungcap')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('them-nhacungcap')}}"><i class="fa fa-plus"></i> Thêm </a></li>
               </ul>
             </li>
             <!-- Đơn hàng -->
@@ -303,7 +293,7 @@
             </li>
             <!-- Thống kê -->
             <li class="treeview">
-              <a href="{{url('chartbook')}}">
+              <a href="{{route('admin')}}">
                 <i class="fa fa-pie-chart"></i>
                 <span>Thống kê</span>
                 
@@ -322,6 +312,15 @@
                 <li><a href="pages/charts/morris.html"><i class="fa fa-eye"></i> Quyền </a></li>
                 <li><a href="pages/charts/flot.html"><i class="fa  fa-exclamation"></i> Vai Trò </a></li>
               </ul>
+            </li>
+            <!-- Quản lý kho hàng -->
+            <li class="treeview">
+              <a href="{{route('danhsach-khohang')}}">
+                <i class="fa fa-archive"></i>
+                <span>Kho hàng</span>
+                
+              </a>
+              
             </li>
 
           <!--

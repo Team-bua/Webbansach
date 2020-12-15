@@ -24,13 +24,13 @@
                 <div class="row  justify-content-md-center">
 
                     <div class="col-6">
-                        <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" />
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                        </div>
+
+                        <input type="email" placeholder="Mời nhập Email " required="">
                         <span class="required-star">*</span>
                     </div>
+                    <span class="required-star">*</span>
                 </div>
+
                 <div class="row justify-content-md-center">
                     <div class="col-3">
                         <button class="btn black">Đăng Nhập </button>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
-                        <h5>Không có Tài Khoản / <a href="register.html">Đăng Ký Tại Đây</a></h5>
+                        <h5>Không có Tài Khoản / <a href="{{route('dangky')}}">Đăng Ký Tại Đây</a></h5>
                     </div>
                 </div>
         </div>

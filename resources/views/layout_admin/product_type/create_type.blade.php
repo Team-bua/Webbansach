@@ -1,66 +1,66 @@
 @extends('layout_admin.master')
 @section('content')
 <div class="content-wrapper" style="min-height: 898px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Thêm loại sách
-            <small>Nguyễn Văn Tèo</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Simple</li>
-          </ol>
-        </section>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Thêm loại sách
+      <small>Nguyễn Văn Tèo</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Tables</a></li>
+      <li class="active">Simple</li>
+    </ol>
+  </section>
 
-        <!-- Main content -->
-        <section class="content">
-         
-        <div class="box box-info">
+  <!-- Main content -->
+  <section class="content">
 
-                <div class="box-header">
-                </div>
-                <div class="box-body">
+    <div class="box box-info">
 
-                <h4> Tên sách : </h4>
+      <div class="box-header">
+      </div>
+      <div class="box-body">
+
+        <h4> Tên sách : </h4>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+          <input type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
+        </div>
+
+
+
+
+        <br>
+        <div class="text-center">
+          <button class=" btn  btn-success btn-lg"> Thêm sách </button>
+        </div>
+
+
+
+      </div>
+      <section class="content">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Danh sách sản phẩm</h3>
+                <div class="box-tools">
                   <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                    <input type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
-                  </div>
-                
-                  
-
-                  
-                  <br>
-                  <center>
-                  <div class="input-group">
-                  <td><button class="btn btn-block btn-success btn-lg"> Thêm sách </button></td>
-                  </div></center>
-                  
-
-                  
-              </div>
-              <section class="content">
-         
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Danh sách sản phẩm</h3>
-                  <div class="box-tools">
-                    <div class="input-group">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
+                    <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                     </div>
                   </div>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr style="  font-size:18px; ">
-                    
+                </div>
+              </div><!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                  <tbody>
+                    <tr style="  font-size:18px; ">
+
                       <th>ID</th>
                       <th>Tên sách</th>
                       <th>Loại sách</th>
@@ -68,8 +68,10 @@
                       <th>Giá Khuyến Mãi</th>
                       <th>Số lượng</th>
                       <th>Miêu tả</th>
-                      <th colspan="2"><center>Chức năng</center></th>
-                     
+                      <th colspan="2">
+                        <center>Chức năng</center>
+                      </th>
+
                     </tr>
                     <tr>
                       <td>1</td>
@@ -79,7 +81,7 @@
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td></td>
                       <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
@@ -90,7 +92,7 @@
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td></td>
                       <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
@@ -101,7 +103,7 @@
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td></td>
                       <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
                     <tr>
@@ -112,17 +114,18 @@
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td></td>
                       <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
+                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                     </tr>
-                  </tbody></table>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
           </div>
-        </section>
-            <!-- danh sach -->
+        </div>
+      </section>
+      <!-- danh sach -->
 
-        </section><!-- /.content -->
-      </div>
+  </section><!-- /.content -->
+</div>
 @endsection
