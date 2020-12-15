@@ -23,8 +23,11 @@ class PageController extends Controller
         return view('layout_index.page.viewall');
 
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
     public function getgioithieu(){
         return view('layout_index.page.about');
     }
@@ -37,9 +40,14 @@ class PageController extends Controller
         return view('layout_index.page.cart');
     }
 
+<<<<<<< HEAD
 
     public function getdangky (){
         return view('layout_index.page.Register');
+=======
+    public function getdangky(){
+        return view('layout_index.page.register');
+>>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
     }
 
     public function getdangnhap(){

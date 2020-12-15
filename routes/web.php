@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,7 @@ use App\Http\Controllers\PageController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
 
 
     return view('welcome');
@@ -25,6 +27,11 @@ Route::get('/', function () {
 
     return redirect()->route('trangchu');
 
+=======
+
+    return redirect()->route('trangchu');
+
+>>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
 });
 
 //----->trang chủ
@@ -40,20 +47,16 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 //----->tintuc
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
 
 // trang admin product
 Route::get('admin', function(){
 	return view('layout_admin.index_admin');
 });
 
-Route::get('adproduct', function(){
-	return view('layout_admin.product.products_list');
-});
-
-Route::get('crproduct', function(){
-	return view('layout_admin.product.products_create');
-});
 Route::get('edproduct', function(){
 	return view('layout_admin.product.products_edit');
 });
@@ -72,4 +75,6 @@ Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
 Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+
+Route::resource('list',ProductController::class);
 

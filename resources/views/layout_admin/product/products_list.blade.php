@@ -46,8 +46,9 @@
                      
                     </tr>
                     <tr>
+                      @foreach($product as $pro)
                       <td>1</td>
-                      <td>John Doe</td>
+                      <td>{{$pro->name}}</td>
                       <td>11-7-2014</td>
                       <td>Approved</span></td>
                       <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
@@ -55,39 +56,7 @@
                       <td></td>
                       <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td>Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td>Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
+                      @endforeach
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
