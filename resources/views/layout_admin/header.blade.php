@@ -277,7 +277,7 @@
                 <i class="fa fa-edit"></i> <span>Loại Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{url('adproduct_type')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li class="active"><a href="{{route('list_type.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
                 
               </ul>
             </li>

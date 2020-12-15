@@ -5,7 +5,7 @@
         <section class="content-header">
           <h1>
             Thêm sách
-            <small>Nguyễn Văn Tèo</small>
+            <small></small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -26,11 +26,10 @@
                 <h4> Tên sách : </h4>
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                    <input type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
+                    <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . .">
                   </div>
                 
-                  <h4>Loại sách</h4>
-                  
+                  <h4>Loại sách</h4>      
                   <div class="input-group input-group">
                     <div class="input-group-btn">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mời chọn sách <span class="fa fa-caret-down"></span></button>
@@ -60,13 +59,6 @@
                     <span class="input-group-addon">VNĐ</span>
                   </div>
 
-                  <h4> Số lượng </h4>
-                  <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-                  <input type="text" class="form-control" placeholder="Số lượng . . . . . . . . .">
-                    <span class="input-group-addon">Quyển</span>
-                  </div>
-
                   <h4> Miêu tả : </h4>
                   <div class="input-group">
                   <span class="input-group-addon"><i class="fa  fa-pencil-square-o"></i></span>
@@ -77,20 +69,7 @@
                   <center>
                   <div class="input-group">
                   <td><button class="btn btn-block btn-success btn-lg"> Thêm sách </button></td>
-                  </div></center>
-                  
-
-                  
-              
-
-                  
-
-
-                    
-
-                    
-
-                  
+                  </div></center>                
               </div>
         </section><!-- /.content -->
       </div>

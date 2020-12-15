@@ -11,7 +11,7 @@ use App\Http\Requests\ProductRequest;
 class ProductController extends Controller
 {
        /**
-     * The MemberRepository instance.
+     * The ProductRepository instance.
      *
      * @var \App\Repositories\ProductRepository
      */

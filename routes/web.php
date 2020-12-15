@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +61,4 @@ Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
 
 Route::resource('list',ProductController::class);
 
+Route::resource('list_type',ProductTypeController::class);
