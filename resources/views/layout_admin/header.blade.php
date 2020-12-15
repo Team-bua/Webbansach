@@ -277,8 +277,8 @@
                 <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{route('archive.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="{{route('archive.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
+                <li class="active"><a href="{{route('supplier.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('supplier.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
               </ul>
             </li>
             <!-- Đơn hàng -->
@@ -287,7 +287,7 @@
                 <i class="fa fa-building-o"></i> <span>Đơn hàng</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li class="active"><a href="{{route('order.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
                 <li><a href="index2.html"><i class="fa fa-plus"></i> Thêm </a></li>
               </ul>
             </li>

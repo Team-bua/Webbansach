@@ -6,9 +6,9 @@ use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
-
-
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\OrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +56,8 @@ Route::resource('supplier',SuppliersController::class);
 Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
+///------>trang admin_CRUD thong tin order
+Route::resource('order',OrderController::class);
 
 
 
