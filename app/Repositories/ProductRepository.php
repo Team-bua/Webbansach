@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductRepository
 {
@@ -13,7 +14,7 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::paginate(10)->orderby('created_at','desc');
+        return Product::paginate(10);
     }
 
     /**
@@ -23,7 +24,7 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
-    public function create($request)
+    public function create(Request $request)
     {
        //kiểm tra file tồn tại
        $name="";
@@ -31,19 +32,21 @@ class ProductRepository
        {
            $file = $request->file('img');
            $name=time().'_'.$file->getClientOriginalName();
-           $destinationPath=public_path('image/product'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
+           $destinationPath=public_path('images/product'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
            $file->move($destinationPath, $name); //lưu hình ảnh vào thư mục public/image
        }
        $product = new Product();
        $product->name=$request->input('name');
        $product->id_type=$request->input('cate');
+       //$product->id_user=Auth::user()->username();
        $product->unit_price=$request->input('unit_price');
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
-       $product->new=$request->input('featured');
+       
        $product->image=$name;
        $product->save();
-       return redirect('list');
+       
+       return redirect()->back();
     }
 
     /**

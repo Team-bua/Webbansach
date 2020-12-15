@@ -40,8 +40,9 @@
                       <th>Loại sách</th>
                       <th>Giá </th>
                       <th>Giá Khuyến Mãi</th>
-                      <th>Số lượng</th>
                       <th>Miêu tả</th>
+                      
+                      <th>Hình ảnh</th>
                       <th colspan="2"><center>Chức năng</center></th>
                      
                     </tr>
@@ -50,11 +51,12 @@
                       @foreach($product as $pro)
                       <td>1</td>
                       <td>{{$pro->name}}</td>
-                      <td>11-7-2014</td>
-                      <td>Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                       <td></td>
-                      <td></td>
+                      <td>{{$pro->unit_price}}</span></td>
+                      <td>{{$pro->promotion_price}}</td>
+                      <td>{{$pro->description}}</td>
+                      <td><img style="width:100px;height:100px;" src="{{asset('images/product/'.$pro->image)}}" ></td>
+                      
                       <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
                       @endforeach

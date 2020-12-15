@@ -43,8 +43,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+       
         return view('layout_admin.product.products_create');
     }
 
@@ -56,7 +57,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = $this->repository->create($request);
+        return view('layout_admin.product.products_list', compact('product'));
     }
 
     /**
