@@ -26,7 +26,7 @@
         <div class="main-menu">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="{{route('trangchu')}}">
+                    <a class="navbar-brand" href="{{route('index')}}">
                         <img src="images/logoteambua.png" alt="logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -34,26 +34,26 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="navbar-item active">
-                                <a href="{{route('trangchu')}}" class="nav-link">Trang Chủ</a>
+                                <a href="{{route('index')}}" class="nav-link">Trang Chủ</a>
                             </li>
                               <li class="navbar-item active">
-                                <a href="{{route('gioithieu')}}" class="nav-link">Giới thiệu</a>
+                                <a href="{{route('introduce')}}" class="nav-link">Giới thiệu</a>
                             </li>
                                 <li class="navbar-item active">
-                                <a href="{{route('tintuc')}}" class="nav-link">Tin Tức</a>
+                                <a href="{{route('news')}}" class="nav-link">Tin Tức</a>
                             </li>
                             <li class="navbar-item active">
 
-                                <a href="{{route('dangnhap')}}" class="nav-link" >Đăng Nhập</a>
+                                <a href="{{route('login')}}" class="nav-link" >Đăng Nhập</a>
                                     
                             </li>
                                 <li class="navbar-item active">
-                                <a href="{{route('dangky')}}" class="nav-link">Đăng Ký</a>
+                                <a href="{{route('signup')}}" class="nav-link">Đăng Ký</a>
                             </li>
                             
                         </ul>
                         <div class="cart my-2 my-lg-0">
-                             <a href="{{route('giohang')}}"><span>
+                             <a href="{{route('cart')}}"><span>
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
                         </div>
                         <form class="form-inline my-2 my-lg-0">

@@ -62,13 +62,13 @@
             <div class="row">
                <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
-                        <a href="{{route('chitiet')}}"><img src="images/r1.jpg" alt="img" ></a>
+                        <a href="{{route('detail')}}"><img src="images/r1.jpg" alt="img" ></a>
                         <h6><a href="#">Mua ngay</a></h6>
                     </div>
                 </div>
             </div>
              <div class="btn-sec">
-                <a href="{{route('tatcaSP')}}" class="btn gray-btn">Xem Thêm</a>
+                <a href="{{route('all')}}" class="btn gray-btn">Xem Thêm</a>
             </div>
         </div>
     </section>
@@ -97,13 +97,13 @@
             <div class="row">
                <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
-                        <a href="{{route('chitiet')}}"><img src="images/r1.jpg" alt="img" ></a>
+                        <a href="{{route('detail')}}"><img src="images/r1.jpg" alt="img" ></a>
                         <h6><a href="#">Buy Now</a></h6>
                     </div>
                 </div>
             </div>
              <div class="btn-sec">
-                <a href="{{route('tatcaSP')}}" class="btn gray-btn">Xem Thêm</a>
+                <a href="{{route('all')}}" class="btn gray-btn">Xem Thêm</a>
             </div>
         </div>
     </section>
@@ -132,13 +132,13 @@
             <div class="row">
                <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
-                        <a href="{{route('chitiet')}}"><img src="images/r1.jpg" alt="img" ></a>
+                        <a href="{{route('detail')}}"><img src="images/r1.jpg" alt="img" ></a>
                         <h6><a href="#">Buy Now</a></h6>
                     </div>
                 </div>
             </div>
              <div class="btn-sec">
-                <a href="{{route('tatcaSP')}}" class="btn gray-btn">Xem Thêm</a>
+                <a href="{{route('all')}}" class="btn gray-btn">Xem Thêm</a>
             </div>
         </div>
     </div>
@@ -168,13 +168,13 @@
             <div class="row">
                <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
-                        <a href="{{route('chitiet')}}"><img src="images/r1.jpg" alt="img" ></a>
+                        <a href="{{route('detail')}}"><img src="images/r1.jpg" alt="img" ></a>
                         <h6><a href="#">Buy Now</a></h6>
                     </div>
                 </div>
             </div>
              <div class="btn-sec">
-                <a href="{{route('tatcaSP')}}" class="btn gray-btn">Xem Thêm</a>
+                <a href="{{route('all')}}" class="btn gray-btn">Xem Thêm</a>
             </div>
         </div>
     </section>

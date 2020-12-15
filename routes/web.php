@@ -21,7 +21,7 @@ use App\Http\Controllers\ProductTypeController;
 */
 // route cac trang index
 Route::get('/', function () {
-    return redirect()->route('trangchu');
+    return redirect()->route('index');
 
 });
 
@@ -30,7 +30,7 @@ Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->loại
 
 //----->chitiet
-Route::get('detail',[PageController::class,'gettype'])->name('detail');
+Route::get('detail',[PageController::class,'getdetail'])->name('detail');
 //----->tất cả sản phẩm
 Route::get('all',[PageController::class,'getall'])->name('all');
 //----->gioithieu
@@ -44,7 +44,7 @@ Route::get('news',[PageController::class,'getnews'])->name('news');
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('login',[PageController::class,'getlogin'])->name('login');
-Route::get('sign',[PageController::class,'getsignin'])->name('sign');
+Route::get('signup',[PageController::class,'getsignup'])->name('signup');
 Route::get('cart',[PageController::class,'getcart'])->name('cart');
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
