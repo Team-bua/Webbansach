@@ -34,16 +34,12 @@
 
           <div class="input-group input-group">
             <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mời chọn sách <span class="fa fa-caret-down"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
+              <select required name="cate" class="form-control">
+              @foreach($product as $pro)
+              <option value="{{$pro->id}}">{{$pro->name}}</option>
+              @endforeach
+              </select>
             </div><!-- /btn-group -->
-            <input name="cate" disabled type="text" class="form-control">
           </div><!-- /input-group -->
 
           <h4> Giá : </h4>

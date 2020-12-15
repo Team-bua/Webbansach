@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Models\Product;
+use App\Models\Product_type;
 use App\Http\Requests\ProductRequest;
 
 
@@ -43,10 +44,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-       
-        return view('layout_admin.product.products_create');
+        $product = Product_type::orderby('id','asc')->get();
+        return view('layout_admin.product.products_create', compact('product'));
     }
 
     /**
