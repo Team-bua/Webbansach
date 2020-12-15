@@ -3,17 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\ProductTypeRepository;
+use App\Models\Product_type;
+use App\Http\Requests\ProductTypeRequest;
+
 
 class ProductTypeController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
+{   /**
+    * The MemberRepository instance.
+    *
+    * @var \App\Repositories\ProductTypeRepository
+    */
+   protected $repository;
+
+
+  /**
+   * Create a new PostController instance.
+   *
+   * @param  \App\Repositories\ProductTypeRepository $repository
+   */
+  public function __construct(ProductTypeRepository $repository)
+  {
+      $this->repository = $repository;
+  }
+   /**
+    * Display a listing of the resource.
+    *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('layout_admin.product_type.create_type');
+        $product_type = $this->repository->getAll();
+        return view('layout_admin.product_type.create_type', compact('product_type'));
     }
 
     /**
@@ -23,7 +44,7 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +55,8 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product_type = $this->repository->create($request);
+        return view('layout_admin.product_type.create_type', compact('product_type'));
     }
 
     /**

@@ -16,16 +16,23 @@
                 <div class="row  justify-content-md-center">
                     <div class="col-6">
 
-                        <input type="email" placeholder="Mời nhập Email " required="">
-                        <span class="required-star">*</span>
+                        <input type="email" class="form-control" placeholder="Mời nhập Email " required="">
+                       <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                 </div>
 
                 <div class="row  justify-content-md-center">
 
                     <div class="col-6">
+<<<<<<< HEAD
 
                         <input type="email" placeholder="Mời nhập Email " required="">
+=======
+                        <div class="form-group has-feedback">
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+>>>>>>> 548835b9959debe77b45e7d228632e80af45dc36
                         <span class="required-star">*</span>
                     </div>
                     <span class="required-star">*</span>

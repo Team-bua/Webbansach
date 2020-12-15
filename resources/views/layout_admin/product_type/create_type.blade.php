@@ -5,7 +5,7 @@
   <section class="content-header">
     <h1>
       Thêm loại sách
-      <small>Nguyễn Văn Tèo</small>
+      <small></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -18,27 +18,23 @@
   <section class="content">
 
     <div class="box box-info">
-
+    <form action="{{ url('list_loaisanpham') }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+          @csrf
       <div class="box-header">
       </div>
       <div class="box-body">
-
-        <h4> Tên sách : </h4>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-          <input type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
-        </div>
-
-
-
-
-        <br>
-        <div class="text-center">
-          <button class=" btn  btn-success btn-lg"> Thêm sách </button>
-        </div>
-
-
-
+          <h4> Tên loại sách : </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . .">
+          </div>
+          <br>
+          <center>
+            <div class="input-group">
+              <td><button class="btn btn-block btn-success btn-lg"> Thêm loại sách </button></td>
+            </div>
+          </center>
+        
       </div>
       <section class="content">
 
@@ -46,7 +42,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Danh sách sản phẩm</h3>
+                <h3 class="box-title">Danh sách loại sản phẩm</h3>
                 <div class="box-tools">
                   <div class="input-group">
                     <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
@@ -58,69 +54,25 @@
               </div><!-- /.box-header -->
               <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
-                  <tbody>
-                    <tr style="  font-size:18px; ">
-
-                      <th>ID</th>
-                      <th>Tên sách</th>
-                      <th>Loại sách</th>
-                      <th>Giá </th>
-                      <th>Giá Khuyến Mãi</th>
-                      <th>Số lượng</th>
-                      <th>Miêu tả</th>
-                      <th colspan="2">
+                  <tbody>  
+                    <tr>
+                      <th>Tên loại</th>
+                      <th colspan="2" width="20%">
                         <center>Chức năng</center>
                       </th>
-
                     </tr>
+                    @foreach($product_type as $pro)
                     <tr>
-                      <td>1</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td>Approved</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
+                      <td>{{$pro->name}}</td>
+                      <td><button class="btn btn-warning btn"> Sửa </button></td>
+                      <td><button class="btn btn-danger btn"> Xóa </button></td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td>Pending</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td>Approved</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
+            </form>
           </div>
         </div>
       </section>

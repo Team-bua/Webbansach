@@ -13,7 +13,9 @@
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" type="text/css" href="style.css" />
-
+<!------------------------------------------------------------------------>
+ <link rel="stylesheet" href="../src/jquery.back-to-top.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!------------------------------------------------------------------------>
 </head>
 
@@ -32,8 +34,19 @@
 <script type="text/javascript" src="js/jquery.selectBox.js"></script>
 <script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
 <script type="text/JavaScript" src="js/cuties.js"></script>
-<!------------------------------------------------------------------------>
+<!---------------------------back to top--------------------------------------------->
+<script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+    <script src="../src/jquery.back-to-top.js"></script>
+    <script>
 
+    $(function(){
+
+            
+        $('.bck').backToTop();      
+
+    });
+    
+    </script>
 
 </script>
 </script>
