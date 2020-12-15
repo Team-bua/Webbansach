@@ -23,7 +23,6 @@ class PageController extends Controller
         return view('layout_index.page.viewall');
 
     }
-
     public function getgioithieu(){
         return view('layout_index.page.about');
     }
