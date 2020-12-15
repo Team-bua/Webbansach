@@ -24,13 +24,14 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'img' => 'mimes:jpg,jpeg,png,gif|max:2048',
         ];
     }
     public function messages()
     {
         return [
-
+            'img.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
+            'img.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
         ];
     }
 }
