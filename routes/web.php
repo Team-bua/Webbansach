@@ -41,39 +41,23 @@ Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu'
 Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
 /*--------------------------------------------------------------------------------*/
 
-// trang admin product
-Route::get('admin', function(){
-	return view('layout_admin.index_admin');
-});
 
-Route::get('edproduct', function(){
-	return view('layout_admin.product.products_edit');
-});
-// trang admin product_type
-Route::get('adproduct_type', function (){
-	return view('layout_admin.product_type.create_type');
-});
-//tran admin thong ke
-
-Route::get('chartbook', function (){
-	return view('layout_admin.chart.chart_book');
-});
 
 //----->trang admin
-Route::get('dashboard',[PageController::class,'getadmin'])->name('admin');
+Route::get('admin',[PageController::class,'getadmin'])->name('admin');
 Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
 Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
 ////----->trang admin_CRUD san pham
-Route::resource('list',ProductController::class);
+Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
-Route::resource('list_loaisanpham',ProductTypeController::class);
+Route::resource('book_type',ProductTypeController::class);
 ////----->trang admin_CRUD nha cung cap
-Route::resource('list_nhacungcap',SuppliersController::class);
+Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD kho hang
-Route::resource('list_kho',ArchiveController::class);
+Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
-Route::resource('list_user',UserController::class);
+Route::resource('user',UserController::class);
 
 
 

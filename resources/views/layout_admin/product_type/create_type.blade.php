@@ -18,7 +18,7 @@
   <section class="content">
 
     <div class="box box-info">
-    <form action="{{ url('list_loaisanpham') }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <form action="{{ url('book_type') }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
           @csrf
       <div class="box-header">
       </div>
