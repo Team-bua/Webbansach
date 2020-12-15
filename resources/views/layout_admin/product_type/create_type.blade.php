@@ -26,7 +26,7 @@
           <h4> Tên loại sách : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." required>
+            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
           </div>
           <br>
           <center>
@@ -36,6 +36,10 @@
           </center>
         
       </div>
+      </form>
+
+      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      @csrf
       <section class="content">
 
         <div class="row">
