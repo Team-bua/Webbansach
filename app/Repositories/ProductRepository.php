@@ -14,7 +14,7 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::paginate(10);
+        return Product::orderBy('created_at', 'desc')->paginate(10);
     }
 
     /**
@@ -42,7 +42,6 @@ class ProductRepository
        $product->unit_price=$request->input('unit_price');
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
-       
        $product->image=$name;
        $product->save();
        
