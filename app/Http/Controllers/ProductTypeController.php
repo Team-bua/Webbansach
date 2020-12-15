@@ -55,8 +55,8 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $product_type = $this->repository->create($request);
-        return view('layout_admin.product_type.create_type', compact('product_type'));
+        $this->repository->create($request);
+        return redirect(route('list_loaisanpham.index'));
     }
 
     /**

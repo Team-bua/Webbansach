@@ -57,8 +57,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $this->repository->create($request);
-        return view('layout_admin.product.products_list', compact('product'));
+        $this->repository->create($request);
+        return redirect(route('list.index'));
     }
 
     /**
