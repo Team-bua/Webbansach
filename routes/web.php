@@ -23,31 +23,29 @@ use App\Http\Controllers\ProductTypeController;
 Route::get('/', function () {
     return redirect()->route('trangchu');
 
-    return redirect()->route('trangchu');
-
 });
 
 //----->trang chủ
-Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
+Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->loại
 
 //----->chitiet
-Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
+Route::get('detail',[PageController::class,'gettype'])->name('detail');
 //----->tất cả sản phẩm
-Route::get('tatcaSP',[PageController::class,'gettatcaSP'])->name('tatcaSP');
+Route::get('all',[PageController::class,'getall'])->name('all');
 //----->gioithieu
-Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
+Route::get('introduce',[PageController::class,'getintroduce'])->name('introduce');
 //----->tintuc
-Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
+Route::get('news',[PageController::class,'getnews'])->name('news');
 /*--------------------------------------------------------------------------------*/
 
 
 
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
-Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
-Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
-Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+Route::get('login',[PageController::class,'getlogin'])->name('login');
+Route::get('sign',[PageController::class,'getsignin'])->name('sign');
+Route::get('cart',[PageController::class,'getcart'])->name('cart');
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,

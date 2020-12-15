@@ -11,23 +11,23 @@ class PageController extends Controller
         return view('layout_index.index');
     }
 
-   public function getchitiet(){
+   public function getdetail(){
         return view('layout_index.page.product_detail');
     }
 
-   public function gettintuc(){
+   public function getnews(){
         return view('layout_index.page.news');
     }
 
-    public function gettatcaSP(){
+    public function getall(){
         return view('layout_index.page.viewall');
 
     }
-    public function getgioithieu(){
+    public function getintroduce(){
         return view('layout_index.page.about');
     }
 
-    public function getloaisach(){
+    public function getlbooktype(){
         return view('layout_index.page.product_type');
     }
 
@@ -35,11 +35,11 @@ class PageController extends Controller
         return view('layout_index.page.cart');
     }
 
-    public function getdangky(){
+    public function getsignin(){
         return view('layout_index.page.register');
     }
 
-    public function getdangnhap(){
+    public function getlogin(){
         return view('layout_index.page.login');
     }
 
