@@ -35,7 +35,6 @@
                   <table class="table table-hover">
                     <tbody><tr style="  font-size:18px; ">
                     
-                      <th>ID</th>
                       <th>Tên sách</th>
                       <th>Loại sách</th>
                       <th>Giá </th>
@@ -45,11 +44,9 @@
                       <th>Hình ảnh</th>
                       <th colspan="2"><center>Chức năng</center></th>
                      
-                    </tr>
-                    
+                    </tr>                    
                     <tr>
                       @foreach($product as $pro)
-                      <td>1</td>
                       <td>{{$pro->name}}</td>
                       <td>{{$pro->product_type->name}}</td>
                       <td>{{$pro->unit_price}}</span></td>
