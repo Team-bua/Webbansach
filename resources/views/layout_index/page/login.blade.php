@@ -16,8 +16,8 @@
                 <div class="row  justify-content-md-center">
                     <div class="col-6">
 
-                        <input type="email" placeholder="Mời nhập Email " required="">
-                        <span class="required-star">*</span>
+                        <input type="email" class="form-control" placeholder="Mời nhập Email " required="">
+                       <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
 
                     <div class="col-6">
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" />
+                            <input type="password" class="form-control" placeholder="Password" required="" />
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                         <span class="required-star">*</span>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
-                        <h5>Không có Tài Khoản / <a href="register.html">Đăng Ký Tại Đây</a></h5>
+                        <h5>Không có Tài Khoản / <a href="{{route('dangky')}}">Đăng Ký Tại Đây</a></h5>
                     </div>
                 </div>
         </div>

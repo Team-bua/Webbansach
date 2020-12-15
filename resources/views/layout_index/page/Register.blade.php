@@ -66,7 +66,7 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
-                        <h5>Đã có tài khoản / <a href="register.html">Đăng Nhập Tại Đây</a></h5>
+                        <h5>Đã có tài khoản / <a href="{{route('dangnhap')}}">Đăng Nhập Tại Đây</a></h5>
                     </div>
                 </div>
                     
