@@ -217,7 +217,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="{{route('thongtin-user')}}" class="btn btn-default btn-flat">Thông tin</a>
+                      <a href="{{route('list_user.index')}}" class="btn btn-default btn-flat">Thông tin</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Đăng Xuất</a>
@@ -267,7 +267,7 @@
                 <i class="fa fa-edit"></i> <span>Loại Sách</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{url('adproduct_type')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li class="active"><a href="{{route('list_loaisanpham.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
                 
               </ul>
             </li>
@@ -277,8 +277,8 @@
                 <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="{{route('danhsach-nhacungcap')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="{{route('them-nhacungcap')}}"><i class="fa fa-plus"></i> Thêm </a></li>
+                <li class="active"><a href="{{route('list_nhacungcap.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
+                <li><a href="{{route('list_nhacungcap.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
               </ul>
             </li>
             <!-- Đơn hàng -->
@@ -315,7 +315,7 @@
             </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-              <a href="{{route('danhsach-khohang')}}">
+              <a href="{{route('list_kho.index')}}">
                 <i class="fa fa-archive"></i>
                 <span>Kho hàng</span>
                 

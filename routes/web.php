@@ -6,6 +6,7 @@ use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductTypeController;
 
 
 /*
@@ -65,13 +66,14 @@ Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
 Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
 ////----->trang admin_CRUD san pham
 Route::resource('list',ProductController::class);
+////----->trang admin_CRUD loai san pha,
+Route::resource('list_loaisanpham',ProductTypeController::class);
 ////----->trang admin_CRUD nha cung cap
-Route::get('danhsach_nhacungcap',[SuppliersController::class,'getlaynhacungcap'])->name('danhsach-nhacungcap');
-Route::get('them_nhacungcap',[SuppliersController::class,'getthemnhacungcap'])->name('them-nhacungcap');
+Route::resource('list_nhacungcap',SuppliersController::class);
 ///------>trang admin_CRUD kho hang
-Route::get('danhsach_khohang',[ArchiveController::class,'getlaykhohang'])->name('danhsach-khohang');
+Route::resource('list_kho',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
-Route::get('thongtin_user',[UserController::class,'getthongtinuser'])->name('thongtin-user');
+Route::resource('list_user',UserController::class);
 
 
 

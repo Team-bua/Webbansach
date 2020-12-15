@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('layout_admin.product_type.create_type');
     }
 
     /**
