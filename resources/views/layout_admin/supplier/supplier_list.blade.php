@@ -34,57 +34,18 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody><tr style="  font-size:18px; ">
-                    
-                      <th>ID</th>
-                      <th>Tên sách</th>
-                      <th>Loại sách</th>
-                      <th>Giá </th>
-                      <th>Giá Khuyến Mãi</th>
-                      <th>Số lượng</th>
-                      <th>Miêu tả</th>
+                      <th>Tên nhà cung cấp</th>
+                      <th>Email</th>
+                      <th>Địa chỉ </th>
+                      <th>Số điện thoại</th>
+
                       <th colspan="2"><center>Chức năng</center></th>
                      
                     </tr>
                     <tr>
-                      <td>1</td>
                       <td>John Doe</td>
                       <td>11-7-2014</td>
                       <td>Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td>Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td>Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
-                      <td></td>
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      <td></td>
                       <td></td>
                       <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>

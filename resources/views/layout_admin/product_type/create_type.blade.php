@@ -68,8 +68,20 @@
                     @foreach($product_type as $pro)
                     <tr>
                       <td>{{$pro->name}}</td>
-                      <td><button class="btn btn-warning btn"> Sửa </button></td>
-                      <td><button class="btn btn-danger btn"> Xóa </button></td>
+                      <td>
+                      <form method="put" action="{{ route('book_type.edit',[$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
+    							  	@csrf
+    								  <input name="_method" type="hidden" value="UPDATE">
+                        <button class="btn btn-warning btn"> Sửa </button>
+                      </form>
+                    </td>                     
+                      <td>
+                      <form method="post" action="{{route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
+    								  @csrf
+    								  <input name="_method" type="hidden" value="DELETE">
+                        <button class="btn btn-danger btn" onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
+                      </form>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>

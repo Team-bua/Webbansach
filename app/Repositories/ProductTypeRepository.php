@@ -13,7 +13,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return Product_type::paginate(10);
+        return Product_type::orderBy('created_at','desc')->paginate(10);
     }
 
     /**
@@ -38,13 +38,10 @@ class ProductTypeRepository
      * @param  \App\Models\Product_type $product_type
      * @return void
      */
-    public function update() {
-        $product->unit_price=$request->input('unit_price');
-        $product->promotion_price=$request->input('promotion_price');
-        $product->description=$request->input('description');
-        $product->image=$name;
-        $product->save();
-        
+    public function update($request, $id) {
+        $product_type = Product_type::find($id);
+        $product_type->name = $request->input('name');
+        $product_type->save();
     }
 
      /**
@@ -54,8 +51,9 @@ class ProductTypeRepository
      * @param  \App\Models\Product_type $product_type
      * @return void
      */
-    public function destroy() {
-
+    public function destroy($id) {
+        $product_type = Product_type::find($id);
+        $product_type->delete();
       
     }
 
