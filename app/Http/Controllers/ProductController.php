@@ -58,7 +58,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->repository->create($request);
-        return redirect(route('list.index'));
+        return redirect(route('book.index'));
     }
 
     /**
