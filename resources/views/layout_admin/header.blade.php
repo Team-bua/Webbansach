@@ -249,7 +249,7 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header" style="font-size: 20px;"><a href="{{url('trangchu')}}">
+            <li class="header" style="font-size: 20px;"><a href="{{url('index')}}">
               <i class="fa fa-home"></i> HOME </li></a>
             <!-- CRUD sách -->
             <li class=" treeview">

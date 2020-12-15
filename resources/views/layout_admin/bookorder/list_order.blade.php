@@ -50,12 +50,12 @@
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý <span class="fa fa-caret-down"></span></button>
                     <ul class="dropdown-menu">
-                      <li><a href="">Tiếp nhận</a></li>
-                      <li><a href="">Đã giao</a></li>
+                      <li><a href="#">Tiếp nhận</a></li>
+                      <li><a href="#">Đã giao</a></li>
 
                     </ul>
                   </div>
-               <td><button class="btn btn-info btn-sm"><a href="">Xem</a></button></td>
+               <td><button class="btn btn-info btn-sm"><a href="#">Xem</a></button></td>
               </tr>
 
 
