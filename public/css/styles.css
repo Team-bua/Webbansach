@@ -11,7 +11,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   color: #000;
   float: left;
   width: 100%; 
@@ -32,11 +32,11 @@ h1, h2, h3, h4, h5, h6, ul {
   padding: 0px; }
 
 input {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   outline: 0; }
 
 textarea {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   outline: 0; }
 
 .btn {
@@ -250,24 +250,7 @@ header .header-top {
 }
 /*-------------------------------------------------------------------------*/
 
-.justify{text-align:justify;}
-.bold{font-weight:bold;}
-.center{text-align:center;}
-.right{text-align:right;}
-.nostart{margin:0; padding:0; list-style-type:none;}
 
-.clear{clear:both;}
-br.clear{clear:both; margin-top:-15px;}
-
-a{outline:none; text-decoration:none;}
-
-.fl_left, .imgl{float:left;}
-.fl_right, .imgr{float:right;}
-
-img{margin:0; padding:0; border:0;}
-.imgl, .imgr{border:1px solid #666666; padding:5px; color:#666666; background-color:#FFFFFF;}
-.imgl{margin:0 15px 0 0; clear:left;}
-.imgr{margin:0 0 15px 15px; clear:right;}
 
 /* ----------------------------------------------Wrapper------------------------------------- */
 
@@ -275,18 +258,6 @@ img{margin:0; padding:0; border:0;}
 
 /* ----------------------------------------------Generalise------------------------------------- */
 
-#topbar, 
-#header, 
-#topnav, 
-#intro, 
-#breadcrumb, 
-#container, 
-#footer, 
-#copyright{
-  display:block; 
-  position:relative;
-  width:960px; 
-  margin:0 auto;}
 
 /* ----------------------------------------------TopBar------------------------------------- */
 
@@ -297,24 +268,11 @@ img{margin:0; padding:0; border:0;}
 
 /* ----------------------------------------------BreadCrumb------------------------------------- */
 
-#breadcrumb{padding:20px 0;}
-#breadcrumb ul{margin:0; padding:0; list-style:none;}
-#breadcrumb ul li{display:inline;}
-#breadcrumb ul li.current a{text-decoration:underline;}
+
 
 /* ----------------------------------------------Content------------------------------------- */
 
-#container{padding:20px 0; line-height:1.4em;}
-#container h1, 
-#container h2, 
-#container h3, 
-#container h4, 
-#container h5, 
-#container h6 {
-  padding-bottom:8px; 
-  border-bottom:1px 
-  dotted #CCCCCC;}
-#content{display:block; float:left; width:600px;}
+
 
 /* ----------------------------------------------Column------------------------------------- */
 
@@ -455,42 +413,39 @@ img{margin:0; padding:0; border:0;}
   padding:4px;
 }
 /*-------------------------------categories------------------------------------*/
-.menu{
-  padding-left:20px;
-  border-radius:10px;
-}
 ul.vert-one{
   margin:0;
   padding:0;
   list-style-type:none;
   display:block;
-  font:bold 15px "Times New Roman", Times, serif;
-  line-height:165%;
-  width:320px;
-}
+   font: 14px "Times New Roman", Times, serif;
+  line-height:240%;
+  width:300px;
+  }
 
 ul.vert-one li{
   margin:0;
   padding:0;
+  border-top:1px solid #4D0000;
   }
 
 ul.vert-one li a{
   display:block;
   text-decoration:none;
   color:#000;
-  background:#fff;
+  background:#FFFFFF;
   padding:0 0 0 20px;
-  width:320px;
+  width:300px;
   }
 
 ul.vert-one li a:hover{
-  background:#ECE6E6 url("../images/icon/menu.gif") no-repeat 0 9px;
+  background:#E3D7D7 url("../images/icon/vert-one_arrow.gif") no-repeat 0 9px;
   }
 
 ul.vert-one li a.current,ul.vert-one li a.current:hover{
-  background:#EFE5E5 url("../images/icon/menu.gif") no-repeat 0 9px;
+  background:#FCBA68 url("../images/icon/vert-one_arrow.gif") no-repeat 0 9px;
   }
-
+  
 /*-------------------------------------------------------------------------*/
 /*--------------------------------rating-----------------------------------*/
 .rating {
@@ -804,9 +759,6 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
       line-height: 24px;
       opacity: 0.7; }
 /*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------*/
 .testimonial-sec {
   padding: 80px 0;
   position: relative; }
@@ -855,6 +807,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
   .container {
     width: 100%;
     padding: 0 20px;
+     display: flex;
     max-width: 100%; }
 
   .recent-book-sec .row {
