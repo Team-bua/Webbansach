@@ -22,12 +22,14 @@
                 <div class="box-header">
                   <h3 class="box-title">Danh sách sản phẩm</h3>
                   <div class="box-tools">
-                    <div class="input-group">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
+                  <div class="col-md-4 pull-right">
+                  <div class="input-group ">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-info btn-flat" type="button">Seach</button>
+                    </span>
+                  </div>
+                  </div>
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -52,11 +54,21 @@
                       <td>{{$pro->unit_price}}</span></td>
                       <td>{{$pro->promotion_price}}</td>
                       <td>{{$pro->description}}</td>
-                      <td><img style="width:100px;height:100px;" src="{{asset('images/product/'.$pro->image)}}" ></td>
-                      
-                      <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
-                      <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-
+                      <td><img style="width:100px;height:100px;" src="{{asset('images/product/'.$pro->image)}}" ></td>                      
+                      <td>
+                      <form method="put" action="{{ route('book.edit',[$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
+    							  	@csrf
+    								  <input name="_method" type="hidden" value="UPDATE">
+                        <button class="btn btn-warning btn"> Sửa </button>
+                      </form>
+                    </td>                     
+                      <td>
+                      <form method="post" action="{{route('book.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
+    								  @csrf
+    								  <input name="_method" type="hidden" value="DELETE">
+                        <button class="btn btn-danger btn" onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
+                      </form>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody></table>

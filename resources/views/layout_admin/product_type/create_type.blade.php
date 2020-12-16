@@ -8,8 +8,8 @@
       <small></small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Tables</a></li>
+      <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="">Tables</a></li>
       <li class="active">Simple</li>
     </ol>
   </section>
@@ -26,7 +26,7 @@
           <h4> Tên loại sách : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
+            <input required type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
           </div>
           <br>
           <center>
@@ -38,8 +38,11 @@
       </div>
       </form>
 
+<<<<<<< HEAD
     
       @csrf
+=======
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
       <section class="content">
 
         <div class="row">
@@ -88,6 +91,10 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
+<<<<<<< HEAD
+=======
+            
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
           </div>
         </div>
       </section>

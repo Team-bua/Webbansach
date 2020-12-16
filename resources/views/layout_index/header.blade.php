@@ -51,11 +51,15 @@
                                 <a href="{{route('index')}}" class="nav-link">Trang Chủ</a>
                             </li>
                               <li class="navbar-item active">
+<<<<<<< HEAD
 
                                 <a href="{{route('introduce')}}" class="nav-link">Giới thiệu</a>
 
                               
 
+=======
+                                <a href="{{route('introduce')}}" class="nav-link">Giới thiệu</a>
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
                             </li>
                                 <li class="navbar-item active">
                                 <a href="{{route('news')}}" class="nav-link">Tin Tức</a>
@@ -66,11 +70,15 @@
                                     
                             </li>
                                 <li class="navbar-item active">
+<<<<<<< HEAD
 
                                 <a href="{{route('signup')}}" class="nav-link">Đăng Ký</a>
 
                                
 
+=======
+                                <a href="{{route('signup')}}" class="nav-link">Đăng Ký</a>
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
                             </li>
                             
                         </ul>

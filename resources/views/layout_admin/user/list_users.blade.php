@@ -39,10 +39,8 @@
                       <th>Email </th>
                       <th>Địa chỉ</th>
                       <th>Điện thoại</th>
-                      <th colspan="2"><center>Chức năng</center></th>
-                     
+                      <th colspan="2"><center>Chức năng</center></th>                    
                     </tr>
-                    
                     <tr>
                       <td></td>
                       <td></td>
