@@ -14,15 +14,13 @@
         <div class="form">
             <form>
                 <div class="row  justify-content-md-center">
-                    <div class="col-6">
-
+                    <div class="col-6">   
                         <input type="email" class="form-control" placeholder="Mời nhập Email " required="">
                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
+                    <span class="required-star">*</span>
                 </div>
-
                 <div class="row  justify-content-md-center">
-
                     <div class="col-6">
                         <div class="form-group has-feedback">
                             <input type="password" class="form-control" placeholder="Password" required="" />
@@ -30,7 +28,7 @@
                         </div>
                         <span class="required-star">*</span>
                     </div>
-                    <span class="required-star">*</span>
+                    
                 </div>
 
                 <div class="row justify-content-md-center">
@@ -41,7 +39,11 @@
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
                         <h5>Không có Tài Khoản / <a href="{{route('signup')}}">Đăng Ký Tại Đây</a></h5>
+<<<<<<< HEAD
+                  </div>
+=======
                     </div>
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
                 </div>
         </div>
     </div>

@@ -38,6 +38,11 @@
       </div>
       </form>
 
+<<<<<<< HEAD
+    
+      @csrf
+=======
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
       <section class="content">
 
         <div class="row">
@@ -86,7 +91,10 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
+<<<<<<< HEAD
+=======
             
+>>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
           </div>
         </div>
       </section>
