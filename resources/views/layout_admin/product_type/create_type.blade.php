@@ -38,7 +38,7 @@
       </div>
       </form>
 
-      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    
       @csrf
       <section class="content">
 
@@ -88,7 +88,6 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
-            </form>
           </div>
         </div>
       </section>

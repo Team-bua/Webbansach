@@ -63,6 +63,33 @@
                         <button class="btn ">Thêm Vào Giỏ Hàng</button>
                         <button class="btn black">Đọc ONLINE</button>
                     </div>
+                    <br>
+                    <ul>
+                        <li>
+                            <span class="name">Tác Giả</span><span class="clm">:</span>
+                            <span class="price">#####</span>
+                        </li>
+                        <li>
+                            <span class="name">Tác giả</span><span class="clm">:</span>
+                            <span class="price">#####</span>
+                        </li>
+                        <li>
+                            <span class="name">Tác giả</span><span class="clm">:</span>
+                            <span class="price">#####</span>
+                        </li>
+                        <li>
+                            <span class="name">Tác giả</span><span class="clm">:</span>
+                             <span class="price">#####</span>
+                        </li>
+                        <li>
+                            <span class="name">Tác giả</span><span class="clm">:</span>
+                            <span class="price">#####</span>
+                        </li>
+                        <li>
+                            <span class="name">Tác giả</span><span class="clm">:</span>
+                            <span class="price">#####</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

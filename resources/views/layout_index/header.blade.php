@@ -2,7 +2,6 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3"><a href="#" class="web-url"><i class="fa fa-hand-o-right" ></i>www.Nhombua.com</a></div>
                     <div class="col-md-6">
                         <h5></h5></div>
                         <div id="menu">
@@ -52,11 +51,11 @@
                                 <a href="{{route('index')}}" class="nav-link">Trang Chủ</a>
                             </li>
                               <li class="navbar-item active">
-<<<<<<< HEAD
-                                <a href="{{route('about')}}" class="nav-link">Giới thiệu</a>
-=======
+
                                 <a href="{{route('introduce')}}" class="nav-link">Giới thiệu</a>
->>>>>>> 5bf7554b65f648dcbbf5d3eaaecb23945f711ba1
+
+                              
+
                             </li>
                                 <li class="navbar-item active">
                                 <a href="{{route('news')}}" class="nav-link">Tin Tức</a>
@@ -67,11 +66,11 @@
                                     
                             </li>
                                 <li class="navbar-item active">
-<<<<<<< HEAD
-                                <a href="{{route('register')}}" class="nav-link">Đăng Ký</a>
-=======
+
                                 <a href="{{route('signup')}}" class="nav-link">Đăng Ký</a>
->>>>>>> 5bf7554b65f648dcbbf5d3eaaecb23945f711ba1
+
+                               
+
                             </li>
                             
                         </ul>
