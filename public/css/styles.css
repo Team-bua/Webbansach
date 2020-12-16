@@ -191,7 +191,7 @@ header .header-top {
   position: absolute;
   top: 3px;
   height: 11px;
-  width:190px;
+  width:100px;
   left: 0px;
   clear:both;
   display:block;
@@ -199,11 +199,11 @@ header .header-top {
 }
 #menu .menu_item .sub_menu {
   position:absolute;
-  left:0px;
+  left:-150px;
   top:20px;
   display: none;
-  width:auto;
-  height:auto;
+  width:15px;
+  height:15px;
 }
 #menu .menu_item .sub_menu .sub_menu_block {
   border-radius: 8px;
@@ -214,7 +214,7 @@ header .header-top {
   margin-top: 12px;
   position: absolute;
   z-index: 5;
-  padding: 15px;
+  padding: -150px;
   display: table;
 }
 #menu > ul > li:hover > .sub_menu {
@@ -249,30 +249,6 @@ header .header-top {
   color: #4d4c4b;
 }
 /*-------------------------------------------------------------------------*/
-
-
-
-/* ----------------------------------------------Wrapper------------------------------------- */
-
-
-
-/* ----------------------------------------------Generalise------------------------------------- */
-
-
-/* ----------------------------------------------TopBar------------------------------------- */
-
-
-/* ----------------------------------------------Header------------------------------------- */
-
-
-
-/* ----------------------------------------------BreadCrumb------------------------------------- */
-
-
-
-/* ----------------------------------------------Content------------------------------------- */
-
-
 
 /* ----------------------------------------------Column------------------------------------- */
 
@@ -427,6 +403,8 @@ ul.vert-one li{
   margin:0;
   padding:0;
   border-top:1px solid #4D0000;
+  border-bottom:1px solid #4D0000;
+  border-radius: 10px;
   }
 
 ul.vert-one li a{
@@ -436,6 +414,7 @@ ul.vert-one li a{
   background:#FFFFFF;
   padding:0 0 0 20px;
   width:300px;
+  border-radius: 10px;
   }
 
 ul.vert-one li a:hover{
@@ -460,6 +439,80 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     content: "\2605";
     position: absolute; }
 /*-------------------------------------------------------------------------*/
+/*----------------------------------tags--------------------------------------*/
+.sidebar-widget.tag a {
+    display: inline-block;
+    margin: 0 0 4px 0;
+    padding: 3px 8px;
+    font-size: 14px;
+    color: #353535;
+    background: #ffffff;
+    border: 1px solid #353535;
+    border-radius: 4px;
+    transition: .3s;
+}
+.sidebar-widget.tag a:hover {
+    color: #ffffff;
+    background: #FF6F61;
+    border-color: #FF6F61;
+}
+.sidebar-widget .title {
+    position: relative;
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.sidebar-widget.brands ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-widget.brands ul li {
+    margin-bottom: 12px; 
+}
+
+.sidebar-widget.brands ul li:last-child {
+    margin-bottom: 0; 
+}
+
+.sidebar-widget.brands ul li a {
+    color: #353535;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 23px;
+    transition: all .3s;
+}
+
+.sidebar-widget.brands ul li a::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 100px;
+    padding-right: 5px;
+}
+
+.sidebar-widget.brands ul li a:hover {
+    color: #FF6F61;
+}
+
+.sidebar-widget.brands ul li a:hover::before {
+    content: '\f101';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 100px;
+}
+
+.sidebar-widget.brands ul li a:hover {
+    padding-left: 10px; 
+}
+
+.sidebar-widget.brands ul li span {
+    display: inline-block;
+    float: center;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 100px;
+}
+/*-----------------------------------------------------------------------------*/
 /*-------------------------------slider----------------------------------------*/
 .slider {
   float: right;
@@ -469,7 +522,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 }
 
 #slide-wrapper {
-  width:750px;
+  width:800px;
   height:450px;
   position: relative;
   float: right;
@@ -481,7 +534,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
   margin-bottom: 8px;
 }
 #slide-wrapper ul {
-  width:750px;
+  width:800px;
   height:450px;
 }
 
@@ -533,7 +586,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
   display: none;
 }
 /*------------------------------------------------------------------------------*/
-/*---------------------------------shopping_cart---------------------------------*/
+/*---------------------------------product---------------------------------*/
 
 /*------------------------------------------------------------------------------*/
 .recomended-sec {
@@ -561,7 +614,8 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     position: relative; }
 .recomended-sec .item img {
       margin-bottom: 15px;
-      max-width: 100%; }
+      max-width: 100%; 
+    }
 .recomended-sec .item h6 {
       font-size: 12px; }
 .recomended-sec .item h6 span {
@@ -573,7 +627,9 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 .recomended-sec .item h6 a:hover {
           text-decoration: none;
           border-bottom: 0;
-          color: #ff9700; }
+          color: #ff9700; 
+}
+
 /*-----------------------------------------------------------------------------------*/
 .about-sec {
   margin-bottom: 80px;
@@ -614,6 +670,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 .about-sec .about-content .btn-sec .black:hover {
           background: transparent;
           color: #252525; }
+          
 /*-----------------------------------------------------------------------------------*/
 /*---------------------------------tooltip-------------------------------------------*/
 
@@ -713,7 +770,15 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
       max-width: 20%; }
 .recent-book-sec .btn-sec {
     margin-top: 20px; }
-
+.recent-book-sec .item .sale {
+      background: #f9372c;
+      padding: 10px 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-transform: uppercase;
+      color: #fff; }
+/*--------------------------------------------------------------------------------*/
 .features-sec {
   margin-bottom: 100px; }
 .features-sec ul li {
@@ -1125,7 +1190,9 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     line-height: 30px;
     font-weight: 200; }
 .static.about-sec {
-  background: transparent; }
+  background: transparent; 
+  
+}
 
 @media only screen and (max-width: 800px) {
   .static h2 {
@@ -1372,7 +1439,7 @@ footer {
   footer .form .btn {
     font-weight: 300; }
   footer .copy-right {
-    background: #000;
+    background: #756E6E;
     color: #fff;
     padding: 25px 0;
     margin-top: 60px; }
@@ -1389,7 +1456,8 @@ footer {
         footer .copy-right .share span:last-child {
           padding-right: 0; }
         footer .copy-right .share span:hover {
-          color: #ff9700; }
+          color: #ff9700; 
+        }
 
 @media only screen and (max-width: 480px) {
   footer .timing {
@@ -1407,4 +1475,12 @@ footer {
 
 /*# sourceMappingURL=styles.css.map */
 /*--------------------------------------------------------------------------*/
-
+.quantity {
+    float: left;
+    margin-right: 15px;
+}
+.quantity input[type="number"] {
+    border: 1px solid #5a88ca;
+    padding: 5px;
+    width: 50px;
+}

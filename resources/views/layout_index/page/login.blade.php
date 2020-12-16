@@ -38,7 +38,7 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
-                        <h5>Không có Tài Khoản / <a href="{{route('dangky')}}">Đăng Ký Tại Đây</a></h5>
+                        <h5>Không có Tài Khoản / <a href="{{route('register')}}">Đăng Ký Tại Đây</a></h5>
                     </div>
                 </div>
         </div>

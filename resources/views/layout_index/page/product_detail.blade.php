@@ -1,11 +1,5 @@
 @extends('layout_index.master')
 @section('content')
-<div class="breadcrumb">
-        <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
-            <span class="breadcrumb-item active">Terms and Condition</span>
-        </div>
-    </div>
     <section class="product-sec">
         <div class="container">
             <h1>7 Day Self publish How to Write a Book</h1>
@@ -61,7 +55,7 @@
                     </ul>
                     <form action="" class="cart">
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                              <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                         </div>
                                        
                                     </form>
@@ -69,66 +63,34 @@
                         <button class="btn ">Thêm Vào Giỏ Hàng</button>
                         <button class="btn black">Đọc ONLINE</button>
                     </div>
-                    
-                     <div class="rating">
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                        <span>&#9734;</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="related-books">
+    
+ <section class="static about-sec">
         <div class="container">
-            <h2>You may also like these book</h2>
-            <div class="recomended-sec">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img src="images/img1.jpg" alt="img">
-                            <h3>how to be a bwase</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img src="images/img2.jpg" alt="img">
-                            <h3>How to write a book...</h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                            <span class="sale">Sale !</span>
-                            <div class="hover">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img src="images/img3.jpg" alt="img">
-                            <h3>7-day self publish...</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img src="images/img4.jpg" alt="img">
-                            <h3>wendy doniger</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h4>Sản Phẩm Liên Quan</h4>
+            <hr>
+            <div class="clear"></div>
+    <div id="carousel">
+      <ul class=" jcarousel-skin-tfc">
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+        <li><a href="#"><img src="images/r1.jpg" alt="" title=""></a></li>
+      </ul>
+    </div>
         </div>
     </section>
-    @endsection
+    <section class="static about-sec">
+        <div class="container">
+          
+        </div>
+    </section>
+    
+
+    <a href="#" class="bck"></a> 
+@endsection

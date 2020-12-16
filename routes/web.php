@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
+
 
 
     return view('welcome');
@@ -27,30 +27,26 @@ Route::get('/', function () {
 
     return redirect()->route('trangchu');
 
-=======
+
 
     return redirect()->route('trangchu');
 
->>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
+
 });
 
 //----->trang chủ
-Route::get('trangchu',[PageController::class,'getIndex'])->name('trangchu');
+Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->loại
 
 //----->chitiet
-Route::get('chitiet',[PageController::class,'getchitiet'])->name('chitiet');
+Route::get('detail',[PageController::class,'getdetail'])->name('detail');
 //----->tất cả sản phẩm
-Route::get('tatcaSP',[PageController::class,'gettatcaSP'])->name('tatcaSP');
+Route::get('all_products',[PageController::class,'get_all_products'])->name('all_products');
 //----->gioithieu
-Route::get('gioithieu',[PageController::class,'getgioithieu'])->name('gioithieu');
+Route::get('about',[PageController::class,'getabout'])->name('about');
 //----->tintuc
-Route::get('tintuc',[PageController::class,'gettintuc'])->name('tintuc');
+Route::get('news',[PageController::class,'getnews'])->name('news');
 /*--------------------------------------------------------------------------------*/
-<<<<<<< HEAD
-
-=======
->>>>>>> 562a0798bd070612dd5489b615afe4c13f9d7f75
 
 // trang admin product
 Route::get('admin', function(){
@@ -72,9 +68,9 @@ Route::get('chartbook', function (){
 
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
-Route::get('dangnhap',[PageController::class,'getdangnhap'])->name('dangnhap');
-Route::get('dangky',[PageController::class,'getdangky'])->name('dangky');
-Route::get('giohang',[PageController::class,'getcart'])->name('giohang');
+Route::get('login',[PageController::class,'getlogin'])->name('login');
+Route::get('register',[PageController::class,'geregister'])->name('register');
+Route::get('cart',[PageController::class,'getcart'])->name('cart');
 
 Route::resource('list',ProductController::class);
 
