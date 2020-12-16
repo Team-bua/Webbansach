@@ -5,7 +5,6 @@
     <section class="content-header">
         <h1>
             Thống Kê
-            <small>Móc bô</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -63,7 +62,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Báo cáo theo tháng</h3>
+                        <h3 class="box-title"><i class="fa fa-bar-chart-o"></i>&nbsp;Báo cáo theo tháng</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -158,7 +157,7 @@
                 <!-- USERS LIST -->
                 <div class="box box-danger">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Thành Viên Mới</h3>
+                        <h3 class="box-title"><i class="fa fa-user"></i>&nbsp;Thành Viên Mới</h3>
                         <div class="box-tools pull-right">
                             <span class="label label-danger">8 Thành Viên</span>
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -219,7 +218,7 @@
                 <!-- PRODUCT LIST -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Sản Phẩm Đã Được Thêm Gần Đây</h3>
+                        <h3 class="box-title"><i class="fa fa-bars"></i>&nbsp;Sản Phẩm Đã Được Thêm Gần Đây</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -337,94 +336,94 @@
         </div><!-- /.row -->
 
 
-        <div class="row" >
-            <div class="col-md-8" style="width: 100%;"> 
-                <!-- TABLE: LATEST ORDERS -->
-                <div class="box box-info">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Đơn Hàng Mới Nhất</h3>
-                        <div class="box-tools pull-right">
-                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="table-responsive">
-                            <table class="table no-margin">
-                                <thead>
-                                    <tr>
-                                        <th>Order ID</th>
-                                        <th>Item</th>
-                                        <th>Status</th>
-                                        <th>Popularity</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                        <td>Call of Duty IV</td>
-                                        <td><span class="label label-success">Shipped</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="label label-warning">Pending</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                        <td>iPhone 6 Plus</td>
-                                        <td><span class="label label-danger">Delivered</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="label label-info">Processing</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="label label-warning">Pending</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                                        <td>iPhone 6 Plus</td>
-                                        <td><span class="label label-danger">Delivered</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                        <td>Call of Duty IV</td>
-                                        <td><span class="label label-success">Shipped</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div><!-- /.table-responsive -->
-                    </div><!-- /.box-body -->
+        <div class="row">
 
+            <div class="col-xs">
+                <div class="box box-solid ">
+
+                    <div class="box-header">
+                        <h3 class="box-title"><i class="fa fa-table"></i>&nbsp;Đơn hàng mới</h3>
+                        <div class="box-tools pull-right">
+
+                        </div>
+                    </div>
+                    <div class="box-body ">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Tên sách </th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>tổng tiền Tiền</th>
+                                <th>Tình trạng</th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                            <tr>
+                                <td>Harry Potter</td>
+                                <td>2</td>
+                                <td>20000</td>
+                                <td>4</td>
+                                <td>
+                                    
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Tiếp nhận</a></li>
+                                            <li><a href="#">Đã giao</a></li>
+
+                                        </ul>
+                                    </div>
+                                <td><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Harry Potter</td>
+                                <td>2</td>
+                                <td>20000</td>
+                                <td>4</td>
+                                <td>
+                                    
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Tiếp nhận</a></li>
+                                            <li><a href="#">Đã giao</a></li>
+
+                                        </ul>
+                                    </div>
+                                <td><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Harry Potter</td>
+                                <td>2</td>
+                                <td>20000</td>
+                                <td>4</td>
+                                <td>
+                                    
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Tiếp nhận</a></li>
+                                            <li><a href="#">Đã giao</a></li>
+
+                                        </ul>
+                                    </div>
+                                <td><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+                        <a href="{{route('order.index')}} "><i class="fa  fa-hand-o-right"></i>&nbsp; Xem thêm</a>
+                    </div><!-- /.box-body -->
                 </div><!-- /.box -->
-            </div><!-- /.col -->
-            
-        </div><!-- /.row -->
+
+            </div>
+        </div>
 
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

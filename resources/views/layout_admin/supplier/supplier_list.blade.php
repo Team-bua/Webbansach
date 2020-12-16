@@ -5,6 +5,7 @@
         <section class="content-header">
           <h1>
             Simple Tables
+            <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,7 +21,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Danh sách sản phẩm</h3>
+                  <h3 class="box-title">Danh sách nhà cung cấp</h3>
                   <div class="box-tools">
                     <div class="input-group">
                       <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
@@ -33,32 +34,22 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody><tr style="  font-size:18px; ">
-                    
-                      <th>Tên sách</th>
-                      <th>Loại sách</th>
-                      <th>Giá </th>
-                      <th>Giá Khuyến Mãi</th>
-                      <th>Miêu tả</th>
-                      
-                      <th>Hình ảnh</th>
+                      <th>Tên nhà cung cấp</th>
+                      <th>Email</th>
+                      <th>Địa chỉ </th>
+                      <th>Số điện thoại</th>
+
                       <th colspan="2"><center>Chức năng</center></th>
                      
-                    </tr>       
-                    @foreach($product as $pro)             
+                    </tr>
                     <tr>
-                      
-                      <td>{{$pro->name}}</td>
-                      <td>{{$pro->product_type->name}}</td>
-                      <td>{{$pro->unit_price}}</span></td>
-                      <td>{{$pro->promotion_price}}</td>
-                      <td>{{$pro->description}}</td>
-                      <td><img style="width:100px;height:100px;" src="{{asset('images/product/'.$pro->image)}}" ></td>
-                      
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td>Approved</span></td>
+                      <td></td>
                       <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-
                     </tr>
-                    @endforeach
                   </tbody></table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

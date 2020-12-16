@@ -30,7 +30,9 @@
                         </div>
                         <span class="required-star">*</span>
                     </div>
+                    <span class="required-star">*</span>
                 </div>
+
                 <div class="row justify-content-md-center">
                     <div class="col-3">
                         <button class="btn black">Đăng Nhập </button>
@@ -38,7 +40,11 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
+<<<<<<< HEAD
                         <h5>Không có Tài Khoản / <a href="{{route('register')}}">Đăng Ký Tại Đây</a></h5>
+=======
+                        <h5>Không có Tài Khoản / <a href="{{route('signup')}}">Đăng Ký Tại Đây</a></h5>
+>>>>>>> 5bf7554b65f648dcbbf5d3eaaecb23945f711ba1
                     </div>
                 </div>
         </div>

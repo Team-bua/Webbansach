@@ -3,43 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ProductRepository;
-use App\Models\Product;
+use App\Repositories\ProductTypeRepository;
 use App\Models\Product_type;
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\ProductTypeRequest;
 
 
-class ProductController extends Controller
-{
-       /**
-     * The ProductRepository instance.
-     *
-     * @var \App\Repositories\ProductRepository
-     */
-    protected $repository;
-
-
-   /**
-    * Create a new PostController instance.
+class ProductTypeController extends Controller
+{   /**
+    * The MemberRepository instance.
     *
-    * @param  \App\Repositories\ProductRepository $repository
+    * @var \App\Repositories\ProductTypeRepository
     */
-   public function __construct(ProductRepository $repository)
-   {
-       $this->repository = $repository;
-   }
-    /**
-     * Display a listing of the resource.
-     *
+   protected $repository;
+
+
+  /**
+   * Create a new PostController instance.
+   *
+   * @param  \App\Repositories\ProductTypeRepository $repository
+   */
+  public function __construct(ProductTypeRepository $repository)
+  {
+      $this->repository = $repository;
+  }
+   /**
+    * Display a listing of the resource.
+    *
      * @return \Illuminate\Http\Response
      */
-
-     
     public function index()
     {
-        $product = $this->repository->getAll();
-        return view('layout_admin.product.products_list', compact('product'));
-
+        $product_type = $this->repository->getAll();
+        return view('layout_admin.product_type.create_type', compact('product_type'));
     }
 
     /**
@@ -49,8 +44,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $product = Product_type::orderby('id','asc')->get();
-        return view('layout_admin.product.products_create', compact('product'));
+
     }
 
     /**
@@ -59,10 +53,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
         $this->repository->create($request);
-        return redirect(route('book.index'));
+        return redirect(route('book_type.index'));
     }
 
     /**
@@ -84,7 +78,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product_type = $this->repository->getAll();
+        $type = Product_type::find($id);
+        return view('layout_admin.product_type.edit_type', compact('type','product_type'));
     }
 
     /**
@@ -94,9 +90,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductTypeRequest $request, $id)
     {
-        //
+        $this->repository->update($request, $id);
+        return redirect(route('book_type.index'));
     }
 
     /**
@@ -105,8 +102,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product_type)
     {
-        //
+        $this->repository->destroy($product_type);
+        return redirect()->back();
     }
 }

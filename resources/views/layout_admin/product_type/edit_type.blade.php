@@ -17,29 +17,26 @@
   <!-- Main content -->
   <section class="content">
 
-    <div class="box box-info">
-    <form action="{{ url('book_type') }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
-          @csrf
+    <div class="box box-info">  
       <div class="box-header">
       </div>
       <div class="box-body">
+      <form action="{{ route('book_type.update',[$type['id']]) }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+          @csrf
+          @method('put')
           <h4> Tên loại sách : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
+            <input type="text" name="name" class="form-control" value="{{$type->name}}">
           </div>
           <br>
           <center>
             <div class="input-group">
-              <td><button class="btn btn-block btn-success btn-lg"> Thêm loại sách </button></td>
+              <td><button class="btn btn-block btn-success btn-lg"> Cập nhật loại sách </button></td>
             </div>
           </center>
-        
+        </form>
       </div>
-      </form>
-
-      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1">
-      @csrf
       <section class="content">
 
         <div class="row">
@@ -88,7 +85,6 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
-            </form>
           </div>
         </div>
       </section>
