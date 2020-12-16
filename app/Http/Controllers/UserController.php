@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
        
-        return view('layout_admin.user.proflie');
+        return view('layout_admin.user.list_users');
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('layout_admin.supplier.supplier_create');
+       
     }
 
     /**
