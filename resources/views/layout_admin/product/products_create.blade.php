@@ -1,4 +1,5 @@
 @extends('layout_admin.master')
+
 @section('content')
 <div class="content-wrapper" style="min-height: 898px;">
   <!-- Content Header (Page header) -->
@@ -74,6 +75,7 @@
 
             <input type="submit" name="submit" value="Thêm" class="btn  btn-success btn-lg">
           </div>
+          
 
     </form>
 </div>

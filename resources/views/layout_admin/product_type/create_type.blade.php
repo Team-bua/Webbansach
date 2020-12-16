@@ -38,11 +38,6 @@
       </div>
       </form>
 
-<<<<<<< HEAD
-    
-      @csrf
-=======
->>>>>>> 96bbea5472f367a8ae8fbeaf39eea8081e555aa1
       <section class="content">
 
         <div class="row">
