@@ -34,6 +34,7 @@ class PageController extends Controller
     public function getsignup(){
         return view('layout_index.page.register');
     }
+    
 
     public function getlogin(){
         return view('layout_index.page.login');

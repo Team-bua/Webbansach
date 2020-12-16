@@ -39,7 +39,7 @@ class ProductController extends Controller
     {
         $product = $this->repository->getAll();
         return view('layout_admin.product.products_list', compact('product'));
-        //return view('layout_admin.chart.chart_book' );
+
     }
 
     /**

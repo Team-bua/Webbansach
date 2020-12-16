@@ -8,6 +8,7 @@ use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,7 @@ Route::resource('archive',ArchiveController::class);
 Route::resource('user',UserController::class);
 ///------>trang admin_CRUD thong tin order
 Route::resource('order',OrderController::class);
-
+///------>trang show thống kê
+Route::resource('chart',ChartController::class);
 
 
