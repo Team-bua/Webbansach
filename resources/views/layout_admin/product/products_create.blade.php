@@ -61,9 +61,6 @@
             <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
             <input name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
           </div>
-
-
-
           <div class="form-group">
             <label for="exampleInputFile">Hình Ảnh</label>
             <input name="img" type="file" id="exampleInputFile">
