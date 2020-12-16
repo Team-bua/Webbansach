@@ -8,8 +8,8 @@
       <small></small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Tables</a></li>
+      <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="">Tables</a></li>
       <li class="active">Simple</li>
     </ol>
   </section>
@@ -38,7 +38,7 @@
       </div>
       </form>
 
-      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    
       @csrf
       <section class="content">
 
@@ -88,7 +88,7 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
-            </form>
+            
           </div>
         </div>
       </section>

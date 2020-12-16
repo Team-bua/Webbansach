@@ -64,13 +64,18 @@
 
     <div class="row">
 
-      <div class="col-xs">
+      <div class="col-xs-12">
         <div class="box box-solid box-primary">
 
           <div class="box-header">
             <h3 class="box-title"><i class="fa fa-table"></i> Danh sách đơn hàng</h3>
-            <div class="box-tools pull-right">
-              <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search" />
+            <div class="col-md-4 pull-right">
+              <div class="input-group ">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                  <button class="btn btn-default btn-flat" type="button">Seach</button>
+                </span>
+              </div>
             </div>
           </div>
           <div class="box-body ">
@@ -94,7 +99,22 @@
                     <ul class="dropdown-menu">
                       <li><a href="#">Tiếp nhận</a></li>
                       <li><a href="#">Đã giao</a></li>
+                    </ul>
+                  </div>
 
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận <span class="fa fa-caret-down"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Đang xử lý</a></li>
+                      <li><a href="#">Đã giao</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao <span class="fa fa-caret-down"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Đang xử lý</a></li>
+                      <li><a href="#">Tiếp nhận</a></li>
                     </ul>
                   </div>
                 <td><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
@@ -118,7 +138,7 @@
           <div class="box-header">
             <h3 class="box-title"><i class="fa  fa-rss"></i> Sản phảm mới cập nhật</h3>
             <div class="box-tools pull-right">
-            <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">

@@ -22,12 +22,14 @@
                 <div class="box-header">
                   <h3 class="box-title">Danh sách sản phẩm</h3>
                   <div class="box-tools">
-                    <div class="input-group">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
+                  <div class="col-md-4 pull-right">
+                  <div class="input-group ">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-info btn-flat" type="button">Seach</button>
+                    </span>
+                  </div>
+                  </div>
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">

@@ -65,6 +65,10 @@
             <label for="exampleInputFile">Hình Ảnh</label>
             <input name="img" type="file" id="exampleInputFile">
           </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Hình Ảnh</label>
+            <input name="img" type="file" id="exampleInputFile" multiple="multiple">
+          </div>
           <br>
           <div class="text-center">
 
