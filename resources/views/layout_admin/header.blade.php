@@ -292,7 +292,7 @@
             </li>
             <!-- Thống kê -->
             <li class="treeview">
-              <a href="{{route('book.index')}}">
+              <a href="{{route('chart.index')}}">
                 <i class="fa fa-pie-chart"></i>
                 <span>Thống kê</span>               
               </a>            
