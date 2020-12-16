@@ -5,7 +5,6 @@
         <section class="content-header">
           <h1>
             Simple Tables
-            <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -49,7 +48,7 @@
                     <tr>
                       
                       <td>{{$pro->name}}</td>
-                      <td></td>
+                      <td>{{$pro->product_type->name}}</td>
                       <td>{{$pro->unit_price}}</span></td>
                       <td>{{$pro->promotion_price}}</td>
                       <td>{{$pro->description}}</td>

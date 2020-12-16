@@ -5,7 +5,6 @@
   <section class="content-header">
     <h1>
       Thêm sách
-      <small>Nguyễn Văn Tèo</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -61,7 +60,6 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
             <input name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
-            <span class="input-group-addon">Quyển</span>
           </div>
 
 
@@ -69,7 +67,6 @@
           <div class="form-group">
             <label for="exampleInputFile">Hình Ảnh</label>
             <input name="img" type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
           </div>
           <br>
           <div class="text-center">
@@ -78,19 +75,6 @@
           </div>
 
     </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 </section><!-- /.content -->
 </div>

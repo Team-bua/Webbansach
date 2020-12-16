@@ -37,15 +37,16 @@ Route::get('all',[PageController::class,'getall'])->name('all');
 Route::get('introduce',[PageController::class,'getintroduce'])->name('introduce');
 //----->tintuc
 Route::get('news',[PageController::class,'getnews'])->name('news');
+
+Route::get('login',[PageController::class,'getlogin'])->name('login');
+Route::get('signup',[PageController::class,'getsignup'])->name('signup');
+Route::get('cart',[PageController::class,'getcart'])->name('cart');
 /*--------------------------------------------------------------------------------*/
 
 
 
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
-Route::get('login',[PageController::class,'getlogin'])->name('login');
-Route::get('signup',[PageController::class,'getsignup'])->name('signup');
-Route::get('cart',[PageController::class,'getcart'])->name('cart');
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,

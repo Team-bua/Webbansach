@@ -37,9 +37,9 @@ class ProductController extends Controller
      
     public function index()
     {
-        //$product = $this->repository->getAll();
-        //return view('layout_admin.product.products_list', compact('product'));
-        return view('layout_admin.chart.chart_book' );
+        $product = $this->repository->getAll();
+        return view('layout_admin.product.products_list', compact('product'));
+        //return view('layout_admin.chart.chart_book' );
     }
 
     /**
