@@ -44,11 +44,12 @@
                       <th>Hình ảnh</th>
                       <th colspan="2"><center>Chức năng</center></th>
                      
-                    </tr>                    
+                    </tr>       
+                    @foreach($product as $pro)             
                     <tr>
-                      @foreach($product as $pro)
+                      
                       <td>{{$pro->name}}</td>
-                      <td>{{$pro->product_type->name}}</td>
+                      <td></td>
                       <td>{{$pro->unit_price}}</span></td>
                       <td>{{$pro->promotion_price}}</td>
                       <td>{{$pro->description}}</td>
@@ -56,8 +57,9 @@
                       
                       <td><button class="btn btn-block btn-warning btn"> Sửa  </button></td>
                       <td><button class="btn btn-block btn-danger btn"> Xóa </button></td>
-                      @endforeach
+
                     </tr>
+                    @endforeach
                   </tbody></table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

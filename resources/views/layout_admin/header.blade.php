@@ -282,18 +282,17 @@
               </ul>
             </li>
             <!-- Đơn hàng -->
-            <li class=" treeview">
-              <a href="">
-                <i class="fa fa-building-o"></i> <span>Đơn hàng</span> <i class="fa fa-angle-left pull-right"></i>
+            <li class="treeview">
+              <a href="{{route('order.index')}}">
+                <i class="fa fa-inbox"></i>
+                <span>Đơn hàng</span>
+                
               </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="{{route('order.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-                <li><a href="index2.html"><i class="fa fa-plus"></i> Thêm </a></li>
-              </ul>
+              
             </li>
             <!-- Thống kê -->
             <li class="treeview">
-              <a href="{{route('admin')}}">
+              <a href="{{route('book.index')}}">
                 <i class="fa fa-pie-chart"></i>
                 <span>Thống kê</span>
                 
@@ -308,7 +307,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pages/charts/morris.html"><i class="fa fa-table"></i> Danh sách </a></li>
+                <li><a href="{{route('user.index')}}"><i class="fa fa-table"></i> Danh sách </a></li>
                 <li><a href="pages/charts/morris.html"><i class="fa fa-eye"></i> Quyền </a></li>
                 <li><a href="pages/charts/flot.html"><i class="fa  fa-exclamation"></i> Vai Trò </a></li>
               </ul>
