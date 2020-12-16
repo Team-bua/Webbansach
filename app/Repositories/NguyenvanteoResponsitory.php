@@ -19,3 +19,4 @@ class NguyenvanteoResponsitory extends BaseRepository
         //return YourModel::class;
     }
 }
+    
