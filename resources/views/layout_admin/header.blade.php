@@ -287,7 +287,7 @@
       </li>
       <!-- Đơn hàng -->
       <li class="treeview">
-        <a href="{{route('order.index')}}">
+        <a href="{{route('bill.index')}}">
           <i class="fa fa-inbox"></i>
           <span>Đơn hàng</span>
           <small class="label pull-right bg-yellow">500</small>

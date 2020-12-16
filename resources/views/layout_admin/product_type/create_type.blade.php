@@ -72,12 +72,10 @@
                     <tr>
                       <td>{{$pro->name}}</td>
                       <td>
-                      <form method="put" action="{{ route('book_type.edit',[$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
-    							  	@csrf
-    								  <input name="_method" type="hidden" value="UPDATE">
-                        <button class="btn btn-warning btn"> Sửa </button>
-                      </form>
-                    </td>                     
+                      <a href="{{route('book_type.edit',[$pro['id']])}}">
+                      <button class="btn btn-warning btn"> Sửa </button>
+                      </a>
+                      </td>                     
                       <td>
                       <form method="post" action="{{route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
     								  @csrf
@@ -91,10 +89,6 @@
                 </table>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
-<<<<<<< HEAD
-=======
-            
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
           </div>
         </div>
       </section>

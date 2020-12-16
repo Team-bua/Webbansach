@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductTypeController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
 
 /*
@@ -22,32 +22,8 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
-
-
-
-
-    return view('welcome');
-
-    return redirect()->route('trangchu');
-
-    return view('');
-
-
-    return redirect()->route('trangchu');
-
-
-
-    return redirect()->route('trangchu');
-
-
     return redirect()->route('index');
 
-
-=======
-    return redirect()->route('index');
-
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 });
 
 /*--------------------------------------------------------------------------------*/
@@ -76,10 +52,6 @@ Route::get('Read',[PageController::class,'getread'])->name('Read');
 
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
-<<<<<<< HEAD
-
-=======
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
@@ -91,12 +63,7 @@ Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
 ///------>trang admin_CRUD thong tin order
-Route::resource('order',OrderController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
-<<<<<<< HEAD
-
-=======
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 
 
