@@ -55,8 +55,27 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
-    public function update() {
-
+    public function update($request, $id) {
+        $name="";
+        if($request->hasfile('img'))
+        {
+            $file = $request->file('img');
+            $name=time().'_'.$file->getClientOriginalName();
+            $destinationPath=public_path('images/product'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
+            $file->move($destinationPath, $name); //lưu hình ảnh vào thư mục public/image
+        }
+        $product = Product::find($id);
+        $product->name=$request->input('name');
+        $product->id_type=$request->input('cate');
+        //$product->id_user=Auth::user()->username();
+        $product->unit_price=$request->input('unit_price');
+        $product->promotion_price=$request->input('promotion_price');
+        $product->description=$request->input('description');
+        if($name==""){
+            $name=$product->image;
+        }
+        $product->image=$name;
+        $product->save();
         
     }
 
@@ -67,8 +86,9 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
-    public function destroy() {
-
+    public function destroy($id) {
+        $product = Product::find($id);
+        $product->delete();
       
     }
 

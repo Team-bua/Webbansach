@@ -25,13 +25,9 @@
     </div>
     <div class="container">
   <ul class="vert-one">
-  <li><a href="" class="current">Danh Mục Sách</a></li>
+  <li><a href="" class="current" ><center>Danh Mục Sách</center></a></li>
   <li><a href="">CSS Layouts</a></li>
-  <li><a href="">CSS Books</a></li>
-  <li><a href="">CSS Menus</a></li>
-  <li><a href="">CSS Tutorials</a></li>
-  <li><a href="">CSS Reference</a></li>
-  <li><a rel="nofollow" target="_blank" href="http://www.13styles.com" title="13styles.com">13styles</a></li>
+
 </ul>
 </div>
 </section>
@@ -56,7 +52,6 @@
         </div>
         </div>
     </section>
-
   <section class="recomended-sec">
         <div class="container">
             <div class="row">
@@ -125,9 +120,9 @@
                 <button class="btn black">Đọc ONLINE</button>
             </div>
         </div>
-        </div>
     </section>
-  <section class="recomended-sec">
+    <div class="product-widget-area">
+        <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                <div class="col-lg-2 col-md-3 col-sm-4">
@@ -177,6 +172,6 @@
                 <a href="{{route('all')}}" class="btn gray-btn">Xem Thêm</a>
             </div>
         </div>
-    </section>
+    </div>
     <a href="#" class="bck"></a>   
 @endsection

@@ -1,114 +1,84 @@
 @extends('layout_admin.master')
 @section('content')
 <div class="content-wrapper" style="min-height: 898px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Cập nhật sách
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Simple</li>
-          </ol>
-        </section>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Cập nhật sách
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Tables</a></li>
+      <li class="active">Simple</li>
+    </ol>
+  </section>
 
-        <!-- Main content -->
-        <section class="content">
-         
-        <div class="box box-info">
-                <div class="box-header">
-                  <h3 class="box-title">Input Addon</h3>
-                </div>
-                <div class="box-body">
-                  <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" placeholder="Username">
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon">.00</span>
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon">.00</span>
-                  </div>
+  <!-- Main content -->
+  <section class="content">
+    
+      <div class="box box-info">
+      <form action="{{route('book.update',[$product['id']])}}" method="post" enctype="multipart/form-data" >
+      @csrf
+      @method('put')
+        <div class="box-header">
+        </div>
+        <div class="box-body">
 
-                  <h4>With icons</h4>
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="text" class="form-control" placeholder="Email">
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon"><i class="fa fa-check"></i></span>
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon"><i class="fa fa-ambulance"></i></span>
-                  </div><br>
-                  <div class="form-group">
-                      <label for="exampleInputFile">File input</label>
-                      <input type="file" id="exampleInputFile">
-                      <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                  <h4>With checkbox and radio inputs</h4>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <input type="text" class="form-control">
-                      </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="radio">
-                        </span>
-                        <input type="text" class="form-control">
-                      </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                  </div><!-- /.row -->
+          <h4> Tên sách : </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+            <input required name="name" type="text" class="form-control" value="{{$product->name}}" placeholder="Tên sách . . . . . . . . .">
+          </div>
 
-                  <h4>With buttons</h4>
-                  <p class="margin">Large: <code>.input-group.input-group-lg</code></p>
-                  <div class="input-group input-group-lg">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action <span class="fa fa-caret-down"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                      </ul>
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control">
-                  </div><!-- /input-group -->
-                  <p class="margin">Normal</p>
-                  <div class="input-group">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-danger">Action</button>
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control">
-                  </div><!-- /input-group -->
-                  <p class="margin">Small <code>.input-group.input-group-sm</code></p>
-                  <div class="input-group input-group-sm">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info btn-flat" type="button">Go!</button>
-                    </span>
-                  </div><!-- /input-group -->
-                </div><!-- /.box-body -->
-              </div>
-        </section><!-- /.content -->
-      </div>
+          <h4>Loại sách</h4>
+
+          <div class="input-group input-group">
+            <div class="input-group-btn">
+              <select required name="cate" class="form-control">
+              @foreach($type as $ty)
+							@if($ty->id == $product->id_type)
+                <option selected value="{{$ty->id}}" >{{$ty->name}}</option>   
+							@else
+							  <option value="{{$ty->id}}" >{{$ty->name}}</option> 
+							@endif  
+							@endforeach  
+              </select>
+            </div><!-- /btn-group -->
+          </div><!-- /input-group -->
+
+          <h4> Giá : </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input required name="unit_price" type="text" value="{{$product->unit_price}}" class="form-control" placeholder="Gía . . . . . . . . .">
+            <span class="input-group-addon">VNĐ</span>
+          </div>
+
+
+          <h4> Giá khuyến mãi : </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input name="promotion_price" type="text" value="{{$product->promotion_price}}" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
+            <span class="input-group-addon">VNĐ</span>
+          </div>
+
+          <h4> Miêu tả </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
+            <input name="description" type="text" value="{{$product->description}}" class="form-control" placeholder="Miêu tả . . . . . . . . .">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Hình Ảnh</label>
+            <img id="avatar" class="thumbnail" width="200px" src="{{asset('images/product/'.$product->image)}}">
+            <input name="img" type="file" id="exampleInputFile">
+          </div>
+          <br>
+          <div class="text-center">
+
+            <input type="submit" name="submit" value="Sửa" class="btn  btn-success btn-lg">
+          </div>
+
+    </form>
+</div>
+</section><!-- /.content -->
+</div>
 @endsection

@@ -2,7 +2,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3"><a href="#" class="web-url">www.Nhombua.com</a></div>
+                    <div class="col-md-3"><a href="#" class="web-url"><i class="fa fa-hand-o-right" ></i>www.Nhombua.com</a></div>
                     <div class="col-md-6">
                         <h5></h5></div>
                         <div id="menu">
@@ -18,7 +18,22 @@
           </div>
         </div>
       </li>
+
     </ul>
+    <ul>
+      <li class="menu_item down"><i class="fa fa-truck" ></i> Miễn phí giao hàng
+        <div class="sub_menu">
+          <div class="bubble"></div>
+          <div class="sub_menu_block" style="width:326px">
+            <ul>
+              <li><a href="">Giao hàng miễn phí từ đơn 300.00đ</a> </li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+    </ul>   
     </div>
                 </div>
             </div>

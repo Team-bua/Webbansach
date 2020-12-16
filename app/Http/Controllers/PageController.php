@@ -27,10 +27,6 @@ class PageController extends Controller
         return view('layout_index.page.about');
     }
 
-    public function getlbooktype(){
-        return view('layout_index.page.product_type');
-    }
-
      public function getcart(){
         return view('layout_index.page.cart');
     }
@@ -38,6 +34,7 @@ class PageController extends Controller
     public function getsignup(){
         return view('layout_index.page.register');
     }
+    
 
     public function getlogin(){
         return view('layout_index.page.login');
