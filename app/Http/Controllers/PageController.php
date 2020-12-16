@@ -27,10 +27,6 @@ class PageController extends Controller
         return view('layout_index.page.about');
     }
 
-    public function getlbooktype(){
-        return view('layout_index.page.product_type');
-    }
-
      public function getcart(){
         return view('layout_index.page.cart');
     }

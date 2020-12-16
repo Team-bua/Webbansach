@@ -26,7 +26,7 @@
           <h4> Tên loại sách : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <input type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
+            <input required type="text" name="name" class="form-control" placeholder="Tên sách . . . . . . . . ." >
           </div>
           <br>
           <center>

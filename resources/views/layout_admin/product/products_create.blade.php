@@ -26,7 +26,7 @@
           <h4> Tên sách : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-            <input name="name" type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
+            <input required name="name" type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
           </div>
 
           <h4>Loại sách</h4>
@@ -44,7 +44,7 @@
           <h4> Giá : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-            <input name="unit_price" type="text" class="form-control" placeholder="Gía . . . . . . . . .">
+            <input required name="unit_price" type="text" class="form-control" placeholder="Gía . . . . . . . . .">
             <span class="input-group-addon">VNĐ</span>
           </div>
 

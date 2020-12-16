@@ -84,7 +84,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->repository->getAll();
+        $product = Product::find($id);
+        $type = Product_type::orderby('id','asc')->get();
+        return view('layout_admin.product.products_edit', compact('type','product'));
     }
 
     /**
@@ -94,9 +97,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $this->repository->update($request, $id);
+        return redirect(route('book.index'));
     }
 
     /**
@@ -105,8 +109,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product)
     {
-        //
+        $this->repository->destroy($product);
+        return redirect()->back();
     }
 }
