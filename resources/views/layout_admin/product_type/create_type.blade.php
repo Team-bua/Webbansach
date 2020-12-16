@@ -38,8 +38,6 @@
       </div>
       </form>
 
-      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1">
-      @csrf
       <section class="content">
 
         <div class="row">
