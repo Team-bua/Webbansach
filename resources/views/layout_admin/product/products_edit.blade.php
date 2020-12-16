@@ -74,7 +74,7 @@
           <br>
           <div class="text-center">
 
-            <input type="submit" name="submit" value="Thêm" class="btn  btn-success btn-lg">
+            <input type="submit" name="submit" value="Sửa" class="btn  btn-success btn-lg">
           </div>
 
     </form>
