@@ -22,12 +22,8 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('welcome');
-=======
-    return redirect()->route('index');
 
->>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 });
 
 /*--------------------------------------------------------------------------------*/
@@ -72,10 +68,7 @@ Route::resource('user',UserController::class);
 Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 
 
