@@ -40,15 +40,13 @@
                       <th>Loại sách</th>
                       <th>Giá </th>
                       <th>Giá Khuyến Mãi</th>
-                      <th>Miêu tả</th>
-                      
+                      <th>Miêu tả</th>                 
                       <th>Hình ảnh</th>
                       <th colspan="2"><center>Chức năng</center></th>
                      
                     </tr>       
                     @foreach($product as $pro)             
-                    <tr>
-                      
+                    <tr>                     
                       <td>{{$pro->name}}</td>
                       <td>{{$pro->product_type->name}}</td>
                       <td>{{$pro->unit_price}}</span></td>

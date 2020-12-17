@@ -3,11 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Repositories\SupplierRepository;
+use App\Models\Supplier;
+use App\Http\Requests\SupplierRequest;
 
 class SuppliersController extends Controller
 {
+  /**
+     * The ProductRepository instance.
+     *
+     * @var \App\Repositories\SupplierRepository
+     */
+    protected $repository;
 
+
+   /**
+    * Create a new PostController instance.
+    *
+    * @param  \App\Repositories\SupplierRepository $repository
+    */
+   public function __construct(SupplierRepository $repository)
+   {
+       $this->repository = $repository;
+   }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +33,8 @@ class SuppliersController extends Controller
      */
     public function index()
     {
-       
-        return view('layout_admin.supplier.supplier_list');
+        $supplier = $this->repository->getAll();
+        return view('layout_admin.supplier.supplier_list', compact('supplier'));
     }
 
     /**
@@ -35,9 +53,10 @@ class SuppliersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
-        //
+        $this->repository->create($request);
+        return redirect(route('supplier.index'));
     }
 
     /**
@@ -59,7 +78,8 @@ class SuppliersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supplier = $this->repository->getsupplier($id);
+        return view('layout_admin.supplier.supplier_edit', compact('supplier'));
     }
 
     /**
@@ -69,9 +89,10 @@ class SuppliersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SupplierRequest $request, $id)
     {
-        //
+        $this->repository->update($request, $id);
+        return redirect(route('supplier.index'));
     }
 
     /**
@@ -82,6 +103,7 @@ class SuppliersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->repository->destroy($id);
+        return redirect()->back();
     }
 }

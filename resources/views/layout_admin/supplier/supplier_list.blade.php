@@ -24,41 +24,51 @@
                 <div class="col-xs-12">
                     <div class="box box-solid box-primary">
 
-                        <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-table"></i>&nbsp; Danh sách nhà cung cấp</h3>
-                            <div class="col-md-4 pull-right">
-                                <div class="input-group">
-                                    <input type="text" name="table_search" class="form-control input-sm pull-right"
-                                        style="width: 150px;" placeholder="Search">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-body ">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th>Tên Nhà Cung Cáp </th>
-                                    <th>Email</th>
-                                    <th>Địa chỉ </th>
-                                    <th>Số Điện Thoại</th>
+          <div class="box-header">
+            <h3 class="box-title"><i class="fa fa-table"></i>&nbsp; Danh sách nhà cung cấp</h3>
+            <div class="col-md-4 pull-right">
+              <div class="input-group ">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                  <button class="btn btn-default btn-flat" type="button">Seach</button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="box-body ">
+            <table class="table table-bordered">
+              <tr>
+                <th>Ảnh đại diện </th>
+                <th>Tên nhà cung cấp </th>
+                <th>Email</th>
+                <th>Địa chỉ </th>
+                <th>Số Điện Thoại</th>
 
-                                    <th colspan="2">Tùy chọn</th>
-                                </tr>
-                                <tr>
-                                    <td>Harry Potter</td>
-                                    <td>2</td>
-                                    <td>20000</td>
-                                    <td>4</td>
-                                    <td>
-                                        <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
-                                    </td>
-                                </tr>
-
-
+                <th colspan="2">Tùy chọn</th>
+              </tr>
+              @foreach($supplier as $sup)
+              <tr>
+                <td><img style="width:50px;height:50px;" src="{{asset('images/users/'.$sup->image)}}" ></td>
+                <td>{{$sup->name}}</td>
+                <td>{{$sup->email}}</td>
+                <td>{{$sup->address}}</td>
+                <td>{{$sup->phone}}</td>  
+                <td>
+                  <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                  <a href="{{ route('supplier.edit',[$sup['id']]) }}">
+                    <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
+                  </a>
+                  <form method="post" action="{{route('supplier.destroy', [$sup['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
+    							@csrf
+                    <input name="_method" type="hidden" value="DELETE">
+                    <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không')"><i class="fa fa-times"></i></button>
+                  </form>         
+                </td>             
+              </tr>
+              @endforeach
+            </table>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
 
                             </table>
                         </div><!-- /.box-body -->

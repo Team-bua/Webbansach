@@ -11,10 +11,13 @@ class PageController extends Controller
         return view('layout_index.index');
     }
 
+   public function getdetail(){
+        return view('layout_index.page.product_detail');
+    }
+
    public function getnews(){
         return view('layout_index.page.news');
     }
-
 
     public function getall(){
         return view('layout_index.page.viewall');
@@ -36,9 +39,6 @@ class PageController extends Controller
         return view('layout_index.page.register');
     }
     
-    public function getdetail(){
-        return view('layout_index.page.product_detail');
-    }
 
     public function getread(){
         return view('layout_index.page.Read_book');

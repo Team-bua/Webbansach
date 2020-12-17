@@ -1,13 +1,13 @@
 @extends('layout_index.master')
 @section('content')
-<section class="slider">
+  <section class="deltai">
     <div class="container">
-        <div id="slide-wrapper">
-            
+        <div id="deltai-wrapper">
+          
         </div>
     </div>
-     <div class="container">
-        <div class="sidebar-widget brands">
+    <div class="container">
+<div class="sidebar-widget brands">
             <h2 class="title">Our Brands</h2>
             <ul>
                 <li><a href="#">Nulla </a><span>(45)</span></li>
@@ -18,8 +18,9 @@
                 <li><a href="#">Sagittis</a><span>(28)</span></li>
             </ul>
         </div>
-     </div>
+</div>
 </section>
+
 <section class="static about-sec">
         <div class="container">           
             <h2>recently added books to our store</h2>

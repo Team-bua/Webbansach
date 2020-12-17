@@ -67,9 +67,16 @@
             <input name="description" type="text" value="{{$product->description}}" class="form-control" placeholder="Miêu tả . . . . . . . . .">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">Hình Ảnh</label>
-            <img id="avatar" class="thumbnail" width="200px" src="{{asset('images/product/'.$product->image)}}">
+            <label for="exampleInputFile">Ảnh đại diện</label>
+            <img id="avatar" class="thumbnail" width="150px" src="{{asset('images/product/'.$product->image)}}">
             <input name="img" type="file" id="exampleInputFile">
+          </div>
+          <div class="form-group">
+            <h4 for="exampleInputFile">Ảnh chi tiết</h4>
+            @foreach($product->imagedetail as $pro)
+            <img id="avatar" width="100px" height="100px" src="{{asset('images/product_detail/'.$pro)}}">
+            @endforeach
+            <input name="img_detail[]" type="file" id="exampleInputFile" multiple="multiple">
           </div>
           <br>
           <div class="text-center">
