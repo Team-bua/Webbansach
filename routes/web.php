@@ -68,10 +68,7 @@ Route::resource('user',UserController::class);
 Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
 
 
