@@ -70,3 +70,5 @@ Route::resource('bill',BillController::class);
 Route::resource('chart',ChartController::class);
 
 
+
+
