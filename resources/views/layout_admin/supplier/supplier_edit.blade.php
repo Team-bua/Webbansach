@@ -21,39 +21,41 @@
             <div class="box-header">
             </div>
             <div class="box-body">
-            <form action="{{url('supplier')}}" method="post" enctype="multipart/form-data" >
+            <form action="{{route('supplier.update',[$supplier['id']])}}" method="post" enctype="multipart/form-data" >
             @csrf
+            @method('put')
                 <h4> Tên nhà cung cấp : </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                    <input required type="text" name="name" class="form-control" placeholder="Tên nhà cung cấp . . . . . . . . .">
+                    <input required type="text" name="name" class="form-control" value="{{$supplier->name}}" placeholder="Tên nhà cung cấp . . . . . . . . .">
                 </div>
 
                 <h4> Email : </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input required type="text" name="email" class="form-control" placeholder="Email . . . . . . . . .">
+                    <input required type="text" name="email" class="form-control" value="{{$supplier->email}}" placeholder="Email . . . . . . . . .">
                 </div>
 
 
                 <h4> Địa chỉ : </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-book"></i></span>
-                    <input required type="text" name="address" class="form-control" placeholder="Địa chỉ . . . . . . . . .">
+                    <input required type="text" name="address" class="form-control" value="{{$supplier->address}}" placeholder="Địa chỉ . . . . . . . . .">
                 </div>
 
                 <h4> Số điện thoại </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input required type="text" name="phone" class="form-control" placeholder="Số điện thoại . . . . . . . . .">
+                    <input required type="text" name="phone" class="form-control" value="{{$supplier->phone}}" placeholder="Số điện thoại . . . . . . . . .">
                 </div>
                 <div class="form-group">
                 <h4 for="exampleInputFile">Ảnh đại diện</h4>
-                    <input name="img" type="file" id="exampleInputFile">
+                <img id="avatar" class="thumbnail" width="150px" src="{{asset('images/users/'.$supplier->image)}}">
+                <input name="img" type="file" id="exampleInputFile">
                 </div>
                 <br>
                 <div class="text-center">
-                    <button class=" btn  btn-success btn-lg"> Thêm </button>
+                    <button class=" btn  btn-success btn-lg"> Cập nhật </button>
                 </div>
             </form>
             </div>

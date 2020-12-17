@@ -33,7 +33,7 @@
           <h4>Loại sách</h4>
 
           <div class="input-group input-group">
-            <div class="input-group-btn">
+            <div class="input-group-btn" >
               <select required name="cate" class="form-control">
               @foreach($product as $pro)
               <option value="{{$pro->id}}">{{$pro->name}}</option>
