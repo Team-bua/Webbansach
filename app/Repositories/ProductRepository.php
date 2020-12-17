@@ -122,6 +122,15 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
+    public function search($request) {
 
+        $search = $request->table_search;
+        return Product::where(function ($query) use ($search) {
+                $query->where('lastname', 'like', "%$search%")
+                        ->orWhere('firstname', 'like', "%$search%")
+                        ->orWhere('email', 'like', "%$search%")
+                        ->orWhere('phonenumber', 'like', "%$search%");
+            })->paginate(10);
+    }
 
 }
