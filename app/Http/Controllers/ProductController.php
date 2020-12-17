@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Models\Product;
-use App\Models\Product_type;
 use App\Http\Requests\ProductRequest;
 
 
@@ -49,7 +48,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $product = Product_type::orderby('id','asc')->get();
+        $product = $this->repository->getTypeAll();
         return view('layout_admin.product.products_create', compact('product'));
     }
 
@@ -84,9 +83,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->repository->getAll();
-        $product = Product::find($id);
-        $type = Product_type::orderby('id','asc')->get();
+        $product = $this->repository->getproduct($id);
+        $type = $this->repository->getTypeAll();
         return view('layout_admin.product.products_edit', compact('type','product'));
     }
 
