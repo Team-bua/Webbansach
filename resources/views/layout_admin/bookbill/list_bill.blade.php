@@ -70,13 +70,13 @@
           <div class="box-header">
             <h3 class="box-title"><i class="fa fa-table"></i> Danh sách đơn hàng</h3>
             <div class="col-md-4 pull-right">
-              <div class="input-group ">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                  <button class="btn btn-default btn-flat" type="button">Seach</button>
-                </span>
+              <div class="input-group">
+                <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                </div>
               </div>
-            </div>
+              </div>
           </div>
           <div class="box-body ">
             <table class="table table-bordered">
