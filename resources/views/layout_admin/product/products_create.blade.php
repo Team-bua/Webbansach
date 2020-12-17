@@ -62,12 +62,12 @@
             <input name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">Hình Ảnh</label>
+            <h4 for="exampleInputFile">Ảnh đại diện</h4>
             <input name="img" type="file" id="exampleInputFile">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">Hình Ảnh</label>
-            <input name="img" type="file" id="exampleInputFile" multiple="multiple">
+            <h4 for="exampleInputFile">Ảnh chi tiết</h4>
+            <input name="img_detail[]" type="file" id="exampleInputFile" multiple="multiple">
           </div>
           <br>
           <div class="text-center">
