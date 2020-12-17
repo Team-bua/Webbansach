@@ -1,37 +1,38 @@
 <header>
-  <div class="header-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5></h5>
-        </div>
-        <div id="menu">
-          <ul>
-            <li class="menu_item down">call : 0779 750 123
-              <div class="sub_menu">
-                <div class="bubble"></div>
-                <div class="sub_menu_block" style="width:326px">
-                  <ul>
-                    <li><a href="">Thứ 2 - 7: hoạt động từ 7:30 - 20:00</a> </li>
-                    <li><a href="">Chủ nhật: hoạt động từ 8:00 - 17:00</a> </li>
-                  </ul>
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5></h5>
+          </div>
+          <div id="menu">
+            <ul>
+              <li class="menu_item down">call : 0779 750 123
+                <div class="sub_menu">
+                  <div class="bubble"></div>
+                  <div class="sub_menu_block" style="width:326px">
+                    <ul>
+                      <li><a href="">Thứ 2 - 7: hoạt động từ 7:30 - 20:00</a> </li>
+                      <li><a href="">Chủ nhật: hoạt động từ 8:00 - 17:00</a> </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
-
-          </ul>
-          <ul>
-            <li class="menu_item down"><i class="fa fa-truck"></i> Miễn phí giao hàng
-              <div class="sub_menu">
-                <div class="bubble"></div>
-                <div class="sub_menu_block" style="width:326px">
-                  <ul>
-                    <li><a href="">Giao hàng miễn phí từ đơn 300.00đ</a> </li>
-                  </ul>
+              </li>
+  
+            </ul>
+            <ul>
+              <li class="menu_item down"><i class="fa fa-truck"></i> Miễn phí giao hàng
+                <div class="sub_menu">
+                  <div class="bubble"></div>
+                  <div class="sub_menu_block" style="width:326px">
+                    <ul>
+                      <li><a href="">Giao hàng miễn phí từ đơn 300.00đ</a> </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -72,12 +73,7 @@
             <a href="{{route('cart')}}"><span>
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
           </div>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
-            <span class="fa fa-search"></span>
-          </form>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
