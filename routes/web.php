@@ -22,8 +22,12 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
+    return view('welcome');
+=======
     return redirect()->route('index');
 
+>>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 });
 
 /*--------------------------------------------------------------------------------*/
@@ -46,6 +50,8 @@ Route::get('cart',[PageController::class,'getcart'])->name('cart');
 Route::get('detail',[PageController::class,'getdetail'])->name('detail');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getread'])->name('Read');
+//----->thanh toán
+Route::get('checkout',[PageController::class,'getcheckout'])->name('checkout');
 /*--------------------------------------------------------------------------------*/
 
 
@@ -62,9 +68,18 @@ Route::resource('supplier',SuppliersController::class);
 Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
+<<<<<<< HEAD
 ///------>trang admin_CRUD thong tin order
+=======
+///------>trang admin_CRUD thong tin bill
+>>>>>>> 6af55e412e6dd051da70d68d1f5e740e268c3600
 Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 
 

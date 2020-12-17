@@ -21,16 +21,14 @@
      </div>
 </section>
 <section class="static about-sec">
-
-        <div class="container">
-                       
+        <div class="container">           
             <h2>recently added books to our store</h2>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="item">
-                            <span class="sale">Sale !</span>
+                        <div class="offer">- %20</div>
                             <img src="images/r1.jpg" alt="img">
                             <h3><a href="#">Keepers of the kalachakara</a></h3>
                             <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
@@ -38,7 +36,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="item">
-                            <span class="sale">Sale !</span>
+                        <div class="offer">- %20</div>
                             <img src="images/r2.jpg" alt="img">
                             <h3><a href="#">Keepers of the kalachakara</a></h3>
                             <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>

@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        
+        return view('layout_admin.user.role_users');
     }
 
     /**

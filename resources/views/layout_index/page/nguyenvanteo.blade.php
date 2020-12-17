@@ -14,13 +14,15 @@
         <div class="form">
             <form>
                 <div class="row  justify-content-md-center">
-                    <div class="col-6">   
+                    <div class="col-6">
+
                         <input type="email" class="form-control" placeholder="Mời nhập Email " required="">
                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
-                    <span class="required-star">*</span>
                 </div>
+
                 <div class="row  justify-content-md-center">
+
                     <div class="col-6">
                         <div class="form-group has-feedback">
                             <input type="password" class="form-control" placeholder="Password" required="" />
@@ -28,7 +30,7 @@
                         </div>
                         <span class="required-star">*</span>
                     </div>
-                    
+                    <span class="required-star">*</span>
                 </div>
 
                 <div class="row justify-content-md-center">
