@@ -22,32 +22,7 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
-
-
-
-
     return view('welcome');
-
-    return redirect()->route('trangchu');
-
-    return view('');
-
-
-    return redirect()->route('trangchu');
-
-
-
-    return redirect()->route('trangchu');
-
-
-    return redirect()->route('index');
-
-
-=======
-    return redirect()->route('index');
-
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 });
 
 /*--------------------------------------------------------------------------------*/
@@ -70,16 +45,14 @@ Route::get('cart',[PageController::class,'getcart'])->name('cart');
 Route::get('detail',[PageController::class,'getdetail'])->name('detail');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getread'])->name('Read');
+//----->thanh toán
+Route::get('checkout',[PageController::class,'getcheckout'])->name('checkout');
 /*--------------------------------------------------------------------------------*/
 
 
 
 //----->trang admin
 Route::get('admin',[PageController::class,'getadmin'])->name('admin');
-<<<<<<< HEAD
-
-=======
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
@@ -94,9 +67,5 @@ Route::resource('user',UserController::class);
 Route::resource('order',OrderController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
-<<<<<<< HEAD
-
-=======
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
 
 
