@@ -418,7 +418,7 @@
 
 
                         </table>
-                        <a href="{{route('order.index')}} "><i class="fa  fa-hand-o-right"></i>&nbsp; Xem thêm</a>
+                        <a href="{{route('bill.index')}} "><i class="fa  fa-hand-o-right"></i>&nbsp; Xem thêm</a>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
 

@@ -310,7 +310,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="{{route('user.index')}}"><i class="fa fa-table"></i> Danh sách </a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-eye"></i> Quyền </a></li>
+
           <li><a href="pages/charts/flot.html"><i class="fa  fa-exclamation"></i> Vai Trò </a></li>
         </ul>
       </li>

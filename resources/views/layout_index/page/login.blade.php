@@ -39,11 +39,7 @@
                 <div class="row  justify-content-md-center">
                     <div class="col-5">
                         <h5>Không có Tài Khoản / <a href="{{route('signup')}}">Đăng Ký Tại Đây</a></h5>
-<<<<<<< HEAD
-                  </div>
-=======
                     </div>
->>>>>>> f18a7fe2a6ddd2b9bc354382cf20ef5cf42160e0
                 </div>
         </div>
     </div>
