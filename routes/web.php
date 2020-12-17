@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductTypeController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
 
 /*
@@ -22,7 +22,12 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
+=======
+    return redirect()->route('index');
+
+>>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 });
 
 /*--------------------------------------------------------------------------------*/
@@ -63,9 +68,14 @@ Route::resource('supplier',SuppliersController::class);
 Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
-///------>trang admin_CRUD thong tin order
-Route::resource('order',OrderController::class);
+///------>trang admin_CRUD thong tin bill
+Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2f011455976f7b18a90446378e2bf63e3ce20b73
 
 

@@ -77,6 +77,7 @@ class ProductRepository
         $product->image=$name;
         $product->save();
         
+        
     }
 
      /**

@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
-class UserController extends Controller
+class BillController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
-        //return view('layout_admin.user.proflie');
-        return view('layout_admin.user.list_users');
+        return view('layout_admin.bookbill.list_bill');
     }
 
     /**
@@ -27,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -49,7 +45,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('layout_admin.user.role_users');
+        return view('layout_admin.bookbill.detail_bill');
     }
 
     /**

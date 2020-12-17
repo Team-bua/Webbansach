@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class NguyenvanteoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('layout_admin.bookorder.list_order');
+        //
     }
 
     /**
@@ -45,7 +45,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return view('layout_admin.bookorder.detail_order');
+        //
     }
 
     /**

@@ -56,12 +56,10 @@
                       <td>{{$pro->description}}</td>
                       <td><img style="width:100px;height:100px;" src="{{asset('images/product/'.$pro->image)}}" ></td>                      
                       <td>
-                      <form method="put" action="{{ route('book.edit',[$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
-    							  	@csrf
-    								  <input name="_method" type="hidden" value="UPDATE">
-                        <button class="btn btn-warning btn"> Sửa </button>
-                      </form>
-                    </td>                     
+                      <a href="{{ route('book.edit',[$pro['id']]) }}">
+                      <button class="btn btn-warning btn"> Sửa </button>
+                      </a>
+                      </td>                     
                       <td>
                       <form method="post" action="{{route('book.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
     								  @csrf
