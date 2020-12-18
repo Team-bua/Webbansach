@@ -31,11 +31,6 @@ class PageController extends Controller
         return view('layout_index.page.login');
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 4eda98edf01b6d2202ac5aab7381decd3664bb48
      public function getcart(){
         return view('layout_index.page.cart');
     }
@@ -43,15 +38,7 @@ class PageController extends Controller
     public function getsignup(){
         return view('layout_index.page.register');
     }
-<<<<<<< HEAD
     
-=======
-
-    
-
-
->>>>>>> 4eda98edf01b6d2202ac5aab7381decd3664bb48
-
     public function getread(){
         return view('layout_index.page.Read_book');
     }
