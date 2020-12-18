@@ -19,10 +19,6 @@ class PageController extends Controller
         return view('layout_index.page.news');
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f03173c184c20b062581b9a72f92bfe5dada7a09
     public function getall(){
         return view('layout_index.page.viewall');
     }
@@ -31,13 +27,10 @@ class PageController extends Controller
         return view('layout_index.page.about');
     }
 
-<<<<<<< HEAD
     public function getlogin(){
         return view('layout_index.page.login');
     }
 
-=======
->>>>>>> f03173c184c20b062581b9a72f92bfe5dada7a09
      public function getcart(){
         return view('layout_index.page.cart');
     }
@@ -45,10 +38,7 @@ class PageController extends Controller
     public function getsignup(){
         return view('layout_index.page.register');
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> f03173c184c20b062581b9a72f92bfe5dada7a09
 
     public function getread(){
         return view('layout_index.page.Read_book');
