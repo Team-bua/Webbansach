@@ -46,10 +46,16 @@
             </div><!-- /btn-group -->
           </div><!-- /input-group -->
 
+          <h4> Tác giả </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-smile-o"></i></span>
+            <input name="publisher" type="text" class="form-control" placeholder="Tác giả. . . . . . . . .">
+          </div>
+
           <h4> Giá : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-            <input required name="unit_price" type="text" value="{{$product->unit_price}}" class="form-control" placeholder="Gía . . . . . . . . .">
+            <input required name="unit_price" type="text" value="{{$product->unit_price}}" class="form-control" placeholder="Giá . . . . . . . . .">
             <span class="input-group-addon">VNĐ</span>
           </div>
 
@@ -68,8 +74,8 @@
           </div>
           <div class="form-group">
             <label for="exampleInputFile">Ảnh đại diện</label>
-            <img id="avatar" class="thumbnail" width="150px" src="{{asset('images/product/'.$product->image)}}">
-            <input name="img" type="file" id="exampleInputFile">
+            <input name="img" type="file" id="exampleInputFile" onchange="changeImg(this)">
+            <img id="avatar" class="thumbnail" width="100px" height="100px" src="{{asset('images/product/'.$product->image)}}" >
           </div>
           <div class="form-group">
             <h4 for="exampleInputFile">Ảnh chi tiết</h4>
@@ -81,7 +87,7 @@
           <br>
           <div class="text-center">
 
-            <input type="submit" name="submit" value="Sửa" class="btn  btn-success btn-lg">
+            <input type="submit" name="submit" value="Cập nhật" class="btn  btn-success btn-lg">
           </div>
 
     </form>

@@ -1,40 +1,40 @@
 @extends('layout_admin.master')
 @section('content')
-    <div class="content-wrapper" style="min-height: 898px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Quản lý nhà cung cấp
+<div class="content-wrapper" style="min-height: 898px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Quản lý nhà cung cấp
 
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Nhà cung cấp</a></li>
-                <li class="active">Danh Sách</li>
-            </ol>
-        </section>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Nhà cung cấp</a></li>
+      <li class="active">Danh Sách</li>
+    </ol>
+  </section>
 
-        <!-- Main content -->
-        <section class="content">
-
-
-
-            <div class="row">
-
-                <div class="col-xs-12">
-                    <div class="box box-solid box-primary">
-
+  <!-- Main content -->
+  <section class="content">
+  <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><i class="fa fa-table"></i>&nbsp; Danh sách nhà cung cấp</h3>
-            <div class="col-md-4 pull-right">
-              <div class="input-group ">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                  <button class="btn btn-default btn-flat" type="button">Seach</button>
-                </span>
-              </div>
+          <h3 class="box-title"><i class="fa fa-table"></i>&nbsp; Danh sách nhà cung cấp</h3>
+            <div class="box-tools">
+              <form action="">
+                <div class="col-md-4 pull-right">
+                  <div class="input-group">
+                    <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
-          </div>
+
+          </div><!-- /.box-header -->
           <div class="box-body ">
             <table class="table table-bordered">
               <tr>
@@ -48,35 +48,35 @@
               </tr>
               @foreach($supplier as $sup)
               <tr>
-                <td><img style="width:50px;height:50px;" src="{{asset('images/users/'.$sup->image)}}" ></td>
+                <td><img style="width:50px;height:50px;" src="{{asset('images/users/'.$sup->image)}}"></td>
                 <td>{{$sup->name}}</td>
                 <td>{{$sup->email}}</td>
                 <td>{{$sup->address}}</td>
-                <td>{{$sup->phone}}</td>  
+                <td>{{$sup->phone}}</td>
                 <td>
                   <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
                   <a href="{{ route('supplier.edit',[$sup['id']]) }}">
                     <button class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
                   </a>
                   <form method="post" action="{{route('supplier.destroy', [$sup['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
-    							@csrf
+                    @csrf
                     <input name="_method" type="hidden" value="DELETE">
                     <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không')"><i class="fa fa-times"></i></button>
-                  </form>         
-                </td>             
+                  </form>
+                </td>
               </tr>
               @endforeach
             </table>
           </div><!-- /.box-body -->
         </div><!-- /.box -->
 
-                            </table>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                   
-                    
-                </div>
-            </div>
-        </section><!-- /.content -->
-    </div>
+        </table>
+      </div><!-- /.box-body -->
+    </div><!-- /.box -->
+
+
+</div>
+</div>
+</section><!-- /.content -->
+</div>
 @endsection

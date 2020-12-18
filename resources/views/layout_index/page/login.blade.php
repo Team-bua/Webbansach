@@ -4,7 +4,7 @@
 <div class="breadcrumb">
     <div class="container">
         <a class="breadcrumb-item" href="index.html">Home</a>
-        <span class="breadcrumb-item active">Register</span>
+        <span class="breadcrumb-item active">Login</span>
     </div>
 </div>
 <section class="static about-sec">

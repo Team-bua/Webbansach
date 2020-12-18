@@ -42,6 +42,12 @@
             </div><!-- /btn-group -->
           </div><!-- /input-group -->
 
+          <h4> Tác giả </h4>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-smile-o"></i></span>
+            <input name="publisher" type="text" class="form-control" placeholder="Tác giả. . . . . . . . .">
+          </div>
+
           <h4> Giá : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
@@ -63,8 +69,9 @@
             <input name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
           </div>
           <div class="form-group">
-            <h4 for="exampleInputFile">Ảnh đại diện</h4>
-            <input name="img" type="file" id="exampleInputFile">
+            <h4 for="exampleInputFile">Ảnh sản phẩm</h4>
+            <input required id="img" type="file" name="img" onchange="changeImg(this)" >
+					  <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg">
           </div>
           <div class="form-group">
             <h4 for="exampleInputFile">Ảnh chi tiết</h4>

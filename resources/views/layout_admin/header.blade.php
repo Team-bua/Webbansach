@@ -270,7 +270,8 @@
       <li class="treeview">
         <a href="{{route('book_type.index')}}">
           <i class="fa fa-edit"></i>
-          <span>Loại sách</span> <i class="fa fa-circle pull-right"></i>
+          <span>Loại sách</span>
+          <small class="label pull-right bg-green">500</small>
 
         </a>
 
@@ -298,7 +299,7 @@
       <li class="treeview">
         <a href="{{route('chart.index')}}">
           <i class="fa fa-pie-chart"></i>
-          <span>Thống kê</span> <i class="fa fa-circle pull-right "></i>
+          <span>Thống kê</span> 
         </a>
       </li>
       <!-- Quản lý tài khoản -->

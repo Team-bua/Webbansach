@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Models\Supplier;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class SupplierRepository
+class UserRepository
 {
     /**
      * Get member collection paginate.
@@ -14,12 +14,12 @@ class SupplierRepository
      */
     public function getAll()
     {   
-        return Supplier::orderBy('created_at', 'desc')->paginate(10);
+        return User::orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function getsupplier($id)
     {
-        return Supplier::find($id);
+        return User::find($id);
     }
 
     public function create(Request $request)
@@ -33,7 +33,7 @@ class SupplierRepository
             $destinationPath=public_path('images/users'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
             $file->move($destinationPath, $image); //lưu hình ảnh vào thư mục public/image        
        }
-       $supplier = new Supplier();
+       $supplier = new User();
        $supplier->name=$request->input('name');
        $supplier->email=$request->input('email');
        $supplier->address=$request->input('address');
@@ -52,7 +52,7 @@ class SupplierRepository
             $destinationPath=public_path('images/users'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
             $file->move($destinationPath, $image); //lưu hình ảnh vào thư mục public/image
         }
-        $supplier = Supplier::find($id);
+        $supplier = User::find($id);
         $supplier->name=$request->input('name');
         $supplier->email=$request->input('email');
         $supplier->address=$request->input('address');
@@ -66,7 +66,7 @@ class SupplierRepository
     }
 
     public function destroy($id) {
-        $supplier = Supplier::find($id);
+        $supplier = User::find($id);
         $supplier->delete();
       
     }
@@ -74,7 +74,7 @@ class SupplierRepository
     public function search($request) {
 
         $search = $request->table_search;
-        return Supplier::where(function ($query) use ($search) {
+        return User::where(function ($query) use ($search) {
                 $query->where('name', 'like', "%$search%")
                         ->orWhere('email', 'like', "%$search%")
                         ->orWhere('phone', 'like', "%$search%");
