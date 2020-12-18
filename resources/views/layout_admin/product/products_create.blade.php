@@ -9,8 +9,8 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Tables</a></li>
-      <li class="active">Simple</li>
+      <li><a href="#">Sách</a></li>
+      <li class="active">Thêm sách</li>
     </ol>
   </section>
 
@@ -33,7 +33,7 @@
           <h4>Loại sách</h4>
 
           <div class="input-group input-group">
-            <div class="input-group-btn">
+            <div class="input-group-btn" >
               <select required name="cate" class="form-control">
               @foreach($product as $pro)
               <option value="{{$pro->id}}">{{$pro->name}}</option>

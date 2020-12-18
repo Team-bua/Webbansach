@@ -22,10 +22,10 @@ class ProductRepository
     {
         return Product::find($id);
     }
-    
+
     public function getTypeAll()
     {
-        return Product_type::orderBy('created_at', 'desc')->paginate(10);
+        return Product_type::all();
     }
     /**
      * create a member.
@@ -122,6 +122,15 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
+    public function search($request) {
 
+        $search = $request->table_search;
+        return Product::where(function ($query) use ($search) {
+                $query->where('lastname', 'like', "%$search%")
+                        ->orWhere('firstname', 'like', "%$search%")
+                        ->orWhere('email', 'like', "%$search%")
+                        ->orWhere('phonenumber', 'like', "%$search%");
+            })->paginate(10);
+    }
 
 }

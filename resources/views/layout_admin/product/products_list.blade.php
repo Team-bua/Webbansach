@@ -4,12 +4,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Simple Tables
+            Danh sách sản phẩm
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Simple</li>
+            <li><a href="#">Sách</a></li>
+            <li class="active">Danh sách</li>
           </ol>
         </section>
 
@@ -20,7 +20,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Danh sách sản phẩm</h3>
+                  <h3 class="box-title"></h3>
                   <div class="box-tools">
                   <div class="col-md-4 pull-right">
                   <div class="input-group">
@@ -40,15 +40,13 @@
                       <th>Loại sách</th>
                       <th>Giá </th>
                       <th>Giá Khuyến Mãi</th>
-                      <th>Miêu tả</th>
-                      
+                      <th>Miêu tả</th>                 
                       <th>Hình ảnh</th>
                       <th colspan="2"><center>Chức năng</center></th>
                      
                     </tr>       
                     @foreach($product as $pro)             
-                    <tr>
-                      
+                    <tr>                     
                       <td>{{$pro->name}}</td>
                       <td>{{$pro->product_type->name}}</td>
                       <td>{{$pro->unit_price}}</span></td>
