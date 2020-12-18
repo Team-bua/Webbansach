@@ -25,7 +25,7 @@
     </div>
     <div class="container">
   <ul class="vert-one">
-  <li><a href="" class="current" ><center>Danh Mục Sách</center></a></li>
+  <li><a class="current" ><center>Danh Mục Sách</center></a></li>
   <li><a href="">CSS Layouts</a></li>
 
 </ul>
@@ -248,6 +248,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
+                        <div class="new">New</div>
                         <img src="images/r2.jpg" alt="img">
                         <h3><a href="#">Keepers of the kalachakara</a></h3>
                         <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
