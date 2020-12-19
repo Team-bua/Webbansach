@@ -4,8 +4,10 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Danh sách sản phẩm
+                Quản lý sách
+                <small>Thêm, xóa và cập nhật sách</small>
             </h1>
+
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="#">Sách</a></li>
@@ -15,41 +17,39 @@
 
         <!-- Main content -->
         <section class="content">
-
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box">
-                        <div class="box-header" >
-                            <h3 class="box-title"></h3>
-                            
-                                <div class="col-md-4 ">
-                                    <div class="input-group ">
-                                        <input type="text" name="table_search" class="form-control input t"
+                        <div class="box-header">
+
+
+                            <form action="">
+                                <div class="col-md-4 pull-left">
+                                    <div class="input-group">
+                                        <input type="text" name="table_search" class="form-control  pull-right"
                                             placeholder="Search">
                                         <div class="input-group-btn">
-                                            <button style="float:left;margin-bottom:5px;margin-left:2px"
-                                                class="btn btn btn-success"><i class="fa fa-search"> Tìm kiếm
-                                                </i></button>
+                                            <button class="btn btn btn-success"
+                                                style="float:left;margin-bottom:5px;margin-left:2px"><i
+                                                    class="fa fa-search"> Tìm kiếm </i></button>
 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 pull-right ">
+                            </form>
 
-
-                                    <button style="float:right;margin-bottom:5px;margin-left:2px"
-                                        class="btn btn btn-success"><i class="fa fa-plus"> Thêm sách mới </i></button>
-
-
-
-                                </div>
-                           
-
+                            <div class="col-md-4 pull-right">
+                                <a href="{{ route('book.create') }}">
+                                    <button class="btn btn btn-success"
+                                        style="float: right;;margin-bottom:5px;margin-left:2px">
+                                        <i class="fa fa-plus"> Thêm sách mới </i></button>
+                                </a>
+                            </div>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
                                 <tbody>
-                                    <tr style="  font-size:18px; ">
+                                    <tr style="font-size:18px; ">
 
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>
@@ -71,10 +71,9 @@
                                             <td>{{ $pro->description }}</td>
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
-
                                             <td>
                                                 <a href="{{ route('book.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn"> Sửa </button>
+                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit"> Sửa </i> </button>
                                                 </a>
                                             </td>
                                             <td>
@@ -82,8 +81,8 @@
                                                     enctype="multipart/form-data" name="form1" id="form1">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger btn"
-                                                        onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
+                                                    <button class="btn btn-danger btn pull-left"
+                                                        onclick="return confirm('Bạn có muốn xóa không')"> <i class="fa fa-trash-o"> Xóa </i> </button>
                                                 </form>
                                             </td>
                                         </tr>

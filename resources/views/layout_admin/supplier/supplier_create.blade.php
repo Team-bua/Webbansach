@@ -49,7 +49,8 @@
                 </div>
                 <div class="form-group">
                 <h4 for="exampleInputFile">Ảnh đại diện</h4>
-                    <input name="img" type="file" id="exampleInputFile">
+                    <input id="img" type="file" name="img" onchange="changeImg(this)" >
+			        <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg">
                 </div>
                 <br>
                 <div class="text-center">

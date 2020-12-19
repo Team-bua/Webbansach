@@ -458,10 +458,35 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     border-color: #FF6F61;
 }
 .sidebar-widget .title {
+
     position: relative;
     font-size: 15px;
     text-transform: capitalize;
     margin-bottom: 15px;
+animation: blur .75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #80A7D7;
+  }
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #80A7D7,
+      0px 0px 10px #80A7D7, 
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
 }
 .sidebar-widget.brands ul {
     margin: 0;
@@ -470,6 +495,8 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 }
 
 .sidebar-widget.brands ul li {
+    float: left;
+    width: 15%;
     margin-bottom: 12px; 
 }
 
@@ -528,6 +555,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     font-size: 22px;
     text-transform: capitalize;
     margin-bottom: 15px;
+     font-family: "Times New Roman", Times, serif;
 }
 
 .sidebar-widget.category {
@@ -662,72 +690,24 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 }
 /*-------------------------------deltai1----------------------------------------*/
 .deltai1 {
-  float: right;
+  float: left;
   width: 100%;
   margin-bottom: 50px; 
 }
-.heading {
-  font-size: 25px;
-  margin-right: 25px;
+#deltal1-wrapper {
+  width:500px;
+  height:400px;
+  position: relative;
+  float: right;
+  border: 1px solid #f5a100;
+  border-radius: 10px;
+  overflow: hidden;
+  visibility:visible;
+  display:block;
+  margin-bottom: 8px;
 }
+/*-----------------------------------------------------------------------------*/
 
-.fa {
-  font-size: 25px;
-}
-
-.checked {
-  color: orange;
-}
-
-/* Three column layout */
-.side {
-  float: left;
-  width: 15%;
-  margin-top:10px;
-}
-
-.middle {
-  margin-top:10px;
-  float: left;
-  width: 70%;
-}
-
-/* Place text to the right */
-.right {
-  text-align: right;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* The bar container */
-.bar-container {
-  width: 100%;
-  background-color: #f1f1f1;
-  text-align: center;
-  color: white;
-}
-
-/* Individual bars */
-.bar-5 {width: 30%; height: 18px; background-color: #4CAF50;}
-.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
-.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
-.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
-
-/* Responsive layout - make the columns stack on top of each other instead of next to each other */
-@media (max-width: 400px) {
-  .side, .middle {
-    width: 100%;
-  }
-  .right {
-    display: none;
-  }
-}
 /*-------------------------------deltai----------------------------------------*/
 .deltai {
   float: right;
@@ -827,7 +807,7 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 #fssPrev, #fssNext, #fssPlayPause {
   display: none;
 }
-/*----------------------------------offer--------------------------------------------*/
+/*----------------------------------sale--------------------------------------------*/
 .offer{
 	position: absolute;
 	right: 15px;
@@ -839,7 +819,70 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
 	background: #d31c71bb;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+   animation: blur .75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #80A7D7;
 	}
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #80A7D7,
+      0px 0px 10px #80A7D7, 
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
+/*----------------------------------new--------------------------------------------*/
+.new{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 99;
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  background: #d31c71bb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+   animation: blur .75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #80A7D7;
+  }
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #80A7D7,
+      0px 0px 10px #80A7D7, 
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 25px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #80A7D7,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
+/*-------------------------------------sort-by------------------------------*/
+
 /*---------------------------------checkout---------------------------------*/
 .checkout {
   position: relative;
@@ -1069,14 +1112,8 @@ ul.vert-one li a.current,ul.vert-one li a.current:hover{
     font-size: 30px;
     text-transform: uppercase;
     color: #363636; 
-    animation: myAnimation 5s ease-out infinite;
-    -moz-animation: myAnimation 5s ease-out infinite;
-    -webkit-animation: myAnimation 5s ease-out infinite;
-    -o-animation: myAnimation 5s ease-out infinite;
   }
-  @-webkit-keyframes myAnimation {
-    from {left: 0px;}
-    to {left: 200px;}
+
 }
 .recent-book-sec hr {
     margin: 0;

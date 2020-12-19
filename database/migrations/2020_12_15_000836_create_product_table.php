@@ -21,8 +21,9 @@ class CreateProductTable extends Migration
             $table->integer('unit_price');
             $table->integer('promotion_price');
             $table->text('description')->nullable();
-            $table->text('image');
-            $table->string('publisher');
+            $table->text('image')->nullable();
+            $table->longtext('imagedetail')->nullable();
+            $table->string('publisher')->nullable();
             $table->timestamps();
         });
     }

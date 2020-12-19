@@ -3,7 +3,7 @@
   <!-- Logo -->
   <a href="index2.html" class="logo"  ><b>Admin</b></a>
   <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top" role="navigation" ">
+  <nav class="navbar navbar-static-top" role="navigation" >
     <!-- Sidebar toggle button-->
     <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button" >
       <span class="sr-only">Toggle navigation</span>
@@ -17,7 +17,7 @@
             <span class="label label-success">4</span>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">You have 4 messages</li>
+            <li class="header">Bạn có 4 tin nhắn</li>
             <li>
               <!-- inner menu: contains the actual data -->
               <ul class="menu">
@@ -255,9 +255,8 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header" style="font-size: 20px;"><a href="{{url('index')}}">
-          <i class="fa fa-home"></i> HOME </li></a>
-      <!-- CRUD sách -->
+      <li class="header "  >
+           <span style="font-size:20px ;padding:20px;color:rgb(192, 184, 184)"> HỆ THỐNG </span></li>
       <li class=" treeview">
         <a href="{{route('book.index')}}">
           <i class="fa fa-book fa-lg text-success"></i> <span> Sách</span> 
@@ -267,21 +266,18 @@
       <!-- CRUD thể loại sách -->
       <li class="treeview">
         <a href="{{route('book_type.index')}}">
-          <i class="fa fa-edit fa-lg text-success"></i>
-          <span>Loại sách</span> <i class="fa fa-circle pull-right"></i>
+          <i class="fa fa-edit  fa-lg text-success"></i>
+          <span>Loại sách</span>
+          <small class="label pull-right bg-green">500</small>
 
         </a>
 
       </li>
       <!-- CRUD  nhà cung cấp -->
       <li class=" treeview">
-        <a href="">
-          <i class="fa fa-briefcase fa-lg text-success"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right "></i>
+        <a href="{{route('supplier.index')}}">
+          <i class="fa fa-briefcase fa-lg text-success"></i> <span>Nhà cung cấp</span> 
         </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="{{route('supplier.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-          <li><a href="{{route('supplier.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
-        </ul>
       </li>
       <!-- Đơn hàng -->
       <li class="treeview">
@@ -296,27 +292,23 @@
       <li class="treeview">
         <a href="{{route('chart.index')}}">
           <i class="fa fa-pie-chart fa-lg text-success"></i>
-          <span>Thống kê</span> <i class="fa fa-circle pull-right "></i>
+          <span>Thống kê</span> 
         </a>
       </li>
       <!-- Quản lý tài khoản -->
       <li class="treeview">
-        <a href="">
-          <i class="fa fa-user"></i>
+        <a href="{{route('user.index')}}">
+          <i class="fa fa-user  fa-lg text-success"></i>
           <span>Tài Khoản</span>
-          <i class="fa fa-angle-left pull-right"></i>
+         
         </a>
-        <ul class="treeview-menu">
-          <li><a href="{{route('user.index')}}"><i class="fa fa-table"></i> Danh sách </a></li>
 
-          <li><a href="pages/charts/flot.html"><i class="fa  fa-exclamation"></i> Vai Trò </a></li>
-        </ul>
       </li>
 
       <!-- Quản lý kho hàng -->
       <li class="treeview">
         <a href="{{route('archive.index')}}">
-          <i class="fa fa-archive"></i>
+          <i class="fa fa-archive  fa-lg text-success"></i>
           <span>Kho hàng</span>
           <small class="label pull-right bg-yellow">12</small>
         </a>

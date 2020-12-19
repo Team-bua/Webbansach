@@ -17,8 +17,8 @@
     <section class="content">
         <!-- Info boxes -->
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
+            <div class="col-md-3 col-sm-6 col-xs-12     ">
+                <div class="info-box ">
                     <span class="info-box-icon bg-blue"><i class="fa  fa-arrow-circle-down"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Sản Phẩm Nhập Vào</span>
@@ -63,8 +63,8 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- TABLE: LATEST ORDERS -->
-                <div class="box box-info">
-                    <div class="box-header with-border">
+                <div class="box box-solid box-success">
+                    <div class="box-header ">
                         <h3 class="box-title">Bán chạy</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -152,7 +152,7 @@
             </div><!-- /.col -->
             <div class="col-md-6">
                 <!-- TABLE: LATEST ORDERS -->
-                <div class="box box-info">
+                <div class="box box-solid box-success">
                     <div class="box-header with-border">
                         <h3 class="box-title">Bán chạy</h3>
                         <div class="box-tools pull-right">
@@ -244,7 +244,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- TABLE: LATEST ORDERS -->
-                <div class="box box-info">
+                <div class="box box-solid box-success">
                     <div class="box-header with-border">
                         <h3 class="box-title">Bán chạy</h3>
                         <div class="box-tools pull-right">
@@ -333,7 +333,7 @@
             </div><!-- /.col -->
             <div class="col-md-6">
                 <!-- TABLE: LATEST ORDERS -->
-                <div class="box box-info">
+                <div class="box box-solid box-success">
                     <div class="box-header with-border">
                         <h3 class="box-title">Bán chạy</h3>
                         <div class="box-tools pull-right">
