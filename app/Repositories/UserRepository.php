@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,25 +22,10 @@ class UserRepository
     {
         return User::find($id);
     }
-
+    
     public function create(Request $request)
     {
-        //kiểm tra file tồn tại
-       $image="";
-       if($request->hasfile('img'))
-       {
-            $file = $request->file('img');
-            $image = time().'_'.$file->getClientOriginalName();
-            $destinationPath=public_path('images/users'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
-            $file->move($destinationPath, $image); //lưu hình ảnh vào thư mục public/image        
-       }
-       $supplier = new User();
-       $supplier->name=$request->input('name');
-       $supplier->email=$request->input('email');
-       $supplier->address=$request->input('address');
-       $supplier->phone=$request->input('phone');
-       $supplier->image=$image;
-       $supplier->save();
+
        
     }
 

@@ -38,8 +38,10 @@ Route::get('introduce',[PageController::class,'getintroduce'])->name('introduce'
 Route::get('news',[PageController::class,'getnews'])->name('news');
 //----->đăng nhập
 Route::get('login',[PageController::class,'getlogin'])->name('login');
+Route::post('login',[PageController::class,'postlogin'])->name('login');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getsignup'])->name('signup');
+Route::post('signup',[PageController::class,'postsignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getcart'])->name('cart');
 //----->chi tiết sản phẩm

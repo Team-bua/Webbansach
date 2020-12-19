@@ -10,25 +10,23 @@
 <section class="static about-sec">
     <div class="container">
         <h1>Tài Khoản / Đăng nhập </h1>
-
         <div class="form">
-            <form>
+            <form action="{{url('login')}}" method="post">
+                @csrf
+                @if(Session::has('flag'))
+                <div class="alert alert-{{Session::get('flag')}}">{{Session::get('messege')}} </div>
+                @endif
                 <div class="row  justify-content-md-center">
-                    <div class="col-6">   
-                        <input type="email" class="form-control" placeholder="Mời nhập Email " required="">
-                       <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <span class="required-star">*</span>
+                    <div class="col-6">
+                            <input type="email" name="username" placeholder="Username . . . . ." required />
+                            <span class="required-star">*</span>
+                        </div>
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-6">
-                        <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" required="" />
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            <input type="password" name="password" placeholder="Password . . . . ."required/>
+                            <span class="required-star">*</span>
                         </div>
-                        <span class="required-star">*</span>
-                    </div>
-                    
                 </div>
 
                 <div class="row justify-content-md-center">

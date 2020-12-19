@@ -101,14 +101,6 @@ class CreateForeignKeys extends Migration
                 ->onUpdate(self::PROPERTIES_CASCADE);
         });
 
-        Schema::table('roles', function (Blueprint $table) {
-            $table->foreign('id_user')
-                ->references('id')
-                ->on('users')
-                ->onDelete(self::PROPERTIES_CASCADE)
-                ->onUpdate(self::PROPERTIES_CASCADE);
-        });
-
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('id_role')
                 ->references('id')
@@ -157,9 +149,6 @@ class CreateForeignKeys extends Migration
         Schema::table('rating', function (Blueprint $table) {
             $table->dropForeign('rating_id_user_in_foreign');
             $table->dropForeign('rating_id_product_in_foreign');
-        });
-        Schema::table('roles', function (Blueprint $table) {
-            $table->dropForeign('roles_id_user_in_foreign');
         });
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_id_role_in_foreign');
