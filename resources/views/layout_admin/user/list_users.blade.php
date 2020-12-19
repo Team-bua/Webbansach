@@ -25,15 +25,12 @@
                             <form action="">
                                 <div class="col-md-4 pull-right">
                                     <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control  pull-right"
-                                        placeholder="Search">
-                                    <div class="input-group-btn">
-                                        <button class="btn  btn-success"
-                                            style="float:left;margin-bottom:5px;margin-left:2px"><i
-                                                class="fa fa-search"> Tìm kiếm </i></button>
-                        
+                                        <input type="text" name="table_search" class="form-control  pull-right" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn  btn-success" style="float:left;margin-bottom:5px;margin-left:2px"><i class="fa fa-search"> Tìm kiếm </i></button>
+
+                                        </div>
                                     </div>
-                                      </div>
                                 </div>
                             </form>
                         </div>
@@ -49,6 +46,7 @@
                                     <th class="text-center">Vai trò</th>
 
                                 </tr>
+                                @foreach($user as $users)
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -69,32 +67,8 @@
                                     <td class="text-center">tuanvu</td>
                                     <td class="text-center">text@gmail.com</td>
                                     <td class="text-center">Quản lý</td>
-
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <div class="input-group-btn">
-                                                <label>
-                                                    <div class="icheckbox_minimal-blue checked" aria-checked="true" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                                    </div>
-                                                </label>
-                                                <button style="background: none ;border:none;color:black;" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Vũ Huyền Tuân </button>
-                                                <ul class="dropdown-menu">
-                                                    <button style="background: none ;border:none;"><a href="#">Xem</a></button>
-                                                    <button style="background: none ;border:none;"><a href="#">Sửa</a></button>
-                                                    <button style="background: none ;border:none;"><a href="#">Xóa</a></button>
-                                                </ul>
-
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">tuanvu</td>
-                                    <td class="text-center">text@gmail.com</td>
-                                    <td class="text-center">Quản lý</td>
-
-
+                                @endforeach
                             </tbody>
                         </table>
                     </div><!-- /.box-body -->

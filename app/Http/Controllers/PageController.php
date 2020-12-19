@@ -58,7 +58,11 @@ public function __construct(PageRepository $repository)
         }else{
             return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
         }
-       
+    }
+
+    public function postlogout(){
+        Auth::logout();
+        return redirect('index');
     }
 
      public function getcart(){
