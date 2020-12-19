@@ -1,10 +1,11 @@
-<header class="main-header">
+
+<header class="main-header  "  >
   <!-- Logo -->
-  <a href="index2.html" class="logo"><b>Admin</b></a>
+  <a href="index2.html" class="logo"  ><b>Admin</b></a>
   <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top" role="navigation">
+  <nav class="navbar navbar-static-top" role="navigation" ">
     <!-- Sidebar toggle button-->
-    <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+    <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button" >
       <span class="sr-only">Toggle navigation</span>
     </a>
     <div class="navbar-custom-menu">
@@ -258,18 +259,15 @@
           <i class="fa fa-home"></i> HOME </li></a>
       <!-- CRUD sách -->
       <li class=" treeview">
-        <a href="">
-          <i class="fa fa-book"></i> <span> Sách</span> <i class="fa fa-angle-left pull-right"></i>
+        <a href="{{route('book.index')}}">
+          <i class="fa fa-book fa-lg text-success"></i> <span> Sách</span> 
         </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="{{route('book.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-          <li><a href="{{route('book.create')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
-        </ul>
+
       </li>
       <!-- CRUD thể loại sách -->
       <li class="treeview">
         <a href="{{route('book_type.index')}}">
-          <i class="fa fa-edit"></i>
+          <i class="fa fa-edit fa-lg text-success"></i>
           <span>Loại sách</span> <i class="fa fa-circle pull-right"></i>
 
         </a>
@@ -278,7 +276,7 @@
       <!-- CRUD  nhà cung cấp -->
       <li class=" treeview">
         <a href="">
-          <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right "></i>
+          <i class="fa fa-briefcase fa-lg text-success"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right "></i>
         </a>
         <ul class="treeview-menu">
           <li class="active"><a href="{{route('supplier.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
@@ -288,7 +286,7 @@
       <!-- Đơn hàng -->
       <li class="treeview">
         <a href="{{route('bill.index')}}">
-          <i class="fa fa-inbox"></i>
+          <i class="fa fa-inbox fa-lg text-success"></i>
           <span>Đơn hàng</span>
           <small class="label pull-right bg-yellow">500</small>
         </a>
@@ -297,7 +295,7 @@
       <!-- Thống kê -->
       <li class="treeview">
         <a href="{{route('chart.index')}}">
-          <i class="fa fa-pie-chart"></i>
+          <i class="fa fa-pie-chart fa-lg text-success"></i>
           <span>Thống kê</span> <i class="fa fa-circle pull-right "></i>
         </a>
       </li>

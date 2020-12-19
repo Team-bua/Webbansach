@@ -71,7 +71,7 @@
             <img id="avatar" class="thumbnail" width="150px" src="{{asset('images/product/'.$product->image)}}">
             <input name="img" type="file" id="exampleInputFile">
           </div>
-          <div class="form-group">
+          <div class="form-group"> 
             <h4 for="exampleInputFile">Ảnh chi tiết</h4>
             @foreach($product->imagedetail as $pro)
             <img id="avatar" width="100px" height="100px" src="{{asset('images/product_detail/'.$pro)}}">
