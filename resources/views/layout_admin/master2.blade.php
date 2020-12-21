@@ -19,6 +19,7 @@
     <!-- Daterange picker -->
     <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
+
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
