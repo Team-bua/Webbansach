@@ -83,6 +83,7 @@
                 </div>
                @endforeach
             </div>
+            
             <div class="btn-sec">
                 <a href="{{route('all')}}" class="btn gray-btn" >Xem Thêm</a>
             </div>

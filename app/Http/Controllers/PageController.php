@@ -34,7 +34,7 @@ public function __construct(ProductRepository $repository)
     }
 
    public function getdetail(){
-        
+
         return view('layout_index.page.product_detail');
     }
 
