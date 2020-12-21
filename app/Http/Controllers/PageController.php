@@ -2,10 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Repositories\PageRepository;
+use App\Http\Requests\PageRequest;
 
 class PageController extends Controller
 {
+    /**
+  * The ProductRepository instance.
+  *
+  * @var \App\Repositories\PageRepository
+  */
+ protected $repository;
+
+
+/**
+ * Create a new PostController instance.
+ *
+ * @param  \App\Repositories\PageRepository $repository
+ */
+public function __construct(PageRepository $repository)
+{
+    $this->repository = $repository;
+}
 
    public function getIndex(){
         return view('layout_index.index');
@@ -31,6 +51,19 @@ class PageController extends Controller
         return view('layout_index.page.login');
     }
 
+<<<<<<< HEAD
+=======
+    public function postlogin(Request $request){
+        $credentaials = array('username'=>$request->username,'password'=>$request->password);
+        if(Auth::attempt($credentaials)){
+            return redirect()->back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
+        }else{
+            return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
+        }
+       
+    }
+
+>>>>>>> 78c976ee5f2b1c401af789ed24b6e6c03ad7a8a5
      public function getcart(){
         return view('layout_index.page.cart');
     }
@@ -38,8 +71,17 @@ class PageController extends Controller
     public function getsignup(){
         return view('layout_index.page.register');
     }
+<<<<<<< HEAD
     
 
+=======
+
+    public function postsignup(PageRequest $request){
+        $this->repository->createuser($request);
+        return redirect()->back()->with('thongbao','Đăng ký thành công');
+    }
+    
+>>>>>>> 78c976ee5f2b1c401af789ed24b6e6c03ad7a8a5
     public function getread(){
         return view('layout_index.page.Read_book');
     }

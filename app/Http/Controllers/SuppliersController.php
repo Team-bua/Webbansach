@@ -31,9 +31,10 @@ class SuppliersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $supplier = $this->repository->getAll();
+        $supplier = $this->repository->search($request);
         return view('layout_admin.supplier.supplier_list', compact('supplier'));
     }
 

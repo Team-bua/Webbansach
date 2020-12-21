@@ -22,13 +22,6 @@ class SupplierRepository
         return Supplier::find($id);
     }
 
-    /**
-     * create a member.
-     *
-     * @param  \App\Http\Requests\ProductRequest $request
-     * @param  \App\Models\Product $product
-     * @return void
-     */
     public function create(Request $request)
     {
         //kiểm tra file tồn tại
@@ -50,13 +43,6 @@ class SupplierRepository
        
     }
 
-    /**
-     * update a member.
-     *
-     * @param  \App\Http\Requests\ProductRequest $request
-     * @param  \App\Models\Product $product
-     * @return void
-     */
     public function update($request, $id) {
         $image="";
         if($request->hasfile('img'))
@@ -79,26 +65,20 @@ class SupplierRepository
         
     }
 
-     /**
-     * delete a member.
-     *
-     * @param  \App\Http\Requests\ProductRequest $request
-     * @param  \App\Models\Product $product
-     * @return void
-     */
     public function destroy($id) {
         $supplier = Supplier::find($id);
         $supplier->delete();
       
     }
 
-     /**
-     * search  member.
-     *
-     * @param  \App\Http\Requests\ProductRequest $request
-     * @param  \App\Models\Product $product
-     * @return void
-     */
+    public function search($request) {
 
+        $search = $request->table_search;
+        return Supplier::where(function ($query) use ($search) {
+                $query->where('name', 'like', "%$search%")
+                        ->orWhere('email', 'like', "%$search%")
+                        ->orWhere('phone', 'like', "%$search%");
+            })->paginate(10);
+    }
 
 }

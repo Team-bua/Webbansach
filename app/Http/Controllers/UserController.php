@@ -3,10 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Repositories\UserRepository;
+use App\Models\User;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
-{
+{ /**
+    * The MemberRepository instance.
+    *
+    * @var \App\Repositories\ProductTypeRepository
+    */
+   protected $repository;
+
+
+  /**
+   * Create a new PostController instance.
+   *
+   * @param  \App\Repositories\UserRepository $repository
+   */
+  public function __construct(UserRepository $repository)
+  {
+      $this->repository = $repository;
+  }
 
     /**
      * Display a listing of the resource.
@@ -36,9 +54,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        
     }
 
     /**

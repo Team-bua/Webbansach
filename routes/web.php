@@ -22,7 +22,11 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
+=======
+    return redirect()->route('index');
+>>>>>>> 78c976ee5f2b1c401af789ed24b6e6c03ad7a8a5
 
 });
 
@@ -38,8 +42,10 @@ Route::get('introduce',[PageController::class,'getintroduce'])->name('introduce'
 Route::get('news',[PageController::class,'getnews'])->name('news');
 //----->đăng nhập
 Route::get('login',[PageController::class,'getlogin'])->name('login');
+Route::post('login',[PageController::class,'postlogin'])->name('login');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getsignup'])->name('signup');
+Route::post('signup',[PageController::class,'postsignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getcart'])->name('cart');
 //----->chi tiết sản phẩm

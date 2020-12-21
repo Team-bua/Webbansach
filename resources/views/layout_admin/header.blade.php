@@ -1,10 +1,11 @@
-<header class="main-header">
+
+<header class="main-header  "  >
   <!-- Logo -->
-  <a href="index2.html" class="logo"><b>Admin</b></a>
+  <a href="index2.html" class="logo"  ><b>Admin</b></a>
   <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top" role="navigation">
+  <nav class="navbar navbar-static-top" role="navigation" >
     <!-- Sidebar toggle button-->
-    <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+    <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button" >
       <span class="sr-only">Toggle navigation</span>
     </a>
     <div class="navbar-custom-menu">
@@ -13,10 +14,10 @@
         <li class="dropdown messages-menu">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope-o"></i>
-            <span class="label label-success">4</span>
+            <span class="label label-primary">4</span>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">You have 4 messages</li>
+            <li class="header">Bạn có 4 tin nhắn</li>
             <li>
               <!-- inner menu: contains the actual data -->
               <ul class="menu">
@@ -83,7 +84,7 @@
                 </li>
               </ul>
             </li>
-            <li class="footer"><a href="">See All Messages</a></li>
+            <li class="footer"><a href="">Xem thêm</a></li>
           </ul>
         </li>
         <!-- Notifications: style can be found in dropdown.less -->
@@ -93,7 +94,7 @@
             <span class="label label-warning">10</span>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">You have 10 notifications</li>
+            <li class="header">Bạn có 10 thông báo</li>
             <li>
               <!-- inner menu: contains the actual data -->
               <ul class="menu">
@@ -125,83 +126,11 @@
                 </li>
               </ul>
             </li>
-            <li class="footer"><a href="">View all</a></li>
+            <li class="footer"><a href="">Xem thêm</a></li>
           </ul>
         </li>
-        <!-- Tasks: style can be found in dropdown.less -->
-        <li class="dropdown tasks-menu">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-flag-o"></i>
-            <span class="label label-danger">9</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="header">You have 9 tasks</li>
-            <li>
-              <!-- inner menu: contains the actual data -->
-              <ul class="menu">
-                <li>
-                  <!-- Task item -->
-                  <a href="">
-                    <h3>
-                      Design some buttons
-                      <small class="pull-right">20%</small>
-                    </h3>
-                    <div class="progress xs">
-                      <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                        <span class="sr-only">20% Complete</span>
-                      </div>
-                    </div>
-                  </a>
-                </li><!-- end task item -->
-                <li>
-                  <!-- Task item -->
-                  <a href="">
-                    <h3>
-                      Create a nice theme
-                      <small class="pull-right">40%</small>
-                    </h3>
-                    <div class="progress xs">
-                      <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                        <span class="sr-only">40% Complete</span>
-                      </div>
-                    </div>
-                  </a>
-                </li><!-- end task item -->
-                <li>
-                  <!-- Task item -->
-                  <a href="">
-                    <h3>
-                      Some task I need to do
-                      <small class="pull-right">60%</small>
-                    </h3>
-                    <div class="progress xs">
-                      <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                        <span class="sr-only">60% Complete</span>
-                      </div>
-                    </div>
-                  </a>
-                </li><!-- end task item -->
-                <li>
-                  <!-- Task item -->
-                  <a href="">
-                    <h3>
-                      Make beautiful transitions
-                      <small class="pull-right">80%</small>
-                    </h3>
-                    <div class="progress xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                        <span class="sr-only">80% Complete</span>
-                      </div>
-                    </div>
-                  </a>
-                </li><!-- end task item -->
-              </ul>
-            </li>
-            <li class="footer">
-              <a href="">View all tasks</a>
-            </li>
-          </ul>
-        </li>
+
+
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -254,41 +183,34 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header" style="font-size: 20px;"><a href="{{url('index')}}">
-          <i class="fa fa-home"></i> HOME </li></a>
-      <!-- CRUD sách -->
+      <li class="header "  >
+           <span style="font-size:20px ;padding:20px;color:rgb(192, 184, 184)"> HỆ THỐNG </span></li>
       <li class=" treeview">
-        <a href="">
-          <i class="fa fa-book"></i> <span> Sách</span> <i class="fa fa-angle-left pull-right"></i>
+        <a href="{{route('book.index')}}">
+          <i class="fa fa-book fa-lg text-success"></i> <span> Sách</span> 
         </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="{{route('book.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-          <li><a href="{{route('book.create')}}"><i class="fa fa-plus"></i> Thêm sách</a></li>
-        </ul>
+
       </li>
       <!-- CRUD thể loại sách -->
       <li class="treeview">
         <a href="{{route('book_type.index')}}">
-          <i class="fa fa-edit"></i>
-          <span>Loại sách</span> <i class="fa fa-circle pull-right"></i>
+          <i class="fa fa-edit  fa-lg text-success"></i>
+          <span>Loại sách</span>
+          <small class="label pull-right bg-green">500</small>
 
         </a>
 
       </li>
       <!-- CRUD  nhà cung cấp -->
       <li class=" treeview">
-        <a href="">
-          <i class="fa fa-briefcase"></i> <span>Nhà cung cấp</span> <i class="fa fa-angle-left pull-right "></i>
+        <a href="{{route('supplier.index')}}">
+          <i class="fa fa-briefcase fa-lg text-success"></i> <span>Nhà cung cấp</span> 
         </a>
-        <ul class="treeview-menu">
-          <li class="active"><a href="{{route('supplier.index')}}"><i class="fa fa-table"></i> Danh sách</a></li>
-          <li><a href="{{route('supplier.create')}}"><i class="fa fa-plus"></i> Thêm </a></li>
-        </ul>
       </li>
       <!-- Đơn hàng -->
       <li class="treeview">
         <a href="{{route('bill.index')}}">
-          <i class="fa fa-inbox"></i>
+          <i class="fa fa-inbox fa-lg text-success"></i>
           <span>Đơn hàng</span>
           <small class="label pull-right bg-yellow">500</small>
         </a>
@@ -297,34 +219,41 @@
       <!-- Thống kê -->
       <li class="treeview">
         <a href="{{route('chart.index')}}">
-          <i class="fa fa-pie-chart"></i>
-          <span>Thống kê</span> <i class="fa fa-circle pull-right "></i>
+          <i class="fa fa-pie-chart fa-lg text-success"></i>
+          <span>Thống kê</span> 
         </a>
       </li>
       <!-- Quản lý tài khoản -->
-      <li class="treeview">
-        <a href="">
-          <i class="fa fa-user"></i>
-          <span>Tài Khoản</span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="{{route('user.index')}}"><i class="fa fa-table"></i> Danh sách </a></li>
 
-          <li><a href="pages/charts/flot.html"><i class="fa  fa-exclamation"></i> Vai Trò </a></li>
-        </ul>
-      </li>
 
       <!-- Quản lý kho hàng -->
       <li class="treeview">
         <a href="{{route('archive.index')}}">
-          <i class="fa fa-archive"></i>
+          <i class="fa fa-archive  fa-lg text-success"></i>
           <span>Kho hàng</span>
           <small class="label pull-right bg-yellow">12</small>
         </a>
 
       </li>
+      <li class="header "  >
+        <span style="font-size:20px ;padding:20px;color:rgb(192, 184, 184)"> PHÂN QUYỀN </span></li>
 
+        <li class="treeview">
+          <a href="{{route('user.index')}}">
+            <i class="fa fa-desktop  fa-lg text-success"></i>
+            <span>Tài Khoản</span>
+           
+          </a>
+  
+        </li>
+        <li class="treeview">
+          <a href="">
+            <i class="fa fa-user  fa-lg text-success"></i>
+            <span>Vai trò</span>
+           
+          </a>
+  
+        </li>
       <!--
             <li class="treeview">
               <a href="">
