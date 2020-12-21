@@ -44,8 +44,8 @@
                 </div>
                 <div class="col-md-6 slider-content">
                     
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
-                    <p>t has survived not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and</p>
+                    <p>. </p>
+
                     <ul>
                         <li>
                             <span class="name">Giá niêm yết</span><span class="clm">:</span>

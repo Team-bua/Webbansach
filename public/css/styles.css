@@ -395,7 +395,7 @@ ul.vert-one{
   max-width:300px;
   padding:0;
   width:100%;
-  font: 13px Helvetica, Verdana, Arial, sans-serif;
+  font: 13px "Times New Roman", Times, serif;
   }
 ul.vert-one >li{
   position:relative;
@@ -409,10 +409,10 @@ ul.vert-one >li p a{
   background:#fcba68;
   color:#FFFFFF;
   display:block;
-  padding:15px;
+  padding:8px;
   text-decoration:none;
   border-radius: 10px;
-   font: 13px Helvetica, Verdana, Arial, sans-serif;
+  font: 13px "Times New Roman", Times, serif;
 }
 ul.vert-one >li a[href="#foo"]{
   height:0;
@@ -1219,8 +1219,8 @@ ul.vert-one :target{
           color: #ff9700; 
 }
 
-/*-----------------------------------------------------------------------------------*/
-.about-sec {
+/*-------------------------------------about-sec----------------------------------------------*/
+/*.about-sec {
   margin-bottom: 80px;
   float: left;
   width: 100%; 
@@ -1258,7 +1258,7 @@ ul.vert-one :target{
         border: 2px solid #252525; }
 .about-sec .about-content .btn-sec .black:hover {
           background: transparent;
-          color: #252525; }
+          color: #252525; }*/
           
 /*-----------------------------------------------------------------------------------*/
 /*---------------------------------tooltip-------------------------------------------*/
@@ -1306,7 +1306,8 @@ ul.vert-one :target{
 
 .recent-book-sec {
   text-align: center;
-  margin-bottom: 130px; }
+  margin-bottom: 130px; 
+}
 .recent-book-sec h2 {
     display: inline-block;
     padding: 0 15px;
@@ -1328,10 +1329,6 @@ ul.vert-one :target{
 .recent-book-sec .item {
     text-align: left;
     margin-bottom: 45px; }
-.recent-book-sec .item img {
-      margin-bottom: 15px;
-      max-width: 100%;
-      cursor: pointer; }
 .recent-book-sec .item img:hover + h3 {
       text-decoration: underline; }
 .recent-book-sec .item h3 {
@@ -1362,14 +1359,6 @@ ul.vert-one :target{
       max-width: 20%; }
 .recent-book-sec .btn-sec {
     margin-top: 20px; }
-.recent-book-sec .item .sale {
-      background: #f9372c;
-      padding: 10px 24px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      text-transform: uppercase;
-      color: #fff; }
 /*--------------------------------------------------------------------------------*/
 .features-sec {
   margin-bottom: 100px; }
@@ -2053,14 +2042,14 @@ footer {
       align-items: center; }
     footer .copy-right .share {
       text-align: right; }
-      footer .copy-right .share span {
+    footer .copy-right .share span {
         padding: 0 5px;
         cursor: pointer; }
-        footer .copy-right .share span:last-child {
+      footer .copy-right .share span:last-child {
           padding-right: 0; }
-        footer .copy-right .share span:hover {
+      footer .copy-right .share span:hover {
           color: #ff9700; 
-        }
+}
 
 @media only screen and (max-width: 480px) {
   footer .timing {
