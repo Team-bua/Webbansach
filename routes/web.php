@@ -22,11 +22,7 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('welcome');
-=======
-    return redirect()->route('index');
->>>>>>> 78c976ee5f2b1c401af789ed24b6e6c03ad7a8a5
 
 });
 

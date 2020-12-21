@@ -20,8 +20,8 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="fa fa-suitcase"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sản Phẩm</span>
-                        <span class="info-box-number">90<small>%</small></span>
+                        <span class="info-box-text">Số sản phẩm</span>
+                        <span class="info-box-number">0</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -29,8 +29,11 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-red"><i class="fa fa-archive"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Kho</span>
-                        <span class="info-box-number">410</span>
+                        <span class="info-box-text">Số sản phẩm</span>
+                        <span class="info-box-number">0</span>
+                        
+                        
+
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -42,7 +45,7 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sales</span>
+                        <span class="info-box-text">Tiền bán hàng</span>
                         <span class="info-box-number">760</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
@@ -71,10 +74,10 @@
                         <h3 class="box-title"><i class="fa fa-signal">&nbsp; Hoạt động</i></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            
                         </div>
                     </div><!-- /.box-header -->
-
+                    <div class="box-body  ">
                     <div class="info col-xs-7">Tiền bán hàng</div>
                     <div class="info col-xs-5 data text-right">0</div>
                     <div class="info col-xs-7">Số đơn hàng</div>
@@ -89,7 +92,7 @@
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
-
+            </div>
             <div class="col-md-4">
                 <!-- PRODUCT LIST -->
                 <div class="box box-primary">
@@ -97,9 +100,10 @@
                         <h3 class="box-title"><i class="fa fa-bars">&nbsp;Thông tin kho</i> </h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                           
                         </div>
                     </div><!-- /.box-header -->
+                    <div class="box-body  ">
                         <div class="info col-xs-7">Tồn kho</div>
                         <div class="info col-xs-5 data text-right">14</div>
                         <div class="info col-xs-7">Hết Hàng</div>
@@ -113,6 +117,7 @@
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
+            </div>
 
             <div class="col-md-4">
                 <!-- PRODUCT LIST -->
@@ -121,7 +126,7 @@
                         <h3 class="box-title"><i class="fa fa-barcode">&nbsp;Thông tin sản phẩm</i></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                           
                         </div>
                     </div><!-- /.box-header -->
                     <div class="box-body  ">
