@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
+use App\Repositories\ProductRepository;
 
 class PageController extends Controller
 {
@@ -22,16 +23,18 @@ class PageController extends Controller
  *
  * @param  \App\Repositories\PageRepository $repository
  */
-public function __construct(PageRepository $repository)
+public function __construct(ProductRepository $repository)
 {
     $this->repository = $repository;
 }
 
    public function getIndex(){
-        return view('layout_index.index');
+        $product = $this->repository->getAll();
+        return view('layout_index.index',compact('product'));
     }
 
    public function getdetail(){
+        
         return view('layout_index.page.product_detail');
     }
 

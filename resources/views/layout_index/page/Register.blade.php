@@ -15,7 +15,7 @@
         <div class="container">
             <h1>Đăng Ký Tài Khoản </h1>         
             <div class="form">     
-                <form action="{{url('signup')}}" method="post" class="form">
+                <form action="{{url('signup')}}" method="post" class="form" id="myform">
                 @csrf  
                 @if(Session::has('thongbao'))
                     <div class="alert alert-success">{{Session::get('thongbao')}} </div>

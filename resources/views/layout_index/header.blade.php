@@ -3,11 +3,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h5>Chào bạn:</h5>
+            <h5></h5>
           </div>
           <div id="menu">
             <ul>
-              <li class="menu_item down">call : 0779 750 123
+              <li class="menu_item down"><i class="fa fa-phone"></i> 0779 750 123
                 <div class="sub_menu">
                   <div class="bubble"></div>
                   <div class="sub_menu_block" style="width:326px">
