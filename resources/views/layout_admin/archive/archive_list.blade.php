@@ -49,9 +49,9 @@
                                     </div>
                                     <div class="col-md-5 padd-0" style="padding-left: 5px;">
                                         <div class="input-daterange input-group" id="datepicker">
-                                            <input style="" type="date" class="input-sm form-control" placeholder="Từ ngày" name="start">
+                                            <input type="date" class="input-sm form-control" placeholder="Từ ngày" name="start">
                                             <span class="input-group-addon">to</span>
-                                            <input style="" type="date" class="input-sm form-control" placeholder="Đến ngày" name="end">
+                                            <input type="date" class="input-sm form-control" placeholder="Đến ngày" name="end">
                                         </div>
                                     </div>
                                     <div class="col-md-3 padd-0" style="padding-left: 100px;">
