@@ -27,35 +27,35 @@
                         <h4> Họ tên: </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input required name="name" type="text" class="form-control"disabled>
+                            <input name="name" type="text" value="{{$user->full_name}}" class="form-control"disabled>
                         </div>
 
                         <h4> Tên đăng nhập : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input name="promotion_price" type="text" class="form-control" disabled>
+                            <input name="promotion_price" type="text" value="{{$user->username}}" class="form-control" disabled>
 
                         </div>
 
                         <h4> Số điện thoại </h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input required name="unit_price" type="number" class="form-control" disabled>
+                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                            <input name="unit_price" type="number" value="{{$user->phone}}" class="form-control" disabled>
 
                         </div>
 
 
                         <h4> Địa chỉ : </h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input name="promotion_price" type="text" class="form-control"disabled>
+                            <span class="input-group-addon"><i class="fa fa-book"></i></span>
+                            <input name="promotion_price" type="text" value="{{$user->address}}" class="form-control"disabled>
 
                         </div>
 
                         <h4> Email: </h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input name="description" type="text" class="form-control"disabled>
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input name="description" type="text" value="{{$user->email}}" class="form-control"disabled>
                         </div>
                         <h4> Gửi thông báo đến thành viên : </h4>
                         <div class="form-group">

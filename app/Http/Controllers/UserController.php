@@ -11,7 +11,7 @@ class UserController extends Controller
 { /**
     * The MemberRepository instance.
     *
-    * @var \App\Repositories\ProductTypeRepository
+    * @var \App\Repositories\UserRepository
     */
    protected $repository;
 
@@ -66,7 +66,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('layout_admin.user.role_users');
+        $user = $this->repository->getuser($id);
+        return view('layout_admin.user.role_users',compact('user'));
     }
 
     /**
@@ -77,7 +78,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

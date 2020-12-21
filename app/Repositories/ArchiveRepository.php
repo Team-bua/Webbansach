@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use App\Models\Bill_in;
 use Illuminate\Http\Request;
 
-class UserRepository
+class ArchiveRepository
 {
     /**
      * Get member collection paginate.
@@ -15,12 +15,12 @@ class UserRepository
      */
     public function getAll()
     {   
-        return User::orderBy('created_at', 'desc')->paginate(10);
+        return Bill_in::orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function getuser($id)
     {
-        return User::find($id);
+        return Bill_in::find($id);
     }
     
     public function create(Request $request)
@@ -38,7 +38,7 @@ class UserRepository
             $destinationPath=public_path('images/users'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
             $file->move($destinationPath, $image); //lưu hình ảnh vào thư mục public/image
         }
-        $supplier = User::find($id);
+        $supplier = Bill_in::find($id);
         $supplier->name=$request->input('name');
         $supplier->email=$request->input('email');
         $supplier->address=$request->input('address');
@@ -52,7 +52,7 @@ class UserRepository
     }
 
     public function destroy($id) {
-        $supplier = User::find($id);
+        $supplier = Bill_in::find($id);
         $supplier->delete();
       
     }
@@ -60,7 +60,7 @@ class UserRepository
     public function search($request) {
 
         $search = $request->table_search;
-        return User::where(function ($query) use ($search) {
+        return Bill_in::where(function ($query) use ($search) {
                 $query->where('name', 'like', "%$search%")
                         ->orWhere('email', 'like', "%$search%")
                         ->orWhere('phone', 'like', "%$search%");
