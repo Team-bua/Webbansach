@@ -22,7 +22,11 @@ use App\Http\Controllers\ChartController;
 */
 // route cac trang index
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
+=======
+    return redirect()->route('index');
+>>>>>>> d896d1a06752670caabce3acd9168747c3aa2e57
 
 });
 
@@ -39,6 +43,8 @@ Route::get('news',[PageController::class,'getnews'])->name('news');
 //----->đăng nhập
 Route::get('login',[PageController::class,'getlogin'])->name('login');
 Route::post('login',[PageController::class,'postlogin'])->name('login');
+//----->đăng xuất
+Route::get('logout',[PageController::class,'postlogout'])->name('logout');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getsignup'])->name('signup');
 Route::post('signup',[PageController::class,'postsignup'])->name('signup');

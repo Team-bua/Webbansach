@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Product_type;
 use Illuminate\Http\Request;
@@ -61,7 +62,7 @@ class ProductRepository
        $product->name=$request->input('name');
        $product->id_type=$request->input('cate');
        $product->publisher=$request->input('publisher');
-       //$product->id_user=Auth::user()->username();
+       $product->id_user=Auth::user()->id;
        $product->unit_price=$request->input('unit_price');
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
@@ -114,7 +115,7 @@ class ProductRepository
         $product->name=$request->input('name');
         $product->id_type=$request->input('cate');
         $product->publisher=$request->input('publisher');
-        //$product->id_user=Auth::user()->username();
+        $product->id_user=Auth::user()->id;
         $product->unit_price=$request->input('unit_price');
         $product->promotion_price=$request->input('promotion_price');
         $product->description=$request->input('description');
