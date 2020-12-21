@@ -409,6 +409,20 @@ ul.vert-one :target {
 /*-------------------------------------------------------------------------*/
 
 
+/*--------------------------------review-----------------------------------*/
+
+.rating-card1 {
+    padding: 10px;
+    background-color: #F5F5F5;
+    width: 70%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-shadow: 2px 2px 18px -2px #337AB7;
+}
+
+
 /*--------------------------------rating------------------------------------*/
 
 .rating-card {
@@ -1226,7 +1240,7 @@ ul.vert-one :target {
 }
 
 #comment-wrapper {
-    width: 600px;
+    width: 500px;
     height: 450px;
     position: relative;
     float: left;
