@@ -20,21 +20,79 @@
                     <div class="border_on_img"></div>
                     <img src="images/slide/361437_image20200910t030157126z.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
                 </li>
+                
             </ul>
         </div>
     </div>
     <div class="container">
-  <ul class="vert-one">
-  <li><a class="current" ><center>Danh Mục Sách</center></a></li>
-  <li><a href="">CSS Layouts</a></li>
+    	<ul class="vert-one">
+		<li>
+			<p><a href="#t1">GROUP</a></p>
+				<ul id="t1">
+					<li><a href="#">Category</a></li>
+					<li><a href="#">Category</a></li>
+					<li><a href="#">Category</a></li>
+					<li><a href="#">Category</a></li>
+					<li><a href="#">Category</a></li>
 
-</ul>
-</div>
+				</ul>
+			<a href="#foo"></a>
+		</li>
+		<li>
+			<p><a href="#t2">GROUP</a></p>
+			<ul id="t2">
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+
+			</ul>
+			<a href="#foo"></a>
+		</li>
+		<li>
+			<p><a href="#t4">GROUP</a></p>
+			<ul id="t4">
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+			</ul>
+			<a href="#foo"></a>
+		</li>
+		<li>
+			<p><a href="#t5">GROUP</a></p>
+			<ul id="t5">
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+
+			</ul>
+			<a href="#foo"></a>
+		</li>
+		<li>
+			<p><a href="#t6">GROUP</a></p>
+			<ul id="t6">
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">Category</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Category</a></li>
+			</ul>
+			<a href="#foo"></a>
+		</li>
+	</ul>
+    </div>
 </section>
 
-<div class="container">
-    
-</div>
  <section class="features-sec">
         <div class="container">
             <ul>
@@ -233,10 +291,6 @@
     </section>
     <section class="recent-book-sec">
         <div class="container">
-            <div class="title">
-                <h2 style="font-family:Times New Roman;">Sách Hay</h2>
-                <hr>
-            </div>
             <div class="row">
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
