@@ -493,39 +493,10 @@ z-index: 999;}
 
 .product-wid-title {
   font-family: "Times New Roman", Times, serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 100;
   margin-bottom: 40px;
-  color: #fff;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-transform: uppercase;
-  animation: blur .80s ease-out infinite;
-  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #80A7D7;
 }
-@keyframes blur {
-  from {
-    text-shadow:0px 0px 10px #80A7D7,
-      0px 0px 10px #80A7D7, 
-      0px 0px 25px #80A7D7,
-      0px 0px 25px #80A7D7,
-      0px 0px 25px #80A7D7,
-      0px 0px 25px #80A7D7,
-      0px 0px 25px #80A7D7,
-      0px 0px 25px #80A7D7,
-      0px 0px 50px #80A7D7,
-      0px 0px 50px #80A7D7,
-      0px 0px 50px #7B96B8,
-      0px 0px 150px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px -10px 100px #7B96B8,
-      0px -10px 100px #7B96B8;
-  }
-}
-
 .single-wid-product {
     margin-bottom: 31px;
     overflow: hidden;

@@ -66,53 +66,82 @@
                                     </form>
                     <div class="btn-sec">
                         <button class="btn ">Thêm Vào Giỏ Hàng</button>
+                        <button class="btn ">Mua Ngay</button>
                         <button class="btn black">Đọc ONLINE</button>
                     </div>
-                    <br>
-                    <ul>
-                        <li>
-                            <span class="name">Tác Giả</span><span class="clm">:</span>
-                            <span class="price">#####</span>
-                        </li>
-                        <li>
-                            <span class="name">Tác giả</span><span class="clm">:</span>
-                            <span class="price">#####</span>
-                        </li>
-                        <li>
-                            <span class="name">Tác giả</span><span class="clm">:</span>
-                            <span class="price">#####</span>
-                        </li>
-                        <li>
-                            <span class="name">Tác giả</span><span class="clm">:</span>
-                             <span class="price">#####</span>
-                        </li>
-                        <li>
-                            <span class="name">Tác giả</span><span class="clm">:</span>
-                            <span class="price">#####</span>
-                        </li>
-                        <li>
-                            <span class="name">Tác giả</span><span class="clm">:</span>
-                            <span class="price">#####</span>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
         </div>
     </section>
-  <section class="slider">
+  <section class="comment">
     <div class="container">
-        <div id="slide-wrapper">
-            
-        </div>
+        <div id="comment-wrapper">
+            <div id="tabs" class="htabs">
+      <a href="#tab-specification">Đánh Giá</a>
+      <a href="#tab-review">Bình Luận</a> 
     </div>
-    <div class="container">
-  <ul class="vert-one">
-  <li><a class="current" ><center>Danh Mục Sách</center></a></li>
-  <li><a href="">CSS Layouts</a></li>
-
-</ul>
+    <div id="tab-specification" class="tab-content">
+      <div class="cpt_product_description ">
+        <div>
+            <div class="rating-card">
+        <div><h1>Rating Card</h1></div>
+        <div class="rating">
+            <h2>4.0</h2>
+            <i aria-hidden="true" class="fa fa-star"></i>
+            <i aria-hidden="true" class="fa fa-star"></i>
+            <i aria-hidden="true" class="fa fa-star"></i>
+            <i aria-hidden="true" class="fa fa-star"></i>
+            <i aria-hidden="true" class="fa fa-star-o"></i>
+            <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+        </div>
+        <div class="rating-process">
+            <div class="rating-right-part">
+                <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
+                <div class="progress"></div>
+            </div>
+            <div class="rating-right-part">
+                <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
+                <div class="progress-2"></div>
+            </div>
+            <div class="rating-right-part">
+                <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
+                <div class="progress-3"></div>
+            </div>
+            <div class="rating-right-part">
+                <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
+                <div class="progress-4"></div>
+            </div>
+            <div class="rating-right-part">
+                <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
+                <div class="progress-5"></div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <br>
+    Chỉ có thành viên mới có thể nhận xét. Vui <a href="{{route('login')}}">Đăng nhập</a> hoặc<a href="{{route('signup')}}"> Đăng Ký</a>
+        </div>
+        <div class="rating1"> 
+<input type="radio" name="rating" value="5" id="5">
+<label for="5">☆</label> 
+<input type="radio" name="rating" value="4" id="4">
+<label for="4">☆</label> 
+<input type="radio" name="rating" value="3" id="3">
+<label for="3">☆</label> 
+<input type="radio" name="rating" value="2" id="2">
+<label for="2">☆</label> 
+<input type="radio" name="rating" value="1" id="1">
+<label for="1">☆</label>
 </div>
-</section>>
+      </div>
+    </div>
+      <div id="tab-review" class="tab-content">
+        
+    </div>
+    </div>
+    </div>
+    </section>
 
     <a href="#" class="bck"></a> 
 @endsection
