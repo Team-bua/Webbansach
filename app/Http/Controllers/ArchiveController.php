@@ -50,7 +50,7 @@ class ArchiveController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('layout_admin.archive.archive_add');
     }
 
     /**
