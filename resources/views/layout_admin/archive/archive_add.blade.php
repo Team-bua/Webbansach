@@ -1,7 +1,6 @@
 @extends('layout_admin.master')
 @section('content')
 
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -23,7 +22,7 @@
       <div class="col-md-8">
         <div class="box box ">
           <div class="box-header">
-            <input type="text" id="search" name="search" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" autocomplete="off">
+            <input type="text" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
           </div>
           <div class="box-body ">
             <table class="table table-bordered">
@@ -77,17 +76,4 @@
     </div>
   </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
-<script type="text/javascript">
-    $('#search').on('keyup',function(){
-      $value = $(this).val();
-      $.ajax({
-        type : "get",
-        url  : "{{URL::to('archive.create')}}",
-        data : {'search':$value},
-            success:function(data){
-              $('tbody').html(data);
-            }
-        });
-    })
-</script>
 @endsection

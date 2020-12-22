@@ -44,7 +44,7 @@ class ArchiveController extends Controller
      */
     public function create(Request $request)
     {
-        $this->repository->search($request);
+       
         return view('layout_admin.archive.archive_add');
     }
 
