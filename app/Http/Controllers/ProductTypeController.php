@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductTypeRepository;
-use App\Models\Product_type;
+use App\Models\ProductType;
 use App\Http\Requests\ProductTypeRequest;
 
 
@@ -79,7 +79,7 @@ class ProductTypeController extends Controller
     public function edit($id)
     {
         $product_type = $this->repository->getAll();
-        $type = Product_type::find($id);
+        $type = ProductType::find($id);
         return view('layout_admin.product_type.edit_type', compact('type','product_type'));
     }
 
