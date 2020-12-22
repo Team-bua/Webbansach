@@ -66,7 +66,7 @@
                                     @foreach ($product as $pro)
                                         <tr>
                                             <td>{{ $pro->name }}</td>
-                                            <td>{{ $pro->product_type->name }}</td>
+                                            <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>

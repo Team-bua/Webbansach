@@ -103,4 +103,10 @@ class ArchiveController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        $this->repository->search($request);
+        return redirect()->back();
+    }
 }

@@ -92,7 +92,7 @@
                 $value = $(this).val();
                 $.ajax({
                     type: "get",
-                    url: "{{ route('archive.create') }}",
+                    url: "{{ url('search') }}",
                     data: {
                         'search': $value
                     },

@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\Hash;
-use App\Models\Bill_in;
+use App\Models\BillIn;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -16,12 +16,12 @@ class ArchiveRepository
      */
     public function getAll()
     {   
-        return Bill_in::orderBy('created_at', 'desc')->paginate(10);
+        return BillIn::orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function getuser($id)
     {
-        return Bill_in::find($id);
+        return BillIn::find($id);
     }
     
     public function create(Request $request)
@@ -39,7 +39,7 @@ class ArchiveRepository
             $destinationPath=public_path('images/users'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
             $file->move($destinationPath, $image); //lưu hình ảnh vào thư mục public/image
         }
-        $supplier = Bill_in::find($id);
+        $supplier = BillIn::find($id);
         $supplier->name=$request->input('name');
         $supplier->email=$request->input('email');
         $supplier->address=$request->input('address');
@@ -53,7 +53,7 @@ class ArchiveRepository
     }
 
     public function destroy($id) {
-        $supplier = Bill_in::find($id);
+        $supplier = BillIn::find($id);
         $supplier->delete();
       
     }
@@ -75,7 +75,7 @@ class ArchiveRepository
                     </tr>';
                 }
             }
-            
+
             return Response($output);
         }
     }

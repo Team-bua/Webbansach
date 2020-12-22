@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Product_type;
+use App\Models\ProductType;
 
 class ProductTypeRepository
 {
@@ -13,19 +13,19 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return Product_type::orderBy('created_at','desc')->paginate(10);
+        return ProductType::orderBy('created_at','desc')->paginate(10);
     }
 
     /**
      * create a member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
-     * @param  \App\Models\Product_type $product_type
+     * @param  \App\Models\ProductType $product_type
      * @return void
      */
     public function create($request)
     {
-       $product_type = new Product_type();
+       $product_type = new ProductType();
        $product_type->name=$request->input('name');
        $product_type->save();
        return redirect()->back();
@@ -35,11 +35,11 @@ class ProductTypeRepository
      * update a member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
-     * @param  \App\Models\Product_type $product_type
+     * @param  \App\Models\ProductType $product_type
      * @return void
      */
     public function update($request, $id) {
-        $product_type = Product_type::find($id);
+        $product_type = ProductType::find($id);
         $product_type->name = $request->input('name');
         $product_type->save();
     }
@@ -48,22 +48,14 @@ class ProductTypeRepository
      * delete a member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
-     * @param  \App\Models\Product_type $product_type
+     * @param  \App\Models\ProductType $product_type
      * @return void
      */
     public function destroy($id) {
-        $product_type = Product_type::find($id);
+        $product_type = ProductType::find($id);
         $product_type->delete();
       
     }
-
-     /**
-     * search  member.
-     *
-     * @param  \App\Http\Requests\ProductTypeRequest $request
-     * @param  \App\Models\Product_type $product_type
-     * @return void
-     */
 
 
 }
