@@ -165,13 +165,8 @@
                                 </div>
                             </td>
                             </td>
-                            
+
                         </tr>
-
-
-                 
-
-                        
                     </div>
                 </div>
             </div>
@@ -179,32 +174,8 @@
     </div><!-- /.box-body -->
     </div><!-- /.box -->
     </div>
-
     </div>
     </div>
-
-
-
-
-
-
-
     </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
-    <script>
-        function toggleTable() {
-            if (document.getElementById("tb").style.display == "table") {
-                document.getElementById("tb").style.display = "none";
-
-            } else {
-                document.getElementById("tb").style.display = "table";
-
-            }
-        }
-
-    </script>
-
-
-
-
 @endsection
