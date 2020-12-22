@@ -3,13 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-
-
+use App\Repositories\ArchiveRepository;
+use App\Http\Requests\ArchiveRequest;
+use App\Models\Product;
 
 class ArchiveController extends Controller
 {
+  /**
+     * The ProductRepository instance.
+     *
+     * @var \App\Repositories\ArchiveRepository
+     */
+    protected $repository;
 
+
+   /**
+    * Create a new PostController instance.
+    *
+    * @param  \App\Repositories\ArchiveRepository $repository
+    */
+   public function __construct(ArchiveRepository $repository)
+   {
+       $this->repository = $repository;
+   }
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +33,8 @@ class ArchiveController extends Controller
      */
     public function index()
     {
-       
-        return view('layout_admin.archive.archive_list');
+        $bill_in = $this->repository->getAll();
+        return view('layout_admin.archive.archive_list', compact('bill_in'));
     }
 
     /**
@@ -28,6 +44,7 @@ class ArchiveController extends Controller
      */
     public function create()
     {
+        
         return view('layout_admin.archive.archive_add');
     }
 

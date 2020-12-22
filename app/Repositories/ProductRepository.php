@@ -18,11 +18,7 @@ class ProductRepository
     {
         return Product::all();
     }
-
-    public function getTypeAll()
-    {
-        return Product_type::all();
-    }
+    
     public function getproduct($id)
     {
         return Product::find($id);

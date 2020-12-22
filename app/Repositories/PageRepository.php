@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Product;
-use App\Models\Product_type;
+use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -26,24 +26,22 @@ class PageRepository
         return  Product::orderBy('created_at', 'desc')->paginate(10);
     }
  
-    public function getproduct($id)
+    public function getProduct($id)
     {
         return Product::find($id);
     }
 
-    public function getproduct_type()
+    public function getProductType()
     {
-        return Product_type::all();
+        return ProductType::all();
     }
 
-
-
-    public function getsupplier($id)
+    public function getSupplier($id)
     {
         return User::find($id);
     }
     
-    public function createuser(Request $request)
+    public function createUser(Request $request)
     {
         $user = new User();
         $user->full_name = $request->input('fullname');

@@ -31,31 +31,31 @@ Route::get('/', function () {
 //----->trang chủ
 Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->tất cả sản phẩm
-Route::get('all',[PageController::class,'getall'])->name('all');
+Route::get('all',[PageController::class,'getAll'])->name('all');
 //----->gioithieu
-Route::get('introduce',[PageController::class,'getintroduce'])->name('introduce');
+Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce');
 //----->tintuc
-Route::get('news',[PageController::class,'getnews'])->name('news');
+Route::get('news',[PageController::class,'getNews'])->name('news');
 //----->đăng nhập
-Route::get('login',[PageController::class,'getlogin'])->name('login');
-Route::post('login',[PageController::class,'postlogin'])->name('login');
+Route::get('login',[PageController::class,'getLogin'])->name('login');
+Route::post('login',[PageController::class,'postLogin'])->name('login');
 //----->đăng ký
-Route::get('signup',[PageController::class,'getsignup'])->name('signup');
-Route::post('signup',[PageController::class,'postsignup'])->name('signup');
+Route::get('signup',[PageController::class,'getSignup'])->name('signup');
+Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
-Route::get('cart',[PageController::class,'getcart'])->name('cart');
+Route::get('cart',[PageController::class,'getCart'])->name('cart');
 //----->chi tiết sản phẩm
-Route::get('detail/{id}',[PageController::class,'getdetail'])->name('detail');
+Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 //----->đọc sách
-Route::get('Read',[PageController::class,'getread'])->name('Read');
+Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
-Route::get('checkout',[PageController::class,'getcheckout'])->name('checkout');
+Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
 /*--------------------------------------------------------------------------------*/
 
 
 
 //----->trang admin
-Route::get('admin',[PageController::class,'getadmin'])->name('admin');
+Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,

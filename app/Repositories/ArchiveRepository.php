@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Support\Facades\Hash;
 use App\Models\Bill_in;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ArchiveRepository
@@ -57,14 +58,26 @@ class ArchiveRepository
       
     }
 
-    public function search($request) {
-
-        $search = $request->table_search;
-        return Bill_in::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%")
-                        ->orWhere('email', 'like', "%$search%")
-                        ->orWhere('phone', 'like', "%$search%");
-            })->paginate(10);
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = '';
+            $products = Product::where('id', 'LIKE', '%' . $request->search . '%')
+                                ->orwhere('name', 'LIKE', '%' . $request->search . '%')
+                                ->get();
+            if ($products) {
+                foreach ($products as $key => $product) {
+                    $output .= '<tr>
+                    <td>' . $product->id . '</td>
+                    <td>' . $product->name . '</td>
+                    <td>' . $product->description . '</td>
+                    <td>' . $product->unit_price . '</td>
+                    </tr>';
+                }
+            }
+            
+            return Response($output);
+        }
     }
 
 }

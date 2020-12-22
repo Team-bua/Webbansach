@@ -24,6 +24,7 @@
 
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
+<<<<<<< HEAD
                             @foreach ($product_detail->imagedetail as $pro)
 
                                 <li class="list-inline-item active">
@@ -33,6 +34,14 @@
                                             src="{{ asset('images/product_detail/' . $pro) }}" class="img-fluid">
                                     </a>
                                 </li>
+=======
+                            @foreach($product_detail->imagedetail as $pro)
+                            <li class="list-inline-item active">
+                                <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
+                                <img style="height:160px" src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
+                                </a>
+                            </li>
+>>>>>>> bd834b5822f5df7f1215739dd1f7d4bd1f798c5d
                             @endforeach
                         </ul>
                     </div>

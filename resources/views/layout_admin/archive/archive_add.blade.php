@@ -24,10 +24,7 @@
         <div class="box box ">
 
           <div class="box-header">
-
-            <input type="text" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
-
-
+            <input type="text" name="search" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
           </div>
           <div class="box-body ">
             <table class="table table-bordered">
@@ -45,7 +42,7 @@
                   <td>Harry Potter</td>
                   <td>2</td>
                   <td>20000</td>
-                  <td></td>
+                  <td><input type="number" class="input-text qty text" style="width:30%" value="1" name="quantity" min="1" step="1"></td>
                   <td><input type="text"></td>
                   <td></td>
                 </tr>
@@ -88,7 +85,22 @@
     </div>
   </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
-
-
-
+@endsection
+@section('js')
+<script type="text/javascript">
+            $('#search').on('keyup',function(){
+                $value = $(this).val();
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('archive.create') }}",
+                    data: {
+                        'search': $value
+                    },
+                    success:function(data){
+                        $('tbody').html(data);
+                    }
+                });
+            })
+            $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+</script>
 @endsection

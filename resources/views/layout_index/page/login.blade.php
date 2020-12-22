@@ -18,7 +18,7 @@
                 @endif
                 <div class="row  justify-content-md-center">
                     <div class="col-6">
-                            <input type="email" name="username" placeholder="Username . . . . ." required />
+                            <input type="email" name="username" placeholder="Email . . . . ." required />
                             <span class="required-star">*</span>
                         </div>
                 </div>
