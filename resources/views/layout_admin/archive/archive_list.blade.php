@@ -49,14 +49,11 @@
                                     </div>
                                     <div class="col-md-5 padd-0" style="padding-left: 5px;">
                                         <div class="input-daterange input-group" id="datepicker">
-                                            <input style="" type="date" class="input-sm form-control" placeholder="Từ ngày" name="start">
+                                            <input type="date" class="input-sm form-control" placeholder="Từ ngày" name="start">
                                             <span class="input-group-addon">to</span>
-                                            <input style="" type="date" class="input-sm form-control" placeholder="Đến ngày" name="end">
+                                            <input type="date" class="input-sm form-control" placeholder="Đến ngày" name="end">
                                         </div>
                                     </div>
-<<<<<<< HEAD
-                                </div>
-=======
                                     <div class="col-md-3 padd-0" style="padding-left: 100px;">
                                         <button style="box-shadow: none;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
@@ -69,8 +66,7 @@
                                         <button type="button" onclick="cms_order_quarter()" class="btn btn-default">Quý</button>
                                     </div>
                                 </div>
-                                </di v>
->>>>>>> d896d1a06752670caabce3acd9168747c3aa2e57
+                                </div>
                             </div>
                         </div>
                         <div class="box-body ">

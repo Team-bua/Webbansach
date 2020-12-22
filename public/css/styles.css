@@ -409,6 +409,23 @@ ul.vert-one :target {
 /*-------------------------------------------------------------------------*/
 
 
+<<<<<<< HEAD
+=======
+/*--------------------------------review-----------------------------------*/
+
+.rating-card1 {
+    padding: 10px;
+    background-color: #F5F5F5;
+    width: 70%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-shadow: 2px 2px 18px -2px #337AB7;
+}
+
+
+>>>>>>> 4306485f1be6d72fb7cd6b7f0b21bbff74111411
 /*--------------------------------rating------------------------------------*/
 
 .rating-card {
@@ -1226,7 +1243,7 @@ ul.vert-one :target {
 }
 
 #comment-wrapper {
-    width: 600px;
+    width: 500px;
     height: 450px;
     position: relative;
     float: left;
@@ -1566,6 +1583,7 @@ ul.vert-one :target {
     color: #ff9700;
 }
 
+<<<<<<< HEAD
 
 /*-------------------------------------about-sec----------------------------------------------*/
 
@@ -1574,6 +1592,15 @@ ul.vert-one :target {
   margin-bottom: 80px;
   float: left;
   width: 100%; 
+=======
+
+/*-----------------------------------------------------------------------------------*/
+
+.about-sec {
+    margin-bottom: 80px;
+    float: left;
+    width: 100%;
+>>>>>>> 4306485f1be6d72fb7cd6b7f0b21bbff74111411
 }
 
 .about-sec .about-img {
@@ -1623,8 +1650,14 @@ ul.vert-one :target {
 }
 
 .about-sec .about-content .btn-sec .black:hover {
+<<<<<<< HEAD
           background: transparent;
           color: #252525; }*/
+=======
+    background: transparent;
+    color: #252525;
+}
+>>>>>>> 4306485f1be6d72fb7cd6b7f0b21bbff74111411
 
 
 /*-----------------------------------------------------------------------------------*/
