@@ -43,19 +43,17 @@
                                         </div>
                                         <div class="col-md-5 padd-0" style="padding-left: 5px;">
                                             <div class="input-daterange input-group" id="datepicker">
-                                                <input type="text" class="input-sm form-control" id="search-date-from"
+                                                <input type="date" class="input-sm form-control" id="search-date-from"
                                                     placeholder="Từ ngày" name="start">
                                                 <span class="input-group-addon">to</span>
-                                                <input type="text" class="input-sm form-control" id="search-date-to"
+                                                <input type="date" class="input-sm form-control" id="search-date-to"
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                            <button style="box-shadow: none;" type="button"
-                                                class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i
-                                                    class="fa fa-search"></i> Tìm kiếm
-                                            </button>
-                                        </div>
+                                        <div class="col-md-3 padd-0" style="padding-left: 100px;">
+                                        <button style="box-shadow: none;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
                                     </div>
                                     <div class="col-md-3 padd-0" style="padding-left: 5px;">
                                         <div class="btn-group order-btn-calendar">

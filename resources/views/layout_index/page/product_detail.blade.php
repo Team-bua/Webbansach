@@ -38,7 +38,7 @@
                             @foreach($product_detail->imagedetail as $pro)
                             <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img style="height:160px" src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
+                                <img style="height:160px"src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
                                 </a>
                             </li>
 >>>>>>> bd834b5822f5df7f1215739dd1f7d4bd1f798c5d
@@ -162,6 +162,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div style="clear:both;"></div>
     </div>
     <br>
@@ -224,8 +225,9 @@
     </div>
     </div>
     </div>
+=======
+>>>>>>> d45ce4ee703900c583db4aedb8f37bc933c49847
     </section>
-
     <a href="#" class="bck"></a>
 @endsection
 
