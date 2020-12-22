@@ -140,6 +140,7 @@ class ProductRepository
      */
     public function destroy($id) {
         $product = Product::find($id);
+        unlink(public_path('images/product').'/'.$product->image);       
         $product->delete();
       
     }
