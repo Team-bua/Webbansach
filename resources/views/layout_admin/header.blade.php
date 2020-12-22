@@ -1,6 +1,6 @@
 <header class="main-header  ">
     <!-- Logo -->
-    <a href="index2.html" class="logo"><b>Admin</b></a>
+    <a href="{{url('admin')}}" class="logo"><b>Admin</b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -135,14 +135,14 @@
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs">{{Auth::user()->full_name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                             <p>
-                                Alexander Pierce - Web Developer
+                               {{Auth::user()->full_name}}
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -151,7 +151,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ route('user.index') }}" class="btn btn-default btn-flat">Thông tin</a>
+                                <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                             </div>
                             <div class="pull-right">
                                 <a href="" class="btn btn-default btn-flat">Đăng Xuất</a>
@@ -202,8 +202,6 @@
                 </a>
 
             </li>
-
-
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
@@ -229,10 +227,6 @@
                 </a>
 
             </li>
-
-            <!-- Quản lý tài khoản -->
-
-
             <!-- Quản lý kho hàng -->
             <li class="treeview">
                 <a href="{{ route('archive.index') }}">

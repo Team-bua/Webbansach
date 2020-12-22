@@ -39,69 +39,70 @@
                                 <br>
                                 <center>
                                     <div class="input-group">
-                                        <td><button class="btn btn-block btn-success btn"> Thêm loại sách </button></td>
+                                        <td><button id="myfun" class="btn btn-block btn-success btn"> Thêm loại sách </button></td>
                                     </div>
                                 </center>
 
                             </div>
                     </div>
                 </div>
-                    </form>
+                </form>
+
+                
 
 
-                    <div class="col-xs-7">
-                        <div class="box">
-                            <div class="box-header">
-                                <h3 class="box-title">Danh sách loại sản phẩm</h3>
-                                <div class="box-tools">
-                                    <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control input-sm pull-right"
-                                            style="width: 150px;" placeholder="Search">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                                        </div>
+                <div class="col-xs-7">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Danh sách loại sản phẩm</h3>
+                            <div class="box-tools">
+                                <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm pull-right"
+                                        style="width: 150px;" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-body table-responsive no-padding">
-                                <table class="table table-hover">
-                                    <tbody>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th>Tên loại</th>
+                                        <th colspan="2" width="20%">
+                                            <center>Chức năng</center>
+                                        </th>
+                                    </tr>
+                                    @foreach ($product_type as $pro)
                                         <tr>
-                                            <th>Tên loại</th>
-                                            <th colspan="2" width="20%">
-                                                <center>Chức năng</center>
-                                            </th>
+                                            <td>{{ $pro->name }}</td>
+                                            <td>
+                                                <a href="{{ route('book_type.edit', [$pro['id']]) }}">
+                                                    <button class="btn btn-warning btn"> Sửa </button>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}"
+                                                    enctype="multipart/form-data" name="form1" id="form1">
+                                                    @csrf
+                                                    <input name="_method" type="hidden" value="DELETE">
+                                                    <button class="btn btn-danger btn"
+                                                        onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
+                                                </form>
+                                            </td>
                                         </tr>
-                                        @foreach ($product_type as $pro)
-                                            <tr>
-                                                <td>{{ $pro->name }}</td>
-                                                <td>
-                                                    <a href="{{ route('book_type.edit', [$pro['id']]) }}">
-                                                        <button class="btn btn-warning btn"> Sửa </button>
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <form method="post"
-                                                        action="{{ route('book_type.destroy', [$pro['id']]) }}"
-                                                        enctype="multipart/form-data" name="form1" id="form1">
-                                                        @csrf
-                                                        <input name="_method" type="hidden" value="DELETE">
-                                                        <button class="btn btn-danger btn"
-                                                            onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div><!-- /.box-body -->
-                        </div><!-- /.box -->
-                    </div>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
                 </div>
+            </div>
         </section>
         <!-- danh sach -->
 
         </section><!-- /.content -->
-        
+
     </div>
 @endsection

@@ -4,7 +4,7 @@
     
     <meta charset="UTF-8">
     <title>BookStore</title>
-    <base href="">
+    <base href="{{asset('backend')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!------------------------------------------------------------------------>

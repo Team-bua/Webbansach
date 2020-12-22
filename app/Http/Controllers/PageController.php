@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
+use App\Repositories\ProductRepository;
 
 class PageController extends Controller
 {
@@ -17,6 +18,7 @@ class PageController extends Controller
  protected $repository;
 
 
+
 /**
  * Create a new PostController instance.
  *
@@ -25,16 +27,22 @@ class PageController extends Controller
 public function __construct(PageRepository $repository)
 {
     $this->repository = $repository;
+   
 }
 
    public function getIndex(){
-        return view('layout_index.index');
+        $product = $this->repository->getAllproduct();
+        $product_type = $this->repository->getproduct_type();
+        return view('layout_index.index',compact('product','product_type'));
     }
 
-   public function getdetail(){
-        return view('layout_index.page.product_detail');
+   public function getdetail($id){
+    $product_detail = $this->repository->getproduct($id);
+
+        return view('layout_index.page.product_detail',compact('product_detail'));
     }
 
+   
    public function getnews(){
         return view('layout_index.page.news');
     }
@@ -58,7 +66,11 @@ public function __construct(PageRepository $repository)
         }else{
             return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
         }
-       
+    }
+
+    public function postlogout(){
+        Auth::logout();
+        return redirect('index');
     }
 
      public function getcart(){

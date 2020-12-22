@@ -72,9 +72,7 @@
                         </div>
                         <div class="box-body ">
                             <table class="table table-bordered">
-
                                 <tr>
-
                                     <th>Tên sách </th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá</th>
@@ -82,62 +80,107 @@
                                     <th>Tình trạng</th>
                                     <th>Tùy chọn</th>
                                 </tr>
-                                <tr>
-
                         </div>
                         <!-- /.box -->
-                        
-                        <td>Harry Potter</td>
-                        <td>2</td>
-                        <td>20000</td>
-                        <td>4</td>
-                        <td>
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử lý
-                                </button>
+                        <tr>
+                            <td>Harry Potter</td>
+                            <td>2</td>
+                            <td>20000</td>
+                            <td>4</td>
+                            <td>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử lý
+                                    </button>
 
-                            </div>
-
-                            <div class="input-group-btn ">
-                                <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
-                                </button>
-
-                            </div>
-
-                            <div class="input-group-btn ">
-                                <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
-                                </button>
-
-                            </div>
-                        <td>
-                            <div class="btn-toolbar" role="toolbar">
-                                <div class="btn-group mr-2" role="group">
-                                    <button style="float:right" class="btn btn-info btn-sm"><i
-                                            class="fa fa-eye"></i></button>
                                 </div>
-                                <div class="btn-group mr-2" role="group">
-                                    <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
-                                        @csrf
-                                        <input name="_method" type="hidden" value="DELETE">
-                                        <button style="float:right" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Bạn có muốn xóa không')"><i
-                                                class="fa fa-trash-o"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </td>
 
+                                <div class="input-group-btn ">
+                                    <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
+                                    </button>
+
+                                </div>
+
+                                <div class="input-group-btn ">
+                                    <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
+                                    </button>
+
+                                </div>
+                            <td>
+                                <div class="btn-toolbar" role="toolbar">
+                                    <div class="btn-group mr-2" role="group">
+                                        <button id="loginLink" onclick="toggleTable();" style="float:right"
+                                            class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                    </div>
+                                    <div class="btn-group mr-2" role="group">
+                                        <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
+                                            @csrf
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button style="float:right" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Bạn có muốn xóa không')"><i
+                                                    class="fa fa-trash-o"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Harry Potter</td>
+                            <td>2</td>
+                            <td>20000</td>
+                            <td>4</td>
+                            <td>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử lý
+                                    </button>
+
+                                </div>
+
+                                <div class="input-group-btn ">
+                                    <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
+                                    </button>
+
+                                </div>
+
+                                <div class="input-group-btn ">
+                                    <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
+                                    </button>
+
+                                </div>
+                            <td>
+                                <div class="btn-toolbar" role="toolbar">
+                                    <div class="btn-group mr-2" role="group">
+                                        <button id="loginLink" onclick="toggleTable();" style="float:right"
+                                            class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                    </div>
+                                    <div class="btn-group mr-2" role="group">
+                                        <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
+                                            @csrf
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button style="float:right" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Bạn có muốn xóa không')"><i
+                                                    class="fa fa-trash-o"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                            </td>
+                            
                         </tr>
 
 
+                 
 
-
-
-                        </table>
-                    </div><!-- /.box-body -->
-                </div><!-- /.box -->
-
+                        
+                    </div>
+                </div>
             </div>
+
+    </div><!-- /.box-body -->
+    </div><!-- /.box -->
+    </div>
+
+    </div>
     </div>
 
 
@@ -148,6 +191,20 @@
 
     </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
+    <script>
+        function toggleTable() {
+            if (document.getElementById("tb").style.display == "table") {
+                document.getElementById("tb").style.display = "none";
+
+            } else {
+                document.getElementById("tb").style.display = "table";
+
+            }
+        }
+
+    </script>
+
+
 
 
 @endsection
