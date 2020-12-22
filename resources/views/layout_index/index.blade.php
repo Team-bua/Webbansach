@@ -34,7 +34,6 @@
 					<li><a href="#">Category</a></li>
 					<li><a href="#">Category</a></li>
 					<li><a href="#">Category</a></li>
-
 				</ul>
 			<a href="#foo"></a>
 		</li>
@@ -71,11 +70,11 @@
             <hr>
           
             <div class="row">
-                   @foreach($product as $new)
+                @foreach($product as $new)
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="item">
                         <div class="new">New</div>
-                        <a href="{{route('detail',$new->id)}}"><img src="{{ asset('images/product/' . $new->image) }}" alt="img" width="250px" height="200px"></a>
+                        <a href="{{route('detail',$new->id)}}"><img src="{{ asset('images/product/'.$new->image) }}" alt="img" width="250px" height="200px"></a>
                         <h3><a href="{{route('detail',$new->id)}}">{{$new->name}}</a></h3>
                         <h6><span class="price">{{ $new->unit_price }}</span> / <a href="#">Buy Now</a></h6>
                     </div>
@@ -83,7 +82,7 @@
                 </div>
                @endforeach
             </div>
-            
+            <div class="row">{{$product->links()}}</div>
             <div class="btn-sec">
                 <a href="{{route('all')}}" class="btn gray-btn" >Xem Thêm</a>
             </div>

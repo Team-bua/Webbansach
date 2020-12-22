@@ -14,28 +14,32 @@ class PageController extends Controller
   * The ProductRepository instance.
   *
   * @var \App\Repositories\PageRepository
+  * @var \App\Repositories\ProductRepository
   */
  protected $repository;
+ protected $repository1;
 
 
 /**
  * Create a new PostController instance.
  *
  * @param  \App\Repositories\PageRepository $repository
+ * @param  \App\Repositories\ProductRepository $repository1
  */
-public function __construct(ProductRepository $repository)
+public function __construct(ProductRepository $repository1, PageRepository $repository)
 {
     $this->repository = $repository;
+    $this->repository1 = $repository1;
 }
 
    public function getIndex(){
-        $product = $this->repository->getAll();
+        $product = $this->repository1->getAll();
         return view('layout_index.index',compact('product'));
     }
 
-   public function getdetail(){
-
-        return view('layout_index.page.product_detail');
+   public function getdetail($id){
+        $product_detail = $this->repository1->getproduct($id);
+        return view('layout_index.page.product_detail',compact('product_detail'));
     }
 
    public function getnews(){

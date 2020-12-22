@@ -189,7 +189,7 @@
 
             <!-- Thống kê -->
             <li class="treeview">
-                <a href="{{ route('chart.index') }}">
+                <a href="{{ url('admin') }}">
                     <i class="fa fa-pie-chart fa-lg text-success"></i>
                     <span>Tổng Quan</span>
                 </a>

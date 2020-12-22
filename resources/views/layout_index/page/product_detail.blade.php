@@ -23,21 +23,13 @@
                         </div>
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
+                            @foreach($product_detail->imagedetail as $pro)
                             <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img src="images/product1.jpg" class="img-fluid">
-                            </a>
+                                <img src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
+                                </a>
                             </li>
-                            <li class="list-inline-item">
-                                <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
-                                <img src="images/product2.jpg" class="img-fluid">
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
-                                <img src="images/product3.jpg" class="img-fluid">
-                            </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!--/main slider carousel-->

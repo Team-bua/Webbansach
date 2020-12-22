@@ -47,7 +47,7 @@ Route::post('signup',[PageController::class,'postsignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getcart'])->name('cart');
 //----->chi tiết sản phẩm
-Route::get('detail',[PageController::class,'getdetail'])->name('detail');
+Route::get('detail/{id}',[PageController::class,'getdetail'])->name('detail');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getread'])->name('Read');
 //----->thanh toán
