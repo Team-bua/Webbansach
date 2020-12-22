@@ -25,19 +25,21 @@
         </div>
     </div>
     <div class="container">
+
     	<ul class="vert-one">
+
 		<li>
 			<p><a href="#t1">Danh Mục Sách</a></p>
 				<ul id="t1">
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
+                    @foreach($product_type as $pro)
+                    <li><a href="#">{{$pro->name}}</a></li>
+                    @endforeach
 				</ul>
 			<a href="#foo"></a>
-		</li>
-	</ul>
+        </li>
+
+    </ul>
+    
     </div>
 </section>
 

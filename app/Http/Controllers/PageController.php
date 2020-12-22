@@ -20,45 +20,49 @@ class PageController extends Controller
  protected $repository1;
 
 
+
 /**
  * Create a new PostController instance.
  *
  * @param  \App\Repositories\PageRepository $repository
  * @param  \App\Repositories\ProductRepository $repository1
  */
-public function __construct(ProductRepository $repository1, PageRepository $repository)
+public function __construct(PageRepository $repository)
 {
     $this->repository = $repository;
-    $this->repository1 = $repository1;
+   
 }
 
    public function getIndex(){
-        $product = $this->repository1->getAll();
-        return view('layout_index.index',compact('product'));
+        $product = $this->repository->getAllproduct();
+        $product_type = $this->repository->getProductType();
+        return view('layout_index.index',compact('product','product_type'));
     }
 
-   public function getdetail($id){
-        $product_detail = $this->repository1->getproduct($id);
+   public function getDetail($id){
+    $product_detail = $this->repository->getproduct($id);
+
         return view('layout_index.page.product_detail',compact('product_detail'));
     }
 
-   public function getnews(){
+   
+   public function getNews(){
         return view('layout_index.page.news');
     }
 
-    public function getall(){
+    public function getAll(){
         return view('layout_index.page.viewall');
     }
 
-    public function getintroduce(){
+    public function getIntroduce(){
         return view('layout_index.page.about');
     }
 
-    public function getlogin(){
+    public function getLogin(){
         return view('layout_index.page.login');
     }
 
-    public function postlogin(Request $request){
+    public function postLogin(Request $request){
         $credentaials = array('username'=>$request->username,'password'=>$request->password);
         if(Auth::attempt($credentaials)){
             return redirect()->back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
@@ -67,33 +71,33 @@ public function __construct(ProductRepository $repository1, PageRepository $repo
         }
     }
 
-    public function postlogout(){
+    public function postLogout(){
         Auth::logout();
         return redirect('index');
     }
 
-     public function getcart(){
+     public function getCart(){
         return view('layout_index.page.cart');
     }
 
-    public function getsignup(){
+    public function getSignup(){
         return view('layout_index.page.register');
     }
 
-    public function postsignup(PageRequest $request){
+    public function postSignup(PageRequest $request){
         $this->repository->createuser($request);
         return redirect()->back()->with('thongbao','Đăng ký thành công');
     }
     
-    public function getread(){
+    public function getRead(){
         return view('layout_index.page.Read_book');
     }
 
-    public function getcheckout(){
+    public function getCheckout(){
         return view('layout_index.page.checkout');
     }
 
-    public function getadmin(){
+    public function getAdmin(){
         return view('layout_admin.index_admin');
     }
 }

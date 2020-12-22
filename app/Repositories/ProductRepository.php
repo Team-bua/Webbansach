@@ -15,18 +15,13 @@ class ProductRepository
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function getAll()
-    {        
-        return  Product::orderBy('created_at', 'desc')->paginate(10);
+    {
+        return Product::all();
     }
-
+    
     public function getproduct($id)
     {
         return Product::find($id);
-    }
-
-    public function getTypeAll()
-    {
-        return Product_type::all();
     }
     /**
      * create a member.

@@ -49,7 +49,7 @@
           <h4> Tác giả </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-smile-o"></i></span>
-            <input name="publisher" type="text" class="form-control" placeholder="Tác giả. . . . . . . . .">
+            <input name="publisher" type="text"value="{{$product->publisher}}" class="form-control" placeholder="Tác giả. . . . . . . . .">
           </div>
 
           <h4> Giá : </h4>

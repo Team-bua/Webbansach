@@ -53,6 +53,7 @@
 
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>
+                                        <th>Tác giả</th>
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
                                         <th>Miêu tả</th>
@@ -66,6 +67,7 @@
                                         <tr>
                                             <td>{{ $pro->name }}</td>
                                             <td>{{ $pro->product_type->name }}</td>
+                                            <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
                                             <td>{{ $pro->description }}</td>
