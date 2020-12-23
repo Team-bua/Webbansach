@@ -240,7 +240,15 @@ $.ajaxSetup({
 
             success: function(response) {
                 if(response){
-                    $("#tableId2 tbody").prepend('<tr><td>'+response.name+'</td></tr>');
+                var tr_str = "<tr>"+
+                   "<td>" + name + "</td>" +
+                 "</tr>";
+                 $("#tableId2 tbody").append(tr_str);
+                }else{
+                var tr_str = "<tr>" +
+                  "<td align='center' colspan='4'>No record found.</td>" +
+                "</tr>";
+                    $("#tableId2 tbody").append(tr_str);
                     $("#bookForm").trigger('reset');
                     $("#bookmodal").modal('hide');
                 }

@@ -241,7 +241,6 @@
                 <a href="{{ route('slide.index') }}">
                     <i class="fa fa-list-alt  fa-lg text-success"></i>
                     <span>Slide</span>
-                    <small class="label pull-right bg-yellow">12</small>
                 </a>
 
             </li>

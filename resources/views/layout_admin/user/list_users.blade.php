@@ -51,7 +51,7 @@
                                 <tr >
                                     <td>{{$users->full_name}}</td>
                                     <td>{{$users->username}}</td>
-                                    <td>{{$users->role->display_name}}</td>
+                                    <td>{{$users->role->display_name}}</td> 
                                     <td >
                                         <div class="btn-toolbar" role="toolbar">
                                             <div class="btn-group mr-2" role="group">
