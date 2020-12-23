@@ -2,14 +2,19 @@
 <html>
 
 <head>
-    <base href="{{asset('backend')}}/">
+    <base href="{{ asset('backend') }}/">
     <meta charset="UTF-8">
     <title>Quản Lý Sách</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- CSS only -->
+    
+    <!-- JavaScript Bundle with Popper -->
+
     <!-- FontAwesome 4.3.0 -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
     <!-- Ionicons 2.0.0 -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
@@ -37,7 +42,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 
 <body class="skin-green">
@@ -45,12 +50,12 @@
 
         @include('layout_admin.header')
         @yield('content')
-        @yield('js')
+        
         <!-- Right side column. Contains the navbar and content of the page -->
         <!-- /.content-wrapper -->
 
     </div><!-- ./wrapper -->
-    
+
     <!-- jQuery 2.1.3 -->
     <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- jQuery UI 1.11.2 -->
@@ -58,6 +63,7 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button);
+
     </script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -91,43 +97,55 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
-    
-    <script>
-		$('#calendar').datepicker({
-		});
-		!function ($) {
-		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
-		        $(this).find('em:first').toggleClass("glyphicon-minus");      
-		    }); 
-		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-		}(window.jQuery);
 
-		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-		});
-		function changeImg(input){
-		    //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-		    if(input.files && input.files[0]){
-		        var reader = new FileReader();
-		        //Sự kiện file đã được load vào website
-		        reader.onload = function(e){
-		            //Thay đổi đường dẫn ảnh
-		            $('#avatar').attr('src',e.target.result);
-		        }
-		        reader.readAsDataURL(input.files[0]);
-		    }
-		}
-		$(document).ready(function() {
-		    $('#avatar').click(function(){
-		        $('#img').click();
-		    });
-		});
+    <script>
+        $('#calendar').datepicker({});
+        ! function($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function() {
+                $(this).find('em:first').toggleClass("glyphicon-minus");
+            });
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function() {
+            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function() {
+            if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        });
+
+        function changeImg(input) {
+            //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                //Sự kiện file đã được load vào website
+                reader.onload = function(e) {
+                    //Thay đổi đường dẫn ảnh
+                    $('#avatar').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(document).ready(function() {
+            $('#avatar').click(function() {
+                $('#img').click();
+            });
+        });
+
     </script>
-    
-   
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+@yield('js')
 
 </body>
 

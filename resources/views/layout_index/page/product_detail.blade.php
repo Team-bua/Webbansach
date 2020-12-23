@@ -24,24 +24,12 @@
 
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
-<<<<<<< HEAD
-                            @foreach ($product_detail->imagedetail as $pro)
-
-                                <li class="list-inline-item active">
-                                    <a id="carousel-selector-0" class="selected" data-slide-to="0"
-                                        data-target="#myCarousel">
-                                        <img  style="height:160px" alt=""
-                                            src="{{ asset('images/product_detail/' . $pro) }}" class="img-fluid">
-                                    </a>
-                                </li>
-=======
                             @foreach($product_detail->imagedetail as $pro)
                             <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
                                 <img style="height:160px"src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
                                 </a>
                             </li>
->>>>>>> bd834b5822f5df7f1215739dd1f7d4bd1f798c5d
                             @endforeach
                         </ul>
                     </div>
@@ -162,71 +150,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        <div style="clear:both;"></div>
-    </div>
-    <br>
-    Chỉ có thành viên mới có thể nhận xét. Vui <a href="{{route('login')}}">Đăng nhập</a> hoặc<a href="{{route('signup')}}"> Đăng Ký</a>
-        </div>
-        <div class="rating1"> 
-<input type="radio" name="rating" value="5" id="5">
-<label for="5">☆</label> 
-<input type="radio" name="rating" value="4" id="4">
-<label for="4">☆</label> 
-<input type="radio" name="rating" value="3" id="3">
-<label for="3">☆</label> 
-<input type="radio" name="rating" value="2" id="2">
-<label for="2">☆</label> 
-<input type="radio" name="rating" value="1" id="1">
-<label for="1">☆</label>
-</div>
-      </div>
-    </div>
-      <div id="tab-review" class="tab-content">
-        <div class="rating-card">
-        <form action="" method="post">
-            <div class="card border-primary rounded-0">
-                <div class="card-body p-3">
-                    <div class="form-group">
-                    <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
-                    </div>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
-                                        </div>
-                                        <input type="email" class="form-control" id="nombre" name="email"  placeholder="ejemplo@gmail.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
-                                        </div>
-                                        <textarea style="resize: none;" rows="5" cols="30" class="form-control"  placeholder="Envianos tu Mensaje" required ></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="text-center">
-                                    <input type="submit" value="Enviar" class="btn btn-info btn-block rounded-0 py-2">
-                                </div>
-                            </div>
-
-                        </div>
-                    </form>
-        <div style="clear:both;"></div>
-    </div>
-    </div>
-    </div>
-    </div>
-=======
->>>>>>> d45ce4ee703900c583db4aedb8f37bc933c49847
     </section>
     <a href="#" class="bck"></a>
 @endsection
