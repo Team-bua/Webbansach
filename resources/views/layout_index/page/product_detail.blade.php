@@ -10,7 +10,7 @@
                     <div id="myCarousel" class="carousel slide">
                         <!-- main slider carousel items -->
                         <div class="carousel-inner">
-                        <div class="offer">- %20</div>
+                        <div class="sale">- %20</div>
                             <div class="active item carousel-item" data-slide-number="0">
                                 <img src="images/product1.jpg" class="img-fluid">
                             </div>
@@ -67,7 +67,7 @@
                     <div class="btn-sec">
                         <button class="btn ">Thêm Vào Giỏ Hàng</button>
                         <button class="btn ">Mua Ngay</button>
-                        <button class="btn black">Đọc ONLINE</button>
+                       <a href="{{route('Read')}}"> <button class="btn black">Đọc ONLINE</button></a>
                     </div>
 
                 </div>
@@ -146,7 +146,7 @@
                     <div class="input-group-prepend">
                     <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
                     </div>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="user name" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -154,7 +154,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
                                         </div>
-                                        <input type="email" class="form-control" id="nombre" name="email"  placeholder="ejemplo@gmail.com" required>
+                                        <input type="email" class="form-control" id="nombre" name="email"  placeholder="abc@gmail.com" required>
                                     </div>
                                 </div>
 
@@ -163,12 +163,12 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
                                         </div>
-                                        <textarea style="resize: none;" rows="5" cols="30" class="form-control"  placeholder="Envianos tu Mensaje" required ></textarea>
+                                        <textarea style="resize: none;" rows="5" cols="30" class="form-control"  placeholder="messenger" required ></textarea>
                                     </div>
                                 </div>
 
                                 <div class="text-center">
-                                    <input type="submit" value="Enviar" class="btn btn-info btn-block rounded-0 py-2">
+                                    <input type="submit" value="Gửi" class="btn btn-info btn-block rounded-0 py-2">
                                 </div>
                             </div>
 
@@ -179,6 +179,42 @@
     </div>
     </div>
     </div>
+    <div class="container">
+            <div id="last-product-wrapper">
+        <div id="comment-list">
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                        </div>
+            </div>
+        </div>
     </section>
 
     <a href="#" class="bck"></a> 

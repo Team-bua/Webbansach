@@ -16,4 +16,38 @@
       
       <p><span class="badge">2</span> Comments:</p><br>
  </div>
+ <div class="container">
+        <div id="comment-list">
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Team bùa
+                                    <br>
+                                    <span>2020-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                </li>
+                            </ul>
+                        </div>
+    </div>
 @endsection

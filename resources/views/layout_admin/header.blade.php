@@ -154,7 +154,7 @@
                                 <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                             </div>
                             <div class="pull-right">
-                                <a href="" class="btn btn-default btn-flat">Đăng Xuất</a>
+                                <a href="{{url('logout')}}" class="btn btn-default btn-flat">Đăng Xuất</a>
                             </div>
                         </li>
                     </ul>

@@ -2,9 +2,11 @@
     <div class="header-top">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h5></h5>
-          </div>
+           @if(Auth::check())
+            <div class="col-md-6"><a href="{{route('admin')}}">Chào bạn {{Auth::user()->full_name}}</a>
+            </div>
+             @else
+             @endif
           <div id="menu">
             <ul>
               <li class="menu_item down"><i class="fa fa-phone"></i> 0779 750 123
@@ -53,8 +55,6 @@
               <a href="{{route('index')}}" class="nav-link">Trang Chủ</a>
             </li>
             <li class="navbar-item active">
-
-
               <a href="{{route('introduce')}}" class="nav-link">Giới thiệu</a>
             </li>
             <li class="navbar-item active">

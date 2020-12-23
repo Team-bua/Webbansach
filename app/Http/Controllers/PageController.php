@@ -65,7 +65,7 @@ public function __construct(ProductRepository $repository)
 
     public function postlogout(){
         Auth::logout();
-        return redirect('index');
+        return redirect()->route('index');
     }
 
      public function getcart(){

@@ -25,24 +25,39 @@
         </div>
     </div>
     <div class="container">
-    	<ul class="vert-one">
-		<li>
-			<p><a href="#t1">Danh Mục Sách</a></p>
-				<ul id="t1">
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-					<li><a href="#">Category</a></li>
-
-				</ul>
-			<a href="#foo"></a>
-		</li>
-	</ul>
+            <ul class="vert-one" >
+        <li>
+            <p><a href="#t1">DANH MỤC SÁCH</a></p>
+        </li>
+        
+    </ul>
     </div>
 </section>
-
- <section class="features-sec">
+<section class="static about-sec">
+        <div class="container"> 
+            <h2>books </h2>
+            <hr>
+            <div class="recent-book-sec">
+                <div class="row">
+                     @foreach ($product as $pro)
+                    <div class="col-md-3">
+                        <div class="item">
+                        <div class="sale">- %20</div>
+                             <a href="{{route('detail')}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            <h6><span class="price">{{ $pro->unit_price }}</span>
+                                <span class="price"><del> {{ $pro->promotion_price }}</del> </span></h6>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="btn-sec">
+                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="features-sec">
         <div class="container">
             <ul>
                 <li>
@@ -66,30 +81,6 @@
             </ul>
 
 </section>
-    <section class="recent-book-sec">
-        <div class="container">
-            <hr>
-          
-            <div class="row">
-                   @foreach($product as $new)
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                    <div class="item">
-                        <div class="new">New</div>
-                        <a href="{{route('detail',$new->id)}}"><img src="{{ asset('images/product/' . $new->image) }}" alt="img" width="250px" height="200px"></a>
-                        <h3><a href="{{route('detail',$new->id)}}">{{$new->name}}</a></h3>
-                        <h6><span class="price">{{ $new->unit_price }}</span> / <a href="#">Buy Now</a></h6>
-                    </div>
-                     
-                </div>
-               @endforeach
-            </div>
-            
-            <div class="btn-sec">
-                <a href="{{route('all')}}" class="btn gray-btn" >Xem Thêm</a>
-            </div>
-        </div>
-    </section>
-
     
     <a href="#" class="bck"></a>   
 @endsection
