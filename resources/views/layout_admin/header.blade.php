@@ -154,7 +154,7 @@
                                 <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                             </div>
                             <div class="pull-right">
-                                <a href="" class="btn btn-default btn-flat">Đăng Xuất</a>
+                                <a href="{{url('logout')}}" class="btn btn-default btn-flat">Đăng Xuất</a>
                             </div>
                         </li>
                     </ul>
@@ -232,6 +232,15 @@
                 <a href="{{ route('archive.index') }}">
                     <i class="fa fa-archive  fa-lg text-success"></i>
                     <span>Kho hàng</span>
+                    <small class="label pull-right bg-yellow">12</small>
+                </a>
+
+            </li>
+            <!-- Quản lý slide -->
+            <li class="treeview">
+                <a href="{{ route('slide.index') }}">
+                    <i class="fa fa-list-alt  fa-lg text-success"></i>
+                    <span>Slide</span>
                     <small class="label pull-right bg-yellow">12</small>
                 </a>
 

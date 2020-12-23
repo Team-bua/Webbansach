@@ -28,7 +28,7 @@ class ProductTypeRepository
        $product_type = new ProductType();
        $product_type->name=$request->input('name');
        $product_type->save();
-       return redirect()->back();
+       return response()->json($product_type);
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 
 class PageRepository
@@ -35,10 +36,9 @@ class PageRepository
     {
         return ProductType::all();
     }
-
-    public function getSupplier($id)
-    {
-        return User::find($id);
+    public function getSlide()
+    {   
+        return Slide::where('status', 1)->get();
     }
     
     public function createUser(Request $request)

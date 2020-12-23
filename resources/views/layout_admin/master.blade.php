@@ -126,7 +126,7 @@
 		});
     </script>
     
-   
+    @yield('js')
 
 </body>
 

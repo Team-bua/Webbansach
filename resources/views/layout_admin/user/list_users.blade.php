@@ -33,13 +33,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        <div class="col-md-4 pull-right">
-                            <a href="{{ route('book.create') }}">
-                                <button class="btn btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px">
-                                    <i class="fa fa-plus"> Thêm sách mới </i></button>
-                            </a>
-                        </div>
                     </div><!-- /.box-header -->
                     <div class="box-body  ">
                         <table class="table table-bordered">
@@ -58,7 +51,7 @@
                                 <tr >
                                     <td>{{$users->full_name}}</td>
                                     <td>{{$users->username}}</td>
-                                    <td>{{$users->role->role_name}}</td>
+                                    <td>{{$users->role->display_name}}</td>
                                     <td >
                                         <div class="btn-toolbar" role="toolbar">
                                             <div class="btn-group mr-2" role="group">
