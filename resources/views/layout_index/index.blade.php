@@ -18,7 +18,7 @@
     	<ul class="vert-one">
 
 		<li>
-			<p><a href="#t1">Danh Mục Sách</a></p>
+			<p><a href="">Danh Mục Sách</a></p>
 				<ul id="t1">
                     @foreach($product_type as $pro)
                     <li><a href="#">{{$pro->name}}</a></li>
