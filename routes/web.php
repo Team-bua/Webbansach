@@ -71,8 +71,6 @@ Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 
-Route::get('search',[ArchiveController::class,'search'])->name('search');
-
 
 
 

@@ -1,7 +1,6 @@
 @extends('layout_admin.master')
 @section('content')
 
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -22,30 +21,22 @@
 
       <div class="col-md-8">
         <div class="box box ">
-
           <div class="box-header">
-            <input type="text" name="search" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
+            <input type="text" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
           </div>
           <div class="box-body ">
             <table class="table table-bordered">
-
-              <tbody style="text-align:center">
+             <thead style="text-align:center">
                 <tr>
-                  <th style="text-align:center">STT </th>
                   <th style="text-align:center">Mã hàng </th>
                   <th style="text-align:center">Tên sản phẩm</th>
                   <th style="text-align:center">Số lượng</th>
                   <th style="text-align:center">Giá nhập</th>
                   <th style="text-align:center">Thành tiền</th>
                 </tr>
-                <tr>
-                  <td>Harry Potter</td>
-                  <td>2</td>
-                  <td>20000</td>
-                  <td><input type="number" class="input-text qty text" style="width:30%" value="1" name="quantity" min="1" step="1"></td>
-                  <td><input type="text"></td>
-                  <td></td>
-                </tr>
+                </thead>
+                <tbody style="text-align:center" >
+               
               </tbody>
             </table>
           </div><!-- /.box-body -->
@@ -85,22 +76,4 @@
     </div>
   </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
-@endsection
-@section('js')
-<script type="text/javascript">
-            $('#search').on('keyup',function(){
-                $value = $(this).val();
-                $.ajax({
-                    type: "get",
-                    url: "{{ url('search') }}",
-                    data: {
-                        'search': $value
-                    },
-                    success:function(data){
-                        $('tbody').html(data);
-                    }
-                });
-            })
-            $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
-</script>
 @endsection

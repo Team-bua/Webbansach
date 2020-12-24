@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
-use App\Models\Product_type;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
 
 class ProductRepository
@@ -17,6 +17,11 @@ class ProductRepository
     public function getAll()
     {
         return Product::all();
+    }
+
+    public function getTypeAll()
+    {
+        return ProductType::all();
     }
     
     public function getproduct($id)
@@ -65,7 +70,7 @@ class ProductRepository
        $product->imagedetail=$imgdetail;
        $product->save();
        
-       return redirect()->back();
+       
     }
 
     /**
@@ -135,6 +140,7 @@ class ProductRepository
      */
     public function destroy($id) {
         $product = Product::find($id);
+        unlink(public_path('images/product').'/'.$product->image);       
         $product->delete();
       
     }

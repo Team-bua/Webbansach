@@ -26,7 +26,7 @@
                             <form action="">
                                 <div class="col-md-4 pull-left">
                                     <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control  pull-right"
+                                        <input type="text" id="table_search" name="table_search" class="form-control  pull-right"
                                             placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-success"
@@ -97,7 +97,6 @@
             </div>
         </section><!-- /.content -->
     </div>
-    
 
 @endsection
 

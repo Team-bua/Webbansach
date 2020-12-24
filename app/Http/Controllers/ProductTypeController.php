@@ -80,8 +80,7 @@ class ProductTypeController extends Controller
     {
         $product_type = $this->repository->getAll();
         $type = ProductType::find($id);
-       /** return response()->json($type); */
-         return view('layout_admin.product_type.create_type', compact('type','product_type'));
+        return view('layout_admin.product_type.edit_type', compact('type','product_type'));
     }
 
     /**

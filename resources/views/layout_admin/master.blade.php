@@ -4,6 +4,7 @@
 <head>
     <base href="{{ asset('backend') }}/">
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Quản Lý Sách</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
@@ -50,7 +51,6 @@
 
         @include('layout_admin.header')
         @yield('content')
-        
         <!-- Right side column. Contains the navbar and content of the page -->
         <!-- /.content-wrapper -->
 
@@ -97,6 +97,10 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>  
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
 
     <script>
         $('#calendar').datepicker({});

@@ -42,9 +42,9 @@ class ArchiveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        
+       
         return view('layout_admin.archive.archive_add');
     }
 
@@ -104,9 +104,8 @@ class ArchiveController extends Controller
         //
     }
 
-    public function search(Request $request)
+    public function getSearch(Request $request)
     {
-        $this->repository->search($request);
-        return redirect()->back();
+        
     }
 }

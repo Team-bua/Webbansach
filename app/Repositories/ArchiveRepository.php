@@ -58,26 +58,4 @@ class ArchiveRepository
       
     }
 
-    public function search(Request $request)
-    {
-        if ($request->ajax()) {
-            $output = '';
-            $products = Product::where('id', 'LIKE', '%' . $request->search . '%')
-                                ->orwhere('name', 'LIKE', '%' . $request->search . '%')
-                                ->get();
-            if ($products) {
-                foreach ($products as $key => $product) {
-                    $output .= '<tr>
-                    <td>' . $product->id . '</td>
-                    <td>' . $product->name . '</td>
-                    <td>' . $product->description . '</td>
-                    <td>' . $product->unit_price . '</td>
-                    </tr>';
-                }
-            }
-
-            return Response($output);
-        }
-    }
-
 }
