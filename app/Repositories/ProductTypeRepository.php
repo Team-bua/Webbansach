@@ -13,7 +13,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::orderBy('created_at','desc')->paginate(10);
+        return ProductType::paginate(10);
     }
 
     /**
