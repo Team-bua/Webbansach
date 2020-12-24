@@ -34,9 +34,10 @@ public function __construct(PageRepository $repository)
 }
 
    public function getIndex(){
+        $slide = $this->repository->getSlide();
         $product = $this->repository->getAllproduct();
         $product_type = $this->repository->getProductType();
-        return view('layout_index.index',compact('product','product_type'));
+        return view('layout_index.index',compact('product','product_type','slide'));
     }
 
    public function getDetail($id){

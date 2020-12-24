@@ -25,10 +25,6 @@
 
         <section class="content">
 
-
-
-
-
             <div class="row">
                 <div class="col-xs">
                     <div class="box">
@@ -122,8 +118,8 @@
         </section>
         <!-- danh sach -->
 
-        </section><!-- /.content -->
 
+            
     </div>
 
 @endsection

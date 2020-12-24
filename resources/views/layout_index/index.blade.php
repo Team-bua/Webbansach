@@ -4,23 +4,12 @@
     <div class="container">
         <div id="slide-wrapper">
             <ul id="slider">
+                @foreach($slide as $sl)
                 <li>
                     <div class="border_on_img"></div>
-                    <img src="images/slide/TrangComicManga_main_920x420.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
+                    <img src="{{ asset('images/slide/'.$sl->image) }}" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
                 </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/VNDirectT10_mainbanner_920x420.jpg" alt="sed diam nonummy">
-                </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/p2-209x179.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
-                </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/361437_image20200910t030157126z.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
-                </li>
-
+                @endforeach
             </ul>
         </div>
     </div>

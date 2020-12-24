@@ -137,6 +137,7 @@
         });
 
     </script>
+<<<<<<< HEAD
     <script>
         // Get the modal
         var modal = document.getElementById('id01');
@@ -150,6 +151,10 @@
 
     </script>
 @yield('js')
+=======
+    
+    @yield('js')
+>>>>>>> da7f594c45f3bdc160db7cedf04ee14d40653a5c
 
 </body>
 

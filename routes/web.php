@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\SlideController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,8 @@ Route::get('news',[PageController::class,'getNews'])->name('news');
 //----->đăng nhập
 Route::get('login',[PageController::class,'getLogin'])->name('login');
 Route::post('login',[PageController::class,'postLogin'])->name('login');
+//----->đăng xuất
+Route::get('logout',[PageController::class,'postLogout'])->name('logout');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
@@ -70,7 +74,9 @@ Route::resource('user',UserController::class);
 Route::resource('bill',BillController::class);
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
+///------>trang show slide
+Route::resource('slide',SlideController::class);
 
-
-
+Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
+Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
 
