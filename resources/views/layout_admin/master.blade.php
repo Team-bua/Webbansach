@@ -137,24 +137,8 @@
         });
 
     </script>
-<<<<<<< HEAD
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-    </script>
 @yield('js')
-=======
-    
-    @yield('js')
->>>>>>> da7f594c45f3bdc160db7cedf04ee14d40653a5c
 
 </body>
 

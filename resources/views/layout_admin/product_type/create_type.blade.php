@@ -46,9 +46,7 @@
 
                             <div class="col-xs pull-right">
                                 <button class="btn btn-block btn-success btn"
-                                    onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Thêm
-                                    loại
-                                    sách</button>
+                                    onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fa fa-plus">&nbsp;Thêm loại sách</i></button>
 
                                 <div id="id01" class="modal" id="bookmodal">
 
@@ -65,20 +63,16 @@
                                             <input type="text" placeholder="Mời nhập tên loại sách......" name="name"
                                                 id="name" required>
                                             <div style="width:500px" class="text-center">
-                                                <button type="submit" class=" btn  btn-success btn">Thêm</button>
+                                                <button type="submit" class=" btn  btn-success btn">Thêm</i></button>
                                             </div>
                                         </div>
-
-
-
-
-
                                     </form>
                                 </div>
                             </div>
                         </div><!-- /.box-header -->
+
                         <div class="box-body table-responsive no-padding">
-                            <table id="tableId" class="table table-hover">
+                            <table style="width:60% " id="tableId" class="table table-hover">
                                 <tbody>
                                     <tr>
                                         <th>Tên loại</th>
@@ -91,7 +85,7 @@
                                             <td>{{ $pro->name }}</td>
                                             <td>
                                                 <a href="{{ route('book_type.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn"> Sửa </button>
+                                                    <button class="btn btn-warning btn pull-right"> Sửa </button>
                                                 </a>
                                             </td>
                                             <td>
@@ -124,5 +118,16 @@
 
 @endsection
 @section('js')
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
 
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
 @stop
