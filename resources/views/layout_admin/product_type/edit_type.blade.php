@@ -1,5 +1,8 @@
 @extends('layout_admin.master')
+<!-- CSS only -->
+
 @section('content')
+
 <div class="content-wrapper" style="min-height: 898px;">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -84,10 +87,16 @@
               </div><!-- /.box-body -->
             </div><!-- /.box -->
           </div>
+          
         </div>
       </section>
       <!-- danh sach -->
 
   </section><!-- /.content -->
 </div>
+
+<!-- Button trigger modal -->
+
+
+
 @endsection

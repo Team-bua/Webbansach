@@ -14,10 +14,26 @@
         </div>
     </div>
     <div class="container">
+<<<<<<< HEAD
         <ul class="vert-one">
         <li>
             <center> <p><a>Danh Mục Sách</a></p></center>
         </li>  
+=======
+
+    	<ul class="vert-one">
+
+		<li>
+			<p><a href="">Danh Mục Sách</a></p>
+				<ul id="t1">
+                    @foreach($product_type as $pro)
+                    <li><a href="#">{{$pro->name}}</a></li>
+                    @endforeach
+				</ul>
+			<a href="#foo"></a>
+        </li>
+
+>>>>>>> 7abb66f27cb0a095defbb04134dc8d6aa85dd864
     </ul>
 <div class="left_column">
       <div class="product_menu">
