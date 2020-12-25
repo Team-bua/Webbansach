@@ -12,6 +12,6 @@ class Supplier extends Model
 
     public function bills()
     {
-        return $this->belongsTo(Bill_in::class,'id_supplier', 'id');
+        return $this->belongsTo(BillIn::class,'id_supplier', 'id');
     }
 }

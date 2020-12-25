@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
-use App\Models\Product_type;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
 
 class ProductRepository
@@ -15,18 +15,18 @@ class ProductRepository
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function getAll()
-    {        
-        return  Product::orderBy('created_at', 'desc')->paginate(10);
-    }
-
-    public function getproduct($id)
     {
-        return Product::find($id);
+        return Product::all();
     }
 
     public function getTypeAll()
     {
-        return Product_type::all();
+        return ProductType::all();
+    }
+    
+    public function getproduct($id)
+    {
+        return Product::find($id);
     }
     /**
      * create a member.
@@ -70,7 +70,7 @@ class ProductRepository
        $product->imagedetail=$imgdetail;
        $product->save();
        
-       return redirect()->back();
+       
     }
 
     /**
@@ -140,6 +140,7 @@ class ProductRepository
      */
     public function destroy($id) {
         $product = Product::find($id);
+        unlink(public_path('images/product').'/'.$product->image);       
         $product->delete();
       
     }

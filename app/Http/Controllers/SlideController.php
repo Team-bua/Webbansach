@@ -3,42 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ProductRepository;
-use App\Http\Requests\ProductRequest;
+use App\Repositories\SlideRepository;
+use App\Models\Slide;
 
-
-class ProductController extends Controller
-{
-       /**
-     * The ProductRepository instance.
-     *
-     * @var \App\Repositories\ProductRepository
-     */
-    protected $repository;
-
-
-   /**
-    * Create a new PostController instance.
+class SlideController extends Controller
+{   /**
+    * The ProductRepository instance.
     *
-    * @param  \App\Repositories\ProductRepository $repository
+    * @var \App\Repositories\SlideRepository
     */
-   public function __construct(ProductRepository $repository)
-   {
-       $this->repository = $repository;
-   }
+   protected $repository;
+
+
+  /**
+   * Create a new PostController instance.
+   *
+   * @param  \App\Repositories\SlideRepository $repository
+   */
+  public function __construct(SlideRepository $repository)
+  {
+      $this->repository = $repository;
+  }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-     
-    public function index(Request $request)
+    public function index()
     {
-        $product = $this->repository->getAll();
-        $product = $this->repository->search($request);
-        return view('layout_admin.product.products_list', compact('product'));
-
+        $slide = $this->repository->getAll();
+        return view('layout_admin.slide.list_slide', compact('slide'));
     }
 
     /**
@@ -48,8 +42,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $product = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_create', compact('product'));
+        return view('layout_admin.slide.create_slide');
     }
 
     /**
@@ -58,10 +51,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
         $this->repository->create($request);
-        return redirect(route('book.index'));
+        return redirect(route('slide.index'));
     }
 
     /**
@@ -83,9 +76,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->repository->getproduct($id);
-        $type = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_edit', compact('type','product'));
+        $slide = $this->repository->getslide($id);
+        return view('layout_admin.slide.edit_slide', compact('slide'));
     }
 
     /**
@@ -95,10 +87,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $this->repository->update($request, $id);
-        return redirect(route('book.index'));
+        return redirect(route('slide.index'));
     }
 
     /**
@@ -107,9 +99,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($product)
+    public function destroy($id)
     {
-        $this->repository->destroy($product);
+        $this->repository->destroy($id);
+        return redirect(route('slide.index'));
+    }
+    public function getOn($id){
+        $on=Slide::find($id);
+        $on->status = Slide::statusOn;
+        $on->save();
+        return redirect()->back();
+    }
+
+    public function getOff($id){
+        $off=Slide::find($id);
+        $off->status = Slide::statusOff;
+        $off->save();
         return redirect()->back();
     }
 }

@@ -4,33 +4,42 @@
     <div class="container">
         <div id="slide-wrapper">
             <ul id="slider">
+                @foreach($slide as $sl)
                 <li>
                     <div class="border_on_img"></div>
-                    <img src="images/slide/TrangComicManga_main_920x420.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
+                    <img src="{{ asset('images/slide/'.$sl->image) }}" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
                 </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/VNDirectT10_mainbanner_920x420.jpg" alt="sed diam nonummy">
-                </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/p2-209x179.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
-                </li>
-                <li>
-                    <div class="border_on_img"></div>
-                    <img src="images/slide/361437_image20200910t030157126z.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
-                </li>
-
+                @endforeach
             </ul>
         </div>
     </div>
     <div class="container">
-            <ul class="vert-one" >
+        <ul class="vert-one">
         <li>
-            <p><a href="#t1">DANH MỤC SÁCH</a></p>
-        </li>
-        
+            <center> <p><a>Danh Mục Sách</a></p></center>
+        </li>  
     </ul>
+<div class="left_column">
+      <div class="product_menu">
+        <ul id="prod_nav" class="clearfix">
+          <li class="top"><a href="#" class="top_link"><span class="down">Sách Trong Nước</span></a>
+            <ul class="sub">
+              <li>
+                  <ul>
+                      <li><h6>Submenu #1</h6></li>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 5</a></li>
+                      </ul>         
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
     </div>
 </section>
 <section class="static about-sec">
@@ -43,10 +52,8 @@
                     <div class="col-md-3">
                         <div class="item">
                         <div class="sale">- %20</div>
-                             <a href="{{route('detail')}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
+                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
-                            <h6><span class="price">{{ $pro->unit_price }}</span>
-                                <span class="price"><del> {{ $pro->promotion_price }}</del> </span></h6>
                         </div>
                     </div>
                     @endforeach

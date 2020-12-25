@@ -2,9 +2,12 @@
 
 namespace App\Repositories;
 
+use App\Models\Product;
+use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 
 class PageRepository
@@ -19,12 +22,26 @@ class PageRepository
         return User::orderBy('created_at', 'desc')->paginate(10);
     }
 
-    public function getsupplier($id)
+    public function getAllproduct()
+    {        
+        return  Product::orderBy('created_at', 'desc')->paginate(10);
+    }
+ 
+    public function getProduct($id)
     {
-        return User::find($id);
+        return Product::find($id);
+    }
+
+    public function getProductType()
+    {
+        return ProductType::all();
+    }
+    public function getSlide()
+    {   
+        return Slide::where('status', 1)->get();
     }
     
-    public function createuser(Request $request)
+    public function createUser(Request $request)
     {
         $user = new User();
         $user->full_name = $request->input('fullname');

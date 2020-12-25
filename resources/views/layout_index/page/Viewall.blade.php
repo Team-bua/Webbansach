@@ -41,7 +41,10 @@
         <div class="container"> 
 
             <h2>books </h2>
-
+<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+            <span class="fa fa-search"></span>
+          </form>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">

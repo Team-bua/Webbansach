@@ -2,11 +2,6 @@
     <div class="header-top">
       <div class="container">
         <div class="row">
-           @if(Auth::check())
-            <div class="col-md-6"><a href="{{route('admin')}}">Chào bạn {{Auth::user()->full_name}}</a>
-            </div>
-             @else
-             @endif
           <div id="menu">
             <ul>
               <li class="menu_item down"><i class="fa fa-phone"></i> 0779 750 123

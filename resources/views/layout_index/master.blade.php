@@ -4,7 +4,7 @@
     
     <meta charset="UTF-8">
     <title>BookStore</title>
-    <base href="">
+    <base href="{{asset('backend')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!------------------------------------------------------------------------>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
     <link rel="stylesheet" href="js/bootstrap.min.js">
     <link rel="stylesheet" href="js/bootstrap.css">
+    <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
    
 <!------------------------------------------------------------------------>
  <link rel="stylesheet" href="../src/jquery.back-to-top.css">

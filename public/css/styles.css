@@ -257,32 +257,45 @@ header .cart .quntity {
     padding: 1px 0;
 }
 
+
 /*------------------------------------menu-catory-----------------------------*/
+
+.left_column {
+    float: left;
+    width: 172px;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
 ul.vert-one {
     list-style: none;
     margin: 0;
-    max-width: 300px;
+    max-width: 199px;
     padding: 0;
-    width: 100%
+    width: 50%;
 }
 
 ul.vert-one>li {
     position: relative
 }
 
- ul.vert-one>li p {
+ul.vert-one>li p {
     margin: 0
 }
 
- ul.vert-one>li p a {
-    background: #fcba68;
-    color: #FFFFFF;
+ul.vert-one>li p  {
+    background: #aa6615;
+    color: #fff;
     display: block;
     padding: 15px;
     text-decoration: none
-    border-radius: 10px;
-    text-decoration: blink;
 }
+
 /*------------------------------------menu------------------------------------*/
 
 #menu ul {
@@ -290,14 +303,12 @@ ul.vert-one>li {
     padding: 0;
     padding: 0 6px;
     float: left;
-    
 }
 
 #menu>ul>li {
     position: relative;
     float: left;
     z-index: 10;
-
 }
 
 #menu .menu_item .sub_menu .bubble {
@@ -332,7 +343,6 @@ ul.vert-one>li {
     z-index: 5;
     padding: -150px;
     display: table;
-
 }
 
 #menu>ul>li:hover>.sub_menu {
@@ -348,16 +358,72 @@ ul.vert-one>li {
     border-left: 1px solid #FADA99;
 }
 
-#menu>ul>li ul>li>a {
-    line-height: 18px;
-    font-size: 12px;
-    float: none;
-    font-family: "Times New Roman", Times, serif;
+
+
+/*--------------------------------rating------------------------------------*/
+
+.rating-card {
+    padding: 10px;
+    background-color: #F5F5F5;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-shadow: 2px 2px 18px -2px #337AB7;
+}
+
+.fa-star,
+.fa-star-o {
+    color: orange;
+}
+
+.rating-card h1 {
+    color: #337AB7;
+    margin-bottom: 30px;
+}
+
+.rating {
+    width: 50%;
+    float: left;
+}
+
+.rating p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.rating h2 {
+    margin: 0px;
+    font-size: 60px;
     font-weight: normal;
-    text-shadow: none !important;
-    color: #4d4c4b;
-    text-decoration: none;
-    padding: 4px;
+}
+
+.rating-process {
+    width: 50%;
+    text-align: left;
+    float: left;
+}
+
+.rating-right-part {
+    margin-bottom: 3px;
+}
+
+.rating-right-part p {
+    margin: 0px;
+}
+
+.progress,
+.progress-2,
+.progress-3,
+.progress-4,
+.progress-5 {
+    background: #c2c2c2;
+    border-radius: 13px;
+    height: 18px;
+    width: 50%;
+    padding: 3px;
+    margin: -20px 0px 0px 50px;
     display: block;
     white-space: nowrap;
     min-width: 10px;
@@ -372,6 +438,8 @@ ul.vert-one>li {
 #menu>ul>li>div>ul>li>a {
     color: #4d4c4b;
 }
+
+
 /*-------------------------------------------------------------------------*/
 
 
@@ -422,8 +490,11 @@ ul.vert-one>li {
     line-height: normal;
     border-bottom: 1px dashed #666666;
 }
+
+
 /*--------------------------------rating------------------------------------*/
- .rating1 {
+
+.rating1 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -540,8 +611,6 @@ ul.vert-one>li {
 
 
 /*-------------------------------categories------------------------------------*/
-
-
 
 
 /*-------------------------------------------------------------------------*/
@@ -777,7 +846,10 @@ ul.vert-one>li {
     text-transform: capitalize;
     margin-bottom: 15px;
 }
+
+
 /*---------------------------------------sidebar-widget brands------------------------------------------*/
+
 .sidebar-widget.brands ul {
     margin: 0;
     padding: 0;
@@ -1027,15 +1099,16 @@ ul.vert-one>li {
 }
 
 #comment-wrapper {
-  width:500px;
-  height:450px;
-  position: relative;
-  float: left;
-  border-radius: 10px;
-  overflow: hidden;
-  visibility:visible;
-  display:block;
-  margin-bottom: 8px;
+     width: 500px;
+    height: 450px;
+    position: relative;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+    visibility: visible;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
 }
 
 #comment-wrapper.htabs a {
@@ -1073,47 +1146,62 @@ ul.vert-one>li {
     padding-bottom: 7px;
     text-decoration: blink;
 }
+
+
 /*-------------------------------form-comment*/
-#comment-list ul{
-  border-bottom: 1px dotted #cdcdcd;
-  padding-bottom: 10px;
+
+#comment-list ul {
+    border-bottom: 1px dotted #cdcdcd;
+    padding-bottom: 10px;
 }
-#comment-list li{
-  list-style: none;
-  color: #666;
-  line-height: 22px;
-  font-size: 12px;
+
+#comment-list li {
+    list-style: none;
+    color: #666;
+    line-height: 22px;
+    font-size: 12px;
 }
-li.com-title{
-  color: #000;
-  font-weight: bold;
-  text-transform: capitalize;
+
+li.com-title {
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
 }
-li.com-title span{
-  font-weight: normal;
-  color: #999;
+
+li.com-title span {
+    font-weight: normal;
+    color: #999;
 }
-.comment-list{
-  margin-top: 25px;
-  text-align: justify;
+
+.comment-list {
+    margin-top: 25px;
+    text-align: justify;
 }
+
+
 /*-------------------------------last-product---------------------------------------*/
+
 #last-product-wrapper {
-  width:550px;
-  height:450px;
-  position: relative;
-  float: right;
-  border-radius: 10px;
-  overflow: hidden;
-  visibility:visible;
-  display:block;
-  margin-bottom: 8px;
+    width: 550px;
+    height: 450px;
+    position: relative;
+    float: right;
+    border-radius: 10px;
+    overflow: hidden;
+    visibility: visible;
+    display: block;
+    margin-bottom: 8px;
 }
+
+
 /*------------------------------recent-book-sec-----------------------------------------------*/
+
 .recent-book-sec {
-  text-align: center;
-  margin-bottom: 130px; }
-  .recent-book-sec h2 {
+    text-align: center;
+    margin-bottom: 130px;
+}
+
+.recent-book-sec h2 {
     display: inline-block;
     padding: 0 15px;
     background: #fff;
@@ -1121,85 +1209,92 @@ li.com-title span{
     position: relative;
     font-size: 20px;
     text-transform: uppercase;
-    color: #363636; }
-  .recent-book-sec hr {
+    color: #363636;
+}
+
+.recent-book-sec hr {
     margin: 0;
     margin-top: -20px;
-    border-top: 1px solid #999999; }
-  .recent-book-sec .title {
-    margin-bottom: 80px; }
-  .recent-book-sec .item {
+    border-top: 1px solid #999999;
+}
+
+.recent-book-sec .title {
+    margin-bottom: 80px;
+}
+
+.recent-book-sec .item {
     text-align: left;
-    margin-bottom: 45px; }
-    .recent-book-sec .item img {
-      margin-bottom: 15px;
-      max-width: 100%;
-      cursor: pointer; 
+    margin-bottom: 45px;
+}
+
+.recent-book-sec .item img {
+    margin-bottom: 15px;
+    max-width: 100%;
+    cursor: pointer;
     border-radius: 10px;
     width: 450px;
     height: 250px;
+}
 
-  }
-    .recent-book-sec .item img:hover + h3 {
-      text-decoration: underline; }
-    .recent-book-sec .item h3 {
-      font-size: 13px;
-      line-height: 22px;
-      font-weight: 300;
-      margin-bottom: 10px; 
-      text-decoration: blink;
-  }
-      .recent-book-sec .item h3 a {
-        color: inherit; 
-        text-decoration: blink;
-    }
-    .recent-book-sec .item h6 {
-      font-size: 12px; }
-      .recent-book-sec .item h6 span {
-        color: #ff0000; }
-      .recent-book-sec .item h6 a {
-        color: #000;
-        border-bottom: 1px solid #d5d5d5;
-        padding-bottom: 1px; }
-        .recent-book-sec .item h6 a:hover {
-          text-decoration: none;
-          border-bottom: 0;
-          color: #ff9700; }
-  .recent-book-sec .row {
-    margin: 0 -30px; }
-    .recent-book-sec .row .col-lg-2 {
-      padding: 0 30px;
-      -ms-flex: 20%;
-      flex: 20%;
-      max-width: 20%; }
-  .recent-book-sec .btn-sec {
-    margin-top: 20px; }
+.recent-book-sec .item img:hover+h3 {
+    text-decoration: underline;
+}
 
+.recent-book-sec .item h3 {
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-decoration: blink;
+}
+
+.recent-book-sec .item h3 a {
+    color: inherit;
+    text-decoration: blink;
+}
+
+.recent-book-sec .item h6 {
+    font-size: 12px;
+}
+
+.recent-book-sec .item h6 span {
+    color: #ff0000;
+}
+
+.recent-book-sec .item h6 a {
+    color: #000;
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 1px;
+}
+
+.recent-book-sec .item h6 a:hover {
+    text-decoration: none;
+    border-bottom: 0;
+    color: #ff9700;
+}
+
+.recent-book-sec .row {
+    margin: 0 -30px;
+}
+
+.recent-book-sec .row .col-lg-2 {
+    padding: 0 30px;
+    -ms-flex: 20%;
+    flex: 20%;
+    max-width: 20%;
+}
+
+.recent-book-sec .btn-sec {
+    margin-top: 20px;
+}
 
 
 /*-----------------------------------------------------------------------*/
 
-.sort {
-    float: left;
-    margin-right: 3%;
-    background: #E1F2F9;
-    width: 250px;
-    padding: 1.4%;
-}
-.sort select {
-    width: 190px;
-}
- .limit {
-    float: left;
-    margin-right: 3%;
-    background: #E1F2F9;
-    width: 112px;
-    padding: 1.4%;
-}
-.limit select {
-    width: 65px;
-}
+
+
 /*--------------------------------------slider---------------------------------------*/
+
 .slider {
     float: right;
     width: 100%;
@@ -1207,7 +1302,7 @@ li.com-title span{
 }
 
 #slide-wrapper {
-    width: 800px;
+    width: 900px;
     height: 400px;
     position: relative;
     float: right;
@@ -1219,7 +1314,7 @@ li.com-title span{
 }
 
 #slide-wrapper ul {
-    width: 800px;
+    width: 900px;
     height: 400px;
 }
 
@@ -1240,7 +1335,6 @@ li.com-title span{
     z-index: 100;
     border-radius: 10px;
 }
-
 
 #slider li,
 #slider li img {
@@ -1280,6 +1374,7 @@ li.com-title span{
 
 
 /*----------------------------------sale--------------------------------------------*/
+
 .sale {
     position: absolute;
     right: 15px;
@@ -1291,8 +1386,9 @@ li.com-title span{
     background: #d31c71bb;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-   
 }
+
+
 /*----------------------------------new--------------------------------------------*/
 
 .new {
@@ -1306,7 +1402,9 @@ li.com-title span{
     background: #d31c71bb;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-   }
+}
+
+
 /*-------------------------------------sort-by------------------------------*/
 
 
@@ -1405,6 +1503,15 @@ li.com-title span{
 /*------------------------------------------------------------------------------*/
 
 
+/*-------------------------------------about-sec----------------------------------------------*/
+
+
+/*.about-sec {
+  margin-bottom: 80px;
+  float: left;
+  width: 100%; 
+=======
+
 /*-----------------------------------------------------------------------------------*/
 
 .about-sec {
@@ -1467,12 +1574,15 @@ li.com-title span{
 
 /*-----------------------------------------------------------------------------------*/
 
+
 /*---------------------------------tooltip-------------------------------------------*/
 
 
 /*-----------------------------------------------------------------------------------*/
 
+
 /*-------------------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------------------------*/
 
@@ -2340,25 +2450,33 @@ footer .copy-right {
     background: #756E6E;
     color: #fff;
     padding: 25px 0;
-<<<<<<< HEAD
     margin-top: 60px;
-=======
-    margin-top: 60px; }
-    footer .copy-right h5 {
-      font-size: 14px;
-      font-weight: 300; }
-    footer .copy-right .row {
-      align-items: center; }
-    footer .copy-right .share {
-      text-align: right; }
-    footer .copy-right .share span {
-        padding: 0 5px;
-        cursor: pointer; }
-      footer .copy-right .share span:last-child {
-          padding-right: 0; }
-      footer .copy-right .share span:hover {
-          color: #ff9700; 
->>>>>>> 6f3e79f4ae3da241982242f8a1f40621d2fa00ff
+}
+
+footer .copy-right h5 {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+footer .copy-right .row {
+    align-items: center;
+}
+
+footer .copy-right .share {
+    text-align: right;
+}
+
+footer .copy-right .share span {
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+footer .copy-right .share span:last-child {
+    padding-right: 0;
+}
+
+footer .copy-right .share span:hover {
+    color: #ff9700;
 }
 
 footer .copy-right h5 {

@@ -45,7 +45,6 @@
 
         @include('layout_admin.header')
         @yield('content')
-        
         <!-- Right side column. Contains the navbar and content of the page -->
         <!-- /.content-wrapper -->
 
@@ -127,7 +126,7 @@
 		});
     </script>
     
-   
+    @yield('js')
 
 </body>
 

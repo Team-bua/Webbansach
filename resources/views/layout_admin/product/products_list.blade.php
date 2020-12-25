@@ -26,7 +26,7 @@
                             <form action="">
                                 <div class="col-md-4 pull-left">
                                     <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control  pull-right"
+                                        <input type="text" id="table_search" name="table_search" class="form-control  pull-right"
                                             placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-success"
@@ -53,6 +53,7 @@
 
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>
+                                        <th>Tác giả</th>
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
                                         <th>Miêu tả</th>
@@ -65,7 +66,8 @@
                                     @foreach ($product as $pro)
                                         <tr>
                                             <td>{{ $pro->name }}</td>
-                                            <td>{{ $pro->product_type->name }}</td>
+                                            <td>{{ $pro->productType->name }}</td>
+                                            <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
                                             <td>{{ $pro->description }}</td>
@@ -95,7 +97,6 @@
             </div>
         </section><!-- /.content -->
     </div>
-    
 
 @endsection
 

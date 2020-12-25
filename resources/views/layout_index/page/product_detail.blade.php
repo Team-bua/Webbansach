@@ -4,7 +4,7 @@
         <div class="container">
             <h1>7 Day Self publish How to Write a Book</h1>
             <div class="row">
-                
+
                 <div class="col-md-6 slider-sec">
                     <!-- main slider carousel -->
                     <div id="myCarousel" class="carousel slide">
@@ -12,39 +12,43 @@
                         <div class="carousel-inner">
                         <div class="sale">- %20</div>
                             <div class="active item carousel-item" data-slide-number="0">
-                                <img src="images/product1.jpg" class="img-fluid">
+
+                                <img id="image-main" style="height:505px"
+                                    src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
+
                             </div>
-                            <div class="item carousel-item" data-slide-number="1">
-                                <img src="images/product2.jpg" class="img-fluid">
-                            </div>
-                            <div class="item carousel-item" data-slide-number="2">
-                                <img src="images/product3.jpg" class="img-fluid">
-                            </div>
+
                         </div>
+
+
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
+                            @foreach($product_detail->imagedetail as $pro)
                             <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img src="images/product1.jpg" class="img-fluid">
-                            </a>
+                                <img style="height:160px"src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
+                                </a>
                             </li>
-                            <li class="list-inline-item">
-                                <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
-                                <img src="images/product2.jpg" class="img-fluid">
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
-                                <img src="images/product3.jpg" class="img-fluid">
-                            </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!--/main slider carousel-->
                 </div>
+                
+                <script>
+                    let imageMain = document.getElementById('image-main');
+                    let imageDetail = document.querySelectorAll('.img-fluid');
+                    imageDetail.forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            let src = this.src;
+                            imageMain.src = src;
+                        });
+                    });
+
+                </script>
                 <div class="col-md-6 slider-content">
-                    
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
+
+                    <p>. </p>
 
                     <ul>
                         <li>
@@ -55,15 +59,16 @@
                             <span class="name">Giá Bán</span><span class="clm">:</span>
                             <span class="price final">$3.37</span>
                         </li>
-                        
+
                     </ul>
-                    
+
                     <form action="" class="cart">
-                                        <div class="quantity">
-                                              <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                       
-                                    </form>
+                        <div class="quantity">
+                            <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4"
+                                class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                        </div>
+
+                    </form>
                     <div class="btn-sec">
                         <button class="btn ">Thêm Vào Giỏ Hàng</button>
                         <button class="btn ">Mua Ngay</button>
@@ -163,7 +168,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
                                         </div>
-                                        <textarea style="resize: none;" rows="5" cols="30" class="form-control"  placeholder="messenger" required ></textarea>
+                                        <textarea style="resize: none;" rows="4" cols="30" class="form-control"  placeholder="messenger" required ></textarea>
                                     </div>
                                 </div>
 
@@ -171,7 +176,8 @@
                                     <input type="submit" value="Gửi" class="btn btn-info btn-block rounded-0 py-2">
                                 </div>
                             </div>
-
+                            <br>
+                        
                         </div>
                     </form>
         <div style="clear:both;"></div>
@@ -180,42 +186,27 @@
     </div>
     </div>
     <div class="container">
-            <div id="last-product-wrapper">
-        <div id="comment-list">
-                            <ul>
-                                <li class="com-title">
-                                    Team bùa
-                                    <br>
-                                    <span>2020-19-01 10:00:00</span>    
-                                </li>
-                                <li class="com-details">
-                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="com-title">
-                                    Team bùa
-                                    <br>
-                                    <span>2020-19-01 10:00:00</span>    
-                                </li>
-                                <li class="com-details">
-                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="com-title">
-                                    Team bùa
-                                    <br>
-                                    <span>2020-19-01 10:00:00</span>    
-                                </li>
-                                <li class="com-details">
-                                    Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
-                                </li>
-                            </ul>
-                        </div>
-            </div>
+                <div id="last-product-wrapper">
+            <div id="comment-list">
+                                <ul>
+                                    <li class="com-title">
+                                        Team bùa
+                                        <br>
+                                        <span>2020-19-01 10:00:00</span>    
+                                    </li>
+                                    <li class="com-details">
+                                        Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                                    </li>
+                                </ul>
+                             
+                            </div>
+                </div>
         </div>
     </section>
-
-    <a href="#" class="bck"></a> 
+    <a href="#" class="bck"></a>
 @endsection
+
+<script>
+    let varName = document.getElementById('elementId');
+
+</script>

@@ -189,7 +189,7 @@
 
             <!-- Thống kê -->
             <li class="treeview">
-                <a href="{{ route('chart.index') }}">
+                <a href="{{ url('admin') }}">
                     <i class="fa fa-pie-chart fa-lg text-success"></i>
                     <span>Tổng Quan</span>
                 </a>
@@ -233,6 +233,14 @@
                     <i class="fa fa-archive  fa-lg text-success"></i>
                     <span>Kho hàng</span>
                     <small class="label pull-right bg-yellow">12</small>
+                </a>
+
+            </li>
+            <!-- Quản lý slide -->
+            <li class="treeview">
+                <a href="{{ route('slide.index') }}">
+                    <i class="fa fa-list-alt  fa-lg text-success"></i>
+                    <span>Slide</span>
                 </a>
 
             </li>

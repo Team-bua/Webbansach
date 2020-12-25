@@ -33,32 +33,26 @@
                                 </div>
                             </div>
                         </form>
-
-                        <div class="col-md-4 pull-right">
-                            <a href="{{ route('book.create') }}">
-                                <button class="btn btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px">
-                                    <i class="fa fa-plus"> Thêm sách mới </i></button>
-                            </a>
-                        </div>
                     </div><!-- /.box-header -->
                     <div class="box-body  ">
                         <table class="table table-bordered">
                             <tbody>
-                                <tr style="  font-size:18px; ">
-                                    <th class="text-center">Tên người dùng
+                                <tr style=" font-size:18px;">
+                                    <th > Tên người dùng
                                         <span id="name" class="fa fa-fw fa-sort pull-right" aria-hidden="true"></span>
                                     </th>
-                                    <th class="text-center">Tên tài khoản
+                                    <th >Tên tài khoản
                                         <span id="name" class="fa fa-fw fa-sort pull-right" aria-hidden="true"></span>
                                     </th>
-                                    <th>Tùy chọn</th>
+                                    <th >Quyền</th>
+                                    <th >Tùy chọn</th>
                                 </tr>
                                 @foreach($user as $users)
-                                <tr>
-                                    <td class="text-center">{{$users->full_name}}</td>
-                                    <td class="text-center">{{$users->username}}</td>
-
-                                    <td>
+                                <tr >
+                                    <td>{{$users->full_name}}</td>
+                                    <td>{{$users->username}}</td>
+                                    <td>{{$users->role->display_name}}</td> 
+                                    <td >
                                         <div class="btn-toolbar" role="toolbar">
                                             <div class="btn-group mr-2" role="group">
                                                 <a href="{{route('user.show',[$users['id']])}}">

@@ -2,7 +2,6 @@
 @section('content')
 </div>
         <div class="main-menu">
-            
         </div>
     </header>
     <div class="breadcrumb">
@@ -31,7 +30,7 @@
                 </div>
                 <div class="row  justify-content-md-center">
                     <div class="col-6">
-                        <input type="email" name="username" class="@error('username') isvalid @enderror" placeholder="Username . . . . . " >
+                        <input type="email" name="username" class="@error('username') isvalid @enderror" placeholder="Email . . . . . " >
                         <span class="required-star">*</span>
                         @error('username')
                         <div style="color:red; margin-top: -30px" >{{ $message }}</div>

@@ -67,6 +67,7 @@ class SupplierRepository
 
     public function destroy($id) {
         $supplier = Supplier::find($id);
+        unlink(public_path('images/users').'/'.$supplier->image);
         $supplier->delete();
       
     }
