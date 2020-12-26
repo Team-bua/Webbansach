@@ -41,8 +41,7 @@ public function __construct(PageRepository $repository)
     }
 
    public function getDetail($id){
-    $product_detail = $this->repository->getproduct($id);
-
+        $product_detail = $this->repository->getproduct($id);
         return view('layout_index.page.product_detail',compact('product_detail'));
     }
 
@@ -79,6 +78,11 @@ public function __construct(PageRepository $repository)
 
      public function getCart(){
         return view('layout_index.page.cart');
+    }
+
+    public function getAddCart(Request $request, $id){
+        $this->repository->getAddCart($request, $id);
+        return redirect()->back();
     }
 
     public function getSignup(){

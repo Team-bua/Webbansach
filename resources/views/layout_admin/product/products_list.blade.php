@@ -70,7 +70,7 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-                                            <td>{{ $pro->description }}</td>
+                                            <td>{!! $pro->description !!}</td>
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>

@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Models\ProductType;
+use App\Models\Cart;
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +27,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        view()->composer('header', function($view){
+            $loaisp = ProductType::all();
+            $view->with('loaisp',$loaisp);
+        });
+        view()->composer('layout_index.page.cart', function($view){
+            if(Session('cart')){
+                $oldcart = Session::get('cart');
+                $cart = new Cart($oldcart);
+                $view->with(['cart'=>Session::get('cart'),
+                            'product_cart'=>$cart->items,
+                            'totalPrice'=>$cart->totalPrice,
+                            'totalQty'=>$cart->totalQty]);
+            }
+        });
         Schema::defaultStringLength(191);
     }
 }

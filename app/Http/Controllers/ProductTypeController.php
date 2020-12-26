@@ -77,9 +77,9 @@ class ProductTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
         $product_type = $this->repository->getAll();
-        $type = ProductType::find($id);
+        $type = ProductType::find($id);         
         return view('layout_admin.product_type.edit_type', compact('type','product_type'));
     }
 

@@ -7,8 +7,10 @@ use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Cart;
 use App\Models\Slide;
 use Illuminate\Http\Request;
+use Session;
 
 class PageRepository
 {
@@ -36,9 +38,19 @@ class PageRepository
     {
         return ProductType::all();
     }
+
     public function getSlide()
     {   
         return Slide::where('status', 1)->get();
+    }
+
+    public function getAddCart(Request $request, $id){
+        $product = Product::find($id);
+        $oldcart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldcart);
+        $cart->add($product, $id);
+        $request->session()->put('cart',$cart);
+        
     }
     
     public function createUser(Request $request)

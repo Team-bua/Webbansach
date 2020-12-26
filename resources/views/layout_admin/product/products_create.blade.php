@@ -62,9 +62,10 @@
                     </div>
 
                     <h4> Miêu tả </h4>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-                        <input id="descriptionbook" name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
+                    <div class='box-body pad'>
+                        <form>
+                            <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </form>
                     </div>
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh sản phẩm</h4>
@@ -87,3 +88,14 @@
     </section><!-- /.content -->
 </div>
 @endsection
+@section('js')
+<script type="text/javascript">
+    $(function() {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('editor1');
+        //bootstrap WYSIHTML5 - text editor
+        $(".textarea").wysihtml5();
+    });
+</script>
+@stop

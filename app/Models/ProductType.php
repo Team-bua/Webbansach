@@ -17,4 +17,9 @@ class ProductType extends Model
     {
         return $this->hasMany(Product::class,'id_type', 'id');
     }
+
+    public function menuType()
+    {
+        return $this->belongsTo(Menu::class,'id_menu', 'id');
+    }
 }

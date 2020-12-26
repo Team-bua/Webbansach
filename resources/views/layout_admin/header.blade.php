@@ -199,6 +199,7 @@
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i class="fa fa-book fa-lg text-success"></i> <span> Sách</span>
+                    <small class="label pull-right bg-green"></small>
                 </a>
 
             </li>

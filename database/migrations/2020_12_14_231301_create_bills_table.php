@@ -22,7 +22,7 @@ class CreateBillsTable extends Migration
             $table->date('date_order');
             $table->date('complete_order');
             $table->integer('total');
-            $table->integer('quanlity');
+            $table->integer('quantity');
             $table->string('payment');
             $table->string('status');
             $table->timestamps();

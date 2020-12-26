@@ -23,15 +23,17 @@
 
 
                         <!-- main slider carousel nav controls -->
+                        @if($product_detail->imagedetail)
                         <ul class="carousel-indicators list-inline">
-                            @foreach($product_detail->imagedetail as $pro)
+                            @for($i=0; $i<3; $i++)
                             <li class="list-inline-item active">
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img style="height:160px"src="{{ asset('images/product_detail/'.$pro) }}" class="img-fluid">                
+                                <img style="height:160px"src="{{ asset('images/product_detail/'.$product_detail->imagedetail[$i]) }}" class="img-fluid">                
                                 </a>
                             </li>
-                            @endforeach
+                            @endfor
                         </ul>
+                        @endif
                     </div>
                     <!--/main slider carousel-->
                 </div>
@@ -48,17 +50,14 @@
 
                 </script>
                 <div class="col-md-6 slider-content">
-
-                    <p>. </p>
-
                     <ul>
                         <li>
-                            <span class="name">Giá niêm yết</span><span class="clm">:</span>
-                            <span class="price">$10.99</span>
+                            <span class="name">Giá Bán</span><span class="clm">:</span>
+                            <span class="price">{{$product_detail->unit_price}} Đ</span>
                         </li>
                         <li>
-                            <span class="name">Giá Bán</span><span class="clm">:</span>
-                            <span class="price final">$3.37</span>
+                            <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
+                            <span class="price final">{{$product_detail->promotion_price}} Đ</span>
                         </li>
 
                     </ul>
@@ -71,7 +70,7 @@
 
                     </form>
                     <div class="btn-sec">
-                        <button class="btn ">Thêm Vào Giỏ Hàng</button>
+                        <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
                         <button class="btn ">Mua Ngay</button>
                         <button class="btn black">Đọc ONLINE</button>
                     </div>

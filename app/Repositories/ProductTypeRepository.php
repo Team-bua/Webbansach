@@ -13,7 +13,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::paginate(10);
+        return ProductType::all();
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductTypeRepository
        $product_type = new ProductType();
        $product_type->name=$request->input('name');
        $product_type->save();
-       return response()->json($product_type);
+       return $product_type;
     }
 
     /**
@@ -38,10 +38,11 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function update($request, $id) {
+    public function update($request, $id) {  
         $product_type = ProductType::find($id);
         $product_type->name = $request->input('name');
         $product_type->save();
+        return $product_type;
     }
 
      /**
