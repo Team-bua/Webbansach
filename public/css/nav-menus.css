@@ -162,7 +162,7 @@ way to fit your requirements.
 	color: #000000;
 	text-decoration: none;
 	cursor:pointer;
-	background: #FCCAD6;
+	background: #FFFFFF;
 
 
 }
@@ -174,8 +174,8 @@ way to fit your requirements.
 }
 
 #prod_nav li:hover a.top_link {
-	color:#ed1c24;
-	background: #F7941E;
+	color:#FFFFFF;
+	background: #fcba68;
 }
 
 
@@ -194,7 +194,7 @@ way to fit your requirements.
 	border: 1px solid ;
 	border-left: 0;
 	white-space: nowrap;
-	width: 930px;
+	width: 900px;
 	height: auto;
 	z-index: 300;
 }

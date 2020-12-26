@@ -14,31 +14,15 @@
         </div>
     </div>
     <div class="container">
-<<<<<<< HEAD
         <ul class="vert-one">
         <li>
             <center> <p><a>Danh Mục Sách</a></p></center>
         </li>  
-=======
-
-    	<ul class="vert-one">
-
-		<li>
-			<p><a href="">Danh Mục Sách</a></p>
-				<ul id="t1">
-                    @foreach($product_type as $pro)
-                    <li><a href="#">{{$pro->name}}</a></li>
-                    @endforeach
-				</ul>
-			<a href="#foo"></a>
-        </li>
-
->>>>>>> 7abb66f27cb0a095defbb04134dc8d6aa85dd864
     </ul>
-<div class="left_column">
-      <div class="product_menu">
+    <div class="left_column">
+        <div class="product_menu">
         <ul id="prod_nav" class="clearfix">
-          <li class="top"><a href="#" class="top_link"><span class="down">Sách Trong Nước</span></a>
+            <li class="top"><a  class="top_link"><span class="down">Sách Trong Nước</span></a>
             <ul class="sub">
               <li>
                   <ul>
@@ -54,13 +38,12 @@
           </li>
         </ul>
       </div>
-    </div>
-    
-    </div>
+    </div>    
+</div>
 </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h2>books </h2>
+            <h2>Tìm thấy {{count($product)}} sản phẩm </h2>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">
@@ -70,8 +53,15 @@
                         <div class="sale">- %20</div>
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
+                <div class="content">
+
+                <div class="body">
+                    <p>{{ $pro->description }}</p>
+                </div>
+                </div>
                         </div>
                     </div>
+
                     @endforeach
                 </div>
                 <div class="btn-sec">

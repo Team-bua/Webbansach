@@ -5,31 +5,21 @@
           <div id="menu">
             <ul>
               <li class="menu_item down"><i class="fa fa-phone"></i> 0779 750 123
-                <div class="sub_menu">
-                  <div class="bubble"></div>
-                  <div class="sub_menu_block" style="width:326px">
-                    <ul>
-                      <li><a href="">Thứ 2 - 7: hoạt động từ 7:30 - 20:00</a> </li>
-                      <li><a href="">Chủ nhật: hoạt động từ 8:00 - 17:00</a> </li>
-                    </ul>
-                  </div>
-                </div>
+
               </li>
   
             </ul>
             <ul>
-              <li class="menu_item down"><i class="fa fa-truck"></i> Miễn phí giao hàng
-                <div class="sub_menu">
-                  <div class="bubble"></div>
-                  <div class="sub_menu_block" style="width:326px">
-                    <ul>
-                      <li><a href="">Giao hàng miễn phí từ đơn 300.00đ</a> </li>
-                    </ul>
-                  </div>
-                </div>
+              <li class="menu_item down"><i class="fa fa-truck"></i> Miễn phí giao hàng trong khu vực
               </li>
             </ul>
-            
+            @if(Auth::check())
+            <ul>
+              <li class="menu_item down">---Chào Bạn<a href="{{route('admin')}}">{{Auth::user()->full_name}}</a>--</li>
+               <li class="menu_item down"><a href="{{route('logout')}}">Đăng xuất</a></li>
+            </ul>
+            @else
+            @endif
           </div>
         </div>
       </div>

@@ -289,7 +289,7 @@ ul.vert-one>li p {
 }
 
 ul.vert-one>li p  {
-    background: #aa6615;
+    background: #F7941E;
     color: #fff;
     display: block;
     padding: 15px;
@@ -311,48 +311,7 @@ ul.vert-one>li p  {
     z-index: 10;
 }
 
-#menu .menu_item .sub_menu .bubble {
-    position: absolute;
-    top: 3px;
-    height: 11px;
-    width: 100px;
-    left: 0px;
-    clear: both;
-    display: block;
-    z-index: 23;
-}
 
-#menu .menu_item .sub_menu {
-    position: absolute;
-    left: 5px;
-    top: 20px;
-    display: none;
-    width: 15px;
-    height: 15px;
-    width: 35%;
-}
-
-#menu .menu_item .sub_menu .sub_menu_block {
-    border-radius: 8px;
-    border: 1px solid #E1B356;
-    box-shadow: 0px 0px 3px #999;
-    -webkit-box-shadow: 0px 0px 3px #999;
-    -moz-box-shadow: 0px 0px 3px #999;
-    margin-top: 12px;
-    position: absolute;
-    z-index: 5;
-    padding: -150px;
-    display: table;
-}
-
-#menu>ul>li:hover>.sub_menu {
-    display: block;
-}
-
-#menu>ul>li>.sub_menu>.sub_menu_block>ul {
-    min-width: 10px;
-    display: table-cell;
-}
 
 #menu>ul>li ul+ul {
     border-left: 1px solid #FADA99;
@@ -760,8 +719,24 @@ ul.vert-one>li p  {
 .rating1:hover>input:checked~label:before {
     opacity: 0.4
 }
-
-
+/*--------------------------------information-----------------------------------*/
+.features ul li {
+    float: left;
+    font-size: 15px;
+    margin-bottom: 10px;
+    width: 35%;
+  }
+  .features ul li i {
+    color: #c2d82e;
+    margin-right: 5px;
+  }
+  ul {
+    list-style: none;
+  }
+   .features {
+    margin: 30px auto;
+    width: 690px;
+  }
 /*--------------------------------comment-----------------------------------*/
 
 .wrapper {
@@ -848,7 +823,7 @@ ul.vert-one>li p  {
 }
 
 
-/*---------------------------------------sidebar-widget brands------------------------------------------*/
+/*---------------------------------------sidebar-widget brands-------------------------------------*/
 
 .sidebar-widget.brands ul {
     margin: 0;
@@ -905,7 +880,7 @@ ul.vert-one>li p  {
 }
 
 
-/*-----------------------------------------------------------------------------*/
+/*-------------------------------sidebar-widget----------------------------------------------*/
 
 .sidebar-widget {
     padding: 30px;
@@ -1234,8 +1209,12 @@ li.com-title span {
     border-radius: 10px;
     width: 450px;
     height: 250px;
+    animation: mymove 5s infinite;
 }
 
+@keyframes mymove {
+  50% {border-radius: 50px;}
+}
 .recent-book-sec .item img:hover+h3 {
     text-decoration: underline;
 }
@@ -1503,16 +1482,43 @@ li.com-title span {
 /*------------------------------------------------------------------------------*/
 
 
+/*-------------------------------------tooltip----------------------------------------------*/
+.content {
+  position: absolute;
+  bottom: 150px;
+  padding: 1px;
+  min-width: 220px;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+
+.content .body {
+  padding: 1px;
+}
+
+.content .body p {
+    font-size: 13px;
+    color: #272727;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+
+}
+
+.item:hover .content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-5%) translateY(-150px);
+}
+
+
 /*-------------------------------------about-sec----------------------------------------------*/
-
-
-/*.about-sec {
-  margin-bottom: 80px;
-  float: left;
-  width: 100%; 
-=======
-
-/*-----------------------------------------------------------------------------------*/
 
 .about-sec {
     margin-bottom: 80px;
@@ -1575,16 +1581,9 @@ li.com-title span {
 /*-----------------------------------------------------------------------------------*/
 
 
-/*---------------------------------tooltip-------------------------------------------*/
 
 
-/*-----------------------------------------------------------------------------------*/
-
-
-/*-------------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------------------*/
+/*--------------------------------------features-sec------------------------------------------*/
 
 .features-sec {
     margin-bottom: 100px;
@@ -1649,7 +1648,7 @@ li.com-title span {
 }
 
 
-/*-----------------------------------------------------------------*/
+/*----------------------------testimonial-sec-------------------------------------*/
 
 .testimonial-sec {
     padding: 80px 0;
@@ -1838,6 +1837,7 @@ li.com-title span {
     .slider .owl-dots {
         bottom: 10px;
     }
+    /*----------------------------------------------------about-sec----------------------------------------------------*/
     .about-sec {
         padding-bottom: 60px;
     }
@@ -2271,7 +2271,7 @@ li.com-title span {
 }
 
 .product-sec .slider-content ul li span.final {
-    font-size: 24px;
+    font-size: 17px;
     text-decoration: none;
     color: #ff0000;
     line-height: 24px;
@@ -2525,7 +2525,7 @@ footer .copy-right .share span:hover {
 /*# sourceMappingURL=styles.css.map */
 
 
-/*--------------------------------------------------------------------------*/
+/*----------------------------------quantity----------------------------------------*/
 
 .quantity {
     float: left;

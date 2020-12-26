@@ -2,9 +2,9 @@
 @section('content')
     <section class="product-sec">
         <div class="container">
-            <h1>7 Day Self publish How to Write a Book</h1>
+            
+            <h1></h1>
             <div class="row">
-
                 <div class="col-md-6 slider-sec">
                     <!-- main slider carousel -->
                     <div id="myCarousel" class="carousel slide">
@@ -12,15 +12,10 @@
                         <div class="carousel-inner">
                         <div class="sale">- %20</div>
                             <div class="active item carousel-item" data-slide-number="0">
-
                                 <img id="image-main" style="height:505px"
                                     src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
-
-                            </div>
-
+                           </div>
                         </div>
-
-
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
                             @foreach($product_detail->imagedetail as $pro)
@@ -34,7 +29,6 @@
                     </div>
                     <!--/main slider carousel-->
                 </div>
-                
                 <script>
                     let imageMain = document.getElementById('image-main');
                     let imageDetail = document.querySelectorAll('.img-fluid');
@@ -46,6 +40,7 @@
                     });
 
                 </script>
+                
                 <div class="col-md-6 slider-content">
 
                     <p>. </p>
@@ -57,7 +52,7 @@
                         </li>
                         <li>
                             <span class="name">Giá Bán</span><span class="clm">:</span>
-                            <span class="price final">$3.37</span>
+                            <span class="price final">10000000VNĐ</span>
                         </li>
 
                     </ul>
@@ -67,15 +62,13 @@
                             <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4"
                                 class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                         </div>
-
                     </form>
                     <div class="btn-sec">
-                        <button class="btn ">Thêm Vào Giỏ Hàng</button>
-                        <button class="btn ">Mua Ngay</button>
+                        <a href=""></a><button class="btn ">Thêm Vào Giỏ Hàng</button>
+                        <button class="btn">Mua Ngay</button>
                        <a href="{{route('Read')}}"> <button class="btn black">Đọc ONLINE</button></a>
                     </div>
-
-                </div>
+                </div>            
             </div>
         </div>
     </section>
@@ -85,6 +78,7 @@
             <div id="tabs" class="htabs">
       <a href="#tab-specification">Đánh Giá</a>
       <a href="#tab-review">Bình Luận</a> 
+      <a href="#tab-information">Thông Tin</a> 
     </div>
     <div id="tab-specification" class="tab-content">
       <div class="cpt_product_description ">
@@ -182,6 +176,24 @@
                     </form>
         <div style="clear:both;"></div>
     </div>
+    </div>
+    <div id="tab-information" class="tab-content">
+      <div class="cpt_product_description ">
+        <div>
+            <section class="features">
+    <ul>
+      <li><i class="fas fa-check"></i>Tác Giả</li>
+      <li><i class="fas fa-check"></i>Nhà Phát Hành</li>
+      <li><i class="fas fa-check"></i>Khối Lượng</li>
+      <li><i class="fas fa-check"></i>Định Dạng</li>
+      <li><i class="fas fa-check"></i>Ngày Phát Hành</li>
+      <li><i class="fas fa-check"></i>Ngôn Ngữ</li>
+      <li><i class="fas fa-check"></i>Kích Thước</li>
+      <li><i class="fas fa-check"></i>Số Trang</li>
+    </ul>
+  </section>
+        </div>
+      </div>
     </div>
     </div>
     </div>

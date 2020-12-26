@@ -41,11 +41,11 @@ public function __construct(PageRepository $repository)
     }
 
    public function getDetail($id){
-    $product_detail = $this->repository->getproduct($id);
-
-        return view('layout_index.page.product_detail',compact('product_detail'));
+        $product_detail = $this->repository->getproduct($id);
+        $product_detail1 = $this->repository->getproduct($id);
+        return view('layout_index.page.product_detail',compact('product_detail','product_detail1'));
     }
-
+        
    
    public function getNews(){
         return view('layout_index.page.news');
