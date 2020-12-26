@@ -78,7 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+        $user = $this->repository->getuser($id);
+        return view('layout_admin.user.list_users', compact('user'));
     }
 
     /**
@@ -90,7 +91,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->repository->update($request, $id);
+        return redirect(route('user.index'));
     }
 
     /**
