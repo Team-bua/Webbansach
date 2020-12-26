@@ -48,6 +48,8 @@ Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
+//----->Thêm vào giỏ hàng
+
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 //----->đọc sách

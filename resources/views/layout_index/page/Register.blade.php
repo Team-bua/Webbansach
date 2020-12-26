@@ -2,7 +2,6 @@
 @section('content')
 </div>
         <div class="main-menu">
-            
         </div>
     </header>
     <div class="breadcrumb">

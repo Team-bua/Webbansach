@@ -3,6 +3,7 @@
   <section class="deltai">
     <div class="container">
         <div class="sidebar-widget tag">
+            
                             <h2 class="title">Yêu Cầu Lựa Chọn</h2>
                             <a href="#">sản phẩm mới</a>
                             <a href="#">A đến Z</a>
@@ -40,13 +41,16 @@
         <div class="container"> 
 
             <h2>books </h2>
-
+<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+            <span class="fa fa-search"></span>
+          </form>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="item">
-                        <div class="offer">- %20</div>
+                        <div class="sale">- %20</div>
                             <img src="images/r1.jpg" alt="img">
                             <h3><a href="#">Keepers of the kalachakara</a></h3>
                             <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
@@ -54,7 +58,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="item">
-                        <div class="offer">- %20</div>
+                        <div class="sale">- %20</div>
                             <img src="images/r2.jpg" alt="img">
                             <h3><a href="#">Keepers of the kalachakara</a></h3>
                             <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
