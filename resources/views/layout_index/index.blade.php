@@ -21,9 +21,10 @@
     </ul>
     <div class="left_column">
         <div class="product_menu">
+            @foreach ($product_type as $pro)
         <ul id="prod_nav" class="clearfix">
-            <li class="top"><a  class="top_link"><span class="down">Sách Trong Nước</span></a>
-            <ul class="sub">
+            <li class="top"><a  class="top_link"><span class="down">{{ $pro->name }}</span></a>
+            <ul  class="sub">
               <li>
                   <ul>
                       <li><h6>Submenu #1</h6></li>
@@ -37,13 +38,14 @@
             </ul>
           </li>
         </ul>
+        @endforeach
       </div>
     </div>    
 </div>
 </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h2>Tìm thấy {{count($product)}} sản phẩm </h2>
+            <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">

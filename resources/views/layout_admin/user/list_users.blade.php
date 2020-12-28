@@ -133,7 +133,7 @@
                                 obj[el.textContent] = elems[i + 1].value
                             }
                         });
-                        $(" #btnsave,#btnedit").hide();
+                        
                     });
 
     </script>

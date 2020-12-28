@@ -69,24 +69,29 @@
                                     </form>
                                 </div>
                             </div>
+
+
                         </div><!-- /.box-header -->
 
                         <div class="box-body table-responsive no-padding">
                             <table style="width:60% " id="tableId" class="table table-hover">
-                                <tbody>
+                                <tbody id="myTable">
+                                    <?php $i = 1 ?>
                                     <tr>
                                         <th>Tên loại</th>
                                         <th colspan="2" width="20%">
                                             <center>Chức năng</center>
                                         </th>
                                     </tr>
+                                    <?php $i++ ?>
                                     @foreach ($product_type as $pro)
                                         <tr>
                                             <td>{{ $pro->name }}</td>
                                             <td>
-                                                <a href="{{ route('book_type.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn pull-right"> Sửa </button>
-                                                </a>
+                                                <button href="{{route('book_type.edit',$pro->id)}}" type="button" 
+                                                    class="btn btn-warning js_order_item" data-toggle="modal" data-target="#myModal">Sửa</button>
+
+
                                             </td>
                                             <td>
                                                 <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}"
@@ -102,8 +107,29 @@
                                 </tbody>
                             </table>
                         </div><!-- /.box-body -->
+
                     </div><!-- /.box -->
+                    
                 </div>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div  class="modal-dialog">
+                
+                        <!-- Modal content-->
+                        <div class="modal-content" style="width:400px;">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Cập nhật loại sản phẩm</h4>
+                            </div>
+                            <div class="modal-body" id="content">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                
             </div>
 
 
@@ -112,6 +138,7 @@
         </section>
         <!-- danh sach -->
 
+        
 
             
     </div>
@@ -130,4 +157,26 @@
     }
 
 </script>
+<script>
+	$(function() {
+		$(".js_order_item").click(function(event) {
+			event.preventDefault();
+			let $this = $(this);
+			let url = $this.attr('href');
+			// $(".slide_id").text('').text($this.attr('data-id'));
+			$("#myModal").modal('show');
+
+			$.ajax({
+				url: url,
+			}).done(function(result) {
+				console.log(result);
+				if (result) {
+					$("#content").html('').append(result);
+				}
+			});
+
+		});
+	});
+</script>
+
 @stop

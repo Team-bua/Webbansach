@@ -13,7 +13,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::orderBy('created_at','desc')->paginate(10);
+        return ProductType::orderBy('created_at','desc')->paginate(8);
     }
 
     /**
@@ -39,10 +39,15 @@ class ProductTypeRepository
      * @return void
      */
     public function update($request, $id) {
+        if ($request->ajax()) {
         $product_type = ProductType::find($id);
         $product_type->name = $request->input('name');
         $product_type->save();
+        return $product_type;
+        $html = view('book_type.edit',compact('product_type'))->render();
+        return response()->json($html);
     }
+}
 
      /**
      * delete a member.
@@ -55,6 +60,21 @@ class ProductTypeRepository
         $product_type = ProductType::find($id);
         $product_type->delete();
       
+    }
+     /**
+     * search  member.
+     *
+     * @param  \App\Http\Requests\ProductTypeRequest $request
+     * @param  \App\Models\ProductType $product_type
+     * @return void
+     */
+
+    public function search($request) {
+
+        $search = $request->table_search;
+        return ProductType::where(function ($query) use ($search) {
+                $query->where('name', 'like', "%$search%");
+            })->paginate(10);
     }
 
 

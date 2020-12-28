@@ -90,8 +90,12 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                {{ $product->links('vendor.pagination.bootstrap-4') }}
                             </table>
+                            
+                           
                         </div><!-- /.box-body -->
+                       
                     </div><!-- /.box -->
                 </div>
             </div>
