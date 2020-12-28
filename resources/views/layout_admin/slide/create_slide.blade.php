@@ -26,7 +26,7 @@
                     <h4> Tiêu đề : </h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                        <input id="namebook" required name="title" type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
+                        <input id="namebook"  name="title" type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
                     </div>
                     <h4> Miêu tả </h4>
                     <div class="input-group">
@@ -35,8 +35,8 @@
                     </div>
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh slide</h4>
-                        <input id="img" type="file" name="img" onchange="changeImg(this)">
-                        <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg">
+                        <input id="img" type="file" name="img" onchange="changeImg(this)" required="">
+                        <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg" >
                     </div>
                     <br>
                     <div class="text-center">

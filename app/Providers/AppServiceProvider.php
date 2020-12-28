@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $loaisp = ProductType::all();
             $view->with('loaisp',$loaisp);
         });
-        view()->composer('layout_index.page.cart', function($view){
+        view()->composer(['layout_index.page.cart','layout_index.page.checkout'], function($view){
             if(Session('cart')){
                 $oldcart = Session::get('cart');
                 $cart = new Cart($oldcart);

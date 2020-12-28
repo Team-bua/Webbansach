@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Cart;
 use App\Models\Slide;
+use App\Models\Bill;
+use App\Models\BillDetail;
 use Illuminate\Http\Request;
 use Session;
 
@@ -52,7 +54,45 @@ class PageRepository
         $request->session()->put('cart',$cart);
         
     }
-    
+
+    public function getDelcart($id){
+        $oldcart = Session::has('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldcart);
+        $cart->removeItem($id);
+        if(count($cart->items)>0){
+            Session::put('cart', $cart);
+        }
+        else{
+            Session::forget('cart');
+        }
+        return redirect()->back();
+    }
+
+    public function postCheckout(Request $request){
+        $cart = Session::get('cart');
+
+        $bill = new Bill();
+        $bill->id_user = Auth::user()->id;
+        $bill->date_order = date('Y-m-d');
+        $bill->email = $request->email;
+        $bill->phone = $request->phone;
+        $bill->address = $request->address;
+        $bill->total = $cart->totalPrice;
+        $bill->payment = $request->payment;
+        $bill->status = $request->status;
+        $bill->save();
+
+        foreach ($cart->items as $key => $value) {
+            $bill_detail = new BillDetail();
+            $bill_detail->id_bill = $bill->id;
+            $bill_detail->id_product = $key;
+            $bill_detail->quantity = $value['qty'];
+            $bill_detail->unit_price = ($value['price']/$value['qty']);
+            $bill_detail->save();       
+        }   
+        Session::forget('cart');
+    }
+
     public function createUser(Request $request)
     {
         $user = new User();

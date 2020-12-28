@@ -49,12 +49,14 @@ Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
+Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
 Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
+Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
 /*--------------------------------------------------------------------------------*/
 
 
