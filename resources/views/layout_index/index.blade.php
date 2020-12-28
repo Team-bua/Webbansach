@@ -7,7 +7,7 @@
                 @foreach($slide as $sl)
                 <li>
                     <div class="border_on_img"></div>
-                    <img src="{{ asset('images/slide/'.$sl->image) }}" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
+                    <img src="{{ asset('images/slide/'.$sl->image) }}">
                 </li>
                 @endforeach
             </ul>
@@ -18,7 +18,7 @@
         <li>
             <center> <p><a>Danh Mục Sách</a></p></center>
         </li>  
-    </ul>
+        </ul>
     <div class="left_column">
         <div class="product_menu">
         <ul id="prod_nav" class="clearfix">
@@ -36,6 +36,7 @@
                 </li>
             </ul>
           </li>
+
         </ul>
       </div>
     </div>    
@@ -43,25 +44,23 @@
 </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h2>Tìm thấy {{count($product)}} sản phẩm </h2>
+            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
             <hr>
             <div class="recent-book-sec">
                 <div class="row">
-                     @foreach ($product as $pro)
+                     @foreach ($new_product as $pro)
                     <div class="col-md-3">
                         <div class="item">
-                        <div class="sale">- %20</div>
+                        <div class="sale">Sale</div>
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
                 <div class="content">
-
                 <div class="body">
                     <p>{{ $pro->description }}</p>
                 </div>
                 </div>
                         </div>
                     </div>
-
                     @endforeach
                 </div>
                 <div class="btn-sec">
@@ -70,26 +69,22 @@
             </div>
         </div>
     </section>
+
 <section class="features-sec">
         <div class="container">
             <ul>
                 <li>
                     <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                    <h3>SAFE SHOPPING</h3>
-                    <h5>Safe Shopping Guarantee</h5>
-                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                    <h3>MUA SẮM AN TOÀN</h3>
                 </li>
                 <li>
                     <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
-                    <h3>30- DAY RETURN</h3>
-                    <h5>Moneyback guarantee</h5>
-                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                    <h3>TRẢ LẠI 30- NGÀY</h3>
+                  
                 </li>
                 <li>
                     <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                    <h3>24/7 SUPPORT</h3>
-                    <h5>online Consultations</h5>
-                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+                    <h3>HỖ TRỢ 24/7</h3>
                 </li>
             </ul>
 

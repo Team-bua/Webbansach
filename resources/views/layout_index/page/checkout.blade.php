@@ -25,15 +25,6 @@
                                         <label style="font-family:Times New Roman;">Địa Chỉ</label>
                                         <input class="form-control" type="text" placeholder="Address">
                                     </div>
-                                  
-                                    <div class="col-md-6">
-                                        <label style="font-family:Times New Roman;">Thành Phố</label>
-                                        <input class="form-control" type="text" placeholder="City">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label style="font-family:Times New Roman;">Quận</label>
-                                        <input class="form-control" type="text" placeholder="State">
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +33,7 @@
                         <div class="checkout-inner">
                         <div class="checkout-summary">
                                 <h1 style="font-family:Times New Roman;" >Tổng số giỏ hàng</h1>                              
-                                <p class="ship-cost" style="font-family:Times New Roman;" >Số lượng<span>$1</span></p>
+                                <p class="ship-cost" style="font-family:Times New Roman;" >Số lượng<span></span></p>
                                 <h2 style="font-family:Times New Roman;">Thành tiền<span>1500000VNĐ</span></h2>
                             </div>
                             <div class="checkout-payment">
@@ -67,7 +58,7 @@
 										<h4 class="nomargin">Product 1</h4>
 										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
 									</div>
-								</div>
+					</div>
                 </div>
             </div>
         </div>

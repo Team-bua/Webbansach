@@ -32,6 +32,12 @@ class PageRepository
         return Product::find($id);
     }
 
+     public function getnewProduct()
+    {
+        $new_product = Product::latest()->paginate(5);
+        return $new_product;
+    }
+
     public function getProductType()
     {
         return ProductType::all();
