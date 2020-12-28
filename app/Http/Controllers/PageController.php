@@ -50,7 +50,8 @@ public function __construct(PageRepository $repository)
     }
 
     public function getAll(){
-        return view('layout_index.page.viewall');
+        $product = $this->repository->getAllproduct();
+        return view('layout_index.page.Viewall',compact('product'));
     }
 
     public function getIntroduce(){

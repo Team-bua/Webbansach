@@ -27,6 +27,7 @@
 
 </head>
 
+
 <body>
     @include('layout_index.header')
     @yield('content')
@@ -42,10 +43,12 @@
     <script type="text/javascript" src="js/jquery.selectBox.js"></script>
     <script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
     <script type="text/JavaScript" src="js/cuties.js"></script>
+    
     <!---------------------------back to top--------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
+
     <script>
         $(function() {
 

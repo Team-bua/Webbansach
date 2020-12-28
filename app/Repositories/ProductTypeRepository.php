@@ -38,7 +38,8 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function update($request, $id) {  
+    public function update($request, $id) 
+    {  
         $product_type = ProductType::find($id);
         $product_type->name = $request->input('name');
         $product_type->save();
@@ -56,6 +57,21 @@ class ProductTypeRepository
         $product_type = ProductType::find($id);
         $product_type->delete();
       
+    }
+     /**
+     * search  member.
+     *
+     * @param  \App\Http\Requests\ProductTypeRequest $request
+     * @param  \App\Models\ProductType $product_type
+     * @return void
+     */
+
+    public function search($request) {
+
+        $search = $request->table_search;
+        return ProductType::where(function ($query) use ($search) {
+                $query->where('name', 'like', "%$search%");
+            })->paginate(10);
     }
 
 

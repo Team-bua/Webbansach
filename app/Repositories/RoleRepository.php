@@ -33,7 +33,10 @@ class UserRepository
     public function update($request, $id) {
 
        $user = User::find($id);
-       $user->role->display_name=$request->input('display');
+       $user->name=$request->input('name');
+       $user->email=$request->input('email');
+       $user->address=$request->input('address');
+       $user->phone=$request->input('phone');
        $user->save();
         
     }

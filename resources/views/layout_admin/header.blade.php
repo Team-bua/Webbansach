@@ -290,3 +290,29 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+
+<script>
+    $("tr input").hide();
+    $("#btnsave").hide();
+
+   
+    $("#btnedit").click(function() {
+        $("#btnsave").hide();
+        $("#infull,#inuser,#indis").toggle();
+    });
+    $("#btnsave").click(function() {
+        $("#infull,#inuser,#indis").toggle();
+        $("#btnedit").hide();
+
+        var obj = {};
+                        var elems = $("tr").eq(index).find("label, input");
+                        
+                        elems.each(function(i, el) {
+                            if ($(el).is("label")) {
+                                obj[el.textContent] = elems[i + 1].value
+                            }
+                        });
+    
+});
+
+</script>

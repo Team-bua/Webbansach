@@ -139,6 +139,8 @@
                                     <i class="fa fa-plus"> Thêm sách mới </i></button>
                                 </a>
                             </div>
+
+
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table id="tableId2" class="table table-hover">
@@ -153,9 +155,9 @@
                                         <tr>
                                             <td>{{ $pro->name }}</td>
                                             <td>
-                                                <a href="{{ route('book_type.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn"> Sửa </button>
-                                                </a>
+                                            
+                                                    <button class="btn btn-warning btn" data-id="edit-{{$pro->id}}" onclick="editType(this)"> Sửa </button>
+                                                
                                             </td>
                                             <td>
                                                 <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}"
@@ -171,8 +173,29 @@
                                 </tbody>
                             </table>
                         </div><!-- /.box-body -->
+
                     </div><!-- /.box -->
+                    
                 </div>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div  class="modal-dialog">
+                
+                        <!-- Modal content-->
+                        <div class="modal-content" style="width:400px;">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Cập nhật loại sản phẩm</h4>
+                            </div>
+                            <div class="modal-body" id="content">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                
             </div>
             <!-- Button trigger modal -->
 
@@ -205,6 +228,34 @@
                 </div>
             </div>
             
+            <!-- EditModal -->
+            <div class="modal fade" id="bookeditmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div style="width:1000px" class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h4 class="modal-title" id="myModalLabel">Cập nhật loại sách</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="bookForm">
+                                <input type="hidden" name="_token" id="csrf-token" />
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        <h4>Loại sách: </h4>
+                                    </label>
+                                    <input style="width:250px" type="text" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
+
+                                </div>
+                                <button type="submit" class="btn btn-success"> Thêm </button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
     </div>
 
     </section><!-- /.content -->
@@ -232,7 +283,7 @@ $.ajaxSetup({
                 if(response){
                 var output = "<tr>"+
                    "<td>" + name + "</td>" +
-                   "<td>" + "<button class='btn btn-warning btn' >Sửa </button>" + "</td>" +
+                   "<td>" + "<button data-toggle='modal' data-target='#bookmodal' class='btn btn-warning btn' >Sửa </button>" + "</td>" +
                    "<td>" + "<button class='btn btn-danger btn' >Xóa </button>" + "</td>" +
                  "</tr>";
                 $("#tableId2 tbody").append(output);
@@ -247,8 +298,9 @@ $.ajaxSetup({
                 }
             }
         });
-
     });
+function editType(id){
 
+}
 </script>
 @stop

@@ -48,148 +48,18 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row">
+                    @foreach ($product as $books)
                     <div class="col-md-3">
                         <div class="item">
                         <div class="sale">- %20</div>
-                            <img src="images/r1.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+                        <a href="{{route('detail',$books->id)}}">
+                            <img src="{{ asset('images/product/' . $books->image) }}" alt="image"/>
+                        </a>
+                            <h3><a href="#">{{ $books->name }}</a></h3>
+                            <h6><span class="price">{{ $books->unit_price }}</span> / <a href="#">Buy Now</a></h6>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                        <div class="sale">- %20</div>
-                            <img src="images/r2.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r3.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r4.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r5.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r1.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r2.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r3.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r4.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r5.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r1.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r2.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r3.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r4.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r5.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r1.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r2.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r3.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r4.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img src="images/r5.jpg" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="btn-sec">
                     <button class="btn gray-btn">load More books</button>
