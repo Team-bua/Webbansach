@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\ProductType;
+use GuzzleHttp\Psr7\Request;
 
 class ProductTypeRepository
 {
@@ -13,7 +14,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::orderBy('created_at','desc')->paginate(8);
+        return ProductType::orderBy('created_at', 'desc')->paginate(8);
     }
 
     /**
@@ -25,10 +26,10 @@ class ProductTypeRepository
      */
     public function create($request)
     {
-       $product_type = new ProductType();
-       $product_type->name=$request->input('name');
-       $product_type->save();
-       return response()->json($product_type);
+        $product_type = new ProductType();
+        $product_type->name = $request->input('name');
+        $product_type->save();
+        return response()->json($product_type);
     }
 
     /**
@@ -38,30 +39,33 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function update($request, $id) {
+    public function update( $request, $id)
+    {
         if ($request->ajax()) {
-        $product_type = ProductType::find($id);
-        $product_type->name = $request->input('name');
-        $product_type->save();
-        return $product_type;
-        $html = view('book_type.edit',compact('product_type'))->render();
-        return response()->json($html);
+            $product_type = ProductType::find($id)->get();
+            $product_type->name = $request->input('name');
+            $product_type->save();
+            return $product_type;
+            $html = view('layout_admin.product_type.edit_type', compact('product_type'))->render();
+            return \response()->json($html);
+        }
     }
-}
 
-     /**
+
+
+    /**
      * delete a member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $product_type = ProductType::find($id);
         $product_type->delete();
-      
     }
-     /**
+    /**
      * search  member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
@@ -69,13 +73,12 @@ class ProductTypeRepository
      * @return void
      */
 
-    public function search($request) {
+    public function search($request)
+    {
 
         $search = $request->table_search;
         return ProductType::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%");
-            })->paginate(10);
+            $query->where('name', 'like', "%$search%");
+        })->paginate(10);
     }
-
-
 }

@@ -288,10 +288,10 @@
 
         </ul>
     </section>
-    <!-- /.sidebar -->
+
 </aside>
 
-<script>
+    <!-- <script>
     $("tr input").hide();
     $("#btnsave").hide();
 
@@ -315,4 +315,4 @@
     
 });
 
-</script>
+</script> -->

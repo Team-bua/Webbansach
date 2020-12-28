@@ -23,6 +23,7 @@ class ProductRepository
     {
         return ProductType::all();
     }
+
     
     public function getproduct($id)
     {

@@ -46,7 +46,8 @@
 
                             <div class="col-xs pull-right">
                                 <button class="btn btn-block btn-success btn"
-                                    onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fa fa-plus">&nbsp;Thêm loại sách</i></button>
+                                    onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i
+                                        class="fa fa-plus">&nbsp;Thêm loại sách</i></button>
 
                                 <div id="id01" class="modal" id="bookmodal">
 
@@ -76,60 +77,45 @@
                         <div class="box-body table-responsive no-padding">
                             <table style="width:60% " id="tableId" class="table table-hover">
                                 <tbody id="myTable">
-                                    <?php $i = 1 ?>
+
                                     <tr>
+                                        <th>TT</th>
                                         <th>Tên loại</th>
                                         <th colspan="2" width="20%">
                                             <center>Chức năng</center>
                                         </th>
                                     </tr>
-                                    <?php $i++ ?>
+                                    <?php $i = 1; ?>
                                     @foreach ($product_type as $pro)
+
                                         <tr>
+                                            <td>{{ $i }}</td>
                                             <td>{{ $pro->name }}</td>
                                             <td>
-                                                <button href="{{route('book_type.edit',$pro->id)}}" type="button" 
-                                                    class="btn btn-warning js_order_item" data-toggle="modal" data-target="#myModal">Sửa</button>
-
-
+                                                <a class="btn btn-warning js_order_item"
+                                                    href="{{ route('book_type.edit', $pro->id) }}">Sửa</a>
                                             </td>
                                             <td>
                                                 <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}"
                                                     enctype="multipart/form-data" name="form1" id="form1">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger btn"
+                                                    <button class="btn btn-danger "
                                                         onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
                                                 </form>
                                             </td>
                                         </tr>
+                                        <?php $i++; ?>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div><!-- /.box-body -->
 
                     </div><!-- /.box -->
-                    
+
                 </div>
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div  class="modal-dialog">
-                
-                        <!-- Modal content-->
-                        <div class="modal-content" style="width:400px;">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Cập nhật loại sản phẩm</h4>
-                            </div>
-                            <div class="modal-body" id="content">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                            </div>
-                        </div>
-                
-                    </div>
-                </div>
-                
+
+
             </div>
 
 
@@ -138,45 +124,85 @@
         </section>
         <!-- danh sach -->
 
-        
 
-            
+
+
     </div>
+    <div id="ModalType" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
 
-@endsection
-@section('js')
-<script>
-    // Get the modal
-    var modal = document.getElementById('id01');
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật loại sản phẩm</h4>
+                </div>
+                <div class="modal-body" id="content">
+                </div>
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
 
-</script>
-<script>
-	$(function() {
-		$(".js_order_item").click(function(event) {
-			event.preventDefault();
-			let $this = $(this);
-			let url = $this.attr('href');
-			// $(".slide_id").text('').text($this.attr('data-id'));
-			$("#myModal").modal('show');
+            </div>
 
-			$.ajax({
-				url: url,
-			}).done(function(result) {
-				console.log(result);
-				if (result) {
-					$("#content").html('').append(result);
-				}
-			});
 
-		});
-	});
-</script>
+            <div class="modal fade" id="formModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="formModalLabel">Create Todo</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="myForm" name="myForm" class="form-horizontal" novalidate="">
 
-@stop
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" class="form-control" id="namett" name="name"
+                                        placeholder="Enter title" value="">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="btn-save" value="add">Save changes
+                            </button>
+                            <input type="hidden" id="todo_id" name="todo_id" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @endsection
+    @section('js')
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        </script>
+        <script>
+            $(".js_order_item").click(function(event) {
+                event.preventDefault();
+                let $this = $(this);
+                let url = $this.attr('href');
+                // $(".slide_id").text('').text($this.attr('data-id'));
+                $("#ModalType").modal('show');
+
+                $.ajax({
+                    url: url,
+                }).done(function(result) {
+                    console.log(result);
+                    if (result) {
+                        $("#content").html('').append(result);
+                    }
+                });
+
+            });
+
+        </script>
+
+    @stop

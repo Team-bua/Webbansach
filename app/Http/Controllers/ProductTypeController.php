@@ -95,7 +95,8 @@ class ProductTypeController extends Controller
     public function update(ProductTypeRequest $request, $id)
     {
         $this->repository->update($request, $id);
-        return redirect(route('book_type.index'));
+        return redirect()->route('book_type.index');
+        
     }
 
     /**
