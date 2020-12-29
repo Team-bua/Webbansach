@@ -34,12 +34,15 @@ public function __construct(PageRepository $repository)
    public function getIndex(){
         $slide = $this->repository->getSlide();
         $product = $this->repository->getAllproduct();
+        $new_product = $this->repository->getnewProduct();
         $product_type = $this->repository->getProductType();
-        return view('layout_index.index',compact('product','product_type','slide'));
+
+        return view('layout_index.index',compact('product','product_type','slide','new_product'));
     }
 
    public function getDetail($id){
         $product_detail = $this->repository->getproduct($id);
+     
         return view('layout_index.page.product_detail',compact('product_detail'));
     }
         
@@ -69,6 +72,11 @@ public function __construct(PageRepository $repository)
         }else{
             return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
         }
+    }
+
+     public function getSearch(Request $req){
+        $search=$this->repository->getSearch($req);
+        return view('layout_index.page.search',compact('search'));
     }
 
     public function postLogout(){
