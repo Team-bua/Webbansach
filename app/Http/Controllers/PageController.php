@@ -13,10 +13,9 @@ class PageController extends Controller
   * The ProductRepository instance.
   *
   * @var \App\Repositories\PageRepository
-  * @var \App\Repositories\ProductRepository
+  * 
   */
  protected $repository;
- protected $repository1;
 
 
 
@@ -24,7 +23,7 @@ class PageController extends Controller
  * Create a new PostController instance.
  *
  * @param  \App\Repositories\PageRepository $repository
- * @param  \App\Repositories\ProductRepository $repository1
+ *
  */
 public function __construct(PageRepository $repository)
 {
@@ -129,7 +128,7 @@ public function __construct(PageRepository $repository)
 
     public function postCheckout(Request $request){
         $this->repository->postCheckout($request);
-        return redirect()->back();
+        return redirect()->back()->with('thongbao','Đặt hàng thành công');
     }
 
     public function getAdmin(){

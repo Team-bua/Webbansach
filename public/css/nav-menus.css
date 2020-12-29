@@ -183,7 +183,7 @@ way to fit your requirements.
 
 #prod_nav li:hover a.top_link {
     color: #FFFFFF;
-    background: #fcba68;
+    background: #F7941E;
 }
 
 
@@ -201,7 +201,7 @@ way to fit your requirements.
     border: 1px solid #FCBA68;
     border-left: 0;
     white-space: nowrap;
-    width: 900px;
+    width: auto;
     height: auto;
     z-index: 300;
 }

@@ -71,6 +71,8 @@ Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
 Route::resource('book_type',ProductTypeController::class);
+Route::post('book_type/edit',[ProductTypeController::class,'getEdit'])->name('book_type.getedit');
+Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD kho hang

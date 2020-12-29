@@ -16,24 +16,30 @@
     <div class="container">
         <ul class="vert-one">
         <li>
-            <center> <p><a>Danh Mục Sách</a></p></center>
+            <center> <p><a><i class="fa fa-bars" ></i>   Danh Mục Sách</a></p></center>
         </li>  
         </ul>
     <div class="left_column">
         <div class="product_menu">
             @foreach ($product_type as $pro)
         <ul id="prod_nav" class="clearfix">
-            <li class="top"><a  class="top_link"><span class="down">{{ $pro->name }}</span></a>
+            <li class="top"><a  class="top_link"><span class="down"><i class="fa fa-book"></i>  {{ $pro->name }}</span></a>
             <ul  class="sub">
-              <li>
-                  <ul>
-                      <li><h6>Submenu #1</h6></li>
+                <li>
+                    <ul>
                       <li><a href="#">Link 1</a></li>
                       <li><a href="#">Link 2</a></li>
                       <li><a href="#">Link 3</a></li>
                       <li><a href="#">Link 4</a></li>
                       <li><a href="#">Link 5</a></li>
-                      </ul>         
+                    </ul>   
+                    <ul>
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 4</a></li>
+                      <li><a href="#">Link 5</a></li>
+                    </ul>       
                 </li>
             </ul>
           </li>
@@ -94,12 +100,13 @@
                     @endif
                         
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
-                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                           
                 <div class="content">
                 <div class="body">
                     <p>{!! $pro->description !!}</p>
                 </div>
                 </div>
+                 <h3><a href="#">{{ $pro->name }}</a></h3>
                         </div>
                     </div>
                     @endforeach

@@ -259,6 +259,7 @@ ul.vert-one {
     max-width: 210px;
     padding: 0;
     width: 50%;
+
 }
 
 ul.vert-one>li {
@@ -1382,7 +1383,7 @@ li.com-title span {
 }
 
 
-/*-------------------------------------animation------------------------------*/
+/*-------------------------------------snowflakes------------------------------*/
 
 .snowflake {
     color: #fff;
@@ -1638,7 +1639,6 @@ li.com-title span {
     min-width: 220px;
     background-color: #FFFFFF;
     border: 1px solid #ccc;
-    border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);

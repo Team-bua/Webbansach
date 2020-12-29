@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>BookStore</title>
   <base href="{{asset('')}}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!------------------------------------------------------------------------>
@@ -15,7 +16,8 @@
     <link rel="stylesheet" href="js/bootstrap.min.js">
     <link rel="stylesheet" href="js/bootstrap.css">
     <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
-   
+    <!---------------------------------------------------------------------->
+   <link rel="shortcut icon" type="image/x-icon" href="\images\icon\logoteambua.png">
 <!------------------------------------------------------------------------>
  <link rel="stylesheet" href="../src/jquery.back-to-top.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -61,7 +63,7 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-    <div class="snowflakes" aria-hidden="true">
+<div class="snowflakes" aria-hidden="true">
   <div class="snowflake">❅</div>
   <div class="snowflake">❆</div>
   <div class="snowflake">❅</div>
