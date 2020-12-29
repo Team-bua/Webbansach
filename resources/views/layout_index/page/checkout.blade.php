@@ -10,6 +10,23 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-8">
+                       
+                      <form>
+                                <table class="table table-bordered .table-responsive text-center">
+                                    <tr class="active">
+                                        <td width="11.111%">Ảnh mô tả</td>
+                                        <td width="22.222%">Tên sản phẩm</td>                            <td width="16.6665%">Đơn giá</td>    
+                                    </tr>
+                                     @foreach($product_cart as $pro)
+                                    <tr>
+                                        <td><img src="{{asset('images/product/'.$pro['item']['image'])}}" width="50px" height="100px"></td>
+                                        <td>{{$pro['item']['name']}}</td>
+                                        <td><span class="price">{{number_format($pro['item']['promotion_price'])}}</span></td>                                
+                                    </tr>
+                                    @endforeach
+                                </table>
+                            </form>   
+                             
                         <div class="checkout-inner">
                             <div class="billing-address">
                                 <h2 style="font-family:Times New Roman;">Địa chỉ thanh toán</h2>
@@ -42,6 +59,7 @@
                                 <p class="ship-cost" style="font-family:Times New Roman;">Số lượng<span>{{number_format($totalQty)}}</span></p>
                                 <h2 style="font-family:Times New Roman;">Thành tiền<span>{{number_format($totalPrice)}}</span></h2>
                             </div>
+
                             <div class="checkout-payment">
                                 <div class="payment-methods">
                                     <h1 style="font-family:Times New Roman;">Hình thức thanh toán</h1>
@@ -58,16 +76,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        @foreach($product_cart as $pro)
-                        <div class="col-sm-2 hidden-xs"><img src="{{asset('images/product/'.$pro['item']['image'])}}" class="img-responsive" />
-                        </div>
-                        <div class="col-sm-10">
-                            <h4 class="nomargin">{{$pro['item']['name']}}</h4>
-                            <p>{!!$pro['item']['description']!!}</p>
-                        </div>
-                    </div>
-                    @endforeach
                 </div>
                 @endif
             </div>

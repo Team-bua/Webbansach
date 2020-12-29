@@ -37,6 +37,20 @@ class PageRepository
         return Product::find($id);
     }
 
+    public function getSearch( $req){
+        $product=Product::where('name','like','%'.$req->key.'%')
+        ->orWhere('unit_price',$req->key)
+        ->paginate(20);
+        return $product;
+    }
+
+     public function getnewProduct()
+    {
+        
+        $new_product = Product::latest()->paginate();
+        return $new_product;
+    }
+
     public function getProductType()
     {
         return ProductType::all();

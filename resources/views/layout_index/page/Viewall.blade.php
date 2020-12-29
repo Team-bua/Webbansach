@@ -31,7 +31,6 @@
 
 <section class="static about-sec">
         <div class="container"> 
-
             <h2>books </h2>
 <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
@@ -48,14 +47,16 @@
                             <img src="{{ asset('images/product/' . $books->image) }}" alt="image"/>
                         </a>
                             <h3><a href="#">{{ $books->name }}</a></h3>
-                            <h6><span class="price">{{ $books->unit_price }}</span> / <a href="#">Buy Now</a></h6>
+                            <div class="content">
+                <div class="body">
+                    <p>{!! $books->description !!}</p>
+                </div>
+                </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <div class="btn-sec">
-                    <button class="btn gray-btn">load More books</button>
-                </div>
+                <div class="btn-sec">{{$product->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
 

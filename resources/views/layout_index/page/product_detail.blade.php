@@ -44,7 +44,11 @@
                 </script>
                 
                 <div class="col-md-6 slider-content">
+<<<<<<< HEAD
+                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
+=======
                     <p style="text-align:justify">{{ $product_detail->description }}</p>
+>>>>>>> 181dd92ae37f8adf401f2392954225c2435ac831
                     <ul>
                         
                         <li>
@@ -69,7 +73,7 @@
                     <div class="btn-sec">
                         <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
                         <button class="btn ">Mua Ngay</button>
-                        <button class="btn black">Đọc ONLINE</button>
+                        <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                     </div>
                 </div>          
             </div>
