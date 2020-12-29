@@ -48,14 +48,15 @@ Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
-//----->Thêm vào giỏ hàng
-
+Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
+Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
 Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
+Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
 /*--------------------------------------------------------------------------------*/
 
 
@@ -66,6 +67,7 @@ Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
 Route::resource('book_type',ProductTypeController::class);
+Route::post('book_type/edit',[ProductTypeController::class,'getEdit'])->name('book_type.getedit');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD kho hang

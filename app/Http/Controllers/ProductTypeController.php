@@ -35,7 +35,7 @@ class ProductTypeController extends Controller
     {
 
         $product_type = $this->repository->getAll();
-        $product_type = $this->repository->search($request);
+        $product_type = $this->repository->search($request); 
         return view('layout_admin.product_type.create_type', compact('product_type'));
     }
 
@@ -57,8 +57,7 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->repository->create($request);
-        return redirect(route('book_type.index'));
+        return  $this->repository->create($request);
     }
 
     /**
@@ -78,13 +77,6 @@ class ProductTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $product_type = $this->repository->getAll();
-        $type = ProductType::find($id);
-        return view('layout_admin.product_type.edit_type', compact('type','product_type'));
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -109,5 +101,11 @@ class ProductTypeController extends Controller
     {
         $this->repository->destroy($product_type);
         return redirect()->back();
+    }
+
+    public function getEdit(Request $request)
+    {   
+        $type = ProductType::find($request->id);         
+        return json_encode((object)['type'=>$type]);
     }
 }

@@ -67,7 +67,7 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 padd-0" style="padding-left: 104px;">
+                                        <div class="col-md-3 padd-0" style="padding-left:95px;">
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>

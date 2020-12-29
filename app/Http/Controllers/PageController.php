@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
-use App\Repositories\ProductRepository;
 
 class PageController extends Controller
 {
@@ -17,7 +16,7 @@ class PageController extends Controller
   * @var \App\Repositories\ProductRepository
   */
  protected $repository;
- protected $repository1;
+
 
 
 
@@ -42,8 +41,7 @@ public function __construct(PageRepository $repository)
 
    public function getDetail($id){
         $product_detail = $this->repository->getproduct($id);
-        $product_detail1 = $this->repository->getproduct($id);
-        return view('layout_index.page.product_detail',compact('product_detail','product_detail1'));
+        return view('layout_index.page.product_detail',compact('product_detail'));
     }
         
    
@@ -53,7 +51,8 @@ public function __construct(PageRepository $repository)
 
     public function getAll(){
         $product = $this->repository->getAllproduct();
-        return view('layout_index.page.Viewall',compact('product'));
+        $product_type = $this->repository->getProductType();
+        return view('layout_index.page.Viewall',compact('product','product_type'));
     }
 
     public function getIntroduce(){
@@ -82,6 +81,16 @@ public function __construct(PageRepository $repository)
         return view('layout_index.page.cart');
     }
 
+    public function getAddCart(Request $request, $id){
+        $this->repository->getAddCart($request, $id);
+        return redirect()->back();
+    }
+
+    public function getDelcart($id){
+        $this->repository->getDelcart($id);
+        return redirect()->back();
+    }
+
     public function getSignup(){
         return view('layout_index.page.register');
     }
@@ -96,7 +105,24 @@ public function __construct(PageRepository $repository)
     }
 
     public function getCheckout(){
-        return view('layout_index.page.checkout');
+        if(Auth::check()){
+            $name = Auth::user()->full_name;
+            $email = Auth::user()->email;
+            $address = Auth::user()->address;
+            $phone = Auth::user()->phone;
+        }
+        else{
+            $name = "";
+            $email = "";
+            $address = "";
+            $phone = "";
+        }
+        return view('layout_index.page.checkout', compact('name','email', 'address', 'phone'));
+    }
+
+    public function postCheckout(Request $request){
+        $this->repository->postCheckout($request);
+        return redirect()->back();
     }
 
     public function getAdmin(){

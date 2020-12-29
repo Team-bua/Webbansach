@@ -58,7 +58,59 @@
                 <div class="content">
 
                 <div class="body">
-                    <p>{{ $pro->description }}</p>
+                    <p>{!! $pro->description !!}</p>
+                </div>
+                </div>
+                        </div>
+                    </div>
+
+                    @endforeach
+                </div>
+                <div class="btn-sec">
+                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
+                </div>
+            </div>
+
+            <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
+            <hr>
+            <div class="recent-book-sec">
+                <div class="row">
+                     @foreach ($product as $pro)
+                    <div class="col-md-3">
+                        <div class="item">
+                        <div class="sale">- %20</div>
+                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                <div class="content">
+
+                <div class="body">
+                    <p>{!! $pro->description !!}</p>
+                </div>
+                </div>
+                        </div>
+                    </div>
+
+                    @endforeach
+                </div>
+                <div class="btn-sec">
+                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
+                </div>
+            </div>
+
+            <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
+            <hr>
+            <div class="recent-book-sec">
+                <div class="row">
+                     @foreach ($product as $pro)
+                    <div class="col-md-3">
+                        <div class="item">
+                        <div class="sale">- %20</div>
+                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                <div class="content">
+
+                <div class="body">
+                    <p>{!! $pro->description !!}</p>
                 </div>
                 </div>
                         </div>

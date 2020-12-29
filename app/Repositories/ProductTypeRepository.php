@@ -14,7 +14,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::orderBy('created_at', 'desc')->paginate(8);
+        return ProductType::all();
     }
 
     /**
@@ -26,10 +26,10 @@ class ProductTypeRepository
      */
     public function create($request)
     {
-        $product_type = new ProductType();
-        $product_type->name = $request->input('name');
-        $product_type->save();
-        return response()->json($product_type);
+       $product_type = new ProductType();
+       $product_type->name=$request->input('name');
+       $product_type->save();
+       return json_encode((object)['product_type'=>$product_type]);
     }
 
     /**

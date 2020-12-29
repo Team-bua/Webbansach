@@ -18,11 +18,11 @@ class CreateBillsTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->string('email');
             $table->string('address');
-            $table->integer('phone');
+            $table->string('phone');
             $table->date('date_order');
             $table->date('complete_order');
             $table->integer('total');
-            $table->integer('quanlity');
+            $table->integer('quantity');
             $table->string('payment');
             $table->string('status');
             $table->timestamps();
