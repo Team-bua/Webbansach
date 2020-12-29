@@ -24,6 +24,11 @@ class CreateProductTable extends Migration
             $table->text('image')->nullable();
             $table->longtext('imagedetail')->nullable();
             $table->string('publisher')->nullable();
+            $table->string('format')->nullable();
+            $table->date('releasedate')->nullable();
+            $table->string('language')->nullable();
+            $table->string('pagenumber')->nullable();
+            $table->string('size')->nullable();
             $table->timestamps();
         });
     }

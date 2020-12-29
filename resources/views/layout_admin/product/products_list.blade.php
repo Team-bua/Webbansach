@@ -29,7 +29,7 @@
                                         <input type="text" id="table_search" name="table_search" class="form-control  pull-right"
                                             placeholder="Search">
                                         <div class="input-group-btn">
-                                            <button class="btn btn btn-success"
+                                            <button class="btn btn btn-warning"
                                                 style="float:left;margin-top:0px;margin-left:2px"><i
                                                     class="fa fa-search"> Tìm kiếm </i></button>
 
@@ -40,7 +40,7 @@
 
                             <div class="col-md-4 pull-right">
                                 <a href="{{ route('book.create') }}">
-                                    <button class="btn btn btn-success"
+                                    <button class="btn btn btn-warning"
                                         style="float: right;;margin-bottom:5px;margin-left:2px">
                                         <i class="fa fa-plus"> Thêm sách mới </i></button>
                                 </a>
@@ -70,6 +70,7 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
+                                            
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>
@@ -89,10 +90,10 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                {{ $product->links('vendor.pagination.bootstrap-4') }}
+                               
                             </table>
                             
-                           
+                            {{ $product->links('vendor.pagination.bootstrap-4') }}
                         </div><!-- /.box-body -->
                        
                     </div><!-- /.box -->

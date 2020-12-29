@@ -10,7 +10,7 @@
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- CSS only -->
-    
+
     <!-- JavaScript Bundle with Popper -->
 
     <!-- FontAwesome 4.3.0 -->
@@ -21,7 +21,12 @@
     <!-- Theme style -->
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
+
+        
          folder instead of downloading all of them to reduce the load. -->
+
+    <link href="bootstrap/css/wordart.css" rel="stylesheet" type="text/css" />   
+     <!-- Wordart -->      
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
@@ -45,7 +50,17 @@
 
 </head>
 
-<body class="skin-green">
+<body class="skin-yellow">
+    <style>
+        h4 {
+            font-weight: bold;
+        }
+
+        .content-wrapper {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
     <div class="wrapper">
 
         @include('layout_admin.header')
@@ -97,7 +112,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
 
-    
+
     <script>
         $('#calendar').datepicker({});
         ! function($) {
@@ -112,24 +127,6 @@
         })
         $(window).on('resize', function() {
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-        });
-
-        function changeImg(input) {
-            //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                //Sự kiện file đã được load vào website
-                reader.onload = function(e) {
-                    //Thay đổi đường dẫn ảnh
-                    $('#avatar').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $(document).ready(function() {
-            $('#avatar').click(function() {
-                $('#img').click();
-            });
         });
 
     </script>

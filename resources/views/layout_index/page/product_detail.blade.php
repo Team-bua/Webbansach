@@ -6,7 +6,7 @@
             <h1>{{$product_detail->name}}</h1>
             <div class="row">
                 <div class="col-md-6 slider-sec">
-                    <!-- main slider carousel -->
+                    
                     <div id="myCarousel" class="carousel slide">
                         <!-- main slider carousel items -->
                         <div class="carousel-inner">
@@ -44,7 +44,9 @@
                 </script>
                 
                 <div class="col-md-6 slider-content">
+                    <p style="text-align:justify">{{ $product_detail->description }}</p>
                     <ul>
+                        
                         <li>
                             <span class="name">Giá Bán</span><span class="clm">:</span>
                             <span class="price">{{number_format($product_detail->unit_price,0,"",",")}} Đ</span>
@@ -53,6 +55,8 @@
                             <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
                             <span class="price final">{{number_format($product_detail->promotion_price,0,"",",")}} Đ</span>
                         </li>
+
+
 
                     </ul>
 
@@ -181,14 +185,13 @@
         <div>
             <section class="features">
     <ul>
-      <li><i class="fas fa-check"></i>Tác Giả</li>
-      <li><i class="fas fa-check"></i>Nhà Phát Hành</li>
-      <li><i class="fas fa-check"></i>Khối Lượng</li>
-      <li><i class="fas fa-check"></i>Định Dạng</li>
-      <li><i class="fas fa-check"></i>Ngày Phát Hành</li>
-      <li><i class="fas fa-check"></i>Ngôn Ngữ</li>
-      <li><i class="fas fa-check"></i>Kích Thước</li>
-      <li><i class="fas fa-check"></i>Số Trang</li>
+      <li><i class="fas fa-check"></i>Tác Giả:{{ $product_detail->publisher  }}</li>
+      <li><i class="fas fa-check"></i>Nhà Phát Hành: {{ $product_detail->publisher  }}</li>
+      <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
+      <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
+      <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
+      <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }}</li>
+      <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }}</li>
     </ul>
   </section>
         </div>

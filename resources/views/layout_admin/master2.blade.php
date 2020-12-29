@@ -33,7 +33,7 @@
     <![endif]-->
 </head>
 
-<body class="skin-green">
+<body class="skin-yellow">
     <div class="wrapper">
 
         @include('layout_admin.header')

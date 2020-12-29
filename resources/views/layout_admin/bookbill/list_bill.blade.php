@@ -67,7 +67,7 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 padd-0" style="padding-left: 104px;">
+                                        <div class="col-md-3 padd-0" style="padding-left: 19%;">
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -97,9 +97,9 @@
                                 </tr>
                         </div>
                         <!-- /.box -->
-                        @foreach($bill->products as $bills)
+                       
                         <tr>
-                            <td>{{$bills->pivot->name}}</td>
+                            <td></td>
                             <td>2</td>
                             <td>20000</td>
                             <td>4</td>
@@ -128,7 +128,7 @@
                             </td>
                             </td>
                         </tr>
-                        @endforeach
+                        
                     </div>
                 </div>
             </div>
