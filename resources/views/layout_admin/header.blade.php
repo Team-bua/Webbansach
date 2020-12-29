@@ -1,151 +1,73 @@
+<style>
+    .wordart {
+        font-family: Arial, sans-serif;
+        font-size: 34px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wordart.horizon .text {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-style: oblique;
+        background: #7286a7;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7286a7), color-stop(13%, #7286a7), color-stop(50%, #ffffff), color-stop(56%, #812f30), color-stop(100%, #ffffff));
+        background: -webkit-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: -o-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: -ms-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: linear-gradient(to bottom, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7286a7', endColorstr='#ffffff', GradientType=0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .wordart.horizon .text:before {
+        content: attr(data-text);
+        position: absolute;
+        z-index: -1;
+        text-shadow: 0.01em 0em 0 #161616, 0em 0.01em 0 #8d8d8d, 0.02em 0.01em 0 #161616, 0.01em 0.02em 0 #8d8d8d, 0.03em 0.02em 0 #161616, 0.02em 0.03em 0 #8d8d8d, 0.04em 0.03em 0 #161616, 0.03em 0.04em 0 #8d8d8d, 0.05em 0.04em 0 #161616, 0.04em 0.05em 0 #8d8d8d, 0.06em 0.05em 0 #161616, 0.05em 0.06em 0 #8d8d8d, 0.07em 0.06em 0 #161616, 0.06em 0.07em 0 #8d8d8d, 0.08em 0.07em 0 #161616, 0.07em 0.08em 0 #8d8d8d, 0.09em 0.08em 0 #161616, 0.08em 0.09em 0 #8d8d8d, 0.1em 0.09em 0 #161616, 0.09em 0.1em 0 #8d8d8d;
+    }
+
+</style>
+
+
 <header class="main-header  ">
     <!-- Logo -->
-    <a href="{{url('admin')}}" class="logo"><b>Admin</b></a>
+    <a href="{{ url('admin') }}" class="logo"><b>Admin</b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
+        <div class="wordart horizon">
+            <span class="text">Hệ thống quản lý trang sách hay</span>
+        </div>
         <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-primary">4</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">Bạn có 4 tin nhắn</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li>
-                                    <!-- start message -->
-                                    <a href="">
-                                        <div class="pull-left">
-                                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                                        </div>
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li><!-- end message -->
-                                <li>
-                                    <a href="">
-                                        <div class="pull-left">
-                                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image" />
-                                        </div>
-                                        <h4>
-                                            AdminLTE Design Team
-                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="pull-left">
-                                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image" />
-                                        </div>
-                                        <h4>
-                                            Developers
-                                            <small><i class="fa fa-clock-o"></i> Today</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="pull-left">
-                                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image" />
-                                        </div>
-                                        <h4>
-                                            Sales Department
-                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="pull-left">
-                                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image" />
-                                        </div>
-                                        <h4>
-                                            Reviewers
-                                            <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="">Xem thêm</a></li>
-                    </ul>
-                </li>
-                <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">10</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">Bạn có 10 thông báo</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-warning text-yellow"></i> Very long description here that may
-                                        not fit into the page and may cause design problems
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-users text-red"></i> 5 new members joined
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-user text-red"></i> You changed your username
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="">Xem thêm</a></li>
-                    </ul>
-                </li>
-
-
-                <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
-                        <span class="hidden-xs">{{Auth::user()->full_name}}</span>
+                        <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                             <p>
-                               {{Auth::user()->full_name}}
+                                {{ Auth::user()->full_name }}
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
+
+
 
 
                         <!-- Menu Footer-->
@@ -154,10 +76,22 @@
                                 <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{url('logout')}}" class="btn btn-default btn-flat">Đăng Xuất</a>
+                                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Đăng Xuất</a>
                             </div>
                         </li>
                     </ul>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="{{asset('images/icon/tiengviet.png')}}" height="16px" width="25px">
+                    </a>
+                    <ul class="dropdown-menu" style=" min-width: 50px;padding-left:19%;padding-top:15%;  box-shadow:none;">
+                        <li >
+                            <img src="{{asset('images/icon/tienganh.png')}}" height="16px" width="25px">
+                        </li>
+                    </ul>
+                </li>
+
                 </li>
             </ul>
         </div>
@@ -173,7 +107,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Team Bùa</p>
+                <p>{{ Auth::user()->full_name }}</p>
 
                 <a href=""><i class="fa fa-circle text-success"></i> Online </a>
             </div>
@@ -184,21 +118,22 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header ">
-                <span style="font-size:20px ;padding:20px;color:rgb(192, 184, 184)"> HỆ THỐNG </span>
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> HỆ THỐNG </span>
             </li>
 
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i class="fa fa-pie-chart fa-lg text-success"></i>
-                    <span>Tổng Quan</span>
+                    <i class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Tổng Quan</span>
                 </a>
             </li>
 
 
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i class="fa fa-book fa-lg text-success"></i> <span> Sách</span>
+                    <i class="fa fa-book fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> Sách</span>
                     <small class="label pull-right bg-green"></small>
                 </a>
 
@@ -206,8 +141,8 @@
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i class="fa fa-edit  fa-lg text-success"></i>
-                    <span>Loại sách</span>
+                    <i class="fa fa-edit  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Loại sách</span>
                     <small class="label pull-right bg-green">500</small>
 
                 </a>
@@ -216,14 +151,15 @@
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('supplier.index') }}">
-                    <i class="fa fa-briefcase fa-lg text-success"></i> <span>Nhà cung cấp</span>
+                    <i class="fa fa-briefcase fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
-                    <i class="fa fa-inbox fa-lg text-success"></i>
-                    <span>Đơn hàng</span>
+                    <i class="fa fa-inbox fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Đơn hàng</span>
                     <small class="label pull-right bg-yellow">500</small>
                 </a>
 
@@ -231,8 +167,8 @@
             <!-- Quản lý kho hàng -->
             <li class="treeview">
                 <a href="{{ route('archive.index') }}">
-                    <i class="fa fa-archive  fa-lg text-success"></i>
-                    <span>Kho hàng</span>
+                    <i class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Kho hàng</span>
                     <small class="label pull-right bg-yellow">12</small>
                 </a>
 
@@ -240,27 +176,27 @@
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i class="fa fa-list-alt  fa-lg text-success"></i>
-                    <span>Slide</span>
+                    <i class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Slide</span>
                 </a>
 
             </li>
             <li class="header ">
-                <span style="font-size:20px ;padding:20px;color:rgb(192, 184, 184)"> PHÂN QUYỀN </span>
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
             </li>
 
             <li class="treeview">
                 <a href="{{ route('user.index') }}">
-                    <i class="fa fa-desktop  fa-lg text-success"></i>
-                    <span>Tài Khoản</span>
+                    <i class="fa fa-desktop  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Tài Khoản</span>
 
                 </a>
 
             </li>
             <li class="treeview">
                 <a href="">
-                    <i class="fa fa-user  fa-lg text-success"></i>
-                    <span>Vai trò</span>
+                    <i class="fa fa-user  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Vai trò</span>
 
                 </a>
 
@@ -288,10 +224,10 @@
 
         </ul>
     </section>
-    <!-- /.sidebar -->
+
 </aside>
 
-<script>
+<!-- <script>
     $("tr input").hide();
     $("#btnsave").hide();
 
@@ -315,4 +251,4 @@
     
 });
 
-</script>
+</script> -->

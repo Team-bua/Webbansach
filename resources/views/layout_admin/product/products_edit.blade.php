@@ -73,6 +73,48 @@
               <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$product->description}}</textarea>
             </form>
           </div>
+
+          <h4> Định dạng: </h4>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money"></i></span>
+              <input id="Format" name="Format" value="{{$product->format}}" type="text" class="form-control"
+                  placeholder="Khuyến mãi . . . . . . . . .">
+              <span class="input-group-addon">VNĐ</span>
+          </div>
+          <h4> Ngày nhập : </h4>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money"></i></span>
+              <input id="Release_Date" name="ReleaseDate"value="{{$product->releasedate}}" type="date" class="form-control"
+                  placeholder="Khuyến mãi . . . . . . . . .">
+              <span class="input-group-addon">VNĐ</span>
+          </div>
+
+
+          <h4> Ngôn ngữ </h4>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money"></i></span>
+              <input id="Language" name="Language" value="{{$product->language}}"  type="text" class="form-control"
+                  placeholder="Khuyến mãi . . . . . . . . .">
+              <span class="input-group-addon">VNĐ</span>
+          </div>
+          
+          <h4> Số trang :</h4>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money"></i></span>
+              <input id="Page_Number" name="PageNumber" value="{{$product->pagenumber}}"  type="text" class="form-control"
+                  placeholder="Khuyến mãi . . . . . . . . .">
+              <span class="input-group-addon">VNĐ</span>
+          </div>
+
+          <h4> Kích thước :</h4>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-money"></i></span>
+              <input id="size" name="size" value="{{$product->size}}"  type="text" class="form-control"
+                  placeholder="Khuyến mãi . . . . . . . . .">
+              <span class="input-group-addon">VNĐ</span>
+          </div>
+
+
           <div class="form-group">
             <label for="exampleInputFile">Ảnh đại diện</label>
             <input name="img" type="file" id="exampleInputFile" onchange="changeImg(this)">

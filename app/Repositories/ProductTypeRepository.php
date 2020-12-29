@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\ProductType;
+use GuzzleHttp\Psr7\Request;
 
 class ProductTypeRepository
 {
@@ -46,20 +47,23 @@ class ProductTypeRepository
         return json_encode((object)['product_type'=>$product_type]);
     }
 
-     /**
+
+
+    /**
      * delete a member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $product_type = ProductType::find($id);
         $product_type->delete();
         return redirect(route('book_type.index'));
       
     }
-     /**
+    /**
      * search  member.
      *
      * @param  \App\Http\Requests\ProductTypeRequest $request
@@ -67,13 +71,12 @@ class ProductTypeRepository
      * @return void
      */
 
-    public function search($request) {
+    public function search($request)
+    {
 
         $search = $request->table_search;
         return ProductType::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%");
-            })->paginate(10);
+            $query->where('name', 'like', "%$search%");
+        })->paginate(10);
     }
-
-
 }

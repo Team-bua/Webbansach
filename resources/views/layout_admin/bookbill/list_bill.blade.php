@@ -67,11 +67,7 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-<<<<<<< HEAD
                                         <div class="col-md-3 padd-0" style="padding-left:95px;">
-=======
-                                        <div class="col-md-3 padd-0" style="padding-left: 104px;">
->>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -144,9 +140,6 @@
     </div>
     </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
-<<<<<<< HEAD
-@endsection
-=======
 @endsection
 @section('js')
 <script>
@@ -157,4 +150,3 @@ $("#color_me").change(function(){
 
 </script>
 @stop
->>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
