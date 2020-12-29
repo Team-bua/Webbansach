@@ -9,4 +9,9 @@ class Menu extends Model
 {
     use HasFactory;
     protected $table = "menu";
+
+    public function menuTypes()
+    {
+        return $this->hasMany(ProductType::class,'id_menu', 'id');
+    }
 }

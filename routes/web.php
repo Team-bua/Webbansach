@@ -32,6 +32,7 @@ Route::get('/', function () {
 
 //----->trang chủ
 Route::get('index',[PageController::class,'getIndex'])->name('index');
+
 //----->tất cả sản phẩm
 Route::get('all',[PageController::class,'getAll'])->name('all');
 //----->gioithieu
@@ -48,14 +49,18 @@ Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
-//----->Thêm vào giỏ hàng
-
+Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
+Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
+Route::get('product_type/{type}',[PageController::class,'getproduct_type'])->name('product_type');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
 Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
+Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
+//----->Tìm kiếm
+Route::get('search',[PageController::class,'getSearch'])->name('search');
 /*--------------------------------------------------------------------------------*/
 
 

@@ -69,17 +69,9 @@
                                     <td><img style="width:100px;height:100px;" src="{{ asset('images/slide/'.$sl->image)}}"></td>
                                     <td>
                                         @if($sl->status == 1)
-                                        <div class="input-group-btn">
-                                            <a href="{{ route('slide_off', [$sl['id']]) }}">
-                                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown " aria-expanded="false">Hoạt động</button>
-                                            </a>
-                                        </div>
+                                            <h4><a href="{{ route('slide_off', [$sl['id']]) }}" class="label-success label">Hoạt động</a></h4>
                                         @else
-                                        <div class="btn-group">
-                                            <a href="{{ route('slide_on', [$sl['id']]) }}">
-                                                <button type="button" class="btn btn-info">Ngừng hoạt động</button>
-                                            </a>
-                                        </div>
+                                            <h4><a href="{{ route('slide_on', [$sl['id']]) }}" class="label-default label">Ngừng hoạt động</a></h4>                                
                                         @endif
                                     </td>
                                     <td>

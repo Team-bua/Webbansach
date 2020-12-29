@@ -17,7 +17,7 @@ class CreateBillDetailTable extends Migration
             $table->increments('id');
             $table->integer('id_bill')->unsigned();
             $table->integer('id_product')->unsigned();
-            $table->integer('quanlyti');
+            $table->integer('quantity');
             $table->integer('unit_price');
             $table->timestamps();
         });

@@ -60,12 +60,22 @@
                         <input id="promotion_pricebook" name="promotion_price" type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
                         <span class="input-group-addon">VNĐ</span>
                     </div>
-
                     <h4> Miêu tả </h4>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-                        <input id="descriptionbook" name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
+<<<<<<< HEAD
+                    <div class='box-body pad'>
+                        <form>
+                            <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </form>
                     </div>
+=======
+                        <div class='box-body pad'>
+                          <form>
+                            <textarea id="descriptionbook" name="description"class="textarea" placeholder="Place some text here" 
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                          </form>
+                        </div>
+                      
+>>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh sản phẩm</h4>
                         <input required id="img" type="file" name="img" onchange="changeImg(this)">
@@ -82,8 +92,41 @@
                     </div>
 
 
+                    
+
+
             </form>
         </div>
     </section><!-- /.content -->
 </div>
+<<<<<<< HEAD
 @endsection
+@section('js')
+<script type="text/javascript">
+    $(function() {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('editor1');
+        //bootstrap WYSIHTML5 - text editor
+        $(".textarea").wysihtml5();
+    });
+</script>
+@stop
+=======
+
+@endsection
+@section('js')
+<script type="text/javascript">
+    $(function () {
+      // Replace the <textarea id="editor1"> with a CKEditor
+      // instance, using default configuration.
+      CKEDITOR.replace('editor1');
+      //bootstrap WYSIHTML5 - text editor
+      $(".textarea").wysihtml5();
+    });
+  </script>
+
+  
+  @stop
+  
+>>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b

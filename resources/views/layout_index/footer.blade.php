@@ -34,6 +34,11 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                      <img src="images/logo1.jpg" alt="logo">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="copy-right">

@@ -17,7 +17,7 @@ class CreateBillInTable extends Migration
             $table->increments('id');
             $table->integer('id_supplier')->unsigned();
             $table->date('input_date');
-            $table->integer('quanlity');
+            $table->integer('quantity');
             $table->integer('total_price');
             $table->timestamps();
         });

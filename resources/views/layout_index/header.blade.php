@@ -48,10 +48,10 @@
             <a href="{{route('cart')}}"><span>
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
           </div>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
-            <span class="fa fa-search"></span>
-          </form>
+          <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{route('search')}}">
+                  <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." autocomplete="off" />
+                 <span class="fa fa-search"></span>
+            </form>
         </div>
                 </nav>
             </div>

@@ -13,7 +13,7 @@ class ProductTypeRepository
      */
     public function getAll()
     {
-        return ProductType::orderBy('created_at','desc')->paginate(10);
+        return ProductType::all();
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductTypeRepository
        $product_type = new ProductType();
        $product_type->name=$request->input('name');
        $product_type->save();
-       return response()->json($product_type);
+       return $product_type;
     }
 
     /**
@@ -38,10 +38,12 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function update($request, $id) {
+    public function update($request, $id) 
+    {  
         $product_type = ProductType::find($id);
         $product_type->name = $request->input('name');
         $product_type->save();
+        return $product_type;
     }
 
      /**
@@ -55,6 +57,21 @@ class ProductTypeRepository
         $product_type = ProductType::find($id);
         $product_type->delete();
       
+    }
+     /**
+     * search  member.
+     *
+     * @param  \App\Http\Requests\ProductTypeRequest $request
+     * @param  \App\Models\ProductType $product_type
+     * @return void
+     */
+
+    public function search($request) {
+
+        $search = $request->table_search;
+        return ProductType::where(function ($query) use ($search) {
+                $query->where('name', 'like', "%$search%");
+            })->paginate(10);
     }
 
 

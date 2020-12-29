@@ -29,38 +29,43 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="checkout-inner">
+                </div>
+                <div class="col-lg-4">
+                    <div class="checkout-inner">
                         <div class="checkout-summary">
-                                <h1 style="font-family:Times New Roman;" >Tổng số giỏ hàng</h1>                              
-                                <p class="ship-cost" style="font-family:Times New Roman;" >Số lượng<span></span></p>
-                                <h2 style="font-family:Times New Roman;">Thành tiền<span>1500000VNĐ</span></h2>
-                            </div>
-                            <div class="checkout-payment">
-                                <div class="payment-methods">
-                                    <h1 style="font-family:Times New Roman;" >Hình thức thanh toán</h1>
-                                    <div class="payment-method">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="payment-1" name="payment">
-                                            <label class="custom-control-label" for="payment-1" style="font-family:Times New Roman;">Thanh toán khi nhận hàng</label>
-                                        </div>
+                            <h1 style="font-family:Times New Roman;">Tổng số giỏ hàng</h1>
+                            <p class="ship-cost" style="font-family:Times New Roman;">Số lượng<span>{{number_format($totalQty)}}</span></p>
+                            <h2 style="font-family:Times New Roman;">Thành tiền<span>{{number_format($totalPrice)}}</span></h2>
+                        </div>
+                        <div class="checkout-payment">
+                            <div class="payment-methods">
+                                <h1 style="font-family:Times New Roman;">Hình thức thanh toán</h1>
+                                <div class="payment-method">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="payment-1" name="payment">
+                                        <label class="custom-control-label" for="payment-1" style="font-family:Times New Roman;">Thanh toán khi nhận hàng</label>
                                     </div>
                                 </div>
-                                <div class="checkout-btn">
-                                    <button>Thanh Toán</button>
-                                </div>
+                            </div>
+                            <div class="checkout-btn">
+                                <button>Thanh Toán</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-									<div class="col-sm-10">
-										<h4 class="nomargin">Product 1</h4>
-										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-									</div>
-					</div>
                 </div>
+                <div class="row">
+                    @foreach($product_cart as $pro)
+                    <div class="col-sm-2 hidden-xs"><img src="{{asset('images/product/'.$pro['item']['image'])}}" class="img-responsive" />
+                    </div>
+                    <div class="col-sm-10">
+                        <h4 class="nomargin">{{$pro['item']['name']}}</h4>
+                        <p>{!!$pro['item']['description']!!}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
+    </div>
+    @endif
 </div>
 @endsection

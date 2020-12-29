@@ -21,9 +21,10 @@
         </ul>
     <div class="left_column">
         <div class="product_menu">
+            @foreach ($product_type as $pro)
         <ul id="prod_nav" class="clearfix">
-            <li class="top"><a  class="top_link"><span class="down">Sách Trong Nước</span></a>
-            <ul class="sub">
+            <li class="top"><a  class="top_link"><span class="down">{{ $pro->name }}</span></a>
+            <ul  class="sub">
               <li>
                   <ul>
                       <li><h6>Submenu #1</h6></li>
@@ -38,6 +39,7 @@
           </li>
 
         </ul>
+        @endforeach
       </div>
     </div>    
 </div>
@@ -47,29 +49,69 @@
             <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
             <hr>
             <div class="recent-book-sec">
-                <div class="row">
+                <div class="row" id="load" style="position: relative;">
                      @foreach ($new_product as $pro)
                     <div class="col-md-3">
                         <div class="item">
-                        <div class="sale">Sale</div>
+                        @if($pro->promotion_price==0)
+                       <div class="new">new</div>
+                    @else
+                        <span class="sale">sale</span>
+                    @endif
+                        
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
                 <div class="content">
                 <div class="body">
-                    <p>{{ $pro->description }}</p>
+                    <p>{!! $pro->description !!}</p>
                 </div>
                 </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
+                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
+
             </div>
         </div>
     </section>
+<section class="static about-sec">
+        <div class="container"> 
+            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
+            <hr>
+            <div class="recent-book-sec">
+                <div class="row" id="load" style="position: relative;">
+                     @foreach ($new_product as $pro)
+                    <div class="col-md-3">
+                        <div class="item">
+                        @if($pro->promotion_price==0)
+                       <div class="new">new</div>
+                    @else
+                        <span class="sale">sale</span>
+                    @endif
+                        
+                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                <div class="content">
+                <div class="body">
+                    <p>{!! $pro->description !!}</p>
+                </div>
+                </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
+                <div class="btn-sec">
+                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
+                </div>
 
+            </div>
+        </div>
+    </section>
 <section class="features-sec">
         <div class="container">
             <ul>

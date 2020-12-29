@@ -30,7 +30,7 @@
                                             placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-success"
-                                                style="float:left;margin-bottom:5px;margin-left:2px"><i
+                                                style="float:left;margin-top:0px;margin-left:2px"><i
                                                     class="fa fa-search"> Tìm kiếm </i></button>
 
                                         </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                            <table  class="table table-hover">
                                 <tbody>
                                     <tr style="font-size:18px; ">
 
@@ -56,7 +56,7 @@
                                         <th>Tác giả</th>
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
-                                        <th>Miêu tả</th>
+
                                         <th>Hình ảnh</th>
                                         <th colspan="2">
                                             <center>Chức năng</center>
@@ -65,12 +65,12 @@
                                     </tr>
                                     @foreach ($product as $pro)
                                         <tr>
-                                            <td>{{ $pro->name }}</td>
+                                            <td><p style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{ $pro->name }}</p></td>
                                             <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-                                            <td>{{ $pro->description }}</td>
+                                            <td>{!! $pro->description !!}</td>
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>
@@ -90,8 +90,12 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                {{ $product->links('vendor.pagination.bootstrap-4') }}
                             </table>
+                            
+                           
                         </div><!-- /.box-body -->
+                       
                     </div><!-- /.box -->
                 </div>
             </div>

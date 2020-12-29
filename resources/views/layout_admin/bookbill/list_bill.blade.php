@@ -1,6 +1,24 @@
 @extends('layout_admin.master')
 @section('content')
+<style>
+.green {
+    background-color: rgb(102, 226, 102);
+    color:white;
+    border-color:  rgb(102, 226, 102);
+    
+}
+.blue {
+    background-color: lightseagreen;
+    color:white;
+    border-color:   lightseagreen;
+}
+.gray {
+    background-color: rgb(221, 205, 205);
+    border-color:  rgb(221, 205, 205);
+}
 
+
+</style>
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -49,7 +67,11 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 padd-0" style="padding-left: 100px;">
+<<<<<<< HEAD
+                                        <div class="col-md-3 padd-0" style="padding-left:95px;">
+=======
+                                        <div class="col-md-3 padd-0" style="padding-left: 104px;">
+>>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -79,71 +101,18 @@
                                 </tr>
                         </div>
                         <!-- /.box -->
+
                         <tr>
                             <td>Harry Potter</td>
                             <td>2</td>
                             <td>20000</td>
                             <td>4</td>
                             <td>
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử lý
-                                    </button>
-
-                                </div>
-
-                                <div class="input-group-btn ">
-                                    <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
-                                    </button>
-
-                                </div>
-
-                                <div class="input-group-btn ">
-                                    <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
-                                    </button>
-
-                                </div>
-                            <td>
-                                <div class="btn-toolbar" role="toolbar">
-                                    <div class="btn-group mr-2" role="group">
-                                        <button id="loginLink" onclick="toggleTable();" style="float:right"
-                                            class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
-                                    </div>
-                                    <div class="btn-group mr-2" role="group">
-                                        <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
-                                            @csrf
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button style="float:right" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Bạn có muốn xóa không')"><i
-                                                    class="fa fa-trash-o"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Harry Potter</td>
-                            <td>2</td>
-                            <td>20000</td>
-                            <td>4</td>
-                            <td>
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử lý
-                                    </button>
-
-                                </div>
-
-                                <div class="input-group-btn ">
-                                    <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
-                                    </button>
-
-                                </div>
-
-                                <div class="input-group-btn ">
-                                    <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
-                                    </button>
-
-                                </div>
+                                <select style="padding-left:32px;width:150px;height:35px;" id="color_me" class="">
+                                    <option class="gray">Đang xử lý</option>
+                                    <option class="blue">Tiếp nhận</option>
+                                    <option class="green">Đã giao</option>
+                                </select>
                             <td>
                                 <div class="btn-toolbar" role="toolbar">
                                     <div class="btn-group mr-2" role="group">
@@ -175,4 +144,17 @@
     </div>
     </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+@section('js')
+<script>
+$("#color_me").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#color_me").attr("class", color);
+});
+
+</script>
+@stop
+>>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b

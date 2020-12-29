@@ -3,7 +3,7 @@
 
     <meta charset="UTF-8">
     <title>BookStore</title>
-    <base href="{{ asset('backend') }}">
+  <base href="{{asset('')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!------------------------------------------------------------------------>
@@ -27,10 +27,12 @@
 
 </head>
 
+
 <body>
     @include('layout_index.header')
     @yield('content')
     @include('layout_index.footer')
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -42,10 +44,12 @@
     <script type="text/javascript" src="js/jquery.selectBox.js"></script>
     <script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
     <script type="text/JavaScript" src="js/cuties.js"></script>
+    
     <!---------------------------back to top--------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
+
     <script>
         $(function() {
 
@@ -57,7 +61,23 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-    
+    <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❆</div>
+</div>
 </body>
 
 </html>
