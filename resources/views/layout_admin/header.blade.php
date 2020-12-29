@@ -54,16 +54,16 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+                        <img style="background-color: #ffffff" src="{{asset('images/icon/adminicon.png')}}" class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                            <p>
-                                {{ Auth::user()->full_name }}
-                                <small>Member since Nov. 2012</small>
+                            <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                            <p style="color: #ffffff">
+                                {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
+                                <small>{{ Auth::user()->email }}</small>
                             </p>
                         </li>
 
@@ -73,10 +73,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                                <a href="" class="btn btn-danger btn-flat">Đổi mật khẩu</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Đăng Xuất</a>
+                                <a href="{{ url('logout') }}" class="btn btn-primary btn-flat">Đăng Xuất</a>
                             </div>
                         </li>
                     </ul>
@@ -104,12 +104,12 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->full_name }}</p>
 
-                <a href=""><i class="fa fa-circle text-success"></i> Online </a>
+                <a href=""><i class="fa fa-circle text-warning"></i> {{ Auth::user()->role->display_name }} </a>
             </div>
         </div>
         <!-- search form -->
@@ -134,7 +134,7 @@
                 <a href="{{ route('book.index') }}">
                     <i class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-                    <small class="label pull-right bg-green"></small>
+                    
                 </a>
 
             </li>
@@ -143,7 +143,7 @@
                 <a href="{{ route('book_type.index') }}">
                     <i class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-                    <small class="label pull-right bg-green">500</small>
+                    
 
                 </a>
 
@@ -160,7 +160,7 @@
                 <a href="{{ route('bill.index') }}">
                     <i class="fa fa-inbox fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Đơn hàng</span>
-                    <small class="label pull-right bg-yellow">500</small>
+                    
                 </a>
 
             </li>
@@ -169,7 +169,7 @@
                 <a href="{{ route('archive.index') }}">
                     <i class="fa fa-archive  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Kho hàng</span>
-                    <small class="label pull-right bg-yellow">12</small>
+                   
                 </a>
 
             </li>

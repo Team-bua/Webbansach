@@ -68,7 +68,7 @@
                     </div>
                         <div class="box-body ">
                             <table class="table table-bordered">
-                                <tr>
+                                <tr style="font-size:18px;">
                                     <th>Tên sách </th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá</th>

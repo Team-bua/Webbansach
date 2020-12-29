@@ -49,7 +49,7 @@
                         <div class="box-body table-responsive no-padding">
                             <table  class="table table-hover">
                                 <tbody>
-                                    <tr style="font-size:18px; ">
+                                    <tr style="font-size:18px;">
 
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>

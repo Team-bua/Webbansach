@@ -67,7 +67,7 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-                                        <div class="col-md-3 padd-0" style="padding-left:95px;">
+                                        <div class="col-md-3 padd-0" style="padding-left:19%;">
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="box-body ">
                             <table class="table table-bordered">
-                                <tr>
+                                <tr style="font-size:18px;">
                                     <th>Tên sách </th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá</th>
