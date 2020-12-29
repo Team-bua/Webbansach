@@ -53,42 +53,37 @@
                             </div>
 
 
-                        </div><!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table id="tableId2" class="table table-hover">
-                                <tbody>
-                                    <tr>
-                                        <th>Tên loại</th>
-                                        <th colspan="2" width="20%">
-                                            <center>Chức năng</center>
-                                        </th>
-                                    </tr>
-                                    @foreach ($product_type as $pro)
-                                        <tr>
-                                            <td>{{ $pro->name }}</td>
-                                            <td>
-                                                <button class="btn btn-warning btn" id="edit-{{ $pro->id }}"
-                                                    onclick="editType(this)"> Sửa </button>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table id="tableId2" class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th>Tên loại</th>
+                                    <th colspan="2" width="20%">
+                                        <center>Chức năng</center>
+                                    </th>
+                                </tr>
+                                @foreach ($product_type as $pro)
+                                <tr>
+                                    <td id="name-{{$pro->id}}">{{ $pro->name }}</td>
+                                    <td>
+                                        <button class="btn btn-warning btn" id="edit-{{$pro->id}}" onclick="editType(this)"> Sửa </button>
 
-                                            </td>
-                                            <td>
-                                                <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}"
-                                                    enctype="multipart/form-data" name="form1" id="form1">
-                                                    @csrf
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger btn"
-                                                        onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div><!-- /.box-body -->
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
 
-                    </div><!-- /.box -->
-
-                </div>
+                </div><!-- /.box -->
 
             </div>
             <!-- Button trigger modal -->
@@ -122,24 +117,27 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- EditModal -->
-            <div class="modal fade" id="bookeditmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div style="width:1000px" class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Cập nhật loại sách</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form id="bookEditForm">
-                                <input type="hidden" name="_token" id="csrf-token" />
-                                <div class="form-group">
-                                    <label for="name">
-                                        <h4>Loại sách: </h4>
-                                    </label>
-                                    <input style="width:250px" type="text" id="name_type" name="name" class="form-control"
-                                        id="type_name" placeholder="Tên loại sách . . . . .">
+        <!-- EditModal -->
+        <div class="modal fade" id="bookeditmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div style="width:1000px" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Cập nhật loại sách</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="bookEditForm">
+                            <input type="hidden" name="_token" id="csrf-token" />
+                            <input type="hidden" name="id" id="id" />
+                            <div class="form-group">
+                                <label for="name">
+                                    <h4>Loại sách: </h4>
+                                </label>
+                                <input style="width:250px" type="text" id="name_type" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
+
+                            </div>
+                            <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
                                 </div>
                                 <button type="submit" class="btn btn-success"> Cập nhật </button>
@@ -158,71 +156,83 @@
 
 @endsection
 @section('js')
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $("#bookForm").submit(function(e) {
+        e.preventDefault();
+        let name = $("#type_name").val();
+        $.ajax({
+            url: "{{ route('book_type.store') }}",
+            type: "POST",
+            data: {
+                name: name
+            },
+            success: function(response) {
+                if (response) {
+                    let type = JSON.parse(response)['product_type'];
+                    let fromDelete = '';
+                    fromDelete += '<td>';
+                    fromDelete += '<form method="post" action="http://localhost:8000/book_type/' + type['id'] + '" name="form1">';
+                    fromDelete += '<input type="hidden" name="_token" value="{{ csrf_token() }}" />';
+                    fromDelete += '<input name="_method" type="hidden" value="DELETE">';
+                    fromDelete += '<button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>';
+                    fromDelete += '</form>';
+                    fromDelete += '</td>';
+         
+                    var output = "<tr>" +
+                        "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
+                        "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] + "' onclick='editType(this)' >Sửa </button>" + "</td>" +fromDelete+
+                        "</tr>";
+                    $("#tableId2 tbody").append(output);
+                    $("#bookmodal").modal('hide');
+
+                }
             }
         });
-        $("#bookForm").submit(function(e) {
+    });
+
+    function editType(edit) {
+        $('#bookeditmodal').modal('toggle');
+        var [x, book_type] = edit.id.split('-')
+        $.ajax({
+            url: "{{ route('book_type.getedit') }}",
+            type: "POST",
+            data: {
+                id: book_type
+            },
+            success: function(response) {
+                let type = JSON.parse(response)['type'];
+                $('#name_type').val(type['name']);
+                $('#id').val(type['id']);
+            }
+        });
+
+        $('#bookEditForm').submit(function(e) {
             e.preventDefault();
-            let name = $("#type_name").val();
+            let id = $("#id").val();
+            let name = $("#name_type").val();
             $.ajax({
-                url: "{{ route('book_type.store') }}",
+                url: "{{ route('book_update') }}",
                 type: "POST",
                 data: {
+                    id: id,
                     name: name
                 },
                 success: function(response) {
-                    if (response) {
-                        let type = JSON.parse(response)['product_type'];
-                        var output = "<tr>" +
-                            "<td>" + type['name'] + "</td>" +
-                            "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] +
-                            "' onclick='editType(this)' >Sửa </button>" + "</td>" +
-                            "<td>" + "<button class='btn btn-danger btn' id='edit-" + type['id'] +
-                            "' >Xóa </button>" + "</td>" +
-                            "</tr>";
-                        $("#tableId2 tbody").append(output);
-                        $("#bookmodal").modal('hide');
+                    let type = JSON.parse(response)['product_type'];
+                    $("#name-" + type['id']).html(type['name']);
+                    $("#bookeditmodal").modal('hide');
 
-                    }
                 }
             });
         });
-
-        function editType(edit) {
-            $('#bookeditmodal').modal('show');
-            var [x, book_type] = edit.id.split('-')
-            $.ajax({
-                url: "{{ route('book_type.getedit') }}",
-                type: "POST",
-                data: {
-                    id: book_type
-                },
-                success: function(response) {
-                    let type = JSON.parse(response)['type'];
-                    $('#name_type').val(type['name']);
-                }
-            });
-            $('#bookEditForm').submit(function(e) {
-                e.preventDefault();
-                let name = $("#name_type").val();
-                $.ajax({
-                    url: "",
-                    type: "PUT",
-                    data: {
-                        name: name
-                    },
-                    success: function(response) {
-                        $
-
-                    }
-
-                });
-            });
-        }
-
-    </script>
+    }
+    function alertDelete(){
+        return confirm('Bạn có muốn xóa không')
+    }
+</script>
 @stop
-

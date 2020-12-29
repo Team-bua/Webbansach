@@ -6,13 +6,14 @@ use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Cart;
 use App\Models\Slide;
 use App\Models\Bill;
 use App\Models\BillDetail;
 use Illuminate\Http\Request;
-use Session;
+
 
 class PageRepository
 {
@@ -78,6 +79,7 @@ class PageRepository
         $bill->phone = $request->phone;
         $bill->address = $request->address;
         $bill->total = $cart->totalPrice;
+        $bill->quantity = $cart->totalQty;
         $bill->payment = $request->payment;
         $bill->status = $request->status;
         $bill->save();

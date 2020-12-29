@@ -4,9 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
 use App\Models\ProductType;
 use App\Models\Cart;
-use Session;
 
 class AppServiceProvider extends ServiceProvider
 {

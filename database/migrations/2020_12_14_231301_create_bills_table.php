@@ -20,11 +20,11 @@ class CreateBillsTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->date('date_order');
-            $table->date('complete_order');
+            $table->date('complete_order')->nullable();
             $table->integer('total');
             $table->integer('quantity');
-            $table->string('payment');
-            $table->string('status');
+            $table->string('payment')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -3,7 +3,7 @@
     <section class="product-sec">
         <div class="container">
             
-            <h1>{{ $product_detail->name}}</h1>
+            <h1>{{$product_detail->name}}</h1>
             <div class="row">
                 <div class="col-md-6 slider-sec">
                     
