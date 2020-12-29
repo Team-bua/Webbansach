@@ -81,7 +81,6 @@ Route::resource('bill',BillController::class);
 Route::resource('chart',ChartController::class);
 ///------>trang show slide
 Route::resource('slide',SlideController::class);
-
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
 

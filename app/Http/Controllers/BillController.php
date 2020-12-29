@@ -3,9 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\BillRepository;
 
 class BillController extends Controller
-{
+{  /**
+    * The ProductRepository instance.
+    *
+    * @var \App\Repositories\BillRepository
+    */
+   protected $repository;
+
+
+  /**
+   * Create a new PostController instance.
+   *
+   * @param  \App\Repositories\BillRepository $repository
+   */
+  public function __construct(BillRepository $repository)
+  {
+      $this->repository = $repository;
+  }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +30,8 @@ class BillController extends Controller
      */
     public function index()
     {
-        return view('layout_admin.bookbill.list_bill');
+        $bill = $this->repository->getAll();
+        return view('layout_admin.bookbill.list_bill',compact('bill'));
     }
 
     /**

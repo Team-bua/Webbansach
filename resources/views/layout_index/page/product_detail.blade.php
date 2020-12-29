@@ -47,11 +47,11 @@
                     <ul>
                         <li>
                             <span class="name">Giá Bán</span><span class="clm">:</span>
-                            <span class="price">{{$product_detail->unit_price}} Đ</span>
+                            <span class="price">{{number_format($product_detail->unit_price,0,"",",")}} Đ</span>
                         </li>
                         <li>
                             <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
-                            <span class="price final">{{$product_detail->promotion_price}} Đ</span>
+                            <span class="price final">{{number_format($product_detail->promotion_price,0,"",",")}} Đ</span>
                         </li>
 
                     </ul>

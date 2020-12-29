@@ -241,7 +241,7 @@
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
                     <i class="fa fa-list-alt  fa-lg text-success"></i>
-                    <span>Slide</span>
+                    <span>Bìa</span>
                 </a>
 
             </li>

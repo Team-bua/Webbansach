@@ -67,11 +67,7 @@
                                                     placeholder="Đến ngày" name="end">
                                             </div>
                                         </div>
-<<<<<<< HEAD
-                                        <div class="col-md-3 padd-0" style="padding-left:95px;">
-=======
                                         <div class="col-md-3 padd-0" style="padding-left: 104px;">
->>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
                                         <button style="box-shadow: none; margin: 0;" type="button" class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -95,15 +91,15 @@
                                     <th>Tên sách </th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá</th>
-                                    <th>tổng tiền Tiền</th>
+                                    <th>Tổng tiền</th>
                                     <th>Tình trạng</th>
                                     <th>Tùy chọn</th>
                                 </tr>
                         </div>
                         <!-- /.box -->
-
+                        @foreach($bill->products as $bills)
                         <tr>
-                            <td>Harry Potter</td>
+                            <td>{{$bills->pivot->name}}</td>
                             <td>2</td>
                             <td>20000</td>
                             <td>4</td>
@@ -131,8 +127,8 @@
                                 </div>
                             </td>
                             </td>
-
                         </tr>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -144,9 +140,6 @@
     </div>
     </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
-<<<<<<< HEAD
-@endsection
-=======
 @endsection
 @section('js')
 <script>
@@ -157,4 +150,3 @@ $("#color_me").change(function(){
 
 </script>
 @stop
->>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b

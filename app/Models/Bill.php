@@ -12,7 +12,7 @@ class Bill extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'bill_detail', 'id_bill', 'id_product');
+        return $this->belongsToMany(Product::class, 'bill_detail')->withPivot('name')->withTimestamps();
     }
 
     public function user()
