@@ -84,10 +84,9 @@ class ProductTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductTypeRequest $request, $id)
+    public function getUpdate(Request $request)
     {
-        $this->repository->update($request, $id);
-        return redirect(route('book_type.index'));
+        return $this->repository->update($request);
     }
 
     /**
@@ -96,10 +95,10 @@ class ProductTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($product_type)
+    public function destroy($request)
     {
-        $this->repository->destroy($product_type);
-        return redirect()->back();
+        return $this->repository->destroy($request);
+       
     }
 
     public function getEdit(Request $request)

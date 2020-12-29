@@ -38,12 +38,12 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function update($request, $id) 
+    public function update($request) 
     {  
-        $product_type = ProductType::find($id);
+        $product_type = ProductType::find($request->id);
         $product_type->name = $request->input('name');
         $product_type->save();
-        return $product_type;
+        return json_encode((object)['product_type'=>$product_type]);
     }
 
      /**
@@ -56,6 +56,7 @@ class ProductTypeRepository
     public function destroy($id) {
         $product_type = ProductType::find($id);
         $product_type->delete();
+        return redirect(route('book_type.index'));
       
     }
      /**

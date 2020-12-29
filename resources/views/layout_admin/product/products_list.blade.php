@@ -70,11 +70,6 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-<<<<<<< HEAD
-                                            <td>{!! $pro->description !!}</td>
-=======
-                                            
->>>>>>> 675dc2317f427ce25f35ae52f4494a4eda41369b
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>

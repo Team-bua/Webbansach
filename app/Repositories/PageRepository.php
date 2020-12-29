@@ -78,6 +78,7 @@ class PageRepository
         $bill->phone = $request->phone;
         $bill->address = $request->address;
         $bill->total = $cart->totalPrice;
+        $bill->quantity = $cart->totalQty;
         $bill->payment = $request->payment;
         $bill->status = $request->status;
         $bill->save();

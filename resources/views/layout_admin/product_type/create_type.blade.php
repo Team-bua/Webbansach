@@ -61,16 +61,16 @@
                                 </tr>
                                 @foreach ($product_type as $pro)
                                 <tr>
-                                    <td>{{ $pro->name }}</td>
+                                    <td id="name-{{$pro->id}}">{{ $pro->name }}</td>
                                     <td>
                                         <button class="btn btn-warning btn" id="edit-{{$pro->id}}" onclick="editType(this)"> Sửa </button>
 
                                     </td>
                                     <td>
-                                        <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
-                                            @csrf
+                                        <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button class="btn btn-danger btn" onclick="return confirm('Bạn có muốn xóa không')"> Xóa </button>
+                                            <button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -124,6 +124,7 @@
                     <div class="modal-body">
                         <form id="bookEditForm">
                             <input type="hidden" name="_token" id="csrf-token" />
+                            <input type="hidden" name="id" id="id" />
                             <div class="form-group">
                                 <label for="name">
                                     <h4>Loại sách: </h4>
@@ -131,7 +132,7 @@
                                 <input style="width:250px" type="text" id="name_type" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
 
                             </div>
-                            <button type="submit" class="btn btn-success"> Cập nhật </button>
+                            <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
                         </form>
                     </div>
@@ -165,10 +166,18 @@
             success: function(response) {
                 if (response) {
                     let type = JSON.parse(response)['product_type'];
+                    let fromDelete = '';
+                    fromDelete += '<td>';
+                    fromDelete += '<form method="post" action="http://localhost:8000/book_type/' + type['id'] + '" name="form1">';
+                    fromDelete += '<input type="hidden" name="_token" value="{{ csrf_token() }}" />';
+                    fromDelete += '<input name="_method" type="hidden" value="DELETE">';
+                    fromDelete += '<button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>';
+                    fromDelete += '</form>';
+                    fromDelete += '</td>';
+         
                     var output = "<tr>" +
-                        "<td>" + type['name'] + "</td>" +
-                        "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] + "' onclick='editType(this)' >Sửa </button>" + "</td>" +
-                        "<td>" + "<button class='btn btn-danger btn' id='edit-" + type['id'] + "' >Xóa </button>" + "</td>" +
+                        "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
+                        "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] + "' onclick='editType(this)' >Sửa </button>" + "</td>" +fromDelete+
                         "</tr>";
                     $("#tableId2 tbody").append(output);
                     $("#bookmodal").modal('hide');
@@ -179,7 +188,7 @@
     });
 
     function editType(edit) {
-        $('#bookeditmodal').modal('show');
+        $('#bookeditmodal').modal('toggle');
         var [x, book_type] = edit.id.split('-')
         $.ajax({
             url: "{{ route('book_type.getedit') }}",
@@ -190,19 +199,32 @@
             success: function(response) {
                 let type = JSON.parse(response)['type'];
                 $('#name_type').val(type['name']);
+                $('#id').val(type['id']);
             }
         });
+
         $('#bookEditForm').submit(function(e) {
             e.preventDefault();
+            let id = $("#id").val();
             let name = $("#name_type").val();
             $.ajax({
-                url: "{{ route('book_type.update') }}",
+                url: "{{ route('book_update') }}",
                 type: "POST",
                 data: {
+                    id: id,
                     name: name
                 },
+                success: function(response) {
+                    let type = JSON.parse(response)['product_type'];
+                    $("#name-" + type['id']).html(type['name']);
+                    $("#bookeditmodal").modal('hide');
+
+                }
             });
         });
+    }
+    function alertDelete(){
+        return confirm('Bạn có muốn xóa không')
     }
 </script>
 @stop
