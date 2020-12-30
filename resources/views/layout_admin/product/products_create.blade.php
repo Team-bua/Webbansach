@@ -65,7 +65,7 @@
 
                         <h4> Giá khuyến mãi : </h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
+                            <span class="input-group-addon" ><i class="fa fa-money fa-lg"></i></span>
                             <input id="promotion_pricebook" name="promotion_price" type="text" class="form-control"
                                 placeholder="Khuyến mãi . . . . . . . . .">
                             <span class="input-group-addon">VNĐ</span>
@@ -93,17 +93,17 @@
 
                         <h4> Số trang :</h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
                             <input id="Page_Number" name="PageNumber" type="text" class="form-control"
                                 placeholder="Nhập số trang  . . . . . . . . .">
                             <span class="input-group-addon">Trang</span>
                         </div>
                         <h4> Kích thước :</h4>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-arrows-alt fa-lg"></i></span>
                             <input id="size" name="size" type="text" class="form-control"
-                                placeholder="Khuyến mãi . . . . . . . . .">
-                            <span class="input-group-addon">VNĐ</span>
+                                placeholder="Nhập chiều dài và cao . . . . . . . . .">
+                            <span class="input-group-addon">Cm</span>
                         </div>
 
                         <div class="form-group">

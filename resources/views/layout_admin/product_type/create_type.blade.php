@@ -57,7 +57,7 @@
                     <div class="box-body table-responsive no-padding">
                         <table id="tableId2" class="table table-hover">
                             <tbody>
-                                <tr>
+                                <tr style="font-size:18px;">
                                     <th>Tên loại</th>
                                     <th colspan="2" width="20%">
                                         <center>Chức năng</center>
@@ -140,7 +140,6 @@
                             <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
                                 </div>
-                                <button type="submit" class="btn btn-success"> Cập nhật </button>
 
                             </form>
                         </div>
@@ -199,7 +198,7 @@
         $('#bookeditmodal').modal('toggle');
         var [x, book_type] = edit.id.split('-')
         $.ajax({
-            url: "{{ route('book_type.getedit') }}",
+            url: "{{ route('book_edit') }}",
             type: "POST",
             data: {
                 id: book_type

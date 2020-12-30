@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\ProductType;
-use GuzzleHttp\Psr7\Request;
 
 class ProductTypeRepository
 {

@@ -10,9 +10,13 @@ class Bill extends Model
     use HasFactory;
     protected $table = "bills";
 
+    const processing = 0;
+    const receiving = 1;
+    const delivered = 2;
+
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'bill_detail', 'id_bill', 'id_product');
+        return $this->belongsToMany(Product::class, 'bill_detail', 'id_bill', 'id_product')->withPivot('quantity','unit_price')->withTimestamps();
     }
 
     public function user()

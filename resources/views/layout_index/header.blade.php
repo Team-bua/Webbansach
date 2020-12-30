@@ -4,7 +4,6 @@
                 <div class="row">
                    @if(Auth::check())
                     <div class="col-md-3">Chào Bạn : <a href="{{route('admin')}}">{{Auth::user()->full_name}}</a></a></div>
-                    @else
                     @endif
                   <div class="col-md-3">
                         <span class="ph-number"><i class="fa fa-truck"></i>Miễn Phí Vận Chuyển</span>
