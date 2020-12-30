@@ -10,7 +10,11 @@
                     <div id="myCarousel" class="carousel slide">
                         <!-- main slider carousel items -->
                         <div class="carousel-inner">
-                        <div class="sale">- %20</div>
+                         @if($product_detail->promotion_price==0)
+                       <div class="new">new</div>
+                    @else
+                        <span class="sale">sale</span>
+                    @endif
                             <div class="active item carousel-item" data-slide-number="0">
                                 <img id="image-main" style="height:505px"
                                     src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
@@ -44,11 +48,7 @@
                 </script>
                 
                 <div class="col-md-6 slider-content">
-<<<<<<< HEAD
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
-=======
-                    <p style="text-align:justify">{{ $product_detail->description }}</p>
->>>>>>> 181dd92ae37f8adf401f2392954225c2435ac831
+                    <p style="text-align:justify">{!! $product_detail->description !!}</p>
                     <ul>
                         
                         <li>
@@ -72,13 +72,32 @@
                     </form>
                     <div class="btn-sec">
                         <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
-                        <button class="btn ">Mua Ngay</button>
+                        <button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Mua Ngay</button>
                         <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                     </div>
                 </div>          
             </div>
         </div>
     </section>
+    <div class="container">
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+     <img src="{{ asset('images/product/' . $product_detail->image) }}" alt="image"/>
+    </div>
+    <div class="container1">
+     <div class="product_info">
+                  <p>{{ $product_detail->name }}</p>
+                  <h3>{{ $product_detail->unit_price }}</h3>
+                <div class="btn "><a href="#">Thanh Toán</a></div>
+      </div>
+    </div>
+    <div class="container1" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn ">Cancel</button>
+    </div>
+  </form>
+</div>
+    </div>
   <section class="comment">
     <div class="container">
         <div id="comment-wrapper">
@@ -224,7 +243,13 @@
     <a href="#" class="bck"></a>
 @endsection
 
+@section('script')
 <script>
-    let varName = document.getElementById('elementId');
-
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
+@endsection

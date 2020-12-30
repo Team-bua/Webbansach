@@ -16,7 +16,7 @@
     <div class="container">
         <ul class="vert-one">
         <li>
-            <center> <p><a><i class="fa fa-bars" ></i>   Danh Mục Sách</a></p></center>
+            <center> <p><a><i class="fa fa-bars" ></i> Danh Mục Sách</a></p></center>
         </li>  
         </ul>
     <div class="left_column">
@@ -32,14 +32,7 @@
                       <li><a href="#">Link 3</a></li>
                       <li><a href="#">Link 4</a></li>
                       <li><a href="#">Link 5</a></li>
-                    </ul>   
-                    <ul>
-                      <li><a href="#">Link 1</a></li>
-                      <li><a href="#">Link 2</a></li>
-                      <li><a href="#">Link 3</a></li>
-                      <li><a href="#">Link 4</a></li>
-                      <li><a href="#">Link 5</a></li>
-                    </ul>       
+                    </ul>         
                 </li>
             </ul>
           </li>
@@ -52,11 +45,33 @@
 </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
+            <h6><span>S</span>
+                <span>á</span>
+                <span>c</span> 
+                <span>h</span>  
+                <span>M</span> 
+                <span>ớ</span> 
+                <span>i</span> 
+                <span>T</span> 
+                <span>ì</span> 
+                <span>m</span> 
+                <span>T</span> 
+                <span>h</span> 
+                <span>ấ</span> 
+                <span>y</span> 
+                <span>{{count($product)}}</span> 
+                <span>s</span> 
+                <span>ả</span> 
+                <span>n</span> 
+                <span>p</span> 
+                <span>h</span> 
+                <span>ẩ</span> 
+                <span>m</span> 
+            </h6>
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                     @foreach ($new_product as $pro)
+                     @foreach ($product as $pro)
                     <div class="col-md-3">
                         <div class="item">
                         @if($pro->promotion_price==0)
@@ -76,7 +91,6 @@
                     </div>
                     @endforeach
                 </div>
-                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
@@ -84,13 +98,35 @@
             </div>
         </div>
     </section>
-<section class="static about-sec">
+<section class="static about-sec" >
         <div class="container"> 
-            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
+            <h6><span>S</span>
+                <span>á</span>
+                <span>c</span> 
+                <span>h</span>  
+                <span>M</span> 
+                <span>ớ</span> 
+                <span>i</span> 
+                <span>T</span> 
+                <span>ì</span> 
+                <span>m</span> 
+                <span>T</span> 
+                <span>h</span> 
+                <span>ấ</span> 
+                <span>y</span> 
+                <span>{{count($product)}}</span> 
+                <span>s</span> 
+                <span>ả</span> 
+                <span>n</span> 
+                <span>p</span> 
+                <span>h</span> 
+                <span>ẩ</span> 
+                <span>m</span> 
+            </h6>
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                     @foreach ($new_product as $pro)
+                     @foreach ($product as $pro)
                     <div class="col-md-3">
                         <div class="item">
                         @if($pro->promotion_price==0)
@@ -109,60 +145,6 @@
                  <h3><a href="#">{{ $pro->name }}</a></h3>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
-                <div class="btn-sec">
-                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
-                </div>
-
-            </div>
-
-            <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
-            <hr>
-            <div class="recent-book-sec">
-                <div class="row">
-                     @foreach ($product as $pro)
-                    <div class="col-md-3">
-                        <div class="item">
-                        <div class="sale">- %20</div>
-                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
-                            <h3><a href="#">{{ $pro->name }}</a></h3>
-                <div class="content">
-
-                <div class="body">
-                    <p>{!! $pro->description !!}</p>
-                </div>
-                </div>
-                        </div>
-                    </div>
-
-                    @endforeach
-                </div>
-                <div class="btn-sec">
-                    <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
-                </div>
-            </div>
-
-            <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
-            <hr>
-            <div class="recent-book-sec">
-                <div class="row">
-                     @foreach ($product as $pro)
-                    <div class="col-md-3">
-                        <div class="item">
-                        <div class="sale">- %20</div>
-                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
-                            <h3><a href="#">{{ $pro->name }}</a></h3>
-                <div class="content">
-
-                <div class="body">
-                    <p>{!! $pro->description !!}</p>
-                </div>
-                </div>
-                        </div>
-                    </div>
-
                     @endforeach
                 </div>
                 <div class="btn-sec">

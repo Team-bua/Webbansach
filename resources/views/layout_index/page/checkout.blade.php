@@ -15,7 +15,8 @@
                                 <table class="table table-bordered .table-responsive text-center">
                                     <tr class="active">
                                         <td width="11.111%">Ảnh mô tả</td>
-                                        <td width="22.222%">Tên sản phẩm</td>                            <td width="16.6665%">Đơn giá</td>    
+                                        <td width="22.222%">Tên sản phẩm</td>                       
+                                        <td width="16.6665%">Đơn giá</td>    
                                     </tr>
                                      @foreach($product_cart as $pro)
                                     <tr>

@@ -40,7 +40,113 @@ textarea {
     font-family: "Times New Roman", Times, serif;
     outline: 0;
 }
+/*--------------------------------------h6-animation---------------------------------------------*/
+h6 span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  -webkit-animation: bounce 0.5s ease infinite alternate;
+  font-size: 30px;
+  color: #EA8989;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
 
+h6 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+}
+
+h6 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+}
+
+h6 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+}
+
+h6 span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+}
+
+h6 span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+}
+
+h6 span:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+}
+
+h6 span:nth-child(8) {
+  -webkit-animation-delay: 0.2s;
+}
+
+h6 span:nth-child(9) {
+  -webkit-animation-delay: 0.3s;
+}
+
+h6 span:nth-child(10) {
+  -webkit-animation-delay: 0.4s;
+}
+
+h6 span:nth-child(11) {
+  -webkit-animation-delay: 0.5s;
+}
+
+h6 span:nth-child(12) {
+  -webkit-animation-delay: 0.6s;
+}
+
+h6 span:nth-child(13) {
+  -webkit-animation-delay: 0.7s;
+}
+
+h6 span:nth-child(14) {
+  -webkit-animation-delay: 0.8s;
+}
+h6 span:nth-child(15) {
+  -webkit-animation-delay: 0.3s;
+}
+h6 span:nth-child(16) {
+  -webkit-animation-delay: 0.4s;
+}
+h6 span:nth-child(17) {
+  -webkit-animation-delay: 0.5s;
+}
+h6 span:nth-child(18) {
+  -webkit-animation-delay: 0.6s;
+}
+h6 span:nth-child(19) {
+  -webkit-animation-delay: 0.7s;
+}
+
+h6 span:nth-child(20) {
+  -webkit-animation-delay: 0.8s;
+}
+
+h6 span:nth-child(21) {
+  -webkit-animation-delay: 0.4s;
+}
+
+h6 span:nth-child(22) {
+  -webkit-animation-delay: 0.5s;
+}
+
+h6 span:nth-child(23) {
+  -webkit-animation-delay: 0.6s;
+}
+
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+/*---------------------------------------btn--------------------------------------------*/
 .btn {
     background: #ff9700;
     opacity: 1;
@@ -52,19 +158,88 @@ textarea {
     letter-spacing: 0.4px;
     border: 2px solid #ff9700;
     border-radius: 2px;
+    text-decoration: none;
 }
 
 .btn:hover {
     background: #fff;
     color: #ff9700;
 }
-
-.container {
-    width: 1200px;
+.btn a{
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+}
+/*--------------------------------------Buynow---------------------------------------------*/
+.container1 {
+    width: 211px;
     padding: 0 50px;
-    max-width: 1200px;
+    max-width: 1070px;
 }
 
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+   float: left;
+  width: 180px;
+  margin-right: -50px;
+}
+
+img.avatar {
+  width: 50%;
+}
+.container1 {
+  padding: 16px;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 16%; 
+}
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
 section {
     float: left;
     width: 100%;
@@ -259,7 +434,6 @@ ul.vert-one {
     max-width: 210px;
     padding: 0;
     width: 50%;
-
 }
 
 ul.vert-one>li {
@@ -1257,7 +1431,7 @@ li.com-title span {
 .recent-book-sec .btn-sec {
     margin-top: 20px;
 }
-
+/*-----------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------*/
 
@@ -1280,6 +1454,7 @@ li.com-title span {
     visibility: visible;
     display: block;
     margin-bottom: 8px;
+     border-radius: 10px;
 }
 
 #slide-wrapper ul {
@@ -1311,35 +1486,6 @@ li.com-title span {
     height: 100% !important;
 }
 
-#sliderthumbs {
-    height: 20px;
-    position: absolute;
-    z-index: 100;
-    margin-left: 3%;
-    top: 4%;
-    right: 3%;
-}
-
-#sliderthumbs a {
-    text-indent: -9999px;
-    float: right;
-    background: #fbda99;
-    width: 10px;
-    height: 10px;
-    margin: 0 2px;
-    border-radius: 8px;
-    border: 1px solid #c0cf0f;
-}
-
-.activeSlide {
-    background: #d88f00 !important;
-}
-
-#fssPrev,
-#fssNext,
-#fssPlayPause {
-    display: none;
-}
 
 @media (min-width:320px) and (max-width:640px) {
     .slider {
@@ -1383,7 +1529,7 @@ li.com-title span {
 }
 
 
-/*-------------------------------------snowflakes------------------------------*/
+/*-------------------------------------animation------------------------------*/
 
 .snowflake {
     color: #fff;
@@ -1639,6 +1785,7 @@ li.com-title span {
     min-width: 220px;
     background-color: #FFFFFF;
     border: 1px solid #ccc;
+    border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
@@ -1668,7 +1815,7 @@ li.com-title span {
 /*-------------------------------------about-sec----------------------------------------------*/
 
 .about-sec {
-    margin-bottom: 80px;
+    margin-bottom: -30px;
     float: left;
     width: 100%;
 }
@@ -1991,7 +2138,7 @@ li.com-title span {
     .slider .slide-wrapper {
         bottom: 10px;
     }
-    /*----------------------------------------------------about-sec----------------------------------------------------*/
+/*----------------------------------------------------about-sec----------------------------------------------------*/
     .about-sec {
         padding-bottom: 60px;
     }

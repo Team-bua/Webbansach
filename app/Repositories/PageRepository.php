@@ -44,13 +44,6 @@ class PageRepository
         return $product;
     }
 
-     public function getnewProduct()
-    {
-        
-        $new_product = Product::latest()->paginate();
-        return $new_product;
-    }
-
     public function getProductType()
     {
         return ProductType::all();

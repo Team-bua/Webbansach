@@ -34,7 +34,7 @@
     @include('layout_index.header')
     @yield('content')
     @include('layout_index.footer')
-    
+    @yield('script')
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -60,6 +60,18 @@
 
         });
 
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#myInput').on('keyup', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var tukhoa = $(this).val().toLowerCase();
+                $('#myTable div').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
+                });
+            });
+        });
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
