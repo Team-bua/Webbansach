@@ -140,7 +140,6 @@
                             <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
                                 </div>
-                                <button type="submit" class="btn btn-success"> Cập nhật </button>
 
                             </form>
                         </div>
