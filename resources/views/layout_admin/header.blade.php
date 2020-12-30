@@ -16,12 +16,12 @@
         font-style: oblique;
         background: #7286a7;
         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-        background: -moz-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: -moz-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #cdd82e 56%, #ffffff 100%);
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7286a7), color-stop(13%, #7286a7), color-stop(50%, #ffffff), color-stop(56%, #812f30), color-stop(100%, #ffffff));
-        background: -webkit-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
-        background: -o-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
-        background: -ms-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
-        background: linear-gradient(to bottom, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #349c53 56%, #ffffff 100%);
+        background: -webkit-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #cdd82e 56%, #ffffff 100%);
+        background: -o-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #cdd82e 56%, #ffffff 100%);
+        background: -ms-linear-gradient(top, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #cdd82e 56%, #ffffff 100%);
+        background: linear-gradient(to bottom, #e8ecf3 0%, #e8ecf3 13%, #ffffff 50%, #cdd82e 56%, #ffffff 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7286a7', endColorstr='#ffffff', GradientType=0);
         background-clip: text;
         -webkit-background-clip: text;
@@ -38,9 +38,10 @@
 </style>
 
 
-<header class="main-header  ">
+<header  class="main-header  " >
     <!-- Logo -->
-    <a href="{{ url('admin') }}" class="logo"><b>Admin</b></a>
+    <a href="{{ url('admin') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
+        class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -51,15 +52,15 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+            <ul  class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img style="background-color: #ffffff" src="{{asset('images/icon/adminicon.png')}}" class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
                         <!-- User image -->
-                        <li class="user-header">
+                        <li style="background-color: #ecc518" class="user-header">
                             <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
                             <p style="color: #ffffff">
                                 {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
@@ -85,7 +86,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{asset('images/icon/tiengviet.png')}}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" style=" min-width: 50px;padding-left:19%;padding-top:15%;  box-shadow:none;">
+                    <ul class="dropdown-menu" 
+                    style="margin-top:7px;min-width:55px;
+                     min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li >
                             <img src="{{asset('images/icon/tienganh.png')}}" height="16px" width="25px">
                         </li>
