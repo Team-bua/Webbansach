@@ -180,7 +180,7 @@
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
                     <i class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Slide</span>
+                    <span>Bìa</span>
                 </a>
 
             </li>

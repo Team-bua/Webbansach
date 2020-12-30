@@ -166,7 +166,7 @@ way to fit your requirements.
 #prod_nav li a.top_link {
     display: block;
     width: 210px;
-    padding-left: 5px;
+    padding-left: 0px;
     font-size: 13px;
     line-height: 50px;
     color: #000000;
@@ -259,8 +259,6 @@ way to fit your requirements.
     color: #ed1c24;
     text-decoration: blink;
 }
-
-
 
 
 /* Account Option Menu */

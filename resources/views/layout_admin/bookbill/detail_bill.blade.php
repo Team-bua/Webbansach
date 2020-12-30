@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="container123  col-md-6" style="">
+                        <div class="container123  col-md-6">
                             <h4></h4>
                             <table class="table table-bordered">
                                 <thead>

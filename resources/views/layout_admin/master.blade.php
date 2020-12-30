@@ -129,8 +129,6 @@
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         });
 
-        });
-
     </script>
 
 <script type="text/javascript">

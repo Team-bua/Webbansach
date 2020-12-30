@@ -34,15 +34,12 @@ public function __construct(PageRepository $repository)
    public function getIndex(){
         $slide = $this->repository->getSlide();
         $product = $this->repository->getAllproduct();
-        $new_product = $this->repository->getnewProduct();
         $product_type = $this->repository->getProductType();
-
-        return view('layout_index.index',compact('product','product_type','slide','new_product'));
+        return view('layout_index.index',compact('product','product_type','slide'));
     }
 
    public function getDetail($id){
-        $product_detail = $this->repository->getproduct($id);
-     
+        $product_detail = $this->repository->getproduct($id);     
         return view('layout_index.page.product_detail',compact('product_detail'));
     }
         

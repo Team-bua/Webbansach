@@ -199,7 +199,7 @@
         $('#bookeditmodal').modal('toggle');
         var [x, book_type] = edit.id.split('-')
         $.ajax({
-            url: "{{ route('book_type.getedit') }}",
+            url: "{{ route('book_edit') }}",
             type: "POST",
             data: {
                 id: book_type
