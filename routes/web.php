@@ -71,7 +71,7 @@ Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
 Route::resource('book_type',ProductTypeController::class);
-Route::post('book_type/edit',[ProductTypeController::class,'getEdit'])->name('book_type.getedit');
+Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('book_edit');
 Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
@@ -81,6 +81,9 @@ Route::resource('archive',ArchiveController::class);
 Route::resource('user',UserController::class);
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class);
+Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
+Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
+Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide

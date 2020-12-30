@@ -15,7 +15,11 @@ class BillRepository
      */
     public function getAll()
     {   
-        return Bill::orderBy('created_at', 'desc')->paginate(10);
+        $bills = Bill::orderBy('created_at', 'desc')->paginate(10);
+        foreach($bills as $bill){
+            $bill->products;
+        }
+        return $bills;
     }
 
     public function getbill($id)

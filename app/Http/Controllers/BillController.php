@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\BillRepository;
+use App\Models\Bill;
 
 class BillController extends Controller
 {  /**
@@ -98,5 +99,25 @@ class BillController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getProcessing($id){
+        $xl = Bill::find($id);
+        $xl->status = Bill::processing;
+        $xl->save();
+        return redirect()->back();
+    }
+
+    public function getReceiving($id){
+        $tn = Bill::find($id);
+        $tn->status = Bill::receiving;
+        $tn->save();
+        return redirect()->back();
+    }
+
+    public function getDelivered($id){
+        $dg = Bill::find($id);
+        $dg->status = Bill::delivered;
+        $dg->save();
+        return redirect()->back();
     }
 }

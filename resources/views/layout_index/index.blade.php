@@ -52,11 +52,11 @@
 </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
+            <h4>Sách Mới tìm thấy {{count($product)}} sản phẩm </h4>
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                     @foreach ($new_product as $pro)
+                     @foreach ($product as $pro)
                     <div class="col-md-3">
                         <div class="item">
                         @if($pro->promotion_price==0)
@@ -76,7 +76,6 @@
                     </div>
                     @endforeach
                 </div>
-                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
@@ -86,11 +85,11 @@
     </section>
 <section class="static about-sec">
         <div class="container"> 
-            <h4>Sách Mới tìm thấy {{count($new_product)}} sản phẩm </h4>
+            <h4>Sách Mới tìm thấy {{count($product)}} sản phẩm </h4>
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                     @foreach ($new_product as $pro)
+                     @foreach ($product as $pro)
                     <div class="col-md-3">
                         <div class="item">
                         @if($pro->promotion_price==0)
@@ -111,7 +110,6 @@
                     </div>
                     @endforeach
                 </div>
-                 <div class="btn-sec">{{$new_product->links('vendor.pagination.bootstrap-4')}}</div>
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
