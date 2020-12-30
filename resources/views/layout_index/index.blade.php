@@ -16,7 +16,7 @@
     <div class="container">
         <ul class="vert-one">
         <li>
-            <center> <p><a><i class="fa fa-bars" ></i>   Danh Mục Sách</a></p></center>
+             <p><a><i class="fa fa-bars" ></i>   Danh Mục Sách</a></p>
         </li>  
         </ul>
     <div class="left_column">
@@ -95,7 +95,7 @@
                         @if($pro->promotion_price==0)
                        <div class="new">new</div>
                     @else
-                        <span class="sale">sale</span>
+                        <span class="sale" >sale</span>
                     @endif
                         
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
@@ -118,7 +118,7 @@
 
             <h3>Sản phẩm mới: {{count($product)}} sản phẩm </h3>
             <hr>
-            <div class="recent-book-sec">
+            <div class="recent-book-sec" >
                 <div class="row">
                      @foreach ($product as $pro)
                     <div class="col-md-3">
@@ -126,9 +126,9 @@
                         <div class="sale">- %20</div>
                              <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
-                <div class="content">
+                <div class="content"  >
 
-                <div class="body">
+                <div class="body"  >
                     <p>{!! $pro->description !!}</p>
                 </div>
                 </div>
