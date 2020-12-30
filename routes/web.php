@@ -66,7 +66,9 @@ Route::get('search',[PageController::class,'getSearch'])->name('search');
 
 
 //----->trang admin
+Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function() {
 Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
+});
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
