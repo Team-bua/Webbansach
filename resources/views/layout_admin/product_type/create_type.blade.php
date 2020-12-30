@@ -1,56 +1,52 @@
 @extends('layout_admin.master')
 @section('content')
 
-    <div class="content-wrapper" style="min-height: 898px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Thêm loại sách
-                <small></small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href=""><i class="fa fa-dashboard"></i> Home </a></li>
-                <li><a href="">Loại sách</a></li>
-                <li class="active">Simple</li>
-            </ol>
-        </section>
+<div class="content-wrapper" style="min-height: 898px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Thêm loại sách
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href=""><i class="fa fa-dashboard"></i> Home </a></li>
+            <li><a href="">Loại sách</a></li>
+            <li class="active">Simple</li>
+        </ol>
+    </section>
 
-        <!-- Main content -->
-
-
+    <!-- Main content -->
 
 
-        <section class="content">
 
 
-            <div class="row">
-                <div class="col-xs">
-                    <div class="box">
-                        <div class="box-header">
+    <section class="content">
 
 
-                            <form action="">
-                                <div class="col-md-4 pull-left">
-                                    <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control  pull-right"
-                                            placeholder="Search">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn btn-success"
-                                                style="float:left;margin-bottom:5px;margin-left:2px"><i
-                                                    class="fa fa-search"> Tìm kiếm </i></button>
+        <div class="row">
+            <div class="col-xs">
+                <div class="box">
+                    <div class="box-header">
 
-                                        </div>
+
+                        <form action="">
+                            <div class="col-md-4 pull-left">
+                                <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control  pull-right" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn btn-success" style="float:left;margin-bottom:5px;margin-left:2px"><i class="fa fa-search"> Tìm kiếm </i></button>
+
                                     </div>
                                 </div>
-                            </form>
-
-                            <div class="col-md-4 pull-right">
-
-                                <a class="btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px"
-                                    data-toggle="modal" data-target="#bookmodal">
-                                    <i class="fa fa-plus"> Thêm sách mới </i></button>
-                                </a>
                             </div>
+                        </form>
+
+                        <div class="col-md-4 pull-right">
+
+                            <a class="btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px" data-toggle="modal" data-target="#bookmodal">
+                                <i class="fa fa-plus"> Thêm sách mới </i></button>
+                            </a>
+                        </div>
 
 
                     </div><!-- /.box-header -->
@@ -89,8 +85,7 @@
             <!-- Button trigger modal -->
 
             <!-- Modal -->
-            <div class="modal fade" id="bookmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="bookmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -105,8 +100,7 @@
                                     <label for="name">
                                         <h4>Loại sách: </h4>
                                     </label>
-                                    <input style="width:250px" type="text" name="name" class="form-control" id="type_name"
-                                        placeholder="Tên loại sách . . . . .">
+                                    <input style="width:250px" type="text" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
 
                                 </div>
                                 <button type="submit" class="btn btn-success"> Thêm </button>
@@ -138,21 +132,17 @@
 
                             </div>
                             <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
-
-                                </div>
-                                <button type="submit" class="btn btn-success"> Cập nhật </button>
-
-                            </form>
-                        </div>
-
+                        </form>
                     </div>
+
                 </div>
             </div>
-    </div>
+        </div>
+</div>
 
-    </section><!-- /.content -->
+</section><!-- /.content -->
 
-    </div>
+</div>
 
 @endsection
 @section('js')
@@ -182,10 +172,10 @@
                     fromDelete += '<button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>';
                     fromDelete += '</form>';
                     fromDelete += '</td>';
-         
+
                     var output = "<tr>" +
                         "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
-                        "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] + "' onclick='editType(this)' >Sửa </button>" + "</td>" +fromDelete+
+                        "<td>" + "<button class='btn btn-warning btn' id='edit-" + type['id'] + "' onclick='editType(this)' >Sửa </button>" + "</td>" + fromDelete +
                         "</tr>";
                     $("#tableId2 tbody").append(output);
                     $("#bookmodal").modal('hide');
@@ -196,7 +186,7 @@
     });
 
     function editType(edit) {
-        $('#bookeditmodal').modal('toggle');
+        $('#bookeditmodal').modal('show');
         var [x, book_type] = edit.id.split('-')
         $.ajax({
             url: "{{ route('book_edit') }}",
@@ -231,7 +221,8 @@
             });
         });
     }
-    function alertDelete(){
+
+    function alertDelete() {
         return confirm('Bạn có muốn xóa không')
     }
 </script>

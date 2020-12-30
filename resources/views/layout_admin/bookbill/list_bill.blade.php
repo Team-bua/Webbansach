@@ -70,7 +70,7 @@
                                 <th>Tổng tiền</th>
                                 <th>Thanh toán</th>
                                 <th width="10%">Tình trạng</th>
-                                <th >Tùy chọn</th>
+                                <th>Tùy chọn</th>
                             </tr>
                             @foreach($bill as $bills)
                             <tr>
@@ -78,36 +78,48 @@
                                 <td>{{$bills->address}}</td>
                                 <td>{{$bills->phone}}</td>
                                 <td style="text-align:center">{{$bills->quantity}}</td>
-                                <td>{{$bills->total}} VNĐ</td>
+                                <td>{{number_format($bills->total,0,"",",")}} VNĐ</td>
                                 <td>{{$bills->payment}}</td>
                                 <td>
                                     <div class="btn-group">
                                         @if($bills->status == 0)
                                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="width:105px">Đang xử lý</button>
                                         <ul class="dropdown-menu" role="menu" style="width:105px">
-                                            <li><a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning">Tiếp nhận</a></li>
-                                            <li><a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info">Đã giao</a></li>
+                                            <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning">
+                                                <li>Tiếp nhận</li>
+                                            </a>
+                                            <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info">
+                                                <li>Đã giao</li>
+                                            </a>
                                         </ul>
                                         @endif
                                         @if($bills->status == 1)
                                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="width:105px">Tiếp nhận</button>
                                         <ul class="dropdown-menu" role="menu" style="width:105px">
-                                            <li><a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger">Đang xử lý</a></li>
-                                            <li><a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info">Đã giao</a></li>
+                                            <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger">
+                                                <li>Đang xử lý</li>
+                                            </a>
+                                            <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info">
+                                                <li>Đã giao</li>
+                                            </a>
                                         </ul>
                                         @endif
                                         @if($bills->status == 2)
                                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="width:105px">Đã giao</button>
                                         <ul class="dropdown-menu" role="menu" style="width:105px">
-                                            <li><a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger">Đang xử lý</a></li>
-                                            <li><a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning">Tiếp nhận</a></li>
+                                            <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger">
+                                                <li>Đang xử lý</li>
+                                            </a>
+                                            <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning">
+                                                <li>Tiếp nhận</li>
+                                            </a>
                                         </ul>
                                         @endif
                                     </div>
                                 <td>
                                     <div class="btn-toolbar" role="toolbar">
                                         <div class="btn-group mr-2" role="group">
-                                            <button id="loginLink" onclick="toggleTable();" style="float:right" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                            <button id="loginLink" onclick="showbill();" style="float:right" class="btn btn-info btn-sm btn1" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye"></i></button>
                                         </div>
                                         <div class="btn-group mr-2" role="group">
                                             <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
@@ -124,12 +136,39 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- ShowModal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-        </div><!-- /.box-body -->
-</div><!-- /.box -->
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Chi tiết đơn hàng</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 </div>
-</div>
-</div>
+</div><!-- /.box-body -->
 </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 @endsection
+@section('js')
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+@stop

@@ -25,7 +25,7 @@
 									</div>
 								</div>
 							</td>
-							<td data-th="Price"><span>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price'])}} VNĐ @else <span style="text-decoration:line-through">{{number_format($pro['item']['unit_price'])}}VNĐ </span>{{number_format($pro['item']['promotion_price'])}} VNĐ @endif</span></td>
+							<td data-th="Price"><span>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price'])}} VNĐ @else {{number_format($pro['item']['promotion_price'])}} VNĐ @endif</span></td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="{{$pro['qty']}}"> 
 							</td>

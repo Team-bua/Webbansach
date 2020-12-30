@@ -15,7 +15,7 @@
                                 <h2 style="font-family:Times New Roman;">Địa chỉ thanh toán</h2>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label style="font-family:Times New Roman;">Tên và tên</label>
+                                        <label style="font-family:Times New Roman;">Họ và tên</label>
                                         <input class="form-control" type="text" value="{{$name}}">
                                     </div>
                                     <div class="col-md-6">
