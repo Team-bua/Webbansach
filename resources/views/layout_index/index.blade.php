@@ -16,7 +16,7 @@
     <div class="container">
         <ul class="vert-one">
         <li>
-             <p><a><i class="fa fa-bars" ></i>   Danh Mục Sách</a></p>
+            <center> <p><a><i class="fa fa-bars" ></i> Danh Mục Sách</a></p></center>
         </li>  
         </ul>
     <div class="left_column">
@@ -32,14 +32,7 @@
                       <li><a href="#">Link 3</a></li>
                       <li><a href="#">Link 4</a></li>
                       <li><a href="#">Link 5</a></li>
-                    </ul>   
-                    <ul>
-                      <li><a href="#">Link 1</a></li>
-                      <li><a href="#">Link 2</a></li>
-                      <li><a href="#">Link 3</a></li>
-                      <li><a href="#">Link 4</a></li>
-                      <li><a href="#">Link 5</a></li>
-                    </ul>       
+                    </ul>         
                 </li>
             </ul>
           </li>
@@ -83,7 +76,7 @@
             </div>
         </div>
     </section>
-<section class="static about-sec">
+<section class="static about-sec" >
         <div class="container"> 
             <h4>Sách Mới tìm thấy {{count($product)}} sản phẩm </h4>
             <hr>

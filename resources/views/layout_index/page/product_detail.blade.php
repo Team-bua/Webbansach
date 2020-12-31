@@ -18,7 +18,7 @@
                     <!-- main slider carousel nav controls -->
                     @if($product_detail->imagedetail)
                     <ul class="carousel-indicators list-inline">
-                        @for($i=0; $i<3; $i++) <li class="list-inline-item active">
+                        @for($i=0; $i>=1; $i++) <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
                                 <img style="height:160px" src="{{ asset('images/product_detail/'.$product_detail->imagedetail[$i]) }}" class="img-fluid">
                             </a>
@@ -41,7 +41,7 @@
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{{ $product_detail->description }}</p>
+                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -221,6 +221,7 @@
 <a href="#" class="bck"></a>
 @endsection
 
+@section('script')
 <script>
     let varName = document.getElementById('elementId');
 </script>

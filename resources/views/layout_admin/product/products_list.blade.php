@@ -30,7 +30,7 @@
                                             placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-warning"
-                                                style="float:left;margin-top:0px;margin-left:2px"><i
+                                                style="border:none; background-color:#4a4235;float:left;margin-top:0px;margin-left:2px"><i
                                                     class="fa fa-search"> Tìm kiếm </i></button>
 
                                         </div>
@@ -41,7 +41,7 @@
                             <div class="col-md-4 pull-right">
                                 <a href="{{ route('book.create') }}">
                                     <button class="btn btn btn-warning"
-                                        style="float: right;;margin-bottom:5px;margin-left:2px">
+                                        style="float: right;;margin-bottom:5px;margin-left:2px;border:none; background-color:#4a4235;">
                                         <i class="fa fa-plus"> Thêm sách mới </i></button>
                                 </a>
                             </div>
@@ -70,7 +70,7 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-                                            <td>{!! $pro->description !!}</td>
+                                            
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>

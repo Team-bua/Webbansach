@@ -130,6 +130,8 @@ public function __construct(PageRepository $repository)
     }
 
     public function getAdmin(){
-        return view('layout_admin.index_admin');
+        $user = $this->repository->getAll ();
+        $product = $this->repository->getAllproduct();
+        return view('layout_admin.index_admin',compact('product','user'));
     }
 }

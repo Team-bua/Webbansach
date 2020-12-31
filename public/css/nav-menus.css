@@ -195,13 +195,12 @@ way to fit your requirements.
 }
 
 #prod_nav li:hover ul.sub {
-    left: 215px;
+    left: 225px;
     top: -1px;
     background: #FEFFFF;
     border: 1px solid #FCBA68;
-    border-left: 0;
     white-space: nowrap;
-    width: auto;
+    width: 888px;
     height: auto;
     z-index: 300;
 }
