@@ -1,26 +1,5 @@
 @extends('layout_index.master')
 @section('content')
-<<<<<<< HEAD
-    <section class="product-sec">
-        <div class="container">
-            
-            <h1>{{$product_detail->name}}</h1>
-            <div class="row">
-                <div class="col-md-6 slider-sec">
-                    
-                    <div id="myCarousel" class="carousel slide">
-                        <!-- main slider carousel items -->
-                        <div class="carousel-inner">
-                         @if($product_detail->promotion_price==0)
-                       <div class="new">new</div>
-                    @else
-                        <span class="sale">sale</span>
-                    @endif
-                            <div class="active item carousel-item" data-slide-number="0">
-                                <img id="image-main" style="height:505px"
-                                    src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
-                           </div>
-=======
 <section class="product-sec">
     <div class="container">
 
@@ -34,7 +13,6 @@
                         <div class="sale">- %20</div>
                         <div class="active item carousel-item" data-slide-number="0">
                             <img id="image-main" style="height:505px" src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
                         </div>
                     </div>
                     <!-- main slider carousel nav controls -->
@@ -62,22 +40,6 @@
                 });
             </script>
 
-<<<<<<< HEAD
-                </script>
-                
-                <div class="col-md-6 slider-content">
-                    <p style="text-align:justify">{!! $product_detail->description !!}</p>
-                    <ul>
-                        
-                        <li>
-                            <span class="name">Giá Bán</span><span class="clm">:</span>
-                            <span class="price">{{$product_detail->unit_price}} Đ</span>
-                        </li>
-                        <li>
-                            <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
-                            <span class="price final">{{$product_detail->promotion_price}} Đ</span>
-                        </li>
-=======
             <div class="col-md-6 slider-content">
                 <p style="text-align:justify">{{ $product_detail->description }}</p>
                 <ul>
@@ -85,7 +47,6 @@
                     <li>
                         <span class="name">Giá Bán</span><span class="clm">:</span>
                         <span class="price final" style="color:black">{{number_format($product_detail->unit_price,0,"",",")}}VNĐ</span>
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
 
                     </li>
                     @else
@@ -99,24 +60,9 @@
                     @endif
                 </ul>
 
-<<<<<<< HEAD
-                    </ul>
-
-                    <form action="" class="cart">
-                        <div class="quantity">
-                            <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4"
-                                class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                        </div>
-                    </form>
-                    <div class="btn-sec">
-                        <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
-                        <button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Mua Ngay</button>
-                        <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
-=======
                 <form action="" class="cart">
                     <div class="quantity">
                         <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
                     </div>
                 </form>
                 <div class="btn-sec">
@@ -126,33 +72,9 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    </section>
-    <div class="container">
-<div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-     <img src="{{ asset('images/product/' . $product_detail->image) }}" alt="image"/>
-    </div>
-    <div class="container1">
-     <div class="product_info">
-                  <p>{{ $product_detail->name }}</p>
-                  <h3>{{ $product_detail->unit_price }}</h3>
-                <div class="btn "><a href="#">Thanh Toán</a></div>
-      </div>
-    </div>
-    <div class="container1" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn ">Cancel</button>
-    </div>
-  </form>
-</div>
-    </div>
-  <section class="comment">
-=======
     </div>
 </section>
 <section class="comment">
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
     <div class="container">
         <div id="comment-wrapper">
             <div id="tabs" class="htabs">
@@ -301,16 +223,5 @@
 
 @section('script')
 <script>
-<<<<<<< HEAD
-var modal = document.getElementById('id01');
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-@endsection
-=======
     let varName = document.getElementById('elementId');
 </script>
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b

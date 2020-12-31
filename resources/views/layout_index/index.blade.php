@@ -45,33 +45,7 @@
 </section>
 <section class="static about-sec">
         <div class="container"> 
-<<<<<<< HEAD
-            <h6><span>S</span>
-                <span>á</span>
-                <span>c</span> 
-                <span>h</span>  
-                <span>M</span> 
-                <span>ớ</span> 
-                <span>i</span> 
-                <span>T</span> 
-                <span>ì</span> 
-                <span>m</span> 
-                <span>T</span> 
-                <span>h</span> 
-                <span>ấ</span> 
-                <span>y</span> 
-                <span>{{count($product)}}</span> 
-                <span>s</span> 
-                <span>ả</span> 
-                <span>n</span> 
-                <span>p</span> 
-                <span>h</span> 
-                <span>ẩ</span> 
-                <span>m</span> 
-            </h6>
-=======
             <h4>Sách Mới tìm thấy {{count($product)}} sản phẩm </h4>
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
@@ -104,33 +78,7 @@
     </section>
 <section class="static about-sec" >
         <div class="container"> 
-<<<<<<< HEAD
-            <h6><span>S</span>
-                <span>á</span>
-                <span>c</span> 
-                <span>h</span>  
-                <span>M</span> 
-                <span>ớ</span> 
-                <span>i</span> 
-                <span>T</span> 
-                <span>ì</span> 
-                <span>m</span> 
-                <span>T</span> 
-                <span>h</span> 
-                <span>ấ</span> 
-                <span>y</span> 
-                <span>{{count($product)}}</span> 
-                <span>s</span> 
-                <span>ả</span> 
-                <span>n</span> 
-                <span>p</span> 
-                <span>h</span> 
-                <span>ẩ</span> 
-                <span>m</span> 
-            </h6>
-=======
             <h4>Sách Mới tìm thấy {{count($product)}} sản phẩm </h4>
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
@@ -155,8 +103,6 @@
                     </div>
                     @endforeach
                 </div>
-<<<<<<< HEAD
-=======
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
@@ -210,7 +156,6 @@
 
                     @endforeach
                 </div>
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
                 <div class="btn-sec">
                     <a href="{{route('all')}}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
