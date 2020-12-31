@@ -92,4 +92,6 @@ Route::resource('chart',ChartController::class);
 Route::resource('slide',SlideController::class);
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
+///------>Trang dành cho nhà xuất bản
+Route::resource('publisher',PublicsherController::class);
 
