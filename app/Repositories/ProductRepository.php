@@ -107,17 +107,6 @@ class ProductRepository
              $imgdetail[] = $file_name;
          }          
         }
-        $imgdetail=[];
-        if($request->hasfile('img_detail'))
-       {
-           $file = $request->file('img_detail');
-           foreach($file as $key => $files){
-            $file_name = time().'_'.$files->getClientOriginalName();
-            $destinationPath=public_path('images/product_detail'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
-            $files->move($destinationPath, $file_name); //lưu hình ảnh vào thư mục public/image
-            $imgdetail[] = $file_name;
-        }          
-       }
         $product = Product::find($id);
         $product->name=$request->input('name');
         $product->id_type=$request->input('cate');

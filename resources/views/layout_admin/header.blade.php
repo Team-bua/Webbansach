@@ -40,7 +40,7 @@
 
 <header  class="main-header  " >
     <!-- Logo -->
-    <a href="{{ url('admin') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
+    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
         class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
