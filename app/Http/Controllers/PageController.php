@@ -35,19 +35,11 @@ public function __construct(PageRepository $repository)
         $slide = $this->repository->getSlide();
         $product = $this->repository->getAllproduct();
         $product_type = $this->repository->getProductType();
-<<<<<<< HEAD
-
-=======
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
         return view('layout_index.index',compact('product','product_type','slide'));
     }
 
    public function getDetail($id){
-<<<<<<< HEAD
-        $product_detail = $this->repository->getproduct($id);
-=======
         $product_detail = $this->repository->getproduct($id);     
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
         return view('layout_index.page.product_detail',compact('product_detail'));
     }
         
