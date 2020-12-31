@@ -35,11 +35,6 @@
     @include('layout_index.header')
     @yield('content')
     @include('layout_index.footer')
-<<<<<<< HEAD
-    @yield('script')
-=======
-
->>>>>>> be9e4260aa324937c3e6cced6647c192fefab04b
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
