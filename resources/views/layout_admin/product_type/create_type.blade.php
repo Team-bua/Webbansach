@@ -14,15 +14,8 @@
                 <li class="active">Simple</li>
             </ol>
         </section>
-
         <!-- Main content -->
-
-
-
-
         <section class="content">
-
-
             <div class="row">
                 <div class="col-xs">
                     <div class="box">
@@ -94,7 +87,7 @@
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-
+                            <button class="  btnmove btn-sm pull-right" style="margin-top:0px;" data-widget="remove"><i class="fa fa-times"></i></button>
                             <h4 class="modal-title" id="myModalLabel">Thêm loại sách</h4>
                         </div>
                         <div class="modal-body">
@@ -233,5 +226,12 @@
     function alertDelete(){
         return confirm('Bạn có muốn xóa không')
     }
+
+    $('.btnmove').click(function() {
+        bookmodal
+        $('#bookmodal').hide();
+        });
+
+        
 </script>
 @stop

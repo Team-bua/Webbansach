@@ -3,8 +3,10 @@
             <div class="container">
                 <div class="row">
                    @if(Auth::check())
-                    <div class="col-md-3">Chào Bạn : <a href="{{route('admin')}}">{{Auth::user()->full_name}}</a></a></div>
+                    <div class="col-md-3">Chào Bạn : <a href="{{route('admin')}}">{{Auth::user()->full_name}}</a></div>
+                    <a href="#">Đăng xuất</a>
                     @endif
+                     
                   <div class="col-md-3">
                         <span class="ph-number"><i class="fa fa-truck"></i>Miễn Phí Vận Chuyển</span>
                     </div>
