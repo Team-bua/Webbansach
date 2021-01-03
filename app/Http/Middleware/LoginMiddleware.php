@@ -20,8 +20,11 @@ class LoginMiddleware
         if (Auth::check()) {
            if (Auth::user()->id_role == 3) {
                 return redirect('index');
+        }    
         }
-            return $next($request);
-        }
+        else{
+            return redirect('login');
+    }
+        return $next($request);
     }
 }
