@@ -9,7 +9,7 @@
 							<th style="width:50%">Tên sản phẩm</th>
 							<th style="width:15%">Giá tiền</th>
 							<th style="width:10%">Số lượng</th>
-							<th style="width:20%">Thành tiền</th>
+							<th style="width:20%; text-align:center">Thành tiền</th>
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
@@ -29,7 +29,7 @@
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="{{$pro['qty']}}"> 
 							</td>
-							<td>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price']*$pro['qty'])}} VNĐ @else {{number_format($pro['item']['promotion_price']*$pro['qty'])}} VNĐ @endif</td>
+							<td style="text-align:center">@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price']*$pro['qty'])}} VNĐ @else {{number_format($pro['item']['promotion_price']*$pro['qty'])}} VNĐ @endif</td>
 							
 							<td class="actions">
 							
