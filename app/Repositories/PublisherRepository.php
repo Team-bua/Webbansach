@@ -1,31 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Repositories;
 
 use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
-use App\Models\User;
-use App\Http\Requests\UserRequest;
 
-class UserController extends Controller
-{ /**
-    * The MemberRepository instance.
-    *
-    * @var \App\Repositories\UserRepository
-    */
-   protected $repository;
-
-
-  /**
-   * Create a new PostController instance.
-   *
-   * @param  \App\Repositories\UserRepository $repository
-   */
-  public function __construct(UserRepository $repository)
-  {
-      $this->repository = $repository;
-  }
-
+class PublisherRepository
+{
     /**
      * Display a listing of the resource.
      *
@@ -33,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = $this->repository->getAll();
-        return view('layout_admin.user.list_users', compact('user'));
+        //
     }
 
     /**
@@ -44,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -53,9 +32,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -66,9 +45,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->repository->getuser($id);
-        $all_roles = $this->repository->getRole();
-        return view('layout_admin.user.role_users',compact('user', 'all_roles'));
+        //
     }
 
     /**
@@ -79,8 +56,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->repository->getuser($id);
-        return view('layout_admin.user.proflie',compact('user'));
+        //
     }
 
     /**
@@ -90,10 +66,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $this->repository->update($request, $id);
-        return redirect()->back();
+        //
     }
 
     /**

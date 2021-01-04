@@ -40,7 +40,7 @@
 
 <header  class="main-header  " >
     <!-- Logo -->
-    <a href="{{ url('admin') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
+    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
         class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -184,6 +184,8 @@
                 </a>
 
             </li>
+            @if(Auth::check())
+                @if(Auth::user()->id_role == 1)
             <li class="header ">
                 <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
             </li>
@@ -204,6 +206,10 @@
                 </a>
 
             </li>
+            @endif
+            @else
+                return redirect('login');
+            @endif
             <!--
             <li class="treeview">
               <a href="">

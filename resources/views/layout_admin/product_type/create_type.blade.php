@@ -132,7 +132,16 @@
 
                             </div>
                             <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
+<<<<<<< HEAD
                         </form>
+=======
+
+                                </div>
+
+                            </form>
+                        </div>
+
+>>>>>>> 36bfb20482ca46efd3b1352e7c75eb8ee8f3fa28
                     </div>
 
                 </div>

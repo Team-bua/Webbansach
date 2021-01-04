@@ -2,7 +2,7 @@
 @section('content')
 <section class="static about-sec">
         <div class="container"> 
-            <h4>Sách Mới tìm thấy {{count($search)}} sản phẩm </h4>
+            <h4>Sách được tìm thấy {{count($search)}} sản phẩm </h4>
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">

@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\PublisherController;
 
 
 /*
@@ -66,7 +67,9 @@ Route::get('search',[PageController::class,'getSearch'])->name('search');
 
 
 //----->trang admin
-Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
+Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function() {
+    Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
+});
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 ////----->trang admin_CRUD loai san pha,
@@ -90,4 +93,6 @@ Route::resource('chart',ChartController::class);
 Route::resource('slide',SlideController::class);
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
+///------>Trang dành cho nhà xuất bản
+Route::resource('publisher',PublisherController::class);
 
