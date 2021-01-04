@@ -20,7 +20,7 @@
                     <ul class="carousel-indicators list-inline">
                         @for($i=0; $i<$image_detail; $i++) <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img style="height:160px" src="{{ asset('images/product_detail/'.$product_detail->imagedetail[$i]) }}" class="img-fluid">
+                                <img style="height:160px;width:120px;" src="{{ asset('images/product_detail/'.$product_detail->imagedetail[$i]) }}" class="img-fluid">
                             </a>
                             </li>
                             @endfor
@@ -33,15 +33,16 @@
                 let imageMain = document.getElementById('image-main');
                 let imageDetail = document.querySelectorAll('.img-fluid');
                 imageDetail.forEach(function(btn) {
-                    btn.addEventListener('click', function() {
+                    btn.addEventListener('mouseover', function() {
                         let src = this.src;
                         imageMain.src = src;
                     });
+                    
                 });
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{{ $product_detail->description }}</p>
+                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -225,3 +226,4 @@
 <script>
     let varName = document.getElementById('elementId');
 </script>
+@stop

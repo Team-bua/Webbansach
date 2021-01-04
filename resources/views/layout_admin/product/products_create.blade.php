@@ -70,18 +70,22 @@
                                 placeholder="Khuyến mãi . . . . . . . . .">
                             <span class="input-group-addon">VNĐ</span>
                         </div>
+
+
+                        <h4> Miêu tả </h4>
+                        <div class='box-body pad'>
+                          <form>
+                            <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." 
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 
+                            1px solid #dddddd; padding: 10px;"></textarea>
+                          </form>
+                        </div>
+
                         <h4> Định dạng: </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa  fa-bold fa-lg"></i></span>
                             <input id="Format" name="Format" type="text" class="form-control"
                                 placeholder="Định dạng là chữ hoặc hình  . . . . . . . . .">
-
-                        </div>
-                        <h4> Ngày nhập : </h4>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
-                            <input style="width:300px" id="Release_Date" name="ReleaseDate" type="date" class="form-control"
-                                placeholder="Ngày nhập sách  . . . . . . . . . ">
 
                         </div>
                         <h4> Ngôn ngữ </h4>
@@ -106,11 +110,18 @@
                             <span class="input-group-addon">Cm</span>
                         </div>
 
+                        <h4> Sản phẩm nổi bật </h4>
+                        <div class="form-group" >
+                            Có: <input type="radio" checked name="featured" value="1">
+                            Không: <input type="radio" name="featured" value="0">
+                        </div>
                         <div class="form-group">
                             <h4 for="exampleInputFile">Ảnh sản phẩm</h4>
                             <input id="imgbook" type="file" name="img" onchange="changeImg(this)">
                             <img id="avatar" class="img-rounded" width="200px" height="300px">
                         </div>
+
+                        
 
                         <div class="form-group">
                             <h4 for="exampleInputFile">Ảnh chi tiết</h4>
@@ -121,7 +132,7 @@
                         <br>
                         <div class="text-center">
 
-                            <input type="submit" name="submit" value="Thêm" class="btn  btn-warning btn-lg">
+                            <input type="submit" name="submit" value="Thêm" class="btn  btn-warning btnthem btn-lg">
                         </div>
 
 
@@ -190,7 +201,16 @@
         };
 
     </script>
+<script>
 
+$(".btnthem ").on("change", function() {
+    if ($("#exampleInputFile")[0].files.length > 3) {
+        alert("Không chọn quá 3 hình");
+    } else {
+        $("#imageUploadForm").submit();
+    }
+});
+</script>
 
 
 @stop

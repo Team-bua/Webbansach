@@ -41,6 +41,7 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -107,7 +108,8 @@
     <script src='plugins/fastclick/fastclick.min.js'></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js" type="text/javascript"></script>
-
+    <script src="../../plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+    <script src="../../plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
 

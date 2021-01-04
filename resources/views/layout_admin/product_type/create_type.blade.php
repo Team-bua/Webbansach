@@ -89,7 +89,7 @@
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-
+                            <button class="  btnmove btn-sm pull-right" style="margin-top:0px;" data-widget="remove"><i class="fa fa-times"></i></button>
                             <h4 class="modal-title" id="myModalLabel">Thêm loại sách</h4>
                         </div>
                         <div class="modal-body">
@@ -132,16 +132,12 @@
 
                             </div>
                             <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
-<<<<<<< HEAD
-                        </form>
-=======
 
                                 </div>
 
                             </form>
                         </div>
 
->>>>>>> 36bfb20482ca46efd3b1352e7c75eb8ee8f3fa28
                     </div>
 
                 </div>
@@ -234,5 +230,12 @@
     function alertDelete() {
         return confirm('Bạn có muốn xóa không')
     }
+
+    $('.btnmove').click(function() {
+        bookmodal
+        $('#bookmodal').hide();
+        });
+
+        
 </script>
 @stop

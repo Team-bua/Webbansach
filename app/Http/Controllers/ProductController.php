@@ -112,4 +112,10 @@ class ProductController extends Controller
         $this->repository->destroy($product);
         return redirect()->back();
     }
-}
+    
+
+
+    }
+
+
+

@@ -69,10 +69,11 @@ class ProductRepository
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
        $product->format=$request->input('Format');
-       $product->releasedate=$request->input('ReleaseDate');
+      
        $product->language=$request->input('Language');
        $product->pagenumber=$request->input('PageNumber');
        $product->size=$request->input('size');
+       $product->new=$request->input('featured');
 
        $product->image=$image;
        $product->imagedetail=$imgdetail;

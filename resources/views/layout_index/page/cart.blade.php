@@ -9,7 +9,7 @@
 							<th style="width:50%">Tên sản phẩm</th>
 							<th style="width:15%">Giá tiền</th>
 							<th style="width:10%">Số lượng</th>
-							<th style="width:22%" class="text-center">Tổng</th>
+							<th style="width:20%">Thành tiền</th>
 							<th style="width:10%"></th>
 						</tr>
 					</thead>
@@ -29,9 +29,10 @@
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="{{$pro['qty']}}"> 
 							</td>
-							<td data-th="Subtotal" class="text-center">{{number_format($pro['price'])}} VNĐ</td>
+							<td>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price']*$pro['qty'])}} VNĐ @else {{number_format($pro['item']['promotion_price']*$pro['qty'])}} VNĐ @endif</td>
+							
 							<td class="actions">
-								<a class="btn btn-danger "><i class="fa fa-save"></i></a>
+							
 								<a class="btn btn-danger btn-sm" href="{{url('delcart',$pro['item']['id'])}}"><i class="fa fa-trash"></i></a>								
 							</td>
 						</tr>

@@ -145,6 +145,7 @@ body {
 }
 
 .content {
+    z-index: 2;
     min-height: 250px;
     padding: 15px;
     margin-right: auto;

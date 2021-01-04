@@ -121,7 +121,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> HỆ THỐNG </span>
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
             </li>
 
             <!-- Thống kê -->
@@ -157,6 +157,11 @@
                     <i class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
+            </li>
+
+
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
@@ -199,6 +204,15 @@
 
             </li>
             <li class="treeview">
+                <a href="{{ url('logout') }}">
+                    <i class="fa fa-sign-out  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Thoát</span>
+
+                </a>
+
+            </li>
+            <!--
+                 <li class="treeview">
                 <a href="">
                     <i class="fa fa-user  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Vai trò</span>
@@ -210,7 +224,7 @@
             @else
                 return redirect('login');
             @endif
-            <!--
+           
             <li class="treeview">
               <a href="">
                 <i class="fa fa-files-o"></i>

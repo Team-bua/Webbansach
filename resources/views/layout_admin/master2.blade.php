@@ -13,7 +13,7 @@
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
-    <link href="plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+   
     <!-- jvectormap -->
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <!-- Daterange picker -->
@@ -59,6 +59,14 @@
     <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
     <!-- daterangepicker -->
     <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+    <script src="plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script src="plugins/flot/jquery.flot.pie.min.js" type="text/javascript"></script>
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <script src="plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
     <!-- datepicker -->
     <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
     <!-- iCheck -->

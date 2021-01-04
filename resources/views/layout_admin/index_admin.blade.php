@@ -1,4 +1,4 @@
-@extends('layout_admin.master2')
+@extends('layout_admin.master')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -21,7 +21,7 @@
                         <span class="info-box-icon bg-aqua"><i class="fa fa-suitcase"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Sản Phẩm</span>
-                            <span class="info-box-number">90<small>%</small></span>
+                            <span class="info-box-number">{{ count($product) }}<small> cuốn </small></span>
                         </div><!-- /.info-box-content -->
                     </div><!-- /.info-box -->
                 </div><!-- /.col -->
@@ -51,8 +51,8 @@
                     <div class="info-box">
                         <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text"></span>
-                            <span class="info-box-number">2,000</span>
+                            <span class="info-box-text">Thành viên</span>
+                            <span class="info-box-number">{{ count($user) }}</span>
                         </div><!-- /.info-box-content -->
                     </div><!-- /.info-box -->
                 </div><!-- /.col -->
@@ -150,7 +150,7 @@
                 <div class="col-md-12">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Monthly Recap Report</h3>
+
                             <div class="box-tools pull-right">
 
                                 <div class="btn-group">
@@ -167,49 +167,54 @@
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-8">
-                                    <p class="text-center">
-                                        <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                                    </p>
-                                    <div class="chart-responsive">
-                                        <!-- Sales Chart Canvas -->
-                                        <canvas id="salesChart" height="180"></canvas>
-                                    </div><!-- /.chart-responsive -->
-                                </div><!-- /.col -->
-                                <div class="col-md-4">
-                                    <p class="text-center">
-                                        <strong>Goal Completion</strong>
-                                    </p>
-                                    <div class="progress-group">
-                                        <span class="progress-text">Add Products to Cart</span>
-                                        <span class="progress-number"><b>160</b>/200</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                                <div class="col-md-7">
+                                    <!-- Bar chart -->
+                                    <div class="box-header">
+                                        <div class="form-group col-md-12 padd-0" style="padding-left: 5px;">
+                                            <div class="col-md-12 padd-0">
+
+                                                <div class="col-md-5 padd-0" style="padding-left: 5px ">
+                                                    <div class="input-daterange input-group" id="datepicker">
+                                                        <input style="height:34px " type="date"
+                                                            class="input-sm form-control" id="search-date-from"
+                                                            placeholder="Từ ngày" name="start">
+                                                        <span class="input-group-addon">đến</span>
+                                                        <input style="height:34px " type="date"
+                                                            class="input-sm form-control" id="search-date-to"
+                                                            placeholder="Đến ngày" name="end">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 padd-0">
+                                                    <select style="width:110px ;margin-left:72%;" class="form-control">
+                                                        <option value="0">Tháng 1</option>
+                                                        <option value="1">Tháng 2</option>
+                                                        <option value="2">Tháng 3</option>
+                                                        <option value="3">Tháng 4</option>
+                                                        <option value="4">Tháng 5</option>
+                                                        <option value="5">Tháng 6</option>
+                                                        <option value="6">Tháng 7</option>
+                                                        <option value="7">Tháng 8</option>
+                                                        <option value="8">Tháng 9</option>
+                                                        <option value="9">Tháng 10</option>
+                                                        <option value="10">Tháng 11</option>
+                                                        <option value="11">Tháng 12</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 padd-0" style="padding-left: 5%;">
+                                                    <button style="box-shadow: none; margin: 0;" type="button"
+                                                        class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i
+                                                            class="fa fa-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                    </div><!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        <span class="progress-text">Complete Purchase</span>
-                                        <span class="progress-number"><b>310</b>/400</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                                        </div>
-                                    </div><!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        <span class="progress-text">Visit Premium Page</span>
-                                        <span class="progress-number"><b>480</b>/800</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                                        </div>
-                                    </div><!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        <span class="progress-text">Send Inquiries</span>
-                                        <span class="progress-number"><b>250</b>/500</span>
-                                        <div class="progress sm">
-                                            <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                                        </div>
-                                    </div><!-- /.progress-group -->
-                                </div><!-- /.col -->
-                            </div><!-- /.row -->
+                                    </div>
+                                </div>
+                            </div><!-- /.box -->
+                            <canvas id="buyers" width="1000px" height="300"></canvas>
+
                         </div><!-- ./box-body -->
                         <div class="box-footer">
                             <div class="row">
@@ -255,3 +260,32 @@
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 @endsection
+@section('js')
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    <script>
+        // line chart data
+        var buyerData = {
+            labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9",
+                "Tháng 10", "Tháng 11", "Tháng 12"
+            ],
+            datasets: [{
+                fillColor: "rgb(255, 206, 153)",
+                strokeColor: "#cc6600",
+                pointColor: "#fff",
+                pointStrokeColor: "#9DB86D",
+                data: [20000000, 1560000, 39000000, 2510000, 3050000, 
+                24700000, 24600000, 15500000, 12000000, 19000000, 25500000, 35500000],
+
+            }]
+        }
+        // get line chart canvas
+        var buyers = document.getElementById('buyers').getContext('2d');
+        // draw line chart
+        new Chart(buyers).Line(buyerData);
+
+    </script>
+
+
+
+
+@stop

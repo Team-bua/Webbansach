@@ -23,24 +23,34 @@ class PageRepository
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function getAll()
-    {   
+    {
         return User::orderBy('created_at', 'desc')->paginate(10);
     }
 
+    public function getAllproductbook()
+    {
+        return  Product::all();
+    }
+
     public function getAllproduct()
-    {        
+    {
         return  Product::orderBy('created_at', 'desc')->paginate(10);
     }
+
  
+
+
+
     public function getProduct($id)
     {
         return Product::find($id);
     }
 
-    public function getSearch( $req){
-        $product=Product::where('name','like','%'.$req->key.'%')
-        ->orWhere('unit_price',$req->key)
-        ->paginate(20);
+    public function getSearch($req)
+    {
+        $product = Product::where('name', 'like', '%' . $req->key . '%')
+            ->orWhere('unit_price', $req->key)
+            ->paginate(20);
         return $product;
     }
 
@@ -50,33 +60,34 @@ class PageRepository
     }
 
     public function getSlide()
-    {   
+    {
         return Slide::where('status', 1)->get();
     }
 
-    public function getAddCart(Request $request, $id){
+    public function getAddCart(Request $request, $id)
+    {
         $product = Product::find($id);
-        $oldcart = Session('cart')?Session::get('cart'):null;
+        $oldcart = Session('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldcart);
         $cart->add($product, $id);
-        $request->session()->put('cart',$cart);
-        
+        $request->session()->put('cart', $cart);
     }
 
-    public function getDelcart($id){
-        $oldcart = Session::has('cart')?Session::get('cart'):null;
+    public function getDelcart($id)
+    {
+        $oldcart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldcart);
         $cart->removeItem($id);
-        if(count($cart->items)>0){
+        if (count($cart->items) > 0) {
             Session::put('cart', $cart);
-        }
-        else{
+        } else {
             Session::forget('cart');
         }
         return redirect()->back();
     }
 
-    public function postCheckout(Request $request){
+    public function postCheckout(Request $request)
+    {
         $cart = Session::get('cart');
 
         $bill = new Bill();
@@ -96,9 +107,9 @@ class PageRepository
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
             $bill_detail->quantity = $value['qty'];
-            $bill_detail->unit_price = ($value['price']/$value['qty']);
-            $bill_detail->save();       
-        }   
+            $bill_detail->unit_price = ($value['price'] / $value['qty']);
+            $bill_detail->save();
+        }
         Session::forget('cart');
     }
 
@@ -112,12 +123,35 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
-       
     }
-    
-    public function destroy($id) {
+
+    public function destroy($id)
+    {
         $supplier = User::find($id);
         $supplier->delete();
-      
     }
+    /*
+     * Get member collection paginate.
+    public function countBook(){
+        $product_type=ProductType::where('id')->get();
+        return ProductType::where('name', $product_type->id)->first();
+    }
+    */
+
+  //  public function countBook()
+   // {
+       // $product_type = ProductType::where('id')
+          //  ->groupBy('name')
+         //   ->count('id');
+          //  return ProductType::where('name', $product_type)->first();
+        //product_type = Product::with([
+        //   'productType' => function ($query) {
+        //      // Adds count of category-related products
+        //   $query->withCount('productType as count');
+        // },
+        //])->get();
+
+
+
+    
 }

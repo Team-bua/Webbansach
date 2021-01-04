@@ -143,6 +143,9 @@
 </div>
 </div><!-- /.box-body -->
 </section><!-- /.content -->
+
+
+<div class="clearfix"></div>
 </div><!-- /.content-wrapper -->
 @endsection
 @section('js')
