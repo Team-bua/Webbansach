@@ -75,14 +75,12 @@
 
                         <div class="input-group-btn">
                             <h4> Vai trò: </h4>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Quản lý
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{$user->role->display_name}}
                                 &nbsp;&nbsp;&nbsp; <span class="fa fa-caret-down"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                @foreach($all_roles as $role)
+                                <li><a href="#">{{$role->display_name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
 

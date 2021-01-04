@@ -67,7 +67,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = $this->repository->getuser($id);
-        return view('layout_admin.user.role_users',compact('user'));
+        $all_roles = $this->repository->getRole();
+        return view('layout_admin.user.role_users',compact('user', 'all_roles'));
     }
 
     /**

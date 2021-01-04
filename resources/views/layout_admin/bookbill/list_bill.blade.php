@@ -124,17 +124,24 @@
                                     </div>
                                 </td>
                                 </td>
+                            
                             </tr>
                             @endforeach
                     </div>
                 </div>
             </div>
-
+        
         </div><!-- /.box-body -->
 </div><!-- /.box -->
 </div>
 </div>
 </div>
+
 </section><!-- /.content -->
+
+
+<div class="clearfix"></div>
 </div><!-- /.content-wrapper -->
+
+
 @endsection

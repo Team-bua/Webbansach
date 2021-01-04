@@ -40,13 +40,13 @@
 
 <header  class="main-header  " >
     <!-- Logo -->
-    <a href="{{ url('admin') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
+    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
         class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <div class="wordart horizon">
-            <span class="text">Hệ thống quản lý trang sách hay</span>
+            <span class="text">Hệ thống quản lý trang bán sách</span>
         </div>
         <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
@@ -121,7 +121,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> HỆ THỐNG </span>
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
             </li>
 
             <!-- Thống kê -->
@@ -158,6 +158,11 @@
                     <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
             </li>
+
+
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
+            </li>
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
@@ -184,9 +189,6 @@
                 </a>
 
             </li>
-            <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
-            </li>
 
             <li class="treeview">
                 <a href="{{ route('user.index') }}">
@@ -197,6 +199,15 @@
 
             </li>
             <li class="treeview">
+                <a href="{{ url('logout') }}">
+                    <i class="fa fa-sign-out  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Thoát</span>
+
+                </a>
+
+            </li>
+            <!--
+                 <li class="treeview">
                 <a href="">
                     <i class="fa fa-user  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Vai trò</span>
@@ -204,7 +215,7 @@
                 </a>
 
             </li>
-            <!--
+
             <li class="treeview">
               <a href="">
                 <i class="fa fa-files-o"></i>

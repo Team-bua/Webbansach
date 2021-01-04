@@ -18,7 +18,7 @@ class LoginMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            if (Auth::user()->id_role == 3) {
+           if (Auth::user()->id_role == 3) {
                 return redirect('index');
         }
             return $next($request);

@@ -56,6 +56,7 @@
                                         <th>Tác giả</th>
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
+                                        <th>Ngày nhập</th>
 
                                         <th>Hình ảnh</th>
                                         <th colspan="2">
@@ -70,7 +71,7 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-                                            
+                                            <td>{{ $pro->created_at }}</td>
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>
