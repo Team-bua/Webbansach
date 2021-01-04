@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class LoginMiddleware
+class SessionMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,14 +16,12 @@ class LoginMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()) {
-           if (Auth::user()->id_role == 3) {
-                return redirect('index');
-        }    
+        $companyid = $request->session()->get('select_companyid', '');
+        if($companyid == '' && Auth::user()->id_role == 1)
+        {    
+                 return redirect('index');
+             
         }
-        else{
-            return redirect('login');
-    }
         return $next($request);
     }
 }

@@ -189,6 +189,11 @@
                 </a>
 
             </li>
+            @if(Auth::check())
+                @if(Auth::user()->id_role == 1)
+            <li class="header ">
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+            </li>
 
             <li class="treeview">
                 <a href="{{ route('user.index') }}">
@@ -215,7 +220,11 @@
                 </a>
 
             </li>
-
+            @endif
+            @else
+                return redirect('login');
+            @endif
+           
             <li class="treeview">
               <a href="">
                 <i class="fa fa-files-o"></i>
