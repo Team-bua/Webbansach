@@ -66,8 +66,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->repository->getuser($id);
-        return view('layout_admin.user.role_users',compact('user'));
+        
     }
 
     /**
@@ -78,7 +77,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+        $user = $this->repository->getuser($id);
+        return view('layout_admin.user.proflie',compact('user'));
     }
 
     /**
@@ -88,9 +88,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-
+        $this->repository->update($request, $id);
+        return redirect()->back();
     }
 
     /**

@@ -49,28 +49,26 @@
                         <div class="box-body table-responsive no-padding">
                             <table  class="table table-hover">
                                 <tbody>
-                                    <tr style="font-size:18px; ">
+                                    <tr style="font-size:18px;">
 
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>
                                         <th>Tác giả</th>
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
-
                                         <th>Hình ảnh</th>
                                         <th colspan="2">
                                             <center>Chức năng</center>
                                         </th>
 
                                     </tr>
-                                    @foreach ($product as $pro)
+                                    @foreach ($products as $pro)
                                         <tr>
                                             <td><p style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{ $pro->name }}</p></td>
                                             <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
-                                            <td>{!! $pro->description !!}</td>
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>
@@ -91,11 +89,9 @@
                                     @endforeach
                                 </tbody>
                                
-                            </table>
-                            
-                            {{ $product->links('vendor.pagination.bootstrap-4') }}
+                            </table>                    
                         </div><!-- /.box-body -->
-                       
+                        <div class="pull-right">{{ $products->links('vendor.pagination.bootstrap-4') }}</div>
                     </div><!-- /.box -->
                 </div>
             </div>

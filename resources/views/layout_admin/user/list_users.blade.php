@@ -15,13 +15,10 @@
 
         <!-- Main content -->
         <section class="content">
-
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box ">
                         <div class="box-header">
-
-
                             <form action="">
                                 <div class="col-md-4 pull-left">
                                     <div class="input-group">

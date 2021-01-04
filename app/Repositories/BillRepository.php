@@ -15,11 +15,7 @@ class BillRepository
      */
     public function getAll()
     {   
-        $bills = Bill::orderBy('created_at', 'desc')->paginate(10);
-        foreach($bills as $bill){
-            $bill->products;
-        }
-        return $bills;
+        return Bill::orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function getbill($id)
@@ -35,12 +31,6 @@ class BillRepository
 
     public function update($request, $id) {
 
-       $user = Bill::find($id);
-       $user->name=$request->input('name');
-       $user->email=$request->input('email');
-       $user->address=$request->input('address');
-       $user->phone=$request->input('phone');
-       $user->save();
         
     }
 
@@ -52,12 +42,7 @@ class BillRepository
 
     public function search($request) {
 
-        $search = $request->table_search;
-        return Bill::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%")
-                        ->orWhere('email', 'like', "%$search%")
-                        ->orWhere('phone', 'like', "%$search%");
-            })->paginate(10);
+       
     }
 
 }

@@ -36,12 +36,12 @@
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh slide</h4>
                         <input id="img" type="file" name="img" onchange="changeImg(this)" required="">
-                        <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg" >
+                        <img id="avatar" class="thumbnail" width="900px" height="400px" src="new.jpg" >
                     </div>
                     <br>
                     <div class="text-center">
 
-                        <input type="submit" name="submit" value="Thêm slide" class="btn  btn-success btn-lg">
+                        <input type="submit" name="submit" value="Thêm bìa" class="btn  btn-success btn-lg">
                     </div>
             </form>
         </div>

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -31,10 +32,13 @@ class UserRepository
     }
 
     public function update($request, $id) {
-
-       $user = User::find($id);
-       $user->role->display_name=$request->input('display');
-       $user->save();
+        if(hash::check($request->password_old, Auth::user()->password)){
+            $user = User::find($id);
+            $user->password = hash::make($request->input('new_password'));
+            $user->save();
+            return redirect()->back()->with(['flag'=>'success','messege'=>'Đổi mật khẩu thành công']);
+        }   
+        return redirect()->back()->with(['flag'=>'danger','messege'=>'Mật khẩu cũ không đúng']);
         
     }
 

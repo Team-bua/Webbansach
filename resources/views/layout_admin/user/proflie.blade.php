@@ -1,74 +1,84 @@
 @extends('layout_admin.master2')
 @section('content')
+<style>
+      .aa {
+      margin-left:400px;
+        width: 400px;
+       
+       
+    }
+</style>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Thống Kê
-            <small>Móc bô</small>
+            Thay đổi thông tin
+            <small>Đổi mật khẩu</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Profile</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+            <li class="active">Đổi mật khẩu</li>
         </ol>
     </section>
 
     <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <div class="box">
+                        <div class="box-header">
+                            <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                            <p>
+                                {{ $user->full_name }}
+                                <small>({{$user->role->display_name }})</small>
+                            </p>
+                            <h3 class="box-title">Đổi mật khẩu</h3>
+                        </div>
+                        <form action="{{ route('user.update',[Auth::user()->id]) }}" method="post" class="beta-form-checkout">
+                            @csrf
+                            @method('put')
+                            <div class="box-body">
+                                <!-- Date range -->
+                              
 
-    <div class="row">
 
+                                <h4> Mật khẩu cũ </h4>
+                                <div class="input-group aa ">
+                                    <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+                                    <input  name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">
+                                </div>
+                                <h4> Mật khẩu mới:</h4>
+                                <div class="input-group aa ">
+                                    <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+                                    <input  name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
+                                </div>
+                                <h4> Xác nhận mật khẩu: </h4>
+                                <div class="input-group aa">
+                                    <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+                                    <input  name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
+                                </div>
 
-        <div class="col-md">
-            <div class="text-center">
-                <div class="box box-primary">
-
-                    <div class="box-header">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        <p>
-                            Alexander Pierce - Web Developer
-                            <small>Member since Nov. 2012</small>
-                        </p>
-                        <h3 class="box-title">Date picker</h3>
-                    </div>
-                    <div class="box-body">
-                        <!-- Date range -->
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label for="inputPassword6">Password &nbsp:</label>
-                                <input size="50px" type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-
+                              
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                </div>
+                                @if(count($errors) > 0)
+                                <div class="alert alert-danger" style="width:350px; margin-left:450px; ">
+                                    @foreach($errors->all() as $err)
+                                    {{$err}}
+                                    @endforeach
+                                </div>
+                                @endif
+                                @if(Session::has('flag'))
+                                <div class="alert alert-{{Session::get('flag')}}"style="width:350px; margin-left:430px; " >{{Session::get('messege')}} </div>
+                                @endif
                             </div>
-                    </div><!-- /.form group -->
-                    <div class="box-body">
-                        <!-- Date and time range -->
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label for="inputPassword6">Password &nbsp:</label>
-                                <input size="50px" type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-
-                            </div>
-                        </div><!-- /.form group -->
-                    </div>
-                    <!-- Date and time range -->
-                    <div class="box-body">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <label for="inputPassword6">Password &nbsp:</label>
-                                <input  size="50px" type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-
-                            </div>
-                        </div><!-- /.form group -->
+                        </form>
                     </div>
                 </div>
-            </div><!-- /.box-body -->
-        </div><!-- /.box -->
-    </div>
-    <!-- iCheck -->
-
-</div><!-- /.col (right) -->
-</div><!-- /.row -->
-
-</section>
+            </div>
+        </div>
+    </section>
 </div>
-</div><!-- /.content-wrapper -->
 @endsection

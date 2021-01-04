@@ -14,19 +14,19 @@
     <!-- JavaScript Bundle with Popper -->
 
     <!-- FontAwesome 4.3.0 -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
-        type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons 2.0.0 -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
+    <link rel="shortcut icon" type="image/x-icon" href="\images\icon\logoteambua.png">
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
 
         
          folder instead of downloading all of them to reduce the load. -->
-
-    <link href="bootstrap/css/wordart.css" rel="stylesheet" type="text/css" />   
-     <!-- Wordart -->      
+    <link rel="stylesheet" type="text/css" href="DataTables-1.10.23/css/dataTables.bootstrap.min.css"/>
+    <link href="bootstrap/css/wordart.css" rel="stylesheet" type="text/css" />
+    <!-- Wordart -->
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
@@ -59,7 +59,6 @@
         .content-wrapper {
             font-family: Arial, Helvetica, sans-serif;
         }
-
     </style>
     <div class="wrapper">
 
@@ -77,7 +76,6 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button);
-
     </script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -87,6 +85,10 @@
     <!-- Sparkline -->
     <script src="plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
     <!-- jvectormap -->
+
+    <script type="text/javascript" src="DataTables-1.10.23/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="DataTables-1.10.23/js/dataTables.bootstrap.min.js"></script>
+    
     <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
     <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
     <!-- jQuery Knob Chart -->
@@ -128,7 +130,31 @@
         $(window).on('resize', function() {
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         });
+    </script>
 
+    <script type="text/javascript">
+        $('#avatar').hide();
+
+        function changeImg(input) {
+            //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                //Sự kiện file đã được load vào website
+                reader.onload = function(e) {
+                    //Thay đổi đường dẫn ảnh
+                    $('#avatar').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+                $('#avatar').show();
+            }
+        }
+        $(document).ready(function() {
+            $('#avatar').click(function() {
+                $('#imgbook').click();
+
+
+            });
+        });
     </script>
     @yield('js')
 </body>

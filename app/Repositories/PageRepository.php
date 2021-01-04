@@ -88,7 +88,7 @@ class PageRepository
         $bill->total = $cart->totalPrice;
         $bill->quantity = $cart->totalQty;
         $bill->payment = $request->payment;
-        $bill->status = $request->status;
+        $bill->status = 0;
         $bill->save();
 
         foreach ($cart->items as $key => $value) {
