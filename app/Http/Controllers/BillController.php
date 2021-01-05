@@ -34,24 +34,6 @@ class BillController extends Controller
         $bill = $this->repository->getAll();
         return view('layout_admin.bookbill.list_bill',compact('bill'));
     }
-    public function NotReceived()
-    {
-        $bill = $this->repository-> getAllNotReceiving();
-        return view('layout_admin.bookbill.order_not_received',compact('bill'));
-    }
-    public function  Received()
-    {
-        $bill = $this->repository-> getAllReceiving();
-        return view('layout_admin.bookbill.order_received',compact('bill'));
-    }
-
-    public function Complete()
-    {
-        $bill = $this->repository-> getAllComplete();
-        return view('layout_admin.bookbill.order_complete',compact('bill'));
-    }
-
-
 
     /**
      * Show the form for creating a new resource.

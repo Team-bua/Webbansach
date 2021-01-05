@@ -53,10 +53,9 @@ Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
 Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
-Route::get('/savecart/{id}/{qty}',[PageController::class,'getSavecart'])->name('savecart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
-Route::get('product_type/{type}',[PageController::class,'getMenuType'])->name('product_type');
+Route::get('product_type/{type}',[PageController::class,'getproductType'])->name('product_type');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
@@ -89,11 +88,6 @@ Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
 Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
 Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
-
-Route::get('receiving',[BillController::class,'Received'])->name('receiving');
-Route::get('not_receiving',[BillController::class,'NotReceived'])->name('notreceiving');
-Route::get('complete_receiving',[BillController::class,'Complete'])->name('completereceiving');
-
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide

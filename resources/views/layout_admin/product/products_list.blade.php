@@ -26,8 +26,8 @@
                             <form action="">
                                 <div class="col-md-4 pull-left">
                                     <div class="input-group">
-                                        <input type="text" id="table_search" name="table_search"
-                                            class="form-control  pull-right" placeholder="Search">
+                                        <input type="text" id="table_search" name="table_search" class="form-control  pull-right"
+                                            placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-warning"
                                                 style="border:none; background-color:#4a4235;float:left;margin-top:0px;margin-left:2px"><i
@@ -47,7 +47,7 @@
                             </div>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                            <table  class="table table-hover">
                                 <tbody>
                                     <tr style="font-size:18px;">
 
@@ -64,12 +64,7 @@
                                     </tr>
                                     @foreach ($products as $pro)
                                         <tr>
-                                            <td>
-                                                <p
-                                                    style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
-                                                    {{ $pro->name }}
-                                                </p>
-                                            </td>
+                                            <td><p style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{ $pro->name }}</p></td>
                                             <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
@@ -78,8 +73,7 @@
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
                                             <td>
                                                 <a href="{{ route('book.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit">
-                                                            Sửa </i> </button>
+                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit"> Sửa </i> </button>
                                                 </a>
                                             </td>
                                             <td>
@@ -87,15 +81,15 @@
                                                     enctype="multipart/form-data" name="form1" id="form1">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button onclick="DeleteCart()" class="btn btn-danger btn pull-left" > <i class="fa fa-trash-o">
-                                                            Xóa </i> </button>
+                                                    <button class="btn btn-danger btn pull-left"
+                                                        onclick="return confirm('Bạn có muốn xóa không')"> <i class="fa fa-trash-o"> Xóa </i> </button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
-
-                            </table>
+                               
+                            </table>                    
                         </div><!-- /.box-body -->
                         <div class="pull-right">{{ $products->links('vendor.pagination.bootstrap-4') }}</div>
                     </div><!-- /.box -->
@@ -106,29 +100,4 @@
 
 @endsection
 
-@section('js')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        function DeleteCart() {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                }
-            })
 
-        }
-
-    </script>
-@stop

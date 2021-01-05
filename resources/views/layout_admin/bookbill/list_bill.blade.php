@@ -27,20 +27,7 @@
         <div class="row">
 
             <div class="col-xs-12">
-
                 <div class="box box-solid ">
-                    <div class="btn-group" style="margin-top:10px;margin-left:5px">
-
-                    
-                        <button type="button" class="btn bg-purple dropdown-toggle" data-toggle="dropdown">
-                            Đơn hàng <span class="caret"></span></button>
-                            <ul style="background-color: white" class="dropdown-menu" role="menu">
-                                <li><a href="{{route('receiving')}}">Đơn hàng tiếp nhận</a></li>
-                                <li><a href="{{route('notreceiving')}}">Đơn hàng chưa xử lý</a></li>
-                                <li><a href="{{route('completereceiving')}}">Đang hàng đã giao</a></li>
-                                <li><a href="{{route('bill.index')}}">Tất cả đơn hàng</a></li>
-                            </ul>
-                    </div>
                     <div class="box-body ">
                         <!-- ShowModal -->
                         <table id="example" class="table table-striped table-bordered display" cellspacing="0" width="100%">
@@ -71,7 +58,7 @@
                                             @foreach($bills->products as $product)
                                             <div class="cart-item">
                                                 <div class="media">
-                                                    <img style="width:100px;height:100px;" src="{{ asset('images/product/' . $product->image) }}" class="pull-left">
+                                                    <img style="width:100px;height:80px;" src="{{ asset('images/product/' . $product->image) }}" class="pull-left">
                                                     <div class="media-body">
                                                         <span class="color-gray your-order-info"><b>Tên sách:</b> {{$product->name}}</span><br>
                                                         <span class="color-gray your-order-info"><b>Đơn giá:</b> {{number_format($product->pivot->unit_price)}} VNĐ</span><br>
@@ -92,34 +79,34 @@
                                     <td>
                                         <div class="btn-group">
                                             @if($bills->status == 0)
-                                            <button type="button" class="btn btn-danger ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Chưa xử lý</button>
+                                            <button type="button" class="btn btn-danger ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý</button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-primary ad">
+                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning ad">
                                                     <li>Tiếp nhận</li>
                                                 </a>
-                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
+                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info ad">
                                                     <li>Đã giao</li>
                                                 </a>
                                             </ul>
                                             @endif
                                             @if($bills->status == 1)
-                                            <button type="button" class="btn btn-primary ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận</button>
+                                            <button type="button" class="btn btn-warning ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận</button>
                                             <ul class="dropdown-menu" role="menu" style="width:105px">
                                                 <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger ad">
-                                                    <li>Chưa xử lý</li>
+                                                    <li>Đang xử lý</li>
                                                 </a>
-                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
+                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info ad">
                                                     <li>Đã giao</li>
                                                 </a>
                                             </ul>
                                             @endif
                                             @if($bills->status == 2)
-                                            <button type="button" class="btn btn-success ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao</button>
+                                            <button type="button" class="btn btn-info ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao</button>
                                             <ul class="dropdown-menu" role="menu">
                                                 <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger ad">
-                                                    <li>Chưa xử lý</li>
+                                                    <li>Đang xử lý</li>
                                                 </a>
-                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-primary ad">
+                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning ad">
                                                     <li>Tiếp nhận</li>
                                                 </a>
                                             </ul>

@@ -39,7 +39,6 @@ class ProductRepository
      */
     public function create(Request $request)
     {
-        
         //kiểm tra file tồn tại
        $image="";
        if($request->hasfile('img'))

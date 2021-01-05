@@ -36,7 +36,6 @@
                     </div>
                     @if(Session::has('cart'))
                     <div class="col-lg-4">
-                        @if(Session::has('cart')>=1)
                         <div class="checkout-inner">
                             <div class="checkout-summary">
                                 <h1 style="font-family:Times New Roman;">Tổng số giỏ hàng</h1>
@@ -59,13 +58,11 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
                     </div>
                 </div>
                 @endif
             </div>
         </div>
-        @if(Session::has('cart')>=1)
         <table class="table table-bordered .table-responsive text-center">
             <tr class="active">
                 <td>Ảnh mô tả</td>
@@ -77,7 +74,7 @@
             <tr>
                 <td><img style="width:50px; height:50px" src="{{asset('images/product/'.$pro['item']['image'])}}"></td>
                 <td>{{$pro['item']['name']}}</td>
-                <td><span class="price">{{number_format($pro['price'])}} VNĐ</span></td>
+                <td><span class="price">@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price'])}} VNĐ @else {{number_format($pro['item']['promotion_price'])}} VNĐ @endif</span></td>
                 <td>{{$pro['qty']}}</td>
             </tr>
             @endforeach

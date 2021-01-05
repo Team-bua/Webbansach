@@ -41,7 +41,6 @@ class AppServiceProvider extends ServiceProvider
                             'totalQty'=>$cart->totalQty]);
             }
         });
-        
         Schema::defaultStringLength(191);
     }
 }
