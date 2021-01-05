@@ -3,8 +3,12 @@
             <div class="container">
                 <div class="row">
                    @if(Auth::check())
+                    @if(Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
                     <div class="col-md-3">Chào Bạn : <a href="{{route('admin')}}">{{Auth::user()->full_name}}</a></a><br><a href="{{ url('logout') }}">Đăng Xuất</a></div>
+                    @else
+                    <div class="col-md-3">Chào Bạn : <a href="{{route('index')}}">{{Auth::user()->full_name}}</a></a><br><a href="{{ url('logout') }}">Đăng Xuất</a></div>
                     @endif
+                  @endif
                      
                   <div class="col-md-3">
                         <span class="ph-number"><i class="fa fa-truck"></i>Miễn Phí Vận Chuyển</span>
