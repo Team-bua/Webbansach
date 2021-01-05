@@ -44,17 +44,17 @@
 
 
                                 <h4> Mật khẩu cũ </h4>
-                                <div class="input-group aa ">
+                                <div class="form-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
                                     <input  name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">
                                 </div>
                                 <h4> Mật khẩu mới:</h4>
-                                <div class="input-group aa ">
+                                <div class="form-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
                                     <input  name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
                                 </div>
                                 <h4> Xác nhận mật khẩu: </h4>
-                                <div class="input-group aa">
+                                <div class="form-group aa">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
                                     <input  name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
                                 </div>
@@ -82,3 +82,19 @@
     </section>
 </div>
 @endsection
+@section('js')
+<script>
+    $(function() {
+        $(".form-group a").click(function() {
+            let $this = $(this);
+            if ($this.hasClass('active')) {
+                $this.parents('.form-group').find('input').attr('type', 'password')
+                $this.removeClass('active');
+            } else {
+                $this.parents('.form-group').find('input').attr('type', 'text')
+                $this.addClass('active')
+            }
+        });
+    });
+</script>
+@stop

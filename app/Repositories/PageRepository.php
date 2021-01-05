@@ -60,6 +60,16 @@ class PageRepository
         return ProductType::all();
     }
 
+    public function getProductTypeName($id)
+    {
+        return ProductType::find($id);
+    }
+
+
+    public function getProductTypeID($id)
+    {
+        return Product::where('id_type',$id)->paginate(10);
+    }
     
     public function getSlide()
     {

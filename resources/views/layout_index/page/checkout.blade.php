@@ -36,6 +36,7 @@
                     </div>
                     @if(Session::has('cart'))
                     <div class="col-lg-4">
+                        @if(Session::has('cart')>=1)
                         <div class="checkout-inner">
                             <div class="checkout-summary">
                                 <h1 style="font-family:Times New Roman;">Tổng số giỏ hàng</h1>
@@ -58,11 +59,13 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 @endif
             </div>
         </div>
+        @if(Session::has('cart')>=1)
         <table class="table table-bordered .table-responsive text-center">
             <tr class="active">
                 <td>Ảnh mô tả</td>

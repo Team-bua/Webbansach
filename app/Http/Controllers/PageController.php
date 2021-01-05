@@ -64,6 +64,12 @@ public function __construct(PageRepository $repository)
         return view('layout_index.page.Viewall',compact('product','product_type'));
     }
 
+    public function getMenuType($id){
+        $type_name = $this->repository->getProductTypeName($id);
+        $product_types = $this->repository->getProductTypeID($id);
+        return view('layout_index.page.view_type',compact('product_types','type_name'));
+    }
+
     public function getIntroduce(){
         return view('layout_index.page.about');
     }
