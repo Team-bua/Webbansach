@@ -46,41 +46,6 @@
                 </div>
             </nav>
         </div>
-<<<<<<< HEAD
-    </div>
-    <div class="main-menu">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div id="menu">
-                    <ul>
-                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
-                            <div class="sub_menu" style="">
-                                <div class="bubble"></div>
-                                <div class="sub_menu_block" style="width:326px">
-                                    <ul>
-                                        @foreach ($types as $pro)
-                                            <li><a href="{{ route('product_type',$pro->id) }}">{{ $pro->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </li>
-                        <li class="menu_item down"><a href="{{ route('index') }}">Trang Chủ</a> </li>
-                        <li class="menu_item down"><a href="{{ route('introduce') }}">Giới thiệu</a></li>
-                        <li class="menu_item down"><a href="{{ route('news') }}">Tin Tức</a></li>
-                        @if (Auth::check())
-                        @else
-                            <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                            <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
-                        @endif
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-=======
         <div class="main-menu">
           <div class="container">
               <nav class="navbar navbar-expand-lg navbar-light">
@@ -113,4 +78,3 @@
           </div>
       </div>
     </header>
->>>>>>> 81d334dd765d1060ecbfca44f3f70588fcfda82a

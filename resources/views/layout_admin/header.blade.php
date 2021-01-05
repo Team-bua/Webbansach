@@ -40,14 +40,9 @@
 
 <header  class="main-header  " >
     <!-- Logo -->
-<<<<<<< HEAD
     <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
                 src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
                 width="250px" /></b></a>
-=======
-    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
-        class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
->>>>>>> a077f896bf604c6b054b6a62373c57503735901b
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -98,13 +93,8 @@
                     <ul class="dropdown-menu" 
                     style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
-<<<<<<< HEAD
                         <li>
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
-=======
-                        <li >
-                            <img src="{{asset('images/icon/tienganh.png')}}" height="16px" width="25px">
->>>>>>> a077f896bf604c6b054b6a62373c57503735901b
                         </li>
                     </ul>
                 </li>
@@ -189,15 +179,9 @@
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
-<<<<<<< HEAD
                   <i class="fa fa-inbox fa-lg text-warning"></i>
                   <span style="font-size:16px ;">Đơn hàng</span>
                   <i class="fa fa-angle-left pull-right"></i>
-=======
-                    <i class="fa fa-inbox fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Đơn hàng</span>
-                    
->>>>>>> a077f896bf604c6b054b6a62373c57503735901b
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                   <li> <a href="{{ route('notreceiving') }}"><i class="fa fa-rotate-right"></i> Đơn hàng chưa xử lý</a></li>
@@ -215,7 +199,6 @@
 
             </li>
             </li>
-<<<<<<< HEAD
             @if (Auth::check())
                 @if (Auth::user()->id_role == 1)
                     <li class="header ">
@@ -234,26 +217,6 @@
                         <a href="{{ url('logout') }}">
                             <i class="fa fa-sign-out  fa-lg text-warning"></i>
                             <span style="font-size:16px ;">Thoát</span>
-=======
-            @if(Auth::check())
-                @if(Auth::user()->id_role == 1)
-            <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
-            </li>
-
-            <li class="treeview">
-                <a href="{{ route('user.index') }}">
-                    <i class="fa fa-desktop  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Tài Khoản</span>
-
-                </a>
-
-            </li>
-            <li class="treeview">
-                <a href="{{ url('logout') }}">
-                    <i class="fa fa-sign-out  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Thoát</span>
->>>>>>> a077f896bf604c6b054b6a62373c57503735901b
 
                 </a>
 
@@ -268,7 +231,7 @@
 
             </li>
             @endif
-            @else
+
                 return redirect('login');
             @endif
            
