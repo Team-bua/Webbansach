@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
     <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <!---------------------------------------------------------------------->
     <link rel="shortcut icon" type="image/x-icon" href="\images\icon\logoteambua.png">
     <!------------------------------------------------------------------------>

@@ -11,6 +11,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\LoginController;
 
 
 /*
