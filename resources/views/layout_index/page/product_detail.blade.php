@@ -7,14 +7,14 @@
             <div class="row">
                 <div class="col-md-6 slider-sec">
 
-                    <div id="myCarousel" class="carousel slide">
-                        <!-- main slider carousel items -->
-                        <div class="carousel-inner">
-                            <div class="sale">- %20</div>
-                            <div class="active item carousel-item" data-slide-number="0">
-                                <img id="image-main" style="height:505px"
-                                    src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
-                            </div>
+                <div id="myCarousel" class="carousel slide">
+                    <!-- main slider carousel items -->
+                    <div class="carousel-inner">
+                        @if($product_detail->promotion_price != 0)
+                        <div class="sale">Sale</div>
+                        @endif
+                        <div class="active item carousel-item" data-slide-number="0">
+                            <img id="image-main" style="height:505px" src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
                         </div>
                         <!-- main slider carousel nav controls -->
                         @if ($product_detail->imagedetail)
