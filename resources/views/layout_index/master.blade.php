@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="js/bootstrap.min.js">
     <link rel="stylesheet" href="js/bootstrap.css">
     <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <!---------------------------------------------------------------------->
     <link rel="shortcut icon" type="image/x-icon" href="\images\icon\logoteambua.png">
     <!------------------------------------------------------------------------>

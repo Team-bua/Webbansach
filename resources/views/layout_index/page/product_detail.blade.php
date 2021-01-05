@@ -67,7 +67,7 @@
                     </div>
                 </form>
                 <div class="btn-sec">
-                    <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
+                    <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
                     <button class="btn " data-toggle="modal" data-target="#product_view">Mua Ngay</button>
                     <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                 </div>

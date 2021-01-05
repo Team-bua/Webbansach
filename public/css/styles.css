@@ -42,17 +42,14 @@ textarea {
 }
 /*--------------------------------------h6-animation---------------------------------------------*/
 h6 span {
-
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: "Times New Roman", Times, serif;
-  -webkit-animation: bounce 0.8s ease infinite alternate;
-  font-size: 30px;
-  color: #EA8989;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
-    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Times New Roman", Times, serif;
+    -webkit-animation: bounce 0.8s ease infinite alternate;
+    font-size: 30px;
+    color: #EA8989;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 h6 span:nth-child(2) {
@@ -80,28 +77,70 @@ h6 span:nth-child(7) {
 }
 
 h6 span:nth-child(8) {
-  -webkit-animation-delay: 0.3s;
+    -webkit-animation-delay: 0.2s;
 }
 
 h6 span:nth-child(9) {
-  -webkit-animation-delay: 0.4s;
+    -webkit-animation-delay: 0.3s;
 }
 
 h6 span:nth-child(10) {
-  -webkit-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.4s;
 }
 
 h6 span:nth-child(11) {
-  -webkit-animation-delay: 0.6s;
+    -webkit-animation-delay: 0.5s;
 }
 
 h6 span:nth-child(12) {
-  -webkit-animation-delay: 0.7s;
+    -webkit-animation-delay: 0.6s;
 }
 
-h6 span:nth-child(12) {
-  -webkit-animation-delay: 0.8s;
+h6 span:nth-child(13) {
+    -webkit-animation-delay: 0.7s;
 }
+
+h6 span:nth-child(14) {
+    -webkit-animation-delay: 0.8s;
+}
+
+h6 span:nth-child(15) {
+    -webkit-animation-delay: 0.3s;
+}
+
+h6 span:nth-child(16) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h6 span:nth-child(17) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h6 span:nth-child(18) {
+    -webkit-animation-delay: 0.6s;
+}
+
+h6 span:nth-child(19) {
+    -webkit-animation-delay: 0.7s;
+}
+
+h6 span:nth-child(20) {
+    -webkit-animation-delay: 0.8s;
+}
+
+h6 span:nth-child(21) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h6 span:nth-child(22) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h6 span:nth-child(23) {
+    -webkit-animation-delay: 0.6s;
+}
+
+
 /* ANIMATION */
 @-webkit-keyframes bounce {
   100% {
@@ -140,17 +179,22 @@ h6 span:nth-child(12) {
   text-decoration: none;
 }
 /*--------------------------------------Buynow---------------------------------------------*/
-.product_view .modal-dialog{
-    max-width:800px; 
+
+.product_view .modal-dialog {
+    max-width: 800px;
     width: 50%;
 }
-.pre-cost{
-    text-decoration: line-through; 
+
+.pre-cost {
+    text-decoration: line-through;
     color: #a5a5a5;
 }
-.space-ten{
+
+.space-ten {
     padding: 10px 0;
 }
+
+
 /*-----------------------------------------------------------------------------------*/
 section {
     float: left;
@@ -330,8 +374,10 @@ header .cart .quntity {
     display: none
 }
 #menu {
+    background:  #f5a200;
+    border: 1px solid #b87a00;
     border-radius: 10px;
-    padding:12px 0px;
+    padding: 0px 5px;
     height: 43px;
     line-height: 38px;
     margin-bottom:18px;
@@ -339,7 +385,7 @@ header .cart .quntity {
 #menu ul {
     list-style: none;
     padding: 0;
-    padding: 0px 3px;
+    padding: 0 6px;
     float: left;
 }
 #menu > ul > li {
@@ -350,17 +396,22 @@ header .cart .quntity {
 #menu > ul > li > a {
     font-family: 'Source Sans Pro', Arial;
     font-size: 13px;
+    color: #FFF;
     float: left;
     font-weight: 600;
     padding: 3px 13px;
     z-index: 6;
-    background: #F7941E;
-    color: #fff;
-    display: block;
-    padding: 3px;
-    text-decoration: none;
+    text-decoration: blink;
 }
-
+#menu li:hover {
+    background: #f4a300;
+    background: -webkit-gradient(linear, left top, left bottom, from(#dc9300), to(#f4a300));
+    background: -webkit-linear-gradient(top, #dc9300, #f4a300);
+    background: -moz-linear-gradient(top, #dc9300, #f4a300);
+    background: -ms-linear-gradient(top, #dc9300, #f4a300);
+    background: -o-linear-gradient(top, #dc9300, #f4a300);
+    background-image: -ms-linear-gradient(top, #dc9300 0%, #f4a300 100%);
+}
 #menu > ul > li.last_item > a {
     background: none;
 }
@@ -402,6 +453,9 @@ header .cart .quntity {
     min-width:150px;
     display: table-cell;
 }
+#menu > ul > li ul + ul {
+    border-left:1px solid #FADA99;
+}
 #menu > ul > li ul > li > a {
     line-height: 18px;
     font-size: 14px;
@@ -423,6 +477,7 @@ header .cart .quntity {
 #menu > ul > li > div > ul > li > a {
     color: #4d4c4b;
 }
+
 
 /*------------------------------------menu------------------------------------*/
 
@@ -1344,7 +1399,7 @@ li.com-title span {
     font-weight: 300;
     margin-bottom: 10px;
     text-decoration: blink;
-      overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 220px;
@@ -1403,27 +1458,29 @@ li.com-title span {
 }
 
 #slide-wrapper {
-    width:1100px;
-    height:400px;
+    width: 1100px;
+    height: 400px;
     position: relative;
     float: right;
     border: 1px solid #f5a100;
     border-radius: 10px;
     overflow: hidden;
-    visibility:visible;
-    display:block;
+    visibility: visible;
+    display: block;
     margin-bottom: 8px;
 }
+
 #slide-wrapper ul {
-    width:1100px;
-    height:400px;
+    width: 1100px;
+    height: 400px;
 }
 
 #slide-wrapper a {
-    border:none;
-    color:#FFF;
-    text-decoration:none;
+    border: none;
+    color: #FFF;
+    text-decoration: none;
 }
+
 .border_on_img {
     float: left;
     width: 97.5%;
@@ -1435,32 +1492,36 @@ li.com-title span {
     z-index: 100;
     border-radius: 10px;
 }
+
 #slider img {
     border-radius: 10px;
 }
-#slider li, #slider li img {
+
+#slider li,
+#slider li img {
     width: 100% !important;
     height: 100% !important;
 }
+
 #sliderthumbs {
-    height:20px;
+    height: 20px;
     position: absolute;
     z-index: 100;
     margin-left: 3%;
     top: 4%;
     right: 3%;
 }
-#sliderthumbs a {
-        text-indent: -9999px;
-        float: left;
-        background: #fbda99;
-        width: 10px;
-        height: 10px;
-        margin: 0 2px;
-        border-radius: 8px;
-        border: 1px solid #c0cf0f;
-    }
 
+#sliderthumbs a {
+    text-indent: -9999px;
+    float: left;
+    background: #fbda99;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 8px;
+    border: 1px solid #c0cf0f;
+}
 
 
 @media (min-width:320px) and (max-width:640px) {
