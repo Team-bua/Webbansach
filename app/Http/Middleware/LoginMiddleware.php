@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Repositories\DecentralizationRepository;
+use App\Services\GetSession;
 
 class LoginMiddleware
 {
@@ -19,7 +21,9 @@ class LoginMiddleware
     {
         if (Auth::check()) {
            if (Auth::user()->id_role == 3) {
-                return redirect('index');
+            $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
+            GetSession::putCompanyId($company_id['company_id']);
+            //dd($company_id);
         }    
         }
         else{

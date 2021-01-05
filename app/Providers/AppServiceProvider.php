@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('header', function($view){
-            $loaisp = ProductType::all();
-            $view->with('loaisp',$loaisp);
+        view()->composer('layout_index.header', function($view){
+            $types = ProductType::all();
+            $view->with('types',$types);
         });
         view()->composer(['layout_index.page.cart','layout_index.page.checkout'], function($view){
             if(Session('cart')){

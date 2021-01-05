@@ -11,6 +11,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -55,7 +56,7 @@ Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart'
 Route::get('/savecart/{id}/{qty}',[PageController::class,'getSavecart'])->name('savecart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
-Route::get('product_type/{type}',[PageController::class,'getproduct_type'])->name('product_type');
+Route::get('product_type/{type}',[PageController::class,'getproductType'])->name('product_type');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán

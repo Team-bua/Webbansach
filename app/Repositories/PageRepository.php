@@ -60,6 +60,7 @@ class PageRepository
         return ProductType::all();
     }
 
+    
     public function getSlide()
     {
         return Slide::where('status', 1)->get();
