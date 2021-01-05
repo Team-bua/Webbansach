@@ -33,22 +33,22 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
+                    @if(Session::has('cart'))
                     <div class="col-lg-4">
                         <div class="checkout-inner">
                             <div class="checkout-summary">
                                 <h1 style="font-family:Times New Roman;">Tổng số giỏ hàng</h1>
-                                @if(Session::has('cart'))
                                 <p class="ship-cost" style="font-family:Times New Roman;">Số lượng<span>{{number_format($totalQty)}}</span></p>
                                 <h2 style="font-family:Times New Roman;">Thành tiền<span>{{number_format($totalPrice)}}</span></h2>
-                                @endif
                             </div>
+
                             <div class="checkout-payment">
                                 <div class="payment-methods">
                                     <h1 style="font-family:Times New Roman;">Hình thức thanh toán</h1>
                                     <div class="payment-method">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" checked id="payment-1" name="payment" value="COD">
+                                            <input type="radio" class="custom-control-input" id="payment-1" name="payment" value="COD">
                                             <label class="custom-control-label" name="payment" for="payment-1" style="font-family:Times New Roman;">Thanh toán khi nhận hàng</label>
                                         </div>
                                     </div>
@@ -59,10 +59,11 @@
                             </div>
                         </div>
                     </div>
-                </div>            
+                </div>
+                @endif
+            </div>
         </div>
         <table class="table table-bordered .table-responsive text-center">
-        @if(Session::has('cart'))
             <tr class="active">
                 <td>Ảnh mô tả</td>
                 <td>Tên sản phẩm</td>
@@ -77,8 +78,7 @@
                 <td>{{$pro['qty']}}</td>
             </tr>
             @endforeach
-        </table>   
-        @endif    
+        </table>
     </form>
 </div>
 @endsection

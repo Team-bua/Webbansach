@@ -33,14 +33,9 @@ public function __construct(PageRepository $repository)
 
    public function getIndex(){
         $slide = $this->repository->getSlide();
-        $product_new = $this->repository->getNewproduct();
-        $product_sale = $this->repository->getSaleproduct();
+        $product = $this->repository->getAllproduct();
         $product_type = $this->repository->getProductType();
-<<<<<<< HEAD
         return view('layout_index.index',compact('product','product_type','slide'));
-=======
-        return view('layout_index.index',compact('product_new','product_sale','product_type','slide'));
->>>>>>> 1e2bb7a2076e9cf30fb656bac89a3688daa9d8c6
     }
 
    public function getDetail($id){
@@ -106,7 +101,8 @@ public function __construct(PageRepository $repository)
     }
 
     public function getDelcart($id){
-        return $this->repository->getDelcart($id);
+        $this->repository->getDelcart($id);
+        return redirect()->back();
     }
 
     public function getSignup(){
