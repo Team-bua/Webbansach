@@ -36,7 +36,11 @@ public function __construct(PageRepository $repository)
         $product_new = $this->repository->getNewproduct();
         $product_sale = $this->repository->getSaleproduct();
         $product_type = $this->repository->getProductType();
+<<<<<<< HEAD
+        return view('layout_index.index',compact('product','product_type','slide'));
+=======
         return view('layout_index.index',compact('product_new','product_sale','product_type','slide'));
+>>>>>>> 1e2bb7a2076e9cf30fb656bac89a3688daa9d8c6
     }
 
    public function getDetail($id){

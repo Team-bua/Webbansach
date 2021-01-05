@@ -37,11 +37,14 @@ class PageRepository
         return  Product::where('new',1, 'desc')->paginate(10);
     }
 
+<<<<<<< HEAD
+=======
     public function getSaleproduct()
     {
         return  Product::where('promotion_price','<>', 0)->paginate(10);
     }
 
+>>>>>>> 1e2bb7a2076e9cf30fb656bac89a3688daa9d8c6
     public function getProduct($id)
     {
         return Product::find($id);
