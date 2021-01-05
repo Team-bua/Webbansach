@@ -15,8 +15,7 @@ class DecentralizationRepository
      */
     public static function getDecentralization($user_name)
     {
-        $company_id = null;
-    $team_id = null;
+    $company_id = null;
 
   	$user = User::select('users.id', 'users.id_role', 'users.id_company')
                  ->where('username',$user_name)
