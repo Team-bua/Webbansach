@@ -16,7 +16,7 @@ class GetSession
     public static function putCompanyId($company_id)
     {
         Session::put('select_companyid',$company_id);
-        dd($company_id);
+        //dd($company_id);
     }
     
 }
