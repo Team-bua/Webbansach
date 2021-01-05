@@ -32,7 +32,7 @@ class PageRepository
         return  Product::all();
     }
 
-    public function getNewproduct()
+    public function getAllproduct()
     {
         return  Product::where('new', 1, 'desc')->paginate(10);
     }
