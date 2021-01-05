@@ -284,6 +284,7 @@
         </div>
     </section>
 @endsection
+
 @section('script')
     <script>
         function AddCart(id) {

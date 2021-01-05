@@ -30,15 +30,19 @@ class LoginController extends Controller
             if (Auth::user()->id_role == 1) {
                 return redirect('admin');
             }elseif (Auth::user()->id_role == 2) {
-                 return redirect('admin');
+                $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
+                GetSession::putCompanyId($company_id['company_id']);
+                //dd($company_id);
+                return redirect('index');
             } else {
                 $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
                 GetSession::putCompanyId($company_id['company_id']);
+                //dd($company_id);
                 return redirect('index');
             }
             
         } else {
-            return redirect('index');
+            return view('layout_index.page.login');
         }
     }
 
@@ -74,15 +78,10 @@ class LoginController extends Controller
                 return redirect(route('companies.index'));
             } else { */
             
-            return redirect(route('maps.index'));
+            return redirect()->back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
             
         } else {
-            $this->incrementLoginAttempts($request);
-            $times = $this->maxAttempts() - Cache::get($this->throttleKey($request)) + 1;
-            $messages = new MessageBag([
-                'errorlogin' => trans('logins.errorlogin') . $times . trans('logins.try')
-            ]);
-            return back()->withErrors($messages);
+            return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
         }
     }
 
@@ -97,5 +96,9 @@ class LoginController extends Controller
         Auth::logout();
         Session::forget('select_companyid');
         return redirect('/login');
+    }
+    public function username()
+    {
+        return 'username';
     }
 }

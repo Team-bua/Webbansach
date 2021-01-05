@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <link rel="stylesheet" href="js/bootstrap.css">
     <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <!---------------------------------------------------------------------->
@@ -22,7 +24,7 @@
     <link rel="stylesheet" href="../src/jquery.back-to-top.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!------------------------------------------------------------------------>
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="style.css">
     <!------------------------------------------------------------------------>
@@ -49,7 +51,6 @@
     <!---------------------------back to top--------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         $(function() {
 
@@ -89,7 +90,6 @@
         <div class="snowflake">❆</div>
         <div class="snowflake">❆</div>
     </div>
-    @yield('script')
 </body>
 
 </html>

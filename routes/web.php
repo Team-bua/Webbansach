@@ -42,10 +42,10 @@ Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce'
 //----->tintuc
 Route::get('news',[PageController::class,'getNews'])->name('news');
 //----->đăng nhập
-Route::get('login',[PageController::class,'getLogin'])->name('login');
-Route::post('login',[PageController::class,'postLogin'])->name('login');
+Route::get('login',[LoginController::class,'getLogin'])->name('login');
+Route::post('login',[LoginController::class,'postLogin'])->name('login');
 //----->đăng xuất
-Route::get('logout',[PageController::class,'postLogout'])->name('logout');
+Route::get('logout',[LoginController::class,'postLogout'])->name('logout');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
