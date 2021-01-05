@@ -87,6 +87,11 @@ Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
 Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
 Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
+
+Route::get('receiving',[BillController::class,'Received'])->name('receiving');
+Route::get('not_receiving',[BillController::class,'NotReceived'])->name('notreceiving');
+Route::get('complete_receiving',[BillController::class,'Complete'])->name('completereceiving');
+
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide
