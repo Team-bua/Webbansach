@@ -159,6 +159,7 @@
         });
     </script>
     @yield('js')
+    @yield('in')
 </body>
 
 </html>

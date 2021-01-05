@@ -37,10 +37,6 @@ class PageRepository
         return  Product::orderBy('created_at', 'desc')->paginate(10);
     }
 
- 
-
-
-
     public function getProduct($id)
     {
         return Product::find($id);
@@ -59,6 +55,7 @@ class PageRepository
         return ProductType::all();
     }
 
+    
     public function getSlide()
     {
         return Slide::where('status', 1)->get();
