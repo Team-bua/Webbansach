@@ -32,11 +32,14 @@
                                 style="float:left;margin-bottom:5px;margin-left:2px"><i
                                     class="fa fa-search"> Tìm kiếm </i></button>
 
+          
+   
+
                         </div>
                     </div>
                 </div>
             </form>
-
+   
             <div class="col-md-4 pull-right">
                 <a href="{{ route('supplier.create') }}">
                     <button class="btn btn btn-success"
@@ -96,5 +99,5 @@
 </div>
 </div>
 </section><!-- /.content -->
-</div>
+
 @endsection

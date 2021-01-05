@@ -62,7 +62,7 @@
                                         </th>
 
                                     </tr>
-                                    @foreach ($products as $pro)
+                                    @foreach($product as $pro)
                                         <tr>
                                             <td><p style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{ $pro->name }}</p></td>
                                             <td>{{ $pro->productType->name }}</td>
@@ -91,7 +91,7 @@
                                
                             </table>                    
                         </div><!-- /.box-body -->
-                        <div class="pull-right">{{ $products->links('vendor.pagination.bootstrap-4') }}</div>
+                        <div class="pull-right">{{ $product->links('vendor.pagination.bootstrap-4') }}</div>
                     </div><!-- /.box -->
                 </div>
             </div>

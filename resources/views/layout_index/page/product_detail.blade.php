@@ -37,12 +37,12 @@
                         let src = this.src;
                         imageMain.src = src;
                     });
-                    
+
                 });
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
+                <p style="text-align:justify">{!! $product_detail->description !!}</p>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -67,14 +67,51 @@
                     </div>
                 </form>
                 <div class="btn-sec">
+<<<<<<< HEAD
                     <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
+                    <button class="btn " data-toggle="modal" data-target="#product_view">Mua Ngay</button>
+=======
+                    <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
                     <button class="btn ">Mua Ngay</button>
+>>>>>>> 1e2bb7a2076e9cf30fb656bac89a3688daa9d8c6
                     <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<div class="container">
+    <div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>{{ $product_detail->name }}</h4>
+                        @if($product_detail->promotion_price == 0)
+                        <h3 class="cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ 
+                         @else
+                        <small class="pre-cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
+                        </small>
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
+                        </h3>
+                        @endif
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <section class="comment">
     <div class="container">
         <div id="comment-wrapper">
@@ -219,11 +256,21 @@
         </div>
     </div>
 </section>
-<a href="#" class="bck"></a>
 @endsection
-
 @section('script')
 <script>
-    let varName = document.getElementById('elementId');
+    function AddCart(id) {
+        $.ajax({
+            url: 'addcart/' + id,
+            type: 'GET'
+        }).done(function(response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Đã thêm vào giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
+    }
 </script>
 @stop

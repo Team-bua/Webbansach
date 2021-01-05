@@ -35,9 +35,9 @@ class ProductController extends Controller
      
     public function index(Request $request)
     {
-        $products = $this->repository->getAll();
+        $product = $this->repository->getAll();
         $product = $this->repository->search($request);
-        return view('layout_admin.product.products_list', compact('products','product'));
+        return view('layout_admin.product.products_list', compact('product'));
 
     }
 
