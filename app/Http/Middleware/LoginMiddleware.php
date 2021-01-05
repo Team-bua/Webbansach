@@ -23,7 +23,7 @@ class LoginMiddleware
            if (Auth::user()->id_role == 3) {
             $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
             GetSession::putCompanyId($company_id['company_id']);
-            dd($company_id);
+            //dd($company_id);
         }    
         }
         else{
