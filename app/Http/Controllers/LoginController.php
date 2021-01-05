@@ -78,10 +78,10 @@ class LoginController extends Controller
                 return redirect(route('companies.index'));
             } else { */
             
-            return redirect()->back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
+            return back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
             
         } else {
-            return redirect()->back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
+            return back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
         }
     }
 
