@@ -14,15 +14,8 @@
             <li class="active">Simple</li>
         </ol>
     </section>
-
     <!-- Main content -->
-
-
-
-
     <section class="content">
-
-
         <div class="row">
             <div class="col-xs">
                 <div class="box">
@@ -230,12 +223,6 @@
     function alertDelete() {
         return confirm('Bạn có muốn xóa không')
     }
-
-    $('.btnmove').click(function() {
-        bookmodal
-        $('#bookmodal').hide();
-        });
-
         
 </script>
 @stop
