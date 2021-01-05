@@ -34,7 +34,6 @@
         z-index: -1;
         text-shadow: 0.01em 0em 0 #161616, 0em 0.01em 0 #8d8d8d, 0.02em 0.01em 0 #161616, 0.01em 0.02em 0 #8d8d8d, 0.03em 0.02em 0 #161616, 0.02em 0.03em 0 #8d8d8d, 0.04em 0.03em 0 #161616, 0.03em 0.04em 0 #8d8d8d, 0.05em 0.04em 0 #161616, 0.04em 0.05em 0 #8d8d8d, 0.06em 0.05em 0 #161616, 0.05em 0.06em 0 #8d8d8d, 0.07em 0.06em 0 #161616, 0.06em 0.07em 0 #8d8d8d, 0.08em 0.07em 0 #161616, 0.07em 0.08em 0 #8d8d8d, 0.09em 0.08em 0 #161616, 0.08em 0.09em 0 #8d8d8d, 0.1em 0.09em 0 #161616, 0.09em 0.1em 0 #8d8d8d;
     }
-
 </style>
 
 
@@ -197,7 +196,6 @@
                 </a>
 
             </li>
-
             </li>
             @if (Auth::check())
                 @if (Auth::user()->id_role == 1)
@@ -218,70 +216,11 @@
                             <i class="fa fa-sign-out  fa-lg text-warning"></i>
                             <span style="font-size:16px ;">Thoát</span>
 
-                        </a>
-
-                    </li>
-                    <!--
-                 <li class="treeview">
-                <a href="">
-                    <i class="fa fa-user  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Vai trò</span>
-
                 </a>
-
             </li>
             @endif
-        @else
-                return redirect('login');
             @endif
-           
-            <li class="treeview">
-              <a href="">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="pages/widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-              </a>
-            </li> -->
-
         </ul>
     </section>
 
 </aside>
-
-<!-- <script>
-    $("tr input").hide();
-    $("#btnsave").hide();
-
-   
-    $("#btnedit").click(function() {
-        $("#btnsave").hide();
-        $("#infull,#inuser,#indis").toggle();
-    });
-    $("#btnsave").click(function() {
-        $("#infull,#inuser,#indis").toggle();
-        $("#btnedit").hide();
-
-        var obj = {};
-                        var elems = $("tr").eq(index).find("label, input");
-                        
-                        elems.each(function(i, el) {
-                            if ($(el).is("label")) {
-                                obj[el.textContent] = elems[i + 1].value
-                            }
-                        });
-    
-});
-
-</script> -->

@@ -65,7 +65,7 @@
                         <h4> Giá : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
-                            <input value="{{ old('unit_price') }}"min="0" max="99" id="unit_pricebook" name="unit_price" type="number"
+                            <input value="{{ old('unit_price') }}" id="unit_pricebook" name="unit_price" type="number"
                                 class="form-control" placeholder="Giá  . . . . . . . . .">
                             <span class="input-group-addon">VNĐ</span>
                         </div>

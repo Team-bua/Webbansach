@@ -33,12 +33,10 @@ public function __construct(PageRepository $repository)
 
    public function getIndex(){
         $slide = $this->repository->getSlide();
-        $product = $this->repository->getAllproduct();
+        $product_new = $this->repository->getNewproduct();
+        $product_sale = $this->repository->getSaleproduct();
         $product_type = $this->repository->getProductType();
-     
-        
-
-        return view('layout_index.index',compact('product','product_type','slide'));
+        return view('layout_index.index',compact('product_new','product_sale','product_type','slide'));
     }
 
    public function getDetail($id){
@@ -65,6 +63,12 @@ public function __construct(PageRepository $repository)
    //     }
     //   dd($count_book);
         return view('layout_index.page.Viewall',compact('product','product_type'));
+    }
+
+    public function getMenuType($id){
+        $type_name = $this->repository->getProductTypeName($id);
+        $product_types = $this->repository->getProductTypeID($id);
+        return view('layout_index.page.view_type',compact('product_types','type_name'));
     }
 
     public function getIntroduce(){
@@ -104,8 +108,7 @@ public function __construct(PageRepository $repository)
     }
 
     public function getDelcart($id){
-        $this->repository->getDelcart($id);
-        return redirect()->back();
+        return $this->repository->getDelcart($id);
     }
 
     public function getSignup(){

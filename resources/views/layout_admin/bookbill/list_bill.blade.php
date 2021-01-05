@@ -146,10 +146,12 @@
                     </div>
                     <div class="modal-body">
                         <div class="showBill"></div>
+                        <button class="btn btn-primary hidden-print" onclick="myFunction()"> In</button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -161,6 +163,7 @@
 <div class="clearfix"></div>
 </div><!-- /.content-wrapper -->
 @endsection
+
 @section('js')
 <script type="text/javascript">
     var table = $('#example').DataTable({
@@ -192,3 +195,11 @@
     });
 </script>
 @stop
+
+@section('in')
+<script type="text/javascript">
+  function myFunction() {
+    window.print();
+}
+</script>
+@endsection

@@ -32,14 +32,15 @@ class PageRepository
         return  Product::all();
     }
 
-    public function getAllproduct()
+    public function getNewproduct()
     {
-        return  Product::orderBy('created_at', 'desc')->paginate(10);
+        return  Product::where('new',1, 'desc')->paginate(10);
     }
 
- 
-
-
+    public function getSaleproduct()
+    {
+        return  Product::where('promotion_price','<>', 0)->paginate(10);
+    }
 
     public function getProduct($id)
     {
@@ -59,6 +60,17 @@ class PageRepository
         return ProductType::all();
     }
 
+    public function getProductTypeName($id)
+    {
+        return ProductType::find($id);
+    }
+
+
+    public function getProductTypeID($id)
+    {
+        return Product::where('id_type',$id)->paginate(10);
+    }
+    
     public function getSlide()
     {
         return Slide::where('status', 1)->get();
@@ -83,7 +95,11 @@ class PageRepository
         } else {
             Session::forget('cart');
         }
-        return redirect()->back();
+        return response()->json([
+            'code'=>200,
+            'message'=>'success',
+            'cart'=>$cart,
+    ],200);
     }
 
     public function postCheckout(Request $request)
