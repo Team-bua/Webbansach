@@ -37,12 +37,12 @@
                         let src = this.src;
                         imageMain.src = src;
                     });
-                    
+
                 });
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
+                <p style="text-align:justify">{!! $product_detail->description !!}</p>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -67,7 +67,7 @@
                     </div>
                 </form>
                 <div class="btn-sec">
-                    <a href="{{url('addcart',$product_detail->id)}}"><button class="btn ">Thêm Vào Giỏ Hàng</button></a>
+                    <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
                     <button class="btn ">Mua Ngay</button>
                     <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                 </div>
@@ -219,11 +219,21 @@
         </div>
     </div>
 </section>
-<a href="#" class="bck"></a>
 @endsection
-
 @section('script')
 <script>
-    let varName = document.getElementById('elementId');
+    function AddCart(id) {
+        $.ajax({
+            url: 'addcart/' + id,
+            type: 'GET'
+        }).done(function(response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Đã thêm vào giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
+    }
 </script>
 @stop

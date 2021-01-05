@@ -17,7 +17,7 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::orderBy('created_at','desc')->paginate(8);
+        return Product::where('created_at','desc')->paginate(10);
     }
 
     public function getTypeAll()
