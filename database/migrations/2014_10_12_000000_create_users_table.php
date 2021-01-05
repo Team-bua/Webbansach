@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->integer('id_role')->default('3')->unsigned();
             $table->integer('id_permission')->nullable()->unsigned();
+            $table->integer('id_company')->nullable()->unsigned();
             $table->string('full_name');
             $table->string('username')->unique();
             $table->string('password');
