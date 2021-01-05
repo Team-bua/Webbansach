@@ -105,6 +105,10 @@ public function __construct(PageRepository $repository)
         return $this->repository->getDelcart($id);
     }
 
+    public function getSavecart(Request $request, $id, $qty){
+        return $this->repository->getSavecart($request, $id, $qty);
+    }
+
     public function getSignup(){
         return view('layout_index.page.register');
     }

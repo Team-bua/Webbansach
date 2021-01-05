@@ -52,6 +52,7 @@ Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
 Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
+Route::get('/savecart/{id}/{qty}',[PageController::class,'getSavecart'])->name('savecart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 Route::get('product_type/{type}',[PageController::class,'getproduct_type'])->name('product_type');
