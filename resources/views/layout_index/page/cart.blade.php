@@ -13,6 +13,8 @@
 				</tr>
 			</thead>
 			<tbody>
+				<form method="post" action="">
+				@csrf
 				@if(Session::has('cart'))
 				@foreach($product_cart as $pro)
 				<tr>
@@ -25,17 +27,18 @@
 							</div>
 						</div>
 					</td>
-					<td data-th="Price"><span>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price'])}} VNĐ @else {{number_format($pro['item']['promotion_price'])}} VNĐ @endif</span></td>
+					<td data-th="Price"><span>{{number_format($pro['price'])}} VNĐ </span></td>
 					<td data-th="Quantity">
-						<input type="number" class="form-control text-center" value="{{$pro['qty']}}">
+						<input type="number" class="form-control text-center qty" value="{{$pro['qty']}}">
 					</td>
-					<td style="text-align:center" id="">@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price']*$pro['qty'])}} VNĐ @else {{number_format($pro['item']['promotion_price']*$pro['qty'])}} VNĐ @endif</td>
+					<td style="text-align:center" id="">{{number_format($pro['price']*$pro['qty'])}} VNĐ</td>
 					<td class="actions">
-						<a class="btn btn-danger btn-sm" href="" data-url="{{route('delcart',$pro['item']['id'])}}"><i class="fa fa-trash"></i></a>
+						<a class="btn btn-danger btn-sm" data-url="{{route('delcart',$pro['item']['id'])}}"><i class="fa fa-trash"></i></a>
 					</td>
 				</tr>
 				@endforeach
 				@endif
+				</form>
 			</tbody>
 			<tfoot>			
 				<tr>
@@ -45,7 +48,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" class="hidden-xs"></td>
-					<td><a href="{{route('checkout')}}" class="btn btn-success btn-block">Thanh Toán <i class="fa fa-angle-right"></i></a></td>
+					<td><a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" class="btn btn-success btn-block">Thanh Toán <i class="fa fa-angle-right"></i></a></td>
 					<td></td>
 				</tr>				
 			</tfoot>
@@ -56,6 +59,7 @@
 @endsection
 @section('script')
 <script>
+	$(document).on('click', '.btn-sm', DelCart);
 	function DelCart(e) {
 		e.preventDefault();
 		let urlRequest = $(this).data('url');
@@ -89,6 +93,6 @@
 			}
 		});
 	}
-	$(document).on('click', '.btn-sm', DelCart);
+	
 </script>
 @stop

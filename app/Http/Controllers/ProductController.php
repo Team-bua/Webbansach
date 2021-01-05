@@ -9,7 +9,7 @@ use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
-       /**
+    /**
      * The ProductRepository instance.
      *
      * @var \App\Repositories\ProductRepository
@@ -17,27 +17,27 @@ class ProductController extends Controller
     protected $repository;
 
 
-   /**
-    * Create a new PostController instance.
-    *
-    * @param  \App\Repositories\ProductRepository $repository
-    */
-   public function __construct(ProductRepository $repository)
-   {
-       $this->repository = $repository;
-   }
+    /**
+     * Create a new PostController instance.
+     *
+     * @param  \App\Repositories\ProductRepository $repository
+     */
+    public function __construct(ProductRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-     
+
     public function index(Request $request)
     {
-        $product = $this->repository->getAll();
+        $products = $this->repository->getAll();
         $product = $this->repository->search($request);
-        return view('layout_admin.product.products_list', compact('product'));
+        return view('layout_admin.product.products_list', compact('products','product'));
 
     }
 
@@ -60,6 +60,7 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
         $this->repository->create($request);
         return redirect(route('book.index'));
     }
@@ -85,7 +86,7 @@ class ProductController extends Controller
     {
         $product = $this->repository->getproduct($id);
         $type = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_edit', compact('type','product'));
+        return view('layout_admin.product.products_edit', compact('type', 'product'));
     }
 
     /**
@@ -112,10 +113,4 @@ class ProductController extends Controller
         $this->repository->destroy($product);
         return redirect()->back();
     }
-    
-
-
-    }
-
-
-
+}

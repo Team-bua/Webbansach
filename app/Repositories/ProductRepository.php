@@ -17,7 +17,7 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::where('created_at','desc')->paginate(10);
+        return Product::orderBy('created_at','desc')->paginate(8);
     }
 
     public function getTypeAll()
@@ -39,6 +39,7 @@ class ProductRepository
      */
     public function create(Request $request)
     {
+        
         //kiểm tra file tồn tại
        $image="";
        if($request->hasfile('img'))

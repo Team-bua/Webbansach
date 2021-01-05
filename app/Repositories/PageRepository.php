@@ -32,14 +32,14 @@ class PageRepository
         return  Product::all();
     }
 
-    public function getNewproduct()
+    public function getAllproduct()
     {
-        return  Product::where('new',1, 'desc')->paginate(10);
+        return  Product::where('new', 1, 'desc')->paginate(10);
     }
 
     public function getSaleproduct()
     {
-        return  Product::where('promotion_price','<>', 0)->paginate(10);
+        return  Product::where('promotion_price', '<>', 0)->paginate(10);
     }
 
     public function getProduct($id)
@@ -60,6 +60,16 @@ class PageRepository
         return ProductType::all();
     }
 
+    public function getProductTypeName($id)
+    {
+        return ProductType::find($id);
+    }
+
+
+    public function getProductTypeID($id)
+    {
+        return Product::where('id_type',$id)->paginate(10);
+    }
     
     public function getSlide()
     {
@@ -86,10 +96,24 @@ class PageRepository
             Session::forget('cart');
         }
         return response()->json([
-            'code'=>200,
-            'message'=>'success',
-            'cart'=>$cart,
-    ],200);
+            'code' => 200,
+            'message' => 'success',
+            'cart' => $cart,
+        ], 200);
+    }
+
+    public function getSavecart(Request $request, $id, $qty)
+    {
+        $oldcart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldcart);
+        $cart->updateItem($id, $qty);
+
+        $request->Session()->put('cart', $cart);
+        return response()->json([
+            'code' => 200,
+            'message' => 'success',
+            'cart' => $cart,
+        ], 200);
     }
 
     public function postCheckout(Request $request)
@@ -144,20 +168,20 @@ class PageRepository
     }
     */
 
-  //  public function countBook()
-   // {
-       // $product_type = ProductType::where('id')
-          //  ->groupBy('name')
-         //   ->count('id');
-          //  return ProductType::where('name', $product_type)->first();
-        //product_type = Product::with([
-        //   'productType' => function ($query) {
-        //      // Adds count of category-related products
-        //   $query->withCount('productType as count');
-        // },
-        //])->get();
+    //  public function countBook()
+    // {
+    // $product_type = ProductType::where('id')
+    //  ->groupBy('name')
+    //   ->count('id');
+    //  return ProductType::where('name', $product_type)->first();
+    //product_type = Product::with([
+    //   'productType' => function ($query) {
+    //      // Adds count of category-related products
+    //   $query->withCount('productType as count');
+    // },
+    //])->get();
 
 
 
-    
+
 }

@@ -112,11 +112,6 @@ class CreateForeignKeys extends Migration
                 ->on('permission')
                 ->onDelete(self::PROPERTIES_CASCADE)
                 ->onUpdate(self::PROPERTIES_CASCADE);
-            $table->foreign('id_company')
-                ->references('id')
-                ->on('companies')
-                ->onDelete(self::PROPERTIES_CASCADE)
-                ->onUpdate(self::PROPERTIES_CASCADE);    
         });
     }
 
