@@ -53,6 +53,7 @@
                    <div id="menu">
     <ul>
       <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
+<<<<<<< HEAD
                               <div class="sub_menu" style="">
                                   <div class="bubble"></div>
                                   <div class="sub_menu_block" style="width:326px">
@@ -73,6 +74,21 @@
       <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
       <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
       @endif
+=======
+        <div class="sub_menu" style="">
+          <div class="bubble"></div>
+          <div class="sub_menu_block" style="width:326px">
+            <ul>
+            
+               @foreach ($types as $pro)
+              <li><a href="{{route('product_type',$pro->id)}}">{{ $pro->name }}</a></li>
+              @endforeach
+            </ul>
+             
+          </div>
+        </div>
+      </li>
+>>>>>>> 2471af2186e795a1612be06dd9afd0698f242704
     </ul>
   </div>
               </nav>

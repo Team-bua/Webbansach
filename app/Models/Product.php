@@ -16,7 +16,7 @@ class Product extends Model
         'imagedetail' => 'array'
     ];   
 
-    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail' ,'publisher'];
+    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail' ,'publisher', 'new'];
 
     public function productType()
     {
