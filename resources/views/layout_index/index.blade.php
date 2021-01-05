@@ -168,6 +168,6 @@
         </ul>
 
 </section>
-    
-    <a href="#" class="bck"></a>   
+
+<a href="#" class="bck"></a>
 @endsection
