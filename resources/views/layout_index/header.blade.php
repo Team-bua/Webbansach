@@ -57,7 +57,7 @@
                                   <div class="sub_menu_block" style="width:326px">
                                       <ul>
                                           @foreach ($types as $pro)
-                                              <li><a href="">{{ $pro->name }}</a></li>
+                                              <li><a href="{{ route('product_type',$pro->id) }}">{{ $pro->name }}</a></li>
                                           @endforeach                            
                                       </ul>
 

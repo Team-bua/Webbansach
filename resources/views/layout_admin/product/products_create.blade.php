@@ -144,7 +144,7 @@
                         <br>
                         <div class="text-center">
 
-                            <input  type="submit" name="submit" value="Thêm"
+                            <input   style="border:none; background-color:#4a4235;"type="submit" name="submit" value="Thêm"
                                 class="btn  btn-warning btnthem btn-lg">
 
                         </div>
