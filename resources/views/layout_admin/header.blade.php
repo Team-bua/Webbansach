@@ -238,10 +238,6 @@
 
             </li>
             @endif
-<<<<<<< HEAD
-=======
-                return redirect('login');
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
             @endif
         </ul>
     </section>

@@ -44,27 +44,6 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-<<<<<<< HEAD
-                     @foreach ($product as $pro)
-                    <div class="col-md-3">
-                        <div class="item">
-                        @if($pro->promotion_price==0)
-                       <div class="new">new</div>
-                    @else
-                        <span class="sale">sale</span>
-                    @endif
-                        
-                             <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image"/></a>
-                            <h3><a href="#">{{ $pro->name }}</a></h3>
-
-                <div class="content">
-                <div class="body">
-                    <p>{!! $pro->description !!}</p>
-                </div>
-                </div>
-                <p class="wrap_price"> <span class="price-old">$119.50</span> <span class="price-new">$96.00</span> </p>
-                    <h6><a href="{{url('addcart',$pro->id)}}"><i class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
-=======
                     @foreach ($product_new as $pro)
                         <div class="col-md-3">
                             <div class="item">
@@ -83,7 +62,6 @@
                                 </div>
                                 <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                             </div>
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
                         </div>
 
                     @endforeach

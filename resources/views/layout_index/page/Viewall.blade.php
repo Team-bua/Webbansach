@@ -36,7 +36,6 @@
           </form>
             <hr>
             <div id="myTable">
-<<<<<<< HEAD
                 <div class="recent-book-sec">
                     <div class="row">
                         @foreach ($product as $books)
@@ -71,31 +70,8 @@
                                      <span class="price-old">{{number_format($books->promotion_price,0,"",",")}}VNĐ
                                      </span>
                                       </p>
-                                       @endif
+                               @endif
                             </div>
-                        @endforeach
-=======
-            <div class="recent-book-sec" >
-                <div class="row">
-                    @foreach ($product as $books)
-                    <div class="col-md-3">
-                        <div class="item">
-                         @if($pro->promotion_price==0)
-                       <div class="new">new</div>
-                    @else
-                        <span class="sale">sale</span>
-                    @endif
-                        <a href="{{route('detail',$books->id)}}">
-                            <img src="{{ asset('images/product/' . $books->image) }}" alt="image"/>
-                        </a>
-                            <h3><a href="#">{{ $books->name }}</a></h3>
-                            <div class="content">
-                <div class="body">
-                    <p>{!! $books->description !!}</p>
-                </div>
-                </div>
-                        </div>
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
                     </div>
                     @endforeach
                 </div>

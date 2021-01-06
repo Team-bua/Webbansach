@@ -37,7 +37,7 @@ Route::get('/', function () {
 Route::get('index',[PageController::class,'getIndex'])->name('index');
 
 //----->tất cả sản phẩm đang có
-Route::get('all_book',[PageController::class,'getAll'])->name('all_book');
+Route::get('all_book',[PageController::class,'AllBook'])->name('all_book');
 //----->tất cả sản phẩm theo mục
 Route::get('all',[PageController::class,'getAll'])->name('all');
 //----->gioithieu
