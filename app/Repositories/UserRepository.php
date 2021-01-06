@@ -23,7 +23,7 @@ class UserRepository
 
     public function getRole()
     {   
-        return Role::orderBy('created_at', 'desc')->paginate(10);
+        return Role::all();
     }
 
     public function getuser($id)
@@ -33,7 +33,15 @@ class UserRepository
     
     public function create(Request $request)
     {
-
+        $user = new User();
+        $user->full_name = $request->input('fullname');
+        $user->username = $request->input('username');
+        $user->email = $request->input('username');
+        $user->password = hash::make($request->input('password'));
+        $user->phone = $request->input('phone');
+        $user->address = $request->input('address');
+        $user->id_role = 2;
+        $user->save();
        
     }
 

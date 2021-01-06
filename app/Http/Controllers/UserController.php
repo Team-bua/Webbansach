@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
-use App\Models\User;
 use App\Http\Requests\UserRequest;
+use App\Models\Company;
 
 class UserController extends Controller
 { /**
@@ -44,7 +44,9 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+        $companies = Company::all();
+        return view('layout_admin.user.create_users', compact('companies'));
+
     }
 
     /**
@@ -55,7 +57,8 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        
+        $this->repository->create($request);
+        return redirect(route('user.index'));
     }
 
     /**
@@ -67,8 +70,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = $this->repository->getuser($id);
-        $all_roles = $this->repository->getRole();
-        return view('layout_admin.user.role_users',compact('user', 'all_roles'));
+        return view('layout_admin.user.role_users',compact('user'));
     }
 
     /**

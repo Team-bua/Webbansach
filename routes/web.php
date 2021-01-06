@@ -12,6 +12,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CompanyController;
 
 
 /*
@@ -42,10 +43,10 @@ Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce'
 //----->tintuc
 Route::get('news',[PageController::class,'getNews'])->name('news');
 //----->đăng nhập
-Route::get('login',[PageController::class,'getLogin'])->name('login');
-Route::post('login',[PageController::class,'postLogin'])->name('login');
+Route::get('login',[LoginController::class,'getLogin'])->name('login');
+Route::post('login',[LoginController::class,'postLogin'])->name('login');
 //----->đăng xuất
-Route::get('logout',[PageController::class,'postLogout'])->name('logout');
+Route::get('logout',[LoginController::class,'postLogout'])->name('logout');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
@@ -53,7 +54,6 @@ Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
 Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
-Route::get('/savecart/{id}/{qty}',[PageController::class,'getSavecart'])->name('savecart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 Route::get('product_type/{type}',[PageController::class,'getproductType'])->name('product_type');
@@ -89,6 +89,10 @@ Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
 Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
 Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
+
+Route::get('receiving',[BillController::class,'Received'])->name('receiving');
+Route::get('not_receiving',[BillController::class,'NotReceived'])->name('notreceiving');
+Route::get('complete_receiving',[BillController::class,'Complete'])->name('completereceiving');
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide
@@ -98,3 +102,4 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 ///------>Trang dành cho nhà xuất bản
 Route::resource('publisher',PublisherController::class);
 
+Route::resource('companies',CompanyController::class);

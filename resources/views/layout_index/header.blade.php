@@ -1,16 +1,21 @@
 <header>
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                @if (Auth::check())
-                <div class="col-md-3">Chào Bạn : <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a></a><br><a href="{{ url('logout') }}">Đăng Xuất</a></div>
-                @endif
-
-                <div class="col-md-3">
-                    <span class="ph-number"><i class="fa fa-truck"></i>Miễn Phí Vận Chuyển</span>
-                </div>
-                <div class="col-md-3">
-                    <span class="ph-number"><i class="fa fa-phone"></i>Call: 0779 750 123</span>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                   @if(Auth::check())
+                    @if(Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                    <div class="col-md-3">Chào Bạn : <a href="{{route('admin')}}">{{Auth::user()->full_name}}</a></a><br><a href="{{ url('logout') }}">Đăng Xuất</a></div>
+                    @else
+                    <div class="col-md-3">Chào Bạn : <a href="{{route('index')}}">{{Auth::user()->full_name}}</a></a><br><a href="{{ url('logout') }}">Đăng Xuất</a></div>
+                    @endif
+                  @endif
+                     
+                  <div class="col-md-3">
+                        <span class="ph-number"><i class="fa fa-truck"></i>Miễn Phí Vận Chuyển</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="ph-number"><i class="fa fa-phone"></i>Call: 0779 750 123</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,7 +32,7 @@
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
-                        <span class="quntity">
+                        <span class="quantity">
                             @if (Session::has('cart'))
                             {{ Session('cart')->totalQty }}@else 0 @endif
                         </span>

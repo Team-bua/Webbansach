@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
-    <link href="css/nav-menus.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <!---------------------------------------------------------------------->
     <link rel="shortcut icon" type="image/x-icon" href="\images\icon\logoteambua.png">
     <!------------------------------------------------------------------------>
@@ -52,10 +50,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         $(function() {
-
-
             $('.bck').backToTop();
-
         });
     </script>
     <script>

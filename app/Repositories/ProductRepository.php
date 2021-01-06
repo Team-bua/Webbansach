@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
-use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
 
 class ProductRepository
 {
@@ -17,7 +16,7 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::where('created_at','desc')->paginate(10);
+        return Product::orderBy('created_at','desc')->paginate(8);
     }
 
     public function getTypeAll()

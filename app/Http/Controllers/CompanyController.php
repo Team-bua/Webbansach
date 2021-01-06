@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ProductRepository;
-use App\Http\Requests\ProductRequest;
+use App\Repositories\CompanyRepository;
+use App\Models\Company;
+use App\Http\Requests\CompaniesRequest;
 
-
-class ProductController extends Controller
+class CompanyController extends Controller
 {
-       /**
+  /**
      * The ProductRepository instance.
      *
-     * @var \App\Repositories\ProductRepository
+     * @var \App\Repositories\CompanyRepository
      */
     protected $repository;
 
@@ -20,9 +20,9 @@ class ProductController extends Controller
    /**
     * Create a new PostController instance.
     *
-    * @param  \App\Repositories\ProductRepository $repository
+    * @param  \App\Repositories\CompanyRepository $repository
     */
-   public function __construct(ProductRepository $repository)
+   public function __construct(CompanyRepository $repository)
    {
        $this->repository = $repository;
    }
@@ -31,14 +31,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-     
     public function index(Request $request)
     {
-        $products = $this->repository->getAll();
-        $product = $this->repository->search($request);
-        return view('layout_admin.product.products_list', compact('products','product'));
-
+        $companies = $this->repository->getAll();
+        $companies = $this->repository->search($request);
+        return view('layout_admin.companies.companies_list', compact('companies'));
     }
 
     /**
@@ -48,8 +45,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $product = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_create', compact('product'));
+        return view('layout_admin.companies.companies_create');
     }
 
     /**
@@ -58,10 +54,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
         $this->repository->create($request);
-        return redirect(route('book.index'));
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -83,9 +79,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->repository->getproduct($id);
-        $type = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_edit', compact('type','product'));
+        $companies = $this->repository->getcompanies($id);
+        return view('layout_admin.companies.companies_edit', compact('companies'));
     }
 
     /**
@@ -95,10 +90,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $this->repository->update($request, $id);
-        return redirect(route('book.index'));
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -107,15 +102,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($product)
+    public function destroy($id)
     {
-        $this->repository->destroy($product);
+        $this->repository->destroy($id);
         return redirect()->back();
     }
-    
-
-
-    }
-
-
-
+}

@@ -48,7 +48,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" class="hidden-xs"></td>
-					<td><a href="{{route('checkout')}}" class="btn btn-success btn-block">Thanh Toán <i class="fa fa-angle-right"></i></a></td>
+					<td><a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" class="btn btn-success btn-block">Thanh Toán <i class="fa fa-angle-right"></i></a></td>
 					<td></td>
 				</tr>				
 			</tfoot>
