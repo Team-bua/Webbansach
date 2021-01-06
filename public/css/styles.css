@@ -40,7 +40,10 @@ textarea {
     font-family: "Times New Roman", Times, serif;
     outline: 0;
 }
+
+
 /*--------------------------------------h6-animation---------------------------------------------*/
+
 h6 span {
     position: relative;
     top: 1px;
@@ -53,27 +56,27 @@ h6 span {
 }
 
 h6 span:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
 }
 
 h6 span:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
 }
 
 h6 span:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
 }
 
 h6 span:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
+    -webkit-animation-delay: 0.4s;
 }
 
 h6 span:nth-child(6) {
-  -webkit-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
 }
 
 h6 span:nth-child(7) {
-  -webkit-animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
 }
 
 h6 span:nth-child(8) {
@@ -142,15 +145,17 @@ h6 span:nth-child(23) {
 
 
 /* ANIMATION */
+
 @-webkit-keyframes bounce {
-  100% {
-    top: -20px;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
-      0 50px 25px rgba(0, 0, 0, 0.2);
-  }
+    100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+    }
 }
+
+
 /*---------------------------------------btn--------------------------------------------*/
+
 .btn {
     background: #ff9700;
     opacity: 1;
@@ -169,15 +174,18 @@ h6 span:nth-child(23) {
     background: #fff;
     color: #ff9700;
 }
-.btn a{
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-decoration: none;
+
+.btn a {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
 }
+
+
 /*--------------------------------------Buynow---------------------------------------------*/
 
 .product_view .modal-dialog {
@@ -196,6 +204,7 @@ h6 span:nth-child(23) {
 
 
 /*-----------------------------------------------------------------------------------*/
+
 section {
     float: left;
     width: 100%;
@@ -373,27 +382,31 @@ header .cart .quntity {
 #menu #menu_mobile_icon {
     display: none
 }
+
 #menu {
-    background:  #f5a200;
+    background: #f5a200;
     border: 1px solid #b87a00;
     border-radius: 10px;
     padding: 0px 5px;
     height: 43px;
-    line-height: 38px;
-    margin-bottom:18px;
+    line-height: 32px;
+    margin-bottom: -9px;
 }
+
 #menu ul {
     list-style: none;
     padding: 0;
     padding: 0 6px;
     float: left;
 }
-#menu > ul > li {
+
+#menu>ul>li {
     position: relative;
     float: left;
     z-index: 10;
 }
-#menu > ul > li > a {
+
+#menu>ul>li>a {
     font-family: 'Source Sans Pro', Arial;
     font-size: 13px;
     color: #FFF;
@@ -403,6 +416,7 @@ header .cart .quntity {
     z-index: 6;
     text-decoration: blink;
 }
+
 #menu li:hover {
     background: #f4a300;
     background: -webkit-gradient(linear, left top, left bottom, from(#dc9300), to(#f4a300));
@@ -412,27 +426,31 @@ header .cart .quntity {
     background: -o-linear-gradient(top, #dc9300, #f4a300);
     background-image: -ms-linear-gradient(top, #dc9300 0%, #f4a300 100%);
 }
-#menu > ul > li.last_item > a {
+
+#menu>ul>li.last_item>a {
     background: none;
 }
+
 #menu .menu_item .sub_menu .bubble {
     position: absolute;
     top: 3px;
     height: 11px;
-    width:190px;
+    width: 190px;
     left: 0px;
-    clear:both;
-    display:block;
-    z-index:23;
+    clear: both;
+    display: block;
+    z-index: 23;
 }
+
 #menu .menu_item .sub_menu {
-    position:absolute;
-    left:0px;
-    top:40px;
+    position: absolute;
+    left: 0px;
+    top: 40px;
     display: none;
-    width:auto;
-    height:auto;
+    width: auto;
+    height: auto;
 }
+
 #menu .menu_item .sub_menu .sub_menu_block {
     background: #fffef7;
     border-radius: 8px;
@@ -440,23 +458,27 @@ header .cart .quntity {
     box-shadow: 0px 0px 3px #999;
     -webkit-box-shadow: 0px 0px 3px #999;
     -moz-box-shadow: 0px 0px 3px #999;
-    margin-top: 12px;
+    margin-top: -3px;
     position: absolute;
     z-index: 5;
     padding: 15px;
     display: table;
 }
-#menu > ul > li:hover > .sub_menu {
-    display:block;
+
+#menu>ul>li:hover>.sub_menu {
+    display: block;
 }
-#menu > ul > li > .sub_menu > .sub_menu_block > ul {
-    min-width:150px;
+
+#menu>ul>li>.sub_menu>.sub_menu_block>ul {
+    min-width: 150px;
     display: table-cell;
 }
-#menu > ul > li ul + ul {
-    border-left:1px solid #FADA99;
+
+#menu>ul>li ul+ul {
+    border-left: 1px solid #FADA99;
 }
-#menu > ul > li ul > li > a {
+
+#menu>ul>li ul>li>a {
     line-height: 18px;
     font-size: 14px;
     float: none;
@@ -470,16 +492,95 @@ header .cart .quntity {
     white-space: nowrap;
     min-width: 120px;
 }
-#menu > ul > li ul > li > a:hover, #menu > ul > li ul > li:hover {
-    color:#895c00;
-    background:none;
+
+#menu>ul>li ul>li>a:hover,
+#menu>ul>li ul>li:hover {
+    color: #895c00;
+    background: none;
 }
-#menu > ul > li > div > ul > li > a {
+
+#menu>ul>li>div>ul>li>a {
     color: #4d4c4b;
 }
 
 
-/*------------------------------------menu------------------------------------*/
+/*------------------------------------price------------------------------------------*/
+
+.price-old {
+    color: #666;
+    padding-top: 1px;
+    text-decoration: line-through;
+    font-family: 'Source Sans Pro', Arial;
+    font-weight: normal;
+    float: left;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.price-new {
+    font-weight: 600;
+    padding-top: 1px;
+    padding-left: 5px;
+    color: #900;
+    font-family: 'Source Sans Pro', Arial;
+    font-size: 13px;
+    float: left;
+}
+
+.wrap_price {
+    text-align: center;
+    padding: 0;
+    font-size: 16px;
+    float: left;
+    line-height: 29px;
+    height: 31px;
+    width: 109px;
+    border-right: none;
+    margin-bottom: 0;
+}
+
+
+/*------------------------------------content-news-----------------------------------*/
+
+.service {
+    margin: 30px auto;
+    width: 1140px;
+}
+
+.service h2 {
+    color: #1f1f1f;
+    font-size: 40px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+
+.service .lead-text {
+    font-size: 18px;
+    margin-bottom: 57px;
+    text-align: center;
+}
+
+.service .service-list li {
+    background-color: #fff;
+    float: left;
+    margin-right: 30px;
+    min-height: 420px;
+    width: 360px;
+}
+
+.service .service-list li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.service .service-list li .inner {
+    padding: 12px 15px;
+}
+
+.service .service-list li h3 {
+    color: #1f1f1f;
+    font-size: 24px;
+    margin-bottom: 3px;
+}
 
 
 /*--------------------------------rating------------------------------------*/
@@ -612,36 +713,6 @@ header .cart .quntity {
     line-height: normal;
     border-bottom: 1px dashed #666666;
 }
-
-
-/*--------------------------------rating------------------------------------*/
-
-.rating1 {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-}
-
-#column div.imgholder {
-    display: block;
-    width: 290px;
-    margin: 0 0 10px 0;
-    padding: 4px;
-    color: #666666;
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-}
-
-.rating1>label {
-    position: relative;
-    width: 1em;
-    font-size: 50px;
-    color: #FFD600;
-    cursor: pointer
-}
-
-
-/* Featured Block */
 
 #column #featured a {
     color: #666666;
@@ -1444,7 +1515,10 @@ li.com-title span {
 .recent-book-sec .btn-sec {
     margin-top: 20px;
 }
+
+
 /*-----------------------------------------------------------------------------*/
+
 
 /*-----------------------------------------------------------------------*/
 
@@ -1522,7 +1596,6 @@ li.com-title span {
     border-radius: 8px;
     border: 1px solid #c0cf0f;
 }
-
 
 @media (min-width:320px) and (max-width:640px) {
     .slider {
@@ -1713,11 +1786,14 @@ li.com-title span {
     -webkit-animation-delay: 4s, 2.5s;
     animation-delay: 9s, 2.5s
 }
+
 .snowflake:nth-of-type(13) {
     left: 65%;
     -webkit-animation-delay: 4s, 2.5s;
     animation-delay: 6s, 2.5s
 }
+
+
 /*---------------------------------checkout---------------------------------*/
 
 .checkout {
@@ -2175,7 +2251,7 @@ li.com-title span {
     .slider .slide-wrapper {
         bottom: 10px;
     }
-/*----------------------------------------------------about-sec----------------------------------------------------*/
+    /*----------------------------------------------------about-sec----------------------------------------------------*/
     .about-sec {
         padding-bottom: 60px;
     }
@@ -2579,8 +2655,8 @@ li.com-title span {
     font-weight: 200;
     line-height: 30px;
     margin-bottom: 25px;
-
 }
+
 .content .body p {
     font-size: 13px;
     color: #272727;

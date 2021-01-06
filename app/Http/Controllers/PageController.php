@@ -41,7 +41,8 @@ public function __construct(PageRepository $repository)
    public function getDetail($id){
         $product_detail = $this->repository->getproduct($id);
         $image_detail = count($product_detail->imagedetail);
-        return view('layout_index.page.product_detail',compact('product_detail', 'image_detail'));
+        $comments = $this->repository->getComment($id);       
+        return view('layout_index.page.product_detail',compact('comments','product_detail', 'image_detail'));
     }
         
    
@@ -84,6 +85,12 @@ public function __construct(PageRepository $repository)
 
     public function getLogin(){
         return view('layout_index.page.login');
+    }
+
+    public function postComment($id,Request $request)
+    {
+        $this->repository->postComment($id,$request);
+        return redirect()->back();
     }
 
     public function postLogin(Request $request){
