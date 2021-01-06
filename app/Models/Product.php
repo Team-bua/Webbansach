@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+  
+
     protected $table = "product";
+    const statusOn = 1;
+    const statusOff = 0;
 
     protected $guarded = ['name'];
     
@@ -47,5 +52,6 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class, 'rating','id_product', 'id_user');
     }
+
 
 }
