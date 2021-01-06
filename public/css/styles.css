@@ -389,8 +389,8 @@ header .cart .quntity {
     border-radius: 10px;
     padding: 0px 5px;
     height: 43px;
-    line-height: 38px;
-    margin-bottom: 18px;
+    line-height: 32px;
+    margin-bottom: -9px;
 }
 
 #menu ul {
