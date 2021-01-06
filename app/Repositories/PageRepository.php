@@ -29,12 +29,14 @@ class PageRepository
 
     public function getAllproductbook()
     {
-        return  Product::all();
+        return  Product::where('status', 1)->get();
     }
 
     public function getAllproduct()
     {
-        return  Product::orderBy('created_at', 'desc')->paginate(10);
+        return  Product::where('new',1)->where('status',1)
+                        ->latest()
+                        ->paginate(10);
     }
 
     public function getProduct($id)
@@ -53,6 +55,16 @@ class PageRepository
     public function getProductType()
     {
         return ProductType::all();
+    }
+    public function getProductTypeName($id)
+    {
+        return ProductType::find($id);
+    }
+
+
+    public function getProductTypeID($id)
+    {
+        return Product::where('id_type',$id)->where('status',1)->paginate(10);
     }
     
     public function getSlide()
@@ -130,26 +142,7 @@ class PageRepository
         $supplier = User::find($id);
         $supplier->delete();
     }
-    /*
-     * Get member collection paginate.
-    public function countBook(){
-        $product_type=ProductType::where('id')->get();
-        return ProductType::where('name', $product_type->id)->first();
-    }
-    */
 
-  //  public function countBook()
-   // {
-       // $product_type = ProductType::where('id')
-          //  ->groupBy('name')
-         //   ->count('id');
-          //  return ProductType::where('name', $product_type)->first();
-        //product_type = Product::with([
-        //   'productType' => function ($query) {
-        //      // Adds count of category-related products
-        //   $query->withCount('productType as count');
-        // },
-        //])->get();
 
 
 

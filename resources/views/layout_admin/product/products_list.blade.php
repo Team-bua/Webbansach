@@ -57,7 +57,7 @@
                                         <th>Giá </th>
                                         <th>Giá Khuyến Mãi</th>
                                         <th>Hình ảnh</th>
-                                        <th colspan="2">
+                                        <th colspan="3">
                                             <center>Chức năng</center>
                                         </th>
 
@@ -69,8 +69,20 @@
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
                                             <td>{{ $pro->promotion_price }}</td>
+
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
+                                                    <td>
+                                                        @if($pro->status == 1)
+                                                        <a href="{{ route('product_off', [$pro['id']]) }}">
+                                                           <button onclick="return confirm('Bạn có muốn dừng kinh doanh không')" style="background-color:rgb(235, 95, 95);border:none;"class="btn btn-warning btn pull-right"><i class="fa fa-pause"></i> </button>
+                                                        </a>
+                                                    @else
+                                                        <a href="{{ route('product_on', [$pro['id']]) }}">
+                                                            <button  style="background-color:rgb(69, 204, 69);border:none;" class="btn btn-warning btn pull-right"><i class="fa fa-play"></i> </button>
+                                                        </a>                              
+                                                    @endif
+                                                    </td>
                                             <td>
                                                 <a href="{{ route('book.edit', [$pro['id']]) }}">
                                                     <button class="btn btn-warning btn pull-right"><i class="fa fa-edit"> Sửa </i> </button>

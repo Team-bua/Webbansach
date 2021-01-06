@@ -33,9 +33,9 @@ public function __construct(PageRepository $repository)
 
    public function getIndex(){
         $slide = $this->repository->getSlide();
-        $product = $this->repository->getAllproduct();
+        $product_new = $this->repository->getAllproduct();
         $product_type = $this->repository->getProductType();
-        return view('layout_index.index',compact('product','product_type','slide'));
+        return view('layout_index.index',compact('product_new','product_type','slide'));
     }
 
    public function getDetail($id){
@@ -50,7 +50,7 @@ public function __construct(PageRepository $repository)
     }
 
     public function getAll(){
-        $product = $this->repository->getAllproductbook();
+        $product = $this->repository-> getAllproduct();
         $product_type = $this->repository->getProductType();
 
       // $count_book = $this->repository->countBook(); 
@@ -63,6 +63,20 @@ public function __construct(PageRepository $repository)
     //   dd($count_book);
         return view('layout_index.page.Viewall',compact('product','product_type'));
     }
+    
+    public function AllBook(){
+        $product_all = $this->repository->getAllproductbook();
+        $product_type = $this->repository->getProductType();
+        return view('layout_index.page.all_book',compact('product_all','product_type'));
+    }
+        // xem tất cả cá sách
+    
+    public function getMenuType($id){
+        $type_name = $this->repository->getProductTypeName($id);
+        $product_types = $this->repository->getProductTypeID($id);
+        return view('layout_index.page.view_type',compact('product_types','type_name'));
+    }
+    // xem sách của từng thể loại
 
     public function getIntroduce(){
         return view('layout_index.page.about');
@@ -143,5 +157,8 @@ public function __construct(PageRepository $repository)
         $product = $this->repository->getAllproductbook();
         return view('layout_admin.index_admin',compact('product','user'));
     }
+
+
+
    
 }

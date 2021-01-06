@@ -36,7 +36,9 @@ Route::get('/', function () {
 //----->trang chủ
 Route::get('index',[PageController::class,'getIndex'])->name('index');
 
-//----->tất cả sản phẩm
+//----->tất cả sản phẩm đang có
+Route::get('all_book',[PageController::class,'getAll'])->name('all_book');
+//----->tất cả sản phẩm theo mục
 Route::get('all',[PageController::class,'getAll'])->name('all');
 //----->gioithieu
 Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce');
@@ -56,7 +58,7 @@ Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart'
 Route::get('/delcart/{id}',[PageController::class,'getDelcart'])->name('delcart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
-Route::get('product_type/{type}',[PageController::class,'getproductType'])->name('product_type');
+Route::get('product_type/{type}',[PageController::class,'getMenuType'])->name('product_type');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
@@ -74,6 +76,8 @@ Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function()
 });
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
+Route::get('product_on/{id}',[ProductController::class,'getSell'])->name('product_on');
+Route::get('product_off/{id}',[ProductController::class,'getStopSell'])->name('product_off');
 ////----->trang admin_CRUD loai san pha,
 Route::resource('book_type',ProductTypeController::class);
 Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('book_edit');

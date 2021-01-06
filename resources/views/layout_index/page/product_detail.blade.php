@@ -98,7 +98,7 @@
                         @endif
                         <div class="space-ten"></div>
                         <div class="btn-ground">
-                            <a href=""<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
+                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
                         </div>
                     </div>
                 </div>
