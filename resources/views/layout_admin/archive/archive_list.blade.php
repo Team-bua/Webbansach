@@ -1,5 +1,11 @@
 @extends('layout_admin.master')
 @section('content')
+<style>
+    .ad {
+
+        width: 105px;
+    }
+</style>
 
 
     <div class="content-wrapper">
@@ -84,23 +90,25 @@
                                         <td>20000</td>
                                         <td>4</td>
                                         <td>
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-warning " aria-expanded="false">Đang xử
-                                                    lý
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default">Đang xử lý</button>
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                  <span class="caret"></span>
+                                                  <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
-
-                                            </div>
-
-                                            <div class="input-group-btn ">
-                                                <button type="button" class="btn btn-info " aria-expanded="false">Tiếp nhận
-                                                </button>
-
-                                            </div>
-
-                                            <div class="input-group-btn ">
-                                                <button type="button" class="btn btn-success" aria-expanded="false">Đã giao
-                                                </button>
-                                            </div>
+                                                <ul style="background-color: white; margin-top:5px;" class="dropdown-menu" role="menu">
+                                                    
+                                                    
+                                                  <li><a href="#">Action</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">Another action</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">Something else here</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                              </div>
+                                        </td>
                                         </td>
                                         <td>
                                             <div class="btn-toolbar" role="toolbar">

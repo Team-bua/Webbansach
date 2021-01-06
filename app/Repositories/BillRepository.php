@@ -18,6 +18,21 @@ class BillRepository
         return Bill::orderBy('created_at', 'desc')->paginate(10);
     }
 
+    public function getAllNotReceiving()
+    {   
+        return Bill::where('status',0)->latest()->paginate(10);
+    }
+    //
+    public function getAllReceiving()
+    {   
+        return Bill::where('status',1)->latest()->paginate(10);
+    }
+
+    public function getAllComplete()
+    {   
+        return Bill::where('status',2)->latest()->paginate(10);
+    }
+
     public function getbill($id)
     {
         return Bill::find($id);

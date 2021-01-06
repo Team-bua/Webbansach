@@ -38,10 +38,11 @@
 </style>
 
 
-<header  class="main-header  " >
+<header class="main-header  ">
     <!-- Logo -->
-    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
-        class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
+    <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
+                src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
+                width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -52,16 +53,18 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul  class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <img style="background-color: #ffffff" src="{{asset('images/icon/adminicon.png')}}" class="user-image" alt="User Image" />
+                        <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
+                            class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
+                    <ul class="dropdown-menu" style="padding-top: 7px;">
                         <!-- User image -->
                         <li style="background-color: #ecc518" class="user-header">
-                            <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
+                                class="img-circle" alt="User Image" />
                             <p style="color: #ffffff">
                                 {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
                                 <small>{{ Auth::user()->email }}</small>
@@ -74,7 +77,8 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{route('user.edit',Auth::user()->id)}}" class="btn btn-danger btn-flat">Đổi mật khẩu</a>
+                                <a href="{{ route('user.edit', Auth::user()->id) }}" class="btn btn-danger btn-flat">Đổi
+                                    mật khẩu</a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{ url('logout') }}" class="btn btn-primary btn-flat">Đăng Xuất</a>
@@ -84,13 +88,12 @@
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('images/icon/tiengviet.png')}}" height="16px" width="25px">
+                        <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" 
-                    style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
-                        <li >
-                            <img src="{{asset('images/icon/tienganh.png')}}" height="16px" width="25px">
+                        <li>
+                            <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
                         </li>
                     </ul>
                 </li>
@@ -107,7 +110,8 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}" class="img-circle"
+                    alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->full_name }}</p>
@@ -127,7 +131,7 @@
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-pie-chart fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Tổng Quan</span>
                 </a>
             </li>
@@ -135,18 +139,18 @@
 
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i class="fa fa-book fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-                    
+
                 </a>
 
             </li>
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i class="fa fa-edit  fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-                    
+
 
                 </a>
 
@@ -154,11 +158,17 @@
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('supplier.index') }}">
-                    <i class="fa fa-briefcase fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
             </li>
 
+            <!-- Quản lý slide -->
+            <li class="treeview">
+                <a href="{{ route('slide.index') }}">
+                    <i style="color:orange" class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <span>Bìa</span>
+                </a>
 
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
@@ -166,112 +176,61 @@
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
-                    <i class="fa fa-inbox fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-inbox fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Đơn hàng</span>
-                    
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
-
+                <ul class="treeview-menu" style="display: none;">
+                    <li> <a href="{{ route('notreceiving') }}"><i class="fa fa-rotate-right"></i> Đơn hàng chưa xử
+                            lý</a></li>
+                    <li> <a href="{{ route('receiving') }}"><i class="fa fa-play"></i> Đơn hàng đang giao</a></li>
+                    <li> <a href="{{ route('completereceiving') }}"><i class="fa fa-check-square"></i> Đơn hàng đã
+                            giao</a></li>
+                </ul>
             </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-                <a href="{{ route('archive.index') }}">
-                    <i class="fa fa-archive  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Kho hàng</span>
-                   
+                <a>
+                    <i style="color:orange" class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> Kho hàng</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
-
-            </li>
-            <!-- Quản lý slide -->
-            <li class="treeview">
-                <a href="{{ route('slide.index') }}">
-                    <i class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span>Bìa</span>
-                </a>
-
-            </li>
-            @if(Auth::check())
-                @if(Auth::user()->id_role == 1)
-            <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+                <ul class="treeview-menu" style="display: none;">
+                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
+                    <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
+                </ul>
             </li>
 
-            <li class="treeview">
-                <a href="{{ route('user.index') }}">
-                    <i class="fa fa-desktop  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Tài Khoản</span>
+            @if (Auth::check())
+                @if (Auth::user()->id_role == 1)
+                    <li class="header ">
+                        <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+                    </li>
 
-                </a>
+                    <li class="treeview">
+                        <a href="{{ route('user.index') }}">
+                            <i style="color:orange" class="fa fa-desktop  fa-lg"></i>
+                            <span style="font-size:16px ;"> Tài Khoản</span>
 
-            </li>
-            <li class="treeview">
-                <a href="{{ url('logout') }}">
-                    <i class="fa fa-sign-out  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Thoát</span>
+                        </a>
 
-                </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="{{ url('logout') }}">
+                            <i style="color:orange" class="fa fa-sign-out  fa-lg text-warning"></i>
+                            <span style="font-size:16px ;">Thoát</span>
 
-            </li>
-            <!--
-                 <li class="treeview">
-                <a href="">
-                    <i class="fa fa-user  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Vai trò</span>
+                        </a>
 
-                </a>
+                    </li>
 
-            </li>
+
+                @endif
+
             @endif
-            @else
-                return redirect('login');
-            @endif
-           
-            <li class="treeview">
-              <a href="">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-              </ul>
-            </li>
 
-            <li>
-              <a href="pages/widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-              </a>
-            </li> -->
 
         </ul>
     </section>
 
 </aside>
-
-<!-- <script>
-    $("tr input").hide();
-    $("#btnsave").hide();
-
-   
-    $("#btnedit").click(function() {
-        $("#btnsave").hide();
-        $("#infull,#inuser,#indis").toggle();
-    });
-    $("#btnsave").click(function() {
-        $("#infull,#inuser,#indis").toggle();
-        $("#btnedit").hide();
-
-        var obj = {};
-                        var elems = $("tr").eq(index).find("label, input");
-                        
-                        elems.each(function(i, el) {
-                            if ($(el).is("label")) {
-                                obj[el.textContent] = elems[i + 1].value
-                            }
-                        });
-    
-});
-
-</script> -->

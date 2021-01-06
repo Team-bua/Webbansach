@@ -51,18 +51,15 @@
                                         <tr>
                                             <td>
                                                 <label> {{ $users->full_name }}</label>
-                                                <input id="infull" disabled value=" {{ $users->full_name }}" type="text"
-                                                    style="display:block;width:150px;height:30px;" />
+
                                             </td>
                                             <td>
                                                 <label> {{ $users->username }}</label>
-                                                <input id="inuser" disabled value=" {{ $users->username }}" type="text"
-                                                    style="display:block;width:200px;height:30px;" />
+
                                             </td>
                                             <td>
                                                 <label> {{ $users->role->display_name }}</label>
-                                                <input id="indis" type="text" value=" {{ $users->role->display_name }}"
-                                                    style="display:block;width:150px;height:30px;" />
+
                                             </td>
                                             <td>
                                                 <div class="btn-toolbar" role="toolbar">
@@ -71,8 +68,7 @@
 
                                                         <button id="btnedit" style="float:right"
                                                             class="btn btn-info btn-sm"><i class="fa fa-plus"></i></button>
-                                                        <button id="btnsave" style="float:right"
-                                                            class="btn btn-info btn-sm"><i class="fa fa-save"></i></button>
+                                                        
                                                     </div>
                                                     <div class="btn-group mr-2" role="group">
                                                         <a href="{{ route('user.show', [$users['id']]) }}">
@@ -96,44 +92,26 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
                         </div><!-- /.box-body -->
+
                     </div>
                 </div>
+
             </div>
         </section><!-- /.content -->
+
     </div>
 @endsection
 @section('js')
+<script>
 
+    //Initialize Select2 Elements
+    $(".select2").select2();
 
-    <script>
-        $("tr input , #btnsave").hide();
-      
+  
 
-                    var index = null;
-                    $("tr").click(function() {
-                        $("input, label", this).toggle();
-                        index = $(this).index("tr");
-                        index = $(" #btnsave").show();
-                        
-      
-                    });
-                    $("input[type=button]").click(function() {
-                       
-
-                        var obj = {};
-                        var elems = $("tr").eq(index).find("label, input");
-                        
-                        elems.each(function(i, el) {
-                            
-                            if ($(el).is("label")) {
-                                obj[el.textContent] = elems[i + 1].value
-                            }
-                        });
-                        
-                    });
-
-    </script>
+</script>
 
 
 @stop

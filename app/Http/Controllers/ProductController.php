@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
-
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -112,7 +112,19 @@ class ProductController extends Controller
         $this->repository->destroy($product);
         return redirect()->back();
     }
-    
+    public function getSell($id){
+        $on= Product::find($id);
+        $on->status = Product::statusOn;
+        $on->save();
+        return redirect()->back();
+    }
+
+    public function getStopSell($id){
+        $off=Product::find($id);
+        $off->status = Product::statusOff;
+        $off->save();
+        return redirect()->back();
+    }
 
 
     }
