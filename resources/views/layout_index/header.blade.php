@@ -46,7 +46,7 @@
                 <div id="menu">
                     <ul>
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
-                            <div class="sub_menu" style="">
+                            <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>

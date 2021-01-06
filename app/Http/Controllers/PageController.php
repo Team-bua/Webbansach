@@ -114,6 +114,11 @@ public function __construct(PageRepository $repository)
         return redirect()->back();
     }
 
+    public function updateCart(Request $request){
+        return $this->repository->postCart($request);
+    
+    }
+
     public function getDelcart($id){
         return $this->repository->getDelcart($id);
     }

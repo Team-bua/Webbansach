@@ -81,6 +81,15 @@ class PageRepository
         $request->session()->put('cart', $cart);
     }
 
+    public function postCart(Request $request)
+    {
+        $oldCart = Session('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->changeItem($request->id,$request->quantity);
+        $request->session()->put('cart',$cart);
+        return response()->json(array('cart'=> $cart,'id'=>$request->id));
+    }
+    
     public function getDelcart($id)
     {
         $oldcart = Session::has('cart') ? Session::get('cart') : null;

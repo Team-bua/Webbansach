@@ -197,7 +197,7 @@
             </li>
             <li class="treeview">
                 <a href="{{ route('companies.index') }}">
-                    <i class="fa fa-archive  fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-archive  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Nhà phát hành</span>
 
                 </a>
@@ -211,7 +211,7 @@
 
                     <li class="treeview">
                         <a href="{{ route('user.index') }}">
-                            <i style="color:orange"class="fa fa-desktop  fa-lg"></i>
+                            <i style="color:orange" class="fa fa-desktop  fa-lg"></i>
                             <span style="font-size:16px ;"> Tài Khoản</span>
 
                         </a>
@@ -226,7 +226,6 @@
 
             </li>
             @endif
-                return redirect('login');
             @endif
         </ul>
     </section>
