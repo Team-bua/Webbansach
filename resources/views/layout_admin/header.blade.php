@@ -9,7 +9,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-
     .wordart.horizon .text {
         font-family: Arial, sans-serif;
         font-weight: bold;
@@ -27,14 +26,12 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
     .wordart.horizon .text:before {
         content: attr(data-text);
         position: absolute;
         z-index: -1;
         text-shadow: 0.01em 0em 0 #161616, 0em 0.01em 0 #8d8d8d, 0.02em 0.01em 0 #161616, 0.01em 0.02em 0 #8d8d8d, 0.03em 0.02em 0 #161616, 0.02em 0.03em 0 #8d8d8d, 0.04em 0.03em 0 #161616, 0.03em 0.04em 0 #8d8d8d, 0.05em 0.04em 0 #161616, 0.04em 0.05em 0 #8d8d8d, 0.06em 0.05em 0 #161616, 0.05em 0.06em 0 #8d8d8d, 0.07em 0.06em 0 #161616, 0.06em 0.07em 0 #8d8d8d, 0.08em 0.07em 0 #161616, 0.07em 0.08em 0 #8d8d8d, 0.09em 0.08em 0 #161616, 0.08em 0.09em 0 #8d8d8d, 0.1em 0.09em 0 #161616, 0.09em 0.1em 0 #8d8d8d;
     }
-
 </style>
 
 
@@ -120,6 +117,20 @@
             </div>
         </div>
         <!-- search form -->
+        <form action="" method="get" class="sidebar-form" style="border-color: #222d32">
+            <div class="input-group" >
+              <select name="searchs" id="searchs" class="form-control" placeholder="Search...">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat" style="border:none; background-color:#4a4235;color:#fff;float:left;margin-top:0px;margin-left:2px"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+
 
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -131,7 +142,7 @@
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i style="color:orange" class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <i style="color:#7c7059" class="fa fa-pie-chart fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Tổng Quan</span>
                 </a>
             </li>
@@ -139,7 +150,7 @@
 
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
+                    <i style="color:#7c7059" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
 
                 </a>
@@ -148,7 +159,7 @@
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i style="color:orange" class="fa fa-edit  fa-lg text-warning"></i>
+                    <i style="color:#7c7059"class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
 
 
@@ -158,7 +169,7 @@
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('supplier.index') }}">
-                    <i style="color:orange" class="fa fa-briefcase fa-lg text-warning"></i>
+                    <i style="color:#7c7059"class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
             </li>
@@ -166,7 +177,7 @@
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i style="color:orange" class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <i style="color:#7c7059"class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>Bìa</span>
                 </a>
 
@@ -175,32 +186,37 @@
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
-                <a href="{{ route('bill.index') }}">
-                    <i style="color:orange" class="fa fa-inbox fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Đơn hàng</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+                <a href="{{ route('user.index') }}">
+                  <i style="color:#7c7059" class="fa fa-inbox fa-lg text-warning"></i>
+                  <span style="font-size:16px ;">Đơn hàng</span>
+                  <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
-                    <li> <a href="{{ route('notreceiving') }}"><i class="fa fa-rotate-right"></i> Đơn hàng chưa xử
-                            lý</a></li>
-                    <li> <a href="{{ route('receiving') }}"><i class="fa fa-play"></i> Đơn hàng đang giao</a></li>
-                    <li> <a href="{{ route('completereceiving') }}"><i class="fa fa-check-square"></i> Đơn hàng đã
-                            giao</a></li>
+                  <li> <a href="{{ route('notreceiving') }}"><i class="fa fa-rotate-right"></i> Đơn hàng chưa xử lý</a></li>
+                  <li> <a href="{{ route('receiving') }}"><i class="fa fa-play"></i> Đơn hàng đang giao</a></li>
+                  <li> <a href="{{ route('completereceiving') }}"><i class="fa fa-check-square"></i> Đơn hàng đã giao</a></li>
                 </ul>
-            </li>
+              </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-                <a>
-                    <i style="color:orange" class="fa fa-archive  fa-lg text-warning"></i>
+                <a >
+                    <i style="color:#7c7059" class="fa fa-archive  fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Kho hàng</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                     <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
                     <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
-                </ul>
+                  </ul>
             </li>
+            <li class="treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i style="color:#7c7059" class="fa  fa-suitcase  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà phát hành</span>
 
+                </a>
+            </li> 
+            
             @if (Auth::check())
                 @if (Auth::user()->id_role == 1)
                     <li class="header ">
@@ -209,7 +225,7 @@
 
                     <li class="treeview">
                         <a href="{{ route('user.index') }}">
-                            <i style="color:orange" class="fa fa-desktop  fa-lg"></i>
+                            <i style="color:#7c7059"class="fa fa-desktop  fa-lg"></i>
                             <span style="font-size:16px ;"> Tài Khoản</span>
 
                         </a>
@@ -217,19 +233,14 @@
                     </li>
                     <li class="treeview">
                         <a href="{{ url('logout') }}">
-                            <i style="color:orange" class="fa fa-sign-out  fa-lg text-warning"></i>
+                            <i style="color:#7c7059" class="fa fa-sign-out  fa-lg text-warning"></i>
                             <span style="font-size:16px ;">Thoát</span>
 
-                        </a>
 
-                    </li>
-
-
-                @endif
-
+            </li>
             @endif
-
-
+                
+            @endif
         </ul>
     </section>
 

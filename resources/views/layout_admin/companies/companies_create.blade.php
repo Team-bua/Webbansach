@@ -21,9 +21,9 @@
             <div class="box-header">
             </div>
             <div class="box-body">
-            <form action="{{url('supplier')}}" method="post" enctype="multipart/form-data" >
+            <form action="{{url('companies')}}" method="post" enctype="multipart/form-data" >
             @csrf
-                <h4> Tên nhà cung cấp : </h4>
+                <h4> Tên nhà phát hành : </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                     <input required type="text" name="name" class="form-control" placeholder="Tên nhà cung cấp . . . . . . . . .">
@@ -45,28 +45,13 @@
                 <h4> Số điện thoại </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input class="form-control"name="phone"  id="cc" type="text" data-inputmask="'mask': '999-999-9999'" placeholder="Số điện thoại . . . . . . . . ." >
+                    <input required type="text" name="phone" class="form-control" placeholder="Số điện thoại . . . . . . . . .">
                 </div>
-                <div class="form-group">
-                <h4 for="exampleInputFile">Ảnh đại diện</h4>
-                    <input id="img" type="file" name="img" onchange="changeImg(this)" >
-			        <img id="avatar" class="thumbnail" width="100px" height="100px" src="new.jpg">
-                </div>
-                <br>
                 <div class="text-center">
-                    <button  style="border-color: #4a4235;background-color:#4a4235;"class=" btn  btn-success btn-lg"> Thêm </button>
+                    <button class=" btn  btn-success btn-lg"> Thêm </button>
                 </div>
             </form>
             </div>
     </section><!-- /.content -->
 </div>
 @endsection
-@section('js')
-    
-    <script type="text/javascript">
-      $(":input").inputmask();
-
-
-    </script>
-
-@stop

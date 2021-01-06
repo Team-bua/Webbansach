@@ -1,10 +1,5 @@
 @extends('layout_admin.master')
-
 @section('content')
-
-
-
-
     <div class="content-wrapper" style="min-height: 898px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -110,15 +105,15 @@
                         <h4> Số trang :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
-                            <input {{ old('PageNumber') }}id="Page_Number" name="PageNumber" type="text" class="form-control"
-                                placeholder="Nhập số trang  . . . . . . . . .">
+                                <input {{ old('PageNumber') }}id="Page_Number" class="form-control"name="PageNumber"  id="size" type="text" data-inputmask="'mask': '9999'"
+                                placeholder="Nhập số trang. . . . . . . . ." />
                             <span class="input-group-addon">Trang</span>
                         </div>
                         <h4> Kích thước :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-arrows-alt fa-lg"></i></span>
-                            <input id="size" name="size" type="text" class="form-control"
-                                placeholder="Nhập chiều dài và cao . . . . . . . . .">
+                                <input class="form-control"name="size"  id="size" type="text" data-inputmask="'mask': '99 x 99'"
+                                placeholder="Nhập skích thước. . . . . . . . ." />
                             <span class="input-group-addon">Cm</span>
                         </div>
 
@@ -226,5 +221,13 @@
             }
         });
     </script>
+
+<script type="text/javascript">
+    $("#size").inputmask();
+    $("#Page_Number").inputmask();
+
+
+  </script>
+
     
 @stop

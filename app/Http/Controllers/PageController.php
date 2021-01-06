@@ -115,8 +115,7 @@ public function __construct(PageRepository $repository)
     }
 
     public function getDelcart($id){
-        $this->repository->getDelcart($id);
-        return redirect()->back();
+        return $this->repository->getDelcart($id);
     }
 
     public function getSignup(){

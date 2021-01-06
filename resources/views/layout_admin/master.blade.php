@@ -114,10 +114,12 @@
     <script src="../../plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
-
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
-
+    <!-- AdminLTE for input mask -->
+    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
 
     <script>
         $('#calendar').datepicker({});

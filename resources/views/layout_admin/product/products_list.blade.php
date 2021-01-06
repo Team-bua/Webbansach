@@ -26,8 +26,8 @@
                             <form action="">
                                 <div class="col-md-4 pull-left">
                                     <div class="input-group">
-                                        <input type="text" id="table_search" name="table_search" class="form-control  pull-right"
-                                            placeholder="Search">
+                                        <input type="text" id="table_search" name="table_search"
+                                            class="form-control  pull-right" placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn btn-warning"
                                                 style="border:none; background-color:#4a4235;float:left;margin-top:0px;margin-left:2px"><i
@@ -47,7 +47,7 @@
                             </div>
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table  class="table table-hover">
+                            <table class="table table-hover">
                                 <tbody>
                                     <tr style="font-size:18px;">
 
@@ -64,7 +64,11 @@
                                     </tr>
                                     @foreach ($products as $pro)
                                         <tr>
-                                            <td><p style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">{{ $pro->name }}</p></td>
+                                            <td>
+                                                <p
+                                                    style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+                                                    {{ $pro->name }}</p>
+                                            </td>
                                             <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
                                             <td>{{ $pro->unit_price }}</span></td>
@@ -72,20 +76,27 @@
 
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>
-                                                    <td>
-                                                        @if($pro->status == 1)
-                                                        <a href="{{ route('product_off', [$pro['id']]) }}">
-                                                           <button onclick="return confirm('Bạn có muốn dừng kinh doanh không')" style="background-color:rgb(235, 95, 95);border:none;"class="btn btn-warning btn pull-right"><i class="fa fa-pause"></i> </button>
-                                                        </a>
-                                                    @else
-                                                        <a href="{{ route('product_on', [$pro['id']]) }}">
-                                                            <button  style="background-color:rgb(69, 204, 69);border:none;" class="btn btn-warning btn pull-right"><i class="fa fa-play"></i> </button>
-                                                        </a>                              
-                                                    @endif
-                                                    </td>
+                                            <td>
+                                                @if ($pro->status == 1)
+                                                    <a href="{{ route('product_off', [$pro['id']]) }}">
+                                                        <button
+                                                            onclick="return confirm('Bạn có muốn ngừng kinh doanh không')"
+                                                            style="background-color:rgb(189, 189, 189);border:none;"
+                                                            class="btn btn-warning btn pull-right">
+                                                            <i class="fa fa-pause"></i> </button>
+                                                    </a>
+                                                @else
+                                                    <a href="{{ route('product_on', [$pro['id']]) }}">
+                                                        <button style="background-color:rgb(69, 204, 69);border:none;"
+                                                            class="btn btn-warning btn pull-right">
+                                                            <i class="fa fa-play"></i> </button>
+                                                    </a>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <a href="{{ route('book.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit"> Sửa </i> </button>
+                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit">
+                                                            Sửa </i> </button>
                                                 </a>
                                             </td>
                                             <td>
@@ -94,14 +105,15 @@
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button class="btn btn-danger btn pull-left"
-                                                        onclick="return confirm('Bạn có muốn xóa không')"> <i class="fa fa-trash-o"> Xóa </i> </button>
+                                                        onclick="return confirm('Bạn có muốn xóa không')"> <i
+                                                            class="fa fa-trash-o"> Xóa </i> </button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
-                               
-                            </table>                    
+
+                            </table>
                         </div><!-- /.box-body -->
                         <div class="pull-right">{{ $products->links('vendor.pagination.bootstrap-4') }}</div>
                     </div><!-- /.box -->
@@ -111,5 +123,3 @@
     </div>
 
 @endsection
-
-

@@ -12,6 +12,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CompanyController;
 
 
 /*
@@ -36,7 +37,7 @@ Route::get('/', function () {
 Route::get('index',[PageController::class,'getIndex'])->name('index');
 
 //----->tất cả sản phẩm đang có
-Route::get('all_book',[PageController::class,'getAll'])->name('all_book');
+Route::get('all_book',[PageController::class,'AllBook'])->name('all_book');
 //----->tất cả sản phẩm theo mục
 Route::get('all',[PageController::class,'getAll'])->name('all');
 //----->gioithieu
@@ -105,3 +106,4 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 ///------>Trang dành cho nhà xuất bản
 Route::resource('publisher',PublisherController::class);
 
+Route::resource('companies',CompanyController::class);
