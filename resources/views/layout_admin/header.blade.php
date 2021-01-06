@@ -118,7 +118,19 @@
             </div>
         </div>
         <!-- search form -->
-
+        <form action="" method="get" class="sidebar-form">
+            <div class="input-group">
+              <select name="searchs" id="searchs" class="form-control" placeholder="Search...">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
