@@ -32,12 +32,3 @@
                         </div>
     </div>
 @endsection
-@section('script')
-    
-
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=bX8WultE"></script>
-   
-
-    
-
-@stop

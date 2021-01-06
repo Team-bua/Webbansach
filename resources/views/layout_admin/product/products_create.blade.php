@@ -1,10 +1,5 @@
 @extends('layout_admin.master')
-
 @section('content')
-
-
-
-
     <div class="content-wrapper" style="min-height: 898px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -144,7 +139,7 @@
                         <br>
                         <div class="text-center">
 
-                            <input  type="submit" name="submit" value="Thêm"
+                            <input   style="border:none; background-color:#4a4235;"type="submit" name="submit" value="Thêm"
                                 class="btn  btn-warning btnthem btn-lg">
 
                         </div>
@@ -169,11 +164,9 @@
             //bootstrap WYSIHTML5 - text editor
             $(".textarea").wysihtml5();
         });
-
     </script>
     <script type="text/javascript">
         $('#avatar').hide();
-
         function changeImg(input) {
             //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
             if (input.files && input.files[0]) {
@@ -190,16 +183,12 @@
         $(document).ready(function() {
             $('#avatar').click(function() {
                 $('#imgbook').click();
-
-
             });
         });
-
     </script>
 
     <script type="text/javascript">
         $("#exampleInputFile").change(function() {
-
             if (this.files && this.files[0]) {
                 for (var i = 0; i < this.files.length; i++) {
                     var reader_detail = new FileReader();
@@ -208,13 +197,10 @@
                 }
             }
         });
-
         function imageIsLoaded(e) {
             var output = '&nbsp; <img  width="200px" height="300px" src=' + e.target.result + '>';
             $("#myImg ").append(output);
-
         };
-
     </script>
     <script>
         $(".btnthem ").on("change", function() {
@@ -224,7 +210,6 @@
                 $("#imageUploadForm").submit();
             }
         });
-
     </script>
 
     <script>
@@ -235,14 +220,6 @@
                 $("#imageUploadForm").submit();
             }
         });
-
     </script>
     
-
-
-
-   
-
-
-
 @stop

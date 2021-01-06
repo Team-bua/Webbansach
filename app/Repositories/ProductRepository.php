@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
-use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
 
 class ProductRepository
 {
@@ -39,7 +39,6 @@ class ProductRepository
      */
     public function create(Request $request)
     {
-        
         //kiểm tra file tồn tại
        $image="";
        if($request->hasfile('img'))

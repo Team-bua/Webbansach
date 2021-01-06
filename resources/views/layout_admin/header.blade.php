@@ -9,7 +9,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-
     .wordart.horizon .text {
         font-family: Arial, sans-serif;
         font-weight: bold;
@@ -27,18 +26,16 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
     .wordart.horizon .text:before {
         content: attr(data-text);
         position: absolute;
         z-index: -1;
         text-shadow: 0.01em 0em 0 #161616, 0em 0.01em 0 #8d8d8d, 0.02em 0.01em 0 #161616, 0.01em 0.02em 0 #8d8d8d, 0.03em 0.02em 0 #161616, 0.02em 0.03em 0 #8d8d8d, 0.04em 0.03em 0 #161616, 0.03em 0.04em 0 #8d8d8d, 0.05em 0.04em 0 #161616, 0.04em 0.05em 0 #8d8d8d, 0.06em 0.05em 0 #161616, 0.05em 0.06em 0 #8d8d8d, 0.07em 0.06em 0 #161616, 0.06em 0.07em 0 #8d8d8d, 0.08em 0.07em 0 #161616, 0.07em 0.08em 0 #8d8d8d, 0.09em 0.08em 0 #161616, 0.08em 0.09em 0 #8d8d8d, 0.1em 0.09em 0 #161616, 0.09em 0.1em 0 #8d8d8d;
     }
-
 </style>
 
 
-<header  class="main-header  " >
+<header class="main-header  ">
     <!-- Logo -->
     <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
                 src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
@@ -53,14 +50,14 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul  class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
                             class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
+                    <ul class="dropdown-menu" style="padding-top: 7px;">
                         <!-- User image -->
                         <li style="background-color: #ecc518" class="user-header">
                             <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
@@ -90,8 +87,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" 
-                    style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li>
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
@@ -121,7 +117,19 @@
             </div>
         </div>
         <!-- search form -->
-
+        <form action="" method="get" class="sidebar-form">
+            <div class="input-group">
+              <select name="searchs" id="searchs" class="form-control" placeholder="Search...">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
@@ -132,7 +140,7 @@
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-pie-chart fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Tổng Quan</span>
                 </a>
             </li>
@@ -140,18 +148,18 @@
 
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i class="fa fa-book fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-                    
+
                 </a>
 
             </li>
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i class="fa fa-edit  fa-lg text-warning"></i>
+                    <i style="color:orange"class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-                    
+
 
                 </a>
 
@@ -159,7 +167,7 @@
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('supplier.index') }}">
-                    <i class="fa fa-briefcase fa-lg text-warning"></i>
+                    <i style="color:orange"class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Nhà cung cấp</span>
                 </a>
             </li>
@@ -167,19 +175,17 @@
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <i style="color:orange"class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>Bìa</span>
                 </a>
-
-
 
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
-                <a href="{{ route('bill.index') }}">
-                  <i class="fa fa-inbox fa-lg text-warning"></i>
+                <a href="{{ route('user.index') }}">
+                  <i style="color:orange" class="fa fa-inbox fa-lg text-warning"></i>
                   <span style="font-size:16px ;">Đơn hàng</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -191,14 +197,24 @@
               </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-                <a href="{{ route('archive.index') }}">
-                    <i class="fa fa-archive  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Kho hàng</span>
-                   
+                <a >
+                    <i style="color:orange" class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> Kho hàng</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+                <ul class="treeview-menu" style="display: none;">
+                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
+                    <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
+                  </ul>
+            </li>
+            <li class="treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà phát hành</span>
 
-            </li>
-            </li>
+                </a>
+            </li> 
+            
             @if (Auth::check())
                 @if (Auth::user()->id_role == 1)
                     <li class="header ">
@@ -207,24 +223,27 @@
 
                     <li class="treeview">
                         <a href="{{ route('user.index') }}">
-                            <i class="fa fa-desktop  fa-lg text-warning"></i>
-                            <span style="font-size:16px ;">Tài Khoản</span>
+                            <i style="color:orange"class="fa fa-desktop  fa-lg"></i>
+                            <span style="font-size:16px ;"> Tài Khoản</span>
 
                         </a>
 
                     </li>
                     <li class="treeview">
                         <a href="{{ url('logout') }}">
-                            <i class="fa fa-sign-out  fa-lg text-warning"></i>
+                            <i style="color:orange" class="fa fa-sign-out  fa-lg text-warning"></i>
                             <span style="font-size:16px ;">Thoát</span>
 
                 </a>
 
             </li>
             @endif
+<<<<<<< HEAD
+=======
+                return redirect('login');
+>>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
             @endif
         </ul>
     </section>
 
 </aside>
-

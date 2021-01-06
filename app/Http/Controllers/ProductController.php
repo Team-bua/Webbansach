@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
-
+use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
+       /**
      * The ProductRepository instance.
      *
      * @var \App\Repositories\ProductRepository
@@ -17,22 +17,22 @@ class ProductController extends Controller
     protected $repository;
 
 
-    /**
-     * Create a new PostController instance.
-     *
-     * @param  \App\Repositories\ProductRepository $repository
-     */
-    public function __construct(ProductRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+   /**
+    * Create a new PostController instance.
+    *
+    * @param  \App\Repositories\ProductRepository $repository
+    */
+   public function __construct(ProductRepository $repository)
+   {
+       $this->repository = $repository;
+   }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-
+     
     public function index(Request $request)
     {
         $products = $this->repository->getAll();
@@ -60,7 +60,6 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-
         $this->repository->create($request);
         return redirect(route('book.index'));
     }
@@ -86,7 +85,7 @@ class ProductController extends Controller
     {
         $product = $this->repository->getproduct($id);
         $type = $this->repository->getTypeAll();
-        return view('layout_admin.product.products_edit', compact('type', 'product'));
+        return view('layout_admin.product.products_edit', compact('type','product'));
     }
 
     /**
@@ -113,4 +112,22 @@ class ProductController extends Controller
         $this->repository->destroy($product);
         return redirect()->back();
     }
-}
+    public function getSell($id){
+        $on= Product::find($id);
+        $on->status = Product::statusOn;
+        $on->save();
+        return redirect()->back();
+    }
+
+    public function getStopSell($id){
+        $off=Product::find($id);
+        $off->status = Product::statusOff;
+        $off->save();
+        return redirect()->back();
+    }
+
+
+    }
+
+
+
