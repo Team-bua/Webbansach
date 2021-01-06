@@ -14,33 +14,33 @@
 			</thead>
 			<tbody>
 				<form method="post" action="">
-				@csrf
-				@if(Session::has('cart'))
-				@foreach($product_cart as $pro)
-				<tr>
-					<td data-th="Product">
-						<div class="row">
-							<div class="col-sm-2 hidden-xs"><img style="width:150px; height:80px" src="{{asset('images/product/'.$pro['item']['image'])}}" alt="..." class="img-responsive" /></div>
-							<div class="col-sm-10">
-								<h4 class="nomargin">{{$pro['item']['name']}}</h4>
-								<p></p>
+					@csrf
+					@if(Session::has('cart'))
+					@foreach($product_cart as $pro)
+					<tr>
+						<td data-th="Product">
+							<div class="row">
+								<div class="col-sm-2 hidden-xs"><img style="width:150px; height:80px" src="{{asset('images/product/'.$pro['item']['image'])}}" alt="..." class="img-responsive" /></div>
+								<div class="col-sm-10">
+									<h4 class="nomargin">{{$pro['item']['name']}}</h4>
+									<p></p>
+								</div>
 							</div>
-						</div>
-					</td>
-					<td data-th="Price"><span>{{number_format($pro['price'])}} VNĐ </span></td>
-					<td data-th="Quantity">
-						<input type="number" class="form-control text-center qty" value="{{$pro['qty']}}">
-					</td>
-					<td style="text-align:center" id="">{{number_format($pro['price']*$pro['qty'])}} VNĐ</td>
-					<td class="actions">
-						<a class="btn btn-danger btn-sm" data-url="{{route('delcart',$pro['item']['id'])}}"><i class="fa fa-trash"></i></a>
-					</td>
-				</tr>
-				@endforeach
-				@endif
+						</td>
+						<td data-th="Price"><span>{{number_format($pro['price'])}} VNĐ </span></td>
+						<td data-th="Quantity" class="product_quantity">
+							<input type="number" class="form-control text-center" id="qty-{{$pro['item']['id']}}" onchange="changeQuantity(this)" min="1" max="100" value="{{$pro['qty']}}">
+						</td>
+						<td style="text-align:center" id="total-{{$pro['item']['id']}}">{{number_format($pro['price']*$pro['qty'])}} VNĐ</td>
+						<td class="actions">
+							<a class="btn btn-danger btn-sm" data-url="{{route('delcart',$pro['item']['id'])}}"><i class="fa fa-trash"></i></a>
+						</td>
+					</tr>
+					@endforeach
+					@endif
 				</form>
 			</tbody>
-			<tfoot>			
+			<tfoot>
 				<tr>
 					<td colspan="3" class="hidden-xs"></td>
 					<td><strong id="totalPrice">Tổng tiền :@if(Session::has('cart')) {{number_format($cart->totalPrice)}} @else 0 @endif VNĐ</strong></td>
@@ -50,7 +50,7 @@
 					<td colspan="3" class="hidden-xs"></td>
 					<td><a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" class="btn btn-success btn-block">Thanh Toán <i class="fa fa-angle-right"></i></a></td>
 					<td></td>
-				</tr>				
+				</tr>
 			</tfoot>
 		</table>
 
@@ -60,6 +60,7 @@
 @section('script')
 <script>
 	$(document).on('click', '.btn-sm', DelCart);
+
 	function DelCart(e) {
 		e.preventDefault();
 		let urlRequest = $(this).data('url');
@@ -93,6 +94,39 @@
 			}
 		});
 	}
-	
+	const base_url = window.location.origin;
+
+	function changeQuantity(inputQuantity) {
+		let [x, id] = inputQuantity.id.split('-');
+		let _token = document.getElementById('_token');
+		requestCart(base_url + '/cart', JSON.stringify({
+			'_token': _token.value,
+			'id': id,
+			'quantity': inputQuantity.value
+		}), function(data) {
+			data = JSON.parse(data);
+			console.log(data);
+			document.getElementById('total-' + data['id']).innerHTML = Number(data['cart']['item'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
+			document.getElementById('totalPrice').innerHTML = Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
+			document.getElementById('total_qty_header').innerHTML = data['cart']['totalQty'];
+		});
+	}
+
+	//
+	function requestCart(url = "", para = "", callbackSuccess = function() {}, callbackError = function(err) {
+		console.log(err)
+	}) {
+		let xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				callbackSuccess(this.responseText);
+			} else if (this.readyState == 4 && this.status == 500) {
+				callbackError(this.responseText);
+			}
+		}
+		xmlHttp.open("POST", url, true);
+		xmlHttp.setRequestHeader("Content-type", "application/json");
+		xmlHttp.send(para);
+	}
 </script>
 @stop

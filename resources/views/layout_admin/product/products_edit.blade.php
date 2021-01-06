@@ -130,7 +130,7 @@
           <br>
           <div class="text-center">
 
-            <input type="submit" name="submit" value="Cập nhật" class="btn  btn-success btn-lg">
+            <input style="border-color: #4a4235;background-color:#4a4235" type="submit" name="submit" value="Cập nhật" class="btn  btn-success btn-lg">
           </div>
 
       </form>

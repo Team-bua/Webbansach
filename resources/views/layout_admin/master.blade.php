@@ -40,6 +40,8 @@
     <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - select -->
+    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
 
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -112,10 +114,12 @@
     <script src="../../plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
-
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
-
+    <!-- AdminLTE for input mask -->
+    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
 
     <script>
         $('#calendar').datepicker({});

@@ -84,8 +84,10 @@
                         </table>
                     </div><!-- /.box-body -->
                 </div>
+
             </div>
         </div>
     </section><!-- /.content -->
 </div>
 @endsection
+

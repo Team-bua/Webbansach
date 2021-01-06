@@ -1,39 +1,31 @@
 @extends('layout_index.master')
 @section('content')
-  <section class="deltai">
-    <div class="container">
-        <div class="sidebar-widget tag">
-            
-                            <h2 class="title">Yêu Cầu Lựa Chọn</h2>
-                            <a href="#">sản phẩm mới</a>
-                            <a href="#">A đến Z</a>
-                            <a href="#">Giá Thấp Đến Cao</a>
-                            <a href="#">Giá Cao Đến Thấp</a>
-                            <a href="#">Giảm Giá Cao Đến Thấp</a>
-                            <a href="#">Giảm Giá Thấp Đến Cao</a>
-                           
-                        </div>
-    </div>
-    <div class="container">
-<div class="sidebar-widget brands">
-            <h2 class="title">Nhóm Sản Phẩm</h2>
-            @foreach ($product_type as $pro)
-            <ul>
-                <li><a href="#">{{ $pro->name }} </a><span>(45)</span></li>
-            </ul>
-            @endforeach
+    <section class="deltai">
+        <div class="container">
+            <div class="sidebar-widget tag">
+
+                <h2 class="title">Yêu Cầu Lựa Chọn</h2>
+                <a href="#">sản phẩm mới</a>
+                <a href="#">A đến Z</a>
+                <a href="#">Giá Thấp Đến Cao</a>
+                <a href="#">Giá Cao Đến Thấp</a>
+                <a href="#">Giảm Giá Cao Đến Thấp</a>
+                <a href="#">Giảm Giá Thấp Đến Cao</a>
+
+            </div>
         </div>
-</div>
+       
 
-</section>
+    </section>
 
-<section class="static about-sec">
-        <div class="container"> 
+    <section class="static about-sec">
+        <div class="container">
             <h2>books </h2>
             <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
-            <span class="fa fa-search"></span>
-          </form>
+                <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..."
+                    aria-label="Search">
+                <span class="fa fa-search"></span>
+            </form>
             <hr>
             <div id="myTable">
                 <div class="recent-book-sec">
@@ -55,9 +47,8 @@
                                             <p>{!! $books->description !!}</p>
                                         </div>
                                     </div>
-
-                    <h6><a href="{{url('addcart',$books->id)}}"><i class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$books->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                                 </div>
+<<<<<<< HEAD
                                 @if($books->promotion_price == 0)
                                     <p class="wrap_price">
                                      <span class="price-new">
@@ -72,13 +63,15 @@
                                       </p>
                                @endif
                             </div>
+=======
+                            </div>
+                        @endforeach
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
                     </div>
-                    @endforeach
                 </div>
-            </div>
             </div>
         </div>
 
     </section>
-    <a href="#" class="bck"></a> 
+    <a href="#" class="bck"></a>
 @endsection
