@@ -12,6 +12,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CompanyController;
 
 
 /*
@@ -105,3 +106,4 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 ///------>Trang dành cho nhà xuất bản
 Route::resource('publisher',PublisherController::class);
 
+Route::resource('companies',CompanyController::class);

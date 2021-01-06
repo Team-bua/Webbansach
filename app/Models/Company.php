@@ -8,13 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
-
-    protected $fillable=[
-        'name', 'address','phone_number','director'
-    ];
-     
-    public function users()
+    protected $table = "companies";
+    public function bills()
     {
-        return $this->hasMany(User::class,'id_company','id');
+        return $this->belongsTo(BillIn::class,'id_company', 'id');
     }
 }

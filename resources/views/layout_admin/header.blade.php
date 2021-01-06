@@ -35,7 +35,7 @@
 </style>
 
 
-<header  class="main-header  " >
+<header class="main-header  ">
     <!-- Logo -->
     <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
                 src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
@@ -50,14 +50,14 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul  class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
                             class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
+                    <ul class="dropdown-menu" style="padding-top: 7px;">
                         <!-- User image -->
                         <li style="background-color: #ecc518" class="user-header">
                             <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
@@ -87,8 +87,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" 
-                    style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li>
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
@@ -151,7 +150,7 @@
                 <a href="{{ route('book.index') }}">
                     <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-                    
+
                 </a>
 
             </li>
@@ -160,7 +159,7 @@
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:orange"class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-                    
+
 
                 </a>
 
@@ -185,7 +184,7 @@
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
-                <a href="{{ route('bill.index') }}">
+                <a href="{{ route('user.index') }}">
                   <i style="color:orange" class="fa fa-inbox fa-lg text-warning"></i>
                   <span style="font-size:16px ;">Đơn hàng</span>
                   <i class="fa fa-angle-left pull-right"></i>
@@ -208,6 +207,13 @@
                     <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
                   </ul>
             </li>
+            <li class="treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà phát hành</span>
+
+                </a>
+            </li> 
             
             @if (Auth::check())
                 @if (Auth::user()->id_role == 1)
@@ -231,60 +237,10 @@
                 </a>
 
             </li>
-            <!--
-                 <li class="treeview">
-                <a href="">
-                    <i class="fa fa-user  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Vai trò</span>
-                </a>
-            </li>
             @endif
                 return redirect('login');
             @endif
-           
-            <li class="treeview">
-              <a href="">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="pages/widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-              </a>
-            </li> -->
-
         </ul>
     </section>
 
 </aside>
-
-<!-- <script>
-    $("tr input").hide();
-    $("#btnsave").hide();
-   
-    $("#btnedit").click(function() {
-        $("#btnsave").hide();
-        $("#infull,#inuser,#indis").toggle();
-    });
-    $("#btnsave").click(function() {
-        $("#infull,#inuser,#indis").toggle();
-        $("#btnedit").hide();
-        var obj = {};
-                        var elems = $("tr").eq(index).find("label, input");
-                        
-                        elems.each(function(i, el) {
-                            if ($(el).is("label")) {
-                                obj[el.textContent] = elems[i + 1].value
-                            }
-                        });
-    
-});
-</script> -->

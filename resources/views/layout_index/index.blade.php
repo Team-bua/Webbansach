@@ -60,8 +60,7 @@
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h6><a href="{{ url('addcart', $pro->id) }}"><i class="fa fa-cart-arrow-down"></i></a> / <a
-                                        href="{{ route('detail', $pro->id) }}"><i class="fa fa-info-circle"></i></a></h6>
+                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                             </div>
                         </div>
 
@@ -192,3 +191,21 @@
 
     <a href="#" class="bck"></a>
 @endsection
+@section('script')
+<script>
+        function AddCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET'
+            }).done(function(response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm vào giỏ hàng',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+
+    </script>
+@stop

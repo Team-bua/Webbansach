@@ -91,7 +91,11 @@ class PageRepository
         } else {
             Session::forget('cart');
         }
-        return redirect()->back();
+        return response()->json([
+            'code' => 200,
+            'message' => 'success',
+            'cart' => $cart,
+        ], 200);
     }
 
     public function postCheckout(Request $request)

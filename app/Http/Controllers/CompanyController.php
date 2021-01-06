@@ -3,38 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
-use App\Http\Requests\UserRequest;
+use App\Repositories\CompanyRepository;
 use App\Models\Company;
+use App\Http\Requests\CompaniesRequest;
 
-class UserController extends Controller
-{ /**
-    * The MemberRepository instance.
-    *
-    * @var \App\Repositories\UserRepository
-    */
-   protected $repository;
-
-
+class CompanyController extends Controller
+{
   /**
-   * Create a new PostController instance.
-   *
-   * @param  \App\Repositories\UserRepository $repository
-   */
-  public function __construct(UserRepository $repository)
-  {
-      $this->repository = $repository;
-  }
+     * The ProductRepository instance.
+     *
+     * @var \App\Repositories\CompanyRepository
+     */
+    protected $repository;
 
+
+   /**
+    * Create a new PostController instance.
+    *
+    * @param  \App\Repositories\CompanyRepository $repository
+    */
+   public function __construct(CompanyRepository $repository)
+   {
+       $this->repository = $repository;
+   }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = $this->repository->getAll();
-        return view('layout_admin.user.list_users', compact('user'));
+        $companies = $this->repository->getAll();
+        $companies = $this->repository->search($request);
+        return view('layout_admin.companies.companies_list', compact('companies'));
     }
 
     /**
@@ -44,9 +45,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        return view('layout_admin.user.create_users', compact('companies'));
-
+        return view('layout_admin.companies.companies_create');
     }
 
     /**
@@ -55,10 +54,10 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
         $this->repository->create($request);
-        return redirect(route('user.index'));
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -69,8 +68,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->repository->getuser($id);
-        return view('layout_admin.user.role_users',compact('user'));
+        //
     }
 
     /**
@@ -81,8 +79,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->repository->getuser($id);
-        return view('layout_admin.user.proflie',compact('user'));
+        $companies = $this->repository->getcompanies($id);
+        return view('layout_admin.companies.companies_edit', compact('companies'));
     }
 
     /**
@@ -92,10 +90,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $this->repository->update($request, $id);
-        return redirect()->back();
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -106,6 +104,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->repository->destroy($id);
+        return redirect()->back();
     }
 }
