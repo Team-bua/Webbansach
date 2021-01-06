@@ -18,7 +18,14 @@ class ProductRepository
      */
     public function getAll()
     {
-        $company_id = GetSession::getCompanyId();
+        if (Auth::user()->id_role == 1) 
+        {
+            $company_id = GetSession::getCompanyId();
+        }elseif(Auth::user()->id_role == 2)
+        {
+            $company_id = Auth::user()->id_company;
+        }
+        
         return Product::where('id_company', $company_id)->orderBy('created_at','desc')->paginate(8);
     }
 

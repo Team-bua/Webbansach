@@ -118,6 +118,7 @@
             </div>
         </div>
         <!-- search form -->
+       
         <?php
         
             use App\Models\Company;
@@ -127,9 +128,10 @@
             
 
         ?>
+        @can('admin')
         <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form">
         @csrf
-            <div class="input-group">
+            <div class="input-group" >
             <select class="form-control" name="select_companyid" id="select_companyid">
                 @foreach($companies as $cp)
                 <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
@@ -139,15 +141,15 @@
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
-          </form>
-          
+          </form>  
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
+        @endcan
         <ul class="sidebar-menu">
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
             </li>
-
+        @can('admin')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
@@ -158,6 +160,14 @@
 
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i style="color:orange"class="fa fa-briefcase fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà xuất bản</span>
+                </a>
+            </li>
+        @endcan
+            <!-- CRUD  sách -->
+            <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
@@ -165,15 +175,7 @@
                 </a>
 
             </li>
-
-            <!-- CRUD  nhà cung cấp -->
-            <li class=" treeview">
-                <a href="{{ route('companies.index') }}">
-                    <i style="color:orange"class="fa fa-briefcase fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Nhà xuất bản</span>
-                </a>
-            </li>
-
+        @can('admin')
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
@@ -191,7 +193,7 @@
                     <i style="color:orange"class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>Bìa</span>
                 </a>
-
+        @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
@@ -221,8 +223,7 @@
                   </ul>
             </li>
             
-            @if (Auth::check())
-                @if (Auth::user()->id_role == 1)
+            @can('admin')
                     <li class="header ">
                         <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
                     </li>
@@ -233,7 +234,7 @@
                             <span style="font-size:16px ;"> Tài Khoản</span>
 
                         </a>
-
+            @endcan
                     </li>
                     <li class="treeview">
                         <a href="{{ url('logout') }}">
@@ -243,9 +244,7 @@
                 </a>
 
             </li>
-            @endif
-                return redirect('login');
-            @endif
+           
         </ul>
     </section>
 
