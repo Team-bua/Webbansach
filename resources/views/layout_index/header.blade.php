@@ -2,7 +2,6 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-3">
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
@@ -21,7 +20,6 @@
 
                     @endif
                 @endif
-
             </div>
         </div>
     </div>
@@ -35,7 +33,6 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
 
             </nav>
         </div>
@@ -93,3 +90,4 @@
         </div>
     </div>
 </header>
+
