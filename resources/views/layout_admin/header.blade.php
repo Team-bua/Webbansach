@@ -222,11 +222,6 @@
 
             </li>
             @endif
-<<<<<<< HEAD
-=======
-
-                return redirect('login');
->>>>>>> 2d48e489c1ec24c71435c3efb0e0ad4579c242b4
             @endif
         </ul>
     </section>

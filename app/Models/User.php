@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     public function productComments()
     {
-        return $this->belongsToMany(Product::class, 'comment','id_user', 'id_product');
+        return $this->belongsToMany(Product::class, 'comment','id_user', 'id_product')->withPivot('body')->withTimestamps();
     }
 
     public function ratings()

@@ -12,6 +12,7 @@ use App\Models\Cart;
 use App\Models\Slide;
 use App\Models\Bill;
 use App\Models\BillDetail;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 
@@ -65,6 +66,21 @@ class PageRepository
         return ProductType::find($id);
     }
 
+    public function postComment($id, $request)
+    {
+        $comment = new Comment();
+        $comment->id_product = $id;
+        $comment->id_user = Auth::user()->id;
+        $comment->body = $request->body;
+        $comment->save();
+
+    }
+
+    public function getComment($id){
+        $product =  Product::find($id);
+
+        return $product->userComments;
+    } 
 
     public function getProductTypeID($id)
     {

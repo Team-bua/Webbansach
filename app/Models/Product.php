@@ -38,9 +38,9 @@ class Product extends Model
         return $this->belongsTo(User::class,'id_user', 'id');
     }
     
-    public function users()
+    public function userComments()
     {
-        return $this->belongsToMany(User::class, 'comment', 'id_product', 'id_user');
+        return $this->belongsToMany(User::class, 'comment', 'id_product', 'id_user')->withPivot('body')->withTimestamps();
     }
 
     public function ratings()

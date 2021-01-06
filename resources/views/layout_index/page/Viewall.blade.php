@@ -47,7 +47,22 @@
                                             <p>{!! $books->description !!}</p>
                                         </div>
                                     </div>
+
+                    <h6><a href="{{url('addcart',$books->id)}}"><i class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$books->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                                 </div>
+                                @if($books->promotion_price == 0)
+                                    <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-old">{{number_format($books->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                                       @endif
                             </div>
                         @endforeach
                     </div>

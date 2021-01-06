@@ -50,6 +50,7 @@
                     <p>{!! $pro->description !!}</p>
                 </div>
                 </div>
+                <p class="wrap_price"> <span class="price-old">$119.50</span> <span class="price-new">$96.00</span> </p>
                     <h6><a href="{{url('addcart',$pro->id)}}"><i class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                         </div>
                     </div>
