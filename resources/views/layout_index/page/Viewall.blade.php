@@ -48,8 +48,25 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+                                @if($books->promotion_price == 0)
+                                    <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-old">{{number_format($books->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif
+                            </div>
+=======
                             </div>
                         @endforeach
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
                     </div>
                 </div>
             </div>

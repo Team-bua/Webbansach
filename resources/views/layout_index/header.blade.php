@@ -2,6 +2,10 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
                 <div class="col-md-3">
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
@@ -12,14 +16,19 @@
 
                 @if (Auth::check())
                     @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                    
                         <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//</a><a
+                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a
                                 href="{{ url('logout') }}">Đăng Xuất</a><br></div>
 
                     @else
 
                     @endif
                 @endif
+<<<<<<< HEAD
+
+=======
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </div>
         </div>
     </div>
@@ -34,6 +43,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </nav>
         </div>
     </div>
@@ -66,28 +79,33 @@
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                     </ul>
-                    <div style="margin-top:3px" class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="cart my-2 my-lg-0">
-                            <a href="{{ route('cart') }}">
-                                <span><i style="color:white;" class="fa fa-shopping-cart"
-                                        aria-hidden="true"></i></span></a>
-                            <span class="quntity">
-                                @if (Session::has('cart'))
-                                {{ Session('cart')->totalQty }}@else 0
-                                @endif
-                            </span>
-                        </div>
-                        <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform"
-                            action="{{ route('search') }}">
-                            <input style="margin-right:10px" type="text" value="" name="key" id="s"
-                                placeholder="Nhập từ khóa..." autocomplete="off" />
-                            <span class="fa fa-search"></span>
-                        </form>
-                    </div>
                 </div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20%">
+                    <div class="cart my-2 my-lg-0">
+                        <a href="{{ route('cart') }}">
+                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                        <span class="quntity">
+                            @if (Session::has('cart'))
+                            {{ Session('cart')->totalQty }}@else 0
+                            @endif
+                        </span>
+                    </div>
+                    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform"
+                        action="{{ route('search') }}">
+                        <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..."
+                            autocomplete="off" />
+                        <span class="fa fa-search"></span>
+                    </form>
+                </div>
+              </nav>
 
+          </div>
             </nav>
+
         </div>
     </div>
 </header>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14

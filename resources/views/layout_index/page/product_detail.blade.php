@@ -221,18 +221,20 @@
     </div>
     <div class="container">
         <div id="last-product-wrapper">
-            <div id="comment-list">
+            <div id="comment-list">     
+            @foreach($comments as $com)                    
                 <ul>
-                    <li class="com-title">
-                        Team bùa
+                    <li class="com-title">                       
+                        {{$com->full_name}}                      
                         <br>
-                        <span>2020-19-01 10:00:00</span>
-                    </li>
+                        <span>{{$product_detail->created_at->format('d/m/Y')}}</span>
+                    </li>     
+                               
                     <li class="com-details">
-                        Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                       {{$com->pivot->body}}
                     </li>
                 </ul>
-
+                 @endforeach                      
             </div>
              
         </div>
