@@ -35,7 +35,7 @@
 </style>
 
 
-<header class="main-header  ">
+<header  class="main-header  " >
     <!-- Logo -->
     <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
                 src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
@@ -50,14 +50,14 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+            <ul  class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
                             class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul class="dropdown-menu" style="padding-top: 7px;">
+                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
                         <!-- User image -->
                         <li style="background-color: #ecc518" class="user-header">
                             <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
@@ -87,7 +87,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" 
+                    style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li>
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
@@ -147,21 +148,32 @@
                 </a>
             </li>
 
-
+            <!-- CRUD  nhà cung cấp -->
+            <li class=" treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i style="color:orange"class="fa fa-briefcase fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà xuất bản</span>
+                </a>
+            </li>
+            
+            <!-- CRUD  sách -->
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:#7c7059" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-
+                    
                 </a>
 
             </li>
+
+            
+
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:#7c7059"class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-
+                    
 
                 </a>
 

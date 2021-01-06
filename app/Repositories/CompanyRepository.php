@@ -59,4 +59,5 @@ class CompanyRepository
             })->paginate(10);
     }
 
+
 }

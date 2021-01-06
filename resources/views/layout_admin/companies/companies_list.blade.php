@@ -44,7 +44,7 @@
                 <a href="{{ route('companies.create') }}">
                     <button class="btn btn btn-success"
                         style="float: right;;margin-bottom:5px;margin-left:2px">
-                        <i class="fa fa-plus"> Thêm nhà phát hành</i></button>
+                        <i class="fa fa-plus"> Thêm nhà xuất bản</i></button>
                 </a>
             </div>
         </div><!-- /.box-header -->

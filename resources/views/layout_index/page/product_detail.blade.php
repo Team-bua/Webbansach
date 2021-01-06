@@ -41,31 +41,6 @@
                 });
             </script>
 
-<<<<<<< HEAD
-                });
-            </script>
-
-            <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description !!}</p>
-                <ul>
-                    @if($product_detail->promotion_price == 0)
-                    <li>
-                        <span class="name">Giá Bán</span><span class="clm">:</span>
-                        <span class="price final" style="color:black">{{number_format($product_detail->unit_price,0,"",",")}}VNĐ</span>
-
-                    </li>
-                    @else
-                    <li>
-                        <span class="name">Giá Bán</span><span class="clm">:</span>
-                        <span class="price">{{number_format($product_detail->unit_price,0,"",",")}}VNĐ</span>
-                        <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
-                        <span class="price final">{{number_format($product_detail->promotion_price,0,"",",")}}VNĐ</span>
-
-                    </li>
-                    @endif
-                </ul>
-
-=======
             <div class="col-md-6 slider-content">
                 <p style="text-align:justify">{!! $product_detail->description  !!}</p>
                 <ul>
@@ -86,7 +61,6 @@
                     @endif
                 </ul>
 
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
                 <form action="" class="cart">
                     <div class="quantity">
                         <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
@@ -199,46 +173,18 @@
                 </div>
             </div>
             <div id="tab-review" class="tab-content">
-<<<<<<< HEAD
                 @if(Auth::check())
                 <div class="rating-card">
                     <form action="{{route('comment',$product_detail->id)}}" method="post">
               @csrf()
-=======
-                <div class="rating-card">
-                    <form action="" method="post">
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
                         <div class="card border-primary rounded-0">
                             <div class="card-body p-3">
                                 <div class="form-group">
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-<<<<<<< HEAD
                                             <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
                                         </div>
                                         <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" name="body" required></textarea>
-=======
-                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
-                                        </div>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="user name" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
-                                        </div>
-                                        <input type="email" class="form-control" id="nombre" name="email" placeholder="abc@gmail.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
-                                        </div>
-                                        <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" required></textarea>
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
                                     </div>
                                 </div>
 
@@ -252,10 +198,7 @@
                     </form>
                     <div style="clear:both;"></div>
                 </div>
-<<<<<<< HEAD
                     @endif
-=======
->>>>>>> 30eefb03d382412192f74532ef34f34b24b6746a
             </div>
             <div id="tab-information" class="tab-content">
                 <div class="cpt_product_description ">
