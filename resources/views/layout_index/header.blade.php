@@ -2,10 +2,6 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
                 <div class="col-md-3">
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
@@ -25,10 +21,6 @@
 
                     @endif
                 @endif
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </div>
         </div>
     </div>
@@ -43,10 +35,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </nav>
         </div>
     </div>
@@ -105,7 +93,3 @@
         </div>
     </div>
 </header>
-<<<<<<< HEAD
-=======
-
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
