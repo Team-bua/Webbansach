@@ -175,33 +175,18 @@
                 </div>
             </div>
             <div id="tab-review" class="tab-content">
+                @if(Auth::check())
                 <div class="rating-card">
-                    <form action="" method="post">
+                    <form action="{{route('comment',$product_detail->id)}}" method="post">
+              @csrf()
                         <div class="card border-primary rounded-0">
                             <div class="card-body p-3">
                                 <div class="form-group">
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
-                                        </div>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="user name" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
-                                        </div>
-                                        <input type="email" class="form-control" id="nombre" name="email" placeholder="abc@gmail.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
                                         </div>
-                                        <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" required></textarea>
+                                        <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" name="body" required></textarea>
                                     </div>
                                 </div>
 
@@ -215,6 +200,7 @@
                     </form>
                     <div style="clear:both;"></div>
                 </div>
+                    @endif
             </div>
             <div id="tab-information" class="tab-content">
                 <div class="cpt_product_description ">
@@ -237,41 +223,39 @@
     </div>
     <div class="container">
         <div id="last-product-wrapper">
-            <div id="comment-list">
+            <div id="comment-list">     
+            @foreach($comments as $com)                    
                 <ul>
-                    <li class="com-title">
-                        Team bùa
+                    <li class="com-title">                       
+                        {{$com->full_name}}                      
                         <br>
-                        <span>2020-19-01 10:00:00</span>
-                    </li>
+                        <span>{{$product_detail->created_at->format('d/m/Y')}}</span>
+                    </li>                                   
                     <li class="com-details">
-                        Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
+                       {{$com->pivot->body}}
                     </li>
                 </ul>
-
+                 @endforeach                      
             </div>
              
         </div>
     </div>
 </section>
-<a href="#" class="bck"></a>
 @endsection
 @section('script')
 <script>
-        function AddCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET'
-            }).done(function(response) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Đã thêm vào giỏ hàng',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+    function AddCart(id) {
+        $.ajax({
+            url: 'addcart/' + id,
+            type: 'GET'
+        }).done(function(response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Đã thêm vào giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500         
             })
-        }
-
-    </script>
-
+        })
+    }
+</script>
 @stop

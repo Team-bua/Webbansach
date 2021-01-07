@@ -30,7 +30,7 @@
             <div id="myTable">
                 <div class="recent-book-sec">
                     <div class="row">
-                        @foreach ($product_hightlights as $books)
+                        @foreach ($product_highlights as $books)
                             <div class="col-md-3">
                                 <div class="item">
                                     @if ($books->new == 1)

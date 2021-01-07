@@ -13,6 +13,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\SessionController;
 
 
 /*
@@ -41,7 +42,7 @@ Route::get('all_book',[PageController::class,'AllBook'])->name('all_book');
 //----->tất cả sản phẩm theo mục
 Route::get('new',[PageController::class,'getAllNew'])->name('allnew');
 Route::get('sale',[PageController::class,'getAllSale'])->name('allsale');
-Route::get('hightlights',[PageController::class,'getAllHightlights'])->name('allhightlights');
+Route::get('highlights',[PageController::class,'getAllHighlights'])->name('allhighlights');
 //----->gioithieu
 Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce');
 //----->tintuc
@@ -112,3 +113,5 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 Route::resource('publisher',PublisherController::class);
 
 Route::resource('companies',CompanyController::class);
+///------>Trang tìm và lưu sesstion company
+Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');

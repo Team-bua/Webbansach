@@ -54,7 +54,7 @@
                                         <th>Tên sách</th>
                                         <th>Loại sách</th>
                                         <th>Tác giả</th>
-                                        <th>Giá </th>
+                                        <th width="10%">Giá </th>
                                         <th>Giá Khuyến Mãi</th>
                                         <th>Hình ảnh</th>
                                         <th colspan="3">
@@ -71,8 +71,8 @@
                                             </td>
                                             <td>{{ $pro->productType->name }}</td>
                                             <td>{{ $pro->publisher }}</td>
-                                            <td>{{ $pro->unit_price }}</span></td>
-                                            <td>{{ $pro->promotion_price }}</td>
+                                            <td>{{ $pro->unit_price }} VNĐ</span></td>
+                                            <td>@if($pro->promotion_price == 0) 0 VNĐ @else {{ $pro->promotion_price }} VNĐ @endif</td>
 
                                             <td><img style="width:100px;height:100px;"
                                                     src="{{ asset('images/product/' . $pro->image) }}"></td>

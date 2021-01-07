@@ -69,11 +69,11 @@ class PageController extends Controller
         $product_sale = $this->repository->getAllProductSale();
         return view('layout_index.page.view_all_sale', compact('product_type', 'product_sale'));
     }
-    public function getAllHightlights()
+    public function getAllHighlights()
     {
         $product_type = $this->repository->getProductType();
-        $product_hightlights = $this->repository->getAllproductHighlights();
-        return view('layout_index.page.view_all_hightlights', compact('product_type', 'product_hightlights '));
+        $product_highlights = $this->repository->getAllproductHighlights();
+        return view('layout_index.page.view_all_highlights', compact('product_type','product_highlights'));
     }
     // xem tất cả sach theo khuyến mãi , nổi bật
 

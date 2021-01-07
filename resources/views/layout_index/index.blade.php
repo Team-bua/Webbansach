@@ -158,7 +158,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <a href="{{  route('allhightlights')  }}"><button class="btn gray-btn">Xem Thêm</button></a>
+                    <a href="{{  route('allhighlights')  }}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
             </div>
 

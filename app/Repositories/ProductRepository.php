@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
+use App\Services\GetSession;
 
 class ProductRepository
 {
@@ -17,7 +18,15 @@ class ProductRepository
      */
     public function getAll()
     {
-        return Product::orderBy('created_at','desc')->paginate(8);
+        if (Auth::user()->id_role == 1) 
+        {
+            $company_id = GetSession::getCompanyId();
+        }elseif(Auth::user()->id_role == 2)
+        {
+            $company_id = Auth::user()->id_company;
+        }
+        
+        return Product::where('id_company', $company_id)->orderBy('created_at','desc')->paginate(8);
     }
 
     public function getTypeAll()
@@ -65,6 +74,7 @@ class ProductRepository
        $product->id_type=$request->input('cate');
        $product->publisher=$request->input('publisher');
        $product->id_user=Auth::user()->id;
+       $product->id_company=Auth::user()->id_company;
        $product->unit_price=$request->input('unit_price');
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
