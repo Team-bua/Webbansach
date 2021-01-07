@@ -51,6 +51,7 @@
                     <p>{!! $books->description !!}</p>
                 </div>
                 </div>
+
                         </div>
                     </div>
                     @endforeach

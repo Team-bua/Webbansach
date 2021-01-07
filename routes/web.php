@@ -13,6 +13,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\SessionController;
 
 
 /*
@@ -110,3 +111,5 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 Route::resource('publisher',PublisherController::class);
 
 Route::resource('companies',CompanyController::class);
+///------>Trang tìm và lưu sesstion company
+Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');

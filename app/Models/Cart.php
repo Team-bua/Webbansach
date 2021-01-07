@@ -26,6 +26,7 @@ class Cart
 			}
 		}
 		$giohang['qty']++;
+		$giohang['price'] = $item->promotion_price==0?$item->unit_price:$item->promotion_price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
 		$this->totalPrice += $item->promotion_price==0?$item->unit_price:$item->promotion_price;

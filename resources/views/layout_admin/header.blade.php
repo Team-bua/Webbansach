@@ -35,7 +35,7 @@
 </style>
 
 
-<header class="main-header  ">
+<header  class="main-header  " >
     <!-- Logo -->
     <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
                 src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
@@ -50,14 +50,14 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+            <ul  class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
                         <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
                             class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul class="dropdown-menu" style="padding-top: 7px;">
+                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
                         <!-- User image -->
                         <li style="background-color: #ecc518" class="user-header">
                             <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
@@ -87,7 +87,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
-                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" 
+                    style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li>
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
@@ -117,77 +118,89 @@
             </div>
         </div>
         <!-- search form -->
-        <form action="" method="get" class="sidebar-form" style="border-color: #222d32">
+       
+        <?php
+        
+            use App\Models\Company;
+            use Illuminate\Support\Facades\Session;
+            $companies = Company::all();
+            $sessionCompany = Session::get('select_companyid');
+            
+
+        ?>
+        @can('admin')
+        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form">
+        @csrf
             <div class="input-group" >
-              <select name="searchs" id="searchs" class="form-control" placeholder="Search...">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat" style="border:none; background-color:#4a4235;color:#fff;float:left;margin-top:0px;margin-left:2px"><i class="fa fa-search"></i></button>
+            <select class="form-control" name="select_companyid" id="select_companyid">
+                @foreach($companies as $cp)
+                <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
+                @endforeach
+            </select>
+            <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
-          </form>
-
-
+          </form>  
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
+        @endcan
         <ul class="sidebar-menu">
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
             </li>
-
+        @can('admin')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i style="color:#7c7059" class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-pie-chart fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Tổng Quan</span>
                 </a>
             </li>
 
-
+            <!-- CRUD  nhà cung cấp -->
+            <li class=" treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i style="color:orange"class="fa fa-briefcase fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">Nhà xuất bản</span>
+                </a>
+            </li>
+        @endcan
+            <!-- CRUD  sách -->
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i style="color:#7c7059" class="fa fa-book fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Sách</span>
-
+                    
                 </a>
 
             </li>
+        @can('admin')
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i style="color:#7c7059"class="fa fa-edit  fa-lg text-warning"></i>
+                    <i style="color:orange"class="fa fa-edit  fa-lg text-warning"></i>
                     <span style="font-size:16px ;">Loại sách</span>
-
+                    
 
                 </a>
 
             </li>
-            <!-- CRUD  nhà cung cấp -->
-            <li class=" treeview">
-                <a href="{{ route('supplier.index') }}">
-                    <i style="color:#7c7059"class="fa fa-briefcase fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Nhà cung cấp</span>
-                </a>
-            </li>
-
+            
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i style="color:#7c7059"class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <i style="color:orange"class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>Bìa</span>
                 </a>
-
+        @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
-                <a href="{{ route('user.index') }}">
-                  <i style="color:#7c7059" class="fa fa-inbox fa-lg text-warning"></i>
+                <a href="{{ route('bill.index') }}">
+                  <i style="color:orange" class="fa fa-inbox fa-lg text-warning"></i>
                   <span style="font-size:16px ;">Đơn hàng</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -200,7 +213,7 @@
             <!-- Quản lý kho hàng -->
             <li class="treeview">
                 <a >
-                    <i style="color:#7c7059" class="fa fa-archive  fa-lg text-warning"></i>
+                    <i style="color:orange" class="fa fa-archive  fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> Kho hàng</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -209,40 +222,31 @@
                     <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
                   </ul>
             </li>
-            <li class="treeview">
-                <a href="{{ route('companies.index') }}">
-                    <i style="color:#7c7059" class="fa  fa-suitcase  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Nhà phát hành</span>
-
-                </a>
-            </li> 
             
-            @if (Auth::check())
-                @if (Auth::user()->id_role == 1)
+            @can('admin')
                     <li class="header ">
                         <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
                     </li>
 
                     <li class="treeview">
                         <a href="{{ route('user.index') }}">
-                            <i style="color:#7c7059"class="fa fa-desktop  fa-lg"></i>
+                            <i style="color:orange"class="fa fa-desktop  fa-lg"></i>
                             <span style="font-size:16px ;"> Tài Khoản</span>
 
                         </a>
-
+            @endcan
                     </li>
                     <li class="treeview">
                         <a href="{{ url('logout') }}">
-                            <i style="color:#7c7059" class="fa fa-sign-out  fa-lg text-warning"></i>
+                            <i style="color:orange" class="fa fa-sign-out  fa-lg text-warning"></i>
                             <span style="font-size:16px ;">Thoát</span>
 
+                </a>
 
             </li>
-            @endif
-
-
-            @endif
+           
         </ul>
     </section>
 
 </aside>
+

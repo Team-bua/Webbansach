@@ -11,14 +11,13 @@
                 </div>
 
                 @if (Auth::check())
-                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
-                        <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//</a><a
-                                href="{{ url('logout') }}">Đăng Xuất</a><br></div>
+                @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
 
-                    @else
+                <div class="col-md-3 pull-right">Chào Bạn : <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a href="{{ url('logout') }}">Đăng Xuất</a><br></div>
 
-                    @endif
+                @else
+
+                @endif
                 @endif
             </div>
         </div>
@@ -26,11 +25,8 @@
     <div class="main-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%"
-                        src="images/logobook.png" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%" src="images/logobook.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -48,8 +44,8 @@
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
                                         @foreach ($types as $pro)
-                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
-                                            </li>
+                                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
 
@@ -62,32 +58,31 @@
                         <li class="menu_item down"><a href="{{ route('all_book') }}">Xem tất cả </a></li>
                         @if (Auth::check())
                         @else
-                            <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                            <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
+                        <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
+                        <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                     </ul>
-                    <div style="margin-top:3px" class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="cart my-2 my-lg-0">
-                            <a href="{{ route('cart') }}">
-                                <span><i style="color:white;" class="fa fa-shopping-cart"
-                                        aria-hidden="true"></i></span></a>
-                            <span class="quntity">
-                                @if (Session::has('cart'))
-                                {{ Session('cart')->totalQty }}@else 0
-                                @endif
-                            </span>
-                        </div>
-                        <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform"
-                            action="{{ route('search') }}">
-                            <input style="margin-right:10px" type="text" value="" name="key" id="s"
-                                placeholder="Nhập từ khóa..." autocomplete="off" />
-                            <span class="fa fa-search"></span>
-                        </form>
-                    </div>
                 </div>
-
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 15%">
+                    <div class="cart my-2 my-lg-0">
+                        <a href="{{ route('cart') }}">
+                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                        <span class="quntity">
+                            @if (Session::has('cart'))
+                            {{ Session('cart')->totalQty }}@else 0
+                            @endif
+                        </span>
+                    </div>
+                    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{ route('search') }}">
+                        <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." autocomplete="off" />
+                        <span class="fa fa-search"></span>
+                    </form>
+                </div>
             </nav>
+
         </div>
+        </nav>
+
+    </div>
     </div>
 </header>
-

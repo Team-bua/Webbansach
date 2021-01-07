@@ -288,7 +288,7 @@ header .header-top .row {
 }
 
 header .main-menu {
-    padding: 40px 0;
+    padding: 14px 0;
 }
 
 header .main-menu .navbar {
@@ -1605,6 +1605,9 @@ li.com-title span {
         width: 100%;
     }
 }
+
+
+/*----------------------------------menu-drop---------------------------------------*/
 
 
 /*----------------------------------sale--------------------------------------------*/
