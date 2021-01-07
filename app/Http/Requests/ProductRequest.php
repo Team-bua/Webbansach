@@ -29,7 +29,7 @@ class ProductRequest extends FormRequest
             'cate'=>'required',
             'publisher'=>'required',
             'unit_price'=>'required|integer',
-            'promotion_price'=>'required|integer',
+            
             'imgs[]' => 'max:2',
             'img' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
             'description'=>'required'   
@@ -45,8 +45,8 @@ class ProductRequest extends FormRequest
             'publisher.required'=>'Vui lòng nhập nhà sản xuất',
             'unit_price.required'=>'Vui lòng nhập giá sản phẩm',
             'unit_price.integer'=>'Giá sản phẩm không đúng định dạng',
-            'promotion_price.required'=>'Vui lòng nhập % giảm giá',
-            'promotion_price.integer'=>'Giá giảm không đúng định dạng',
+            
+           
             'img.required'=>'Vui lòng chọn ảnh',
             'img.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
             'img.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',

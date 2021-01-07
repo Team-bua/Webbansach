@@ -59,17 +59,19 @@
                         <li class="menu_item down"><a href="{{ route('index') }}">Trang Chủ</a> </li>
                         <li class="menu_item down"><a href="{{ route('introduce') }}">Giới thiệu</a></li>
                         <li class="menu_item down"><a href="{{ route('news') }}">Tin Tức</a></li>
-                        <li class="menu_item down"><a href="{{ route('all_book') }}">Xem tất cả </a></li>
+                        <li class="menu_item down"><a href="{{ route('all_book') }}">Tất cả sách </a></li>
                         @if (Auth::check())
                         @else
                             <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                     </ul>
+
+                </div>
                     <div style="margin-top:3px" class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="cart my-2 my-lg-0">
                             <a href="{{ route('cart') }}">
-                                <span><i style="color:white;" class="fa fa-shopping-cart"
+                                <span><i class="fa fa-shopping-cart"
                                         aria-hidden="true"></i></span></a>
                             <span class="quntity">
                                 @if (Session::has('cart'))
@@ -84,8 +86,6 @@
                             <span class="fa fa-search"></span>
                         </form>
                     </div>
-                </div>
-
             </nav>
         </div>
     </div>

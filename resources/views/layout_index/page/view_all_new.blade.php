@@ -20,7 +20,7 @@
 
     <section class="static about-sec">
         <div class="container">
-            <h2>books </h2>
+            <h2>Sách mới </h2>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..."
                     aria-label="Search">
@@ -30,14 +30,10 @@
             <div id="myTable">
                 <div class="recent-book-sec">
                     <div class="row">
-                        @foreach ($product as $books)
+                        @foreach ($product_new as $books)
                             <div class="col-md-3">
                                 <div class="item">
-                                    @if ($books->promotion_price == 0)
                                         <div class="new">new</div>
-                                    @else
-                                        <span class="sale">sale</span>
-                                    @endif
                                     <a href="{{ route('detail', $books->id) }}">
                                         <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
                                     </a>

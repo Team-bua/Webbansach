@@ -39,7 +39,9 @@ Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->tất cả sản phẩm đang có
 Route::get('all_book',[PageController::class,'AllBook'])->name('all_book');
 //----->tất cả sản phẩm theo mục
-Route::get('all',[PageController::class,'getAll'])->name('all');
+Route::get('new',[PageController::class,'getAllNew'])->name('allnew');
+Route::get('sale',[PageController::class,'getAllSale'])->name('allsale');
+Route::get('hightlights',[PageController::class,'getAllHightlights'])->name('allhightlights');
 //----->gioithieu
 Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce');
 //----->tintuc
