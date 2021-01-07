@@ -55,7 +55,7 @@
           <h4> Giá : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-            <input required name="unit_price" type="text" value="{{$product->unit_price}}" class="form-control" placeholder="Giá . . . . . . . . .">
+            <input required name="unit_price" type="number" value="{{$product->unit_price}}" class="form-control" placeholder="Giá . . . . . . . . .">
             <span class="input-group-addon">VNĐ</span>
           </div>
 
@@ -63,7 +63,7 @@
           <h4> Giá khuyến mãi : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-            <input name="promotion_price" type="text" value="{{$product->promotion_price}}" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
+            <input name="promotion_price" type="number" value="{{$product->promotion_price}}" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
             <span class="input-group-addon">VNĐ</span>
           </div>
 
@@ -79,23 +79,15 @@
               <span class="input-group-addon"><i class="fa fa-money"></i></span>
               <input id="Format" name="Format" value="{{$product->format}}" type="text" class="form-control"
                   placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">VNĐ</span>
-          </div>
-          <h4> Ngày nhập : </h4>
-          <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-money"></i></span>
-              <input id="Release_Date" name="ReleaseDate"value="{{$product->releasedate}}" type="date" class="form-control"
-                  placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">VNĐ</span>
-          </div>
 
+          </div>
 
           <h4> Ngôn ngữ </h4>
           <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-money"></i></span>
               <input id="Language" name="Language" value="{{$product->language}}"  type="text" class="form-control"
                   placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">VNĐ</span>
+
           </div>
           
           <h4> Số trang :</h4>
@@ -103,7 +95,7 @@
               <span class="input-group-addon"><i class="fa fa-money"></i></span>
               <input id="Page_Number" name="PageNumber" value="{{$product->pagenumber}}"  type="text" class="form-control"
                   placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">VNĐ</span>
+              <span class="input-group-addon">Trang</span>
           </div>
 
           <h4> Kích thước :</h4>
@@ -111,7 +103,7 @@
               <span class="input-group-addon"><i class="fa fa-money"></i></span>
               <input id="size" name="size" value="{{$product->size}}"  type="text" class="form-control"
                   placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">VNĐ</span>
+              <span class="input-group-addon">Cm</span>
           </div>
 
 

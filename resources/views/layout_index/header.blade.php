@@ -11,9 +11,12 @@
                 </div>
 
                 @if (Auth::check())
-                @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                        <div class="col-md-3 pull-right">Chào Bạn : <a
+                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//</a><a
+                                href="{{ url('logout') }}">Đăng Xuất</a><br></div>
 
-                <div class="col-md-3 pull-right">Chào Bạn : <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a href="{{ url('logout') }}">Đăng Xuất</a><br></div>
+                    @else
 
                     @endif
                 @endif
@@ -23,8 +26,11 @@
     <div class="main-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%" src="images/logobook.png" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%"
+                        src="images/logobook.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -37,13 +43,13 @@
                 <div id="menu">
                     <ul>
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
-                            <div class="sub_menu">
+                            <div class="sub_menu" style="">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
-                                        @foreach ($types as $pro)
-                                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
-                                        </li>
+                                        @foreach($types as $pro)
+                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
 
@@ -53,11 +59,11 @@
                         <li class="menu_item down"><a href="{{ route('index') }}">Trang Chủ</a> </li>
                         <li class="menu_item down"><a href="{{ route('introduce') }}">Giới thiệu</a></li>
                         <li class="menu_item down"><a href="{{ route('news') }}">Tin Tức</a></li>
-                        <li class="menu_item down"><a href="{{ route('all_book') }}">Xem tất cả </a></li>
+                        <li class="menu_item down"><a href="{{ route('all_book') }}">Tất cả sách </a></li>
                         @if (Auth::check())
                         @else
-                        <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                        <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
+                            <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
+                            <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
                             <div class="sub_menu" style="">
@@ -74,6 +80,7 @@
                             </div>
                         </li>
                     </ul>
+
                 </div>
 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 5%">
                     <div class="cart my-2 my-lg-0">
@@ -91,7 +98,6 @@
                     </form>
                 </div>
             </nav>
-
         </div>
     </div>
 </header>

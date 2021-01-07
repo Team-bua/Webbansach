@@ -28,17 +28,37 @@ class PageRepository
         return User::orderBy('created_at', 'desc')->paginate(10);
     }
 
+
     public function getAllproductbook()
     {
         return  Product::where('status', 1)->get();
     }
+    // sách hoạt động
 
-    public function getAllproduct()
+    public function getAllproductNew()
     {
-        return  Product::where('new',1)->where('status',1)
-                        ->latest()
-                        ->paginate(10);
+        return Product::orderBy('created_at', 'desc')
+            ->where('status', 1)
+            ->latest()
+            ->paginate(10);
     }
+    // sach mới
+
+    public function getAllProductSale()
+    {
+        return  Product::where('promotion_price', '<>', 0)->where('status', 1)
+        ->latest()
+        ->paginate(10);
+    }
+    // sách giảm giá
+
+    public function getAllproductHighlights()
+    {
+        return  Product::where('new', 1)->where('status', 1)
+            ->latest()
+            ->paginate(10);
+    }
+    //sách nổi bật
 
     public function getProduct($id)
     {
@@ -69,20 +89,20 @@ class PageRepository
         $comment->id_user = Auth::user()->id;
         $comment->body = $request->body;
         $comment->save();
-
     }
 
-    public function getComment($id){
+    public function getComment($id)
+    {
         $product =  Product::find($id);
 
         return $product->userComments;
-    } 
+    }
 
     public function getProductTypeID($id)
     {
-        return Product::where('id_type',$id)->where('status',1)->paginate(10);
+        return Product::where('id_type', $id)->where('status', 1)->paginate(10);
     }
-    
+
     public function getSlide()
     {
         return Slide::where('status', 1)->get();
@@ -101,11 +121,11 @@ class PageRepository
     {
         $oldCart = Session('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->changeItem($request->id,$request->quantity);
-        $request->session()->put('cart',$cart);
-        return response()->json(array('cart'=> $cart,'id'=>$request->id));
+        $cart->changeItem($request->id, $request->quantity);
+        $request->session()->put('cart', $cart);
+        return response()->json(array('cart' => $cart, 'id' => $request->id));
     }
-    
+
     public function getDelcart($id)
     {
         $oldcart = Session::has('cart') ? Session::get('cart') : null;
@@ -167,9 +187,4 @@ class PageRepository
         $supplier = User::find($id);
         $supplier->delete();
     }
-
-
-
-
-    
 }

@@ -10,7 +10,9 @@
                 <div id="myCarousel" class="carousel slide">
                     <!-- main slider carousel items -->
                     <div class="carousel-inner">
-                        <div class="sale">- %20</div>
+                        @if($product_detail->promotion_price!=0)
+                        <div class="sale">Sale</div>
+                        @endif
                         <div class="active item carousel-item" data-slide-number="0">
                             <img id="image-main" style="height:505px" src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
                         </div>
@@ -42,7 +44,7 @@
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description !!}</p>
+                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -210,8 +212,8 @@
                                 <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
                                 <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
                                 <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
-                                <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }}</li>
-                                <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }}</li>
+                                <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }} Cm</li>
+                                <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }} Trang</li>
                             </ul>
                         </section>
                     </div>

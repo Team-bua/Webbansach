@@ -32,10 +32,10 @@
                     @foreach ($product_types as $books)
                     <div class="col-md-3">
                         <div class="item">
-                         @if($books->promotion_price==0)
-                       <div class="new">new</div>
+                         @if($books->promotion_price != 0)
+                       <div class="new">sale</div>
                     @else
-                        <span class="sale">sale</span>
+                        <span class="sale">new</span>
                     @endif
                         <a href="{{route('detail',$books->id)}}">
                             <img src="{{ asset('images/product/' . $books->image) }}" alt="image"/>
