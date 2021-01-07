@@ -14,7 +14,7 @@
 			</thead>
 			<tbody>
 				<form method="post" action="">
-					@csrf
+					<input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}" />
 					@if(Session::has('cart'))
 					@foreach($product_cart as $pro)
 					<tr>
