@@ -103,7 +103,11 @@
                         <h4> Số trang :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
+<<<<<<< HEAD
                                 <input {{ old('PageNumber') }}id="Page_Number" class="form-control"name="PageNumber"  id="size" type="text" data-inputmask="'mask': '999'"
+=======
+                                <input id="Page_Number" class="form-control"name="PageNumber"  type="text">
+>>>>>>> 34ce1b833146da42ca12655ed938649cc8f2270e
                                 placeholder="Nhập số trang. . . . . . . . ." />
                             <span class="input-group-addon">Trang</span>
                         </div>
