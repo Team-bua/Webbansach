@@ -3,10 +3,10 @@
 <div class="content-wrapper" style="min-height: 898px;">
   <!-- Content Header (Page header) -->
   <section class="content-header">
-    <h1>
-      Quản lý nhà cung cấp
-
-    </h1>
+    <h2>
+      Quản lý nhà cung cấp   <small>Thêm, sửa, nhà cung cấp .</small>
+    </h2>
+   
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Nhà cung cấp</a></li>
@@ -29,7 +29,7 @@
                             placeholder="Search">
                         <div class="input-group-btn">
                             <button class="btn btn btn-success"
-                                style="float:left;margin-bottom:5px;margin-left:2px"><i
+                                style="border-color: #4a4235;background-color:#4a4235;float:left;margin-bottom:5px;margin-left:2px"><i
                                     class="fa fa-search"> Tìm kiếm </i></button>
 
           
@@ -43,7 +43,7 @@
             <div class="col-md-4 pull-right">
                 <a href="{{ route('supplier.create') }}">
                     <button class="btn btn btn-success"
-                        style="float: right;;margin-bottom:5px;margin-left:2px">
+                        style="border-color: #4a4235;background-color:#4a4235;float: right;;margin-bottom:5px;margin-left:2px">
                         <i class="fa fa-plus"> Thêm nhà cung cấp </i></button>
                 </a>
             </div>

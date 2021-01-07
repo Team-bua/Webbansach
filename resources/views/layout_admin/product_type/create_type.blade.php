@@ -34,7 +34,7 @@
                                 <div class="input-group">
                                     <input type="text" name="table_search" class="form-control  pull-right" placeholder="Search">
                                     <div class="input-group-btn">
-                                        <button class="btn btn btn-success" style="float:left;margin-bottom:5px;margin-left:2px"><i class="fa fa-search"> Tìm kiếm </i></button>
+                                        <button class="btn btn btn-success" style="border-color: #4a4235;background-color:#4a4235;float:left;margin-bottom:5px;margin-left:2px"><i class="fa fa-search"> Tìm kiếm </i></button>
 
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
 
                         <div class="col-md-4 pull-right">
 
-                            <a class="btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px" data-toggle="modal" data-target="#bookmodal">
+                            <a class="btn btn-success" style="border-color: #4a4235;background-color:#4a4235;float: right;margin-bottom:5px;margin-left:2px" data-toggle="modal" data-target="#bookmodal">
                                 <i class="fa fa-plus"> Thêm sách mới </i></button>
                             </a>
                         </div>
@@ -89,7 +89,7 @@
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button class="  btnmove btn-sm pull-right" style="margin-top:0px;" data-widget="remove"><i class="fa fa-times"></i></button>
+                            <button  style="background-color:#4a4235" class="  btnmove btn-sm pull-right" style="margin-top:0px;" data-widget="remove"><i class="fa fa-times"></i></button>
                             <h4 class="modal-title" id="myModalLabel">Thêm loại sách</h4>
                         </div>
                         <div class="modal-body">
@@ -103,7 +103,7 @@
                                     <input style="width:250px" type="text" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
 
                                 </div>
-                                <button type="submit" class="btn btn-success"> Thêm </button>
+                                <button  style="border-color: #4a4235;background-color:#4a4235" type="submit" class="btn btn-success"> Thêm </button>
 
                             </form>
                         </div>
@@ -131,7 +131,7 @@
                                 <input style="width:250px" type="text" id="name_type" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
 
                             </div>
-                            <button type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
+                            <button style="border-color: #4a4235;background-color:#4a4235"type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
                                 </div>
 
