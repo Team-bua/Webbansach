@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->increments('id');
             $table->integer('id_type')->unsigned();
             $table->integer('id_user')->unsigned();
+            $table->integer('id_company')->unsigned();
             $table->string('name');
             $table->integer('unit_price');
             $table->integer('promotion_price')->nullable();

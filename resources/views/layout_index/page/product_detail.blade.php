@@ -228,8 +228,7 @@
                         {{$com->full_name}}                      
                         <br>
                         <span>{{$product_detail->created_at->format('d/m/Y')}}</span>
-                    </li>     
-                               
+                    </li>                                   
                     <li class="com-details">
                        {{$com->pivot->body}}
                     </li>
@@ -240,24 +239,21 @@
         </div>
     </div>
 </section>
-<a href="#" class="bck"></a>
 @endsection
 @section('script')
 <script>
-        function AddCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET'
-            }).done(function(response) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Đã thêm vào giỏ hàng',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+    function AddCart(id) {
+        $.ajax({
+            url: 'addcart/' + id,
+            type: 'GET'
+        }).done(function(response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Đã thêm vào giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500         
             })
-        }
-
-    </script>
-
+        })
+    }
+</script>
 @stop

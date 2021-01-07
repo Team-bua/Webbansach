@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Thêm Nhà Cung Cấp
+                Thêm thành viên
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,7 +21,7 @@
                 <div class="box-header">
                 </div>
                 <div class="box-body">
-                    <form action="{{ url('user') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('user.index') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <h4> Họ tên : </h4>
                         <div class="input-group">
@@ -49,7 +49,7 @@
                         <h4> Mật khẩu : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                            <input required type="text" name="password" class="form-control"
+                            <input required type="password" name="password" class="form-control"
                                 placeholder="Mật khẩu . . . . . . . . .">
                         </div>
                         <h4> Địa chỉ : </h4>
@@ -66,8 +66,6 @@
                                 <input class="form-control"name="phone"  id="cc" type="text" data-inputmask="'mask': '999-999-9999'"
                                 placeholder="Số điện thoại. . . . . . . . ." />
                             </div>
-                            <!-- /.input group -->
-                        
                         <div class="text-center">
                             <button class=" btn  btn-success btn-lg"> Thêm </button>
                         </div>

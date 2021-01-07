@@ -11,13 +11,9 @@
                 </div>
 
                 @if (Auth::check())
-                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
-                    
-                        <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a
-                                href="{{ url('logout') }}">Đăng Xuất</a><br></div>
+                @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
 
-                    @else
+                <div class="col-md-3 pull-right">Chào Bạn : <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a href="{{ url('logout') }}">Đăng Xuất</a><br></div>
 
                     @endif
                 @endif
@@ -27,11 +23,8 @@
     <div class="main-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%"
-                        src="images/logobook.png" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%" src="images/logobook.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -44,13 +37,13 @@
                 <div id="menu">
                     <ul>
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
-                            <div class="sub_menu" style="">
+                            <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
                                         @foreach ($types as $pro)
-                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
-                                            </li>
+                                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
 
@@ -63,8 +56,8 @@
                         <li class="menu_item down"><a href="{{ route('all_book') }}">Xem tất cả </a></li>
                         @if (Auth::check())
                         @else
-                            <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                            <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
+                        <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
+                        <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
                             <div class="sub_menu" style="">
@@ -92,16 +85,11 @@
                             @endif
                         </span>
                     </div>
-                    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform"
-                        action="{{ route('search') }}">
-                        <input type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..."
-                            autocomplete="off" />
+                    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{ route('search') }}">
+                        <input class="form-control mr-sm-2" type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." autocomplete="off" />
                         <span class="fa fa-search"></span>
                     </form>
                 </div>
-              </nav>
-
-          </div>
             </nav>
 
         </div>

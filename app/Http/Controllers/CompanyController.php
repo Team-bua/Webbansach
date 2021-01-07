@@ -107,4 +107,10 @@ class CompanyController extends Controller
         $this->repository->destroy($id);
         return redirect()->back();
     }
+
+    public function getCompany()
+    {
+       $company = $this->repository->getCompany();
+       return view('layout_admin.header', compact('company'));
+    }
 }

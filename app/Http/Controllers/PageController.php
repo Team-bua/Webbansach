@@ -126,6 +126,8 @@ public function __construct(PageRepository $repository)
     
     }
 
+    
+    
     public function getDelcart($id){
         return $this->repository->getDelcart($id);
     }

@@ -1870,6 +1870,7 @@ li.com-title span {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.5s;
+    z-index: 20;
 }
 
 .content .body {
@@ -1883,6 +1884,7 @@ li.com-title span {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 220px;
+
 }
 
 .item:hover .content {
