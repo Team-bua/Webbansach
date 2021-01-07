@@ -2,10 +2,6 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
                 <div class="col-md-3">
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
@@ -25,10 +21,6 @@
 
                     @endif
                 @endif
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </div>
         </div>
     </div>
@@ -43,10 +35,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14
             </nav>
         </div>
     </div>
@@ -78,9 +66,23 @@
                             <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
+                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
+                            <div class="sub_menu" style="">
+                                <div class="bubble"></div>
+                                <div class="sub_menu_block" style="width:326px">
+                                    <ul>
+                                        @foreach ($types as $pro)
+                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20%">
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 5%">
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
@@ -105,7 +107,3 @@
         </div>
     </div>
 </header>
-<<<<<<< HEAD
-=======
-
->>>>>>> 09617c2c7663823b9c97129729763d39d3ffff14

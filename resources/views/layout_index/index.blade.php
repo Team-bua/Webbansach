@@ -14,7 +14,7 @@
             </div>
         </div>
     </section>
-    <div class="container ">
+    <div class="container">
         <table >
             <tr>
                     <td ><img style="height:260px;width:365px" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
@@ -60,7 +60,7 @@
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
+                               
                             </div>
                         </div>
 

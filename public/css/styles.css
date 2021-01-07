@@ -107,42 +107,6 @@ h6 span:nth-child(14) {
     -webkit-animation-delay: 0.8s;
 }
 
-h6 span:nth-child(15) {
-    -webkit-animation-delay: 0.3s;
-}
-
-h6 span:nth-child(16) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(17) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(18) {
-    -webkit-animation-delay: 0.6s;
-}
-
-h6 span:nth-child(19) {
-    -webkit-animation-delay: 0.7s;
-}
-
-h6 span:nth-child(20) {
-    -webkit-animation-delay: 0.8s;
-}
-
-h6 span:nth-child(21) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(22) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(23) {
-    -webkit-animation-delay: 0.6s;
-}
-
 
 /* ANIMATION */
 
@@ -288,7 +252,7 @@ header .header-top .row {
 }
 
 header .main-menu {
-    padding: 40px 0;
+    padding: 14px 0;
 }
 
 header .main-menu .navbar {
@@ -1606,7 +1570,9 @@ li.com-title span {
     }
 }
 
+
 /*----------------------------------menu-drop---------------------------------------*/
+
 
 /*----------------------------------sale--------------------------------------------*/
 
