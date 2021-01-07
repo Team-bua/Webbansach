@@ -391,6 +391,7 @@ header .cart .quntity {
     height: 43px;
     line-height: 32px;
     margin-bottom: -9px;
+    z-index: 101;
 }
 
 #menu ul {
