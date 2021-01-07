@@ -72,18 +72,16 @@
                         <h4> Giá khuyến mãi : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
-                            <input value="{{ old('promotion_price') }}"id="promotion_pricebook" name="promotion_price" type="number" class="form-control"
+                            <input id="promotion_pricebook" name="promotion_price" type="number" class="form-control"
                                 placeholder="Khuyến mãi . . . . . . . . .">
-                            <span class="input-group-addon">%</span>
+                            <span class="input-group-addon">VNĐ</span>
                         </div>
-                        @error('promotion_price')
-                            <div style="color: red"> {{ $message }} </div>
-                        @enderror
+
 
                         <h4> Miêu tả </h4>
                         <div class='box-body pad'>
                             <form>
-                                <textarea {{ old('description') }}name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 
+                                <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 
                                 1px solid #dddddd; padding: 10px;"></textarea>
                             </form>
                         </div>
@@ -105,7 +103,11 @@
                         <h4> Số trang :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
+<<<<<<< HEAD
+                                <input {{ old('PageNumber') }}id="Page_Number" class="form-control"name="PageNumber"  id="size" type="text" data-inputmask="'mask': '999'"
+=======
                                 <input id="Page_Number" class="form-control"name="PageNumber"  type="text">
+>>>>>>> 34ce1b833146da42ca12655ed938649cc8f2270e
                                 placeholder="Nhập số trang. . . . . . . . ." />
                             <span class="input-group-addon">Trang</span>
                         </div>

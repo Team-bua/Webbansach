@@ -14,12 +14,13 @@
             </div>
         </div>
     </section>
-    <div class="container ">
-        <table >
+    <div class="container " style="padding: 14px 50px;">
+        <table  >
             <tr>
-                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
-                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide2.png') }}"alt="image" /> </td>
-                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide3.png') }}"alt="image" /> </td>
+                <td ><img style="height:260px;"src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px;" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px" src="{{ asset('images/slide2.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px;" src="{{ asset('images/slide3.png') }}"alt="image" /> </td>
                
             </tr>
         </table>
@@ -46,11 +47,8 @@
                 <div class="row" id="load" style="position: relative;">
                     @foreach ($product_new as $pro)
                         <div class="col-md-3">
-                            <div class="item">
-                                @if ($pro->new == 1)
+                            <div class="item">                               
                                     <div class="new">new</div>
-                                @endif
-
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $pro->name }}</a></h3>
@@ -67,7 +65,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <a href="{{ route('all') }}"><button class="btn gray-btn">Xem Thêm</button></a>
+                    <a href="{{ route('allnew') }}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
 
             </div>
@@ -94,12 +92,11 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                    @foreach ($product_new as $pro)
+                    @foreach ($product_sale as $pro)
                         <div class="col-md-3">
                             <div class="item">
-                                @if ($pro->promotion_price == 0)
-                                    <div class="new">new</div>
-                                @else
+                                @if ($pro->promotion_price != 0)
+                                   
                                     <span class="sale">sale</span>
                                 @endif
 
@@ -117,7 +114,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <a href="{{ route('all') }}"><button class="btn gray-btn">Xem Thêm</button></a>
+                    <a href="{{ route('allsale') }}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
             </div>
 
@@ -140,13 +137,11 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                    @foreach ($product_new as $pro)
+                    @foreach ($product_hightlights as $pro)
                         <div class="col-md-3">
                             <div class="item">
-                                @if ($pro->promotion_price == 0)
-                                    <div class="new">new</div>
-                                @else
-                                    <span class="sale">sale</span>
+                                @if ($pro->new == 1)
+                                    <div class="new">Hot</div> 
                                 @endif
 
                                 <a href="{{ route('detail', $pro->id) }}"><img
@@ -163,7 +158,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <a href="{{ route('all') }}"><button class="btn gray-btn">Xem Thêm</button></a>
+                    <a href="{{  route('allhighlights')  }}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
             </div>
 

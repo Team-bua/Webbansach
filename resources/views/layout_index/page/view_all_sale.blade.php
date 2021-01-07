@@ -14,11 +14,13 @@
 
             </div>
         </div>
+       
+
     </section>
 
     <section class="static about-sec">
         <div class="container">
-            <h2> Tất cả sách </h2>
+            <h2>Sách khuyến mãi </h2>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..."
                     aria-label="Search">
@@ -28,22 +30,16 @@
             <div id="myTable">
                 <div class="recent-book-sec">
                     <div class="row">
-                        @foreach ($product_all as $books)
+                        @foreach ($product_sale as $books)
                             <div class="col-md-3">
                                 <div class="item">
                                     @if ($books->promotion_price != 0)
-                                        <div class="sale">Sale</div>
-                                        <a href="{{ route('detail', $books->id) }}">
-                                            <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
-                                        </a>
-                                        <h3><a href="#">{{ $books->name }}</a></h3>
-                                    @else
-                                        <a href="{{ route('detail', $books->id) }}">
-                                            <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
-                                        </a>
-                                        <h3><a href="#">{{ $books->name }}</a></h3>
-
-                                    @endif
+                                    <span class="sale">sale</span>
+                                @endif
+                                    <a href="{{ route('detail', $books->id) }}">
+                                        <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
+                                    </a>
+                                    <h3><a href="#">{{ $books->name }}</a></h3>
                                     <div class="content">
                                         <div class="body">
                                             <p>{!! $books->description !!}</p>
