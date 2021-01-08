@@ -57,6 +57,7 @@
 	</div>
 </section>
 @endsection
+
 @section('script')
 <script>
 	$(document).on('click', '.btn-sm', DelCart);

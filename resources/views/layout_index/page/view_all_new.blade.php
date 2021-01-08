@@ -38,14 +38,27 @@
                                         <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
                                     </a>
                                     <h3><a href="#">{{ $books->name }}</a></h3>
+                                    <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                                     <div class="content">
                                         <div class="body">
                                             <p>{!! $books->description !!}</p>
                                         </div>
                                     </div>
                                 </div>
+                                @if($books->promotion_price == 0)
+                                    <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-old">{{number_format($books->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif
                             </div>
-                        @endforeach
                     </div>
                 </div>
             </div>

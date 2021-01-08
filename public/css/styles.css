@@ -107,42 +107,6 @@ h6 span:nth-child(14) {
     -webkit-animation-delay: 0.8s;
 }
 
-h6 span:nth-child(15) {
-    -webkit-animation-delay: 0.3s;
-}
-
-h6 span:nth-child(16) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(17) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(18) {
-    -webkit-animation-delay: 0.6s;
-}
-
-h6 span:nth-child(19) {
-    -webkit-animation-delay: 0.7s;
-}
-
-h6 span:nth-child(20) {
-    -webkit-animation-delay: 0.8s;
-}
-
-h6 span:nth-child(21) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(22) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(23) {
-    -webkit-animation-delay: 0.6s;
-}
-
 
 /* ANIMATION */
 
@@ -391,6 +355,7 @@ header .cart .quntity {
     height: 43px;
     line-height: 32px;
     margin-bottom: -9px;
+    z-index: 101;
 }
 
 #menu ul {
@@ -1906,6 +1871,7 @@ li.com-title span {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.5s;
+    z-index: 20;
 }
 
 .content .body {
@@ -1919,6 +1885,7 @@ li.com-title span {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 220px;
+
 }
 
 .item:hover .content {

@@ -67,29 +67,39 @@
                             <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
+                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
+                            <div class="sub_menu" style="">
+                                <div class="bubble"></div>
+                                <div class="sub_menu_block" style="width:326px">
+                                    <ul>
+                                        @foreach ($types as $pro)
+                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
                     </ul>
 
                 </div>
-                    <div style="margin-top:3px" class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="cart my-2 my-lg-0">
-                            <a href="{{ route('cart') }}">
-                                <span><i class="fa fa-shopping-cart"
-                                        aria-hidden="true"></i></span></a>
-                            <span class="quntity">
-                                @if (Session::has('cart'))
-                                {{ Session('cart')->totalQty }}@else 0
-                                @endif
-                            </span>
-                        </div>
-                        <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform"
-                            action="{{ route('search') }}">
-                            <input style="margin-right:10px" type="text" value="" name="key" id="s"
-                                placeholder="Nhập từ khóa..." autocomplete="off" />
-                            <span class="fa fa-search"></span>
-                        </form>
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 5%">
+                    <div class="cart my-2 my-lg-0">
+                        <a href="{{ route('cart') }}">
+                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                        <span class="quntity">
+                            @if (Session::has('cart'))
+                            {{ Session('cart')->totalQty }}@else 0
+                            @endif
+                        </span>
                     </div>
+                    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{ route('search') }}">
+                        <input class="form-control mr-sm-2" type="text" value="" name="key" id="s" placeholder="Nhập từ khóa..." autocomplete="off" />
+                        <span class="fa fa-search"></span>
+                    </form>
+                </div>
             </nav>
         </div>
     </div>
 </header>
-

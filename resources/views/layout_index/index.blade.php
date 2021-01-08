@@ -14,8 +14,8 @@
             </div>
         </div>
     </section>
-    <div class="container " style="padding: 14px 50px;">
-        <table  >
+    <div class="container">
+        <table >
             <tr>
                 <td ><img style="height:260px;"src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
                     <td ><img style="height:260px;" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
@@ -52,13 +52,25 @@
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $pro->name }}</a></h3>
-
+                                 <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                                 <div class="content">
                                     <div class="body">
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
+                               @if($pro->promotion_price == 0)
+                                      <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-old">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif   
                             </div>
                         </div>
 
@@ -102,13 +114,27 @@
 
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-
+                                         <h3><a href="#">{{ $pro->name }}</a></h3>
+                              @if($pro->promotion_price == 0)
+                                      <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-old">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif   
                                 <div class="content">
                                     <div class="body">
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h3><a href="#">{{ $pro->name }}</a></h3>
+                                  <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
+                                
                             </div>
                         </div>
                     @endforeach
@@ -120,6 +146,9 @@
 
         </div>
 
+    </section>
+    
+    <section class="static about-sec">
         <div class="container">
             <h6><span>S</span>
                 <span>á</span>
@@ -146,13 +175,26 @@
 
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-
+                                         <h3><a href="#">{{ $pro->name }}</a></h3>
+                                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                                 <div class="content">
                                     <div class="body">
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h3><a href="#">{{ $pro->name }}</a></h3>
+                               @if($pro->promotion_price == 0)
+                                      <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-old">
+                                        {{number_format($pro->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif   
                             </div>
                         </div>
                     @endforeach
@@ -164,6 +206,7 @@
 
         </div>
     </section>
+    
     <section class="features-sec">
         <div class="container">
             <ul>

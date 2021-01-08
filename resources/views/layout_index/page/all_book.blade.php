@@ -1,5 +1,31 @@
 @extends('layout_index.master')
 @section('content')
+<<<<<<< HEAD
+  <section class="deltai">
+    <div class="container">
+        <div class="sidebar-widget tag">
+            
+                            <h2 class="title">Yêu Cầu Lựa Chọn</h2>
+                            <a href="#">sản phẩm mới</a>
+                            <a href="#">A đến Z</a>
+                            <a href="#">Giá Thấp Đến Cao</a>
+                            <a href="#">Giá Cao Đến Thấp</a>
+                            <a href="#">Giảm Giá Cao Đến Thấp</a>
+                            <a href="#">Giảm Giá Thấp Đến Cao</a>
+                           
+                        </div>
+    </div>
+    <div class="container">
+<div class="sidebar-widget brands">
+            <h2 class="title">Nhóm Sản Phẩm</h2>
+            @foreach ($product_type as $pro)
+            <ul>
+                <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }} </a><span>(45)</span></li>
+            </ul>
+            @endforeach
+        </div>
+</div>
+=======
     <section class="deltai">
         <div class="container">
             <div class="sidebar-widget tag">
@@ -11,6 +37,7 @@
                 <a href="#">Giá Cao Đến Thấp</a>
                 <a href="#">Giảm Giá Cao Đến Thấp</a>
                 <a href="#">Giảm Giá Thấp Đến Cao</a>
+>>>>>>> 33064ddfef5d2154ce64ea50b070dd377ccec874
 
             </div>
         </div>
@@ -26,6 +53,38 @@
             </form>
             <hr>
             <div id="myTable">
+<<<<<<< HEAD
+            <div class="recent-book-sec" >
+                <div class="row">
+                    @foreach ($product_all as $books)
+                    <div class="col-md-3">
+                        <div class="item">
+                       
+                        <a href="{{route('detail',$books->id)}}">
+                            <img src="{{ asset('images/product/' . $books->image) }}" alt="image"/>
+                        </a>
+                            <h3><a href="#">{{ $books->name }}</a></h3>
+                             <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
+                            <div class="content">
+                <div class="body">
+                    <p>{!! $books->description !!}</p>
+                </div>
+                </div>
+                    @if($books->promotion_price == 0)
+                                      <p class="wrap_price">
+                                     <span class="price-new">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                     </span> 
+                                      @else
+                                      <span class="price-old">
+                                        {{number_format($books->unit_price,0,"",",")}}VNĐ
+                                      </span> 
+                                     <span class="price-new">{{number_format($books->promotion_price,0,"",",")}}VNĐ
+                                     </span>
+                                      </p>
+                               @endif   
+                        </div>
+=======
                 <div class="recent-book-sec">
                     <div class="row">
                         @foreach ($product_all as $books)
@@ -52,6 +111,7 @@
                                 </div>
                             </div>
                         @endforeach
+>>>>>>> 33064ddfef5d2154ce64ea50b070dd377ccec874
                     </div>
                 </div>
             </div>

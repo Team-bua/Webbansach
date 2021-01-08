@@ -59,5 +59,6 @@ class Cart
 		$this->totalQty += $this->items[$id]['qty'];
 		$this->totalPrice += $this->items[$id]['price'];
 	}
+	
 
 }
