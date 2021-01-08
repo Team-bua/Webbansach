@@ -40,7 +40,7 @@
                     <h4> Số điện thoại </h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                        <input style="padding-left: 20px" name="unit_price" type="number" value="{{$user->phone}}" class="form-control" disabled>
+                        <input style="padding-left: 20px" name="unit_price" type="text" value="{{$user->phone}}" id="phone" data-inputmask="'mask': '9999999999'" class="form-control" disabled>
 
                     </div>
 
@@ -81,3 +81,12 @@
     </section><!-- /.content -->
 </div>
 @endsection
+@section('js')
+    
+    <script type="text/javascript">
+      $(":input").inputmask();
+
+
+    </script>
+
+@stop
