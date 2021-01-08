@@ -54,7 +54,7 @@
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
-                            <div class="sub_menu" style="">
+                            <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
