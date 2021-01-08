@@ -2,12 +2,13 @@
 
 namespace App\Repositories;
 
-use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
 use App\Services\GetSession;
+
 
 class ProductRepository
 {
@@ -26,7 +27,7 @@ class ProductRepository
             $company_id = Auth::user()->id_company;
         }
         
-        return Product::where('id_company', $company_id)->orderBy('created_at','desc')->paginate(8);
+        return Product::where('id_company', $company_id)->orderBy('created_at','desc')->get();
     }
 
     public function getTypeAll()
@@ -46,8 +47,9 @@ class ProductRepository
      * @param  \App\Models\Product $product
      * @return void
      */
-    public function create(Request $request)
+    public function create($request)
     {
+      
         //kiểm tra file tồn tại
        $image="";
        if($request->hasfile('img'))

@@ -46,80 +46,124 @@
                                 </a>
                             </div>
                         </div><!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
-                                <tbody>
-                                    <tr style="font-size:18px;">
 
-                                        <th>Tên sách</th>
-                                        <th>Loại sách</th>
-                                        <th>Tác giả</th>
-                                        <th width="10%">Giá </th>
-                                        <th>Giá Khuyến Mãi</th>
-                                        <th>Hình ảnh</th>
-                                        <th colspan="3">
-                                            <center>Chức năng</center>
-                                        </th>
+                    </div><!-- /.box -->
 
-                                    </tr>
-                                    @foreach ($products as $pro)
-                                        <tr>
-                                            <td>
-                                                <p
-                                                    style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
-                                                    {{ $pro->name }}</p>
-                                            </td>
-                                            <td>{{ $pro->productType->name }}</td>
-                                            <td>{{ $pro->publisher }}</td>
-                                            <td>{{ $pro->unit_price }} VNĐ</span></td>
-                                            <td>@if($pro->promotion_price == 0) 0 VNĐ @else {{ $pro->promotion_price }} VNĐ @endif</td>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Tên sách</th>
+                                <th>Loại sách</th>
+                                <th>Tác giả</th>
+                                <th width="10%">Giá </th>
+                                <th>Giá Khuyến Mãi</th>
+                                <th>Hình ảnh</th>
+                                <th>Trạng thái</th>
+                                <th style="width: 100px" >Tùy chọn</th>
+                               
 
-                                            <td><img style="width:100px;height:100px;"
-                                                    src="{{ asset('images/product/' . $pro->image) }}"></td>
-                                            <td>
-                                                @if ($pro->status == 1)
-                                                    <a href="{{ route('product_off', [$pro['id']]) }}">
-                                                        <button
-                                                            onclick="return confirm('Bạn có muốn ngừng kinh doanh không')"
-                                                            style="background-color:rgb(189, 189, 189);border:none;"
-                                                            class="btn btn-warning btn pull-right">
-                                                            <i class="fa fa-pause"></i> </button>
-                                                    </a>
-                                                @else
-                                                    <a href="{{ route('product_on', [$pro['id']]) }}">
-                                                        <button style="background-color:rgb(69, 204, 69);border:none;"
-                                                            class="btn btn-warning btn pull-right">
-                                                            <i class="fa fa-play"></i> </button>
-                                                    </a>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('book.edit', [$pro['id']]) }}">
-                                                    <button class="btn btn-warning btn pull-right"><i class="fa fa-edit">
-                                                            Sửa </i> </button>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <form method="post" action="{{ route('book.destroy', [$pro['id']]) }}"
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($products as $pro)
+                                <tr>
+                                    <td>
+                                        <p
+                                            style=" width:150px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+                                            {{ $pro->name }}
+                                        </p>
+                                    </td>
+                                    <td>{{ $pro->productType->name }}</td>
+                                    <td>{{ $pro->publisher }}</td>
+                                    <td>{{ $pro->unit_price }} VNĐ</span></td>
+                                    <td>
+                                        @if ($pro->promotion_price == 0) 0 VNĐ
+                                        @else {{ $pro->promotion_price }} VNĐ @endif
+                                    </td>
+
+                                    <td><img style="width:100px;height:100px;"
+                                            src="{{ asset('images/product/' . $pro->image) }}"></td>
+                                    <td>
+
+                                        @if ($pro->status == 1)
+                                            <a href="{{ route('product_off', [$pro['id']]) }}">
+                                                <button type="button"
+                                                    onclick="return confirm('Bạn có muốn ngừng kinh doanh không')"
+                                                    style="background-color:rgb(189, 189, 189);border:none;"
+                                                    class="btn btn-warning btn ">
+                                                    <i class="fa fa-pause"></i> </button>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('product_on', [$pro['id']]) }}">
+                                                <button type="button" style="background-color:rgb(69, 204, 69);border:none;"
+                                                    class="btn btn-warning btn ">
+                                                    <i class="fa fa-play"></i> </button>
+                                            </a>
+                                        @endif
+
+                                    </td>
+                                    <td>
+                                                <form style="margin-right:5px;float: left;" method="post" action="{{ route('book.destroy', [$pro['id']]) }}"
                                                     enctype="multipart/form-data" name="form1" id="form1">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger btn pull-left"
+                                                    <button class="btn btn-danger btn btn-flat"
                                                         onclick="return confirm('Bạn có muốn xóa không')"> <i
-                                                            class="fa fa-trash-o"> Xóa </i> </button>
+                                                            class="fa fa-trash-o">  </i> </button>
                                                 </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
+                                            
+                                                <!-- -->
+                                            <a href="{{ route('book.edit', [$pro['id']]) }}">
+                                                <button type="button" class="btn btn-warning btn btn-flat"><i
+                                                        class="fa fa-edit">
+                                                    </i> </button>
+                                            </a>
 
-                            </table>
-                        </div><!-- /.box-body -->
-                        <div class="pull-right">{{ $products->links('vendor.pagination.bootstrap-4') }}</div>
-                    </div><!-- /.box -->
+                                    </td>
+                                </tr>
                 </div>
             </div>
-        </section><!-- /.content -->
+
+            @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+
+                </tr>
+            </tfoot>
+            </table>
+    </div><!-- /.box-body -->
+    </div><!-- /.box -->
+
+
+    </section><!-- /.content -->
     </div>
 
 @endsection
+
+@section('js')
+
+
+    <!-- SlimScroll -->
+    <script type="text/javascript">
+        $('#example1').dataTable({
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": false,
+            "bAutoWidth": true
+        });
+
+    </script>
+
+
+@stop

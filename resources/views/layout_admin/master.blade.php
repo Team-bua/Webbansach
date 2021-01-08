@@ -10,7 +10,7 @@
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- CSS only -->
-
+    <link rel="stylesheet" type="text/css" href="DataTables-1.10.23/css/dataTables.bootstrap.min.css"/>
     <!-- JavaScript Bundle with Popper -->
 
     <!-- FontAwesome 4.3.0 -->
@@ -23,8 +23,10 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
 
         
+        
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" type="text/css" href="DataTables-1.10.23/css/dataTables.bootstrap.min.css"/>
+         
+    
     <link href="bootstrap/css/wordart.css" rel="stylesheet" type="text/css" />
     <!-- Wordart -->
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
@@ -91,7 +93,7 @@
 
     <script type="text/javascript" src="DataTables-1.10.23/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="DataTables-1.10.23/js/dataTables.bootstrap.min.js"></script>
-    
+
     <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
     <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
     <!-- jQuery Knob Chart -->

@@ -27,8 +27,8 @@
                         <h4> Tên sách : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pencil fa-lg"></i></span>
-                            <input id="namebook"  name="name" type="text" class="form-control"
-                                value="{{ old('name') }}" placeholder="Tên sách . . . . . . . . .">
+                            <input id="namebook" name="name" type="text" class="form-control" value="{{ old('name') }}"
+                                placeholder="Tên sách . . . . . . . . .">
                         </div>
                         @error('name')
                             <div style="color: red"> {{ $message }} </div>
@@ -38,7 +38,7 @@
                         <h4> Loại sách </h4>
                         <div class="input-group input-group">
                             <div class="input-group-btn">
-                                <select style=" font-weight:bold;"  name="cate" class="form-control">
+                                <select style=" font-weight:bold;" name="cate" class="form-control">
                                     <option style=" font-weight:bold;" value="-1"> --Chọn thể loại sách-- </option>
                                     @foreach ($product as $pro)
                                         <option value="{{ $pro->id }}">{{ $pro->name }}</option>
@@ -50,8 +50,8 @@
                         <h4> Tác giả : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-smile-o fa-lg"></i></span>
-                            <input value="{{ old('publisher') }}" id="publisherbook" name="publisher" type="text" class="form-control"
-                                placeholder="Tác giả. . . . . . . . .">
+                            <input value="{{ old('publisher') }}" id="publisherbook" name="publisher" type="text"
+                                class="form-control" placeholder="Tác giả. . . . . . . . .">
                         </div>
                         @error('publisher')
                             <div style="color: red"> {{ $message }} </div>
@@ -82,9 +82,12 @@
                         <div class='box-body pad'>
                             <form>
                                 <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 
-                                1px solid #dddddd; padding: 10px;"></textarea>
+                                    1px solid #dddddd; padding: 10px;"></textarea>
                             </form>
                         </div>
+                        @error('description')
+                            <div style="color: red"> {{ $message }} </div>
+                        @enderror
 
                         <h4> Định dạng: </h4>
                         <div class="input-group">
@@ -103,19 +106,15 @@
                         <h4> Số trang :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
-<<<<<<< HEAD
-                                <input {{ old('PageNumber') }}id="Page_Number" class="form-control"name="PageNumber"  id="size" type="text" data-inputmask="'mask': '999'"
-=======
-                                <input id="Page_Number" class="form-control"name="PageNumber"  type="text">
->>>>>>> 34ce1b833146da42ca12655ed938649cc8f2270e
+                            <input id="Page_Number" class="form-control" name="PageNumber" type="text"
                                 placeholder="Nhập số trang. . . . . . . . ." />
                             <span class="input-group-addon">Trang</span>
                         </div>
                         <h4> Kích thước :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-arrows-alt fa-lg"></i></span>
-                                <input class="form-control"name="size"  id="size" type="text" data-inputmask="'mask': '99 x 99'"
-                                placeholder="Nhập skích thước. . . . . . . . ." />
+                            <input class="form-control" name="size" id="size" type="text" data-inputmask="'mask': '99 x 99'"
+                                placeholder="Nhập kích thước. . . . . . . . ." />
                             <span class="input-group-addon">Cm</span>
                         </div>
 
@@ -129,6 +128,9 @@
                             <input id="imgbook" type="file" name="img" onchange="changeImg(this)">
                             <img id="avatar" class="img-rounded" width="200px" height="300px">
                         </div>
+                        @error('img')
+                        <div style="color: red"> {{ $message }} </div>
+                    @enderror
 
 
 
@@ -138,10 +140,13 @@
                             <div id="myImg">
                             </div>
                         </div>
+                        @error('img_detail[]')
+                        <div style="color: red"> {{ $message }} </div>
+                    @enderror
                         <br>
                         <div class="text-center">
 
-                            <input   style="border:none; background-color:#4a4235;"type="submit" name="submit" value="Thêm"
+                            <input style="border:none; background-color:#4a4235;" type="submit" name="submit" value="Thêm"
                                 class="btn  btn-warning btnthem btn-lg">
 
                         </div>
@@ -166,9 +171,11 @@
             //bootstrap WYSIHTML5 - text editor
             $(".textarea").wysihtml5();
         });
+
     </script>
     <script type="text/javascript">
         $('#avatar').hide();
+
         function changeImg(input) {
             //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
             if (input.files && input.files[0]) {
@@ -187,6 +194,7 @@
                 $('#imgbook').click();
             });
         });
+
     </script>
 
     <script type="text/javascript">
@@ -199,10 +207,12 @@
                 }
             }
         });
+
         function imageIsLoaded(e) {
             var output = '&nbsp; <img  width="200px" height="300px" src=' + e.target.result + '>';
             $("#myImg ").append(output);
         };
+
     </script>
     <script>
         $(".btnthem ").on("change", function() {
@@ -212,6 +222,7 @@
                 $("#imageUploadForm").submit();
             }
         });
+
     </script>
 
     <script>
@@ -222,14 +233,14 @@
                 $("#imageUploadForm").submit();
             }
         });
+
     </script>
 
-<script type="text/javascript">
-    $("#size").inputmask();
-    $("#Page_Number").inputmask();
+    <script type="text/javascript">
+        $("#size").inputmask();
+        $("#Page_Number").inputmask();
+
+    </script>
 
 
-  </script>
-
-    
 @stop
