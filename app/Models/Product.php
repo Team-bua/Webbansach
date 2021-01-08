@@ -53,5 +53,9 @@ class Product extends Model
         return $this->belongsToMany(User::class, 'rating','id_product', 'id_user');
     }
 
+    public function productCompany()
+    {
+        return $this->belongsTo(Company::class,'id_company', 'id');
+    }
 
 }

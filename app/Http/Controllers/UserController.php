@@ -134,8 +134,8 @@ class UserController extends Controller
     public function changeRole(Request $request,$id)
     {
         $user = $this->repository->getuser($id);
-        $user->full_name = $request->input('fullname');
+        $user->id_role = $request->input('cate');
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('thongbao','Cập nhật thành công');
     }
 }

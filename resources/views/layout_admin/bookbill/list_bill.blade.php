@@ -40,7 +40,7 @@
                                     <th>Ngày đặt</th>
                                     <th>Email</th>
                                     <th>Tổng sản phấm</th>
-                                    <th width="10%">Tổng tiền</th>
+                                    <th width="10%">Tổng tiền (VNĐ)</th>
                                     <th>Thanh toán</th>
                                     <th>Tình trạng</th>
                                     <th>Tùy chọn</th>
@@ -74,7 +74,7 @@
                                     <td>{{$bills->date_order}}</td>
                                     <td>{{$bills->email}}</td>
                                     <td style="text-align:center">{{$bills->quantity}}</td>
-                                    <td>{{number_format($bills->total,0,"",",")}} VNĐ</td>
+                                    <td>{{number_format($bills->total,0,"",",")}}</td>
                                     <td>{{$bills->payment}}</td>
                                     <td>
                                         <div class="btn-group">

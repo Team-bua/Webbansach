@@ -126,6 +126,7 @@ class ProductRepository
         $product->id_type=$request->input('cate');
         $product->publisher=$request->input('publisher');
         $product->id_user=Auth::user()->id;
+        $product->id_company=Auth::user()->id_company;
         $product->unit_price=$request->input('unit_price');
         $product->promotion_price=$request->input('promotion_price');
         $product->description=$request->input('description');

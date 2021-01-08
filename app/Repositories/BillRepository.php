@@ -15,7 +15,7 @@ class BillRepository
      */
     public function getAll()
     {   
-        return Bill::orderBy('created_at', 'desc')->paginate(10);
+        return Bill::all();
     }
 
     public function getAllNotReceiving()
