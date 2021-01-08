@@ -122,15 +122,9 @@
                     <div>
                         <div class="rating-card">
                             <div>
-                                <h1>Rating Card</h1>
+                                <h1>Đánh Giá</h1>
                             </div>
                             <div class="rating">
-                                <h2>4.0</h2>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star-o"></i>
                                 <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
                             </div>
                             <div class="rating-process">
