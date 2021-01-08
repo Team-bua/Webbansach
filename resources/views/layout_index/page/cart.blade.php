@@ -67,7 +67,7 @@
 		let urlRequest = $(this).data('url');
 		let that = $(this);
 		Swal.fire({
-			title: 'Delete',
+			title: 'Xóa sản phẩm',
 			text: "Bạn có muốn xóa không!",
 			icon: 'warning',
 			showCancelButton: true,
@@ -86,7 +86,7 @@
 							$('.quntity').html(''+data['cart']['totalQty']);
 							that.parent().parent().remove();
 							Swal.fire(
-								'Deleted!',
+								'Xóa!',
 								'Xóa thành công.',
 								'success'
 							)

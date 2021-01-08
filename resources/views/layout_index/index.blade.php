@@ -229,21 +229,3 @@
 
     <a href="#" class="bck"></a>
 @endsection
-@section('script')
-<script>
-        function AddCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET',
-            }).done(function(response) {             
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Đã thêm vào giỏ hàng',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            })
-        }
-
-    </script>
-@stop

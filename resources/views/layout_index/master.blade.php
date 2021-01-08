@@ -89,7 +89,25 @@ jQuery(window).load(function() {
     }); 
 
 });
+
 </script>
+<script>
+        function AddCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET',
+            }).done(function(response) {  
+                $('.quntity').html(response['cart']['totalQty']);           
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm vào giỏ hàng',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+
+    </script>
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
