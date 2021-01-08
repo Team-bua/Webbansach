@@ -185,6 +185,7 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
+
     }
 
     public function getInfo($id){
@@ -199,6 +200,19 @@ class PageRepository
         $customer->address = $request->input('address');
         $customer->save();
     }
+
+    public function updatePassword(Request $request, $id)
+    {   
+        if (Hash::Check($request->password,Auth::user()->password)){
+        $pa=User::find($id);
+        $pa->password=$request->input('password');
+        $request->user()->fill([
+            'password' => Hash::make($request->new_password)
+        ])->save();
+        return redirect()->back()->with('success','Thay đổi thành công ');
+    }
+            return redirect()->back()->with('danger','Mật khẩu cũ không đúng ');
+    }   
 
     public function destroy($id)
     {

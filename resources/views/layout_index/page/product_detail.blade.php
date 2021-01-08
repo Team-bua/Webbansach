@@ -171,7 +171,7 @@
             <div id="tab-review" class="tab-content">
                 @if(Auth::check())
                 <div class="rating-card">
-                    <form action="{{route('comment',$product_detail->id)}}" method="post">
+                    <form acxtion="{{route('comment',$product_detail->id)}}" method="post">
               @csrf()
                         <div class="card border-primary rounded-0">
                             <div class="card-body p-3">
