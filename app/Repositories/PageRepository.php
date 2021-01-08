@@ -115,6 +115,11 @@ class PageRepository
         $cart = new Cart($oldcart);
         $cart->add($product, $id);
         $request->session()->put('cart', $cart);
+        return response()->json([
+            'code' => 200,
+            'message' => 'success',
+            'cart' => $cart,
+        ], 200);
     }
 
     public function postCart(Request $request)
@@ -180,6 +185,19 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
+    }
+
+    public function getInfo($id){
+        return User::find($id);
+    }
+
+    public function changeInfo(Request $request, $id){
+        $customer = User::find($id);
+        $customer->full_name = $request->input('fullname');
+        $customer->email = $request->input('email');
+        $customer->phone = $request->input('phone');
+        $customer->address = $request->input('address');
+        $customer->save();
     }
 
     public function destroy($id)

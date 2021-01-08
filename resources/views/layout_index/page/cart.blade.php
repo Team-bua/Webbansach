@@ -13,7 +13,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<form method="post" action="">
+				<form>
 					<input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}" />
 					@if(Session::has('cart'))
 					@foreach($product_cart as $pro)
@@ -82,6 +82,7 @@
 					success: function(data) {
 						if (data.code == 200) {
 							$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+							$('.quntity').html(''+data['cart']['totalQty']);
 							that.parent().parent().remove();
 							Swal.fire(
 								'Deleted!',
@@ -106,9 +107,9 @@
 		}), function(data) {
 			data = JSON.parse(data);
 			console.log(data);
-			document.getElementById('total-' + data['id']).innerHTML = Number(data['cart']['item'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
-			document.getElementById('totalPrice').innerHTML = Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
-			document.getElementById('total_qty_header').innerHTML = data['cart']['totalQty'];
+			document.getElementById('total-' + data['id']).innerHTML = Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
+			document.getElementById('totalPrice').innerHTML ='Tổng tiền :'+ Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
+			document.getElementById('quntity').innerHTML = data['cart']['totalQty'];
 		});
 	}
 

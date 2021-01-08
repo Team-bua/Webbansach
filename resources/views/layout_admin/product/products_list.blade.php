@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                             </form>
-
+                            @can('user')
                             <div class="col-md-4 pull-right">
                                 <a href="{{ route('book.create') }}">
                                     <button class="btn btn btn-warning"
@@ -45,6 +45,7 @@
                                         <i class="fa fa-plus"> Thêm sách mới </i></button>
                                 </a>
                             </div>
+                            @endcan
                         </div><!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
