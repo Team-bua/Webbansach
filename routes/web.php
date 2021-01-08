@@ -66,6 +66,7 @@ Route::get('product_type/{type}',[PageController::class,'getMenuType'])->name('p
 //----->thông tin khách hàng
 Route::get('/info/{id}',[PageController::class,'getInfo'])->name('info');
 Route::post('/changeinfo/{id}',[PageController::class,'changeinfo'])->name('changeinfo');
+Route::post('/updatePassword/{id}',[PageController::class,'updatePassword'])->name('updatePassword');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán

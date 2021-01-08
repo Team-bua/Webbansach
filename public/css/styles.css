@@ -548,86 +548,6 @@ header .cart .quntity {
 }
 
 
-/*--------------------------------rating------------------------------------*/
-
-.rating-card {
-    padding: 10px;
-    background-color: #F5F5F5;
-    width: 60%;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 30px;
-    box-shadow: 2px 2px 18px -2px #337AB7;
-}
-
-.fa-star,
-.fa-star-o {
-    color: orange;
-}
-
-.rating-card h1 {
-    color: #337AB7;
-    margin-bottom: 30px;
-}
-
-.rating {
-    width: 50%;
-    float: left;
-}
-
-.rating p {
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-.rating h2 {
-    margin: 0px;
-    font-size: 60px;
-    font-weight: normal;
-}
-
-.rating-process {
-    width: 50%;
-    text-align: left;
-    float: left;
-}
-
-.rating-right-part {
-    margin-bottom: 3px;
-}
-
-.rating-right-part p {
-    margin: 0px;
-}
-
-.progress,
-.progress-2,
-.progress-3,
-.progress-4,
-.progress-5 {
-    background: #c2c2c2;
-    border-radius: 13px;
-    height: 18px;
-    width: 50%;
-    padding: 3px;
-    margin: -20px 0px 0px 50px;
-    display: block;
-    white-space: nowrap;
-    min-width: 10px;
-}
-
-#menu>ul>li ul>li>a:hover,
-#menu>ul>li ul>li:hover {
-    color: #895c00;
-    background: none;
-}
-
-#menu>ul>li>div>ul>li>a {
-    color: #4d4c4b;
-}
-
-
 /*-------------------------------------------------------------------------*/
 
 
@@ -1330,7 +1250,7 @@ ul {
 }
 
 
-/*-------------------------------form-comment*/
+/*-------------------------------form-comment------------------------------------------------*/
 
 #comment-list ul {
     border-bottom: 1px dotted #cdcdcd;
@@ -1361,20 +1281,61 @@ li.com-title span {
 }
 
 
-/*-------------------------------last-product---------------------------------------*/
+/*-------------------------------info-user---------------------------------------*/
 
-#last-product-wrapper {
-    width: 550px;
-    height: 450px;
+.info {
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#info-wrapper {
+    width: 800px;
+    height: 500px;
     position: relative;
-    float: right;
+    float: left;
     border-radius: 10px;
     overflow: hidden;
     visibility: visible;
     display: block;
     margin-bottom: 8px;
+    position: relative;
 }
 
+#info-wrapper.htabs a {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-decoration: blink;
+}
+
+.htabs {
+    height: 30px;
+    line-height: 16px;
+    border-bottom: 1px solid #96C7DA;
+
+}
+
+.htabs a {
+    border-top: 1px solid #ADD4E2;
+    border-left: 1px solid #ADD4E2;
+    border-right: 1px solid #ADD4E2;
+    padding: 7px 15px 6px 15px;
+    float: left;
+    color: #205E75;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400;
+    text-align: center;
+    margin-right: 2px;
+    display: none;
+    text-decoration: blink;
+}
+
+.htabs a.selected {
+    padding-bottom: 7px;
+    text-decoration: blink;
+}
 
 /*------------------------------recent-book-sec-----------------------------------------------*/
 
@@ -1482,9 +1443,31 @@ li.com-title span {
 }
 
 
-/*-----------------------------------------------------------------------------*/
+/*----------------------------------showpassword-------------------------------------------*/
 
+.pass_show{position: relative} 
 
+.pass_show .ptxt { 
+
+position: absolute; 
+
+top: 50%; 
+
+right: -30px; 
+
+z-index: 1; 
+
+color: #f36c01; 
+
+margin-top: -10px; 
+
+cursor: pointer; 
+
+transition: .3s ease all; 
+
+} 
+
+.pass_show .ptxt:hover{color: #333333;}
 /*-----------------------------------------------------------------------*/
 
 
@@ -1573,7 +1556,44 @@ li.com-title span {
 
 
 /*----------------------------------menu-drop---------------------------------------*/
+.dropbtn {
+  background-color: #f5a200;
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+border: 1px solid #b87a00;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 101;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #F4A300;}
 
 /*----------------------------------sale--------------------------------------------*/
 

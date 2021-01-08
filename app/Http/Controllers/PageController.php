@@ -209,4 +209,10 @@ class PageController extends Controller
         return redirect()->back()->with('Cập nhật thông tin thành công');
     }
 
+    public function updatePassword(Request $request, $id)
+    {
+        $this->repository->updatePassword($request, $id);
+        return redirect()->back();
+    }
+
 }

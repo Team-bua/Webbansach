@@ -6,22 +6,8 @@
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
                 <div class="col-md-4 ">
-                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i>Số điện thoại: 0779 750 123
-                        / 0945 555 666</span>
+                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i> Số điện thoại: 0779 750 123 || 0945 555 666</span>
                 </div>
-
-                @if (Auth::check())
-                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
-                        <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a
-                                href="{{ url('logout') }}">Đăng Xuất</a><br></div>
-
-                    @else
-                    <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>//<a
-                                href="{{ url('logout') }}">Đăng Xuất</a><br></div>
-                    @endif
-                @endif
             </div>
         </div>
     </div>
@@ -99,6 +85,25 @@
                         <span class="fa fa-search"></span>
                     </form>
                 </div>
+                @if (Auth::check())
+                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                     <div class="dropdown">
+                        <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle" ></i></button>
+                    <div class="dropdown-content">
+                        <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>
+                        <a href="{{ url('logout') }}">Đăng Xuất</a>
+                    </div>
+                    </div>
+                    @else
+                    <div class="dropdown">
+                        <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle" ></i></button>
+                    <div class="dropdown-content">
+                        <a href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>
+                        <a href="{{ url('logout') }}">Đăng Xuất</a>
+                    </div>
+                    </div>
+                    @endif
+                @endif
             </nav>
         </div>
     </div>
