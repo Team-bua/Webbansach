@@ -17,8 +17,7 @@ class UserRepository
      */
     public function getAll()
     {   
-        return User::where('id_role', '!=', '1')
-        ->orderBy('created_at', 'desc')->paginate(10);
+        //
     }
 
     public function getRole()

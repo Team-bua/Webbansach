@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
 {
@@ -138,8 +139,7 @@ class PageController extends Controller
 
     public function getAddCart(Request $request, $id)
     {
-        $this->repository->getAddCart($request, $id);
-        return redirect()->back();
+        return $this->repository->getAddCart($request, $id);
     }
 
     public function updateCart(Request $request)
@@ -196,4 +196,17 @@ class PageController extends Controller
         $product = $this->repository->getAllproductbook();
         return view('layout_admin.index_admin', compact('product', 'user'));
     }
+
+    public function getInfo($id)
+    {
+        $customer = $this->repository->getInfo($id);
+        return view('layout_index.customer.info',compact('customer'));
+    }
+
+    public function changeInfo(Request $request, $id)
+    {
+        $this->repository->changeInfo($request, $id);
+        return redirect()->back()->with('Cập nhật thông tin thành công');
+    }
+
 }

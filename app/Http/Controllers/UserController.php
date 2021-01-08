@@ -8,6 +8,7 @@ use App\Repositories\UserRepository;
 use App\Http\Requests\UserRequest;
 use App\Models\Company;
 use App\Models\User;
+use App\Services\GetSession;
 
 class UserController extends Controller
 { /**
@@ -35,7 +36,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = $this->repository->getAll();
+        $company_id =  GetSession::getCompanyId();
+        $user = User::where('id_role', '!=', '1')->where('id_company', '=', $company_id)
+        ->orderBy('created_at', 'desc')->paginate(10);
         return view('layout_admin.user.list_users', compact('user'));
     }
 
@@ -117,6 +120,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
     }
 }

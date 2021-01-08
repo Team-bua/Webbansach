@@ -238,8 +238,8 @@
         function AddCart(id) {
             $.ajax({
                 url: 'addcart/' + id,
-                type: 'GET'
-            }).done(function(response) {
+                type: 'GET',
+            }).done(function(response) {             
                 Swal.fire({
                     icon: 'success',
                     title: 'Đã thêm vào giỏ hàng',

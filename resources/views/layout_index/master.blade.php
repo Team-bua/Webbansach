@@ -48,6 +48,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -105,6 +108,7 @@ jQuery(window).load(function() {
         <div class="snowflake">❆</div>
     </div>
     @yield('script')
+    @yield('js')
 </body>
 
 </html>
