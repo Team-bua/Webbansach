@@ -1,12 +1,5 @@
 @extends('layout_index.master')
-
 @section('content')
-    <div class="breadcrumb">
-        <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
-            <span class="breadcrumb-item active">Info</span>
-        </div>
-    </div>
     <section class="info">
     <div class="container">
         <div id="info-wrapper">
@@ -47,12 +40,7 @@
                 </div>
             </div>
             <div id="tab-changePassword" class="tab-content">
-            @if(Session::has('success'))
-            <div class="alert alert-success">{{Session::get('success')}}</div>
-            @endif
-             @if(Session::has('danger'))
-            <div class="alert alert-danger">{{Session::get('danger')}}</div>
-            @endif
+         
             <form method="post" action="{{ route('updatePassword',Auth::user()->id)}}">
                  @csrf
             <div class="row" >
@@ -69,11 +57,20 @@
             <div class="form-group pass_show"> 
                 <input type="password"  name="re_password" class="form-control" placeholder="Nhập Lại Mật Khẩu"> 
             </div> 
+
           <div class="col-3">
                         <button class="btn black">Cập nhật thông tin </button>
                     </div>
+
         </div>  
     </div>
+    <br>
+     @if(Session::has('success'))
+            <div class="alert alert-success">{{Session::get('success')}}</div>
+            @endif
+             @if(Session::has('danger'))
+            <div class="alert alert-danger">{{Session::get('danger')}}</div>
+            @endif
     </form>
             </div>
             <div id="tab-application" class="tab-content">

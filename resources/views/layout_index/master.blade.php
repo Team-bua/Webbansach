@@ -70,8 +70,6 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-<<<<<<< HEAD
-=======
     <script type="text/javascript">
 jQuery(window).load(function() {
 
@@ -110,7 +108,6 @@ jQuery(window).load(function() {
         }
 
     </script>
->>>>>>> 2e46d5fd202f9337e16ff378647e9d94912463d5
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -130,7 +127,6 @@ jQuery(window).load(function() {
     </div>
     @yield('script')
     @yield('js')
-    @yield('show')
 </body>
 
 </html>

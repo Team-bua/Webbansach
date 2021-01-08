@@ -1,11 +1,5 @@
 @extends('layout_index.master')
 @section('content')
-    <div class="breadcrumb">
-        <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
-            <span class="breadcrumb-item active">Register</span>
-        </div>
-    </div>
     <section class="static about-sec">
         <div class="container">
             <h1>Đăng Ký Tài Khoản </h1>         

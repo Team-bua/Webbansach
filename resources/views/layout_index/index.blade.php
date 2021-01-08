@@ -20,7 +20,6 @@
                     <td ><img style="height:260px;width:365px" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
                     <td ><img style="height:260px;width:365px" src="{{ asset('images/slide2.png') }}"alt="image" /> </td>
                     <td ><img style="height:260px;width:365px" src="{{ asset('images/slide3.png') }}"alt="image" /> </td>
-               
             </tr>
         </table>
     </div>
