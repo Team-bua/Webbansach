@@ -115,11 +115,7 @@ class PageRepository
         $cart = new Cart($oldcart);
         $cart->add($product, $id);
         $request->session()->put('cart', $cart);
-        return response()->json([
-            'code' => 200,
-            'message' => 'success',
-            'cart' => $cart,
-        ], 200);
+        return response()->json(array('cart' => $cart));
     }
 
     public function postCart(Request $request)

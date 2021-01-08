@@ -100,6 +100,8 @@ Route::resource('supplier',SuppliersController::class);
 Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
+Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole');
+Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole');
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');

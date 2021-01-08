@@ -70,6 +70,47 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<<<<<<< HEAD
+=======
+    <script type="text/javascript">
+jQuery(window).load(function() {
+
+    $("#nav > li > a").click(function () { // binding onclick
+        if ($(this).parent().hasClass('selected')) {
+            $("#nav .selected div div").slideUp(100); // hiding popups
+            $("#nav .selected").removeClass("selected");
+        } else {
+            $("#nav .selected div div").slideUp(100); // hiding popups
+            $("#nav .selected").removeClass("selected");
+
+            if ($(this).next(".subs").length) {
+                $(this).parent().addClass("selected"); // display popup
+                $(this).next(".subs").children().slideDown(200);
+            }
+        }
+    }); 
+
+});
+
+</script>
+<script>
+        function AddCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET',
+            }).done(function(response) {  
+                $('.quntity').html(response['cart']['totalQty']);           
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm vào giỏ hàng',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+
+    </script>
+>>>>>>> 2e46d5fd202f9337e16ff378647e9d94912463d5
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>

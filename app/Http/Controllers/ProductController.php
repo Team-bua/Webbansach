@@ -7,6 +7,7 @@ use App\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 
+
 class ProductController extends Controller
 {
        /**
@@ -47,7 +48,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
+        
         $product = $this->repository->getTypeAll();
         return view('layout_admin.product.products_create', compact('product'));
     }
