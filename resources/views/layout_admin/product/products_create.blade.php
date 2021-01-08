@@ -9,7 +9,7 @@
             </h1>
 
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
                 <li><a href="#">Sách</a></li>
                 <li class="active">Thêm sách</li>
             </ol>
@@ -60,7 +60,7 @@
                         <h4> Giá : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
-                            <input value="{{ old('unit_price') }}" id="unit_pricebook" name="unit_price" type="number"
+                            <input value="{{ old('unit_price') }}" min="0" max="99999999" id="unit_pricebook" name="unit_price" type="number"
                                 class="form-control" placeholder="Giá  . . . . . . . . .">
                             <span class="input-group-addon">VNĐ</span>
                         </div>
@@ -72,7 +72,7 @@
                         <h4> Giá khuyến mãi : </h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
-                            <input id="promotion_pricebook" name="promotion_price" type="number" class="form-control"
+                            <input id="promotion_pricebook" min="0" max="99999999" name="promotion_price" type="number" class="form-control"
                                 placeholder="Khuyến mãi . . . . . . . . .">
                             <span class="input-group-addon">VNĐ</span>
                         </div>
@@ -106,8 +106,7 @@
                         <h4> Số trang :</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
-                            <input id="Page_Number" class="form-control" name="PageNumber" type="text"
-                                placeholder="Nhập số trang. . . . . . . . ." />
+                                <input id="Page_Number" class="form-control"name="PageNumber"  type="number" placeholder="Nhập số trang. . . . . . . . ." />                               
                             <span class="input-group-addon">Trang</span>
                         </div>
                         <h4> Kích thước :</h4>

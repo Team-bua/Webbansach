@@ -108,9 +108,4 @@ class CompanyController extends Controller
         return redirect()->back();
     }
 
-    public function getCompany()
-    {
-       $company = $this->repository->getCompany();
-       return view('layout_admin.header', compact('company'));
-    }
 }

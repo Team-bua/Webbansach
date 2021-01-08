@@ -63,6 +63,9 @@ Route::post('cart', [PageController::class, 'updateCart'])->name('cart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 Route::get('product_type/{type}',[PageController::class,'getMenuType'])->name('product_type');
+//----->thông tin khách hàng
+Route::get('/info/{id}',[PageController::class,'getInfo'])->name('info');
+Route::post('/changeinfo/{id}',[PageController::class,'changeinfo'])->name('changeinfo');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
@@ -72,6 +75,8 @@ Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout')
 Route::get('search',[PageController::class,'getSearch'])->name('search');
 //----->Bình Luận
 Route::post('comment/{id}',[PageController::class,'postComment'])->name('comment');
+//----->nhà xuất bản
+
 /*--------------------------------------------------------------------------------*/
 
 

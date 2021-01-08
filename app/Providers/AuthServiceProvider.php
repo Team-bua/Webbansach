@@ -29,6 +29,9 @@ class AuthServiceProvider extends ServiceProvider
             return $user->id_role == '1';
         });
 
+        Gate::define('user',function($user){
+            return $user->id_role == '2';
+        });
         //
     }
 }
