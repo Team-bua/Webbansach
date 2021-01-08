@@ -6,18 +6,18 @@
                     <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
                 </div>
                 <div class="col-md-4 ">
-                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i>Số điện thoại: 0779 750 123
-                        / 0945 555 666</span>
+                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i> Số điện thoại: 0779 750 123 || 0945 555 666</span>
                 </div>
+
 
                 @if (Auth::check())
                     @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
                         <div class="col-md-3 pull-right">Chào Bạn : <a
-                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//</a><a
+                                href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>//<a
                                 href="{{ url('logout') }}">Đăng Xuất</a><br></div>
-
                     @else
-
+                    <div class="col-md-3 pull-right">Chào Bạn : <a
+                                href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a> ||<a href="{{ url('logout') }}"> Đăng Xuất</a><br></div>
                     @endif
                 @endif
             </div>
@@ -43,7 +43,7 @@
                 <div id="menu">
                     <ul>
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
-                            <div class="sub_menu" style="">
+                            <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>

@@ -63,6 +63,10 @@ Route::post('cart', [PageController::class, 'updateCart'])->name('cart');
 //----->chi tiết sản phẩm
 Route::get('detail/{id}',[PageController::class,'getDetail'])->name('detail');
 Route::get('product_type/{type}',[PageController::class,'getMenuType'])->name('product_type');
+//----->thông tin khách hàng
+Route::get('/info/{id}',[PageController::class,'getInfo'])->name('info');
+Route::post('/changeinfo/{id}',[PageController::class,'changeinfo'])->name('changeinfo');
+Route::post('/updatePassword/{id}',[PageController::class,'updatePassword'])->name('updatePassword');
 //----->đọc sách
 Route::get('Read',[PageController::class,'getRead'])->name('Read');
 //----->thanh toán
@@ -96,6 +100,8 @@ Route::resource('supplier',SuppliersController::class);
 Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
+Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole');
+Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole');
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');

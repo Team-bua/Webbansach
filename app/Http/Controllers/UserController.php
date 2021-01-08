@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
 use App\Http\Requests\UserRequest;
 use App\Models\Company;
+use App\Models\Role;
 use App\Models\User;
+use App\Services\GetSession;
+use PhpParser\Node\Expr\FuncCall;
 
 class UserController extends Controller
 { /**
@@ -35,7 +38,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = $this->repository->getAll();
+        $company_id =  GetSession::getCompanyId();
+        $user = User::where('id_role', '!=', '1')
+        ->orderBy('created_at', 'desc')->paginate(10);
         return view('layout_admin.user.list_users', compact('user'));
     }
 
@@ -80,8 +85,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = $this->repository->getuser($id);
-        return view('layout_admin.user.role_users',compact('user'));
+       //
     }
 
     /**
@@ -117,6 +121,21 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+    }
+    public function getRole($id)
+    {
+        $all_role = Role::all();
+        $user = $this->repository->getuser($id);
+        return view('layout_admin.user.role_users',compact('user','all_role'));
+    }
+
+    public function changeRole(Request $request,$id)
+    {
+        $user = $this->repository->getuser($id);
+        $user->full_name = $request->input('fullname');
+        $user->save();
+        return redirect()->back();
     }
 }

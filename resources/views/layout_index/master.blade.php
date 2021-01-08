@@ -48,6 +48,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -67,6 +70,8 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<<<<<<< HEAD
+=======
     <script type="text/javascript">
 jQuery(window).load(function() {
 
@@ -86,7 +91,26 @@ jQuery(window).load(function() {
     }); 
 
 });
+
 </script>
+<script>
+        function AddCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET',
+            }).done(function(response) {  
+                $('.quntity').html(response['cart']['totalQty']);           
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm vào giỏ hàng',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+
+    </script>
+>>>>>>> 2e46d5fd202f9337e16ff378647e9d94912463d5
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -105,6 +129,8 @@ jQuery(window).load(function() {
         <div class="snowflake">❆</div>
     </div>
     @yield('script')
+    @yield('js')
+    @yield('show')
 </body>
 
 </html>

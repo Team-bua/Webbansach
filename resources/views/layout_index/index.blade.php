@@ -17,10 +17,9 @@
     <div class="container">
         <table >
             <tr>
-                <td ><img style="height:260px;"src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
-                    <td ><img style="height:260px;" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
-                    <td ><img style="height:260px" src="{{ asset('images/slide2.png') }}"alt="image" /> </td>
-                    <td ><img style="height:260px;" src="{{ asset('images/slide3.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide1.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide2.png') }}"alt="image" /> </td>
+                    <td ><img style="height:260px;width:365px" src="{{ asset('images/slide3.png') }}"alt="image" /> </td>
                
             </tr>
         </table>
@@ -47,8 +46,11 @@
                 <div class="row" id="load" style="position: relative;">
                     @foreach ($product_new as $pro)
                         <div class="col-md-3">
-                            <div class="item">                               
+                            <div class="item">
+                                @if ($pro->new == 1)
                                     <div class="new">new</div>
+                                @endif
+
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $pro->name }}</a></h3>
@@ -104,18 +106,26 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                    @foreach ($product_sale as $pro)
+                    @foreach ($product_new as $pro)
                         <div class="col-md-3">
                             <div class="item">
-                                @if ($pro->promotion_price != 0)
-                                   
+                                @if ($pro->promotion_price == 0)
+                                    <div class="new">new</div>
+                                @else
                                     <span class="sale">sale</span>
                                 @endif
 
                                 <a href="{{ route('detail', $pro->id) }}"><img
                                         src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                                          <h3><a href="#">{{ $pro->name }}</a></h3>
-                              @if($pro->promotion_price == 0)
+                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
+                                <div class="content">
+                                    <div class="body">
+                                        <p>{!! $pro->description !!}</p>
+                                    </div>
+                                </div>
+                               
+                                 @if($pro->promotion_price == 0)
                                       <p class="wrap_price">
                                      <span class="price-new">
                                         {{number_format($pro->unit_price,0,"",",")}}VNĐ
@@ -128,13 +138,6 @@
                                      </span>
                                       </p>
                                @endif   
-                                <div class="content">
-                                    <div class="body">
-                                        <p>{!! $pro->description !!}</p>
-                                    </div>
-                                </div>
-                                  <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
-                                
                             </div>
                         </div>
                     @endforeach
@@ -147,7 +150,6 @@
         </div>
 
     </section>
-    
     <section class="static about-sec">
         <div class="container">
             <h6><span>S</span>
@@ -166,11 +168,13 @@
             <hr>
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
-                    @foreach ($product_hightlights as $pro)
+                    @foreach ($product_new as $pro)
                         <div class="col-md-3">
                             <div class="item">
-                                @if ($pro->new == 1)
-                                    <div class="new">Hot</div> 
+                                @if ($pro->promotion_price == 0)
+                                    <div class="new">new</div>
+                                @else
+                                    <span class="sale">sale</span>
                                 @endif
 
                                 <a href="{{ route('detail', $pro->id) }}"><img
@@ -200,7 +204,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <a href="{{  route('allhighlights')  }}"><button class="btn gray-btn">Xem Thêm</button></a>
+                    <a href="{{ route('allhighlights') }}"><button class="btn gray-btn">Xem Thêm</button></a>
                 </div>
             </div>
 
@@ -229,21 +233,3 @@
 
     <a href="#" class="bck"></a>
 @endsection
-@section('script')
-<script>
-        function AddCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET'
-            }).done(function(response) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Đã thêm vào giỏ hàng',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            })
-        }
-
-    </script>
-@stop

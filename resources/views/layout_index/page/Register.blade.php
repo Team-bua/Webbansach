@@ -1,9 +1,5 @@
 @extends('layout_index.master')
 @section('content')
-</div>
-        <div class="main-menu">
-        </div>
-    </header>
     <div class="breadcrumb">
         <div class="container">
             <a class="breadcrumb-item" href="index.html">Home</a>

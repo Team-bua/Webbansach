@@ -115,6 +115,7 @@ class PageRepository
         $cart = new Cart($oldcart);
         $cart->add($product, $id);
         $request->session()->put('cart', $cart);
+        return response()->json(array('cart' => $cart));
     }
 
     public function postCart(Request $request)
@@ -180,7 +181,34 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
+
     }
+
+    public function getInfo($id){
+        return User::find($id);
+    }
+
+    public function changeInfo(Request $request, $id){
+        $customer = User::find($id);
+        $customer->full_name = $request->input('fullname');
+        $customer->email = $request->input('email');
+        $customer->phone = $request->input('phone');
+        $customer->address = $request->input('address');
+        $customer->save();
+    }
+
+    public function updatePassword(Request $request, $id)
+    {   
+        if (Hash::Check($request->password,Auth::user()->password)){
+        $pa=User::find($id);
+        $pa->password=$request->input('password');
+        $request->user()->fill([
+            'password' => Hash::make($request->new_password)
+        ])->save();
+        return redirect()->back()->with('success','Thay đổi thành công ');
+    }
+            return redirect()->back()->with('danger','Mật khẩu cũ không đúng ');
+    }   
 
     public function destroy($id)
     {
