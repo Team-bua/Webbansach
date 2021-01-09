@@ -212,7 +212,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
-                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
+                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
                     <li> <a href="{{ route('archive.index') }}"><i class="fa fa-inbox"></i> Nhập kho</a></li>
                   </ul>
             </li>

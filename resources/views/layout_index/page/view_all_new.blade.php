@@ -59,6 +59,7 @@
                                       </p>
                                @endif
                             </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

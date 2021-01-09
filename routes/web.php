@@ -14,6 +14,7 @@ use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\StoreController;
 
 
 /*
@@ -126,3 +127,5 @@ Route::resource('companies',CompanyController::class);
 Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->name('product_company');
 ///------>Trang tìm và lưu sesstion company
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
+///------>Trang kho
+Route::resource('store', StoreController::class);
