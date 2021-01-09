@@ -45,6 +45,7 @@
                             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                             <input required type="email" name="username" class="form-control"
                                 placeholder="Tên đăng nhập . . . . . . . . .">
+                                
                         </div>
                         <h4> Mật khẩu : </h4>
                         <div class="input-group">
