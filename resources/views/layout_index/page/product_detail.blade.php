@@ -172,7 +172,7 @@
                 @if(Auth::check())
                 <div class="rating-card">
                     <form acxtion="{{route('comment',$product_detail->id)}}" method="post">
-              @csrf()
+                    @csrf
                         <div class="card border-primary rounded-0">
                             <div class="card-body p-3">
                                 <div class="form-group">

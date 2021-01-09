@@ -13,6 +13,7 @@ use App\Models\Slide;
 use App\Models\Bill;
 use App\Models\BillDetail;
 use App\Models\Comment;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 
@@ -77,9 +78,15 @@ class PageRepository
     {
         return ProductType::all();
     }
+
     public function getProductTypeName($id)
     {
         return ProductType::find($id);
+    }
+
+    public function getProductCompanyName($id)
+    {
+        return Company::find($id);
     }
 
     public function postComment($id, $request)
@@ -101,6 +108,11 @@ class PageRepository
     public function getProductTypeID($id)
     {
         return Product::where('id_type', $id)->where('status', 1)->paginate(10);
+    }
+
+    public function getProductCompanyID($id)
+    {
+        return Product::where('id_company', $id)->where('status', 1)->paginate(10);
     }
 
     public function getSlide()
@@ -209,6 +221,11 @@ class PageRepository
     }
             return redirect()->back()->with('danger','Mật khẩu cũ không đúng ');
     }   
+
+    public function getBill()
+    {
+       return Bill::where('id_user', Auth::user()->id)->get();
+    }
 
     public function destroy($id)
     {

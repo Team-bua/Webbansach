@@ -15,7 +15,7 @@ class BillRepository
      */
     public function getAll()
     {   
-        return Bill::all();
+        return Bill::orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function getAllNotReceiving()
@@ -32,6 +32,13 @@ class BillRepository
     {   
         return Bill::where('status',2)->latest()->paginate(10);
     }
+
+    public function getAllFail()
+    {   
+        return Bill::where('status',3)->latest()->paginate(10);
+    }
+
+     
 
     public function getbill($id)
     {

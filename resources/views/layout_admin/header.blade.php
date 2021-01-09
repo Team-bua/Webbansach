@@ -202,13 +202,7 @@
                 <a href="{{ route('bill.index') }}">
                   <i style="color:#8b7b61" class="fa fa-inbox fa-lg text-warning"></i>
                   <span style="font-size:16px ;">Đơn hàng</span>
-                  <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu" style="display: none;">
-                  <li> <a href="{{ route('notreceiving') }}"><i class="fa fa-rotate-right"></i> Đơn hàng chưa xử lý</a></li>
-                  <li> <a href="{{ route('receiving') }}"><i class="fa fa-play"></i> Đơn hàng đang giao</a></li>
-                  <li> <a href="{{ route('completereceiving') }}"><i class="fa fa-check-square"></i> Đơn hàng đã giao</a></li>
-                </ul>
               </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
@@ -219,7 +213,7 @@
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                     <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
-                    <li> <a href=""><i class="fa fa-inbox"></i> Nhập kho</a></li>
+                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-inbox"></i> Nhập kho</a></li>
                   </ul>
             </li>
             

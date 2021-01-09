@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 use App\Models\ProductType;
 use App\Models\Cart;
+use App\Models\Company;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layout_index.header', function($view){
             $types = ProductType::all();
             $view->with('types',$types);
+        });
+        view()->composer('layout_index.header', function($view){
+            $company = Company::all();
+            $view->with('company',$company);
         });
         view()->composer(['layout_index.page.cart','layout_index.page.checkout'], function($view){
             if(Session('cart')){

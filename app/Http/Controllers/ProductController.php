@@ -48,9 +48,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
-    {
-        
+    { 
         $product = $this->repository->getTypeAll();
         return view('layout_admin.product.products_create', compact('product'));
     }

@@ -28,6 +28,18 @@
 
             <div class="col-xs-12">
                 <div class="box box-solid ">
+                    <div class="btn-group" style="margin-top:10px;margin-left:5px">
+
+                    
+                        <button type="button" class="btn bg-purple dropdown-toggle" data-toggle="dropdown">
+                            Đơn hàng <span class="caret"></span></button>
+                            <ul style="background-color: white" class="dropdown-menu" role="menu">
+                                <li><a href="{{route('notreceiving')}}">Đơn hàng đang xử lý</a></li>
+                                <li><a href="{{route('receiving')}}">Đơn hàng đã tiếp nhận</a></li>
+                                <li><a href="{{route('completereceiving')}}">Đang hàng đã giao</a></li>
+                                <li><a href="{{route('fails')}}">Đang hàng thất bại</a></li>
+                            </ul>
+                    </div>
                     <div class="box-body ">
                         <!-- ShowModal -->
                         <table id="example" class="table table-striped table-bordered display" cellspacing="0" width="100%">
@@ -40,7 +52,7 @@
                                     <th>Ngày đặt</th>
                                     <th>Email</th>
                                     <th>Tổng sản phấm</th>
-                                    <th width="10%">Tổng tiền (VNĐ)</th>
+                                    <th width="10%">Tổng tiền</th>
                                     <th>Thanh toán</th>
                                     <th>Tình trạng</th>
                                     <th>Tùy chọn</th>
@@ -74,40 +86,64 @@
                                     <td>{{$bills->date_order}}</td>
                                     <td>{{$bills->email}}</td>
                                     <td style="text-align:center">{{$bills->quantity}}</td>
-                                    <td>{{number_format($bills->total,0,"",",")}}</td>
+                                    <td>{{number_format($bills->total,0,"",",")}} </td>
                                     <td>{{$bills->payment}}</td>
                                     <td>
                                         <div class="btn-group">
                                             @if($bills->status == 0)
-                                            <button type="button" class="btn btn-danger ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý</button>
+                                            <button type="button" class="btn btn-default ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý</button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning ad">
+                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-primary ad">
                                                     <li>Tiếp nhận</li>
                                                 </a>
-                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info ad">
+                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
                                                     <li>Đã giao</li>
+                                                </a>
+                                                <a href="{{route('bill_fail',[$bills['id']])}}" class="btn btn-danger ad">
+                                                    <li>Thất bại</li>
                                                 </a>
                                             </ul>
                                             @endif
                                             @if($bills->status == 1)
-                                            <button type="button" class="btn btn-warning ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận</button>
+                                            <button type="button" class="btn btn-primary ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận</button>
                                             <ul class="dropdown-menu" role="menu" style="width:105px">
-                                                <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger ad">
+                                                <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
                                                     <li>Đang xử lý</li>
                                                 </a>
-                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-info ad">
+                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
                                                     <li>Đã giao</li>
+                                                </a>
+                                                <a href="{{route('bill_fail',[$bills['id']])}}" class="btn btn-danger ad">
+                                                    <li>Thất bại</li>
                                                 </a>
                                             </ul>
                                             @endif
                                             @if($bills->status == 2)
-                                            <button type="button" class="btn btn-info ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao</button>
+                                            <button type="button" class="btn btn-success ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao</button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-danger ad">
+                                                <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
                                                     <li>Đang xử lý</li>
                                                 </a>
-                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-warning ad">
+                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn btn-primary ad">
                                                     <li>Tiếp nhận</li>
+                                                </a>
+                                                <a href="{{route('bill_fail',[$bills['id']])}}" class="btn btn-danger ad">
+                                                    <li>Thất bại</li>
+                                                </a>
+                                            </ul>
+                                            @endif
+
+                                            @if($bills->status == 3)
+                                            <button type="button" class="btn btn-danger ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Thất bại</button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
+                                                    <li>Đang xử lý</li>
+                                                </a>
+                                                <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-primary ad">
+                                                    <li>Tiếp nhận</li>
+                                                </a>
+                                                <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
+                                                    <li>Đã giao</li>
                                                 </a>
                                             </ul>
                                             @endif
