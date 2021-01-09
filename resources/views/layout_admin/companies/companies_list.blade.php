@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Quản lý nhà cung cấp
+                Quản lý nhà sản xuất
 
             </h1>
             <ol class="breadcrumb">

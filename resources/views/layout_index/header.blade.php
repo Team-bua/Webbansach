@@ -14,11 +14,8 @@
     <div class="main-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%"
-                        src="images/logobook.png" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand text-center" href="{{ route('index') }}"><img style=" height: 140px ;width:50%" src="images/logobook.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -36,8 +33,8 @@
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
                                         @foreach($types as $pro)
-                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
-                                            </li>
+                                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
 
@@ -50,8 +47,8 @@
                         <li class="menu_item down"><a href="{{ route('all_book') }}">Tất cả sách </a></li>
                         @if (Auth::check())
                         @else
-                            <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                            <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
+                        <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
+                        <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
                             <div class="sub_menu">
@@ -59,8 +56,8 @@
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
                                         @foreach ($company as $com)
-                                            <li><a href="{{ route('product_company', $com->id) }}">{{ $com->name }}</a>
-                                            </li>
+                                        <li><a href="{{ route('product_company', $com->id) }}">{{ $com->name }}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
 
@@ -70,7 +67,7 @@
                     </ul>
 
                 </div>
-<div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 5%">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 4%">
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
@@ -86,23 +83,23 @@
                     </form>
                 </div>
                 @if (Auth::check())
-                    @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
-                     <div class="dropdown">
-                        <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle" ></i></button>
+                @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
+                <div class="dropdown">
+                    <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
                         <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>
                         <a href="{{ url('logout') }}">Đăng Xuất</a>
                     </div>
-                    </div>
-                    @else
-                    <div class="dropdown">
-                        <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle" ></i></button>
+                </div>
+                @else
+                <div class="dropdown">
+                    <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
                         <a href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>
                         <a href="{{ url('logout') }}">Đăng Xuất</a>
                     </div>
-                    </div>
-                    @endif
+                </div>
+                @endif
                 @endif
             </nav>
         </div>

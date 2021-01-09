@@ -48,9 +48,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
-    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
-    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -70,27 +68,6 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript">
-jQuery(window).load(function() {
-
-    $("#nav > li > a").click(function () { // binding onclick
-        if ($(this).parent().hasClass('selected')) {
-            $("#nav .selected div div").slideUp(100); // hiding popups
-            $("#nav .selected").removeClass("selected");
-        } else {
-            $("#nav .selected div div").slideUp(100); // hiding popups
-            $("#nav .selected").removeClass("selected");
-
-            if ($(this).next(".subs").length) {
-                $(this).parent().addClass("selected"); // display popup
-                $(this).next(".subs").children().slideDown(200);
-            }
-        }
-    }); 
-
-});
-
-</script>
 <script>
         function AddCart(id) {
             $.ajax({
@@ -127,6 +104,7 @@ jQuery(window).load(function() {
     </div>
     @yield('script')
     @yield('js')
+    @yield('show')
 </body>
 
 </html>
