@@ -76,6 +76,8 @@ Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout')
 Route::get('search',[PageController::class,'getSearch'])->name('search');
 //----->Bình Luận
 Route::post('comment/{id}',[PageController::class,'postComment'])->name('comment');
+//----->Người Dùng
+
 //----->nhà xuất bản
 
 /*--------------------------------------------------------------------------------*/

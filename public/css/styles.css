@@ -1281,61 +1281,7 @@ li.com-title span {
 }
 
 
-/*-------------------------------info-user---------------------------------------*/
 
-.info {
-    float: left;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-#info-wrapper {
-    width: 800px;
-    height: 500px;
-    position: relative;
-    float: left;
-    border-radius: 10px;
-    overflow: hidden;
-    visibility: visible;
-    display: block;
-    margin-bottom: 8px;
-    position: relative;
-}
-
-#info-wrapper.htabs a {
-    font-size: 12px;
-    padding-left: 8px;
-    padding-right: 8px;
-    text-decoration: blink;
-}
-
-.htabs {
-    height: 30px;
-    line-height: 16px;
-    border-bottom: 1px solid #96C7DA;
-
-}
-
-.htabs a {
-    border-top: 1px solid #ADD4E2;
-    border-left: 1px solid #ADD4E2;
-    border-right: 1px solid #ADD4E2;
-    padding: 7px 15px 6px 15px;
-    float: left;
-    color: #205E75;
-    font-size: 16px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 400;
-    text-align: center;
-    margin-right: 2px;
-    display: none;
-    text-decoration: blink;
-}
-
-.htabs a.selected {
-    padding-bottom: 7px;
-    text-decoration: blink;
-}
 
 /*------------------------------recent-book-sec-----------------------------------------------*/
 
@@ -1453,7 +1399,7 @@ position: absolute;
 
 top: 50%; 
 
-right: -30px; 
+right: 10px; 
 
 z-index: 1; 
 

@@ -1,17 +1,30 @@
 @extends('layout_index.master')
 @section('content')
-    <section class="info">
-    <div class="container">
-        <div id="info-wrapper">
-            <div id="tabs" class="htabs">
-                <a href="#tab-info">Thông tin tài khoản</a>
-                <a href="#tab-changePassword">Đổi Mật Khẩu</a>
-                <a href="#tab-application">Đơn Hàng</a>
-            </div>
-            <div id="tab-info" class="tab-content">
-                <div class="cpt_product_description ">
-<div class="row">
-        <div class="col-sm-6">
+<div class="container">
+    <br>
+    <h6><span>T</span>
+        <span>h</span>
+        <span>ô</span>
+        <span>n</span>
+        <span>g</span>
+        <span>t</span>
+        <span>i</span>
+        <span>n</span>
+        <span>.</span>
+    </h6>
+            <hr>
+    <div class="btn-sec">
+        <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>
+        <button class="btn " data-toggle="modal" data-target="#tab-content">Đổi Mật Khẩu</button>       
+    </div>
+</div>
+<div class="container">
+    <div class="modal fade product_view" id="tab-info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+        <div class="col-sm-12">
             <form method="post" action="{{ route('changeinfo',Auth::user()->id)}}">
                 @csrf
                 <div class="form-group">
@@ -37,14 +50,20 @@
             </form>
         </div>
     </div>
-                </div>
             </div>
-            <div id="tab-changePassword" class="tab-content">
-         
-            <form method="post" action="{{ route('updatePassword',Auth::user()->id)}}">
+        </div>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="modal fade product_view" id="tab-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+        <div class="col-sm-12">
+           <form method="post" action="{{ route('updatePassword',Auth::user()->id)}}">
                  @csrf
-            <div class="row" >
-        <div class="col-sm-4">
             <label>Mật Khẩu Cũ</label>
             <div class="form-group pass_show"> 
                 <input type="password" name="password"  class="form-control" placeholder="Mật Khẩu Cũ" > 
@@ -57,13 +76,9 @@
             <div class="form-group pass_show"> 
                 <input type="password"  name="re_password" class="form-control" placeholder="Nhập Lại Mật Khẩu"> 
             </div> 
-
           <div class="col-3">
-                        <button class="btn black">Cập nhật thông tin </button>
-                    </div>
-
-        </div>  
-    </div>
+            <button class="btn black">Cập nhật thông tin </button>
+        </div> 
     <br>
      @if(Session::has('success'))
             <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -72,72 +87,15 @@
             <div class="alert alert-danger">{{Session::get('danger')}}</div>
             @endif
     </form>
-            </div>
-            <div id="tab-application" class="tab-content">
-                <div class="cpt_product_description ">
-                    <div>
-                        <table class="table table-bordered">
-                    <thead>
-                        <tr class="bg-primary" >
-                        <th width=30%>Sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Số Lượng</th>
-                        <th>Ngày đặt</th>
-                        <th>Tổng tiền</th>
-                        <th>Thanh toán</th>
-                        </tr>
-                    </thead>
-                        <tbody>
-                  
-                        <tr class="cart_item">
-                            <td class="product-name">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <p class="font-large table-title"></p>
-                                        <p class="table-option"></p>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td class="product-price">
-                                <span class="amount"></span>
-                            </td>
-
-                            <td class="product-quantity">
-                                <select name="product-qty" id="product-qty">
-                                    <option></option>
-                                </select>
-                            </td>
-                            <td class="product-status">
-                                
-                            </td>
-
-                            <td class="product-subtotal">
-                                <span class="amount"></span>
-                            </td>
-                            <td class="product-status">
-                                
-                            </td>
-                            <td class="product-status">
-                               
-                            </td>
-                            
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                </div>
+        </div>
+    </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div id="last-product-wrapper">
-            <div id="comment-list">     
-                     
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+</div>
+
+    
 @endsection
 @section('js')
     <script type="text/javascript">
