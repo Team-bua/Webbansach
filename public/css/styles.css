@@ -1250,7 +1250,7 @@ ul {
 }
 
 
-/**/
+/*----------------------------------------------------------------*/
 
 .last-product-wrapper {
     float: right;
@@ -1300,62 +1300,6 @@ li.com-title span {
 .comment-list {
     margin-top: 25px;
     text-align: justify;
-}
-
-
-/*-------------------------------info-user---------------------------------------*/
-
-.info {
-    float: left;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-#info-wrapper {
-    width: 70%;
-    height: auto;
-    position: relative;
-    float: left;
-    border-radius: 10px;
-    overflow: hidden;
-    visibility: visible;
-    display: block;
-    margin-bottom: 8px;
-    position: relative;
-}
-
-#info-wrapper.htabs a {
-    font-size: 12px;
-    padding-left: 8px;
-    padding-right: 8px;
-    text-decoration: blink;
-}
-
-.htabs {
-    height: 30px;
-    line-height: 16px;
-    border-bottom: 1px solid #96C7DA;
-}
-
-.htabs a {
-    border-top: 1px solid #ADD4E2;
-    border-left: 1px solid #ADD4E2;
-    border-right: 1px solid #ADD4E2;
-    padding: 7px 15px 6px 15px;
-    float: left;
-    color: #205E75;
-    font-size: 16px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 400;
-    text-align: center;
-    margin-right: 2px;
-    display: none;
-    text-decoration: blink;
-}
-
-.htabs a.selected {
-    padding-bottom: 7px;
-    text-decoration: blink;
 }
 
 
@@ -1474,7 +1418,7 @@ li.com-title span {
 .pass_show .ptxt {
     position: absolute;
     top: 50%;
-    right: -30px;
+    right: 10px;
     z-index: 1;
     color: #f36c01;
     margin-top: -10px;
