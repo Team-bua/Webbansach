@@ -14,7 +14,7 @@
 
             </div>
         </div>
-       
+
 
     </section>
 
@@ -45,6 +45,22 @@
                                             <p>{!! $books->description !!}</p>
                                         </div>
                                     </div>
+                                    <h6><a href="javascript:"><i onclick="AddCart('{{ $books->id }}')"
+                                                class="fa fa-cart-arrow-down"></i></a>
+                                        /
+                                        <a class="beta-btn primary" href="{{ url('detail', $books->id) }}">Chi tiết <i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </h6>
+                                    @if ($books->promotion_price == 0)
+                                        <span class="price-new"> {{ number_format($books->unit_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                    @else
+                                        <span class="price-old">{{ number_format($books->unit_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                        <span class="price-new">{{ number_format($books->promotion_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

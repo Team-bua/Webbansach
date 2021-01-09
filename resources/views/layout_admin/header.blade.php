@@ -191,7 +191,7 @@
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
                     <i style="color:#8b7b61"class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span>Bìa</span>
+                    <span>Banner</span>
                 </a>
         @endcan
             <li class="header ">

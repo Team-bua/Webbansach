@@ -18,8 +18,8 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Simple</li>
+                <li><a href="#">Hệ thống </a></li>
+                <li class="active">Kho hàng</li>
             </ol>
         </section>
 

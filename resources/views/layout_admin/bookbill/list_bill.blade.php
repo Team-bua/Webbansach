@@ -14,7 +14,7 @@
             <small>Xử lý và xem tình trạng của đơn hàng</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Hệ thống</a></li>
             <li><a href="#">Đơn hàng</a></li>
         </ol>
     </section>

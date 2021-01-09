@@ -1,31 +1,31 @@
 @extends('layout_index.master')
 @section('content')
-  <section class="deltai">
-    <div class="container">
-        <div class="sidebar-widget tag">
-            
-                            <h2 class="title">Yêu Cầu Lựa Chọn</h2>
-                            <a href="#">sản phẩm mới</a>
-                            <a href="#">A đến Z</a>
-                            <a href="#">Giá Thấp Đến Cao</a>
-                            <a href="#">Giá Cao Đến Thấp</a>
-                            <a href="#">Giảm Giá Cao Đến Thấp</a>
-                            <a href="#">Giảm Giá Thấp Đến Cao</a>
-                           
-                        </div>
-    </div>
-    <div class="container">
-<div class="sidebar-widget brands">
-            <h2 class="title">Nhóm Sản Phẩm</h2>
-            @foreach ($product_type as $pro)
-            <ul>
-                <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }} </a><span>(45)</span></li>
-            </ul>
-            @endforeach
-        </div>
-</div>
+    <section class="deltai">
+        <div class="container">
+            <div class="sidebar-widget tag">
+
+                <h2 class="title">Yêu Cầu Lựa Chọn</h2>
+                <a href="#">sản phẩm mới</a>
+                <a href="#">A đến Z</a>
+                <a href="#">Giá Thấp Đến Cao</a>
+                <a href="#">Giá Cao Đến Thấp</a>
+                <a href="#">Giảm Giá Cao Đến Thấp</a>
+                <a href="#">Giảm Giá Thấp Đến Cao</a>
 
             </div>
+        </div>
+        <div class="container">
+            <div class="sidebar-widget brands">
+                <h2 class="title">Nhóm Sản Phẩm</h2>
+                @foreach ($product_type as $pro)
+                    <ul>
+                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }} </a><span>(45)</span></li>
+                    </ul>
+                @endforeach
+            </div>
+        </div>
+
+        </div>
         </div>
     </section>
 
@@ -62,6 +62,22 @@
                                             <p>{!! $books->description !!}</p>
                                         </div>
                                     </div>
+                                    <h6><a href="javascript:"><i onclick="AddCart('{{ $books->id }}')"
+                                                class="fa fa-cart-arrow-down"></i></a>
+                                        /
+                                        <a class="beta-btn primary" href="{{ url('detail', $books->id) }}">Chi tiết <i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </h6>
+                                    @if ($books->promotion_price == 0)
+                                        <span class="price-new"> {{ number_format($books->unit_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                    @else
+                                        <span class="price-old">{{ number_format($books->unit_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                        <span class="price-new">{{ number_format($books->promotion_price, 0, '', ',') }}VNĐ
+                                        </span>
+                                        </p>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
