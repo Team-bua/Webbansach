@@ -37,7 +37,7 @@
                             <ul style="background-color: white" class="dropdown-menu" role="menu">
                                 <li><a href="{{route('notreceiving')}}">Đơn hàng đang xử lý</a></li>
                                 <li><a href="{{route('receiving')}}">Đơn hàng đã tiếp nhận</a></li>
-                                <li><a href="{{route('fails')}}">Đang hàng thất bại</a></li>
+                                <li><a href="{{route('completereceiving')}}">Đang hàng đã giao</a></li>
                                 <li><a href="{{route('bill.index')}}">Tất cả đơn hàng</a></li>
                             </ul>
                     </div>
@@ -100,6 +100,7 @@
                                                 <a href="{{route('bill_delivered',[$bills['id']])}}" class="btn btn-success ad">
                                                     <li>Đã giao</li>
                                                 </a>
+                                                
                                                 <a href="{{route('bill_fail',[$bills['id']])}}" class="btn btn-danger ad">
                                                     <li>Thất bại</li>
                                                 </a>

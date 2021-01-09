@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
@@ -93,6 +94,13 @@ class PageController extends Controller
         return view('layout_index.page.view_type', compact('product_types', 'type_name'));
     }
     // xem sách của từng thể loại
+    
+    public function getMenuCompany($id)
+    {
+        $company_name = $this->repository->getProductCompanyName($id);
+        $product_company = $this->repository->getProductCompanyID($id);
+        return view('layout_index.page.product_company', compact('product_company','company_name'));
+    }
 
     public function getIntroduce()
     {
@@ -200,16 +208,17 @@ class PageController extends Controller
     public function getInfo($id)
     {
         $customer = $this->repository->getInfo($id);
-        return view('layout_index.customer.info',compact('customer'));
+        $bill = $this->repository->getBill();
+        return view('layout_index.customer.info',compact('customer','bill'));
     }
 
     public function changeInfo(Request $request, $id)
     {
         $this->repository->changeInfo($request, $id);
-        return redirect()->back()->with('Cập nhật thông tin thành công');
+        return redirect()->back()->with('thongbao','Cập nhật thông tin thành công');
     }
 
-    public function updatePassword(Request $request, $id)
+    public function updatePassword(UserRequest $request, $id)
     {
         $this->repository->updatePassword($request, $id);
         return redirect()->back();

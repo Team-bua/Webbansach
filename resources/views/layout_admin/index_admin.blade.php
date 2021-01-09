@@ -284,8 +284,4 @@
         new Chart(buyers).Line(buyerData);
 
     </script>
-
-
-
-
 @stop

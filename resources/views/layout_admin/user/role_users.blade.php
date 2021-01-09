@@ -18,9 +18,12 @@
     <section class="content">
 
         <div class="box ">
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{route('changerole',$user->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="box-header">
+                    @if(Session::has('thongbao'))
+                    <div class="alert alert-success">{{Session::get('thongbao')}} </div>
+                    @endif
                 </div>
                 <div class="box-body">
 
@@ -60,13 +63,15 @@
 
                     <div class="input-group-btn">
                         <h4> Vai trò: </h4>
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{$user->role->display_name}}
-                            &nbsp;&nbsp;&nbsp; <span class="fa fa-caret-down"></span></button>
-                        <ul class="dropdown-menu">
+                        <select style=" font-weight:bold;" name="cate" class="form-control">
                             @foreach($all_role as $role)
-                            <li><a name="role" value="{{$role->id}}">{{$role->display_name}}</a></li>
+                            @if($role->id == $user->id_role)
+                            <option selected value="{{$role->id}}">{{$role->display_name}}</option>
+                            @else
+                            <option value="{{$role->id}}">{{$role->display_name}}</option>
+                            @endif                
                             @endforeach
-                        </ul>
+                        </select>
                     </div>
 
                     <br>
@@ -82,11 +87,9 @@
 </div>
 @endsection
 @section('js')
-    
-    <script type="text/javascript">
-      $(":input").inputmask();
 
-
-    </script>
+<script type="text/javascript">
+    $(":input").inputmask();
+</script>
 
 @stop

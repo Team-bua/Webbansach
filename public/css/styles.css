@@ -1248,7 +1248,25 @@ ul {
     padding-bottom: 7px;
     text-decoration: blink;
 }
+/*----------------------------------------------------------------*/
+.last-product-wrapper {
+    float: right;
+    width: 100%;
+    margin-bottom: 50px;
+}
 
+#last-product-wrapper {
+    width: 500px;
+    height: 450px;
+    position: relative;
+    float: right;
+    border-radius: 10px;
+    overflow: hidden;
+    visibility: visible;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+}
 
 /*-------------------------------form-comment------------------------------------------------*/
 

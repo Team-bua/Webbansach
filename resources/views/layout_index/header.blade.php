@@ -54,12 +54,12 @@
                             <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
-                            <div class="sub_menu" style="">
+                            <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
-                                        @foreach ($types as $pro)
-                                            <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a>
+                                        @foreach ($company as $com)
+                                            <li><a href="{{ route('product_company', $com->id) }}">{{ $com->name }}</a>
                                             </li>
                                         @endforeach
                                     </ul>

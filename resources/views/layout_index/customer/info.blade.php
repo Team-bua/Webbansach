@@ -1,3 +1,4 @@
+
 @extends('layout_index.master')
 @section('content')
 <div class="container">
@@ -17,6 +18,38 @@
         <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>
         <button class="btn " data-toggle="modal" data-target="#tab-content">Đổi Mật Khẩu</button>       
     </div>
+    <table class="table table-bordered">
+                            <thead>
+                                <tr class="bg-info">
+                                    <th width=20%>Ảnh sản phẩm</th>
+                                    <th width=25%>Tên sản phẩm</th>
+                                    <th width=20%>Giá</th>
+                                    <th>Số Lượng</th>
+                                    <th width=15%>Ngày đặt</th>
+                                    <th width=20%>Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($bill as $bills)                            
+                            @foreach($bills->products as $product)
+                                <tr class="cart_item">
+                                    <td class="product-name"><img style="width:120px;height:120px;" src="{{ asset('images/product/' . $product->image) }}">
+                                    </td>
+                                    <td>{{$product->name}}</td>
+                                    <td class="product-price">
+                                        <span class="amount">{{number_format($product->pivot->unit_price)}} VNĐ</span>
+                                    </td>
+
+                                    <td class="product-quantity text-center">{{$product->pivot->quantity}}</td>
+                                    <td class="product-status">{{$bills->created_at->format('d/m/y')}}</td>
+                                    <td class="product-subtotal">{{number_format($product->pivot->unit_price * $product->pivot->quantity)}} VNĐ</td>
+
+                                </tr>
+                                
+                                @endforeach
+                            @endforeach
+                            </tbody>
+                        </table>
 </div>
 <div class="container">
     <div class="modal fade product_view" id="tab-info">
@@ -97,24 +130,27 @@
 
     
 @endsection
+
 @section('js')
-    <script type="text/javascript">
-      $(":input").inputmask();
-    </script>
+<script type="text/javascript">
+    $(":input").inputmask();
+</script>
 @stop
 @section('show')
 <script type="text/javascript">
-    $(document).ready(function(){
-$('.pass_show').append('<span class="ptxt">hiện</span>');  
-});
-  
+    $(document).ready(function() {
+        $('.pass_show').append('<span class="ptxt">hiện</span>');
+    });
 
-$(document).on('click','.pass_show .ptxt', function(){ 
 
-$(this).text($(this).text() == "ẩn" ? "hiện" : "ẩn"); 
+    $(document).on('click', '.pass_show .ptxt', function() {
 
-$(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+        $(this).text($(this).text() == "ẩn" ? "hiện" : "ẩn");
 
-});  
+        $(this).prev().attr('type', function(index, attr) {
+            return attr == 'password' ? 'text' : 'password';
+        });
+
+    });
 </script>
 @stop

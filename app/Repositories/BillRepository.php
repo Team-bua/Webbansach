@@ -33,6 +33,13 @@ class BillRepository
         return Bill::where('status',2)->latest()->paginate(10);
     }
 
+    public function getAllFail()
+    {   
+        return Bill::where('status',3)->latest()->paginate(10);
+    }
+
+     
+
     public function getbill($id)
     {
         return Bill::find($id);

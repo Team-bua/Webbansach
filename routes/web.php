@@ -75,7 +75,7 @@ Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout')
 //----->Tìm kiếm
 Route::get('search',[PageController::class,'getSearch'])->name('search');
 //----->Bình Luận
-Route::post('comment/{id}',[PageController::class,'postComment'])->name('comment');
+Route::put('comment/{id}',[PageController::class,'postComment'])->name('comment');
 //----->Người Dùng
 
 //----->nhà xuất bản
@@ -109,10 +109,12 @@ Route::resource('bill',BillController::class);
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
 Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
 Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
+Route::get('bill_fail/{id}',[BillController::class,'getFail'])->name('bill_fail');
 
 Route::get('receiving',[BillController::class,'Received'])->name('receiving');
 Route::get('not_receiving',[BillController::class,'NotReceived'])->name('notreceiving');
 Route::get('complete_receiving',[BillController::class,'Complete'])->name('completereceiving');
+Route::get('fails',[BillController::class,'Fails'])->name('fails');
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide
@@ -123,5 +125,6 @@ Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off'
 Route::resource('publisher',PublisherController::class);
 
 Route::resource('companies',CompanyController::class);
+Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->name('product_company');
 ///------>Trang tìm và lưu sesstion company
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');

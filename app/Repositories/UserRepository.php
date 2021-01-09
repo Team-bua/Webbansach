@@ -36,8 +36,15 @@ class UserRepository
        
     }
 
-    public function update($request, $id) {
-       ;
+    public function update($request, $id) 
+    {
+        if(hash::check($request->password_old, Auth::user()->password)){
+            $user = User::find($id);
+            $user->password = hash::make($request->input('new_password'));
+            $user->save();
+            return redirect()->back()->with(['flag'=>'success','messege'=>'Đổi mật khẩu thành công']);
+        }   
+        return redirect()->back()->with(['flag'=>'danger','messege'=>'Mật khẩu cũ không đúng']);
         
     }
 

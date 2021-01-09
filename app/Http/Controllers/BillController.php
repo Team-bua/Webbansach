@@ -51,6 +51,12 @@ class BillController extends Controller
         return view('layout_admin.bookbill.order_complete',compact('bill'));
     }
 
+    public function Fails()
+    {
+        $bill = $this->repository-> getAllFail();
+        return view('layout_admin.bookbill.order_fail',compact('bill'));
+    }
+
 
 
     /**
@@ -136,6 +142,12 @@ class BillController extends Controller
         $dg = Bill::find($id);
         $dg->status = Bill::delivered;
         $dg->save();
+        return redirect()->back();
+    }
+    public function getFail($id){
+        $tb = Bill::find($id);
+        $tb->status = Bill::fail;
+        $tb->save();
         return redirect()->back();
     }
 }

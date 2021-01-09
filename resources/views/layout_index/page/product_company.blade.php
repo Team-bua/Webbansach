@@ -20,7 +20,7 @@
 
 <section class="static about-sec">
     <div class="container">
-        <h2>{{$type_name->name}}</h2>
+        <h2>Nhà xuất bản: {{$company_name->name}}</h2>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
             <span class="fa fa-search"></span>
@@ -29,7 +29,7 @@
         <div id="myTable">
             <div class="recent-book-sec">
                 <div class="row">
-                    @foreach ($product_types as $books)
+                    @foreach ($product_company as $books)
                     <div class="col-md-3">
                         <div class="item">
                             @if($books->promotion_price != 0)
