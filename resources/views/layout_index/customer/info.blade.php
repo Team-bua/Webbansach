@@ -17,9 +17,15 @@
         <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>
         <button class="btn " data-toggle="modal" data-target="#tab-content">Đổi Mật Khẩu</button>
     </div>
+    @if(Session::has('success'))
+    <div class="alert alert-success">{{Session::get('success')}}</div>
+    @endif
+    @if(Session::has('danger'))
+    <div class="alert alert-danger">{{Session::get('danger')}}</div>
+    @endif
     <table class="table table-bordered">
         <thead>
-            <tr >
+            <tr>
                 <th width=20%>Ảnh sản phẩm</th>
                 <th width=25%>Tên sản phẩm</th>
                 <th width=20%>Giá</th>
@@ -111,12 +117,6 @@
                                     <button class="btn black">Cập nhật thông tin </button>
                                 </div>
                                 <br>
-                                @if(Session::has('success'))
-                                <div class="alert alert-success">{{Session::get('success')}}</div>
-                                @endif
-                                @if(Session::has('danger'))
-                                <div class="alert alert-danger">{{Session::get('danger')}}</div>
-                                @endif
                             </form>
                         </div>
                     </div>

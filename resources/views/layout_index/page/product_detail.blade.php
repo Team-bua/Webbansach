@@ -70,7 +70,7 @@
                 </form>
                 <div class="btn-sec">
                     <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
-                    <button class="btn " data-toggle="modal" data-target="#product_view">Mua Ngay</button>
+                    <button class="btn " onclick="BuyCart('{{$product_detail->id}}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
                     <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                         @endif
                         <div class="space-ten"></div>
                         <div class="btn-ground">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
+                            <a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif"><button type="button" class="btn btn-primary">Thanh Toán</button></a>
                         </div>
                     </div>
                 </div>
@@ -236,4 +236,17 @@
         </div>
     </div>
 </section>
+@endsection
+@section('js')
+<script>
+        function BuyCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET',
+            }).done(function(response) {  
+                $('.quntity').html(response['cart']['totalQty']);           
+            })
+        }
+
+    </script>
 @endsection
