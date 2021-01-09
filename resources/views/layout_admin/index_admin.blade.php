@@ -202,7 +202,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3 padd-0" style="padding-left: 5%;">
-                                                    <button style="box-shadow: none; margin: 0;" type="button"
+                                                    <button style="box-shadow: none; margin: 0; background-color:#4a4235; border-color:#4a4235" type="button"
                                                         class="btn btn-success btn-large" onclick="cms_paging_order(1)"><i
                                                             class="fa fa-search"></i>
                                                     </button>

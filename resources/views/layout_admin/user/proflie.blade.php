@@ -1,4 +1,4 @@
-@extends('layout_admin.master2')
+@extends('layout_admin.master')
 @section('content')
 <style>
       .aa {

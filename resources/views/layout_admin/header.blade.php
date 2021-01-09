@@ -1,7 +1,7 @@
 <style>
     .wordart {
         font-family: Arial, sans-serif;
-        font-size: 34px;
+        font-size: 32px;
         font-weight: bold;
         position: relative;
         z-index: 1;
