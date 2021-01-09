@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\BillController;
@@ -14,6 +13,7 @@ use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\StoreController;
 
 
 /*
@@ -96,8 +96,6 @@ Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('bo
 Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
-///------>trang admin_CRUD kho hang
-Route::resource('archive',ArchiveController::class);
 ///------>trang admin_CRUD thong tin user
 Route::resource('user',UserController::class);
 Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole');
@@ -126,3 +124,5 @@ Route::resource('companies',CompanyController::class);
 Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->name('product_company');
 ///------>Trang tìm và lưu sesstion company
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
+///------>Trang kho
+Route::resource('store', StoreController::class);

@@ -4,12 +4,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Quản lý nhà sản xuất
+                Quản lý Kho Hàng
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="{{url('companies')}}">Nhà cung cấp</a></li>
+                <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{url('stores')}}">Kho Hàng</a></li>
                 <li class="active">Danh Sách</li>
             </ol>
         </section>
@@ -25,10 +25,10 @@
 
 
                             <div class="col-md-4 pull-right">
-                                <a href="{{ route('companies.create') }}">
+                                <a href="{{ route('store.create') }}">
                                     <button class="btn btn btn-success "
                                         style="float:right;;margin-bottom:5px;margin-left:2px;background-color: #4a4235;border: #4a4235">
-                                        <i class="fa fa-plus"> Thêm nhà xuất bản</i></button>
+                                        <i class="fa fa-plus">&nbsp;Nhập Kho</i></button>
                                 </a>
                             </div>
                         </div><!-- /.box-header -->
@@ -36,32 +36,32 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Tên nhà phát hành </th>
-                                        <th>Email</th>
-                                        <th>Địa chỉ </th>
-                                        <th>Số Điện Thoại</th>
+                                        <th>Tên sản phẩm </th>
+                                        <th>Tổng sản phẩm</th>
+                                        <th>Số lượng sản phẩm tồn kho</th>
+                                        <th>Số lượng sản Phẩm bán ra</th>
 
                                         <th>Tùy chọn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($companies as $com)
+                                    @foreach ($stores as $st)
                                         <tr>
-                                            <td>{{ $com->name }}</td>
-                                            <td>{{ $com->email }}</td>
-                                            <td>{{ $com->address }}</td>
-                                            <td>{{ $com->phone_number }}</td>
+                                            <td>{{ $st->products->name }}</td>
+                                            <td>{{ $st->all_product_in_store }}</td>
+                                            <td>{{ $st->stored_product }}</td>
+                                            <td>{{ $st->sold_product }}</td>
                                             <td>
                                                 <div class="btn-toolbar" role="toolbar">
                                                     <div class="btn-group mr-2" role="group">
-                                                        <a href="{{ route('companies.edit', [$com['id']]) }}">
+                                                        <a href="{{ route('store.edit', [$st['id']]) }}">
                                                             <button style="float:right" class="btn btn-warning btn-sm"><i
                                                                     class="fa fa-pencil"></i></button>
                                                         </a>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group">
                                                         <form method="post"
-                                                            action="{{ route('companies.destroy', [$com['id']]) }}"
+                                                            action="{{ route('store.destroy', [$st['id']]) }}"
                                                             enctype="multipart/form-data" name="form1" id="form1">
                                                             @csrf
                                                             <input name="_method" type="hidden" value="DELETE">
