@@ -58,7 +58,7 @@
                                         <p>{!! $pro->description !!}</p>
                                     </div>
                                 </div>
-                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$pro->id)}}"><i class="fa fa-info-circle"></i></a></h6>
+                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                             </div>
                         </div>
 
@@ -109,6 +109,7 @@
                                     </div>
                                 </div>
                                 <h3><a href="#">{{ $pro->name }}</a></h3>
+                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                             </div>
                         </div>
                     @endforeach
@@ -153,6 +154,7 @@
                                     </div>
                                 </div>
                                 <h3><a href="#">{{ $pro->name }}</a></h3>
+                                <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a></h6>
                             </div>
                         </div>
                     @endforeach

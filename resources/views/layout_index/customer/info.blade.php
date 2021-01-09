@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Số điện thoại:</label>
-                                    <input type="text" name="phone" class="form-control" data-inputmask="'mask': '999-999-9999'" value="{{$customer->phone}}" />
+                                    <input type="text" name="phone" class="form-control" value="{{$customer->phone}}" />
                                 </div>
                                 <div class="form-group">
                                     <label>Địa chỉ:</label>
