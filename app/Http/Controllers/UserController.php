@@ -39,8 +39,8 @@ class UserController extends Controller
     public function index()
     {
         $company_id =  GetSession::getCompanyId();
-        $user = User::where('id_role', '!=', '1')->where('id_company','=',2)
-        ->orderBy('created_at', 'desc')->paginate(10);
+        $user = User::where('id_role', '!=', 1)->where('id_role', '!=', 3)
+                    ->orderBy('created_at', 'desc')->paginate(10);
         return view('layout_admin.user.list_users', compact('user'));
     }
 

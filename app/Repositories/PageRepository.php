@@ -232,4 +232,8 @@ class PageRepository
         $supplier = User::find($id);
         $supplier->delete();
     }
+
+    public function getRead($id){
+        return Product::find($id);
+    }
 }

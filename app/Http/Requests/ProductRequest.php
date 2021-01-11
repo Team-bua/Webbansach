@@ -39,7 +39,6 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.unique'=>'Tên sản phẩm đã tồn tại',
             'name.required'=>'Vui lòng nhập tên sản phẩm',
  
             'publisher.required'=>'Vui lòng nhập nhà sản xuất',

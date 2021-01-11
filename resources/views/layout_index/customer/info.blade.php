@@ -44,7 +44,6 @@
                 <td class="product-price">
                     <span class="amount">{{number_format($product->pivot->unit_price)}} VNĐ</span>
                 </td>
-
                 <td class="product-quantity text-center">{{$product->pivot->quantity}}</td>
                 <td class="product-status">{{$bills->created_at->format('d/m/y')}}</td>
                 <td class="product-subtotal">{{number_format($product->pivot->unit_price * $product->pivot->quantity)}} VNĐ</td>

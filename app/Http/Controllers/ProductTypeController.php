@@ -33,7 +33,6 @@ class ProductTypeController extends Controller
      */
     public function index(Request $request)
     {
-
         $product_type = $this->repository->getAll();
         $product_type = $this->repository->search($request); 
         return view('layout_admin.product_type.create_type', compact('product_type'));

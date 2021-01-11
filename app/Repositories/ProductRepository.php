@@ -71,6 +71,14 @@ class ProductRepository
             $imgdetail[] = $file_name;
         }          
        }
+       $pdf="";
+       if($request->hasfile('pdf'))
+       {
+            $file = $request->file('pdf');
+            $pdf = $file->getClientOriginalName();
+            $destinationPath=public_path('book_pdf'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
+            $file->move($destinationPath, $pdf); //lưu hình ảnh vào thư mục public/image        
+       }
        $product = new Product();
        $product->name=$request->input('name');
        $product->id_type=$request->input('cate');
@@ -81,12 +89,11 @@ class ProductRepository
        $product->promotion_price=$request->input('promotion_price');
        $product->description=$request->input('description');
        $product->format=$request->input('Format');
-      
        $product->language=$request->input('Language');
        $product->pagenumber=$request->input('PageNumber');
        $product->size=$request->input('size');
        $product->new=$request->input('featured');
-
+       $product->link=$pdf;
        $product->image=$image;
        $product->imagedetail=$imgdetail;
        $product->save();
@@ -121,6 +128,14 @@ class ProductRepository
              $imgdetail[] = $file_name;
          }          
         }
+        $pdf="";
+        if($request->hasfile('pdf'))
+        {
+             $file = $request->file('pdf');
+             $pdf = time().'_'.$file->getClientOriginalName();
+             $destinationPath=public_path('book_pdf'); //project\public\image\cars, //public_path(): trả về đường dẫn tới thư mục public
+             $file->move($destinationPath, $pdf); //lưu hình ảnh vào thư mục public/image        
+        }
         $product = Product::find($id);
         $product->name=$request->input('name');
         $product->id_type=$request->input('cate');
@@ -143,7 +158,10 @@ class ProductRepository
         if($imgdetail == []){
             $imgdetail = $product->imagedetail;
         }
-        $product->imagedetail=$imgdetail;
+        if($pdf ==""){
+            $pdf=$product->link;
+        }
+        $product->link=$pdf;
         $product->save();
         
     }
@@ -157,7 +175,8 @@ class ProductRepository
      */
     public function destroy($id) {
         $product = Product::find($id);
-        unlink(public_path('images/product').'/'.$product->image);       
+        unlink(public_path('images/product').'/'.$product->image);  
+        unlink(public_path('book_pdf').'/'.$product->link);     
         $product->delete();
       
     }

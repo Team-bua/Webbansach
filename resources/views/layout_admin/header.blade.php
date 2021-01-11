@@ -180,13 +180,9 @@
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:#8b7b61"class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Loại sách</span>
-                    
-
+                    <span style="font-size:16px ;">Loại sách</span>           
                 </a>
-
-            </li>
-            
+            </li>          
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">

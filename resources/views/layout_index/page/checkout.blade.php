@@ -4,8 +4,8 @@
     <form action="{{url('checkout')}}" method="post" class="beta-form-checkout">
         @csrf
         <div class="checkout">
-            @if(Session::has('thongbao'))
-            <div class="alert alert-success">{{Session::get('thongbao')}} </div>
+            @if(Session::has('flag'))
+            <div class="alert alert-{{Session::get('flag')}}">{{Session::get('messege')}} </div>
             @endif
             <div class="container-fluid">
                 <div class="row">
@@ -38,10 +38,9 @@
                         <div class="checkout-inner">
                             <div class="checkout-summary">
                                 <h1 style="font-family:Times New Roman;">Tổng số giỏ hàng</h1>
-                                @if(Session::has('cart'))
-                                <p class="ship-cost" style="font-family:Times New Roman;">Số lượng<span>{{number_format($totalQty)}}</span></p>
-                                <h2 style="font-family:Times New Roman;">Thành tiền<span>{{number_format($totalPrice)}}</span></h2>
-                                @endif
+                                <p class="ship-cost" style="font-family:Times New Roman;">Số lượng<span> @if(Session::has('cart')){{number_format($totalQty)}} @else 0 @endif</span></p>
+                                <h2 style="font-family:Times New Roman;">Thành tiền<span> @if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif VNĐ</span></h2>
+
                             </div>
                             <div class="checkout-payment">
                                 <div class="payment-methods">
