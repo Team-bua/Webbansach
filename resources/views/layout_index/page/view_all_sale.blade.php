@@ -13,10 +13,7 @@
             <a href="#">Giảm Giá Thấp Đến Cao</a>
 
         </div>
-<<<<<<< HEAD
-=======
     </div>
->>>>>>> 0108457a13f999c6b1a1929bc7176ac30f1acbad
 
 
 </section>
@@ -44,7 +41,14 @@
                             <h3><a href="#">{{ $books->name }}</a></h3>
                             <div class="content">
                                 <div class="body">
-                                    <p>{!! $books->description !!}</p>
+                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} Cm<br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Định dạng:</b> {{$books->format}} <br>
+                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}}
                                 </div>
                             </div>
                             <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
@@ -62,6 +66,7 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="btn-sec">{{$product_sale->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 @section('content')
 <section class="static about-sec">
 	<div class="container">
-		<table id="cart" class="table table-hover table-condensed">
+		<table id="cart" class="table table-hover table-condensed" style="margin-bottom: 2em;">
 			<thead>
 				<tr>
 					<th style="width:50%">Tên sản phẩm</th>
@@ -83,7 +83,7 @@
 					success: function(data) {
 						if (data.code == 200) {
 							$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
-							$('.quntity').html(''+data['cart']['totalQty']);
+							$('.quntity').html('' + data['cart']['totalQty']);
 							that.parent().parent().remove();
 							Swal.fire(
 								'Xóa!',
@@ -109,7 +109,7 @@
 			data = JSON.parse(data);
 			console.log(data);
 			document.getElementById('total-' + data['id']).innerHTML = Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
-			document.getElementById('totalPrice').innerHTML ='Tổng tiền :'+ Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
+			document.getElementById('totalPrice').innerHTML = 'Tổng tiền :' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
 			document.getElementById('quntity').innerHTML = data['cart']['totalQty'];
 		});
 	}

@@ -45,7 +45,14 @@
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
                         <div class="content">
                             <div class="body">
-                                <p>{!! $pro->description !!}</p>
+                                <b>Tên sách:</b> {{$pro->name}} <br>
+                                <b>Tác giả:</b> {{$pro->publisher}} <br>
+                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
+                                <b>Kích thước:</b> {{$pro->size}} Cm<br>
+                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
+                                <b>Định dạng:</b> {{$pro->format}} <br>
+                                <b>Ngôn ngữ:</b> {{$pro->language}} <br>
+                                <b>Phát hành:</b> {{$pro->productCompany->name}}
                             </div>
                         </div>
                         @if($pro->promotion_price == 0)
@@ -102,7 +109,14 @@
 
                         <div class="content">
                             <div class="body">
-                                <p>{!! $pro->description !!}</p>
+                                <b>Tên sách:</b> {{$pro->name}} <br>
+                                <b>Tác giả:</b> {{$pro->publisher}} <br>
+                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
+                                <b>Kích thước:</b> {{$pro->size}} Cm<br>
+                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
+                                <b>Định dạng:</b> {{$pro->format}} <br>
+                                <b>Ngôn ngữ:</b> {{$pro->language}} <br>
+                                <b>Phát hành:</b> {{$pro->productCompany->name}}
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
@@ -156,7 +170,14 @@
 
                         <div class="content">
                             <div class="body">
-                                <p>{!! $pro->description !!}</p>
+                                <b>Tên sách:</b> {{$pro->name}} <br>
+                                <b>Tác giả:</b> {{$pro->publisher}} <br>
+                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
+                                <b>Kích thước:</b> {{$pro->size}} Cm<br>
+                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
+                                <b>Định dạng:</b> {{$pro->format}} <br>
+                                <b>Ngôn ngữ:</b> {{$pro->language}} <br>
+                                <b>Phát hành:</b> {{$pro->productCompany->name}}
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>

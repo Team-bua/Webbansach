@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
       <li><a href="#">Sách</a></li>
-      <li class="active">Cập nhật sách</li>
+      <li class="active">Cập nhật</li>
     </ol>
   </section>
 
@@ -29,7 +29,6 @@
             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
             <input required name="name" type="text" class="form-control" value="{{$product->name}}" placeholder="Tên sách . . . . . . . . .">
           </div>
-
           <h4>Loại sách</h4>
 
           <div class="input-group input-group">
@@ -51,15 +50,12 @@
             <span class="input-group-addon"><i class="fa fa-smile-o"></i></span>
             <input name="publisher" type="text" value="{{$product->publisher}}" class="form-control" placeholder="Tác giả. . . . . . . . .">
           </div>
-
           <h4> Giá : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
             <input required name="unit_price" type="number" value="{{$product->unit_price}}" class="form-control" placeholder="Giá . . . . . . . . .">
             <span class="input-group-addon">VNĐ</span>
           </div>
-
-
           <h4> Giá khuyến mãi : </h4>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-money"></i></span>
@@ -73,37 +69,32 @@
               <textarea name="description" class="textarea" placeholder="Miêu tả . . . . ." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$product->description}}</textarea>
             </form>
           </div>
-
           <h4> Định dạng: </h4>
           <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-money"></i></span>
-              <input id="Format" name="Format" value="{{$product->format}}" type="text" class="form-control"
-                  placeholder="Khuyến mãi . . . . . . . . .">
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input id="Format" name="Format" value="{{$product->format}}" type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
 
           </div>
 
           <h4> Ngôn ngữ </h4>
           <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-money"></i></span>
-              <input id="Language" name="Language" value="{{$product->language}}"  type="text" class="form-control"
-                  placeholder="Khuyến mãi . . . . . . . . .">
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input id="Language" name="Language" value="{{$product->language}}" type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
 
           </div>
-          
+
           <h4> Số trang :</h4>
           <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-money"></i></span>
-              <input id="Page_Number" name="PageNumber" value="{{$product->pagenumber}}"  type="text" class="form-control"
-                  placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">Trang</span>
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input id="Page_Number" name="PageNumber" value="{{$product->pagenumber}}" type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
+            <span class="input-group-addon">Trang</span>
           </div>
 
           <h4> Kích thước :</h4>
           <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-money"></i></span>
-              <input id="size" name="size" value="{{$product->size}}"  type="text" class="form-control"
-                  placeholder="Khuyến mãi . . . . . . . . .">
-              <span class="input-group-addon">Cm</span>
+            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+            <input id="size" name="size" value="{{$product->size}}" type="text" class="form-control" placeholder="Khuyến mãi . . . . . . . . .">
+            <span class="input-group-addon">Cm</span>
           </div>
 
 
@@ -112,12 +103,17 @@
             <input name="img" type="file" id="exampleInputFile" onchange="changeImg(this)">
             <img id="avatar" class="thumbnail" width="100px" height="100px" src="{{asset('images/product/'.$product->image)}}">
           </div>
+
           <div class="form-group">
             <h4 for="exampleInputFile">Ảnh chi tiết</h4>
             @foreach($product->imagedetail as $pro)
             <img id="avatar" width="100px" height="100px" src="{{asset('images/product_detail/'.$pro)}}">
             @endforeach
             <input name="img_detail[]" type="file" id="exampleInputFile" multiple="multiple">
+          </div>
+          <div class="form-group">
+            <h4 for="exampleInputFile">Link sách</h4>
+            <input id="pdf" type="file" name="pdf">
           </div>
           <br>
           <div class="text-center">

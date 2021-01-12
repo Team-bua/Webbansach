@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
-use Illuminate\Support\Facades\Redirect;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class PageController extends Controller
 {
@@ -39,8 +40,10 @@ class PageController extends Controller
         $product_sale = $this->repository->getAllProductSale();
         $product_new = $this->repository->getAllproductNew();
         $product_type = $this->repository->getProductType();
-        return view('layout_index.index',
-         compact('product_new', 'product_type', 'slide', 'product_sale','product_hightlights'));
+        return view(
+            'layout_index.index',
+            compact('product_new', 'product_type', 'slide', 'product_sale', 'product_hightlights')
+        );
     }
 
     public function getDetail($id)
@@ -75,7 +78,7 @@ class PageController extends Controller
     {
         $product_type = $this->repository->getProductType();
         $product_highlights = $this->repository->getAllproductHighlights();
-        return view('layout_index.page.view_all_highlights', compact('product_type','product_highlights'));
+        return view('layout_index.page.view_all_highlights', compact('product_type', 'product_highlights'));
     }
     // xem tất cả sach theo khuyến mãi , nổi bật
 
@@ -94,12 +97,12 @@ class PageController extends Controller
         return view('layout_index.page.view_type', compact('product_types', 'type_name'));
     }
     // xem sách của từng thể loại
-    
+
     public function getMenuCompany($id)
     {
         $company_name = $this->repository->getProductCompanyName($id);
         $product_company = $this->repository->getProductCompanyID($id);
-        return view('layout_index.page.product_company', compact('product_company','company_name'));
+        return view('layout_index.page.product_company', compact('product_company', 'company_name'));
     }
 
     public function getIntroduce()
@@ -171,9 +174,10 @@ class PageController extends Controller
         return redirect()->back()->with('thongbao', 'Đăng ký thành công');
     }
 
-    public function getRead()
+    public function getRead($id)
     {
-        return view('layout_index.page.Read_book');
+        $pdf = $this->repository->getRead($id);
+        return view('layout_index.page.Read_book', compact('pdf'));
     }
 
     public function getCheckout()
@@ -194,8 +198,12 @@ class PageController extends Controller
 
     public function postCheckout(Request $request)
     {
-        $this->repository->postCheckout($request);
-        return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
+        try {
+            $this->repository->postCheckout($request);
+            return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công']);
+        } catch (Exception $exception) {
+            return redirect()->back()->with(['flag' => 'danger', 'messege' => 'Không tồn tại sản phẩm']);
+        }
     }
 
     public function getAdmin()
@@ -209,13 +217,13 @@ class PageController extends Controller
     {
         $customer = $this->repository->getInfo($id);
         $bill = $this->repository->getBill();
-        return view('layout_index.customer.info',compact('customer','bill'));
+        return view('layout_index.customer.info', compact('customer', 'bill'));
     }
 
     public function changeInfo(Request $request, $id)
     {
         $this->repository->changeInfo($request, $id);
-        return redirect()->back()->with('thongbao','Cập nhật thông tin thành công');
+        return redirect()->back()->with('thongbao', 'Cập nhật thông tin thành công');
     }
 
     public function updatePassword(UserRequest $request, $id)
@@ -223,5 +231,4 @@ class PageController extends Controller
         $this->repository->updatePassword($request, $id);
         return redirect()->back();
     }
-
 }

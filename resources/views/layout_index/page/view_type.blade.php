@@ -1,4 +1,3 @@
-
 @extends('layout_index.master')
 @section('content')
     <section class="deltai">
@@ -49,26 +48,36 @@
                                     </h6>
                                     <div class="content">
                                         <div class="body">
-                                            <p>{!! $books->description !!}</p>
+                                            <b>Tên sách:</b> {{ $books->name }} <br>
+                                            <b>Tác giả:</b> {{ $books->publisher }} <br>
+                                            <b>Thể loại:</b> {{ $books->productType->name }} <br>
+                                            <b>Kích thước:</b> {{ $books->size }} Cm<br>
+                                            <b>Số trang:</b> {{ $books->pagenumber }} <br>
+                                            <b>Định dạng:</b> {{ $books->format }} <br>
+                                            <b>Ngôn ngữ:</b> {{ $books->language }} <br>
+                                            <b>Phát hành:</b> {{ $books->productCompany->name }}
                                         </div>
                                     </div>
-
+                                    <h6><a href="javascript:"><i onclick="AddCart('{{ $books->id }}')"
+                                                class="fa fa-cart-arrow-down"></i></a> /
+                                        <a class="beta-btn primary" href="{{ url('detail', $books->id) }}">Chi tiết <i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </h6>
                                     @if ($books->promotion_price == 0)
-                                        <p class="wrap_price"> <span
-                                                class="price-new">{{ number_format($books->unit_price, 0, '', ',') }}VNĐ
-                                            </span>
-                                        @else
-                                            <span class="price-old">{{ number_format($books->unit_price, 0, '', ',') }}VNĐ
-                                            </span>
-                                            <span
-                                                class="price-new">{{ number_format($books->promotion_price, 0, '', ',') }}VNĐ
-                                            </span>
+                                        <span class="price-new">{{ number_format($books->unit_price, 0, '', ',') }} VNĐ
+                                        </span>
+                                    @else
+                                        <span class="price-old">{{ number_format($books->unit_price, 0, '', ',') }} VNĐ
+                                        </span>
+                                        <span class="price-new">{{ number_format($books->promotion_price, 0, '', ',') }} VNĐ
+                                        </span>
                                         </p>
                                     @endif
                                 </div>
                             </div>
                         @endforeach
                     </div>
+                    <div class="btn-sec">{{ $product_types->links('vendor.pagination.bootstrap-4') }}</div>
                 </div>
             </div>
         </div>

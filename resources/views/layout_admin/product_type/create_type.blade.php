@@ -215,6 +215,42 @@
             });
         });
     }
+    $(document).on('click', '.btn-sm', DelCart);
+
+    function DelCart(e) {
+        e.preventDefault();
+        let urlRequest = $(this).data('url');
+        let that = $(this);
+        Swal.fire({
+            title: 'Xóa sản phẩm',
+            text: "Bạn có muốn xóa không!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Có, muốn xóa!',
+            cancelButtonText: 'Không xóa',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: urlRequest,
+                    type: 'GET',
+                    success: function(data) {
+                        if (data.code == 200) {
+                            $('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+                            $('.quntity').html('' + data['cart']['totalQty']);
+                            that.parent().parent().remove();
+                            Swal.fire(
+                                'Xóa!',
+                                'Xóa thành công.',
+                                'success'
+                            )
+                        }
+                    }
+                });
+            }
+        });
+    }
 
     function alertDelete() {
         return confirm('Bạn có muốn xóa không')
