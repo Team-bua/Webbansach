@@ -41,8 +41,7 @@
                         <div class="new">new</div>
                         <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a>
-                            /
+                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
                         <div class="content">
                             <div class="body">
@@ -50,12 +49,12 @@
                             </div>
                         </div>
                         @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}}VNĐ </span>
-                            @else
-                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}}VNĐ
-                            </span>
-                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
-                            </span>
+                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                        @else
+                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                        </span>
+                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                        </span>
                         </p>
                         @endif
                     </div>
@@ -107,16 +106,15 @@
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a>
-                            /
+                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
                         @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}}VNĐ </span>
-                            @else
-                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}}VNĐ
-                            </span>
-                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
-                            </span>
+                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                        @else
+                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                        </span>
+                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                        </span>
                         </p>
                         @endif
                     </div>
@@ -162,16 +160,15 @@
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a>
-                            /
+                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
                         @if($pro->promotion_price == 0)
-                        <span class="price-new"> {{number_format($pro->unit_price,0,"",",")}}VNĐ </span>
-                            @else
-                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}}VNĐ
-                            </span>
-                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}}VNĐ
-                            </span>
+                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                        @else
+                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                        </span>
+                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                        </span>
                         </p>
                         @endif
                     </div>

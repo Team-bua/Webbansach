@@ -8,7 +8,7 @@
             Thêm sách
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Thể loại</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
             <li class="active"><a href="#">Banner</a></li>
         </ol>
     </section>

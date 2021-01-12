@@ -3,38 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ArchiveRepository;
-use App\Http\Requests\ArchiveRequest;
-use App\Models\Product;
+use App\Repositories\StoreRepository;
+use App\Http\Requests\StoreRequest;
+use App\Models\Store;
 
-class ArchiveController extends Controller
+
+class StoreController extends Controller
 {
-  /**
-     * The ProductRepository instance.
-     *
-     * @var \App\Repositories\ArchiveRepository
-     */
-    protected $repository;
-
-
-   /**
-    * Create a new PostController instance.
-    *
-    * @param  \App\Repositories\ArchiveRepository $repository
-    */
-   public function __construct(ArchiveRepository $repository)
-   {
-       $this->repository = $repository;
-   }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    protected $repository;
+
+    public function __construct(StoreRepository $repository)
     {
-        $bill_in = $this->repository->getAll();
-        return view('layout_admin.archive.archive_list', compact('bill_in'));
+        $this->repository = $repository;
+    }
+
+    public function index(Request $request)
+    {
+        $stores = $this->repository->getAll();
+        $stores = $this->repository->search($request);
+        return view('layout_admin.stores.stores_list', compact('stores'));
     }
 
     /**
@@ -42,10 +34,9 @@ class ArchiveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-       
-        return view('layout_admin.archive.archive_add');
+        //
     }
 
     /**
@@ -56,7 +47,8 @@ class ArchiveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->repository->create($request);
+        return redirect(route('store.index'));
     }
 
     /**
@@ -67,7 +59,7 @@ class ArchiveController extends Controller
      */
     public function show($id)
     {
-       
+        //
     }
 
     /**
@@ -102,10 +94,5 @@ class ArchiveController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getSearch(Request $request)
-    {
-        
     }
 }

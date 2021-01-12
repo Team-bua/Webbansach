@@ -60,7 +60,7 @@
                     <ul  class="dropdown-menu" style="padding-top: 7px;" >
                         <!-- User image -->
                         <li style="background-color: #8b7b61" class="user-header">
-                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}"
+                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png')  }}"
                                 class="img-circle" alt="User Image" />
                             <p style="color: #ffffff">
                                 {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
@@ -73,13 +73,11 @@
 
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-left">
+                            <div class="text-center">
                                 <a href="{{ route('user.edit', Auth::user()->id) }}" class="btn btn-danger btn-flat">Đổi
                                     mật khẩu</a>
                             </div>
-                            <div class="pull-right">
-                                <a href="{{ url('logout') }}" class="btn btn-primary btn-flat">Đăng Xuất</a>
-                            </div>
+
                         </li>
                     </ul>
 
@@ -108,7 +106,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png') }}" class="img-circle"
+                <img style="background-color: #ffffff" src="{{ asset('images/icon/tuanrau_phagame.png') }}" class="img-circle"
                     alt="User Image" />
             </div>
             <div class="pull-left info">
@@ -129,16 +127,16 @@
 
         ?>
         @can('admin')
-        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form">
+        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;" >
         @csrf
-            <div class="input-group" >
+            <div class="input-group">
             <select class="form-control" name="select_companyid" id="select_companyid">
                 @foreach($companies as $cp)
                 <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
                 @endforeach
             </select>
-            <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            <span class="input-group-btn" >
+                <button style="border: none; margin-left:2px" type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
           </form>  
@@ -193,6 +191,13 @@
                     <i style="color:#8b7b61"class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>Banner</span>
                 </a>
+
+
+                <li class="treeview">
+                    <a href="{{ route('thenews.index') }}">
+                        <i style="color:#8b7b61"class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
+                        <span>News</span>
+                    </a>
         @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
@@ -212,8 +217,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
-                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
-                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-inbox"></i> Nhập kho</a></li>
+                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
                   </ul>
             </li>
             

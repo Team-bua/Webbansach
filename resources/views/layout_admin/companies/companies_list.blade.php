@@ -8,8 +8,8 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
-                <li><a href="#">Nhà cung cấp</a></li>
+                <li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{url('companies')}}">Nhà cung cấp</a></li>
                 <li class="active">Danh Sách</li>
             </ol>
         </section>
