@@ -39,7 +39,14 @@
                             <h3><a href="#">{{ $books->name }}</a></h3>
                             <div class="content">
                                 <div class="body">
-                                    <p>{!! $books->description !!}</p>
+                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} <br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Định dạng:</b> {{$books->format}} <br>
+                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}}
                                 </div>
                             </div>
                             <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
@@ -57,10 +64,10 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="btn-sec">{{$product_new->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>
-
 </section>
 <a href="#" class="bck"></a>
 @endsection

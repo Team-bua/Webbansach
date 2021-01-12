@@ -30,11 +30,8 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layout_index.header', function($view){
             $types = ProductType::all();
-            $view->with('types',$types);
-        });
-        view()->composer('layout_index.header', function($view){
             $company = Company::all();
-            $view->with('company',$company);
+            $view->with(['types'=>$types,'company'=>$company]);
         });
         view()->composer(['layout_index.page.cart','layout_index.page.checkout'], function($view){
             if(Session('cart')){

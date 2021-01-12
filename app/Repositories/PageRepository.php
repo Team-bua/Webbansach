@@ -32,7 +32,7 @@ class PageRepository
 
     public function getAllproductbook()
     {
-        return  Product::where('status', 1)->get();
+        return  Product::where('status', 1)->paginate(20);
     }
     // sách hoạt động
 

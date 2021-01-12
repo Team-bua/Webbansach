@@ -62,12 +62,6 @@
                     </li>
                     @endif
                 </ul>
-
-                <form action="" class="cart">
-                    <div class="quantity">
-                        <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                    </div>
-                </form>
                 <div class="btn-sec">
                     <button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button>
                     <button class="btn " onclick="BuyCart('{{$product_detail->id}}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>

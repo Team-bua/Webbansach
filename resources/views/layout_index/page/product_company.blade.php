@@ -20,7 +20,7 @@
 
 <section class="static about-sec">
     <div class="container">
-        <h2>Nhà xuất bản: {{$company_name->name}}</h2>
+        <h2>{{$company_name->name}}</h2>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
             <span class="fa fa-search"></span>
@@ -43,7 +43,14 @@
                             <h3><a href="#">{{ $books->name }}</a></h3>
                             <div class="content">
                                 <div class="body">
-                                    <p>{!! $books->description !!}</p>
+                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} <br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Định dạng:</b> {{$books->format}} <br>
+                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}}
                                 </div>
                             </div>
                             <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
@@ -61,6 +68,7 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="btn-sec">{{$product_company->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>

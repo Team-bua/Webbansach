@@ -14,16 +14,6 @@
 
         </div>
     </div>
-    <div class="container">
-        <div class="sidebar-widget brands">
-            <h2 class="title">Nhóm Sản Phẩm</h2>
-            @foreach ($product_type as $pro)
-            <ul>
-                <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }} </a><span>(45)</span></li>
-            </ul>
-            @endforeach
-        </div>
-    </div>
 
     </div>
     </div>
@@ -58,7 +48,15 @@
                             @endif
                             <div class="content">
                                 <div class="body">
-                                    <p>{!! $books->description !!}</p>
+                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} <br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Định dạng:</b> {{$books->format}} <br>
+                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}} <br>
+                                    <a href="{{route('Read',$books->id)}}"><button class="btn-sm">Đọc ONLINE</button></a>
                                 </div>
                             </div>
                             <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
@@ -76,6 +74,7 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="btn-sec">{{$product_all->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>

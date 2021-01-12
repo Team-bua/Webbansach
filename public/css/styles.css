@@ -1862,7 +1862,7 @@ li.com-title span {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.5s;
-    z-index: 20;
+    z-index: 102;
 }
 
 .content .body {
@@ -1881,7 +1881,7 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-    transform: translateX(-5%) translateY(-150px);
+    transform: translateX(-5%) translateY(0px);
 }
 
 
