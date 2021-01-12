@@ -17,6 +17,7 @@
         <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>
         <button class="btn " data-toggle="modal" data-target="#tab-content">Đổi Mật Khẩu</button>
     </div>
+<<<<<<< HEAD
     <br>
     <div class="row">
         <div class="accordion-group" style="font-size: 25px; width:97%; margin-left: 15px; ">
@@ -76,6 +77,45 @@
             </div>
         </div>
     </div>
+=======
+    @if(Session::has('success'))
+    <div class="alert alert-success">{{Session::get('success')}}</div>
+    @endif
+    @if(Session::has('danger'))
+    <div class="alert alert-danger">{{Session::get('danger')}}</div>
+    @endif
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th width=20%>Ảnh sản phẩm</th>
+                <th width=25%>Tên sản phẩm</th>
+                <th width=20%>Giá</th>
+                <th>Số Lượng</th>
+                <th width=15%>Ngày đặt</th>
+                <th width=20%>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($bill as $bills)
+            @foreach($bills->products as $product)
+            <tr class="cart_item">
+                <td class="product-name"><img style="width:120px;height:120px;" src="{{ asset('images/product/' . $product->image) }}">
+                </td>
+                <td>{{$product->name}}</td>
+                <td class="product-price">
+                    <span class="amount">{{number_format($product->pivot->unit_price)}} VNĐ</span>
+                </td>
+                <td class="product-quantity text-center">{{$product->pivot->quantity}}</td>
+                <td class="product-status">{{$bills->created_at->format('d/m/y')}}</td>
+                <td class="product-subtotal">{{number_format($product->pivot->unit_price * $product->pivot->quantity)}} VNĐ</td>
+
+            </tr>
+
+            @endforeach
+            @endforeach
+        </tbody>
+    </table>
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 </div>
 <br>
 <div class="container">
@@ -139,12 +179,15 @@
                                     <button class="btn black">Cập nhật thông tin </button>
                                 </div>
                                 <br>
+<<<<<<< HEAD
                                 @if(Session::has('success'))
                                 <div class="alert alert-success">{{Session::get('success')}}</div>
                                 @endif
                                 @if(Session::has('danger'))
                                 <div class="alert alert-danger">{{Session::get('danger')}}</div>
                                 @endif
+=======
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
                             </form>
                         </div>
                     </div>

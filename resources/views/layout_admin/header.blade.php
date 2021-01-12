@@ -1,7 +1,7 @@
 <style>
     .wordart {
         font-family: Arial, sans-serif;
-        font-size: 34px;
+        font-size: 32px;
         font-weight: bold;
         position: relative;
         z-index: 1;
@@ -180,13 +180,9 @@
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:#8b7b61"class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Loại sách</span>
-                    
-
+                    <span style="font-size:16px ;">Loại sách</span>           
                 </a>
-
-            </li>
-            
+            </li>          
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
@@ -212,8 +208,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
-                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
-                    <li> <a href="{{ route('archive.index') }}"><i class="fa fa-inbox"></i> Nhập kho</a></li>
+                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
                   </ul>
             </li>
             

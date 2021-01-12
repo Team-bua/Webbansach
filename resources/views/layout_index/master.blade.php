@@ -48,10 +48,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<<<<<<< HEAD
     <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
     
+=======
+
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
     <script>
         $(function() {
             $('.bck').backToTop();

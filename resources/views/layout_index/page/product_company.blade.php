@@ -20,7 +20,7 @@
 
 <section class="static about-sec">
     <div class="container">
-        <h2>Nhà xuất bản: {{$company_name->name}}</h2>
+        <h2>{{$company_name->name}}</h2>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
             <span class="fa fa-search"></span>
@@ -44,9 +44,17 @@
                             <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$books->id)}}"><i class="fa fa-info-circle"></i></a></h6>
                             <div class="content">
                                 <div class="body">
-                                    <p>{!! $books->description !!}</p>
+                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} <br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Định dạng:</b> {{$books->format}} <br>
+                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}}
                                 </div>
                             </div>
+<<<<<<< HEAD
                             @if($books->promotion_price == 0)
                                   <p class="wrap_price"> <span class="price-new">{{number_format($books->unit_price,0,"",",")}}VNĐ 
                                   </span> 
@@ -59,10 +67,24 @@
                             @endif
 
                             
+=======
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
+                            @if($books->promotion_price == 0)
+                            <span class="price-new">{{number_format($books->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($books->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($books->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            </p>
+                            @endif
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
                         </div>
                     </div>
                     @endforeach
                 </div>
+                <div class="btn-sec">{{$product_company->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>

@@ -32,8 +32,6 @@
                     @error('name')
                     <div style="color: red"> {{ $message }} </div>
                     @enderror
-
-
                     <h4> Loại sách </h4>
                     <div class="input-group input-group">
                         <div class="input-group-btn">
@@ -123,29 +121,22 @@
                     @error('img')
                     <div style="color: red"> {{ $message }} </div>
                     @enderror
-
-
-
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh chi tiết</h4>
                         <input name="img_detail[]" id="exampleInputFile" type='file' multiple />
                         <div id="myImg">
                         </div>
                     </div>
-                    @error('img_detail[]')
-                    <div style="color: red"> {{ $message }} </div>
-                    @enderror
+                    <div class="form-group">
+                        <h4 for="exampleInputFile">Link sách</h4>
+                        <input id="pdf" type="file" name="pdf">
+                    </div>
                     <br>
                     <div class="text-center">
 
                         <input style="border:none; background-color:#4a4235;" type="submit" name="submit" value="Thêm" class="btn  btn-warning btnthem btn-lg">
 
                     </div>
-
-
-
-
-
             </form>
         </div>
     </section><!-- /.content -->

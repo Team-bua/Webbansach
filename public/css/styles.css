@@ -1561,6 +1561,7 @@ li.com-title span {
     text-decoration: none;
     display: block;
     border-radius: 10px;
+<<<<<<< HEAD
 }
 
 .dropdown-content a:hover {
@@ -1571,6 +1572,18 @@ li.com-title span {
     display: block;
 }
 
+=======
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 .dropdown:hover .dropbtn {
     background-color: #F4A300;
 }
@@ -1872,7 +1885,7 @@ li.com-title span {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.5s;
-    z-index: 20;
+    z-index: 102;
 }
 
 .content .body {
@@ -1891,7 +1904,11 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
+<<<<<<< HEAD
     transform: translateX(-5%) translateY(-100px);
+=======
+    transform: translateX(-5%) translateY(0px);
+>>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 }
 
 
