@@ -51,6 +51,7 @@
     <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+    
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -87,6 +88,22 @@
         }
 
     </script>
+    <!---------------------------------------------------------------------------------------->
+<!--     <script>
+window.onscroll = function() {myFunction()};
+
+var menu = document.getElementById("menu");
+var sticky = menu.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    menu.classList.add("sticky")
+  } else {
+    menu.classList.remove("sticky");
+  }
+}
+</script> -->
+    <!---------------------------------------------------------------------------------------->
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -107,6 +124,9 @@
     @yield('script')
     @yield('js')
     @yield('show')
+    @yield('music')
+    @yield('speak')
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
 </body>
 
 </html>

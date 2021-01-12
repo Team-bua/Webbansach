@@ -1,5 +1,16 @@
 @extends('layout_index.master')
 @section('content')
+<style type="text/css">
+    textarea {
+    font-size: 15px;
+    border: 10px solid black;
+    padding: 2rem 1rem;
+    min-height: 3em;
+    resize: none;
+    background: #ffd73e33;
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+}
+</style>
 <section class="product-sec">
     <div class="container">
 
@@ -39,12 +50,23 @@
                         let src = this.src;
                         imageMain.src = src;
                     });
-                    
+
                 });
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
+            <textarea  type="text" placeholder="Nhập gì đó để nói (input something)..." rows="10" cols="63"  id="text" disabled>
+            {!! $product_detail->description !!}
+        </textarea> 
+        <br>
+        <br>
+        <div class="col-md-4">
+      <div class="form-group">
+        <select id="gender" class="form-control" >
+          <option value="Vietnamese Female" style="text-decoration: blink;">Tiếng Việt</option>
+        </select>
+      </div>
+    </div>
                 <ul>
                     @if($product_detail->promotion_price == 0)
                     <li>
@@ -62,52 +84,51 @@
                     </li>
                     @endif
                 </ul>
-
-                <form action="" class="cart">
-                    <div class="quantity">
-                        <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                    </div>
-                </form>
                 <div class="btn-sec">
+                    <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book" ></i></button>
                     <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
                     <button class="btn " data-toggle="modal" data-target="#product_view">Mua Ngay</button>
                     <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
+                    
                 </div>
             </div>
         </div>
     </div>
 </section>
+<audio id="myAudio">
+  <source src="images/music/oke.mp3.mp3" type="audio/mpeg">
+</audio>
 <div class="container">
     <div class="modal fade product_view" id="product_view">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6 product_img">
-                        <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
-                    </div>
-                    <div class="col-md-6 product_content">
-                        <h4>{{ $product_detail->name }}</h4>
-                        @if($product_detail->promotion_price == 0)
-                        <h3 class="cost">
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ 
-                         @else
-                        <small class="pre-cost">
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
-                        </small>
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
-                        </h3>
-                        @endif
-                        <div class="space-ten"></div>
-                        <div class="btn-ground">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 product_img">
+                            <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
+                        </div>
+                        <div class="col-md-6 product_content">
+                            <h4>{{ $product_detail->name }}</h4>
+                            @if($product_detail->promotion_price == 0)
+                            <h3 class="cost">
+                                <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
+                                @else
+                                <small class="pre-cost">
+                                    <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
+                                </small>
+                                <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
+                            </h3>
+                            @endif
+                            <div class="space-ten"></div>
+                            <div class="btn-ground">
+                                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <section class="comment">
     <div class="container">
@@ -154,6 +175,7 @@
                         <br>
                         Chỉ có thành viên mới có thể nhận xét. Vui <a href="{{route('login')}}">Đăng nhập</a> hoặc<a href="{{route('signup')}}"> Đăng Ký</a>
                     </div>
+                    @if(Auth::check())
                     <div class="rating1">
                         <input type="radio" name="rating" value="5" id="5">
                         <label for="5">☆</label>
@@ -166,14 +188,15 @@
                         <input type="radio" name="rating" value="1" id="1">
                         <label for="1">☆</label>
                     </div>
+                    @endif
                 </div>
             </div>
             <div id="tab-review" class="tab-content">
                 @if(Auth::check())
                 <div class="rating-card">
                     <form action="{{route('comment',$product_detail->id)}}" method="post">
-                    @csrf
-                    @method('put')
+                        @csrf
+                        @method('put')
                         <div class="card border-primary rounded-0">
                             <div class="card-body p-3">
                                 <div class="form-group">
@@ -195,7 +218,7 @@
                     </form>
                     <div style="clear:both;"></div>
                 </div>
-                    @endif
+                @endif
             </div>
             <div id="tab-information" class="tab-content">
                 <div class="cpt_product_description ">
@@ -218,22 +241,46 @@
     </div>
     <div class="container">
         <div id="last-product-wrapper">
-            <div id="comment-list">     
-            @foreach($comments as $com)                    
+            <div id="comment-list">
+                @foreach($comments as $com)
                 <ul>
-                    <li class="com-title">                       
-                        {{$com->full_name}}                      
+                    <li class="com-title">
+                        {{$com->full_name}}
                         <br>
                         <span>{{$product_detail->created_at->format('d/m/Y')}}</span>
-                    </li>                                   
+                    </li>
                     <li class="com-details">
-                       {{$com->pivot->body}}
+                        {{$com->pivot->body}}
                     </li>
                 </ul>
-                 @endforeach                      
+                @endforeach
             </div>
-             
+
         </div>
     </div>
 </section>
 @endsection
+@section('speak')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#btPlay").click(function(){
+        var text = $("#text").val();
+        var gender = $("#gender").val();
+        responsiveVoice.speak(text, gender, {rate: 1});
+      });
+    });
+  </script>
+@stop
+@section('music')
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+@stop

@@ -125,7 +125,7 @@ h6 span:nth-child(14) {
     opacity: 1;
     color: #fff;
     text-transform: uppercase;
-    padding: 15px 20px 11px;
+    padding: 15px 15px 11px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -347,6 +347,16 @@ header .cart .quntity {
     display: none
 }
 
+/*.sticky {
+    position: fixed;
+    top: 0;
+    width: 80%;
+}
+
+.sticky +.about-sec {
+    padding-top: 60px;
+}*/
+
 #menu {
     background: #f5a200;
     border: 1px solid #b87a00;
@@ -445,7 +455,7 @@ header .cart .quntity {
 
 #menu>ul>li ul>li>a {
     line-height: 18px;
-    font-size: 14px;
+    font-size: 16px;
     float: none;
     font-family: 'Source Sans Pro', Arial;
     font-weight: normal;
@@ -1248,7 +1258,10 @@ ul {
     padding-bottom: 7px;
     text-decoration: blink;
 }
+
+
 /*----------------------------------------------------------------*/
+
 .last-product-wrapper {
     float: right;
     width: 100%;
@@ -1267,6 +1280,7 @@ ul {
     margin-bottom: 8px;
     position: relative;
 }
+
 
 /*-------------------------------form-comment------------------------------------------------*/
 
@@ -1297,8 +1311,6 @@ li.com-title span {
     margin-top: 25px;
     text-align: justify;
 }
-
-
 
 
 /*------------------------------recent-book-sec-----------------------------------------------*/
@@ -1409,29 +1421,26 @@ li.com-title span {
 
 /*----------------------------------showpassword-------------------------------------------*/
 
-.pass_show{position: relative} 
+.pass_show {
+    position: relative
+}
 
-.pass_show .ptxt { 
+.pass_show .ptxt {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    color: #f36c01;
+    margin-top: -10px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
 
-position: absolute; 
+.pass_show .ptxt:hover {
+    color: #333333;
+}
 
-top: 50%; 
 
-right: 10px; 
-
-z-index: 1; 
-
-color: #f36c01; 
-
-margin-top: -10px; 
-
-cursor: pointer; 
-
-transition: .3s ease all; 
-
-} 
-
-.pass_show .ptxt:hover{color: #333333;}
 /*-----------------------------------------------------------------------*/
 
 
@@ -1520,44 +1529,52 @@ transition: .3s ease all;
 
 
 /*----------------------------------menu-drop---------------------------------------*/
+
 .dropbtn {
-  background-color: #f5a200;
-  color: white;
-  padding: 8px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-border: 1px solid #b87a00;
+    background-color: #f5a200;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #b87a00;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 101;
-  border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+    border-radius: 10px;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  border-radius: 10px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #F4A300;}
+.dropdown:hover .dropbtn {
+    background-color: #F4A300;
+}
+
 
 /*----------------------------------sale--------------------------------------------*/
 
@@ -1869,13 +1886,12 @@ border: 1px solid #b87a00;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 220px;
-
 }
 
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-    transform: translateX(-5%) translateY(-150px);
+    transform: translateX(-5%) translateY(-100px);
 }
 
 
@@ -2900,17 +2916,3 @@ footer .copy-right .share span:hover {
 
 
 /*# sourceMappingURL=styles.css.map */
-
-
-/*----------------------------------quantity----------------------------------------*/
-
-.quantity {
-    float: left;
-    margin-right: 15px;
-}
-
-.quantity input[type="number"] {
-    border: 1px solid #5a88ca;
-    padding: 5px;
-    width: 50px;
-}
