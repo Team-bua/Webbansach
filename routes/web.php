@@ -76,8 +76,8 @@ Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout')
 Route::get('search',[PageController::class,'getSearch'])->name('search');
 //----->Bình Luận
 Route::put('comment/{id}',[PageController::class,'postComment'])->name('comment');
-//----->nhà xuất bản
-
+//----->đánh giá
+Route::put('rating/{id}',[PageController::class,'postRating'])->name('rating');
 /*--------------------------------------------------------------------------------*/
 
 

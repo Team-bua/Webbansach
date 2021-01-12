@@ -121,6 +121,12 @@ class PageController extends Controller
         return redirect()->back();
     }
 
+    public function postRating($id, Request $request)
+    {
+        $this->repository->postRating($id, $request);
+        return redirect()->back();
+    }
+
     public function postLogin(Request $request)
     {
         $credentaials = array('username' => $request->username, 'password' => $request->password);
