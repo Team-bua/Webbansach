@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Quản lý nhà sản xuất
+                Quản lý nhà cung cấp
 
             </h1>
             <ol class="breadcrumb">
@@ -36,7 +36,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Tên nhà phát hành </th>
+                                        <th>Tên nhà cung cấp </th>
                                         <th>Email</th>
                                         <th>Địa chỉ </th>
                                         <th>Số Điện Thoại</th>

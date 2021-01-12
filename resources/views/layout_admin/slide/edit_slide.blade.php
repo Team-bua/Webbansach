@@ -8,9 +8,8 @@
             Cập nhật slide
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Sách</a></li>
-            <li class="active">Thêm sách</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Thể loại</a></li>
+            <li class="active"><a href="#">Banner</a></li>
         </ol>
     </section>
 

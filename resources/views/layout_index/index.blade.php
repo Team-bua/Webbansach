@@ -14,17 +14,7 @@
         </div>
     </div>
 </section>
-<div class="container " style="padding: 14px 50px;">
-    <table>
-        <tr>
-            <td><img style="height:260px;" src="{{ asset('images/slide1.png') }}" alt="image" /> </td>
-            <td><img style="height:260px;" src="{{ asset('images/slide1.png') }}" alt="image" /> </td>
-            <td><img style="height:260px" src="{{ asset('images/slide2.png') }}" alt="image" /> </td>
-            <td><img style="height:260px;" src="{{ asset('images/slide3.png') }}" alt="image" /> </td>
 
-        </tr>
-    </table>
-</div>
 <br>
 <section class="static about-sec">
     <div class="container">

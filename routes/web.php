@@ -12,6 +12,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StoreController;
 
@@ -126,3 +127,6 @@ Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->n
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
 ///------>Trang kho
 Route::resource('store', StoreController::class);
+///------>Tintuc
+Route::resource('thenews',NewsController::class);
+Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent');

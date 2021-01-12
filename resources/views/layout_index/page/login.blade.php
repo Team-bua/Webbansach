@@ -15,9 +15,9 @@
                             <span class="required-star">*</span>
                         </div>
                 </div>
-                <div class="row  justify-content-md-center">
-                    <div class="col-6">
-                            <input type="password" name="password" placeholder="Password . . . . ."required/>
+                <div class="row  justify-content-md-center " >
+                    <div class="col-6 ">
+                        <input type="password" name="password" placeholder="Password . . . . ." required/>
                             <span class="required-star">*</span>
                         </div>
                 </div>

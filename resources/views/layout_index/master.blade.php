@@ -48,7 +48,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -85,6 +84,22 @@
         }
 
     </script>
+    <!---------------------------------------------------------------------------------------->
+<!--     <script>
+window.onscroll = function() {myFunction()};
+
+var menu = document.getElementById("menu");
+var sticky = menu.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    menu.classList.add("sticky")
+  } else {
+    menu.classList.remove("sticky");
+  }
+}
+</script> -->
+    <!---------------------------------------------------------------------------------------->
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -105,6 +120,9 @@
     @yield('script')
     @yield('js')
     @yield('show')
+    @yield('music')
+    @yield('speak')
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
 </body>
 
 </html>

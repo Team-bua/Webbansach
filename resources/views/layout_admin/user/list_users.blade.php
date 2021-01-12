@@ -7,9 +7,8 @@
             Quản lý tài khoản
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tài khoản</a></li>
-            <li class="active">Danh sách</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+            <li class="active">Người dùng</li>
         </ol>
     </section>
 

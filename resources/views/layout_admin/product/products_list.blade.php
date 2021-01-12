@@ -9,7 +9,7 @@
         </h1>
 
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Sách</a></li>
             <li class="active">Danh sách</li>
         </ol>
@@ -45,8 +45,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th style="width: 120px">Tùy chọn</th>
-                            <th></th>
+                            <th style="width: 100px">Tùy chọn</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,7 +77,7 @@
                             </td>
                             <td>{!! $pro->description !!}</td>
                             <td>{{ $pro->pagenumber }}</td>
-                            <td>{{ $pro->size }} cm</td>
+                            <td>{{ $pro->size }}</td>
                             <td>{{ $pro->language }}</td>
                             <td>{{ $pro->productCompany->name }}</td>
                             <td>
@@ -93,11 +92,8 @@
                                     <button type="button" class="btn btn-warning btn btn-flat"><i class="fa fa-edit">
                                         </i> </button>
                                 </a>
-                               
                                 @endcan
-                                <button style="margin-right:5px;float: left;" class='btn btn-flat btn-info btn1' ><i class='fa fa-eye'></i></button>
                             </td>
-                            <td></td>
                         </tr>
             </div>
         </div>
@@ -132,7 +128,6 @@
 
 @section('js')
 <!-- SlimScroll -->
-
 <script type="text/javascript">
     var table = $('#example1').DataTable({
         "bPaginate": true,
@@ -142,7 +137,7 @@
         "bInfo": false,
         "bAutoWidth": true,
         "columnDefs": [{
-            "targets": [7, 8, 9, 10, 11, 13],
+            "targets": [7, 8, 9, 10, 11],
             "visible": false
         }, {
             // adding a more info button at the end

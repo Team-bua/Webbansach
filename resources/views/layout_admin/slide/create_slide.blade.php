@@ -8,9 +8,8 @@
             Thêm sách
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Sách</a></li>
-            <li class="active">Thêm sách</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+            <li class="active"><a href="#">Banner</a></li>
         </ol>
     </section>
 
@@ -26,12 +25,12 @@
                     <h4> Tiêu đề : </h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                        <input id="namebook"  name="title" type="text" class="form-control" placeholder="Tên sách . . . . . . . . .">
+                        <input id="namebook"  name="title" type="text" class="form-control" >
                     </div>
                     <h4> Miêu tả </h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-                        <input id="descriptionbook" name="description" type="text" class="form-control" placeholder="Miêu tả . . . . . . . . .">
+                        <input id="descriptionbook" name="description" type="text" class="form-control" >
                     </div>
                     <div class="form-group">
                         <h4 for="exampleInputFile">Ảnh slide</h4>
@@ -41,7 +40,7 @@
                     <br>
                     <div class="text-center">
 
-                        <input type="submit" name="submit" value="Thêm bìa" class="btn  btn-success btn-lg">
+                        <input style="background-color: #4a4235;border-color: #4a4235;"type="submit" name="submit" value="Thêm bìa" class="btn  btn-success btn-lg">
                     </div>
             </form>
         </div>

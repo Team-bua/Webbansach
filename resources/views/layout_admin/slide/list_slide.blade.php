@@ -12,9 +12,8 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href=""><i class="fa fa-dashboard"></i> Home </a></li>
-            <li><a href="">Loại sách</a></li>
-            <li class="active">Simple</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+            <li class="active"><a href="#">Banner</a></li>
         </ol>
     </section>
 
