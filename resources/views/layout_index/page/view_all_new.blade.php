@@ -42,7 +42,7 @@
                                     <b>Tên sách:</b> {{$books->name}} <br>
                                     <b>Tác giả:</b> {{$books->publisher}} <br>
                                     <b>Thể loại:</b> {{$books->productType->name}} <br>
-                                    <b>Kích thước:</b> {{$books->size}} <br>
+                                    <b>Kích thước:</b> {{$books->size}} Cm<br>
                                     <b>Số trang:</b> {{$books->pagenumber}} <br>
                                     <b>Định dạng:</b> {{$books->format}} <br>
                                     <b>Ngôn ngữ:</b> {{$books->language}} <br>

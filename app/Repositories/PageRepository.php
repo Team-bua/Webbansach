@@ -14,6 +14,7 @@ use App\Models\Bill;
 use App\Models\BillDetail;
 use App\Models\Comment;
 use App\Models\Company;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 
 
@@ -101,8 +102,21 @@ class PageRepository
     public function getComment($id)
     {
         $product =  Product::find($id);
-
         return $product->userComments;
+    }
+
+    public function rating($id){
+        $product =  Product::find($id);
+        return $product->ratings;
+    }
+
+    public function postRating($id, $request)
+    {
+        $rating = new Rating();
+        $rating->id_product = $id;
+        $rating->id_user = Auth::user()->id;
+        $rating->body = $request->rating;
+        $rating->save();
     }
 
     public function getProductTypeID($id)

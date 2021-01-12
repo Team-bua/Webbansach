@@ -146,7 +146,6 @@
                             <div style="clear:both;"></div>
                         </div>
                         <br>
-                        Chỉ có thành viên mới có thể nhận xét. Vui <a href="{{route('login')}}">Đăng nhập</a> hoặc<a href="{{route('signup')}}"> Đăng Ký</a>
                     </div>
                     <div class="rating1">
                         <input type="radio" name="rating" value="5" id="5">

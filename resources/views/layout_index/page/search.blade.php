@@ -22,7 +22,7 @@
                                 <b>Tên sách:</b> {{$pro->name}} <br>
                                 <b>Tác giả:</b> {{$pro->publisher}} <br>
                                 <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Kích thước:</b> {{$pro->size}} <br>
+                                <b>Kích thước:</b> {{$pro->size}} Cm<br>
                                 <b>Số trang:</b> {{$pro->pagenumber}} <br>
                                 <b>Định dạng:</b> {{$pro->format}} <br>
                                 <b>Ngôn ngữ:</b> {{$pro->language}} <br>
