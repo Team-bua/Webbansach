@@ -105,7 +105,7 @@ class PageRepository
         return $product->userComments;
     }
 
-    public function rating($id){
+    public function getRating($id){
         $product =  Product::find($id);
         return $product->ratings;
     }

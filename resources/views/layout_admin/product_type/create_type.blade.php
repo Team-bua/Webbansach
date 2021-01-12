@@ -110,11 +110,11 @@
                                 <button style="margin-right:5px;float: left;" class="btn btn-warning btn" id="edit-{{ $pro->id }}" onclick="editType(this)"> Sửa </button>
 
 
-                                <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1">
+                                <!-- <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <input name="_method" type="hidden" value="DELETE">
-                                    <button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>
-                                </form>
+                                    <input name="_method" type="hidden" value="DELETE"> -->
+                                    <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
+                                <!-- </form> -->
                             </td>
                         </tr>
                         @endforeach
@@ -137,15 +137,18 @@
 
 @endsection
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    const base_url = window.location.origin;
     $("#bookForm").submit(function(e) {
         e.preventDefault();
         let name = $("#type_name").val();
+        let urlRequest = $(this).data('url');
         $.ajax({
             url: "{{ route('book_type.store') }}",
             type: "POST",
@@ -155,22 +158,12 @@
             success: function(response) {
                 if (response) {
                     let type = JSON.parse(response)['product_type'];
-                    let fromDelete = '';
-
-                    fromDelete += '<form method="post" action="http://localhost:8000/book_type/' +
-                        type['id'] + '" name="form1">';
-                    fromDelete +=
-                        '<input type="hidden" name="_token" value="{{ csrf_token() }}" />';
-                    fromDelete += '<input name="_method" type="hidden" value="DELETE">';
-                    fromDelete +=
-                        '<button class="btn btn-danger delType" id="del" onclick="return alertDelete()"> Xóa </button>';
-                    fromDelete += '</form>';
-                    fromDelete += '</td>';
-
                     var output = "<tr>" +
                         "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
                         "<td>" + "<button  style='margin-right:5px;float: left;' class='btn btn-warning btn' id='edit-" + type['id'] +
-                        "' onclick='editType(this)' >Sửa </button>" + fromDelete + "</td>"
+                        "' onclick='editType(this)' >Sửa </button>" +
+                        "<button class='btn btn-danger delType' data-url="+base_url+"/book_del/"+ type['id'] +
+                        ">Xóa </button>"  + "</td>"
                     "</tr>";
                     $("#tableId2 tbody").append(output);
                     $("#bookmodal").modal('hide');
@@ -215,7 +208,7 @@
             });
         });
     }
-    $(document).on('click', '.btn-sm', DelCart);
+    $(document).on('click', '.delType', DelCart);
 
     function DelCart(e) {
         e.preventDefault();
@@ -237,8 +230,6 @@
                     type: 'GET',
                     success: function(data) {
                         if (data.code == 200) {
-                            $('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
-                            $('.quntity').html('' + data['cart']['totalQty']);
                             that.parent().parent().remove();
                             Swal.fire(
                                 'Xóa!',

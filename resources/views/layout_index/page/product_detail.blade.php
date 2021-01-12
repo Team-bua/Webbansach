@@ -86,6 +86,12 @@
 
                     </li>
                     @endif
+                    <li>
+                    <span class="name">Đánh giá</span><span class="clm">:</span>
+                        @for($i=1; $i<=5; $i++)
+                    <i class="fa fa-star" style="color:#999" ></i>
+                        @endfor
+                    </li>
                 </ul>
                 <div class="btn-sec">
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
@@ -148,15 +154,15 @@
                             <br>
                         </div>
                         <div class="rating1">
-                            <input type="radio" name="rating" value="5" id="5">
+                            <input type="radio" name="rating" value="Tuyệt Vời" id="5">
                             <label for="5">☆</label>
-                            <input type="radio" name="rating" value="4" id="4">
+                            <input type="radio" name="rating" value="Rất hay" id="4">
                             <label for="4">☆</label>
-                            <input type="radio" name="rating" value="3" id="3">
+                            <input type="radio" name="rating" value="Hay" id="3">
                             <label for="3">☆</label>
-                            <input type="radio" name="rating" value="2" id="2">
+                            <input type="radio" name="rating" value="Tệ" id="2">
                             <label for="2">☆</label>
-                            <input type="radio" name="rating" value="1" id="1">
+                            <input type="radio" name="rating" value="Quá tệ" id="1">
                             <label for="1">☆</label>
                         </div>
                         <div class="text-center">

@@ -95,6 +95,7 @@ Route::get('product_off/{id}',[ProductController::class,'getStopSell'])->name('p
 Route::resource('book_type',ProductTypeController::class);
 Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('book_edit');
 Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
+Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_del');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD thong tin user
