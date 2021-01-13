@@ -7,13 +7,7 @@
      font-size: 15px;
      font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
-    
-    
-
 }
-
-
-
 </style>
     <div class="content-wrapper" style="min-height: 898px;">
         <!-- Content Header (Page header) -->
@@ -44,20 +38,12 @@
                     </div>
 
                 </div><!-- /.box-header -->
-                <div class="box-body">
-                    
-                       
-                            @foreach ($new_content as $new)
-                               
-                                    
+                <div class="box-body">                  
+                            @foreach ($new_content as $new)                                 
                                    <p>  {!! $new->content !!} </p>
-                            @endforeach
-            
-            <!-- Modal -->
-
-   
+                            @endforeach           
+            <!-- Modal -->  
     </div><!-- /.box -->
-
     </section><!-- /.content -->
     </div>
 

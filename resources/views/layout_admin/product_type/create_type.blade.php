@@ -108,13 +108,7 @@
                             <td id="name-{{ $pro->id }}">{{ $pro->name }}</td>
                             <td>
                                 <button style="margin-right:5px;float: left;" class="btn btn-warning btn" id="edit-{{ $pro->id }}" onclick="editType(this)"> Sửa </button>
-
-
-                                <!-- <form method="post" action="{{ route('book_type.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <input name="_method" type="hidden" value="DELETE"> -->
                                     <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
-                                <!-- </form> -->
                             </td>
                         </tr>
                         @endforeach

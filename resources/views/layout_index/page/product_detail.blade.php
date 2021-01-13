@@ -1,7 +1,7 @@
 @extends('layout_index.master')
 @section('content')
 <style type="text/css">
-    textarea {
+    .area {
         font-size: 15px;
         border: 10px solid black;
         padding: 2rem 1rem;
@@ -55,8 +55,8 @@
             </script>
 
             <div class="col-md-6 slider-content">
-                <textarea type="text" placeholder="Nhập gì đó để nói (input something)..." rows="10" cols="63" id="text" disabled>
-                {!!  $product_detail->description !!}
+                <textarea class="area" type="text" placeholder="Nhập gì đó để nói (input something)..." rows="10" cols="63" id="text" disabled>
+                {!! $product_detail->description !!}
             </textarea>
                 <audio id="myAudio">
                     <source src="images/music/oke.mp3.mp3" type="audio/mpeg">
@@ -121,7 +121,7 @@
                         @method('put')
                         <div class="cpt_product_description ">
                             <div class="rating-card">
-                                <div>
+                                <div style="height: 40px">
                                     <h1>Đánh Giá</h1>
                                 </div>
                                 <div class="rating">
@@ -151,22 +151,22 @@
                                 </div>
                                 <div style="clear:both;"></div>
                             </div>
-                            <br>
                         </div>
                         <div class="rating1">
-                            <input type="radio" name="rating" value="Tuyệt Vời" id="5">
+                            <input type="radio" name="ra_number" value="5" id="5">
                             <label for="5">☆</label>
-                            <input type="radio" name="rating" value="Rất hay" id="4">
+                            <input type="radio" name="ra_number" value="4" id="4">
                             <label for="4">☆</label>
-                            <input type="radio" name="rating" value="Hay" id="3">
+                            <input type="radio" name="ra_number" value="3" id="3">
                             <label for="3">☆</label>
-                            <input type="radio" name="rating" value="Tệ" id="2">
+                            <input type="radio" name="ra_number" value="2" id="2">
                             <label for="2">☆</label>
-                            <input type="radio" name="rating" value="Quá tệ" id="1">
+                            <input type="radio" name="ra_number" value="1" id="1">
                             <label for="1">☆</label>
                         </div>
+                        <textarea name="content" id="" cols="100" rows="1"></textarea>
                         <div class="text-center">
-                            <input type="submit" value="Gửi" class="btn btn-info btn-block rounded-0 py-2">
+                            <input type="submit" value="Gửi" class="btn btn-info btn-block">
                         </div>
                     </form>
                     @else
