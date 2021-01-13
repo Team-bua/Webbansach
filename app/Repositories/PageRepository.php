@@ -107,16 +107,19 @@ class PageRepository
 
     public function getRating($id){
         $product =  Product::find($id);
-        return $product->ratings;
+        $ra_date = $product->ratings()->orderBy('rating.created_at','desc')->paginate(10);
+        return ['ra_date'=>$ra_date];
     }
 
     public function postRating($id, $request)
-    {
-        $rating = new Rating();
-        $rating->id_product = $id;
-        $rating->id_user = Auth::user()->id;
-        $rating->body = $request->input('rating');
-        $rating->save();
+    {        
+            $rating = new Rating();
+            $rating->id_product = $id;
+            $rating->id_user = Auth::user()->id;
+            $rating->ra_number = $request->input('rating');
+            $rating->body = $request->input('body');
+            $rating->save();
+        
     }
 
     public function getProductTypeID($id)

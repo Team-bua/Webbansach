@@ -135,6 +135,7 @@
         "bFilter": true,
         "bSort": true,
         "bInfo": false,
+        "order": [],
         "bAutoWidth": true,
         "columnDefs": [{
             "targets": [7, 8, 9, 10, 11],

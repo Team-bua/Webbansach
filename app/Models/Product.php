@@ -50,7 +50,7 @@ class Product extends Model
 
     public function ratings()
     {
-        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user');
+        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user')->withPivot('body','ra_number')->withTimestamps();
     }
 
     public function productCompany()
