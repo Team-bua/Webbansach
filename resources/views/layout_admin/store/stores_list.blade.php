@@ -100,8 +100,8 @@
             "bPaginate": true,
             "bLengthChange": true,
             "bFilter": true,
-            "bSort": true,
             "order": [],
+            "bSort": true,
             "bInfo": false,
             "bAutoWidth": true
         });

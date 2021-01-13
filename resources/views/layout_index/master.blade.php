@@ -67,13 +67,13 @@
     </script>
     <!-------------------------------------------------------------------------------------->
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-<script>
+    <script>
         function AddCart(id) {
             $.ajax({
                 url: 'addcart/' + id,
                 type: 'GET',
-            }).done(function(response) {  
-                $('.quntity').html(response['cart']['totalQty']);           
+            }).done(function(response) {
+                $('.quntity').html(response['cart']['totalQty']);
                 Swal.fire({
                     icon: 'success',
                     title: 'Đã thêm vào giỏ hàng',
@@ -82,10 +82,9 @@
                 })
             })
         }
-
     </script>
     <!---------------------------------------------------------------------------------------->
-<!--     <script>
+    <!--     <script>
 window.onscroll = function() {myFunction()};
 
 var menu = document.getElementById("menu");
