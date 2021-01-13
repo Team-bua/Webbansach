@@ -103,6 +103,37 @@
     </div>
     </div>
 </section>
+<div class="container">
+    <div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>{{ $product_detail->name }}</h4>
+                        @if($product_detail->promotion_price == 0)
+                        <h3 class="cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ 
+                         @else
+                        <small class="pre-cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
+                        </small>
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
+                        </h3>
+                        @endif
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                        <a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif"><button type="button" class="btn btn-primary">Thanh Toán</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="comment">
     <div class="container">
         <div id="comment-wrapper">
