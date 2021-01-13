@@ -41,7 +41,9 @@
                                 <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
                             </a>
                             <h3><a href="#">{{ $books->name }}</a></h3>
-                              <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> / <a href="{{route('detail',$books->id)}}"><i class="fa fa-info-circle"></i></a></h6>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            </h6>
                             <div class="content">
                                 <div class="body">
                                     <b>Tên sách:</b> {{$books->name}} <br>
@@ -54,19 +56,7 @@
                                     <b>Phát hành:</b> {{$books->productCompany->name}}
                                 </div>
                             </div>
-<<<<<<< HEAD
-                          
-                            @if($books->promotion_price == 0)
-                                  <p class="wrap_price"> <span class="price-new">{{number_format($books->unit_price,0,"",",")}}VNĐ 
-                                  </span> 
-                                  @else
-                                <span class="price-old">{{number_format($books->unit_price,0,"",",")}}VNĐ
-                                </span> 
-                                <span class="price-new">{{number_format($books->promotion_price,0,"",",")}}VNĐ
-                                </span>
-=======
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a></h6>
+
                             @if($books->promotion_price == 0)
                             <span class="price-new">{{number_format($books->unit_price,0,"",",")}} VNĐ </span>
                             @else
@@ -74,7 +64,6 @@
                             </span>
                             <span class="price-new">{{number_format($books->promotion_price,0,"",",")}} VNĐ
                             </span>
->>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
                             </p>
                             @endif
                         </div>

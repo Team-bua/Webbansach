@@ -347,6 +347,7 @@ header .cart .quntity {
     display: none
 }
 
+
 /*.sticky {
     position: fixed;
     top: 0;
@@ -1202,6 +1203,39 @@ ul {
 }
 
 
+/*-------------------------------hotline---------------------------------------*/
+
+.mobile-hotline {
+    display: none
+}
+
+.hotline {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 9000;
+    display: block;
+    background: #fac100;
+    color: red;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 99px;
+}
+
+.hotline .hotline-number {
+    font-size: 13px;
+    color: #b20000;
+}
+
+@media (max-width: 767px) {
+    .hotline {
+        display: none;
+    }
+}
+
+
 /*-------------------------------Comment---------------------------------------*/
 
 .comment {
@@ -1561,7 +1595,6 @@ li.com-title span {
     text-decoration: none;
     display: block;
     border-radius: 10px;
-<<<<<<< HEAD
 }
 
 .dropdown-content a:hover {
@@ -1572,18 +1605,6 @@ li.com-title span {
     display: block;
 }
 
-=======
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
->>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 .dropdown:hover .dropbtn {
     background-color: #F4A300;
 }
@@ -1904,11 +1925,7 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-<<<<<<< HEAD
-    transform: translateX(-5%) translateY(-100px);
-=======
     transform: translateX(-5%) translateY(0px);
->>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 }
 
 
