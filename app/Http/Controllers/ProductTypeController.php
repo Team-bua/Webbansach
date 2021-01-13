@@ -94,9 +94,14 @@ class ProductTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($request)
+    public function delete($id)
     {
-        return $this->repository->destroy($request);
+        $product_type = ProductType::find($id);
+        $product_type->delete();
+        return response()->json([
+            'code' => 200,
+            'message' => 'success',
+        ], 200);
        
     }
 

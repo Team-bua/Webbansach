@@ -6,20 +6,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 200px;
-    
-    
-
-
 }
 .a image{
     
     visibility: hidden;
-    
-
 }
-
-
-
 </style>
     <div class="content-wrapper" style="min-height: 898px;">
         <!-- Content Header (Page header) -->
@@ -65,9 +56,6 @@
                             @foreach ($the_news as $new)
                                 <tr>
                                     <td>{{ $new->name }}</td>
-                                   
-
-
                                     <td><img style="width:100px;height:100px;"
                                             src="{{ asset('images/news/' . $new->image) }}"></td>
                                    

@@ -95,7 +95,7 @@ class PageRepository
         $comment = new Comment();
         $comment->id_product = $id;
         $comment->id_user = Auth::user()->id;
-        $comment->body = $request->body;
+        $comment->body = $request->input('body');
         $comment->save();
     }
 
@@ -105,7 +105,7 @@ class PageRepository
         return $product->userComments;
     }
 
-    public function rating($id){
+    public function getRating($id){
         $product =  Product::find($id);
         return $product->ratings;
     }
@@ -115,7 +115,7 @@ class PageRepository
         $rating = new Rating();
         $rating->id_product = $id;
         $rating->id_user = Auth::user()->id;
-        $rating->body = $request->rating;
+        $rating->body = $request->input('rating');
         $rating->save();
     }
 

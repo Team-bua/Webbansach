@@ -138,12 +138,6 @@
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         });
     </script>
-<<<<<<< HEAD
-
- 
-   
-=======
->>>>>>> fd73ad536970bb76fb9ed615f3131dbd684e7ba8
     @yield('js')
     @yield('in')
 </body>
