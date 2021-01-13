@@ -56,7 +56,7 @@
                             <tr>
                                 <th>Tiêu đề</th>
                                 <th>Ảnh</th>
-                              
+                                <th>Trạng thái</th>
 
                                 <th style="width: 150px">Tùy chọn</th>
                             </tr>
@@ -77,7 +77,21 @@
                                             src=" asset('images/news_detail/' . $new->imagedetail[$i]) }}">
                                     </td>
                                     endfor -->
-     
+                                    <td>
+                                        @if ($new->status == 1)
+                                        <a href="{{ route('news_off', [$new['id']]) }}">
+                                            <button type="button" style="background-color:rgb(69, 204, 69);border:none;" class="btn btn-warning btn ">
+                                                <i class="fa fa-pause">&nbsp;Đang chạy </i> </button>
+                                        </a>
+                                        @else
+                                        <a href="{{ route('news_on', [$new['id']]) }}">
+
+                                                <button type="button"  style="background-color:rgb(189, 189, 189);border:none;" class="btn btn-warning btn ">
+                                                    <i class="fa fa-play">&nbsp;Chưa Phê duyệt</i> </button>
+                                        </a>
+                                        @endif
+
+                                    </td>
                                     <td>
 
                                         <form style="margin-right:5px;float: left;" method="post" action="{{ route('thenews.destroy', [$new['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">

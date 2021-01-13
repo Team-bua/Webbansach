@@ -192,7 +192,7 @@
                 <li class="treeview">
                     <a href="{{ route('thenews.index') }}">
                         <i style="color:#8b7b61"class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
-                        <span>News</span>
+                        <span>Tin tức</span>
                     </a>
         @endcan
             <li class="header ">
