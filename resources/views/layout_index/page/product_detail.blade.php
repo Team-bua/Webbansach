@@ -94,11 +94,19 @@
                     </li>
                 </ul>
                 <div class="btn-sec">
+<<<<<<< HEAD
+                    <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book" ></i></button>
+                    
+                    <button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button>
+                    <button class="btn " onclick="BuyCart('{{$product_detail->id}}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
+                    <a href="{{route('Read',$product_detail->id)}}"><button class="btn black">Đọc ONLINE</button></a>
+=======
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
 
                     <button class="btn" onclick="AddCart('{{ $product_detail->id }}')">Thêm Vào Giỏ Hàng</button>
                     <button class="btn " onclick="BuyCart('{{ $product_detail->id }}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
                     <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">Đọc ONLINE</button></a>
+>>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2
                 </div>
             </div>
         </div>
@@ -106,6 +114,37 @@
     </div>
     </div>
 </section>
+<<<<<<< HEAD
+<audio id="myAudio">
+  <source src="images/music/oke.mp3.mp3" type="audio/mpeg">
+</audio>
+<div class="container">
+    <div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>{{ $product_detail->name }}</h4>
+                        @if($product_detail->promotion_price == 0)
+                        <h3 class="cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ 
+                         @else
+                        <small class="pre-cost">
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
+                        </small>
+                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
+                        </h3>
+                        @endif
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif"><button type="button" class="btn btn-primary">Thanh Toán</button></a>
+                        </div>
+                    </div>
+=======
     <section class="comment">
         <div class="container">
             <div id="comment-wrapper">
@@ -113,6 +152,7 @@
                     <a href="#tab-specification">Đánh Giá</a>
                     <a href="#tab-review">Bình Luận</a>
                     <a href="#tab-information">Thông Tin</a>
+>>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2
                 </div>
                 <div id="tab-specification" class="tab-content">
                     @if(Auth::check())
@@ -243,6 +283,26 @@
 
             </div>
         </div>
+<<<<<<< HEAD
+    </div>
+</section>
+@endsection
+@section('speak')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#btPlay").click(function(){
+        var text = $("#text").val();
+        var gender = $("#gender").val();
+        
+        responsiveVoice.speak(text, gender, {rate: 1},{volume : 2000});
+      });
+    });
+  </script>
+@stop
+@section('music')
+<script>
+var x = document.getElementById("myAudio"); 
+=======
     </section>
     @endsection
     @section('speak')
@@ -261,11 +321,21 @@
     @section('music')
     <script>
         var x = document.getElementById("myAudio");
+>>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2
 
         function playAudio() {
             x.play();
         }
 
+<<<<<<< HEAD
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+@stop
+@section('js')
+<script>
+=======
         function pauseAudio() {
             x.pause();
         }
@@ -273,6 +343,7 @@
     @stop
     @section('js')
     <script>
+>>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2
         function BuyCart(id) {
             $.ajax({
                 url: 'addcart/' + id,
@@ -282,4 +353,8 @@
             })
         }
     </script>
+<<<<<<< HEAD
+@endsection
+=======
     @endsection
+>>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2

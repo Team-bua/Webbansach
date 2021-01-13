@@ -1,4 +1,8 @@
 <header>
+        <a href="tel:0779 750 123"><div class="hotline">
+<span class="before-hotline">Hotline:</span>
+<span class="hotline-number">0779 750 123</span>
+</div></a>
     <div class="header-top">
         <div class="container">
             <div class="row">
