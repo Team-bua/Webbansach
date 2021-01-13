@@ -51,7 +51,8 @@ class PageController extends Controller
         $product_detail = $this->repository->getproduct($id);
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail'));
+        $rating = $this->repository->getRating($id);
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail','rating'));
     }
 
 
@@ -118,6 +119,12 @@ class PageController extends Controller
     public function postComment($id, Request $request)
     {
         $this->repository->postComment($id, $request);
+        return redirect()->back();
+    }
+
+    public function postRating($id, Request $request)
+    {
+        $this->repository->postRating($id, $request);
         return redirect()->back();
     }
 

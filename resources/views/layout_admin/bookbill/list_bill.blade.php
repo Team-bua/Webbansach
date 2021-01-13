@@ -76,7 +76,7 @@
                                                         <span class="color-gray your-order-info"><b>Đơn giá:</b> {{number_format($product->pivot->unit_price)}} VNĐ</span><br>
                                                         <span class="color-gray your-order-info"><b>Số lượng:</b> *{{$product->pivot->quantity}} </span>
                                                     </div>
-                                                    <br><br><br>
+                                                    <br><br>
                                                 </div>
                                             </div>
                                             @endforeach
