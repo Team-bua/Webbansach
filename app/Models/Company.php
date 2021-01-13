@@ -13,4 +13,11 @@ class Company extends Model
     {
         return $this->belongsTo(BillIn::class,'id_company', 'id');
     }
+
+    public function companys()
+    {
+        return $this->hasMany(User::class,'id_user', 'id');
+    }
+
+
 }

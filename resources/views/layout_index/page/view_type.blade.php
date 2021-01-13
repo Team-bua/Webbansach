@@ -42,10 +42,6 @@
                                         <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
                                     </a>
                                     <h3><a href="#">{{ $books->name }}</a></h3>
-                                    <h6><a href="javascript:"><i onclick="AddCart('{{ $books->id }}')"
-                                                class="fa fa-cart-arrow-down"></i></a> / <a
-                                            href="{{ route('detail', $books->id) }}"><i class="fa fa-info-circle"></i></a>
-                                    </h6>
                                     <div class="content">
                                         <div class="body">
                                             <b>Tên sách:</b> {{ $books->name }} <br>
