@@ -7,9 +7,8 @@
                 Thêm thành viên
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Nhà cung cấp</a></li>
-                <li class="active">Thêm</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
+                <li class="active">Người dùng</li>
             </ol>
         </section>
 
@@ -45,6 +44,7 @@
                             <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
                             <input required type="email" name="username" class="form-control"
                                 placeholder="Tên đăng nhập . . . . . . . . .">
+                                
                         </div>
                         <h4> Mật khẩu : </h4>
                         <div class="input-group">
@@ -63,7 +63,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-phone"></i>
                                 </div>
-                                <input class="form-control"name="phone"  id="cc" type="text" data-inputmask="'mask': '999-999-9999'"
+                                <input class="form-control"name="phone"  id="cc" type="number" data-inputmask="'mask': '9999999999'"
                                 placeholder="Số điện thoại. . . . . . . . ." />
                             </div>
                         <div class="text-center">

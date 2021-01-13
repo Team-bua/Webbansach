@@ -55,13 +55,13 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    public function destroy($id)
-    {
-        $product_type = ProductType::find($id);
-        $product_type->delete();
-        return redirect(route('book_type.index'));
+    // public function destroy($id)
+    // {
+    //     $product_type = ProductType::find($id);
+    //     $product_type->delete();
+    //     return json_encode((object)['product_type'=>$product_type]);
       
-    }
+    // }
     /**
      * search  member.
      *

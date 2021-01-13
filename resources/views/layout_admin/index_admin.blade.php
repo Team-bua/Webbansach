@@ -7,8 +7,8 @@
                 Thống Kê
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Thống Kê</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i>Hệ thống</a></li>
+                <li class="active">Tổng quan</li>
             </ol>
         </section>
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\SlideController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StoreController;
 
@@ -76,8 +77,8 @@ Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout')
 Route::get('search',[PageController::class,'getSearch'])->name('search');
 //----->Bình Luận
 Route::put('comment/{id}',[PageController::class,'postComment'])->name('comment');
-//----->nhà xuất bản
-
+//----->đánh giá
+Route::put('rating/{id}',[PageController::class,'postRating'])->name('rating');
 /*--------------------------------------------------------------------------------*/
 
 
@@ -94,6 +95,7 @@ Route::get('product_off/{id}',[ProductController::class,'getStopSell'])->name('p
 Route::resource('book_type',ProductTypeController::class);
 Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('book_edit');
 Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
+Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_del');
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD thong tin user
@@ -126,3 +128,6 @@ Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->n
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
 ///------>Trang kho
 Route::resource('store', StoreController::class);
+///------>Tintuc
+Route::resource('thenews',NewsController::class);
+Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent');

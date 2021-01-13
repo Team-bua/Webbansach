@@ -14,7 +14,7 @@
             <small>Xử lý và xem tình trạng của đơn hàng</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Hệ thống</a></li>
             <li><a href="#">Đơn hàng</a></li>
         </ol>
     </section>
@@ -93,7 +93,7 @@
                                         <div class="btn-group">
                                             @if($bills->status == 0)
                                             <button type="button" class="btn btn-default ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đang xử lý</button>
-                                            <ul class="dropdown-menu" role="menu">
+                                            <ul style="background-color: white" class="dropdown-menu" role="menu">
                                                 <a href="{{route('bill_receiving',[$bills['id']])}}" class="btn btn-primary ad">
                                                     <li>Tiếp nhận</li>
                                                 </a>
@@ -107,7 +107,7 @@
                                             @endif
                                             @if($bills->status == 1)
                                             <button type="button" class="btn btn-primary ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tiếp nhận</button>
-                                            <ul class="dropdown-menu" role="menu" style="width:105px">
+                                            <ul style="background-color: white" class="dropdown-menu" role="menu" style="width:105px">
                                                 <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
                                                     <li>Đang xử lý</li>
                                                 </a>
@@ -121,7 +121,7 @@
                                             @endif
                                             @if($bills->status == 2)
                                             <button type="button" class="btn btn-success ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Đã giao</button>
-                                            <ul class="dropdown-menu" role="menu">
+                                            <ul style="background-color: white" class="dropdown-menu" role="menu">
                                                 <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
                                                     <li>Đang xử lý</li>
                                                 </a>
@@ -136,7 +136,7 @@
 
                                             @if($bills->status == 3)
                                             <button type="button" class="btn btn-danger ad dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Thất bại</button>
-                                            <ul class="dropdown-menu" role="menu">
+                                            <ul style="background-color: white" class="dropdown-menu" role="menu">
                                                 <a href="{{route('bill_processing',[$bills['id']])}}" class="btn btn-default ad">
                                                     <li>Đang xử lý</li>
                                                 </a>

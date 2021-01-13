@@ -47,6 +47,8 @@
                                 <div class="input-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
                                     <input  name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">
+                                    <a style="position: absolute;top: 58%;left: 500px;color: #007bff;font-size: 18px;" class="fa fa-eye"></a>
+                                    
                                 </div>
                                 <h4> Mật khẩu mới:</h4>
                                 <div class="input-group aa ">
@@ -82,3 +84,19 @@
     </section>
 </div>
 @endsection
+@section('js')
+<script>
+    $(function() {
+        $(".aa")..on('click', function()
+            let $this = $(this);
+            if ($this.hasClass('active')) {
+                $this.parents('.input-group').find('input').attr('type', 'password')
+                $this.removeClass('active');
+            } else {
+                $this.parents('.input-group').find('input').attr('type', 'text')
+                $this.addClass('active')
+            }
+        });
+    });
+</script>
+@stop
