@@ -84,19 +84,3 @@
     </section>
 </div>
 @endsection
-@section('js')
-<script>
-    $(function() {
-        $(".aa")..on('click', function()
-            let $this = $(this);
-            if ($this.hasClass('active')) {
-                $this.parents('.input-group').find('input').attr('type', 'password')
-                $this.removeClass('active');
-            } else {
-                $this.parents('.input-group').find('input').attr('type', 'text')
-                $this.addClass('active')
-            }
-        });
-    });
-</script>
-@stop

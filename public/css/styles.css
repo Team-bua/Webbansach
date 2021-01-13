@@ -125,7 +125,7 @@ h6 span:nth-child(14) {
     opacity: 1;
     color: #fff;
     text-transform: uppercase;
-    padding: 15px 15px 11px;
+    padding: 15px 13px 11px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -346,6 +346,7 @@ header .cart .quntity {
 #menu #menu_mobile_icon {
     display: none
 }
+
 
 /*.sticky {
     position: fixed;
@@ -1211,8 +1212,8 @@ ul {
 }
 
 #comment-wrapper {
-    width: 500px;
-    height: 450px;
+    width: 520px;
+    height: 650px;
     position: relative;
     float: left;
     border-radius: 10px;
@@ -1561,7 +1562,6 @@ li.com-title span {
     text-decoration: none;
     display: block;
     border-radius: 10px;
-<<<<<<< HEAD
 }
 
 .dropdown-content a:hover {
@@ -1572,18 +1572,6 @@ li.com-title span {
     display: block;
 }
 
-=======
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
->>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 .dropdown:hover .dropbtn {
     background-color: #F4A300;
 }
@@ -1904,11 +1892,7 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-<<<<<<< HEAD
-    transform: translateX(-5%) translateY(-100px);
-=======
     transform: translateX(-5%) translateY(0px);
->>>>>>> 524e4e5145bfb3548dae0cded8863307241d90f7
 }
 
 

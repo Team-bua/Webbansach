@@ -10,6 +10,10 @@
         background: #ffd73e33;
         border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
     }
+
+    .active {
+        color: #ff9705 !important;
+    }
 </style>
 <section class="product-sec">
     <div class="container">
@@ -55,7 +59,7 @@
             </script>
 
             <div class="col-md-6 slider-content">
-                <textarea class="area" type="text" placeholder="Nhập gì đó để nói (input something)..." rows="10" cols="63" id="text" disabled>
+                <textarea class="area" type="text" placeholder="Nhập gì đó để nói (input something)..." rows="7" cols="63" id="text" disabled>
                 {!! $product_detail->description !!}
             </textarea>
                 <audio id="myAudio">
@@ -86,16 +90,9 @@
 
                     </li>
                     @endif
-                    <li>
-                    <span class="name">Đánh giá</span><span class="clm">:</span>
-                        @for($i=1; $i<=5; $i++)
-                    <i class="fa fa-star" style="color:#999" ></i>
-                        @endfor
-                    </li>
                 </ul>
                 <div class="btn-sec">
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
-
                     <button class="btn" onclick="AddCart('{{ $product_detail->id }}')">Thêm Vào Giỏ Hàng</button>
                     <button class="btn " onclick="BuyCart('{{ $product_detail->id }}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
                     <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">Đọc ONLINE</button></a>
@@ -106,180 +103,196 @@
     </div>
     </div>
 </section>
-    <section class="comment">
-        <div class="container">
-            <div id="comment-wrapper">
-                <div id="tabs" class="htabs">
-                    <a href="#tab-specification">Đánh Giá</a>
-                    <a href="#tab-review">Bình Luận</a>
-                    <a href="#tab-information">Thông Tin</a>
-                </div>
-                <div id="tab-specification" class="tab-content">
-                    @if(Auth::check())
-                    <form action="{{route('rating',$product_detail->id)}}" method="post">
-                        @csrf
-                        @method('put')
-                        <div class="cpt_product_description ">
-                            <div class="rating-card">
-                                <div style="height: 40px">
-                                    <h1>Đánh Giá</h1>
-                                </div>
-                                <div class="rating">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
-                                </div>
-                                <div class="rating-process">
-                                    <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
-                                        <div class="progress"></div>
-                                    </div>
-                                    <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
-                                        <div class="progress-2"></div>
-                                    </div>
-                                    <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
-                                        <div class="progress-3"></div>
-                                    </div>
-                                    <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
-                                        <div class="progress-4"></div>
-                                    </div>
-                                    <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
-                                        <div class="progress-5"></div>
-                                    </div>
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                        </div>
-                        <div class="rating1">
-                            <input type="radio" name="ra_number" value="5" id="5">
-                            <label for="5">☆</label>
-                            <input type="radio" name="ra_number" value="4" id="4">
-                            <label for="4">☆</label>
-                            <input type="radio" name="ra_number" value="3" id="3">
-                            <label for="3">☆</label>
-                            <input type="radio" name="ra_number" value="2" id="2">
-                            <label for="2">☆</label>
-                            <input type="radio" name="ra_number" value="1" id="1">
-                            <label for="1">☆</label>
-                        </div>
-                        <textarea name="content" id="" cols="100" rows="1"></textarea>
-                        <div class="text-center">
-                            <input type="submit" value="Gửi" class="btn btn-info btn-block">
-                        </div>
-                    </form>
-                    @else
-                    <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}">Đăng nhập</a> hoặc<a
-                                href="{{ route('signup') }}"> Đăng Ký</a></div>
-                    @endif
-                </div>
-                <div id="tab-review" class="tab-content">
-                    @if(Auth::check())
-                    <div class="rating-card">
-                        <form action="{{route('comment',$product_detail->id)}}" method="post">
-                            @csrf
-                            @method('put')
-                            <div class="card border-primary rounded-0">
-                                <div class="card-body p-3">
-                                    <div class="form-group">
-                                        <div class="input-group mb-2">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
-                                            </div>
-                                            <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" name="body" required></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <input type="submit" value="Gửi" class="btn btn-info btn-block rounded-0 py-2">
-                                    </div>
-                                </div>
-                                <br>
-
-                            </div>
-                        </form>
-                    </div>
-                    @else
-                    <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}">Đăng nhập</a> hoặc<a
-                                href="{{ route('signup') }}"> Đăng Ký</a></div>
-                    @endif
-                </div>
-                <div id="tab-information" class="tab-content">
+<section class="comment">
+    <div class="container">
+        <div id="comment-wrapper">
+            <div id="tabs" class="htabs">
+                <a href="#tab-specification">Đánh Giá</a>
+                <a href="#tab-information">Thông Tin</a>
+            </div>
+            <div id="tab-specification" class="tab-content">
+                @if(Auth::check())
+                <form action="{{route('rating',$product_detail->id)}}" method="post">
+                    @csrf
+                    @method('put')
                     <div class="cpt_product_description ">
-                        <div>
-                            <section class="features">
-                                <ul>
-                                    <li><i class="fas fa-check"></i>Tác Giả:{{ $product_detail->publisher  }}</li>
-                                    <li><i class="fas fa-check"></i>Nhà Phát Hành: {{ $product_detail->publisher  }}</li>
-                                    <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
-                                    <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
-                                    <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
-                                    <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }} Cm</li>
-                                    <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }} Trang</li>
-                                </ul>
-                            </section>
+                        <div class="rating-card">
+                            <div style="height: 40px">
+                                <h1>Đánh Giá</h1>
+                            </div>
+                            <div class="rating">
+                                <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+                            </div>
+                            <div class="rating-process">
+                                <div class="rating-right-part">
+                                    <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="rating-right-part">
+                                    <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
+                                    <div class="progress-2"></div>
+                                </div>
+                                <div class="rating-right-part">
+                                    <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
+                                    <div class="progress-3"></div>
+                                </div>
+                                <div class="rating-right-part">
+                                    <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
+                                    <div class="progress-4"></div>
+                                </div>
+                                <div class="rating-right-part">
+                                    <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
+                                    <div class="progress-5"></div>
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
                         </div>
+                    </div>
+                    <div class="rating1">
+                        <input type="radio" name="rating" value="5" id="5">
+                        <label for="5">☆</label>
+                        <input type="radio" name="rating" value="4" id="4">
+                        <label for="4">☆</label>
+                        <input type="radio" name="rating" value="3" id="3">
+                        <label for="3">☆</label>
+                        <input type="radio" name="rating" value="2" id="2">
+                        <label for="2">☆</label>
+                        <input type="radio" name="rating" value="1" id="1">
+                        <label for="1">☆</label>
+                    </div>
+                    <center>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                            </div>
+                            <textarea style="resize: none;" rows="3" cols="50" class="form-control" placeholder="Nội dung đánh giá . . . . ." name="body" required></textarea>
+                        </div>
+                    </center>
+                    <br>
+                    <div class="text-center">
+                        <input type="submit" value="Gửi" class="btn btn-info btn-block">
+                    </div>
+                </form>
+                @else
+                <div class="cpt_product_description ">
+                    <div class="rating-card">
+                        <div style="height: 40px">
+                            <h1>Đánh Giá</h1>
+                        </div>
+                        <div class="rating">
+                            <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+                        </div>
+                        <div class="rating-process">
+                            <div class="rating-right-part">
+                                <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
+                                <div class="progress"></div>
+                            </div>
+                            <div class="rating-right-part">
+                                <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
+                                <div class="progress-2"></div>
+                            </div>
+                            <div class="rating-right-part">
+                                <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
+                                <div class="progress-3"></div>
+                            </div>
+                            <div class="rating-right-part">
+                                <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
+                                <div class="progress-4"></div>
+                            </div>
+                            <div class="rating-right-part">
+                                <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
+                                <div class="progress-5"></div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div><br>
+                <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}">Đăng nhập</a> hoặc<a href="{{ route('signup') }}"> Đăng Ký</a></div>
+                @endif
+            </div>
+            <div id="tab-information" class="tab-content">
+                <div class="cpt_product_description ">
+                    <div>
+                        <section class="features">
+                            <ul>
+                                <li><i class="fas fa-check"></i>Tác Giả:{{ $product_detail->publisher  }}</li>
+                                <li><i class="fas fa-check"></i>Nhà Phát Hành: {{ $product_detail->publisher  }}</li>
+                                <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
+                                <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
+                                <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
+                                <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }} Cm</li>
+                                <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }} Trang</li>
+                            </ul>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div id="last-product-wrapper">
-                <div id="comment-list">
-                    @foreach($comments as $com)
-                    <ul>
-                        <li class="com-title">
-                            {{$com->full_name}}
-                            <br>
-                            <span>{{$product_detail->created_at->format('d/m/Y')}}</span>
-                        </li>
-                        <li class="com-details">
-                            {{$com->pivot->body}}
-                        </li>
-                    </ul>
-                    @endforeach
-                </div>
-
+    </div>
+    <div class="container">
+        <div id="last-product-wrapper">
+            <div id="comment-list">             
+                @foreach($rating['ra_date'] as $ra)
+                <?php
+                $ra_show = 0;
+                if ($ra->pivot->ra_number) {
+                    $ra_show = $ra->pivot->ra_number;
+                }
+                ?>
+                <ul>
+                    <li class="com-title">
+                        {{$ra->full_name}} &nbsp;
+                        @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i>
+                        @endfor
+                        <br>
+                        <span>{{$ra->pivot->created_at->format('d/m/Y')}}</span>
+                    </li>
+                    <li class="com-details">
+                        {{$ra->pivot->body}}
+                    </li>
+                </ul>
+                @endforeach
             </div>
+
         </div>
-    </section>
-    @endsection
-    @section('speak')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#btPlay").click(function() {
-                var text = $("#text").val();
-                var gender = $("#gender").val();
-                responsiveVoice.speak(text, gender, {
-                    rate: 1
-                });
+    </div>
+</section>
+@endsection
+@section('speak')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btPlay").click(function() {
+            var text = $("#text").val();
+            var gender = $("#gender").val();
+            responsiveVoice.speak(text, gender, {
+                rate: 1
             });
         });
-    </script>
-    @stop
-    @section('music')
-    <script>
-        var x = document.getElementById("myAudio");
+    });
+</script>
+@stop
+@section('music')
+<script>
+    var x = document.getElementById("myAudio");
 
-        function playAudio() {
-            x.play();
-        }
+    function playAudio() {
+        x.play();
+    }
 
-        function pauseAudio() {
-            x.pause();
-        }
-    </script>
-    @stop
-    @section('js')
-    <script>
-        function BuyCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET',
-            }).done(function(response) {
-                $('.quntity').html(response['cart']['totalQty']);
-            })
-        }
-    </script>
-    @endsection
+    function pauseAudio() {
+        x.pause();
+    }
+</script>
+@stop
+@section('js')
+<script>
+    function BuyCart(id) {
+        $.ajax({
+            url: 'addcart/' + id,
+            type: 'GET',
+        }).done(function(response) {
+            $('.quntity').html(response['cart']['totalQty']);
+        })
+    }
+</script>
+@endsection

@@ -246,6 +246,7 @@
         "bLengthChange": true,
         "bFilter": true,
         "bSort": true,
+        "order": [],
         "bInfo": false,
         "bAutoWidth": false
     });
