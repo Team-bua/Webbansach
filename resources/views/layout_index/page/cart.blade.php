@@ -2,6 +2,9 @@
 @section('content')
 <section class="static about-sec">
 	<div class="container">
+		@if($errors->any())
+		<div style="color: red">{{$errors->first()}}</div>
+		@endif
 		<table id="cart" class="table table-hover table-condensed" style="margin-bottom: 2em;">
 			<thead>
 				<tr>
