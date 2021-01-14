@@ -45,7 +45,8 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th style="width: 100px">Tùy chọn</th>
+                            <th style="width: 120px">Tùy chọn</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,7 +94,9 @@
                                         </i> </button>
                                 </a>
                                 @endcan
+                                <button style="margin-right:5px;float: left;" class='btn btn-flat btn-info btn1' ><i class='fa fa-eye'></i></button>
                             </td>
+                            <td></td>
                         </tr>
             </div>
         </div>
@@ -138,7 +141,7 @@
         "order": [],
         "bAutoWidth": true,
         "columnDefs": [{
-            "targets": [7, 8, 9, 10, 11],
+            "targets": [7, 8, 9, 10, 11, 13],
             "visible": false
         }, {
             // adding a more info button at the end
