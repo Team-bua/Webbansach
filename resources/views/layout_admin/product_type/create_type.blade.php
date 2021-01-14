@@ -186,6 +186,7 @@
                 $('#id').val(type['id']);
             }
         });
+    }
 
         $('#bookEditForm').submit(function(e) {
             e.preventDefault();
@@ -211,7 +212,6 @@
                 }
             });
         });
-    }
     $(document).on('click', '.delType', DelCart);
 
     function DelCart(e) {

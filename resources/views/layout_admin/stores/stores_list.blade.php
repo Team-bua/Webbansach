@@ -47,13 +47,13 @@
                                 @foreach ($stores as $st)
                                 <tr>
                                     <td>{{ $st->products->name }}</td>
-                                    <td style="text-align:center" id="total-{{ $st->id }}" >{{ $st->all_product_in_store }}</td>
+                                    <td style="text-align:center" id="total-{{ $st->id }}">{{ $st->all_product_in_store }}</td>
                                     <td style="text-align:center" id="qtyTon-{{ $st->id }}">{{ $st->stored_product }}</td>
                                     <td style="text-align:center">{{ $st->sold_product }}</td>
                                     <td>
                                         <div class="btn-toolbar" role="toolbar">
                                             <div class="btn-group mr-2" role="group">
-                                                    <button style="float:right" class="btn btn-warning btn-sm" id="edit-{{ $st->id }}" onclick="editType(this)"><i class="fa fa-pencil"></i></button>
+                                                <button style="float:right" class="btn btn-warning btn-sm" id="edit-{{ $st->id }}" onclick="editStore(this)"><i class="fa fa-pencil"></i></button>
                                             </div>
                                             <div class="btn-group mr-2" role="group">
                                                 <form method="post" action="{{ route('store.destroy', [$st['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
@@ -84,7 +84,11 @@
                                             <label for="name">
                                                 <h4>Tổng sản phẩm: </h4>
                                             </label>
-                                            <input style="width:250px" type="number" min="1" id="total" name="total" class="form-control">
+                                            <input style="width:250px" type="text" id="total" name="total" class="form-control">
+                                            <label for="name">
+                                                <h4>Sản phẩm tồn kho: </h4>
+                                            </label>
+                                            <input style="width:250px" type="text" id="qtyTon" name="qtyTon" class="form-control">
 
                                         </div>
                                         <button style="border-color: #4a4235;background-color:#4a4235" type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
@@ -125,7 +129,7 @@
             }
         });
 
-        function editType(edit) {
+        function editStore(edit) {
             $('#bookeditmodal').modal('show');
             var [x, store_all] = edit.id.split('-')
             $.ajax({
@@ -137,26 +141,29 @@
                 success: function(response) {
                     let store = JSON.parse(response)['store'];
                     $('#total').val(store['all_product_in_store']);
+                    $('#qtyTon').val(store['stored_product']);
                     $('#id').val(store['id']);
                 }
             });
-
-            $('#bookEditForm').submit(function(e) {
+        }
+        $('#bookEditForm').submit(function(e) {
                 e.preventDefault();
                 let id = $("#id").val();
                 let total = $("#total").val();
+                let qtyTon = $("#qtyTon").val();
                 $.ajax({
                     url: "{{ route('store_update') }}",
                     type: "POST",
                     data: {
                         id: id,
-                        total: total
+                        total: total,
+                        qtyTon: qtyTon
                     },
                     success: function(response) {
                         let store_update = JSON.parse(response)['store'];
+                        $("#bookeditmodal").modal('hide');
                         $("#total-" + store_update['id']).html(store_update['all_product_in_store']);
                         $("#qtyTon-" + store_update['id']).html(store_update['stored_product']);
-                        $("#bookeditmodal").modal('hide');
                         Swal.fire({
                             icon: 'success',
                             title: 'Cập nhật thành công',
@@ -166,7 +173,6 @@
                     }
                 });
             });
-        }
     </script>
 
     @stop
