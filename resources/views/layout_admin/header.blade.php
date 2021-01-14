@@ -123,8 +123,6 @@
             use Illuminate\Support\Facades\Session;
             $companies = Company::all();
             $sessionCompany = Session::get('select_companyid');
-            
-
         ?>
         @can('admin')
         <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;" >

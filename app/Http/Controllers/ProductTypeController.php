@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ProductTypeRepository;
 use App\Models\ProductType;
 use App\Http\Requests\ProductTypeRequest;
-
+use Exception;
 
 class ProductTypeController extends Controller
 {   /**
@@ -96,12 +96,21 @@ class ProductTypeController extends Controller
      */
     public function delete($id)
     {
-        $product_type = ProductType::find($id);
-        $product_type->delete();
-        return response()->json([
-            'code' => 200,
-            'message' => 'success',
-        ], 200);
+            $product_type = $this->repository->destroy($id);
+            if($product_type){
+                ProductType::destroy($id);
+                return response()->json([
+                    'code' => 200,
+                    'message' => 'success',
+                ], 200);
+                
+            }else{
+            return response()->json([
+                'code' => 500,
+                'message' => 'danger',
+            ], 500);
+        }
+        
        
     }
 

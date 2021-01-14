@@ -55,13 +55,17 @@ class ProductTypeRepository
      * @param  \App\Models\ProductType $product_type
      * @return void
      */
-    // public function destroy($id)
-    // {
-    //     $product_type = ProductType::find($id);
-    //     $product_type->delete();
-    //     return json_encode((object)['product_type'=>$product_type]);
-      
-    // }
+    public function destroy($id)
+    {
+        $product_type = ProductType::find($id);
+        $types = $product_type->products;
+        $count_products = count($types);
+        if($count_products == 0){
+            return true;
+        }else{
+            return false;
+        }     
+    }
     /**
      * search  member.
      *

@@ -108,7 +108,7 @@
                             <td id="name-{{ $pro->id }}">{{ $pro->name }}</td>
                             <td>
                                 <button style="margin-right:5px;float: left;" class="btn btn-warning btn" id="edit-{{ $pro->id }}" onclick="editType(this)"> Sửa </button>
-                                    <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
+                                <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
                             </td>
                         </tr>
                         @endforeach
@@ -156,12 +156,18 @@
                         "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
                         "<td>" + "<button  style='margin-right:5px;float: left;' class='btn btn-warning btn' id='edit-" + type['id'] +
                         "' onclick='editType(this)' >Sửa </button>" +
-                        "<button class='btn btn-danger delType' data-url="+base_url+"/book_del/"+ type['id'] +
-                        ">Xóa </button>"  + "</td>"
+                        "<button class='btn btn-danger delType' data-url=" + base_url + "/book_del/" + type['id'] +
+                        ">Xóa </button>" + "</td>"
                     "</tr>";
                     $("#tableId2 tbody").append(output);
                     $("#bookmodal").modal('hide');
                 }
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm thành công',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         });
     });
@@ -197,7 +203,12 @@
                     let type = JSON.parse(response)['product_type'];
                     $("#name-" + type['id']).html(type['name']);
                     $("#bookeditmodal").modal('hide');
-
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cập nhật thành công',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             });
         });
@@ -231,6 +242,13 @@
                                 'success'
                             )
                         }
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi hệ thống!',
+                            text: 'Còn sách không thể xóa',
+                        })
                     }
                 });
             }
