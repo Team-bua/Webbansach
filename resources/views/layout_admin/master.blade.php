@@ -121,6 +121,7 @@
     <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
     <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script>
         $('#calendar').datepicker({});

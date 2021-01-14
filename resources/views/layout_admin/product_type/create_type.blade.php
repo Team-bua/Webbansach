@@ -131,7 +131,6 @@
 
 @endsection
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -253,10 +252,6 @@
                 });
             }
         });
-    }
-
-    function alertDelete() {
-        return confirm('Bạn có muốn xóa không')
     }
 
     $('#tableId2').dataTable({
