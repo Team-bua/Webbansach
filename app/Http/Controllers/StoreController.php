@@ -25,7 +25,6 @@ class StoreController extends Controller
     public function index(Request $request)
     {
         $stores = $this->repository->getAll();
-        $stores = $this->repository->search($request);
         return view('layout_admin.stores.stores_list', compact('stores'));
     }
 
@@ -47,8 +46,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $this->repository->create($request);
-        return redirect(route('store.index'));
+
     }
 
     /**
@@ -80,9 +78,9 @@ class StoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function getupdate(Request $request)
     {
-        //
+        return $this->repository->update($request);
     }
 
     /**
@@ -94,5 +92,11 @@ class StoreController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getEdit(Request $request)
+    {   
+        $store = Store::find($request->id);         
+        return json_encode((object)['store'=>$store]);
     }
 }
