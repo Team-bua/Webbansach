@@ -54,14 +54,14 @@
                                             <td>
                                                 <div class="btn-toolbar" role="toolbar">
                                                     <div class="btn-group mr-2" role="group">
-                                                        <a href="{{ route('store.edit', [$st['id']]) }}">
+                                                        <a href="{{ route('store.edit', [$st['id_store']]) }}">
                                                             <button style="float:right" class="btn btn-warning btn-sm"><i
                                                                     class="fa fa-pencil"></i></button>
                                                         </a>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group">
                                                         <form method="post"
-                                                            action="{{ route('store.destroy', [$st['id']]) }}"
+                                                            action="{{ route('store.destroy', [$st['id_store']]) }}"
                                                             enctype="multipart/form-data" name="form1" id="form1">
                                                             @csrf
                                                             <input name="_method" type="hidden" value="DELETE">
