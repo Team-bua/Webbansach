@@ -32,7 +32,7 @@
 						</td>
 						<td data-th="Price"><span>@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price'])}} @else {{number_format($pro['item']['promotion_price'])}} @endif VNĐ </span></td>
 						<td data-th="Quantity" class="product_quantity">
-							<input type="number" class="form-control text-center" id="qty-{{$pro['item']['id']}}" onchange="changeQuantity(this)" min="1" max="100" value="{{$pro['qty']}}">
+							<input type="number" class="form-control text-center" id="qty-{{$pro['item']['id']}}" onchange="changeQuantity(this)" min="1" value="{{$pro['qty']}}">
 						</td>
 						<td style="text-align:center" id="total-{{$pro['item']['id']}}">@if($pro['item']['promotion_price']==0){{number_format($pro['item']['unit_price']*$pro['qty'])}} @else {{number_format($pro['item']['promotion_price']*$pro['qty'])}} @endif VNĐ</td>
 						<td class="actions">
@@ -86,7 +86,7 @@
 					success: function(data) {
 						if (data.code == 200) {
 							$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
-							$('.quntity').html('' + data['cart']['totalQty']);
+							$('.quntity').html(data['cart']['totalQty']);
 							that.parent().parent().remove();
 							Swal.fire(
 								'Xóa!',
@@ -111,9 +111,9 @@
 		}), function(data) {
 			data = JSON.parse(data);
 			console.log(data);
-			document.getElementById('total-' + data['id']).innerHTML = Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
-			document.getElementById('totalPrice').innerHTML = 'Tổng tiền :' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ';
-			document.getElementById('quntity').innerHTML = data['cart']['totalQty'];
+			$('#total-'+ data['id']).html(Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+			$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+			$('.quntity').html(data['cart']['totalQty']);
 		});
 	}
 

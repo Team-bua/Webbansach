@@ -47,8 +47,8 @@
                                 @foreach ($stores as $st)
                                 <tr>
                                     <td>{{ $st->products->name }}</td>
-                                    <td style="text-align:center" id="name-{{ $st->id }}" >{{ $st->all_product_in_store }}</td>
-                                    <td style="text-align:center">{{ $st->stored_product }}</td>
+                                    <td style="text-align:center" id="total-{{ $st->id }}" >{{ $st->all_product_in_store }}</td>
+                                    <td style="text-align:center" id="qtyTon-{{ $st->id }}">{{ $st->stored_product }}</td>
                                     <td style="text-align:center">{{ $st->sold_product }}</td>
                                     <td>
                                         <div class="btn-toolbar" role="toolbar">
@@ -154,7 +154,8 @@
                     },
                     success: function(response) {
                         let store_update = JSON.parse(response)['store'];
-                        $("#name-" + store_update['id']).html(store_update['all_product_in_store']);
+                        $("#total-" + store_update['id']).html(store_update['all_product_in_store']);
+                        $("#qtyTon-" + store_update['id']).html(store_update['stored_product']);
                         $("#bookeditmodal").modal('hide');
                         Swal.fire({
                             icon: 'success',
