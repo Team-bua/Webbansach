@@ -43,7 +43,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            <th></th>   
                             <th></th>
                             <th style="width: 100px">Tùy chọn</th>
                         </tr>
@@ -65,12 +65,12 @@
 
                                 @if ($pro->status == 1)
                                 <a href="{{ route('product_off', [$pro['id']]) }}">
-                                    <button type="button" onclick="return confirm('Bạn có muốn ngừng kinh doanh không')" style="background-color:rgb(189, 189, 189);border:none;" class="btn btn-warning btn ">
+                                    <button type="button" onclick="return confirm('Bạn có muốn ngừng kinh doanh không')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn ">
                                         <i class="fa fa-pause"></i> </button>
                                 </a>
                                 @else
                                 <a href="{{ route('product_on', [$pro['id']]) }}">
-                                    <button type="button" style="background-color:rgb(69, 204, 69);border:none;" class="btn btn-warning btn ">
+                                    <button type="button" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn ">
                                         <i class="fa fa-play"></i> </button>
                                 </a>
                                 @endif

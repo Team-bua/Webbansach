@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
 use Exception;
+use Analytics;
+use Session;
+use Spatie\Analytics\Period;
 use Illuminate\Support\Facades\Log;
-
+   
 class PageController extends Controller
 {
     /**
@@ -57,10 +61,19 @@ class PageController extends Controller
 
 
     public function getNews()
-    {
-        return view('layout_index.page.news');
+    { 
+        $content_fist = $this->repository->getContentFist();
+        $content = $this->repository->getContent();
+        return view('layout_index.page.news', compact('content','content_fist'));
     }
-    //
+    public function getNewsContent($id)
+    { 
+        $content = $this->repository->getContent();
+        $content_detail = $this->repository->getContentDetail($id);
+       
+        return view('layout_index.page.news-detail', compact('content_detail','content'));
+    }
+    // tin tức
 
     public function getAllNew()
     {
@@ -215,9 +228,11 @@ class PageController extends Controller
 
     public function getAdmin()
     {
+        $data [ "fetchTotalVisitorsAndPageViews"]= Analytics:: fetchTotalVisitorsAndPageViews(Period::days(0));
+        $data [ "fetchTopBrowsers"]= Analytics::fetchTopBrowsers(Period::days(0));
         $user = $this->repository->getAll();
-        $product = $this->repository->getAllproductbook();
-        return view('layout_admin.index_admin', compact('product', 'user'));
+       $product = $this->repository->getAllproductbook();
+      return view('layout_admin.index_admin',$data, compact('product', 'user'));
     }
 
     public function getInfo($id)
@@ -238,4 +253,13 @@ class PageController extends Controller
         $this->repository->updatePassword($request, $id);
         return redirect()->back();
     }
+   
+    public function changeLanguage($language)
+    {
+        Session::put('language', $language);
+    
+        return redirect()->back();
+    }
+
+
 }

@@ -50,6 +50,8 @@ Route::get('highlights',[PageController::class,'getAllHighlights'])->name('allhi
 Route::get('introduce',[PageController::class,'getIntroduce'])->name('introduce');
 //----->tintuc
 Route::get('news',[PageController::class,'getNews'])->name('news');
+//------>chi tiet tin tuc
+Route::get('news_detail/{id}',[PageController::class,'getNewsContent'])->name('newsdetail');
 //----->đăng nhập
 Route::get('login',[LoginController::class,'getLogin'])->name('login');
 Route::post('login',[LoginController::class,'postLogin'])->name('login');
@@ -89,6 +91,13 @@ Route::put('rating/{id}',[PageController::class,'postRating'])->name('rating');
 Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function() {
     Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
 });
+
+
+Route::group(['middleware' => 'App\Http\Middleware\Locale'], function() {
+    Route::get('language/{language}',
+     [PageController::class,'changeLanguage'])->name('user.language');
+});
+
 ////----->trang admin_CRUD san pham
 Route::resource('book',ProductController::class);
 Route::get('product_on/{id}',[ProductController::class,'getSell'])->name('product_on');
@@ -138,3 +147,4 @@ Route::get('new_off/{id}',[NewsController::class,'getStopNews'])->name('news_off
 
 
 
+//->

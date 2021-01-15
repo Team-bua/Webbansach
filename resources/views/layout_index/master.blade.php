@@ -24,7 +24,17 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="style.css">
     <!------------------------------------------------------------------------>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-187250841-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-187250841-2');
+</script>
 </head>
 
 
@@ -48,13 +58,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../src/jquery.back-to-top.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<<<<<<< HEAD
-    <script src="plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
-    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
-    <script src="plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
-
-=======
->>>>>>> 2fd913a3d2289d9b09f551c7273fff38bec784a2
     <script>
         $(function() {
             $('.bck').backToTop();
@@ -90,6 +93,7 @@
             })
         }
     </script>
+
     <!---------------------------------------------------------------------------------------->
     <!--     <script>
 window.onscroll = function() {myFunction()};

@@ -15,6 +15,7 @@ use App\Models\BillDetail;
 use App\Models\Comment;
 use App\Models\Company;
 use App\Models\Rating;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 
@@ -49,8 +50,8 @@ class PageRepository
     public function getAllProductSale()
     {
         return  Product::where('promotion_price', '<>', 0)->where('status', 1)
-        ->latest()
-        ->paginate(10);
+            ->latest()
+            ->paginate(10);
     }
     // sách giảm giá
 
@@ -105,7 +106,8 @@ class PageRepository
         return $product->userComments;
     }
 
-    public function getRating($id){
+    public function getRating($id)
+    {
         $product =  Product::find($id);
         return $product->ratings;
     }
@@ -207,14 +209,15 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
-
     }
 
-    public function getInfo($id){
+    public function getInfo($id)
+    {
         return User::find($id);
     }
 
-    public function changeInfo(Request $request, $id){
+    public function changeInfo(Request $request, $id)
+    {
         $customer = User::find($id);
         $customer->full_name = $request->input('fullname');
         $customer->email = $request->input('email');
@@ -224,21 +227,21 @@ class PageRepository
     }
 
     public function updatePassword(Request $request, $id)
-    {   
-        if (Hash::Check($request->password,Auth::user()->password)){
-        $pa=User::find($id);
-        $pa->password=$request->input('password');
-        $request->user()->fill([
-            'password' => Hash::make($request->new_password)
-        ])->save();
-        return redirect()->back()->with('success','Thay đổi thành công ');
+    {
+        if (Hash::Check($request->password, Auth::user()->password)) {
+            $pa = User::find($id);
+            $pa->password = $request->input('password');
+            $request->user()->fill([
+                'password' => Hash::make($request->new_password)
+            ])->save();
+            return redirect()->back()->with('success', 'Thay đổi thành công ');
+        }
+        return redirect()->back()->with('danger', 'Mật khẩu cũ không đúng ');
     }
-            return redirect()->back()->with('danger','Mật khẩu cũ không đúng ');
-    }   
 
     public function getBill()
     {
-       return Bill::where('id_user', Auth::user()->id)->get();
+        return Bill::where('id_user', Auth::user()->id)->get();
     }
 
     public function destroy($id)
@@ -247,7 +250,28 @@ class PageRepository
         $supplier->delete();
     }
 
-    public function getRead($id){
+    public function getRead($id)
+    {
         return Product::find($id);
     }
+
+    public function getContent()
+    {
+        return News::where('status', 1)->get();
+    }
+
+    public function getContentDetail($id)
+    {
+        return News::where('id',$id)->get();
+    }
+
+    public function getContentFist()
+    {
+        return News::orderBy('id','desc')->first();
+    }
+
+    
+
+    // trang tin tức
+
 }

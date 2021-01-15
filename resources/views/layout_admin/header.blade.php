@@ -82,14 +82,21 @@
                     </ul>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="{!! route('user.language', ['vi']) !!}" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                     </a>
                     <ul class="dropdown-menu" 
                     style="margin-top:7px;min-width:55px;
                      min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
                         <li>
+                            <a href="{!! route('user.language', ['en']) !!}">
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!! route('user.language', ['vi']) !!}" >
+                                <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -152,7 +159,7 @@
             <li class="treeview">
                 <a href="{{ url('admin') }}">
                     <i style="color:#8b7b61" class="fa fa-pie-chart fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Tổng Quan</span>
+                    <span style="font-size:16px ;">{{ __('dashboard') }}</span>
                 </a>
             </li>
 
@@ -160,7 +167,7 @@
             <li class=" treeview">
                 <a href="{{ route('companies.index') }}">
                     <i style="color:#8b7b61"class="fa fa-briefcase fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Nhà xuất bản</span>
+                    <span style="font-size:16px ;">{{ __('publisher') }}</span>
                 </a>
             </li>
         @endcan
@@ -168,7 +175,7 @@
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
-                    <span style="font-size:16px ;"> Sách</span>
+                    <span style="font-size:16px ;"> {{ __('listbook') }}</span>
                     
                 </a>
 
@@ -178,21 +185,21 @@
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:#8b7b61"class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Loại sách</span>           
+                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>           
                 </a>
             </li>          
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
                     <i style="color:#8b7b61"class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span>Banner</span>
+                    <span>{{ __('banner') }}</span>
                 </a>
 
 
                 <li class="treeview">
                     <a href="{{ route('thenews.index') }}">
                         <i style="color:#8b7b61"class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
-                        <span>Tin tức</span>
+                        <span>{{ __('news') }}</span>
                     </a>
         @endcan
             <li class="header ">
@@ -202,18 +209,18 @@
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
                   <i style="color:#8b7b61" class="fa fa-inbox fa-lg text-warning"></i>
-                  <span style="font-size:16px ;">Đơn hàng</span>
+                  <span style="font-size:16px ;">{{ __('bills') }}</span>
                 </a>
               </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
                 <a >
                     <i style="color:#8b7b61" class="fa fa-archive  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;"> Kho hàng</span>
+                    <span style="font-size:16px ;"> {{ __('store') }}</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
-                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> Tồn Kho </a></li>
+                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
                   </ul>
             </li>
             
@@ -225,7 +232,7 @@
                     <li class="treeview">
                         <a href="{{ route('user.index') }}">
                             <i style="color:#8b7b61"class="fa fa-desktop  fa-lg"></i>
-                            <span style="font-size:16px ;"> Tài Khoản</span>
+                            <span style="font-size:16px ;"> {{ __('acc') }}</span>
 
                         </a>
             @endcan
@@ -233,7 +240,7 @@
                     <li class="treeview">
                         <a href="{{ url('logout') }}">
                             <i style="color:#8b7b61" class="fa fa-sign-out  fa-lg text-warning"></i>
-                            <span style="font-size:16px ;">Thoát</span>
+                            <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
 
