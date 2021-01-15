@@ -54,7 +54,7 @@
                                             <td>
                                                 <div class="btn-toolbar" role="toolbar">
                                                     <div class="btn-group mr-2" role="group">
-                                                        <a href="{{ route('store.edit', [$st['id_storesasdasd']]) }}">
+                                                        <a href="{{ route('store.edit', [$st['id_store']]) }}">
                                                             <button style="float:right" class="btn btn-warning btn-sm"><i
                                                                     class="fa fa-pencil"></i></button>
                                                         </a>

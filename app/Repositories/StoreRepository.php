@@ -24,7 +24,7 @@ class StoreRepository
         return Product::all();
     }
 
-    public function getcompanies($id)
+    public function getstore($id)
     {
         return Store::find($id);
     }
