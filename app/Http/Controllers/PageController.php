@@ -11,7 +11,9 @@ use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use App\Models\Cart;
+use App\Models\Rating;
 use App\Models\Store;
+
 class PageController extends Controller
 {
     /**
@@ -54,7 +56,8 @@ class PageController extends Controller
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $rating = $this->repository->getRating($id);
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail','rating'));
+        $count_ra = Rating::all();
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating', 'count_ra'));
     }
 
 
@@ -195,36 +198,33 @@ class PageController extends Controller
         $product_name = '';
         $product_quantity = '';
         $status = 'true';
-        if(isset($cart)){
-        foreach ($cart->items as $key => $value) {
-            $stored_product = Store::where('id_product', $key)
-                            ->value('stored_product');
-            if ($stored_product - $value['qty'] < 0 ) {
-                $product_name = $value['item']['name'];
-                $product_quantity = $stored_product;
-                $status = 'false';
-                break;
+        if (isset($cart)) {
+            foreach ($cart->items as $key => $value) {
+                $stored_product = Store::where('id_product', $key)
+                    ->value('stored_product');
+                if ($stored_product - $value['qty'] < 0) {
+                    $product_name = $value['item']['name'];
+                    $product_quantity = $stored_product;
+                    $status = 'false';
+                    break;
+                }
             }
         }
-    }
-        if($status == 'true'){
-            if (Auth::check()) 
-            {
+        if ($status == 'true') {
+            if (Auth::check()) {
                 $name = Auth::user()->full_name;
                 $email = Auth::user()->email;
                 $address = Auth::user()->address;
                 $phone = Auth::user()->phone;
-            } 
-            else 
-            {
+            } else {
                 $name = "";
                 $email = "";
                 $address = "";
                 $phone = "";
             }
-        return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
-        }else
-        return back()->withErrors(['Sách "'.$product_name.'" chỉ còn lại '.$product_quantity.' sản phẩm!']);
+            return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
+        } else
+            return back()->withErrors(['Sách "' . $product_name . '" chỉ còn lại ' . $product_quantity . ' sản phẩm!']);
     }
 
     public function postCheckout(Request $request)

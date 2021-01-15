@@ -60,8 +60,8 @@
                     </div>
                 </div>
             </div>
+            @if(Session::has('cart'))
             <table class="table table-bordered .table-responsive text-center">
-                @if(Session::has('cart'))
                 <tr class="active">
                     <td>Ảnh mô tả</td>
                     <td>Tên sản phẩm</td>
@@ -77,7 +77,7 @@
                 </tr>
                 @endforeach
             </table>
-            @endif    
+            @endif
     </form>
 </div>
 @endsection

@@ -90,6 +90,20 @@
 
                     </li>
                     @endif
+                    <li>
+                        <span class="name">Đánh giá</span><span class="clm">:</span> &nbsp; &nbsp;
+                        @if($rating['product'])
+                        <?php
+                        $product_ra = 0;
+                        if ($rating['product']->total_ra) {
+                            $product_ra = round($rating['product']->total_number / $rating['product']->total_ra, 2);
+                        }
+
+                        ?>
+                        @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
+                            @endfor
+                            @endif
+                    </li>
                 </ul>
                 <div class="btn-sec">
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
@@ -152,7 +166,7 @@
                                     <h1>Đánh Giá</h1>
                                 </div>
                                 <div class="rating">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Review</p>
                                 </div>
                                 <div class="rating-process">
                                     <div class="rating-right-part">
@@ -211,7 +225,7 @@
                                 <h1>Đánh Giá</h1>
                             </div>
                             <div class="rating">
-                                <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Review</p>
                             </div>
                             <div class="rating-process">
                                 <div class="rating-right-part">
