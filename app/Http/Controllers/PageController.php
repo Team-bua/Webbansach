@@ -8,11 +8,11 @@ use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Session;
+use Analytics;
 use Spatie\Analytics\Period;
 use Exception;
 use App\Models\Rating;
 use App\Models\Store;
-use Analytics;
 
 class PageController extends Controller
 
