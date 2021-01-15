@@ -10,11 +10,15 @@ use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
 use Exception;
 use Analytics;
+use App\Models\Rating;
 use Session;
 use Spatie\Analytics\Period;
 use Illuminate\Support\Facades\Log;
-   
+
+
+
 class PageController extends Controller
+
 {
     /**
      * The ProductRepository instance.
@@ -56,22 +60,23 @@ class PageController extends Controller
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $rating = $this->repository->getRating($id);
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail','rating'));
+        $count_ra = Rating::all();
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra' ));
     }
 
 
     public function getNews()
-    { 
+    {
         $content_fist = $this->repository->getContentFist();
         $content = $this->repository->getContent();
-        return view('layout_index.page.news', compact('content','content_fist'));
+        return view('layout_index.page.news', compact('content', 'content_fist'));
     }
     public function getNewsContent($id)
-    { 
+    {
         $content = $this->repository->getContent();
         $content_detail = $this->repository->getContentDetail($id);
-       
-        return view('layout_index.page.news-detail', compact('content_detail','content'));
+
+        return view('layout_index.page.news-detail', compact('content_detail', 'content'));
     }
     // tin tức
 
@@ -228,11 +233,11 @@ class PageController extends Controller
 
     public function getAdmin()
     {
-        $data [ "fetchTotalVisitorsAndPageViews"]= Analytics:: fetchTotalVisitorsAndPageViews(Period::days(0));
-        $data [ "fetchTopBrowsers"]= Analytics::fetchTopBrowsers(Period::days(0));
+        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(0));
+        $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
         $user = $this->repository->getAll();
-       $product = $this->repository->getAllproductbook();
-      return view('layout_admin.index_admin',$data, compact('product', 'user'));
+        $product = $this->repository->getAllproductbook();
+        return view('layout_admin.index_admin', $data, compact('product', 'user'));
     }
 
     public function getInfo($id)
@@ -253,13 +258,11 @@ class PageController extends Controller
         $this->repository->updatePassword($request, $id);
         return redirect()->back();
     }
-   
+
     public function changeLanguage($language)
     {
         Session::put('language', $language);
-    
+
         return redirect()->back();
     }
-
-
 }

@@ -125,7 +125,7 @@ h6 span:nth-child(14) {
     opacity: 1;
     color: #fff;
     text-transform: uppercase;
-    padding: 15px 15px 11px;
+    padding: 15px 13px 11px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.4px;
@@ -1245,8 +1245,8 @@ ul {
 }
 
 #comment-wrapper {
-    width: 500px;
-    height: 450px;
+    width: 520px;
+    height: 650px;
     position: relative;
     float: left;
     border-radius: 10px;

@@ -21,7 +21,7 @@ class Product extends Model
         'imagedetail' => 'array'
     ];   
 
-    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail' ,'publisher', 'new', 'link'];
+    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail', 'total_ra', 'total_number' ,'publisher', 'new', 'link'];
 
     public function productType()
     {
@@ -50,7 +50,7 @@ class Product extends Model
 
     public function ratings()
     {
-        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user');
+        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user')->withPivot('body','ra_number')->withTimestamps();
     }
 
     public function productCompany()

@@ -98,7 +98,7 @@
                     <h4> Số trang :</h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-file-text fa-lg"></i></span>
-                        <input id="Page_Number" class="form-control" name="PageNumber" type="number" placeholder="Nhập số trang. . . . . . . . ." />
+                        <input id="Page_Number" class="form-control" name="PageNumber" type="number" min="1" placeholder="Nhập số trang. . . . . . . . ." />
                         <span class="input-group-addon">Trang</span>
                     </div>
                     <h4> Kích thước :</h4>
@@ -217,4 +217,5 @@
     $("#size").inputmask();
     $("#Page_Number").inputmask();
 </script>
+
 @stop

@@ -36,11 +36,10 @@
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
                                     <ul>
-                                        @foreach($types as $pro)
-                                        <li><a href="{{ route('product_type', $pro->id) }}">{{ $pro->name }}</a></li>
-                                        @endforeach
+                                        @for($i = 0; $i < count($product_n); $i++)
+                                        <li><a href="{{ route('product_type', $types_id[$i]) }}">{{ $types_name[$i] }}({{ $product_n[$i] }})</a></li>
+                                        @endfor
                                     </ul>
-
                                 </div>
                             </div>
                         </li>

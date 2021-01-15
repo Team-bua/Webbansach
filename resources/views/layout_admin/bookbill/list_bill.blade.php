@@ -192,6 +192,7 @@
     var table = $('#example').DataTable({
         "paging": true,
         "info": false,
+        "order": [],
         // hiding columns via datatable column.visivle API
         "columnDefs": [{
             "targets": [1, 3, 4],

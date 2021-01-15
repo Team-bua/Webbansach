@@ -70,7 +70,8 @@ class PageRepository
 
     public function getSearch($req)
     {
-        $product = Product::where('name', 'like', '%' . $req->key . '%')
+        $product = Product::where('status', 1)
+            ->where('name', 'like', '%' . $req->key . '%')
             ->orWhere('unit_price', $req->key)
             ->paginate(20);
         return $product;
@@ -109,7 +110,8 @@ class PageRepository
     public function getRating($id)
     {
         $product =  Product::find($id);
-        return $product->ratings;
+        $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
+        return ['ra_date' => $ra_date, 'product' => $product];
     }
 
     public function postRating($id, $request)
@@ -117,8 +119,14 @@ class PageRepository
         $rating = new Rating();
         $rating->id_product = $id;
         $rating->id_user = Auth::user()->id;
-        $rating->body = $request->input('rating');
+        $rating->ra_number = $request->input('rating');
+        $rating->body = $request->input('body');
         $rating->save();
+
+        $product = Product::find($id);
+        $product->total_number += $request->input('rating');
+        $product->total_ra += 1;
+        $product->save();
     }
 
     public function getProductTypeID($id)

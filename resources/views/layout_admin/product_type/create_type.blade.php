@@ -108,7 +108,7 @@
                             <td id="name-{{ $pro->id }}">{{ $pro->name }}</td>
                             <td>
                                 <button style="margin-right:5px;float: left;" class="btn btn-warning btn" id="edit-{{ $pro->id }}" onclick="editType(this)"> Sửa </button>
-                                    <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
+                                <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
                             </td>
                         </tr>
                         @endforeach
@@ -131,7 +131,6 @@
 
 @endsection
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -156,12 +155,18 @@
                         "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
                         "<td>" + "<button  style='margin-right:5px;float: left;' class='btn btn-warning btn' id='edit-" + type['id'] +
                         "' onclick='editType(this)' >Sửa </button>" +
-                        "<button class='btn btn-danger delType' data-url="+base_url+"/book_del/"+ type['id'] +
-                        ">Xóa </button>"  + "</td>"
+                        "<button class='btn btn-danger delType' data-url=" + base_url + "/book_del/" + type['id'] +
+                        ">Xóa </button>" + "</td>"
                     "</tr>";
                     $("#tableId2 tbody").append(output);
                     $("#bookmodal").modal('hide');
                 }
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã thêm thành công',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         });
     });
@@ -181,6 +186,7 @@
                 $('#id').val(type['id']);
             }
         });
+    }
 
         $('#bookEditForm').submit(function(e) {
             e.preventDefault();
@@ -197,11 +203,15 @@
                     let type = JSON.parse(response)['product_type'];
                     $("#name-" + type['id']).html(type['name']);
                     $("#bookeditmodal").modal('hide');
-
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cập nhật thành công',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             });
         });
-    }
     $(document).on('click', '.delType', DelCart);
 
     function DelCart(e) {
@@ -231,14 +241,17 @@
                                 'success'
                             )
                         }
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi hệ thống!',
+                            text: 'Còn sách không thể xóa',
+                        })
                     }
                 });
             }
         });
-    }
-
-    function alertDelete() {
-        return confirm('Bạn có muốn xóa không')
     }
 
     $('#tableId2').dataTable({
@@ -246,6 +259,7 @@
         "bLengthChange": true,
         "bFilter": true,
         "bSort": true,
+        "order": [],
         "bInfo": false,
         "bAutoWidth": false
     });

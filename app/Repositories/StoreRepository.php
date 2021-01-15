@@ -3,8 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Store;
-use App\Models\Product;
-use App\Models\Company;
 use Illuminate\Http\Request;
 
 class StoreRepository
@@ -16,53 +14,27 @@ class StoreRepository
      */
     public function getAll()
     {   
-        return Store::orderBy('id', 'desc')->paginate(10);
-    }
-
-    public function getProduct()
-    {   
-        return Product::all();
-    }
-
-    public function getcompanies($id)
-    {
-        return Store::find($id);
+        return Store::all();
     }
 
     public function create(Request $request)
     {
-       $stores = new Company();
-       $stores->name=$request->input('name');
-       $stores->email=$request->input('email');
-       $stores->address=$request->input('address');
-       $stores->phone_number=$request->input('phone');
-       $stores->save();
+       
        
     }
 
-    public function update($request, $id) {
-        $stores = Company::find($id);
-        $stores->name=$request->input('name');
-        $stores->email=$request->input('email');
-        $stores->address=$request->input('address');
-        $stores->phone_number=$request->input('phone');
-        $stores->save();
-        
+    public function update($request) 
+    {  
+        $store = Store::find($request->id);
+        $store->all_product_in_store = $request->input('total');
+        $store->stored_product = $request->input('qtyTon');
+        $store->save();
+        return json_encode((object)['store'=>$store]);
     }
 
     public function destroy($id) {
-        $stores = Company::find($id);
-        $stores->delete();
+       
       
-    }
-
-    public function search($request) {
-
-        $search = $request->table_search;
-        return Store::join('product', 'store.id_product', '=', 'product.id')
-               ->where(function ($query) use ($search) {
-                $query->where('product.name', 'like', "%$search%");
-            })->paginate(10);
     }
 
 
