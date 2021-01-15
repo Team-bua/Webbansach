@@ -34,7 +34,7 @@
                     <h4> Nội dung </h4>
                     <div class='box-body pad'>
                         <form>
-                            <textarea name="content" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 
+                            <textarea name="content" class="textarea" style="width: 100%; height: 500px; font-size: 14px; line-height: 18px; border: 
                                     1px solid #dddddd; padding: 10px;"></textarea>
                         </form>
                     </div>
@@ -42,20 +42,12 @@
 
 
                     <div class="form-group">
-                        <h4 for="exampleInputFile">Ảnh sản phẩm</h4>
+                        <h4 for="exampleInputFile">Ảnh tin tức </h4>
                         <input id="imgbook" type="file" name="img" onchange="changeImg(this)">
                         <img id="avatar" class="img-rounded" width="200px" height="300px">
                     </div>
 
 
-
-
-                    <div class="form-group">
-                        <h4 for="exampleInputFile">Ảnh chi tiết</h4>
-                        <input name="img_detail[]" id="exampleInputFile" type='file' multiple />
-                        <div id="myImg">
-                        </div>
-                    </div>
                     <br>
                     <div class="text-center">
 

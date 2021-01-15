@@ -114,4 +114,19 @@ class NewsController extends Controller
         $this->repository->destroy($id);
         return redirect()->back();
     }
+
+    public function getOnNews($id){
+        $on= News::find($id);
+        $on->status = News::statusOn;
+        $on->save();
+        return redirect()->back();
+    }
+
+    public function getStopNews($id){
+        $off=News::find($id);
+        $off->status = News::statusOff;
+        $off->save();
+        return redirect()->back();
+    }
+
 }

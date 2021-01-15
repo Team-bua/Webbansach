@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
-use Exception;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use App\Models\Cart;
+use Exception;
 use App\Models\Rating;
-use App\Models\Store;
+
 
 class PageController extends Controller
+
 {
     /**
      * The ProductRepository instance.
@@ -57,15 +56,24 @@ class PageController extends Controller
         $comments = $this->repository->getComment($id);
         $rating = $this->repository->getRating($id);
         $count_ra = Rating::all();
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating', 'count_ra'));
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra' ));
     }
 
 
     public function getNews()
     {
-        return view('layout_index.page.news');
+        $content_fist = $this->repository->getContentFist();
+        $content = $this->repository->getContent();
+        return view('layout_index.page.news', compact('content', 'content_fist'));
     }
-    //
+    public function getNewsContent($id)
+    {
+        $content = $this->repository->getContent();
+        $content_detail = $this->repository->getContentDetail($id);
+
+        return view('layout_index.page.news-detail', compact('content_detail', 'content'));
+    }
+    // tin tức
 
     public function getAllNew()
     {
@@ -194,37 +202,18 @@ class PageController extends Controller
 
     public function getCheckout()
     {
-        $cart = Session::get('cart');
-        $product_name = '';
-        $product_quantity = '';
-        $status = 'true';
-        if (isset($cart)) {
-            foreach ($cart->items as $key => $value) {
-                $stored_product = Store::where('id_product', $key)
-                    ->value('stored_product');
-                if ($stored_product - $value['qty'] < 0) {
-                    $product_name = $value['item']['name'];
-                    $product_quantity = $stored_product;
-                    $status = 'false';
-                    break;
-                }
-            }
+        if (Auth::check()) {
+            $name = Auth::user()->full_name;
+            $email = Auth::user()->email;
+            $address = Auth::user()->address;
+            $phone = Auth::user()->phone;
+        } else {
+            $name = "";
+            $email = "";
+            $address = "";
+            $phone = "";
         }
-        if ($status == 'true') {
-            if (Auth::check()) {
-                $name = Auth::user()->full_name;
-                $email = Auth::user()->email;
-                $address = Auth::user()->address;
-                $phone = Auth::user()->phone;
-            } else {
-                $name = "";
-                $email = "";
-                $address = "";
-                $phone = "";
-            }
-            return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
-        } else
-            return back()->withErrors(['Sách "' . $product_name . '" chỉ còn lại ' . $product_quantity . ' sản phẩm!']);
+        return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
     }
 
     public function postCheckout(Request $request)
@@ -239,9 +228,11 @@ class PageController extends Controller
 
     public function getAdmin()
     {
+        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(0));
+        $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
         $user = $this->repository->getAll();
         $product = $this->repository->getAllproductbook();
-        return view('layout_admin.index_admin', compact('product', 'user'));
+        return view('layout_admin.index_admin', $data, compact('product', 'user'));
     }
 
     public function getInfo($id)
@@ -260,6 +251,13 @@ class PageController extends Controller
     public function updatePassword(UserRequest $request, $id)
     {
         $this->repository->updatePassword($request, $id);
+        return redirect()->back();
+    }
+
+    public function changeLanguage($language)
+    {
+        Session::put('language', $language);
+
         return redirect()->back();
     }
 }

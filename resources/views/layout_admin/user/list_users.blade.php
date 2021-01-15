@@ -30,6 +30,7 @@
                                 <tr style=" font-size:18px;">
                                     <th> Tên người dùng</th>
                                     <th>Tên tài khoản</th>
+                                    <th>Thuộc</th>
                                     <th>Quyền</th>
                                     <th>Tùy chọn</th>
                                 </tr>
@@ -39,7 +40,10 @@
                                 <tr>
                                     <td>{{ $users->full_name }}</td>
                                     <td>{{ $users->username }}</td>
+                                    <td>{{ $users->companys->name }}</td>
                                     <td>{{ $users->role->display_name }}</td>
+                                    
+                                 
                                     <td>
                                         <div class="btn-toolbar" role="toolbar">
                                             <div class="btn-group mr-2" role="group">

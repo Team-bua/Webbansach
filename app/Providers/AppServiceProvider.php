@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layout_admin.header', function ($view) {
             $types = ProductType::all();
             $company = Company::all();
-            $product = Product::where('status', 1)->get();
+            $product = Product::where('status',1)->get();
             $view->with(['types' => $types, 'company' => $company, 'product' => $product]);
         });
         view()->composer(['layout_index.page.cart', 'layout_index.page.checkout'], function ($view) {

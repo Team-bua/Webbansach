@@ -15,6 +15,7 @@ use App\Models\BillDetail;
 use App\Models\Comment;
 use App\Models\Company;
 use App\Models\Rating;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 
@@ -261,4 +262,24 @@ class PageRepository
     {
         return Product::find($id);
     }
+
+    public function getContent()
+    {
+        return News::where('status', 1)->get();
+    }
+
+    public function getContentDetail($id)
+    {
+        return News::where('id',$id)->get();
+    }
+
+    public function getContentFist()
+    {
+        return News::orderBy('id','desc')->first();
+    }
+
+    
+
+    // trang tin tức
+
 }

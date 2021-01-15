@@ -9,6 +9,9 @@ class News extends Model
 {
     use HasFactory;
     protected $table = "tnews";
+    const statusOn = 1;
+    const statusOff = 0;
+
     protected $casts = [
         'imagedetail' => 'array'
     ];  
