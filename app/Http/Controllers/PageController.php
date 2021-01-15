@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Session;
 use Exception;
 use App\Models\Rating;
 use App\Models\Store;
+use Spatie\Analytics\Period;
+use Analytics;
 
 
 class PageController extends Controller
