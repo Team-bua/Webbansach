@@ -128,6 +128,8 @@ Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->n
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
 ///------>Trang kho
 Route::resource('store', StoreController::class);
+Route::post('store_edit/edit',[StoreController::class,'getEdit'])->name('store_edit');
+Route::post('store_update',[StoreController::class,'getUpdate'])->name('store_update');
 ///------>Tintuc
 Route::resource('thenews',NewsController::class);
 Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent');

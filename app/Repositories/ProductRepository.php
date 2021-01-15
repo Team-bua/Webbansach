@@ -94,6 +94,7 @@ class ProductRepository
        $product->size=$request->input('size');
        $product->new=$request->input('featured');
        $product->link=$pdf;
+       $product->status=1;
        $product->image=$image;
        $product->imagedetail=$imgdetail;
        $product->save();
@@ -175,8 +176,7 @@ class ProductRepository
      */
     public function destroy($id) {
         $product = Product::find($id);
-        unlink(public_path('images/product').'/'.$product->image);  
-        unlink(public_path('book_pdf').'/'.$product->link);     
+        unlink(public_path('images/product').'/'.$product->image);      
         $product->delete();
       
     }
