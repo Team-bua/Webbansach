@@ -261,7 +261,7 @@
 </style>
     <div class="container">
         @foreach ($content_detail as $con)
-            <p style="font-size:12px;"> {!! $con->content !!} </p>
+            <p style="font-size:12px;text-align: justify;"> {!! $con->content !!} </p>
         @endforeach
         <div id="hpage_latest">
             @foreach ($content as $con)
