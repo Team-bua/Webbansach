@@ -8,10 +8,11 @@ use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Session;
+use Spatie\Analytics\Period;
 use Exception;
 use App\Models\Rating;
 use App\Models\Store;
-
+use Analytics;
 
 class PageController extends Controller
 
@@ -56,8 +57,9 @@ class PageController extends Controller
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $rating = $this->repository->getRating($id);
-        $count_ra = Rating::all();
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra' ));
+        $count_ra = Rating::where('id_product', $id)->get();
+        $ra_5 = Rating::where('ra_number',5)->count();
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra','ra_5' ));
     }
 
 
@@ -252,7 +254,8 @@ class PageController extends Controller
         $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
         $user = $this->repository->getAll();
         $product = $this->repository->getAllproductbook();
-        return view('layout_admin.index_admin', $data, compact('product', 'user'));
+        $store = $this->repository->getAllstore();
+        return view('layout_admin.index_admin', $data, compact('product', 'user','store'));
     }
 
     public function getInfo($id)

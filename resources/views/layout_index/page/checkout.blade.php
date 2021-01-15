@@ -88,30 +88,6 @@
                 </table>
                 @endif
             </div>
-<<<<<<< HEAD
         </form>
     </div>
 @endsection
-=======
-            @if(Session::has('cart'))
-            <table class="table table-bordered .table-responsive text-center">
-                <tr class="active">
-                    <td>Ảnh mô tả</td>
-                    <td>Tên sản phẩm</td>
-                    <td width="20%">Đơn giá</td>
-                    <td>Số lượng</td>
-                </tr>
-                @foreach($product_cart as $pro)
-                <tr>
-                    <td><img style="width:50px; height:50px" src="{{asset('images/product/'.$pro['item']['image'])}}"></td>
-                    <td>{{$pro['item']['name']}}</td>
-                    <td><span class="price">{{number_format($pro['price'])}} VNĐ</span></td>
-                    <td>{{$pro['qty']}}</td>
-                </tr>
-                @endforeach
-            </table>
-            @endif
-    </form>
-</div>
-@endsection
->>>>>>> 65f1557fd2bccc709a5108090748793470d1b827

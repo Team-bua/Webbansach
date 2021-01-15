@@ -166,8 +166,6 @@
                 <a href="{{ route('companies.index') }}">
                     <i style="color:#8b7b61"class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">{{ __('publisher') }}</span>
-
-                    <small class="label pull-right bg-primary ">{{count($company)}}</small>
                 </a>
             </li>
         @endcan
@@ -176,8 +174,6 @@
                 <a href="{{ route('book.index') }}">
                     <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> {{ __('listbook') }}</span>
-         
-                    <small class="label pull-right bg-primary ">{{count($product)}}</small>
                 </a>
 
             </li>
@@ -186,9 +182,7 @@
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
                     <i style="color:#8b7b61"class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>           
-                      
-                    <small class="label pull-right bg-primary ">{{count($types)}}</small>       
+                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>                
                 </a>
             </li>          
             <!-- Quản lý slide -->

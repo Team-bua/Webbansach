@@ -16,6 +16,7 @@ use App\Models\Comment;
 use App\Models\Company;
 use App\Models\Rating;
 use App\Models\News;
+use App\Models\Store;
 use Illuminate\Http\Request;
 
 
@@ -34,7 +35,12 @@ class PageRepository
 
     public function getAllproductbook()
     {
-        return  Product::where('status', 1)->paginate(20);
+        return  Product::all();
+    }
+
+    public function getAllstore()
+    {
+        return  Store::sum('all_product_in_store');
     }
     // sách hoạt động
 
@@ -263,6 +269,7 @@ class PageRepository
         return Product::find($id);
     }
 
+    // tin tức
     public function getContent()
     {
         return News::where('status', 1)->get();

@@ -10,7 +10,7 @@
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- CSS only -->
-    <link rel="stylesheet" type="text/css" href="DataTables-1.10.23/css/dataTables.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="DataTables-1.10.23/css/dataTables.bootstrap.min.css" />
     <!-- JavaScript Bundle with Popper -->
 
     <!-- FontAwesome 4.3.0 -->
@@ -25,8 +25,8 @@
         
         
          folder instead of downloading all of them to reduce the load. -->
-         
-    
+
+
 
     <!-- Wordart -->
     <link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
@@ -43,9 +43,8 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - select -->
-    
 
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -139,6 +138,7 @@
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         });
     </script>
+
     @yield('js')
     @yield('in')
 </body>
