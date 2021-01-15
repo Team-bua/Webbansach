@@ -6,9 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 use App\Models\ProductType;
+use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Company;
-use App\Models\Product;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,8 +31,20 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layout_index.header', function ($view) {
             $types = ProductType::all();
+            $product_n = [];
+            $types_id = [];
+            $types_name = [];
+            foreach($types as $t)
+            {
+                $product_numbers = Product::where('id_type', $t->id)
+                                    ->where('status', '1')
+                                    ->count('id');
+                $product_n[] = $product_numbers;
+                $types_id[] = $t->id;
+                $types_name[] = $t->name;
+            }
             $company = Company::all();
-            $view->with(['types' => $types, 'company' => $company]);
+            $view->with(['types'=>$types,'company'=>$company, 'product_n'=>$product_n, 'types_id'=>$types_id, 'types_name'=>$types_name]);
         });
         view()->composer('layout_admin.header', function ($view) {
             $types = ProductType::all();

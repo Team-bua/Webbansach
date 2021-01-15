@@ -68,7 +68,7 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->repository->getstore($id);
     }
 
     /**
