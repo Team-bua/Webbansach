@@ -251,8 +251,7 @@ class PageController extends Controller
 
     public function getAdmin()
     {
-        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(0));
-        $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
+        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(10));
         $user = $this->repository->getAll();
         $product = $this->repository->allBookAdm();
         $store = $this->repository->getAllstore();

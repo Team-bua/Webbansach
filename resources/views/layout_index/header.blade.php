@@ -7,10 +7,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <span class="ph-number"><i class="fa fa-truck"></i> Miễn Phí Vận Chuyển </span>
+                    <span class="ph-number"><i class="fa fa-truck"></i> {{ __('free ship') }} </span>
                 </div>
                 <div class="col-md-4 ">
-                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i> Số điện thoại: 0779 750 123 || 0945 555 666</span>
+                    <span style="float: left;" class="ph-number"><i class="fa fa-phone"></i> {{ __('phone') }}: 0779 750 123 || 0945 555 666</span>
+                </div>
+                <div style="padding-left:310px"class="col-md-4">
+            
+                   
+                            <a href="{!! route('user.language', ['en']) !!}">
+                            <img src="{{ asset('images/icon/tienganh.png') }}" height="20px" width="22px">
+                            </a>
+                        
+                      
+                            <a href="{!! route('user.language', ['vi']) !!}" >
+                                <img src="{{ asset('images/icon/tiengviet.png') }}" height="18px" width="22px">
+                            </a>
+                     
+               
                 </div>
             </div>
         </div>
@@ -31,7 +45,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div id="menu">
                     <ul>
-                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục Sách</a>
+                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('catelory') }}</a>
                             <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
@@ -43,16 +57,16 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu_item down"><a href="{{ route('index') }}">Trang Chủ</a> </li>
-                        <li class="menu_item down"><a href="{{ route('introduce') }}">Giới thiệu</a></li>
-                        <li class="menu_item down"><a href="{{ route('news') }}">Tin Tức</a></li>
-                        <li class="menu_item down"><a href="{{ route('all_book') }}">Tất cả sách </a></li>
+                        <li class="menu_item down"><a href="{{ route('index') }}">{{ __('hompage') }}</a> </li>
+                        <li class="menu_item down"><a href="{{ route('introduce') }}">{{ __('introduce') }} </a></li>
+                        <li class="menu_item down"><a href="{{ route('news') }}">{{ __('newws') }}</a></li>
+                        <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a></li>
                         @if (Auth::check())
                         @else
-                        <li class="menu_item down"><a href="{{ route('login') }}">Đăng Nhập</a></li>
-                        <li class="menu_item down"><a href="{{ route('signup') }}">Đăng Ký</a></li>
+                        <li class="menu_item down"><a href="{{ route('login') }}">{{ __('login') }}</a></li>
+                        <li class="menu_item down"><a href="{{ route('signup') }}">{{ __('signup') }}</a></li>
                         @endif
-                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> Danh Mục NXB</a>
+                        <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('company') }}</a>
                             <div class="sub_menu">
                                 <div class="bubble"></div>
                                 <div class="sub_menu_block" style="width:326px">
@@ -87,10 +101,10 @@
                 @if (Auth::check())
                 @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
                 <div class="dropdown">
-                    <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn">{{ __('hello') }} &nbsp;<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
                         <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>
-                        <a href="{{ url('logout') }}">Đăng Xuất</a>
+                        <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>
                 @else
@@ -98,7 +112,7 @@
                     <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
                         <a href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>
-                        <a href="{{ url('logout') }}">Đăng Xuất</a>
+                        <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>
                 @endif
