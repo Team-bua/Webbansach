@@ -11,10 +11,9 @@ use App\Http\Requests\UserRequest;
 use Exception;
 use Analytics;
 use App\Models\Rating;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Spatie\Analytics\Period;
 use Illuminate\Support\Facades\Log;
-
 
 
 class PageController extends Controller
@@ -233,8 +232,7 @@ class PageController extends Controller
 
     public function getAdmin()
     {
-        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(0));
-        $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
+        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(10));
         $user = $this->repository->getAll();
         $product = $this->repository->getAllproductbook();
         return view('layout_admin.index_admin', $data, compact('product', 'user'));

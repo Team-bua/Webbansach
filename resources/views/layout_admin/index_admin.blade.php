@@ -42,13 +42,11 @@
                     <div class="info-box">
                         <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
                         <div class="info-box-content">
-                            @foreach ($fetchTotalVisitorsAndPageViews as $key => $item)
-
-
+                          
                                 <span class="info-box-text">Truy cập </span>
-                                <span class="info-box-number">{{ $item['pageViews'] }}</span>
+                                <span class="info-box-number"></span>
 
-                            @endforeach
+                           
                         </div><!-- /.info-box-content -->
                     </div><!-- /.info-box -->
                 </div><!-- /.col -->
@@ -171,47 +169,31 @@
                             </div>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                            <div class="col-md-6">
-                                <div class="box">
-                                    <div class="box-header">
-                                        <h3 class="box-title">Trang Web</h3>
-                                    </div>
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table class="table table-bordered">
-                                            <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>Web </th>
-                                                <th>View</th>
-                                                
-                                            </tr>
-                                            @foreach ($fetchTopBrowsers as $key => $item)
-                                            <tr>
-                                                <td>{{ $key + 1 }}</td>
-                                                <td>{{ $item["browser"] }}</td>
-                                                <td>{{ $item["sessions"] }} </td>
-                                            </tr>
-                                                @endforeach
-
-                                        </table>
-                                    </div>
-                                    <!-- /.box-body -->
-                                    <div class="box-footer clearfix">
-                                        <ul class="pagination pagination-sm no-margin pull-right">
-                                            <li><a href="#">&laquo;</a></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">&raquo;</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- /.box -->
-        
-
-                                <!-- /.box -->
-                            </div>
-                        </div><!-- /.box -->
+                            <table id="tableId2" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr style="font-size:18px;">
+                                        <th>Ngày </th>
+                                        <th width="20%">
+                                            Lượt View
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                    @foreach ($fetchTotalVisitorsAndPageViews as $key => $item)
+                                   
+                               
+                                    <tr>
+                                        <td >{{ $item['date']->format('d/m/Y')  }} </td>
+                                        <td >{{ $item['pageViews'] }} </td>
+                                      
+                                    </tr>
+                                    
+                                    @endforeach
+                                </tbody>
+            
+                            </table>
+                        </div><!-- /.box-body -->
 
                         <canvas id="buyers" width="1000px" height="300"></canvas>
 
@@ -284,5 +266,17 @@
         // draw line chart
         new Chart(buyers).Line(buyerData);
 
-    </script>
+        
+    $('#tableId2').dataTable({
+        "bPaginate": true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bSort": true,
+        "order": [],
+        "bInfo": false,
+        "bAutoWidth": false
+    });
+</script>
+
+ 
 @stop

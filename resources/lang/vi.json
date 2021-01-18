@@ -1,6 +1,6 @@
 {
 
-
+    "book": "Hệ thống quản lý trang bán sách",
     "dashboard": "Tổng quan",
     "publisher": "Nhà xuất bản",
     "listbook": "Sách",
@@ -11,9 +11,32 @@
     "store": "Kho hàng",
     "acc": "Tài khoản",
     "exit": "Thoát",
+    "chart": "Thống kê",
+
+    "catelory": "Danh mục sách",
+    "hompage": "Trang chủ",
+    "introduce": "Giới thiệu",
+    "newws": "Tin tức",
+    "all": "Tất cả sách",
+    "company": "Danh Mục NXB",
+    "hello": "Chào Bạn",
+    "logout": "Đăng Xuất",
+    "login": "Đăng nhập",
+    "signup": "Đăng kí",
 
 
 
-    "chart": "Thống kê"
+    "free ship": "Miễn phí vận chuyển",
+    "phone": "Số điện thoại",
+
+    "newbook": "Sách Mới Nhất",
+    "salebook": "Sách Khuyến Mãi",
+    "hotbook": "Sách Nổi Bật",
+
+
+    "detail": "Chi tiết",
+    "addcart": "Thêm vào giỏ hàng",
+    "read online": "Đọc Online",
+    "sss": " $type_name->name "
 
 }

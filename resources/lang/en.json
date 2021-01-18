@@ -1,5 +1,6 @@
 {
 
+    "book": "Book Store Admin",
     "dashboard": "Dash Board",
     "publisher": "Publisher",
     "listbook": "Book",
@@ -11,8 +12,37 @@
     "acc": "Account",
     "exit": "Exit",
 
+    "catelory": "Catelory",
+    "hompage": "Home",
+    "introduce": "Intro",
+    "newws": "News",
+    "all": "All",
+    "company": "Company",
+    "hello": "Hello",
+    "logout": "Logout",
+    "login": "Login",
+    "signup": "Signup",
 
-    "chart": "Chart"
+
+    "free ship": "All Free Ship",
+    "phone": "Phone",
+
+
+    "newbook": "New Book",
+    "salebook": "Sale Book",
+    "hotbook": "Hot Book",
+
+    "detail": "Detail",
+    "addcart": "Add To Cart",
+    "read online": "Read Online",
+
+
+    "sss": "Nghe thuat"
+
+
+
+
+
 
 
 }

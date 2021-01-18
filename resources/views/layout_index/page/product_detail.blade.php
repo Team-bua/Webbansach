@@ -107,9 +107,9 @@
                 </ul>
                 <div class="btn-sec">
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
-                    <button class="btn" onclick="AddCart('{{ $product_detail->id }}')">Thêm Vào Giỏ Hàng</button>
+                    <button class="btn" onclick="AddCart('{{ $product_detail->id }}')">{{ __('addcart') }}</button>
                     <button class="btn " onclick="BuyCart('{{ $product_detail->id }}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
-                    <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">Đọc ONLINE</button></a>
+                    <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">{{ __('read online') }}</button></a>
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <div class="wordart horizon">
-            <span class="text">Hệ thống quản lý trang bán sách </span>
+            <span class="text">{{ __('book') }}</span>
         </div>
         <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
@@ -83,11 +83,11 @@
 
                 <li class="dropdown">
                     <a href="{!! route('user.language', ['vi']) !!}" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
+                       <i class="fa fa-language fa-lg"></i>
                     </a>
                     <ul class="dropdown-menu" 
                     style="margin-top:7px;min-width:55px;
-                     min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
+                     min-height:50px;margin-right:-10px;background-color:#ffffff;line-height:35px;">
                         <li>
                             <a href="{!! route('user.language', ['en']) !!}">
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
