@@ -2,16 +2,8 @@
 @section('content')
 <div class="container">
     <br>
-    <h6><span>T</span>
-        <span>h</span>
-        <span>ô</span>
-        <span>n</span>
-        <span>g</span>
-        <span>t</span>
-        <span>i</span>
-        <span>n</span>
-        <span>.</span>
-    </h6>
+      <h6><span>Thông Tin</span>
+        </h6>
     <hr>
     <div class="btn-sec">
         <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>

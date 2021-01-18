@@ -55,59 +55,6 @@ h6 span {
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
-h6 span:nth-child(2) {
-    -webkit-animation-delay: 0.1s;
-}
-
-h6 span:nth-child(3) {
-    -webkit-animation-delay: 0.2s;
-}
-
-h6 span:nth-child(4) {
-    -webkit-animation-delay: 0.3s;
-}
-
-h6 span:nth-child(5) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(6) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(7) {
-    -webkit-animation-delay: 0.6s;
-}
-
-h6 span:nth-child(8) {
-    -webkit-animation-delay: 0.2s;
-}
-
-h6 span:nth-child(9) {
-    -webkit-animation-delay: 0.3s;
-}
-
-h6 span:nth-child(10) {
-    -webkit-animation-delay: 0.4s;
-}
-
-h6 span:nth-child(11) {
-    -webkit-animation-delay: 0.5s;
-}
-
-h6 span:nth-child(12) {
-    -webkit-animation-delay: 0.6s;
-}
-
-h6 span:nth-child(13) {
-    -webkit-animation-delay: 0.7s;
-}
-
-h6 span:nth-child(14) {
-    -webkit-animation-delay: 0.8s;
-}
-
-
 /* ANIMATION */
 
 @-webkit-keyframes bounce {
@@ -126,7 +73,7 @@ h6 span:nth-child(14) {
     color: #fff;
     text-transform: uppercase;
     padding: 15px 13px 11px;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.4px;
     border: 2px solid #ff9700;
@@ -148,8 +95,35 @@ h6 span:nth-child(14) {
     width: 100%;
     text-decoration: none;
 }
+/*--------------------------------------btnRead--------------------------------------------*/
+.btnR {
+    background: #ff9700;
+    opacity: 1;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 11px 8px 11px;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    border: 2px solid #ff9700;
+    border-radius: 10px;
+    text-decoration: none;
+}
 
+.btnR:hover {
+    background: #fff;
+    color: #ff9700;
+}
 
+.btnR a {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+}
 /*--------------------------------------Buynow---------------------------------------------*/
 
 .product_view .modal-dialog {
@@ -758,49 +732,6 @@ header .cart .quntity {
     margin: 0px;
 }
 
-.progress,
-.progress-2,
-.progress-3,
-.progress-4,
-.progress-5 {
-    background: #c2c2c2;
-    border-radius: 13px;
-    height: 18px;
-    width: 50%;
-    padding: 3px;
-    margin: -20px 0px 0px 50px;
-    display: block;
-}
-
-.progress:after,
-.progress-2:after,
-.progress-3:after,
-.progress-4:after,
-.progress-5:after {
-    content: '';
-    display: block;
-    background: #337AB7;
-    width: 80%;
-    height: 100%;
-    border-radius: 9px;
-}
-
-.progress-2:after {
-    width: 60%;
-}
-
-.progress-3:after {
-    width: 40%;
-}
-
-.progress-4:after {
-    width: 20%;
-}
-
-.progress-5:after {
-    width: 10%;
-}
-
 @media (min-width:320px) and (max-width:640px) {
     .rating {
         width: 100%;
@@ -1246,7 +1177,7 @@ ul {
 
 #comment-wrapper {
     width: 520px;
-    height: 650px;
+    height: 485px;
     position: relative;
     float: left;
     border-radius: 10px;
@@ -1418,7 +1349,7 @@ li.com-title span {
 }
 
 .recent-book-sec .item h6 {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .recent-book-sec .item h6 span {
