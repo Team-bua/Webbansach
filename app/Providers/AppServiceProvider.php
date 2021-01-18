@@ -34,23 +34,16 @@ class AppServiceProvider extends ServiceProvider
             $product_n = [];
             $types_id = [];
             $types_name = [];
-            foreach($types as $t)
-            {
+            foreach ($types as $t) {
                 $product_numbers = Product::where('id_type', $t->id)
-                                    ->where('status', '1')
-                                    ->count('id');
+                    ->where('status', '1')
+                    ->count('id');
                 $product_n[] = $product_numbers;
                 $types_id[] = $t->id;
                 $types_name[] = $t->name;
             }
             $company = Company::all();
-            $view->with(['types'=>$types,'company'=>$company, 'product_n'=>$product_n, 'types_id'=>$types_id, 'types_name'=>$types_name]);
-        });
-        view()->composer('layout_admin.header', function ($view) {
-            $types = ProductType::all();
-            $company = Company::all();
-            $product = Product::where('status',1)->get();
-            $view->with(['types' => $types, 'company' => $company, 'product' => $product]);
+            $view->with(['types' => $types, 'company' => $company, 'product_n' => $product_n, 'types_id' => $types_id, 'types_name' => $types_name]);
         });
         view()->composer(['layout_index.page.cart', 'layout_index.page.checkout'], function ($view) {
             if (Session('cart')) {

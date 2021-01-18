@@ -229,23 +229,23 @@
                             </div>
                             <div class="rating-process">
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
+                                    <p>5<i aria-hidden="true" class="fa fa-star"></i> 80%</p>
                                     <div class="progress"></div>
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
+                                    <p>4<i aria-hidden="true" class="fa fa-star"></i> 60%</p>
                                     <div class="progress-2"></div>
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
+                                    <p>3<i aria-hidden="true" class="fa fa-star"></i> 40%</p>
                                     <div class="progress-3"></div>
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
+                                    <p>2<i aria-hidden="true" class="fa fa-star"></i> 20%</p>
                                     <div class="progress-4"></div>
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
+                                    <p>1<i aria-hidden="true" class="fa fa-star"></i> 10%</p>
                                     <div class="progress-5"></div>
                                 </div>
                             </div>

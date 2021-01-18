@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Repositories\PageRepository;
 use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
-use Exception;
-use Analytics;
-use App\Models\Rating;
 use Illuminate\Support\Facades\Session;
+use Analytics;
 use Spatie\Analytics\Period;
-use Illuminate\Support\Facades\Log;
-
+use Exception;
+use App\Models\Rating;
+use App\Models\Store;
 
 class PageController extends Controller
 
@@ -59,8 +57,9 @@ class PageController extends Controller
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $rating = $this->repository->getRating($id);
-        $count_ra = Rating::all();
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra' ));
+        $count_ra = Rating::where('id_product', $id)->get();
+        $ra_5 = Rating::where('ra_number',5)->count();
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra','ra_5' ));
     }
 
 
@@ -206,18 +205,37 @@ class PageController extends Controller
 
     public function getCheckout()
     {
-        if (Auth::check()) {
-            $name = Auth::user()->full_name;
-            $email = Auth::user()->email;
-            $address = Auth::user()->address;
-            $phone = Auth::user()->phone;
-        } else {
-            $name = "";
-            $email = "";
-            $address = "";
-            $phone = "";
+        $cart = Session::get('cart');
+        $product_name = '';
+        $product_quantity = '';
+        $status = 'true';
+        if (isset($cart)) {
+            foreach ($cart->items as $key => $value) {
+                $stored_product = Store::where('id_product', $key)
+                    ->value('stored_product');
+                if ($stored_product - $value['qty'] < 0) {
+                    $product_name = $value['item']['name'];
+                    $product_quantity = $stored_product;
+                    $status = 'false';
+                    break;
+                }
+            }
         }
-        return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
+        if ($status == 'true') {
+            if (Auth::check()) {
+                $name = Auth::user()->full_name;
+                $email = Auth::user()->email;
+                $address = Auth::user()->address;
+                $phone = Auth::user()->phone;
+            } else {
+                $name = "";
+                $email = "";
+                $address = "";
+                $phone = "";
+            }
+            return view('layout_index.page.checkout', compact('name', 'email', 'address', 'phone'));
+        } else
+            return back()->withErrors(['Sách "' . $product_name . '" chỉ còn lại ' . $product_quantity . ' sản phẩm!']);
     }
 
     public function postCheckout(Request $request)
@@ -235,7 +253,8 @@ class PageController extends Controller
         $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(10));
         $user = $this->repository->getAll();
         $product = $this->repository->getAllproductbook();
-        return view('layout_admin.index_admin', $data, compact('product', 'user'));
+        $store = $this->repository->getAllstore();
+        return view('layout_admin.index_admin', $data, compact('product', 'user','store'));
     }
 
     public function getInfo($id)

@@ -30,7 +30,7 @@
                         <span class="info-box-icon bg-red"><i class="fa fa-archive"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Kho</span>
-                            <span class="info-box-number">410</span>
+                            <span class="info-box-number">{{$store}}</span>
                         </div><!-- /.info-box-content -->
                     </div><!-- /.info-box -->
                 </div><!-- /.col -->
