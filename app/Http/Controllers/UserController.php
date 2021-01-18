@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
 use App\Http\Requests\UserRequest;
 use App\Models\Company;
 use App\Models\Role;
 use App\Models\User;
+use App\Repositories\UserRepository;
 use App\Services\GetSession;
-use PhpParser\Node\Expr\FuncCall;
 
 class UserController extends Controller
 { /**
@@ -64,17 +63,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-        $user->full_name = $request->input('fullname');
-        $user->username = $request->input('username');
-        $user->email = $request->input('username');
-        $user->password = hash::make($request->input('password'));
-        $user->phone = $request->input('phone');
-        $user->address = $request->input('address');
-        $user->id_company = $request->input('cate');
-        $user->id_role = 2;
-        $user->save();
-        return redirect(route('user.index'));
+        return $this->repository->create($request);
     }
 
     /**
@@ -123,6 +112,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
+        return redirect()->back();
     }
     public function getRole($id)
     {

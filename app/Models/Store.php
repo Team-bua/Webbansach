@@ -11,6 +11,8 @@ class Store extends Model
 
     protected $table = "store";
 
+    protected $fillable = ['all_product_in_store','stored_product','sold_product'];
+
     public function productinbill()
     {
         return $this->belongsTo(BillDetail::class,'id_product', 'id_product');

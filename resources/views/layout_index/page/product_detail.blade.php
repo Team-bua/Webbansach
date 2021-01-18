@@ -106,12 +106,11 @@
                     </li>
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
-                   
-                       @if($store->stored_product == 0)
-                       hết hàng
-                       @else
-                       còn hàng
-                       @endif          
+                        @if($store && $store->stored_product != 0)
+                        còn hàng
+                        @else
+                        hết hàng
+                        @endif
                     </li>
                 </ul>
                 <div class="btn-sec">
