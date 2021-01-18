@@ -217,5 +217,4 @@
     $("#size").inputmask();
     $("#Page_Number").inputmask();
 </script>
-
 @stop

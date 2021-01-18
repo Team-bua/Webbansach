@@ -24,13 +24,13 @@ class ProductTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'name' => 'required',
         ];
     }
     public function messages()
     {
         return [
-           
+            'name.required' => 'Bạn chưa nhập loại sách',
         ];
     }
 }

@@ -21,8 +21,7 @@
     <div class="row">
         <div class="accordion-group" style="font-size: 25px; width:97%; margin-left: 15px; ">
             <div class="accordion-heading country">
-                <a class="accordion-toggle" data-toggle="collapse" href="#country1" 
-                style="text-decoration: blink;
+                <a class="accordion-toggle" data-toggle="collapse" href="#country1" style="text-decoration: blink;
                         background: #ff9700;
                         color: #fff;
                         border: 2px solid #ff9700;
@@ -57,14 +56,14 @@
                                 <td>{{number_format($product->pivot->unit_price)}} VNĐ</td>
                                 <td>{{$bills->created_at->format('d/m/y')}}</td>
                                 <td> @if($bills->status == 0)
-                        <button type="button" class="btn btn-default">Đang xử lý</button>
-                        @elseif($bills->status == 1)
-                        <button type="button" class="btn btn-primary">Tiếp nhận</button>
-                        @elseif($bills->status == 2)
-                        <button type="button" class="btn btn-success">Đã giao</button>                    
-                        @elseif($bills->status == 3)
-                        <button type="button" class="btn btn-danger">Thất bại</button>
-                        @endif</td>
+                                    <button type="button" class="btn btn-default">Đang xử lý</button>
+                                    @elseif($bills->status == 1)
+                                    <button type="button" class="btn btn-primary">Tiếp nhận</button>
+                                    @elseif($bills->status == 2)
+                                    <button type="button" class="btn btn-success">Đã giao</button>
+                                    @elseif($bills->status == 3)
+                                    <button type="button" class="btn btn-danger">Thất bại</button>
+                                    @endif</td>
                                 <td>{{number_format($product->pivot->unit_price * $product->pivot->quantity)}} VNĐ</td>
                             </tr>
 

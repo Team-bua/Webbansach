@@ -21,7 +21,7 @@
                         <span class="info-box-icon bg-aqua"><i class="fa fa-suitcase"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Sản Phẩm</span>
-                            <span class="info-box-number">{{ count($product) }}<small> cuốn </small></span>
+                            <span class="info-box-number">{{ count($product) }}</span>
                         </div><!-- /.info-box-content -->
                     </div><!-- /.info-box -->
                 </div><!-- /.col -->

@@ -32,10 +32,13 @@ class PageRepository
         return User::orderBy('created_at', 'desc')->paginate(10);
     }
 
+    public function allBookAdm(){
+        return Product::all();
+    }
 
     public function getAllproductbook()
     {
-        return  Product::all();
+        return  Product::orderBy('created_at', 'desc')->paginate(20);
     }
 
     public function getAllstore()
@@ -86,6 +89,11 @@ class PageRepository
     public function getProductType()
     {
         return ProductType::all();
+    }
+
+    public function store($id)
+    {
+        return Store::find($id);
     }
 
     public function getProductTypeName($id)
@@ -277,15 +285,15 @@ class PageRepository
 
     public function getContentDetail($id)
     {
-        return News::where('id',$id)->get();
+        return News::where('id', $id)->get();
     }
 
     public function getContentFist()
     {
-        return News::orderBy('id','desc')->first();
+        return News::orderBy('id', 'desc')->first();
     }
 
-    
+
 
     // trang tin tức
 

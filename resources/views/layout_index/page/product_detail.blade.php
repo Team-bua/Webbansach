@@ -104,6 +104,15 @@
                             @endfor
                             @endif
                     </li>
+                    <li>
+                        <span class="name">Trạng thái</span><span class="clm">:</span>
+                   
+                       @if($store->stored_product == 0)
+                       hết hàng
+                       @else
+                       còn hàng
+                       @endif          
+                    </li>
                 </ul>
                 <div class="btn-sec">
                     <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>

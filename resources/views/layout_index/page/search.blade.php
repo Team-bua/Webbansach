@@ -29,6 +29,18 @@
                                 <b>Phát hành:</b> {{$pro->productCompany->name}}
                             </div>
                         </div>
+                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                            <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                        </h6>
+                        @if($pro->promotion_price == 0)
+                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                        @else
+                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                        </span>
+                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                        </span>
+                        </p>
+                        @endif
                     </div>
                 </div>
                 @endforeach

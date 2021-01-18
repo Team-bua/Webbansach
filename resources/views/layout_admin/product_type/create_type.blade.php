@@ -29,7 +29,7 @@
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button style="background-color:#4a4235" class="  btnmove btn-sm pull-right" style="margin-top:0px;" data-widget="remove"><i class="fa fa-times"></i></button>
+
                             <h4 class="modal-title" id="myModalLabel">Thêm loại sách</h4>
                         </div>
                         <div class="modal-body">
@@ -167,6 +167,14 @@
                     showConfirmButton: false,
                     timer: 1500
                 })
+            },
+            error: function(response){
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Mời nhập đầy đủ',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         });
     });
@@ -188,30 +196,30 @@
         });
     }
 
-        $('#bookEditForm').submit(function(e) {
-            e.preventDefault();
-            let id = $("#id").val();
-            let name = $("#name_type").val();
-            $.ajax({
-                url: "{{ route('book_update') }}",
-                type: "POST",
-                data: {
-                    id: id,
-                    name: name
-                },
-                success: function(response) {
-                    let type = JSON.parse(response)['product_type'];
-                    $("#name-" + type['id']).html(type['name']);
-                    $("#bookeditmodal").modal('hide');
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Cập nhật thành công',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            });
+    $('#bookEditForm').submit(function(e) {
+        e.preventDefault();
+        let id = $("#id").val();
+        let name = $("#name_type").val();
+        $.ajax({
+            url: "{{ route('book_update') }}",
+            type: "POST",
+            data: {
+                id: id,
+                name: name
+            },
+            success: function(response) {
+                let type = JSON.parse(response)['product_type'];
+                $("#name-" + type['id']).html(type['name']);
+                $("#bookeditmodal").modal('hide');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Cập nhật thành công',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
         });
+    });
     $(document).on('click', '.delType', DelCart);
 
     function DelCart(e) {

@@ -39,26 +39,21 @@
                             @csrf
                             @method('put')
                             <div class="box-body">
-                                <!-- Date range -->
-                              
-
-
+                                <!-- Date range -->                   
                                 <h4> Mật khẩu cũ </h4>
                                 <div class="input-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">
-                                    <a style="position: absolute;top: 58%;left: 500px;color: #007bff;font-size: 18px;" class="fa fa-eye"></a>
-                                    
+                                    <input required name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">      
                                 </div>
                                 <h4> Mật khẩu mới:</h4>
                                 <div class="input-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
+                                    <input required name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
                                 </div>
                                 <h4> Xác nhận mật khẩu: </h4>
                                 <div class="input-group aa">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
+                                    <input required name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
                                 </div>
 
                               

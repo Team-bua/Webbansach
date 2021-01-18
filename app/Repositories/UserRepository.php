@@ -20,11 +20,6 @@ class UserRepository
         //
     }
 
-    public function getRole()
-    {   
-        return Role::all();
-    }
-
     public function getuser($id)
     {
         return User::find($id);
@@ -36,7 +31,7 @@ class UserRepository
        
     }
 
-    public function update($request, $id) 
+    public function update(Request $request, $id) 
     {
         if(hash::check($request->password_old, Auth::user()->password)){
             $user = User::find($id);
@@ -51,16 +46,6 @@ class UserRepository
     public function destroy($id) {
       
       
-    }
-
-    public function search($request) {
-
-        $search = $request->table_search;
-        return User::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%")
-                        ->orWhere('email', 'like', "%$search%")
-                        ->orWhere('phone', 'like', "%$search%");
-            })->paginate(10);
     }
 
 }

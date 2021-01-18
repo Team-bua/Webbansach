@@ -56,10 +56,11 @@ class PageController extends Controller
         $product_detail = $this->repository->getproduct($id);
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
+        $store = $this->repository->store($id);
         $rating = $this->repository->getRating($id);
         $count_ra = Rating::where('id_product', $id)->get();
         $ra_5 = Rating::where('ra_number',5)->count();
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra','ra_5' ));
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra','ra_5','store' ));
     }
 
 
@@ -253,7 +254,7 @@ class PageController extends Controller
         $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(0));
         $data["fetchTopBrowsers"] = Analytics::fetchTopBrowsers(Period::days(0));
         $user = $this->repository->getAll();
-        $product = $this->repository->getAllproductbook();
+        $product = $this->repository->allBookAdm();
         $store = $this->repository->getAllstore();
         return view('layout_admin.index_admin', $data, compact('product', 'user','store'));
     }

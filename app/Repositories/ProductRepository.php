@@ -99,7 +99,6 @@ class ProductRepository
        $product->imagedetail=$imgdetail;
        $product->save();
        
-       
     }
 
     /**

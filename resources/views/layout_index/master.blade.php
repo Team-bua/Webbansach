@@ -24,17 +24,20 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="style.css">
     <!------------------------------------------------------------------------>
- 
-<!-- Global site tag (gtag.js) - Google Analytics -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-187250841-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  gtag('config', 'UA-187250841-2');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-187250841-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-187250841-2');
+    </script>
 </head>
 
 
@@ -82,14 +85,18 @@
             $.ajax({
                 url: 'addcart/' + id,
                 type: 'GET',
-            }).done(function(response) {
-                $('.quntity').html(response['cart']['totalQty']);
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Đã thêm vào giỏ hàng',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                success: function(response) {
+                        $('.quntity').html(response['cart']['totalQty']);
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Đã thêm vào giỏ hàng',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })  
+                },
+                error: function(response){
+                    
+                }
             })
         }
     </script>
