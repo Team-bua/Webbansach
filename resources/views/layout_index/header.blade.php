@@ -60,7 +60,22 @@
                         <li class="menu_item down"><a href="{{ route('index') }}">{{ __('hompage') }}</a> </li>
                         <li class="menu_item down"><a href="{{ route('introduce') }}">{{ __('introduce') }} </a></li>
                         <li class="menu_item down"><a href="{{ route('news') }}">{{ __('newws') }}</a></li>
-                        <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a></li>
+                        <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a>
+                            <div class="sub_menu">
+                                <div class="bubble"></div>
+                                <div class="sub_menu_block" style="width:326px">
+                                    <ul>
+                                        <li><a href="{{ route('allnew') }}">{{ __("newbook") }}</a>
+                                        </li>
+                                        <li><a href="{{ route('allsale') }}">{{ __("salebook") }}</a>
+                                        </li>
+                                        <li><a href="{{  route('allhighlights')  }}">{{ __("hotbook") }}</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
                         @if (Auth::check())
                         @else
                         <li class="menu_item down"><a href="{{ route('login') }}">{{ __('login') }}</a></li>

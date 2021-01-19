@@ -23,8 +23,9 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_new as $pro)
                 <div class="col-md-3">
-                         <div class="single_product">
+                         
                     <div class="item">
+                        <div class="single_product">
                         <div class="new">new</div>
                         <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
@@ -74,6 +75,7 @@
                 @foreach ($product_sale as $pro)
                 <div class="col-md-3">
                     <div class="item">
+                        <div class="single_product">
                         @if ($pro->promotion_price != 0)
 
                         <span class="sale">sale</span>
@@ -107,6 +109,7 @@
                         </h6>
                     </div>
                 </div>
+                </div>
                 @endforeach
             </div>
             <div class="btn-sec">
@@ -125,6 +128,7 @@
                 @foreach ($product_hightlights as $pro)
                 <div class="col-md-3">
                     <div class="item">
+                        <div class="single_product">
                         @if ($pro->new == 1)
                         <div class="new">Hot</div>
                         @endif
@@ -155,6 +159,7 @@
                             <a class="beta-btn primary" href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                     </div>
+                </div>
                 </div>
                 @endforeach
             </div>

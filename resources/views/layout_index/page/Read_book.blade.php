@@ -10,7 +10,7 @@
 #app {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
 }
 #toolbar {
   display: flex;

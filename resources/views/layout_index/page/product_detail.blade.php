@@ -221,7 +221,7 @@
                                 <h1>Đánh Giá</h1>
                             </div>
                             <div class="rating">
-                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Đánh giá</p>
+                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh giá</p>
                             </div>
                             <div class="rating-process">
                                 <div class="rating-right-part">
