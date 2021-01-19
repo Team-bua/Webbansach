@@ -48,7 +48,7 @@
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('catelory') }}</a>
                             <div class="sub_menu">
                                 <div class="bubble"></div>
-                                <div class="sub_menu_block" style="width:326px">
+                                <div class="sub_menu_block" style="width:75px">
                                     <ul>
                                         @for($i = 0; $i < count($product_n); $i++)
                                         <li><a href="{{ route('product_type', $types_id[$i]) }}">{{ $types_name[$i] }} ({{ $product_n[$i] }})</a></li>
@@ -60,16 +60,30 @@
                         <li class="menu_item down"><a href="{{ route('index') }}">{{ __('hompage') }}</a> </li>
                         <li class="menu_item down"><a href="{{ route('introduce') }}">{{ __('introduce') }} </a></li>
                         <li class="menu_item down"><a href="{{ route('news') }}">{{ __('newws') }}</a></li>
-                        <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a></li>
+                        <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a>
+                            <div class="sub_menu">
+                                <div class="bubble"></div>
+                                <div class="sub_menu_block" style="width:25px">
+                                    <ul>
+                                        <li><a href="{{ route('allnew') }}">{{ __("newbook") }}</a>
+                                        </li>
+                                        <li><a href="{{ route('allsale') }}">{{ __("salebook") }}</a>
+                                        </li>
+                                        <li><a href="{{  route('allhighlights')  }}">{{ __("hotbook") }}</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
                         @if (Auth::check())
                         @else
                         <li class="menu_item down"><a href="{{ route('login') }}">{{ __('login') }}</a></li>
-                        <li class="menu_item down"><a href="{{ route('signup') }}">{{ __('signup') }}</a></li>
                         @endif
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('company') }}</a>
                             <div class="sub_menu">
                                 <div class="bubble"></div>
-                                <div class="sub_menu_block" style="width:326px">
+                                <div class="sub_menu_block" style="width:50px">
                                     <ul>
                                         @foreach ($company as $com)
                                         <li><a href="{{ route('product_company', $com->id) }}">{{ $com->name }}</a>
@@ -101,17 +115,17 @@
                 @if (Auth::check())
                 @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
                 <div class="dropdown">
-                    <button class="dropbtn">{{ __('hello') }} &nbsp;{{ Auth::user()->full_name }} <i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn"><i class="fa fa-user-circle"></i>&nbsp;{{ Auth::user()->full_name }} </button>
                     <div class="dropdown-content">
-                        <a href="{{ route('admin') }}">Thông Tin</a>
+                        <a href="{{ route('admin') }}">{{ __('Information') }}</a>
                         <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>
                 @else
                 <div class="dropdown">
-                    <button class="dropbtn">{{ __('hello') }} &nbsp;{{ Auth::user()->full_name }}<i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn"><i class="fa fa-user-circle"></i>&nbsp;{{ Auth::user()->full_name }}</button>
                     <div class="dropdown-content">
-                        <a href="{{ route('info',Auth::user()->id) }}">Thông Tin</a>
+                        <a href="{{ route('info',Auth::user()->id) }}">{{ __('Information') }}</a>
                         <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>
