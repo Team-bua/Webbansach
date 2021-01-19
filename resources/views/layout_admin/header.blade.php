@@ -157,7 +157,7 @@
                     <span style="font-size:16px ;">{{ __('dashboard') }}</span>
                 </a>
             </li>
-
+            @can('admin')
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('companies.index') }}">
