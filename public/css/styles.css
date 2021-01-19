@@ -422,6 +422,7 @@ header .cart .quntity {
 #menu>ul>li>.sub_menu>.sub_menu_block>ul {
     min-width: 150px;
     display: table-cell;
+
 }
 
 #menu>ul>li ul+ul {
@@ -441,6 +442,7 @@ header .cart .quntity {
     display: block;
     white-space: nowrap;
     min-width: 120px;
+    border-bottom: 1px solid #E1B356;
 }
 
 #menu>ul>li ul>li>a:hover,
@@ -673,7 +675,7 @@ header .cart .quntity {
 }
 
 
-/*-------------------------------categories------------------------------------*/
+/*-------------------------------single_product------------------------------------*/
 
 
 /*-------------------------------------------------------------------------*/
@@ -2289,7 +2291,7 @@ li.com-title span {
 }
 
 .product-sec {
-    margin-bottom: 100px;
+    margin-bottom: 25px;
 }
 
 .product-sec h1 {

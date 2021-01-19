@@ -101,17 +101,17 @@
                 @if (Auth::check())
                 @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
                 <div class="dropdown">
-                    <button class="dropbtn">{{ __('hello') }} &nbsp;<i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn">{{ __('hello') }} &nbsp;{{ Auth::user()->full_name }} <i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
-                        <a href="{{ route('admin') }}">{{ Auth::user()->full_name }}</a>
+                        <a href="{{ route('admin') }}">Thông Tin</a>
                         <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>
                 @else
                 <div class="dropdown">
-                    <button class="dropbtn">{{ __('hello') }} &nbsp;<i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn">{{ __('hello') }} &nbsp;{{ Auth::user()->full_name }}<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
-                        <a href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>
+                        <a href="{{ route('info',Auth::user()->id) }}">Thông Tin</a>
                         <a href="{{ url('logout') }}">{{ __('logout') }}</a>
                     </div>
                 </div>

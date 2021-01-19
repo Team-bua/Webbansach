@@ -23,6 +23,7 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_new as $pro)
                 <div class="col-md-3">
+                         <div class="single_product">
                     <div class="item">
                         <div class="new">new</div>
                         <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
@@ -51,6 +52,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
 
                 @endforeach
