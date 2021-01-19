@@ -4,12 +4,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Quản lý nhà cung cấp
+                Quản lý nhà xuất bản
 
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="{{url('companies')}}">Nhà cung cấp</a></li>
+                <li><a href="{{url('companies')}}">Nhà xuất bản</a></li>
                 <li class="active">Danh Sách</li>
             </ol>
         </section>
@@ -20,10 +20,6 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-
-
-
-
                             <div class="col-md-4 pull-right">
                                 <a href="{{ route('companies.create') }}">
                                     <button class="btn btn btn-success "
@@ -36,7 +32,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Tên nhà cung cấp </th>
+                                        <th>Tên nhà xuất bản </th>
                                         <th>Email</th>
                                         <th>Địa chỉ </th>
                                         <th>Số Điện Thoại</th>

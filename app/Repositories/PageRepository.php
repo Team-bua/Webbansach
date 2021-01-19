@@ -161,12 +161,20 @@ class PageRepository
 
     public function getAddCart(Request $request, $id)
     {
-        $product = Product::find($id);
-        $oldcart = Session('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldcart);
-        $cart->add($product, $id);
-        $request->session()->put('cart', $cart);
-        return response()->json(array('cart' => $cart));
+        $store = Store::where('id_product', $request->id)->first();
+        if($store && $store->stored_product != 0){
+            $product = Product::find($id);
+            $oldcart = Session('cart') ? Session::get('cart') : null;
+            $cart = new Cart($oldcart);
+            $cart->add($product, $id);
+            $request->session()->put('cart', $cart);
+            return response()->json(array('cart' => $cart));
+        }else{
+            return response()->json([
+                'code' => 500,
+                'message' => 'error',
+            ], 500);
+        }        
     }
 
     public function postCart(Request $request)

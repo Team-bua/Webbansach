@@ -18,7 +18,7 @@
                     <div class="box-header">
                     <div class="col-md-4 pull-right">
                             <a href="{{ route('user.create') }}">
-                                <button class="btn btn btn-success" style="float: right;;margin-bottom:5px;margin-left:2px">
+                                <button class="btn btn btn-success" style="float:right;;margin-bottom:5px;margin-left:2px;background-color: #4a4235;border: #4a4235">
                                     <i class="fa fa-plus"> Thêm thành viên</i></button>
                             </a>
                         </div>

@@ -253,7 +253,7 @@
                     error: function(data) {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Lỗi hệ thống!',
+                            title: 'Lỗi!',
                             text: 'Còn sách không thể xóa',
                         })
                     }

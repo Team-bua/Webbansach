@@ -54,7 +54,7 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompaniesRequest $request)
     {
         $this->repository->create($request);
         return redirect(route('companies.index'));

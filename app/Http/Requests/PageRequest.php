@@ -29,7 +29,7 @@ class PageRequest extends FormRequest
             'password' => 'required|min:6|max:20',  
             're_password' => 'required|same:password',
             'address' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|max:10',
         ];
     }
     public function messages()
@@ -43,9 +43,9 @@ class PageRequest extends FormRequest
             'password.max' => 'Mật khẩu không quá 20 ký tự',
             're_password.same' => 'Nhập mật khẩu không đúng',
             're_password.required' => 'Vui lòng nhập lại mật khẩu',  
-            'address.required' => 'Bạn chưa nhập tên',
             'address.required' => 'Bạn chưa nhập địa chỉ',    
-            'phone.required' => 'Bạn chưa nhập số điện thoại',       
+            'phone.required' => 'Bạn chưa nhập số điện thoại',    
+            'phone.max' => 'Điện thoại chỉ có 10 số'  
         ];
     }
 }
