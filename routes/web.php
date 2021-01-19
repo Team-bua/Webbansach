@@ -89,7 +89,7 @@ Route::put('rating/{id}',[PageController::class,'postRating'])->name('rating');
 
 //----->trang admin
 Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function() {
-    Route::get('admin',[PageController::class,'getAdmin'])->name('admin');
+    Route::get('admin',[PageController::class,'getAdmin'])->name('admin')->middleware('sessionuser');
 });
 
 
@@ -99,11 +99,11 @@ Route::group(['middleware' => 'App\Http\Middleware\Locale'], function() {
 });
 
 ////----->trang admin_CRUD san pham
-Route::resource('book',ProductController::class);
+Route::resource('book',ProductController::class)->middleware('sessionuser');
 Route::get('product_on/{id}',[ProductController::class,'getSell'])->name('product_on');
 Route::get('product_off/{id}',[ProductController::class,'getStopSell'])->name('product_off');
 ////----->trang admin_CRUD loai san pha,
-Route::resource('book_type',ProductTypeController::class);
+Route::resource('book_type',ProductTypeController::class)->middleware('sessionuser');
 Route::post('book_edit/edit',[ProductTypeController::class,'getEdit'])->name('book_edit');
 Route::post('book_update',[ProductTypeController::class,'getUpdate'])->name('book_update');
 Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_del');
@@ -114,7 +114,7 @@ Route::resource('user',UserController::class);
 Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole');
 Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole');
 ///------>trang admin_CRUD thong tin bill
-Route::resource('bill',BillController::class);
+Route::resource('bill',BillController::class)->middleware('sessionuser');
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
 Route::get('bill_receiving/{id}',[BillController::class,'getReceiving'])->name('bill_receiving');
 Route::get('bill_delivered/{id}',[BillController::class,'getDelivered'])->name('bill_delivered');
@@ -138,11 +138,11 @@ Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->n
 ///------>Trang tìm và lưu sesstion company
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
 ///------>Trang kho
-Route::resource('store', StoreController::class);
-Route::post('store_edit/edit',[StoreController::class,'getEdit'])->name('store_edit');
-Route::post('store_update',[StoreController::class,'getUpdate'])->name('store_update');
+Route::resource('store', StoreController::class)->middleware('sessionuser');
+Route::post('store_edit/edit',[StoreController::class,'getEdit'])->name('store_edit')->middleware('sessionuser');
+Route::post('store_update',[StoreController::class,'getUpdate'])->name('store_update')->middleware('sessionuser');
 ///------>Tintuc
-Route::resource('thenews',NewsController::class);
+Route::resource('thenews',NewsController::class)->middleware('sessionuser');
 Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent');
 Route::get('new_on/{id}',[NewsController::class,'getOnNews'])->name('news_on');
 Route::get('new_off/{id}',[NewsController::class,'getStopNews'])->name('news_off');

@@ -123,11 +123,13 @@
         <?php
 
         use App\Models\Company;
+        use App\Services\GetSession;
         use Illuminate\Support\Facades\Session;
 
         $companies = Company::all();
+        $company_id =  GetSession::getCompanyId();
         $sessionCompany = Session::get('select_companyid');
-        ?>
+        ?>     
         @can('admin')
         <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;">
             @csrf
@@ -149,7 +151,7 @@
             <li class="header ">
                 <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
             </li>
-            @can('admin')
+            @if($company_id != '')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
@@ -157,6 +159,7 @@
                     <span style="font-size:16px ;">{{ __('dashboard') }}</span>
                 </a>
             </li>
+            @endif
             @can('admin')
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
@@ -167,6 +170,7 @@
             </li>
             @endcan
             <!-- CRUD  sách -->
+            @if($company_id != '')
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
@@ -217,7 +221,7 @@
                     <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
                 </ul>
             </li>
-
+            @endif
             @can('admin')
             <li class="header ">
                 <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>

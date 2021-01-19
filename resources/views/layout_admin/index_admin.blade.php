@@ -171,6 +171,8 @@
 
                         </div>
                     </div><!-- /.box-header -->
+                    @endcan
+                    
                     <div class="box-body">
                         <table id="tableId2" class="table table-bordered table-striped">
                             <thead>
@@ -197,11 +199,15 @@
 
                         </table>
                     </div><!-- /.box-body -->
+                    <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Area Chart</h3>
+                </div>
 
                     <canvas id="buyers" width="1000px" height="300" data-list-day="{{$listDay}}" 
                     data-money-done="{{$arrRevenueMonthDone}}"
-                    data-money-pending="{{$arrRevenueMonthPending}}"></canvas> -->
-                @endcan
+                    data-money-pending="{{$arrRevenueMonthPending}}"></canvas>
+                
                 <div class="box box-primary">
                 <div class="box-header">
                   <h3 class="box-title">Area Chart</h3>
