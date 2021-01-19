@@ -2,7 +2,7 @@
 
     "book": "Hệ thống quản lý trang bán sách",
     "dashboard": "Tổng quan",
-    "publisher": "Nhà xuất bản",
+    "companies": "Nhà xuất bản",
     "listbook": "Sách",
     "listtype": "Loại Sách",
     "banner": "Bìa",
@@ -33,13 +33,13 @@
     "free ship": "Miễn phí vận chuyển",
     "phone": "Số điện thoại",
 
-    "Request To Choose":"Yêu Cầu Lựa Chọn",
-    "New Product":"sản phẩm mới",
-    "A To Z":"A đến Z",
-    "Price Low To High":"Giá Thấp Đến Cao",
-    "Price High To Low":"Giá Cao Đến Thấp",
-    "Discounts High To Low":"Giảm Giá Cao Đến Thấp",
-    "Discount From Low To High":"Giảm Giá Thấp Đến Cao",
+    "Request To Choose": "Yêu Cầu Lựa Chọn",
+    "New Product": "sản phẩm mới",
+    "A To Z": "A đến Z",
+    "Price Low To High": "Giá Thấp Đến Cao",
+    "Price High To Low": "Giá Cao Đến Thấp",
+    "Discounts High To Low": "Giảm Giá Cao Đến Thấp",
+    "Discount From Low To High": "Giảm Giá Thấp Đến Cao",
 
 
 
@@ -49,7 +49,7 @@
 
 
 
-    "Buy now":"Mua ngay",
+    "Buy now": "Mua ngay",
     "detail": "Chi tiết",
     "addcart": "Thêm vào giỏ hàng",
     "read online": "Đọc Online",

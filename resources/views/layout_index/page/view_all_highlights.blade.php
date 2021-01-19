@@ -20,7 +20,7 @@
 
 <section class="static about-sec">
     <div class="container">
-         <h6><span>Sách nổi bật</span>
+        <h6><span>Sách nổi bật</span>
         </h6>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
@@ -46,13 +46,10 @@
                             </h6>
                             <div class="content">
                                 <div class="body">
-                                    <b>Tên sách:</b> {{$books->name}} <br>
+                                <b>Tên sách:</b> {{$books->name}} <br>
                                     <b>Tác giả:</b> {{$books->publisher}} <br>
                                     <b>Thể loại:</b> {{$books->productType->name}} <br>
-                                    <b>Kích thước:</b> {{$books->size}} Cm<br>
                                     <b>Số trang:</b> {{$books->pagenumber}} <br>
-                                    <b>Định dạng:</b> {{$books->format}} <br>
-                                    <b>Ngôn ngữ:</b> {{$books->language}} <br>
                                     <b>Phát hành:</b> {{$books->productCompany->name}} <br>
                                     <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                                 </div>
@@ -77,35 +74,35 @@
     </div>
 
 </section>
-   <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 product_img">
-                            <img src="" class="img-responsive" width="200px">
-                        </div>
-                        <div class="col-md-6 product_content">
-                            <h4></h4>
-                           
-                            <h3 class="cost">
-                                <span class="glyphicon glyphicon-usd"></span> 
-                                <small class="pre-cost">
-                                    <span class="glyphicon glyphicon-usd"></span> 
-                                </small>
-                                <span class="glyphicon glyphicon-usd"></span> 
-                            </h3>
-                 
-                            <div class="space-ten"></div>
-                            <div class="btn-ground">
-                                <a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a>
-                            </div>
+<div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="" class="img-responsive" width="200px">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4></h4>
+
+                        <h3 class="cost">
+                            <span class="glyphicon glyphicon-usd"></span>
+                            <small class="pre-cost">
+                                <span class="glyphicon glyphicon-usd"></span>
+                            </small>
+                            <span class="glyphicon glyphicon-usd"></span>
+                        </h3>
+
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <a href="#" class="bck"></a>
 @endsection
 @section('js')

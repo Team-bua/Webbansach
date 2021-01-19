@@ -2,7 +2,7 @@
 
     "book": "Admin's Book Store",
     "dashboard": "Dash Board",
-    "publisher": "Publisher",
+    "companies": "Publisher",
     "listbook": "Book",
     "listtype": "Book Type",
     "banner": "Banner",
@@ -31,13 +31,13 @@
     "free ship": "All Free Ship",
     "phone": "Phone",
 
-    "Request To Choose":"Request To Choose",
-    "New Product":"New Product",
-    "A To Z":"A To Z",
-    "Price Low To High":"Price Low To High",
-    "Price High To Low":"Price High To Low",
-    "Discounts High To Low":"Discounts High To Low",
-    "Discount From Low To High":"Discount From Low To High",
+    "Request To Choose": "Request To Choose",
+    "New Product": "New Product",
+    "A To Z": "A To Z",
+    "Price Low To High": "Price Low To High",
+    "Price High To Low": "Price High To Low",
+    "Discounts High To Low": "Discounts High To Low",
+    "Discount From Low To High": "Discount From Low To High",
 
 
     "newbook": "New Book",
@@ -49,9 +49,9 @@
     "addcart": "Add To Cart",
     "read online": "Read Online",
 
-    "new book":"new book",
-    "sale book":"sale book",
-    "hot book":"hot book",
+    "new book": "new book",
+    "sale book": "sale book",
+    "hot book": "hot book",
 
 
 
