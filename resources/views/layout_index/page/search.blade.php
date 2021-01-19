@@ -19,12 +19,12 @@
                         <h3><a href="#">{{ $pro->name }}</a></h3>
                         <div class="content">
                             <div class="body">
-                                <b>Tên sách:</b> {{$books->name}} <br>
-                                <b>Tác giả:</b> {{$books->publisher}} <br>
-                                <b>Thể loại:</b> {{$books->productType->name}} <br>
-                                <b>Số trang:</b> {{$books->pagenumber}} <br>
-                                <b>Phát hành:</b> {{$books->productCompany->name}} <br>
-                                <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                <b>Tên sách:</b> {{$pro->name}} <br>
+                                <b>Tác giả:</b> {{$pro->publisher}} <br>
+                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
+                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
+                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
+                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /

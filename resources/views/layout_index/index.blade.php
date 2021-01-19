@@ -23,35 +23,35 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_new as $pro)
                 <div class="col-md-3">
-                         <div class="single_product">
-                    <div class="item">
-                        <div class="new">new</div>
-                        <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-                        <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                            <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                        </h6>
-                        @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
-                        @else
-                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
-                        </span>
-                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
-                        </span>
-                        @endif
-                        <div class="content">
-                            <div class="body">
-                                <b>Tên sách:</b> {{$pro->name}} <br>
-                                <b>Tác giả:</b> {{$pro->publisher}} <br>
-                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
-                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                    <div class="single_product">
+                        <div class="item">
+                            <div class="new">new</div>
+                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
+                                <a class="beta-btn primary" data-toggle="modal" data-target="#product_view" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                            <div class="content">
+                                <div class="body">
+                                    &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                    &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                    &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                    &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
                 @endforeach
@@ -82,18 +82,18 @@
 
                         <div class="content">
                             <div class="body">
-                                <b>Tên sách:</b> {{$pro->name}} <br>
-                                <b>Tác giả:</b> {{$pro->publisher}} <br>
-                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
-                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                         @if($pro->promotion_price == 0)
                         <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
@@ -114,7 +114,7 @@
     </div>
 </section>
 <section class="static about-sec">
-<div class="container">
+    <div class="container">
         <h6><span>{{ __("hotbook") }}</span>
         </h6>
         <hr>
@@ -129,18 +129,19 @@
                         <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                         <div class="content">
                             <div class="body">
-                                <b>Tên sách:</b> {{$pro->name}} <br>
-                                <b>Tác giả:</b> {{$pro->publisher}} <br>
-                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
 
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                         @if($pro->promotion_price == 0)
                         <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
@@ -171,6 +172,7 @@
             type: 'GET',
         }).done(function(response) {
             $('.quntity').html(response['cart']['totalQty']);
+            
         })
     }
 </script>

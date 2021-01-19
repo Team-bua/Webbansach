@@ -42,6 +42,11 @@
 
 
 <body>
+<style>
+    .font{
+        color: #895A89;
+    }
+</style>
     @include('layout_index.header')
     @yield('content')
     @include('layout_index.footer')
@@ -105,7 +110,6 @@
             })
         }
     </script>
-
     <!---------------------------------------------------------------------------------------->
     <!--     <script>
 window.onscroll = function() {myFunction()};
