@@ -8,45 +8,44 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($search as $pro)
                 <div class="col-md-3">
-                    <div class="item">
-                        @if($pro->promotion_price==0)
-                        <div class="new">new</div>
-                        @else
-                        <span class="sale">sale</span>
-                        @endif
-
-                        <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-                        <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <div class="content">
-                            <div class="body">
-                                <b>Tên sách:</b> {{$pro->name}} <br>
-                                <b>Tác giả:</b> {{$pro->publisher}} <br>
-                                <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
-                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                    <div class="single_product">
+                        <div class="item">
+                            @if($pro->promotion_price==0)
+                            <div class="new">new</div>
+                            @else
+                            <span class="sale">sale</span>
+                            @endif
+                            <a href="{{route('detail',$pro->id)}}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                            <div class="content">
+                                <div class="body">
+                                    &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                    &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                    &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                    &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                </div>
                             </div>
                         </div>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                            <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
-                        </h6>
-                        @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
-                        @else
-                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
-                        </span>
-                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
-                        </span>
-                        </p>
-                        @endif
                     </div>
+                    <br>
                 </div>
                 @endforeach
             </div>
             <div class="btn-sec">{{$search->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
-            <div class="btn-sec">
-                <a href="{{route('all_book')}}"><button class="btn gray-btn">Xem Thêm</button></a>
-            </div>
         </div>
     </div>
 </section>

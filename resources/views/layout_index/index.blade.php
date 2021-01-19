@@ -28,10 +28,6 @@
                             <div class="new">new</div>
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
-                                <a class="beta-btn primary" data-toggle="modal" data-target="#product_view" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                            </h6>
                             @if($pro->promotion_price == 0)
                             <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
                             @else
@@ -39,7 +35,11 @@
                             </span>
                             <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
                             </span>
-                            @endif
+                            @endif 
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
+                            </h6>
                             <div class="content">
                                 <div class="body">
                                     &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
@@ -52,13 +52,13 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                 </div>
                 @endforeach
             </div>
             <div class="btn-sec">
                 <a href="{{ route('allnew') }}"><button class="btn gray-btn">Xem Thêm</button></a>
             </div>
-
         </div>
     </div>
 </section>
@@ -71,17 +71,11 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_sale as $pro)
                 <div class="col-md-3">
-                    <div class="item">
-                        <div class="single_product">
-                            @if ($pro->promotion_price != 0)
-                            <span class="sale">sale</span>
-                            @endif
+                    <div class="single_product">
+                        <div class="item">
+                            <div class="sale">sale</div>
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                                <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                            </h6>
                             @if($pro->promotion_price == 0)
                             <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
                             @else
@@ -90,6 +84,10 @@
                             <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
                             </span>
                             @endif
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
                             <div class="content">
                                 <div class="body">
                                     &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
@@ -102,6 +100,7 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                 </div>
                 @endforeach
             </div>
@@ -120,8 +119,8 @@
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_hightlights as $pro)
                 <div class="col-md-3">
-                    <div class="item">
-                        <div class="single_product">
+                    <div class="single_product">
+                        <div class="item">
                             @if ($pro->new == 1)
                             <div class="new">Hot</div>
                             @endif
@@ -137,11 +136,6 @@
                                 </div>
                             </div>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
-
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                                <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                            </h6>
                             @if($pro->promotion_price == 0)
                             <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
                             @else
@@ -150,8 +144,13 @@
                             <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
                             </span>
                             @endif
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
                         </div>
                     </div>
+                    <br>
                 </div>
                 @endforeach
             </div>
@@ -163,17 +162,4 @@
     </div>
 </section>
 <a href="#" class="bck"></a>
-@endsection
-@section('js')
-<script>
-    function BuyCart(id) {
-        $.ajax({
-            url: 'addcart/' + id,
-            type: 'GET',
-        }).done(function(response) {
-            $('.quntity').html(response['cart']['totalQty']);
-
-        })
-    }
-</script>
 @endsection
