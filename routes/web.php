@@ -141,6 +141,7 @@ Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSess
 Route::resource('store', StoreController::class);
 Route::post('store_edit/edit',[StoreController::class,'getEdit'])->name('store_edit');
 Route::post('store_update',[StoreController::class,'getUpdate'])->name('store_update');
+Route::get('store_del/{id}',[StoreController::class,'delete'])->name('store_del');
 ///------>Tintuc
 Route::resource('thenews',NewsController::class);
 Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent');

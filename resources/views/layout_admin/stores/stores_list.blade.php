@@ -8,7 +8,7 @@
 
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
             <li><a href="{{url('stores')}}">Kho Hàng</a></li>
             <li class="active">Danh Sách</li>
         </ol>
@@ -20,16 +20,6 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-
-
-
-
-                        <div class="col-md-4 pull-right">
-                            <a href="{{ route('store.create') }}">
-                                <button class="btn btn btn-success " style="float:right;;margin-bottom:5px;margin-left:2px;background-color: #4a4235;border: #4a4235">
-                                    <i class="fa fa-plus">&nbsp;Nhập Kho</i></button>
-                            </a>
-                        </div>
                     </div><!-- /.box-header -->
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -56,11 +46,7 @@
                                                 <button style="float:right" class="btn btn-warning btn-sm" id="edit-{{ $st->id }}" onclick="editStore(this)"><i class="fa fa-pencil"></i></button>
                                             </div>
                                             <div class="btn-group mr-2" role="group">
-                                                <form method="post" action="{{ route('store.destroy', [$st['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
-                                                    @csrf
-                                                    <input name="_method" type="hidden" value="DELETE">
-                                                    <button style="float:right" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không')"><i class="fa fa-trash-o"></i></button>
-                                                </form>
+                                            <button class="btn btn-danger delStore" data-url="{{route('store_del',$st->id)}}"> Xóa </button>
                                             </div>
                                         </div>
                                     </td>
@@ -173,6 +159,40 @@
                     }
                 });
             });
+    $(document).on('click', '.delStore', DelProduct);
+
+    function DelProduct(e) {
+        e.preventDefault();
+        let urlRequest = $(this).data('url');
+        let that = $(this);
+        Swal.fire({
+            title: 'Xóa sản phẩm',
+            text: "Bạn có muốn xóa không!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Có, muốn xóa!',
+            cancelButtonText: 'Không xóa',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: urlRequest,
+                    type: 'GET',
+                    success: function(data) {
+                        if (data.code == 200) {
+                            that.parent().parent().parent().parent().remove();
+                            Swal.fire(
+                                'Xóa!',
+                                'Xóa thành công.',
+                                'success'
+                            )
+                        }
+                    }
+                });
+            }
+        });
+    }
     </script>
 
     @stop
