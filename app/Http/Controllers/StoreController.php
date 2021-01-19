@@ -68,7 +68,7 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        $this->repository->getstore($id);
+
     }
 
     /**
@@ -89,9 +89,14 @@ class StoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $store = Store::find($id);
+        $store->delete();
+        return response()->json([
+            'code' => 200,
+            'message' => 'success',
+        ], 200);
     }
 
     public function getEdit(Request $request)

@@ -3,8 +3,10 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+        <h1 style="font-size: 50px; font-family: Serif"><center><b>{{ $company_name }}</b></center></h1>
         <h1>
-            {{ __('chart') }}
+            {{ __('Chart') }}
+            <small>{{ __('infor') }}</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>Hệ thống</a></li>
@@ -20,7 +22,7 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="fa fa-suitcase"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sản Phẩm</span>
+                        <span class="info-box-text">{{ __('prod') }}</span>
                         <span class="info-box-number">{{ count($product) }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
@@ -29,7 +31,7 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-red"><i class="fa fa-archive"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Kho</span>
+                        <span class="info-box-text">{{ __('store') }}</span>
                         <span class="info-box-number">{{$store}}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
@@ -43,8 +45,8 @@
                     <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
 
-                        <span class="info-box-text">Truy cập </span>
-                        <span class="info-box-number"></span>
+                        <span class="info-box-text">{{ __('sold') }} </span>
+                        <span class="info-box-number">{{ $bill_by_company_id }}</span>
 
 
                     </div><!-- /.info-box-content -->
@@ -54,7 +56,7 @@
                 <div class="info-box">
                     <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Thành viên</span>
+                        <span class="info-box-text">{{ __('user') }}</span>
                         <span class="info-box-number">{{ count($user) }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
@@ -151,6 +153,7 @@
 
         <div class="row">
             <div class="col-md-12">
+                @can('admin')
                 <div class="box">
                     <div class="box-header with-border">
 
@@ -168,6 +171,8 @@
 
                         </div>
                     </div><!-- /.box-header -->
+                    @endcan
+                    
                     <div class="box-body">
                         <table id="tableId2" class="table table-bordered table-striped">
                             <thead>
@@ -194,10 +199,25 @@
 
                         </table>
                     </div><!-- /.box-body -->
+                    <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Area Chart</h3>
+                </div>
 
                     <canvas id="buyers" width="1000px" height="300" data-list-day="{{$listDay}}" 
                     data-money-done="{{$arrRevenueMonthDone}}"
                     data-money-pending="{{$arrRevenueMonthPending}}"></canvas>
+                
+                <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Area Chart</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div class="chart" id="revenue-chart" data-list-day="{{$listDay}}" 
+                    data-money-done="{{$arrRevenueMonthDone}}"
+                    data-money-pending="{{$arrRevenueMonthPending}}" style="height: 300px;"></div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
                 </div><!-- ./box-body -->
                 <div class="box-footer">

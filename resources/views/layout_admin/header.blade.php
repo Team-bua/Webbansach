@@ -123,11 +123,13 @@
         <?php
 
         use App\Models\Company;
+        use App\Services\GetSession;
         use Illuminate\Support\Facades\Session;
 
         $companies = Company::all();
+        $company_id =  GetSession::getCompanyId();
         $sessionCompany = Session::get('select_companyid');
-        ?>
+        ?>     
         @can('admin')
         <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;">
             @csrf
@@ -145,11 +147,12 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         @endcan
+        <!-- Thống kê -->
         <ul class="sidebar-menu">
             <li class="header ">
                 <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
             </li>
-            @can('admin')
+            @if($company_id != '')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
@@ -157,16 +160,21 @@
                     <span style="font-size:16px ;">{{ __('dashboard') }}</span>
                 </a>
             </li>
-
+            @endif
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ SÁCH</span>
+            </li>
+            @can('admin')
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('companies.index') }}">
                     <i style="color:#8b7b61" class="fa fa-briefcase fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">{{ __('publisher') }}</span>
+                    <span style="font-size:16px ;">{{ __('companies') }}</span>
                 </a>
             </li>
             @endcan
             <!-- CRUD  sách -->
+            @if($company_id != '')
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
@@ -182,20 +190,7 @@
                     <span style="font-size:16px ;"> {{ __('listtype') }}</span>
                 </a>
             </li>
-            <!-- Quản lý slide -->
-            <li class="treeview">
-                <a href="{{ route('slide.index') }}">
-                    <i style="color:#8b7b61" class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span>{{ __('banner') }}</span>
-                </a>
-
-
-            <li class="treeview">
-                <a href="{{ route('thenews.index') }}">
-                    <i style="color:#8b7b61" class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
-                    <span>{{ __('news') }}</span>
-                </a>
-                @endcan
+            @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
@@ -217,10 +212,26 @@
                     <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
                 </ul>
             </li>
-
+            @endif
             @can('admin')
             <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> THIẾT LẬP</span>
+            </li>
+            <!-- Quản lý slide -->
+            <li class="treeview">
+                <a href="{{ route('slide.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <span>{{ __('banner') }}</span>
+                </a>
+
+
+            <li class="treeview">
+                <a href="{{ route('thenews.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
+                    <span>{{ __('news') }}</span>
+                </a>
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
             </li>
 
             <li class="treeview">

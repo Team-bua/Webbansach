@@ -18,8 +18,10 @@ use App\Models\Company;
 use App\Models\Rating;
 use App\Models\News;
 use App\Models\Store;
+use App\Services\GetSession;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 class PageRepository
 {
@@ -34,7 +36,8 @@ class PageRepository
     }
 
     public function allBookAdm(){
-        return Product::all();
+        $company_id= GetSession::getCompanyId();
+        return Product::where('id_company', $company_id)->get();
     }
 
     public function getAllproductbook()
@@ -42,9 +45,18 @@ class PageRepository
         return  Product::orderBy('created_at', 'desc')->paginate(20);
     }
 
+    public function getAllCompany()
+    {
+        $company_id= GetSession::getCompanyId();
+        return  Company::where('id', $company_id)->value('name');
+    }
+
     public function getAllstore()
     {
-        return  Store::sum('all_product_in_store');
+        $company_id= GetSession::getCompanyId();
+        return  Store::join('product', 'store.id_product', '=', 'product.id')
+                            ->where('product.id_company', $company_id)
+                            ->sum('store.stored_product');
     }
     // sách hoạt động
 
@@ -54,6 +66,15 @@ class PageRepository
             ->where('status', 1)
             ->latest()
             ->paginate(10);
+    }
+    // sach mới
+
+    public function getBillByCompanyId()
+    {
+        $company_id= GetSession::getCompanyId();
+        return  BillDetail::join('product', 'bill_detail.id_product', '=', 'product.id')
+                    ->where('product.id_company', $company_id)
+                    ->count('bill_detail.id');
     }
     // sach mới
 
