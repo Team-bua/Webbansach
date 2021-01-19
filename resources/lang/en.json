@@ -1,6 +1,6 @@
 {
 
-    "book": "Book Store Admin",
+    "book": "Admin's Book Store",
     "dashboard": "Dash Board",
     "companies": "Publisher",
     "listbook": "Book",
@@ -11,6 +11,10 @@
     "store": "Store",
     "acc": "Account",
     "exit": "Exit",
+    "infor" : "Statistical product, store, data's sold by Publisher",
+    "prod": "Product",
+    "sold": "Sold product",
+    "user": "User",
 
     "catelory": "Catelory",
     "hompage": "Home",
