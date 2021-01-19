@@ -256,7 +256,9 @@ class PageController extends Controller
         $user = $this->repository->getAll();
         $product = $this->repository->allBookAdm();
         $store = $this->repository->getAllstore();
-        $listDay = Date::getListDayInMonth();
+        $company_name = $this->repository->getAllCompany();
+        $bill_by_company_id = $this->repository->getBillByCompanyId();
+        $listDay = Date::getListDayInMonth();  
         $revenueMonthDone = Bill::whereMonth('created_at',date('m'))
             ->select(DB::raw('sum(total) as totalMoney'), DB::raw('DATE(created_at) day'))
             ->groupBy('day')
@@ -289,6 +291,8 @@ class PageController extends Controller
             $arrRevenueMonthPending[] = (int)$total;
         }     
         $viewData = [
+            'bill_by_company_id'        => $bill_by_company_id,
+            'company_name'              => $company_name,
             'product'                   => $product,
             'user'                      => $user,
             'store'                     => $store,

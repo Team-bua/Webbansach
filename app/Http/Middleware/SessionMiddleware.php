@@ -20,7 +20,7 @@ class SessionMiddleware
         $companyid = $request->session()->get('select_companyid', '');
         if($companyid == '' && Auth::user()->id_role == 1)
         {    
-                 return redirect('index');
+                 return redirect(route('companies.index'));
              
         }
         return $next($request);

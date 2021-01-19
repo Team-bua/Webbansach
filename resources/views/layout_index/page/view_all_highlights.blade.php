@@ -20,7 +20,7 @@
 
 <section class="static about-sec">
     <div class="container">
-         <h6><span>Sách nổi bật</span>
+        <h6><span>Sách nổi bật</span>
         </h6>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
@@ -28,6 +28,7 @@
         </form>
         <hr>
         <div id="myTable">
+<<<<<<< HEAD
      <div class="recent-book-sec">
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_highlights as $books)
@@ -39,9 +40,38 @@
                                     @else
                                         <span class="sale">new</span>
                                     @endif
+=======
+            <div class="recent-book-sec">
+                <div class="row">
+                    @foreach ($product_highlights as $books)
+                    <div class="col-md-3">
+                        <div class="item">
+                            @if ($books->new == 1)
+                            <div class="new">Hot</div>
+                            @endif
+                            <a href="{{ route('detail', $books->id) }}">
+                                <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
+                            </a>
+                            <h3><a href="#">{{ $books->name }}</a></h3>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">{{ __('detail') }}<i class="fa fa-chevron-right"></i></a>
+                                <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                            <div class="content">
+                                <div class="body">
+                                <b>Tên sách:</b> {{$books->name}} <br>
+                                    <b>Tác giả:</b> {{$books->publisher}} <br>
+                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
+                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
+                                    <b>Phát hành:</b> {{$books->productCompany->name}} <br>
+                                    <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                </div>
+                            </div>
+>>>>>>> b13064f1f68687fe2663ddedbb8664a7866b4eb3
 
                         <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
 
+<<<<<<< HEAD
                         <div class="content">
                             <div class="body">
                                 <b>Tên sách:</b> {{$books->name}} <br>
@@ -50,6 +80,31 @@
                                 <b>Phát hành:</b> {{$books->productCompany->name}} <br>
                                 <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
+=======
+</section>
+<div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="" class="img-responsive" width="200px">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4></h4>
+
+                        <h3 class="cost">
+                            <span class="glyphicon glyphicon-usd"></span>
+                            <small class="pre-cost">
+                                <span class="glyphicon glyphicon-usd"></span>
+                            </small>
+                            <span class="glyphicon glyphicon-usd"></span>
+                        </h3>
+
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a>
+>>>>>>> b13064f1f68687fe2663ddedbb8664a7866b4eb3
                         </div>
                         <h3><a href="#">{{ $books->name }}</a></h3>
                         @if($books->promotion_price == 0)
@@ -74,8 +129,12 @@
         </div>
         </div>
     </div>
+<<<<<<< HEAD
 
 </section>
+=======
+</div>
+>>>>>>> b13064f1f68687fe2663ddedbb8664a7866b4eb3
 <a href="#" class="bck"></a>
 @endsection
 @section('js')

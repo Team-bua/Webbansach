@@ -28,7 +28,7 @@ class LoginController extends Controller
         if (Auth::check()) {
            
             if (Auth::user()->id_role == 1) {
-                return redirect('admin');
+                return redirect(route('companies.index'));
             }elseif (Auth::user()->id_role == 2) {
                 $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
                 GetSession::putCompanyId($company_id['company_id']);
