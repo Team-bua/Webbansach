@@ -14,8 +14,6 @@
         </div>
     </div>
 </section>
-
-<br>
 <section class="static about-sec">
     <div class="container">
         <h6><span>{{ __("newbook") }}</span>
@@ -31,7 +29,7 @@
                         <h3><a href="#">{{ $pro->name }}</a></h3>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" onclick="BuyCart('')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                         <div class="content">
                             <div class="body">
@@ -43,7 +41,7 @@
                                 <b>Định dạng:</b> {{$pro->format}} <br>
                                 <b>Ngôn ngữ:</b> {{$pro->language}} <br>
                                 <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                    <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         @if($pro->promotion_price == 0)
@@ -69,7 +67,7 @@
 </section>
 <section class="static about-sec">
     <div class="container">
-         <h6><span>{{ __("salebook") }}</span>
+        <h6><span>{{ __("salebook") }}</span>
         </h6>
         <hr>
         <div class="recent-book-sec">
@@ -94,13 +92,13 @@
                                 <b>Định dạng:</b> {{$pro->format}} <br>
                                 <b>Ngôn ngữ:</b> {{$pro->language}} <br>
                                 <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                    <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                        <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" onclick="BuyCart('')" >{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                         @if($pro->promotion_price == 0)
                         <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
@@ -119,11 +117,11 @@
                 <a href="{{ route('allsale') }}"><button class="btn gray-btn">Xem Thêm</button></a>
             </div>
         </div>
-
     </div>
-
-    <div class="container">
-         <h6><span>{{ __("hotbook") }}</span>
+</section>
+<section class="static about-sec">
+<div class="container">
+        <h6><span>{{ __("hotbook") }}</span>
         </h6>
         <hr>
         <div class="recent-book-sec">
@@ -142,18 +140,14 @@
                                 <b>Tên sách:</b> {{$pro->name}} <br>
                                 <b>Tác giả:</b> {{$pro->publisher}} <br>
                                 <b>Thể loại:</b> {{$pro->productType->name}} <br>
-                                <b>Kích thước:</b> {{$pro->size}} Cm<br>
-                                <b>Số trang:</b> {{$pro->pagenumber}} <br>
-                                <b>Định dạng:</b> {{$pro->format}} <br>
-                                <b>Ngôn ngữ:</b> {{$pro->language}} <br>
-                               <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
-                                    <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                <b>Phát hành:</b> {{$pro->productCompany->name}} <br>
+                                <a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
                             </div>
                         </div>
                         <h3><a href="#">{{ $pro->name }}</a></h3>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" onclick="BuyCart('')" >{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                         @if($pro->promotion_price == 0)
                         <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
@@ -175,55 +169,6 @@
 
     </div>
 </section>
-   <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 product_img">
-                            <img src="" class="img-responsive" width="200px">
-                        </div>
-                        <div class="col-md-6 product_content">
-                            <h4></h4>
-                           
-                            <h3 class="cost">
-                                <span class="glyphicon glyphicon-usd"></span> 
-                                <small class="pre-cost">
-                                    <span class="glyphicon glyphicon-usd"></span> 
-                                </small>
-                                <span class="glyphicon glyphicon-usd"></span> 
-                            </h3>
-                 
-                            <div class="space-ten"></div>
-                            <div class="btn-ground">
-                                <a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<section class="features-sec">
-    <div class="container">
-        <ul>
-            <li>
-                <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                <h3>MUA SẮM AN TOÀN</h3>
-            </li>
-            <li>
-                <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
-                <h3>TRẢ LẠI 30- NGÀY</h3>
-
-            </li>
-            <li>
-                <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                <h3>HỖ TRỢ 24/7</h3>
-            </li>
-        </ul>
-
-</section>
-
 <a href="#" class="bck"></a>
 @endsection
 @section('js')
