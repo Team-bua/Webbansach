@@ -195,19 +195,9 @@
                         </table>
                     </div><!-- /.box-body -->
 
-                    <!-- <canvas id="buyers" width="1000px" height="300" data-list-day="{{$listDay}}" 
+                    <canvas id="buyers" width="1000px" height="300" data-list-day="{{$listDay}}" 
                     data-money-done="{{$arrRevenueMonthDone}}"
-                    data-money-pending="{{$arrRevenueMonthPending}}"></canvas> -->
-                <div class="box box-primary">
-                <div class="box-header">
-                  <h3 class="box-title">Area Chart</h3>
-                </div>
-                <div class="box-body chart-responsive">
-                  <div class="chart" id="revenue-chart" data-list-day="{{$listDay}}" 
-                    data-money-done="{{$arrRevenueMonthDone}}"
-                    data-money-pending="{{$arrRevenueMonthPending}}" style="height: 300px;"></div>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
+                    data-money-pending="{{$arrRevenueMonthPending}}"></canvas>
 
                 </div><!-- ./box-body -->
                 <div class="box-footer">
@@ -256,7 +246,7 @@
 @endsection
 @section('js')
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
-<!-- <script>
+<script>
     let listDay = $("#buyers").attr('data-list-day');
     listDay = JSON.parse(listDay);
 
@@ -280,37 +270,6 @@
     var buyers = document.getElementById('buyers').getContext('2d');
     // draw line chart
     new Chart(buyers).Line(buyerData);
-</script> -->
-<script>
-    let listDay = $("#revenue-chart").attr('data-list-day');
-    listDay = JSON.parse(listDay);
-
-    let dataMoneyDone = $("#revenue-chart").attr('data-money-done');
-    dataMoneyDone = JSON.parse(dataMoneyDone);
-
-    let dataMoneyPending = $("#revenue-chart").attr('data-money-pending');
-    dataMoneyPending = JSON.parse(dataMoneyPending);
-    var area = new Morris.Area({
-          element: 'revenue-chart',
-          resize: true,
-          data: [
-            {y: '2011 Q1', item1: 2666, item2: 2666},
-            {y: '2011 Q2', item1: 2778, item2: 2294},
-            {y: '2011 Q3', item1: 4912, item2: 1969},
-            {y: '2011 Q4', item1: 3767, item2: 3597},
-            {y: '2012 Q1', item1: 6810, item2: 1914},
-            {y: '2012 Q2', item1: 5670, item2: 4293},
-            {y: '2012 Q3', item1: 4820, item2: 3795},
-            {y: '2012 Q4', item1: 15073, item2: 5967},
-            {y: '2013 Q1', item1: 10687, item2: 4460},
-            {y: '2013 Q2', item1: 8432, item2: 5713}
-          ],
-          xkey: 'y',
-          ykeys: ['item1', 'item2'],
-          labels: ['Item 1', 'Item 2'],
-          lineColors: ['#a0d0e0', '#3c8dbc'],
-          hideHover: 'auto'
-        });
 </script>
 <script>
     $('#tableId2').dataTable({

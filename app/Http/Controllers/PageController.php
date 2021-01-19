@@ -48,9 +48,8 @@ class PageController extends Controller
         $product_sale = $this->repository->getAllProductSale();
         $product_new = $this->repository->getAllproductNew();
         $product_type = $this->repository->getProductType();
-        return view(
-            'layout_index.index',
-            compact('product_new', 'product_type', 'slide', 'product_sale', 'product_hightlights')
+        return view('layout_index.index',compact('product_new', 'product_type', 
+                                                'slide', 'product_sale', 'product_hightlights')
         );
     }
 
@@ -61,9 +60,7 @@ class PageController extends Controller
         $comments = $this->repository->getComment($id);
         $store = $this->repository->store($id);
         $rating = $this->repository->getRating($id);
-        $count_ra = Rating::where('id_product', $id)->get();
-        $ra_5 = Rating::where('ra_number',5)->count();
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','count_ra','ra_5','store' ));
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','store' ));
     }
 
 

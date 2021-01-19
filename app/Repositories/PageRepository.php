@@ -124,9 +124,17 @@ class PageRepository
 
     public function getRating($id)
     {
+        $ra_5 = Rating::where('ra_number',5)->count();
+        $ra_4 = Rating::where('ra_number',4)->count();
+        $ra_3 = Rating::where('ra_number',3)->count();
+        $ra_2 = Rating::where('ra_number',2)->count();
+        $ra_1 = Rating::where('ra_number',1)->count();
+        $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
         $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
-        return ['ra_date' => $ra_date, 'product' => $product];
+        return ['ra_date'=>$ra_date, 'product'=>$product, 'ra_5'=>$ra_5,
+                'ra_4'=>$ra_4, 'ra_3'=>$ra_3, 'ra_2'=>$ra_2, 'ra_1'=>$ra_1,
+                'count_ra'=>$count_ra];
     }
 
     public function postRating($id, $request)
@@ -161,12 +169,20 @@ class PageRepository
 
     public function getAddCart(Request $request, $id)
     {
-        $product = Product::find($id);
-        $oldcart = Session('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldcart);
-        $cart->add($product, $id);
-        $request->session()->put('cart', $cart);
-        return response()->json(array('cart' => $cart));
+        $store = Store::where('id_product', $request->id)->first();
+        if($store && $store->stored_product != 0){
+            $product = Product::find($id);
+            $oldcart = Session('cart') ? Session::get('cart') : null;
+            $cart = new Cart($oldcart);
+            $cart->add($product, $id);
+            $request->session()->put('cart', $cart);
+            return response()->json(array('cart' => $cart));
+        }else{
+            return response()->json([
+                'code' => 500,
+                'message' => 'error',
+            ], 500);
+        }        
     }
 
     public function postCart(Request $request)

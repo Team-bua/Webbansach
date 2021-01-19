@@ -9,6 +9,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
     .wordart.horizon .text {
         font-family: Arial, sans-serif;
         font-weight: bold;
@@ -26,6 +27,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
     .wordart.horizon .text:before {
         content: attr(data-text);
         position: absolute;
@@ -35,11 +37,9 @@
 </style>
 
 
-<header  class="main-header  " >
+<header class="main-header  ">
     <!-- Logo -->
-    <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;"
-                src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px"
-                width="250px" /></b></a>
+    <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;" src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -50,18 +50,16 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul  class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}"
-                            class="user-image" alt="User Image" />
+                        <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}" class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
+                    <ul class="dropdown-menu" style="padding-top: 7px;">
                         <!-- User image -->
                         <li style="background-color: #8b7b61" class="user-header">
-                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png')  }}"
-                                class="img-circle" alt="User Image" />
+                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png')  }}" class="img-circle" alt="User Image" />
                             <p style="color: #ffffff">
                                 {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
                                 <small>{{ Auth::user()->email }}</small>
@@ -83,18 +81,17 @@
 
                 <li class="dropdown">
                     <a href="{!! route('user.language', ['vi']) !!}" class="dropdown-toggle" data-toggle="dropdown">
-                       <i class="fa fa-language fa-lg"></i>
+                        <i class="fa fa-language fa-lg"></i>
                     </a>
-                    <ul class="dropdown-menu" 
-                    style="margin-top:7px;min-width:55px;
+                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
                      min-height:50px;margin-right:-10px;background-color:#ffffff;line-height:35px;">
                         <li>
                             <a href="{!! route('user.language', ['en']) !!}">
-                            <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
+                                <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
                             </a>
                         </li>
                         <li>
-                            <a href="{!! route('user.language', ['vi']) !!}" >
+                            <a href="{!! route('user.language', ['vi']) !!}">
                                 <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
                             </a>
                         </li>
@@ -113,8 +110,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img style="background-color: #ffffff" src="{{ asset('images/icon/tuanrau_phagame.png') }}" class="img-circle"
-                    alt="User Image" />
+                <img style="background-color: #ffffff" src="{{ asset('images/icon/tuanrau_phagame.png') }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->full_name }}</p>
@@ -123,36 +119,37 @@
             </div>
         </div>
         <!-- search form -->
-       
+
         <?php
-        
-            use App\Models\Company;
-            use Illuminate\Support\Facades\Session;
-            $companies = Company::all();
-            $sessionCompany = Session::get('select_companyid');
+
+        use App\Models\Company;
+        use Illuminate\Support\Facades\Session;
+
+        $companies = Company::all();
+        $sessionCompany = Session::get('select_companyid');
         ?>
         @can('admin')
-        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;" >
-        @csrf
+        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;">
+            @csrf
             <div class="input-group">
-            <select class="form-control" name="select_companyid" id="select_companyid">
-                @foreach($companies as $cp)
-                <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
-                @endforeach
-            </select>
-            <span class="input-group-btn" >
-                <button style="border: none; margin-left:2px" type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
+                <select class="form-control" name="select_companyid" id="select_companyid">
+                    @foreach($companies as $cp)
+                    <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
+                    @endforeach
+                </select>
+                <span class="input-group-btn">
+                    <button style="border: none; margin-left:2px" type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                </span>
             </div>
-          </form>  
+        </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         @endcan
         <ul class="sidebar-menu">
             <li class="header ">
-                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
             </li>
-        @can('admin')
+            @can('admin')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
@@ -164,11 +161,11 @@
             <!-- CRUD  nhà cung cấp -->
             <li class=" treeview">
                 <a href="{{ route('companies.index') }}">
-                    <i style="color:#8b7b61"class="fa fa-briefcase fa-lg text-warning"></i>
+                    <i style="color:#8b7b61" class="fa fa-briefcase fa-lg text-warning"></i>
                     <span style="font-size:16px ;">{{ __('publisher') }}</span>
                 </a>
             </li>
-        @endcan
+            @endcan
             <!-- CRUD  sách -->
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
@@ -177,74 +174,73 @@
                 </a>
 
             </li>
-        @can('admin')
+            @can('admin')
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i style="color:#8b7b61"class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>                
+                    <i style="color:#8b7b61" class="fa fa-edit  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>
                 </a>
-            </li>          
+            </li>
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i style="color:#8b7b61"class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <i style="color:#8b7b61" class="fa fa-list-alt  fa-lg text-warning"></i>
                     <span>{{ __('banner') }}</span>
                 </a>
 
 
-                <li class="treeview">
-                    <a href="{{ route('thenews.index') }}">
-                        <i style="color:#8b7b61"class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
-                        <span>{{ __('news') }}</span>
-                    </a>
-        @endcan
+            <li class="treeview">
+                <a href="{{ route('thenews.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
+                    <span>{{ __('news') }}</span>
+                </a>
+                @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
-                  <i style="color:#8b7b61" class="fa fa-inbox fa-lg text-warning"></i>
-                  <span style="font-size:16px ;">{{ __('bills') }}</span>
+                    <i style="color:#8b7b61" class="fa fa-inbox fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('bills') }}</span>
                 </a>
-              </li>
+            </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-                <a >
+                <a>
                     <i style="color:#8b7b61" class="fa fa-archive  fa-lg text-warning"></i>
                     <span style="font-size:16px ;"> {{ __('store') }}</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                     <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
-                  </ul>
+                </ul>
             </li>
-            
+
             @can('admin')
-                    <li class="header ">
-                        <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
-                    </li>
+            <li class="header ">
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+            </li>
 
-                    <li class="treeview">
-                        <a href="{{ route('user.index') }}">
-                            <i style="color:#8b7b61"class="fa fa-desktop  fa-lg"></i>
-                            <span style="font-size:16px ;"> {{ __('acc') }}</span>
+            <li class="treeview">
+                <a href="{{ route('user.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-desktop  fa-lg"></i>
+                    <span style="font-size:16px ;"> {{ __('acc') }}</span>
 
-                        </a>
-            @endcan
-                    </li>
-                    <li class="treeview">
-                        <a href="{{ url('logout') }}">
-                            <i style="color:#8b7b61" class="fa fa-sign-out  fa-lg text-warning"></i>
-                            <span style="font-size:16px ;">{{ __('exit') }}</span>
+                </a>
+                @endcan
+            </li>
+            <li class="treeview">
+                <a href="{{ url('logout') }}">
+                    <i style="color:#8b7b61" class="fa fa-sign-out  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
 
             </li>
-           
+
         </ul>
     </section>
 
 </aside>
-

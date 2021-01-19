@@ -106,9 +106,9 @@
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
                         @if($store && $store->stored_product == 0)
-                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;"><i class="fa fa-times"></i> hết hàng&ensp;</h6>
+                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;">Hết hàng&ensp;</h6>
                         @else
-                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;"><i class="fa fa-check"></i> còn hàng&ensp;</h6>
+                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;">Còn hàng&ensp;</h6>
                         @endif
                     </li>
                 </ul>
@@ -144,24 +144,23 @@
                                     <h1>Đánh Giá</h1>
                                 </div>
                                 <div class="rating">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Đánh Giá</p>
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh Giá</p>
                                 </div>
                                 <div class="rating-process">
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
-                                        </p>
-
+                                            {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
                                     </div>
                                     <div class="rating-right-part">
                                         <p><i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
                                             <i aria-hidden="true" class="fa fa-star"></i>
-
+                                            {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
                                         </p>
 
                                     </div>
