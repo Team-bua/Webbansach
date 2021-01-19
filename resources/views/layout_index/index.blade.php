@@ -53,7 +53,6 @@
                         </div>
                     </div>
                 </div>
-
                 @endforeach
             </div>
             <div class="btn-sec">
@@ -73,36 +72,35 @@
                 @foreach ($product_sale as $pro)
                 <div class="col-md-3">
                     <div class="item">
-                        @if ($pro->promotion_price != 0)
-
-                        <span class="sale">sale</span>
-                        @endif
-
-                        <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-
-                        <div class="content">
-                            <div class="body">
-                                &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
-                                &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
-                                &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
-                                &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
-                                &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
-                                &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                        <div class="single_product">
+                            @if ($pro->promotion_price != 0)
+                            <span class="sale">sale</span>
+                            @endif
+                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
+                                <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                            <div class="content">
+                                <div class="body">
+                                    &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                    &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                    &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                    &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                </div>
                             </div>
                         </div>
-                        <h3><a href="#">{{ $pro->name }}</a></h3>
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                            <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                        </h6>
-                        @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
-                        @else
-                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
-                        </span>
-                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
-                        </span>
-                        @endif
                     </div>
                 </div>
                 @endforeach
@@ -123,34 +121,36 @@
                 @foreach ($product_hightlights as $pro)
                 <div class="col-md-3">
                     <div class="item">
-                        @if ($pro->new == 1)
-                        <div class="new">Hot</div>
-                        @endif
-                        <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-                        <div class="content">
-                            <div class="body">
-                                &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
-                                &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
-                                &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
-                                &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
-                                &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
-                                &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                        <div class="single_product">
+                            @if ($pro->new == 1)
+                            <div class="new">Hot</div>
+                            @endif
+                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <div class="content">
+                                <div class="body">
+                                    &nbsp;<b style="color: #BA510A; font-size: 19px">{{$pro->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-user"></i> : <b class="font">{{$pro->publisher}}</b> <br>
+                                    &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
+                                    &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
+                                    &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
+                                    &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                </div>
                             </div>
-                        </div>
-                        <h3><a href="#">{{ $pro->name }}</a></h3>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
 
-                        <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                            <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                        </h6>
-                        @if($pro->promotion_price == 0)
-                        <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
-                        @else
-                        <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
-                        </span>
-                        <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
-                        </span>
-                        @endif
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
+                                <a class="beta-btn primary" href="{{route('cart')}}" onclick="BuyCart('{{$pro->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                        </div>
                     </div>
                 </div>
                 @endforeach
@@ -172,7 +172,7 @@
             type: 'GET',
         }).done(function(response) {
             $('.quntity').html(response['cart']['totalQty']);
-            
+
         })
     }
 </script>
