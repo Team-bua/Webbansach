@@ -1,6 +1,6 @@
 @extends('layout_index.master')
 @section('content')
-
+@if($pdf->link)
 <style type="text/css">
 	body {
   margin: 0;
@@ -77,7 +77,11 @@
 </div>
 <br>
 <br>
- 
+ @else
+<div class="container">
+    <h2>Không có dữ liệu sách</h2>
+</div>
+@endif
 <script src="https://unpkg.com/pdfjs-dist@2.0.489/build/pdf.min.js"></script>
 <script type="text/javascript">
 	(function() {
@@ -184,10 +188,30 @@
 
 
 </script>
+
 <script>
-      initPDFViewer('{{asset("book_pdf/ong-tram-tuoi.pdf")}}');
+      initPDFViewer('{{asset("book_pdf/$pdf->link")}}');
     </script>
+    @if(Auth::check())
     <script type="text/javascript">
+ 	         var toGet = 0;
+function addQuantity() {
+   toGet++;
+   if (toGet >= 5) {
+   	document.location="{{route('detail',$product_detail->id)}}";
+   	Swal.fire({
+                            icon: 'info',
+                            title: 'Mời mua hàng',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })  
+  
+   }
+}
+
+ </script>
+ @else
+  <script type="text/javascript">
  	         var toGet = 0;
 function addQuantity() {
    toGet++;
@@ -197,4 +221,5 @@ function addQuantity() {
 }
 
  </script>
+ @endif
 @endsection

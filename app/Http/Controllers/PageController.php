@@ -9,10 +9,13 @@ use App\Http\Requests\PageRequest;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Session;
 use Analytics;
+use App\Models\Bill;
+use App\Models\Date;
 use Spatie\Analytics\Period;
 use Exception;
 use App\Models\Rating;
 use App\Models\Store;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 
@@ -53,7 +56,7 @@ class PageController extends Controller
 
     public function getDetail($id)
     {
-        $product_detail = $this->repository->getproduct($id);
+        $product_detail = $this->repository->getProduct($id);
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $store = $this->repository->store($id);
@@ -200,8 +203,9 @@ class PageController extends Controller
 
     public function getRead($id)
     {
+        $product_detail = $this->repository->getProduct($id);
         $pdf = $this->repository->getRead($id);
-        return view('layout_index.page.Read_book', compact('pdf'));
+        return view('layout_index.page.Read_book', compact('pdf','product_detail'));
     }
 
     public function getCheckout()
@@ -251,11 +255,51 @@ class PageController extends Controller
 
     public function getAdmin()
     {
-        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(10));
+        $data["fetchTotalVisitorsAndPageViews"] = Analytics::fetchTotalVisitorsAndPageViews(Period::days(9));
         $user = $this->repository->getAll();
         $product = $this->repository->allBookAdm();
         $store = $this->repository->getAllstore();
-        return view('layout_admin.index_admin', $data, compact('product', 'user','store'));
+        $listDay = Date::getListDayInMonth();
+        $revenueMonthDone = Bill::whereMonth('created_at',date('m'))
+            ->select(DB::raw('sum(total) as totalMoney'), DB::raw('DATE(created_at) day'))
+            ->groupBy('day')
+            ->get()
+            ->toArray();
+        $revenueMonthPending = Bill::whereMonth('created_at',date('m'))
+            ->select(DB::raw('sum(total) as totalMoney'), DB::raw('DATE(created_at) day'))
+            ->groupBy('day')
+            ->get()
+            ->toArray();
+
+        $arrRevenueMonthDone = [];
+        $arrRevenueMonthPending = [];
+        foreach($listDay as $day){
+            $total = 0;
+            foreach ($revenueMonthDone as $key => $revenue) {
+                if($revenue['day'] == $day){
+                    $total = $revenue['totalMoney'];
+                    break;
+                }
+            }
+            $arrRevenueMonthDone[] = (int)$total;
+            $total = 0;
+            foreach ($revenueMonthPending as $key => $revenue) {
+                if($revenue['day'] == $day){
+                    $total = $revenue['totalMoney'];
+                    break;
+                }
+            }
+            $arrRevenueMonthPending[] = (int)$total;
+        }     
+        $viewData = [
+            'product'                   => $product,
+            'user'                      => $user,
+            'store'                     => $store,
+            'listDay'                   => json_encode($listDay),
+            'arrRevenueMonthDone'       => json_encode($arrRevenueMonthDone),
+            'arrRevenueMonthPending'    => json_encode($arrRevenueMonthPending)
+        ];
+        return view('layout_admin.index_admin',$viewData, $data);
     }
 
     public function getInfo($id)

@@ -58,4 +58,9 @@ class Product extends Model
         return $this->belongsTo(Company::class,'id_company', 'id');
     }
 
+    public function productsStore()
+    {
+        return $this->belongsTo(Store::class,'id_product', 'id');
+    }
+
 }

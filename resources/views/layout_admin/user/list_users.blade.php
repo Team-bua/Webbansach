@@ -52,7 +52,7 @@
                                                 </a>
                                             </div>
                                             <div class="btn-group mr-2" role="group">
-                                                <form method="post" action="" enctype="multipart/form-data" name="form1" id="form1">
+                                                <form method="post" action="{{ route('user.destroy', [$users['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button style="float:right" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa không')"><i class="fa fa-trash-o"></i></button>

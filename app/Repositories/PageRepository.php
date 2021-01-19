@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Cart;
 use App\Models\Slide;
 use App\Models\Bill;
+use App\Models\Date;
 use App\Models\BillDetail;
 use App\Models\Comment;
 use App\Models\Company;
@@ -18,7 +19,7 @@ use App\Models\Rating;
 use App\Models\News;
 use App\Models\Store;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class PageRepository
 {
@@ -93,7 +94,7 @@ class PageRepository
 
     public function store($id)
     {
-        return Store::find($id);
+        return Store::where('id_product', $id)->first();
     }
 
     public function getProductTypeName($id)
@@ -290,11 +291,7 @@ class PageRepository
 
     public function getContentFist()
     {
-        return News::orderBy('id', 'desc')->first();
+        return News::orderBy('id', 'desc')->where('status', 1)->first();
     }
-
-
-
-    // trang tin tức
 
 }

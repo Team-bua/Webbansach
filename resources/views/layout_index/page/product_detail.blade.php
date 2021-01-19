@@ -106,11 +106,10 @@
                     </li>
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
-
-                        @if($store->stored_product == 0)
-                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;">hết hàng&ensp;<i class="fa fa-times"></i></h6>
+                        @if($store && $store->stored_product == 0)
+                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;"><i class="fa fa-times"></i> hết hàng&ensp;</h6>
                         @else
-                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;">còn hàng&ensp;<i class="fa fa-check"></i></h6>
+                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;"><i class="fa fa-check"></i> còn hàng&ensp;</h6>
                         @endif
                     </li>
                 </ul>
