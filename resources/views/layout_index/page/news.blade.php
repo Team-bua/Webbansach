@@ -257,16 +257,20 @@
         }
 
     </style>
+         @if($content_fist)  
     <div class="wrapper col4">
+        
         <div id="container">
             <h1>Tin tức liên quan</h1>
             <div id="content">
-
+               
                 <div id="featured_post">
+                    
                     <img style="width:620px;height:340px;" src="{{ asset('images/news/' . $content_fist->image) }}">
                     <h3>  {!! $content_fist->name !!}</h3>
 
                 </div>
+               
                 <div id="hpage_latest">
                     @foreach ($content as $con)
                         <ul>
@@ -287,15 +291,24 @@
                 @foreach ($content as $con)
                     <ul id="latestnews">
                         <li> <img style="width:80px;height:80px;" src="{{ asset('images/news/' . $con->image) }}">
-                            <p><strong><a href="#">Indonectetus facilis leo.</a></strong> Nullamlacus dui ipsum cons eque
-                                lobor ttis non euis que morbi penas dapi bulum orna. Urnaul trices quis curabitur.</p>
+                            <p><strong><a href="#"></a></strong></p>
                         </li>
                     </ul>
                 @endforeach
+                
+            </div>
+            @else
+            <div id="container">
+                Không có tin tức
             </div>
             <br class="clear" />
         </div>
         <br class="clear" />
+        
     </div>
+   
+        @endif
+   
+
 
 @endsection

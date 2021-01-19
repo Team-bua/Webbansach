@@ -203,8 +203,9 @@ class PageController extends Controller
 
     public function getRead($id)
     {
+        $product_detail = $this->repository->getProduct($id);
         $pdf = $this->repository->getRead($id);
-        return view('layout_index.page.Read_book', compact('pdf'));
+        return view('layout_index.page.Read_book', compact('pdf','product_detail'));
     }
 
     public function getCheckout()

@@ -59,12 +59,12 @@
             </script>
 
             <div class="col-md-6 slider-content">
-                <textarea class="area" type="text" placeholder="Nhập gì đó để nói (input something)..." rows="7" cols="63" id="text" disabled>
+                <textarea class="area" type="text" rows="7" cols="63" id="text" disabled>
                 {!! $product_detail->description !!}
             </textarea>
-                <audio id="myAudio">
+                <!--                 <audio id="myAudio">
                     <source src="images/music/oke.mp3.mp3" type="audio/mpeg">
-                </audio>
+                </audio> -->
                 <br>
                 <br>
                 <div class="col-md-4">
@@ -106,17 +106,18 @@
                     </li>
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
-                        @if($store && $store->stored_product != 0)
-                        còn hàng
+                        @if($store && $store->stored_product == 0)
+                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;"><i class="fa fa-times"></i> hết hàng&ensp;</h6>
                         @else
-                        hết hàng
+                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;"><i class="fa fa-check"></i> còn hàng&ensp;</h6>
                         @endif
                     </li>
                 </ul>
                 <div class="btn-sec">
-                    <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-book"></i></button>
-                    <button class="btn" onclick="AddCart('{{ $product_detail->id }}')">{{ __('addcart') }}</button>
-                    <button class="btn " onclick="BuyCart('{{ $product_detail->id }}')" data-toggle="modal" data-target="#product_view">Mua Ngay</button>
+
+                    <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-play"></i></button>
+                    <button class="btn btn-success btn-lg" id="btPause" onclick="pauseAudio()"><i class="fa fa-stop"></i></button>
+                    <button class="btn black" onclick="AddCart('{{ $product_detail->id }}')">{{ __('addcart') }}</button>
                     <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">{{ __('read online') }}</button></a>
                 </div>
             </div>
@@ -126,36 +127,6 @@
     </div>
 </section>
 <div class="container">
-    <div class="modal fade product_view" id="product_view">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 product_img">
-                            <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
-                        </div>
-                        <div class="col-md-6 product_content">
-                            <h4>{{ $product_detail->name }}</h4>
-                            @if($product_detail->promotion_price == 0)
-                            <h3 class="cost">
-                                <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
-                                @else
-                                <small class="pre-cost">
-                                    <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
-                                </small>
-                                <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
-                            </h3>
-                            @endif
-                            <div class="space-ten"></div>
-                            <div class="btn-ground">
-                                <a href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif"><button type="button" class="btn btn-primary">Thanh Toán</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <section class="comment">
         <div class="container">
             <div id="comment-wrapper">
@@ -174,28 +145,47 @@
                                     <h1>Đánh Giá</h1>
                                 </div>
                                 <div class="rating">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Review</p>
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Đánh Giá</p>
                                 </div>
                                 <div class="rating-process">
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
-                                        <div class="progress"></div>
+                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                        </p>
+
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
-                                        <div class="progress-2"></div>
+                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+
+                                        </p>
+
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
-                                        <div class="progress-3"></div>
+                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+
+                                        </p>
+
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
-                                        <div class="progress-4"></div>
+                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+                                            <i aria-hidden="true" class="fa fa-star"></i>
+
+                                        </p>
+
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
-                                        <div class="progress-5"></div>
+                                        <p><i aria-hidden="true" class="fa fa-star"></i>
+
+                                        </p>
+
                                     </div>
                                 </div>
                                 <div style="clear:both;"></div>
@@ -233,28 +223,47 @@
                                 <h1>Đánh Giá</h1>
                             </div>
                             <div class="rating">
-                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Review</p>
+                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($count_ra)}} Đánh giá</p>
                             </div>
                             <div class="rating-process">
                                 <div class="rating-right-part">
-                                    <p>5<i aria-hidden="true" class="fa fa-star"></i> 80%</p>
-                                    <div class="progress"></div>
+                                    <p><i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                    </p>
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p>4<i aria-hidden="true" class="fa fa-star"></i> 60%</p>
-                                    <div class="progress-2"></div>
+                                    <p><i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+
+                                    </p>
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p>3<i aria-hidden="true" class="fa fa-star"></i> 40%</p>
-                                    <div class="progress-3"></div>
+                                    <p><i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+
+                                    </p>
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p>2<i aria-hidden="true" class="fa fa-star"></i> 20%</p>
-                                    <div class="progress-4"></div>
+                                    <p><i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+
+                                    </p>
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p>1<i aria-hidden="true" class="fa fa-star"></i> 10%</p>
-                                    <div class="progress-5"></div>
+                                    <p><i aria-hidden="true" class="fa fa-star"></i>
+
+                                    </p>
+
                                 </div>
                             </div>
                             <div style="clear:both;"></div>
@@ -321,6 +330,13 @@
                 rate: 1
             });
         });
+        $("#btPause").click(function() {
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.pause();
+            } else {
+                responsiveVoice.resume();
+            }
+        });
     });
 </script>
 @stop
@@ -337,15 +353,3 @@
     }
 </script>
 @stop
-@section('js')
-<script>
-    function BuyCart(id) {
-        $.ajax({
-            url: 'addcart/' + id,
-            type: 'GET',
-        }).done(function(response) {
-            $('.quntity').html(response['cart']['totalQty']);
-        })
-    }
-</script>
-@endsection

@@ -299,7 +299,7 @@ class PageRepository
 
     public function getContentFist()
     {
-        return News::orderBy('id', 'desc')->first();
+        return News::orderBy('id', 'desc')->where('status', 1)->first();
     }
 
 }

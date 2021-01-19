@@ -109,7 +109,7 @@
                 </div>
                 @else
                 <div class="dropdown">
-                    <button class="dropbtn">Chào Bạn &nbsp;<i class="fa fa-user-circle"></i></button>
+                    <button class="dropbtn">{{ __('hello') }} &nbsp;<i class="fa fa-user-circle"></i></button>
                     <div class="dropdown-content">
                         <a href="{{ route('info',Auth::user()->id) }}">{{ Auth::user()->full_name }}</a>
                         <a href="{{ url('logout') }}">{{ __('logout') }}</a>
