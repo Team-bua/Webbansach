@@ -110,9 +110,9 @@ Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD thong tin user
-Route::resource('user',UserController::class);
-Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole');
-Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole');
+Route::resource('user',UserController::class)->middleware('sessionuser');
+Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole')->middleware('sessionuser');
+Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole')->middleware('sessionuser');
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class)->middleware('sessionuser');
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
@@ -127,7 +127,7 @@ Route::get('fails',[BillController::class,'Fails'])->name('fails');
 ///------>trang show thống kê
 Route::resource('chart',ChartController::class);
 ///------>trang show slide
-Route::resource('slide',SlideController::class);
+Route::resource('slide',SlideController::class)->middleware('sessionuser');
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
 ///------>Trang dành cho nhà xuất bản

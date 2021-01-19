@@ -11,9 +11,15 @@ class SessionController extends Controller
 {
     public function getCompanyIdSession(Request $request)
     {
-        GetSession::putCompanyId($request->select_companyid);
-        $company = $request->session()->get('select_companyid', '');
-        
+        if($request->select_companyid == null){
+            GetSession::putCompanyId('0');
+            $company = $request->session()->get('select_companyid', '');
+        }
+        else
+        {
+            GetSession::putCompanyId($request->select_companyid);
+            $company = $request->session()->get('select_companyid', '');
+        }
         if ($company != '') {
             if (Auth::user()->id_role == 1) {
                 return redirect('admin');
@@ -27,5 +33,5 @@ class SessionController extends Controller
                 return redirect(route('index'));
             }
         }
-    }
+   }
 }
