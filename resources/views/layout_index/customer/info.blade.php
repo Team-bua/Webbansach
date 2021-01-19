@@ -153,7 +153,6 @@
         $('.pass_show').append('<span class="ptxt">hiện</span>');
     });
 
-
     $(document).on('click', '.pass_show .ptxt', function() {
 
         $(this).text($(this).text() == "ẩn" ? "hiện" : "ẩn");

@@ -46,7 +46,7 @@
                                                 <button style="float:right" class="btn btn-warning btn-sm" id="edit-{{ $st->id }}" onclick="editStore(this)"><i class="fa fa-pencil"></i></button>
                                             </div>
                                             <div class="btn-group mr-2" role="group">
-                                            <button class="btn btn-danger delStore" data-url="{{route('store_del',$st->id)}}"> Xóa </button>
+                                            <button class="btn btn-danger delStore btn-sm   " data-url="{{route('store_del',$st->id)}}"> Xóa </button>
                                             </div>
                                         </div>
                                     </td>

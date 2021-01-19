@@ -5,7 +5,7 @@
     <section class="content-header">
         <h1 style="font-size: 50px; font-family: Serif"><center><b>{{ $company_name }}</b></center></h1>
         <h1>
-            {{ __('Chart') }}
+            {{ __('chart') }}
             <small>{{ __('infor') }}</small>
         </h1>
         <ol class="breadcrumb">
@@ -156,9 +156,7 @@
                 @can('admin')
                 <div class="box">
                     <div class="box-header with-border">
-
                         <div class="box-tools pull-right">
-
                             <div class="btn-group">
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Action</a></li>
@@ -171,8 +169,7 @@
 
                         </div>
                     </div><!-- /.box-header -->
-                    @endcan
-                    
+                    @endcan                   
                     <div class="box-body">
                         <table id="tableId2" class="table table-bordered table-striped">
                             <thead>
@@ -186,14 +183,10 @@
                             <tbody>
 
                                 @foreach ($fetchTotalVisitorsAndPageViews as $key => $item)
-
-
                                 <tr>
                                     <td>{{ $item['date']->format('d/m/Y')  }} </td>
                                     <td>{{ $item['pageViews'] }} </td>
-
                                 </tr>
-
                                 @endforeach
                             </tbody>
 

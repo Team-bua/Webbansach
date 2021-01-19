@@ -65,10 +65,6 @@
                                 <small>{{ Auth::user()->email }}</small>
                             </p>
                         </li>
-
-
-
-
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="text-center">
@@ -135,7 +131,7 @@
             @csrf
             <div class="input-group">
                 <select class="form-control" name="select_companyid" id="select_companyid">
-                    <option value="" selected>Tất cả công ty</option>
+                    <option value="" selected>Tất cả nhà xuất bản</option>
                     @foreach($companies as $cp)
                     <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
                     @endforeach
@@ -249,9 +245,7 @@
                     <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
-
             </li>
-
         </ul>
     </section>
 
