@@ -51,7 +51,6 @@ class UpdateStoredInDay extends Command
                 $history_stored->created_at = $stored->created_at; 
                 $history_stored->save();
                 
-                $stored->stored_product = $stored->all_product_in_store + $stored->stored_product;
                 $stored->all_product_in_store = '0';
                 $stored->created_at = now();
                 $stored->save();

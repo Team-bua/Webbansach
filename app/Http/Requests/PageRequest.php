@@ -24,9 +24,9 @@ class PageRequest extends FormRequest
     public function rules()
     {
         return [
-            'fullname' => 'required|min:6||max:30',
+            'fullname' => 'required|min:5||max:25',
             'username' => 'required|email|unique:users,email',
-            'password' => 'required|min:5|max:25',  
+            'password' => 'required|min:6|max:20',  
             're_password' => 'required|same:password',
             'address' => 'required',
             'phone' => 'required|numeric|digits:10',
@@ -40,7 +40,6 @@ class PageRequest extends FormRequest
             'fullname.max' => 'Tên không vượt quá 25 ký tự',
             'username.required' => 'Bạn chưa nhập username',
             'username.unique' => 'Username đã tồn tại',
-            'username.email' => 'Không đúng định dạng email',
             'password.required' => 'Bạn chưa nhập mật khẩu',
             'password.min' => 'Mật khẩu ít nhất 6 ký tự',
             'password.max' => 'Mật khẩu không quá 20 ký tự',

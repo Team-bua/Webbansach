@@ -55,10 +55,9 @@
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
                                     <input required name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
                                 </div>
-
-                              
+                                <br>                      
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    <button type="submit" class="btn btn-primary" style="background-color: #4a4235;border: #4a4235">Cập nhật</button>
                                 </div>
                                 @if(count($errors) > 0)
                                 <div class="alert alert-danger" style="width:350px; margin-left:450px; ">

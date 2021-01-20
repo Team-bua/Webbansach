@@ -25,9 +25,9 @@ class CompaniesRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:companies|regex:/(^[\pL0-9 ]+$)/u',
-            'email' => 'required|email',
+            'email' => 'required',
             'address' => 'required',
-            'phone' => 'required|max:10',
+            'phone' => 'required|numeric|digits:10',
         ];
     }
     public function messages()
@@ -37,10 +37,10 @@ class CompaniesRequest extends FormRequest
             'name.unique' => 'Tên nhà xuất bản đã tồn tại',
             'name.regex' => 'Tên nhà xuất bản không được phép có ký tự đặc biệt',
             'email.required' => 'Bạn chưa nhập email',
-            'email.email' => 'Không đúng định dạng email',
             'address.required' => 'Bạn chưa nhập địa chỉ',
             'phone.required' => 'Bạn chưa nhập số điện thoại',    
-            'phone.max' => 'Điện thoại chỉ có 10 số' 
+            'phone.digits' => 'Điện thoại chỉ có 10 số',
+            'phone.numeric' => 'Điện thoại chỉ được nhập số' 
         ];
     }
 }

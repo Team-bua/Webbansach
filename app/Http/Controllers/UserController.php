@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\ChangePassRequest;
 use App\Models\Company;
 use App\Models\Role;
 use App\Models\User;
@@ -75,7 +76,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         return $this->repository->create($request);
     }
@@ -110,7 +111,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(ChangePassRequest $request, $id)
     {
         $this->repository->update($request, $id);
         return redirect()->back();
