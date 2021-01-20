@@ -71,11 +71,6 @@
                                                 <h4>Tổng sản phẩm: </h4>
                                             </label>
                                             <input style="width:250px" type="text" id="total" name="total" class="form-control">
-                                            <label for="name">
-                                                <h4>Sản phẩm tồn kho: </h4>
-                                            </label>
-                                            <input style="width:250px" type="text" id="qtyTon" name="qtyTon" class="form-control">
-
                                         </div>
                                         <button style="border-color: #4a4235;background-color:#4a4235" type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
 
@@ -127,7 +122,6 @@
                 success: function(response) {
                     let store = JSON.parse(response)['store'];
                     $('#total').val(store['all_product_in_store']);
-                    $('#qtyTon').val(store['stored_product']);
                     $('#id').val(store['id']);
                 }
             });
