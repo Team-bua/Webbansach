@@ -41,7 +41,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($companies as $com)
+                                    @foreach ($company as $com)
                                         <tr>
                                             <td>{{ $com->name }}</td>
                                             <td>{{ $com->email }}</td>
