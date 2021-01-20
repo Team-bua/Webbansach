@@ -145,11 +145,11 @@ class PageRepository
 
     public function getRating($id)
     {
-        $ra_5 = Rating::where('ra_number',5)->count();
-        $ra_4 = Rating::where('ra_number',4)->count();
-        $ra_3 = Rating::where('ra_number',3)->count();
-        $ra_2 = Rating::where('ra_number',2)->count();
-        $ra_1 = Rating::where('ra_number',1)->count();
+        $ra_5 = Rating::where('ra_number',5)->where('id_product', $id)->count();
+        $ra_4 = Rating::where('ra_number',4)->where('id_product', $id)->count();
+        $ra_3 = Rating::where('ra_number',3)->where('id_product', $id)->count();
+        $ra_2 = Rating::where('ra_number',2)->where('id_product', $id)->count();
+        $ra_1 = Rating::where('ra_number',1)->where('id_product', $id)->count();
         $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
         $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);

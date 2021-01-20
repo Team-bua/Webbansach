@@ -78,15 +78,3 @@
 </section>
 <a href="#" class="bck"></a>
 @endsection
-@section('js')
-<script>
-    function BuyCart(id) {
-        $.ajax({
-            url: 'addcart/' + id,
-            type: 'GET',
-        }).done(function(response) {
-            $('.quntity').html(response['cart']['totalQty']);
-        })
-    }
-</script>
-@endsection
