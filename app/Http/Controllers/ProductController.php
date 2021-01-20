@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -61,8 +61,8 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $this->repository->create($request);
-        return redirect(route('book.index'));
+        return $this->repository->create($request);
+        
     }
 
     /**

@@ -164,7 +164,6 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content" style="width:auto">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h3 class="modal-title" id="myModalLabel" style="color: red">Chi tiết đơn hàng</h3>
                     </div>
                     <div class="modal-body">
@@ -209,8 +208,8 @@
         var data = table.row($(this).parents('tr')).data(); // getting target row data
         $('.showBill').html(
             // Adding and structuring the full data
-            '<table class="table dtr-details" width="100%"><h4 class="text-center" style="color:blue">Thông tin khách hàng</h4><tbody><tr><td>Tên Khách Hàng<td><td>' + data[0] + '</td></tr><tr><td>Địa chỉ<td><td>' + data[1] + '</td></tr><tr><td>Số điện thoại<td><td>' + data[2] +
-            '</td></tr><tr><td>Ngày đặt<td><td>' + data[4] + '</td></tr><tr><td>Email<td><td>' + data[5] + '</td></tr></tbody></table>' +
+            '<table class="table dtr-details" width="100%"><h4 class="text-center" style="color:blue">Thông tin khách hàng</h4><tbody><tr><td><b>Tên Khách Hàng</b><td><td>' + data[0] + '</td></tr><tr><td><b>Địa chỉ</b><td><td>' + data[1] + '</td></tr><tr><td><b>Số điện thoại</b><td><td>' + data[2] +
+            '</td></tr><tr><td><b>Ngày đặt</b><td><td>' + data[4] + '</td></tr><tr><td><b>Email</b><td><td>' + data[5] + '</td></tr></tbody></table>' +
             '<table class="table table-bordered table-hover dataTable"><tr role="row"><th class="sorting_asc text-center" style="color:blue"><h4>Thông tin đơn hàng</h4></th></tr><tbody><tr><td>' + data[3] +
             '</td></tr><tr><td><b style="font-size:18px">Tổng tiền :</b><b class="text-red pull-right">' + data[7] + '</b></td></tr></table>'
 

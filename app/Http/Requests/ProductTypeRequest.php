@@ -26,7 +26,7 @@ class ProductTypeRequest extends FormRequest
         return [
             'name' => 'required',
         ];
-    }
+    }   
     public function messages()
     {
         return [

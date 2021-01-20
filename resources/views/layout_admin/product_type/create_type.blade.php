@@ -29,7 +29,6 @@
                 <div style="width:1000px" class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-
                             <h4 class="modal-title" id="myModalLabel">Thêm loại sách</h4>
                         </div>
                         <div class="modal-body">
@@ -41,7 +40,7 @@
                                         <h4>Loại sách: </h4>
                                     </label>
                                     <input style="width:250px" type="text" name="name" class="form-control" id="type_name" placeholder="Tên loại sách . . . . .">
-
+                                    <p id="add-error" style="color:red"></p>
                                 </div>
                                 <button style="border-color: #4a4235;background-color:#4a4235" type="submit" class="btn btn-success"> Thêm </button>
 
@@ -87,7 +86,7 @@
 
                 <div class="col-md-4 pull-right">
 
-                    <a class="btn btn-success" style="border-color: #4a4235;background-color:#4a4235;float: right;margin-bottom:5px;margin-left:2px" data-toggle="modal" data-target="#bookmodal">
+                    <a class="btn btn-success" style="border-color: #4a4235;background-color:#4a4235;float: right;margin-bottom:5px;margin-left:2px" onclick="Add()" data-toggle="modal" data-target="#bookmodal">
                         <i class="fa fa-plus"> Thêm sách mới </i></button>
                     </a>
                 </div>
@@ -105,7 +104,7 @@
                     <tbody>
                         @foreach ($product_type as $pro)
                         <tr>
-                            <td id="name-{{ $pro->id }}">{{ $pro->name }}</td>
+                            <td id="name-{{ $pro->id }}">{{ $pro->name }} ({{count($pro->products)}})</td>
                             <td>
                                 <button style="margin-right:5px;float: left;" class="btn btn-warning btn" id="edit-{{ $pro->id }}" onclick="editType(this)"> Sửa </button>
                                 <button class="btn btn-danger delType" data-url="{{route('book_del',$pro->id)}}"> Xóa </button>
@@ -137,9 +136,14 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    function Add(){
+        $('#add-error').html('');
+    
+    }
     const base_url = window.location.origin;
     $("#bookForm").submit(function(e) {
         e.preventDefault();
+        $('#add-error').html('');
         let name = $("#type_name").val();
         let urlRequest = $(this).data('url');
         $.ajax({
@@ -149,7 +153,7 @@
                 name: name
             },
             success: function(response) {
-                if (response) {
+                if(response){                
                     let type = JSON.parse(response)['product_type'];
                     var output = "<tr>" +
                         "<td id='name-" + type['id'] + "'>" + type['name'] + "</td>" +
@@ -169,12 +173,10 @@
                 })
             },
             error: function(response){
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Mời nhập đầy đủ',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                let errors = response.responseJSON['errors'];
+                for (const key in errors) {
+                    $('#add-error').append(errors[key][0]);
+                }
             }
         });
     });

@@ -15,6 +15,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\MemberController;
 
 
 
@@ -131,7 +132,7 @@ Route::resource('slide',SlideController::class)->middleware('sessionuser');
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
 ///------>Trang dành cho nhà xuất bản
-Route::resource('publisher',PublisherController::class);
+Route::resource('member',MemberController::class);
 
 Route::resource('companies',CompanyController::class);
 Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->name('product_company');

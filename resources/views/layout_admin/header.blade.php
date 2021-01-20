@@ -231,7 +231,7 @@
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
             </li>
-
+            @can('admin')
             <li class="treeview">
                 <a href="{{ route('user.index') }}">
                     <i style="color:#8b7b61" class="fa fa-desktop  fa-lg"></i>
@@ -239,6 +239,14 @@
 
                 </a>
             </li>
+            <li class="treeview">
+                <a href="{{ route('member.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-user  fa-lg"></i>
+                    <span style="font-size:16px ;"> {{ __('user') }}</span>
+
+                </a>
+            </li>
+            @endcan
             <li class="treeview">
                 <a href="{{ url('logout') }}">
                     <i style="color:#8b7b61" class="fa fa-sign-out  fa-lg text-warning"></i>

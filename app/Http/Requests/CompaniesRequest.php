@@ -24,8 +24,8 @@ class CompaniesRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:companies',
-            'email' => 'required',
+            'name' => 'required|unique:companies|regex:/(^[\pL0-9 ]+$)/u',
+            'email' => 'required|email',
             'address' => 'required',
             'phone' => 'required|max:10',
         ];
@@ -34,7 +34,10 @@ class CompaniesRequest extends FormRequest
     {
         return [
             'name.required' => 'Bạn chưa nhập tên',
+            'name.unique' => 'Tên nhà xuất bản đã tồn tại',
+            'name.regex' => 'Tên nhà xuất bản không được phép có ký tự đặc biệt',
             'email.required' => 'Bạn chưa nhập email',
+            'email.email' => 'Không đúng định dạng email',
             'address.required' => 'Bạn chưa nhập địa chỉ',
             'phone.required' => 'Bạn chưa nhập số điện thoại',    
             'phone.max' => 'Điện thoại chỉ có 10 số' 

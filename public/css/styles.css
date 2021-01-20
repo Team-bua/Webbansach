@@ -236,7 +236,7 @@ header .main-menu {
 }
 
 header .main-menu .navbar {
-    padding: 0;
+    padding-left: 10px;
 }
 
 header .main-menu .navbar-brand {
@@ -342,7 +342,6 @@ header .cart .quntity {
     background: #f5a200;
     border: 1px solid #b87a00;
     border-radius: 3px;
-    padding: 0px 5px;
     height: 43px;
     line-height: 32px;
     margin-bottom: -9px;
@@ -368,10 +367,9 @@ header .cart .quntity {
     color: #FFF;
     float: left;
     font-weight: 600;
-    padding: 5px 6px;
+    padding: 5px 14px;
     z-index: 6;
     text-decoration: blink;
-    border-right: 1px solid #b87a00;
 }
 
 #menu li:hover {
