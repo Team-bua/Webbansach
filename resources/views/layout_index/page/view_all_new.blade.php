@@ -28,7 +28,6 @@
         </form>
         <hr>
         <div id="myTable">
-<<<<<<< HEAD
              <div class="recent-book-sec">
             <div class="row" id="load" style="position: relative;">
                 @foreach ($product_new as $books)
@@ -60,31 +59,6 @@
                                 <b>Số trang:</b> {{$books->pagenumber}} <br>
                                 <b>Phát hành:</b> {{$books->productCompany->name}} <br>
                                 <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
-=======
-            <div class="recent-book-sec">
-                <div class="row">
-                    @foreach ($product_new as $books)
-                    <div class="col-md-3">
-                        <div class="item">
-                            <div class="new">new</div>
-                            <a href="{{ route('detail', $books->id) }}">
-                                <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
-                            </a>
-                            <h3><a href="#">{{ $books->name }}</a></h3>
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">{{ __('detail') }}<i class="fa fa-chevron-right"></i></a>
-                                <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                            </h6>
-                            <div class="content">
-                                <div class="body">
-                                <b>Tên sách:</b> {{$books->name}} <br>
-                                    <b>Tác giả:</b> {{$books->publisher}} <br>
-                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
-                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
-                                    <b>Phát hành:</b> {{$books->productCompany->name}} <br>
-                                    <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
-                                </div>
->>>>>>> b13064f1f68687fe2663ddedbb8664a7866b4eb3
                             </div>
                         </div>
                     </div>

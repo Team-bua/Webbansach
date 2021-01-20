@@ -37,28 +37,7 @@
                        @if ($books->promotion_price != 0)
                             <span class="sale">sale</span>
                             @endif
-<<<<<<< HEAD
                         <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
-=======
-                            <a href="{{ route('detail', $books->id) }}">
-                                <img src="{{ asset('images/product/' . $books->image) }}" alt="image" />
-                            </a>
-                            <h3><a href="#">{{ $books->name }}</a></h3>
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$books->id)}}">{{ __('detail') }}<i class="fa fa-chevron-right"></i></a>
-                                <a class="beta-btn primary" onclick="BuyCart('')" data-toggle="modal" data-target="#product_view">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
-                            </h6>
-                            <div class="content">
-                                <div class="body">
-                                    <b>Tên sách:</b> {{$books->name}} <br>
-                                    <b>Tác giả:</b> {{$books->publisher}} <br>
-                                    <b>Thể loại:</b> {{$books->productType->name}} <br>
-                                    <b>Số trang:</b> {{$books->pagenumber}} <br>
-                                    <b>Phát hành:</b> {{$books->productCompany->name}} <br>
-                                    <a href="{{route('Read',$books->id)}}"><button class="btnR">Đọc ONLINE</button></a>
-                                </div>
-                            </div>
->>>>>>> b13064f1f68687fe2663ddedbb8664a7866b4eb3
 
                         <div class="content">
                             <div class="body">
