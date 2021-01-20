@@ -65,10 +65,6 @@
                                 <small>{{ Auth::user()->email }}</small>
                             </p>
                         </li>
-
-
-
-
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="text-center">
@@ -249,9 +245,7 @@
                     <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
-
             </li>
-
         </ul>
     </section>
 

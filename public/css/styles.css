@@ -55,6 +55,7 @@ h6 span {
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
+
 /* ANIMATION */
 
 @-webkit-keyframes bounce {
@@ -95,7 +96,10 @@ h6 span {
     width: 100%;
     text-decoration: none;
 }
+
+
 /*--------------------------------------btnRead--------------------------------------------*/
+
 .btnR {
     background: #ff9700;
     opacity: 1;
@@ -124,6 +128,8 @@ h6 span {
     width: 100%;
     text-decoration: none;
 }
+
+
 /*--------------------------------------Buynow---------------------------------------------*/
 
 .product_view .modal-dialog {
@@ -341,7 +347,6 @@ header .cart .quntity {
     line-height: 32px;
     margin-bottom: -9px;
     z-index: 101;
-
 }
 
 #menu ul {
@@ -349,7 +354,6 @@ header .cart .quntity {
     padding: 0;
     padding: 0 6px;
     float: left;
-
 }
 
 #menu>ul>li {
@@ -425,7 +429,6 @@ header .cart .quntity {
 #menu>ul>li>.sub_menu>.sub_menu_block>ul {
     min-width: 150px;
     display: table-cell;
-
 }
 
 #menu>ul>li ul+ul {
@@ -446,7 +449,6 @@ header .cart .quntity {
     white-space: nowrap;
     min-width: 120px;
     border-bottom: 1px solid #E1B356;
-
 }
 
 #menu>ul>li ul>li>a:hover,
@@ -469,7 +471,7 @@ header .cart .quntity {
     font-family: 'Source Sans Pro', Arial;
     font-weight: normal;
     float: left;
-    font-size: 13px;
+    font-size: 14px;
     margin-left: 10px;
 }
 
@@ -479,7 +481,7 @@ header .cart .quntity {
     padding-left: 5px;
     color: #900;
     font-family: 'Source Sans Pro', Arial;
-    font-size: 13px;
+    font-size: 14px;
     float: left;
 }
 
@@ -680,45 +682,50 @@ header .cart .quntity {
 
 
 /*-------------------------------single_product------------------------------------*/
+
 .single_product {
     border: 2px solid transparent;
     padding: 0px 0px 2px 0px;
 }
+
 .single_product {
-  --borderWidth: 1px;
-  background: #FFFFFF;
-  position: relative;
-  border-radius: var(--borderWidth);
-}
-.single_product:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 1s ease alternate infinite;
-  background-size: 300% 300%;
+    --borderWidth: 1px;
+    width: 190px;
+    background: #FFFFFF;
+    position: relative;
+    border-radius: var(--borderWidth);
 }
 
+.single_product:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 1s ease alternate infinite;
+    background-size: 300% 300%;
+}
 
 @keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-.single_product:hover{
+
+.single_product:hover {
     border: 1px;
 }
+
 
 /*-------------------------------------------------------------------------*/
 
@@ -1353,6 +1360,7 @@ li.com-title span {
 .recent-book-sec .item {
     text-align: left;
     margin-bottom: 45px;
+    height: 320px;
 }
 
 .recent-book-sec .item img {
@@ -1376,7 +1384,7 @@ li.com-title span {
 }
 
 .recent-book-sec .item h3 {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 22px;
     font-weight: 300;
     margin-bottom: 10px;
@@ -1384,7 +1392,7 @@ li.com-title span {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 180px;
+    width: 190px;
 }
 
 .recent-book-sec .item h3 a {
@@ -1393,7 +1401,7 @@ li.com-title span {
 }
 
 .recent-book-sec .item h6 {
-    font-size: 15px;
+    font-size: 22px;
 }
 
 .recent-book-sec .item h6 span {
@@ -1616,6 +1624,7 @@ li.com-title span {
     border-radius: 10px;
 }
 
+
 /*---------------------------------checkout---------------------------------*/
 
 .checkout {
@@ -1809,8 +1818,6 @@ li.com-title span {
 
 
 /*-----------------------------------------------------------------------------------*/
-
-
 
 
 /*----------------------------testimonial-sec-------------------------------------*/
