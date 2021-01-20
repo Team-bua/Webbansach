@@ -35,7 +35,7 @@
                             </span>
                             <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
                             </span>
-                            @endif 
+                            @endif
                             <br>
                             <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                                 <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
@@ -51,6 +51,8 @@
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                     <br>
                 </div>

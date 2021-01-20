@@ -25,7 +25,7 @@ class StoreRepository
     {
         $store = Store::find($request->id);
         $store->all_product_in_store = $request->input('total');
-        $store->stored_product = $request->input('qtyTon');
+        $store->stored_product += $request->input('total');
         $store->save();
         return json_encode((object) ['store' => $store]);
     }

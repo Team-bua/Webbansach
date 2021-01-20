@@ -151,41 +151,27 @@
                                 </div>
                                 <div class="rating-process">
                                     <div class="rating-right-part">
-                                        <i aria-hidden="true" class="fa fa-star"></i>
-                                        <i aria-hidden="true" class="fa fa-star"></i>
-                                        <i aria-hidden="true" class="fa fa-star"></i>
-                                        <i aria-hidden="true" class="fa fa-star"></i>
-                                        <i aria-hidden="true" class="fa fa-star"></i>
-                                        {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
+                                        5<i aria-hidden="true" class="fa fa-star"></i>                                       
+                                        Có {{$rating['ra_5']}} đánh giá 
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
-                                        </p>
+                                        4<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_4']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-
-                                        </p>
+                                        3<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_3']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-
-                                        </p>
+                                        2<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_2']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
-                                        <p><i aria-hidden="true" class="fa fa-star"></i>
-
-                                        </p>
+                                       1<i aria-hidden="true" class="fa fa-star"></i>
+                                       Có {{$rating['ra_1']}} đánh giá 
 
                                     </div>
                                 </div>

@@ -93,10 +93,10 @@
                     </ul>
 
                 </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 2%">
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">
-                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                            <span><i class="fa fa-shopping-cart" aria-hidden="true" ></i></span></a>
                         <span class="quntity">
                             @if (Session::has('cart'))
                             {{ Session('cart')->totalQty }}@else 0
