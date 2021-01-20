@@ -84,6 +84,8 @@
                     <li>
                         <span class="name">Giá Bán</span><span class="clm">:</span>
                         <span class="price">{{ number_format($product_detail->unit_price, 0, '', ',') }}VNĐ</span>
+                    </li>
+                    <li>
                         <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
                         <span class="price final">{{ number_format($product_detail->promotion_price, 0, '', ',') }}VNĐ</span>
 
@@ -99,9 +101,10 @@
                         }
 
                         ?>
-                        @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
-                            @endfor
-                            @endif
+                        @for($i=1; $i<=5; $i++) 
+                            <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
+                        @endfor
+                        @endif
                     </li>
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
@@ -149,11 +152,11 @@
                                 <div class="rating-process">
                                     <div class="rating-right-part">
                                         <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            <i aria-hidden="true" class="fa fa-star"></i>
-                                            {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        <i aria-hidden="true" class="fa fa-star"></i>
+                                        {{$rating['ra_5']}} <i class="fa fa-check-square"></i>
                                     </div>
                                     <div class="rating-right-part">
                                         <p><i aria-hidden="true" class="fa fa-star"></i>

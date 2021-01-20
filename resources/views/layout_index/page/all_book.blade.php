@@ -63,11 +63,12 @@
                         <br>
                         <h6><a href="javascript:"><i onclick="AddCart('{{$books->id}}')" class="fa fa-cart-arrow-down"></i></a> /
                             <a class="beta-btn primary" href="{{url('detail',$books->id)}}">{{ __("detail") }}<i class="fa fa-chevron-right"></i></a>
-                            <a class="beta-btn primary" href="@if(Auth::check()) {{route('checkout')}} @else {{route('login')}} @endif" onclick="BuyCart('{{$books->id}}')">{{ __("Buy now") }}<i class="fa fa-chevron-right"></i></a>
                         </h6>
                     </div>
+                
+                <br></div>
                 </div>
-                </div>
+
                 @endforeach
             </div>
             <div class="btn-sec">{{$product_all->links('vendor.pagination.bootstrap-4')}}</div>

@@ -65,10 +65,6 @@
                                 <small>{{ Auth::user()->email }}</small>
                             </p>
                         </li>
-
-
-
-
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="text-center">
@@ -135,6 +131,7 @@
             @csrf
             <div class="input-group">
                 <select class="form-control" name="select_companyid" id="select_companyid">
+                    <option value="" selected>Tất cả nhà xuất bản</option>
                     @foreach($companies as $cp)
                     <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
                     @endforeach
@@ -149,10 +146,10 @@
         @endcan
         <!-- Thống kê -->
         <ul class="sidebar-menu">
+            @if($company_id != '' && $company_id != '0')
             <li class="header ">
                 <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
             </li>
-            @if($company_id != '')
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
@@ -174,7 +171,7 @@
             </li>
             @endcan
             <!-- CRUD  sách -->
-            @if($company_id != '')
+            @if($company_id != '' && $company_id != '0')
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
                     <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
@@ -212,7 +209,6 @@
                     <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
                 </ul>
             </li>
-            @endif
             @can('admin')
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> THIẾT LẬP</span>
@@ -230,6 +226,8 @@
                     <i style="color:#8b7b61" class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
                     <span>{{ __('news') }}</span>
                 </a>
+            @endcan
+            @endif
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
             </li>
@@ -240,7 +238,6 @@
                     <span style="font-size:16px ;"> {{ __('acc') }}</span>
 
                 </a>
-                @endcan
             </li>
             <li class="treeview">
                 <a href="{{ url('logout') }}">
@@ -248,9 +245,7 @@
                     <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
-
             </li>
-
         </ul>
     </section>
 

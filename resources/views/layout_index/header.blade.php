@@ -17,14 +17,10 @@
                    
                             <a href="{!! route('user.language', ['en']) !!}">
                             <img src="{{ asset('images/icon/tienganh.png') }}" height="20px" width="22px">
-                            </a>
-                        
-                      
+                            </a>                     
                             <a href="{!! route('user.language', ['vi']) !!}" >
-                                <img src="{{ asset('images/icon/tiengviet.png') }}" height="18px" width="22px">
-                            </a>
-                     
-               
+                                <img src="{{ asset('images/icon/tiengviet.png') }}" height="20px" width="22px">
+                            </a>   
                 </div>
             </div>
         </div>
@@ -97,7 +93,7 @@
                     </ul>
 
                 </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 4%">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
