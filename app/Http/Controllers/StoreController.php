@@ -25,6 +25,7 @@ class StoreController extends Controller
     public function index(Request $request)
     {
         $stores = $this->repository->getAll();
+        //$stored_in_day = $this->repository->getStoredInDay();
         return view('layout_admin.stores.stores_list', compact('stores'));
     }
 
@@ -33,9 +34,10 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function updateStoredInDay()
     {
-        //
+        $history_stored = $this->repository->updateStoredInDay();
+        return redirect('store');
     }
 
     /**

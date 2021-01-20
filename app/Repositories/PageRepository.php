@@ -32,7 +32,8 @@ class PageRepository
      */
     public function getAll()
     {
-        return User::orderBy('created_at', 'desc')->paginate(10);
+        $company_id= GetSession::getCompanyId();
+        return User::where('id_company', $company_id)->orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function allBookAdm(){
