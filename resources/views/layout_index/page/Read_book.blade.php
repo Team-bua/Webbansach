@@ -66,11 +66,14 @@
     <div role="toolbar" id="toolbar">
       <div id="pager">
         <button data-pager="prev">Trang Trước</button>
-        <button data-pager="next" onclick="addQuantity()">Trang Sau</button>
+        <button data-pager="next" onclick="addQuantity()" id="btPlay">Trang Sau</button>
+      </div>
+        <div id="page-mode">
+        <label><input type="hidden" min="1" max="8" disabled=""></label>
       </div>
     </div>
     <div id="viewport-container">
-      <div role="main" id="viewport"></div>
+      <div role="main" id="viewport" ></div>
     </div>
   </div>
 </div>
@@ -261,6 +264,7 @@
 <script>
   initPDFViewer('{{asset("book_pdf/$pdf->link")}}');
 </script>
+
 @if(Auth::check())
 <script type="text/javascript">
   var toGet = 0;
@@ -279,6 +283,7 @@
     }
   }
 </script>
+
 @else
 <script type="text/javascript">
   var toGet = 0;

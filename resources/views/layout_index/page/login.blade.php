@@ -32,10 +32,12 @@
                         <h5>Không có Tài Khoản / <a href="{{route('signup')}}">Đăng Ký Tại Đây</a></h5>
                     </div>
                 </div>
+            </form>
         </div>
     </div>
-    </form>
+    
     </div>
     </div>
 </section>
+
 @endsection

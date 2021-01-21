@@ -129,7 +129,6 @@ function myFunction() {
     @yield('script')
     @yield('js')
     @yield('show')
-    @yield('music')
     @yield('speak')
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
 </body>

@@ -39,8 +39,9 @@
     <div class="main-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div id="menu">
-                    <ul>
+                    <ul class="navbar-nav ml-auto">
                         <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('catelory') }}</a>
                             <div class="sub_menu">
                                 <div class="bubble"></div>
@@ -93,6 +94,7 @@
                     </ul>
 
                 </div>
+            </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 2%">
                     <div class="cart my-2 my-lg-0">
                         <a href="{{ route('cart') }}">

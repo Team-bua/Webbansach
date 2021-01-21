@@ -1,6 +1,6 @@
 @extends('layout_index.master')
 @section('content')
-    <style type="text/css">
+      <style type="text/css">
         .clear {
             clear: both;
         }
@@ -238,6 +238,7 @@
             font-weight: bold;
             text-align: right;
             line-height: normal;
+
         }
 
         #column div.imgholder {
@@ -257,16 +258,15 @@
         }
 
     </style>
-         @if($content_fist)  
+    @if($content_fist)  
     <div class="wrapper col4">
-        
         <div id="container">
             <h1>Tin tức liên quan</h1>
             <div id="content">
                
                 <div id="featured_post">
                     
-                    <img style="width:620px;height:340px;" src="{{ asset('images/news/' . $content_fist->image) }}">
+                    <a href="{{ route('newsdetail', [$content_fist['id']]) }}"><img style="width:620px;height:340px;" src="{{ asset('images/news/' . $content_fist->image) }}"></a>
                     <h3>  {!! $content_fist->name !!}</h3>
 
                 </div>
@@ -275,7 +275,7 @@
                     @foreach ($content as $con)
                         <ul>
                             <li>
-                                <img style="width:190px;height:180px;" src="{{ asset('images/news/' . $con->image) }}">
+                                <a href="{{ route('newsdetail', [$con['id']]) }}"><img style="width:190px;height:180px;" src="{{ asset('images/news/' . $con->image) }}"></a>
                                 <p class="ten"><b>{{ $con->name }}</b></p>
                                 <a href="{{ route('newsdetail', [$con['id']]) }}">
                                     <p class="readmore">Xem thêm &raquo;</p>
@@ -290,24 +290,25 @@
             <div id="column">
                 @foreach ($content as $con)
                     <ul id="latestnews">
-                        <li> <img style="width:80px;height:80px;" src="{{ asset('images/news/' . $con->image) }}">
-                            <p><strong><a href="#"></a></strong></p>
+                        <li> 
+                            <a href="{{ route('newsdetail', [$con['id']]) }}"><img style="width:80px;height:80px;" src="{{ asset('images/news/' . $con->image) }}"></a>
+                            <p style=""><strong><a href="{{ route('newsdetail', [$con['id']]) }}"> {{ $con->name }}</a></strong></p>
                         </li>
                     </ul>
                 @endforeach
                 
             </div>
-            @else
-            <div id="container">
+          
+              @else
+        </div>
+          <div id="container">
                 Không có tin tức
             </div>
             <br class="clear" />
         </div>
         <br class="clear" />
-        
-    </div>
-   
         @endif
+    </div>
    
 
 
