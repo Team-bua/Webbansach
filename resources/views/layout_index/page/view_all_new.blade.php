@@ -35,6 +35,9 @@
                         <div class="single_product">
                             <div class="item">
                                 <div class="new">new</div>
+                                @if($books->store && $books->store->stored_product == 0)
+                                <div class="Out">Hết Hàng</div>
+                                @endif
                                 <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $books->name }}</a></h3>
                                 @if($books->promotion_price == 0)

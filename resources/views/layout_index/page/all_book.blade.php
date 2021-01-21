@@ -2,7 +2,7 @@
 @section('content')
 <section class="deltai">
     <div class="container">
-        <div class="sidebar-widget tag" >
+        <div class="sidebar-widget tag">
             <form action="" id="sort_by" name="sort_by">
                 @csrf
                 <h2 class="title">Lựa chọn :</h2>
@@ -38,7 +38,9 @@
                                 @else
                                 <span class="sale">new</span>
                                 @endif
-
+                                @if($books->store && $books->store->stored_product == 0)
+                                <div class="Out">Hết Hàng</div>
+                                @endif
                                 <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $books->name }}</a></h3>
                                 @if($books->promotion_price == 0)

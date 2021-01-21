@@ -41,12 +41,12 @@ class PageController extends Controller
         $this->repository = $repository;
     }
 
-    public function getIndex(Request $request)
+    public function getIndex()
     {
         $slide = $this->repository->getSlide();
         $product_hightlights = $this->repository->getAllproductHighlights();
         $product_sale = $this->repository->getAllProductSale();
-        $product_new = $this->repository->getAllproductNew($request);
+        $product_new = $this->repository->getAllproductNew();
         $product_type = $this->repository->getProductType();
         return view('layout_index.index',compact('product_new', 'product_type', 
                                                 'slide', 'product_sale', 'product_hightlights')
@@ -157,7 +157,7 @@ class PageController extends Controller
     public function getSearch(Request $req)
     {
         $search = $this->repository->getSearch($req);
-        return view('layout_index.page.search', compact('search','store'));
+        return view('layout_index.page.search', compact('search'));
     }
 
     public function postLogout()
