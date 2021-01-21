@@ -5,12 +5,10 @@
         <div class="sidebar-widget tag">
 
             <h2 class="title">Yêu Cầu Lựa Chọn</h2>
-            <a href="#">sản phẩm mới</a>
-            <a href="#">A đến Z</a>
+            <a href="#">Dưới 50,000 VNĐ</a>
+            <a href="#">50,000 - 100,000 VNĐ</a>
             <a href="#">Giá Thấp Đến Cao</a>
             <a href="#">Giá Cao Đến Thấp</a>
-            <a href="#">Giảm Giá Cao Đến Thấp</a>
-            <a href="#">Giảm Giá Thấp Đến Cao</a>
 
         </div>
     </div>

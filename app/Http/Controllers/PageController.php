@@ -100,9 +100,9 @@ class PageController extends Controller
     }
     // xem tất cả sach theo khuyến mãi , nổi bật
 
-    public function AllBook()
+    public function AllBook(Request $request)
     {
-        $product_all = $this->repository->getAllproductbook();
+        $product_all = $this->repository->getAllproductbook($request);
         $product_type = $this->repository->getProductType();
         return view('layout_index.page.all_book', compact('product_all', 'product_type'));
     }

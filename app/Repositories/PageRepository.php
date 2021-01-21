@@ -20,8 +20,6 @@ use App\Models\News;
 use App\Models\Store;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 
 class PageRepository
 {
@@ -41,9 +39,16 @@ class PageRepository
         return Product::where('id_company', $company_id)->get();
     }
 
-    public function getAllproductbook()
+    public function getAllproductbook($request)
     {
-        return  Product::orderBy('created_at', 'desc')->paginate(20);
+        if($request->price){
+            $price = $request->price;
+            switch($price){
+
+            }
+        }
+        $product = Product::orderBy('created_at', 'desc')->paginate(20);
+        return $product;
     }
 
     public function getAllCompany()
