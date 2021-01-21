@@ -46,7 +46,7 @@ class UserController extends Controller
             ->where('username', $username)
             ->orderBy('created_at', 'desc')->paginate(10);
         }
-        elseif($company_id != '' && Auth::user()->id_role == 1)
+        elseif($company_id != '' && $company_id != 0 && Auth::user()->id_role == 1)
         {
             $user = User::where('id_company', $company_id)
             ->orderBy('created_at', 'desc')->paginate(10);     
