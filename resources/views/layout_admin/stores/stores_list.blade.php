@@ -24,10 +24,10 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Tên sản phẩm </th>
-                                    <th>Sản phâm mỗi ngày</th>
-                                    <th>Sản phẩm tồn kho</th>
-                                    <th>Sản phẩm bán ra</th>
+                                    <th>Tên sách </th>
+                                    <th>Tổng sách nhập trong ngày</th>
+                                    <th>Tổng sách tồn kho</th>
+                                    <th>Tổng sách bán ra</th>
 
                                     <th>Tùy chọn</th>
                                 </tr>
@@ -67,14 +67,12 @@
                                         <input type="hidden" name="id" id="id" />
                                         <div class="form-group">
                                             <label for="name">
-                                                <h4>Sản phẩm trong ngày: </h4>
+                                                <h4>Tổng sách nhập trong ngày: </h4>
                                             </label>
                                             <input style="width:250px" type="text" id="total" name="total" class="form-control">
                                         </div>
                                         <button style="border-color: #4a4235;background-color:#4a4235" type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
-
                                 </div>
-
                                 </form>
                             </div>
 

@@ -236,7 +236,7 @@ header .main-menu {
 }
 
 header .main-menu .navbar {
-    padding-left: 10px;
+    padding-left: 0px;
 }
 
 header .main-menu .navbar-brand {
@@ -1468,7 +1468,7 @@ li.com-title span {
 }
 
 #slide-wrapper {
-    width: 1100px;
+    width: 1110px;
     height: 400px;
     position: relative;
     float: right;
@@ -1481,7 +1481,7 @@ li.com-title span {
 }
 
 #slide-wrapper ul {
-    width: 1100px;
+    width: 1110px;
     height: 400px;
 }
 
