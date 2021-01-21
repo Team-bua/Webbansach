@@ -1154,7 +1154,7 @@ ul {
 .deltai {
     float: right;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: -15px;
 }
 
 #deltai-wrapper {

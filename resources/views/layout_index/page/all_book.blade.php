@@ -2,17 +2,17 @@
 @section('content')
 <section class="deltai">
     <div class="container">
-        <div class="sidebar-widget tag">
-
-            <h2 class="title">Yêu Cầu Lựa Chọn</h2>
-            <a href="#">Dưới 50,000 VNĐ</a>
-            <a href="#">50,000 - 100,000 VNĐ</a>
-            <a href="#">Giá Thấp Đến Cao</a>
-            <a href="#">Giá Cao Đến Thấp</a>
-
+        <div class="sidebar-widget tag" >
+            <form action="" id="sort_by" name="sort_by">
+                @csrf
+                <h2 class="title">Lựa chọn :</h2>
+                <a href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>
+                <a href="{{Request::url()}}?sort_by=tang_dan">Giá tăng dần</a>
+                <a href="{{Request::url()}}?sort_by=duoi_70">Dưới 70,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=70-100">Từ 70,000 - 100,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=tren_100">Trên 100,000 VNĐ</a>
+            </form>
         </div>
-    </div>
-    </div>
     </div>
 </section>
 
@@ -25,6 +25,7 @@
             <span class="fa fa-search"></span>
         </form>
         <hr>
+
         <div id="myTable">
             <div class="recent-book-sec">
                 <div class="row" id="load" style="position: relative;">
@@ -36,7 +37,7 @@
                                 <div class="new">sale</div>
                                 @else
                                 <span class="sale">new</span>
-                              @endif
+                                @endif
 
                                 <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
                                 <h3><a href="#">{{ $books->name }}</a></h3>
@@ -68,7 +69,7 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="btn-sec">{{$product_all->links('vendor.pagination.bootstrap-4')}}</div>
+                <div class="btn-sec">{{$product_all->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>

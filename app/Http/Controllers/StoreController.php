@@ -34,11 +34,6 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function updateStoredInDay()
-    // {
-    //     $history_stored = $this->repository->updateStoredInDay();
-    //     return redirect('store');
-    // }
 
     /**
      * Store a newly created resource in storage.

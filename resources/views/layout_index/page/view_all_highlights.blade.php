@@ -3,15 +3,15 @@
 <section class="deltai">
     <div class="container">
         <div class="sidebar-widget tag">
-
-            <h2 class="title">Yêu Cầu Lựa Chọn</h2>
-            <a href="#">sản phẩm mới</a>
-            <a href="#">A đến Z</a>
-            <a href="#">Giá Thấp Đến Cao</a>
-            <a href="#">Giá Cao Đến Thấp</a>
-            <a href="#">Giảm Giá Cao Đến Thấp</a>
-            <a href="#">Giảm Giá Thấp Đến Cao</a>
-
+            <form action="" id="sort_by" name="sort_by">
+                @csrf
+                <h2 class="title">Lựa chọn :</h2>
+                <a href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>
+                <a href="{{Request::url()}}?sort_by=tang_dan">Giá tăng dần</a>
+                <a href="{{Request::url()}}?sort_by=duoi_70">Dưới 70,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=70-100">Từ 70,000 - 100,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=tren_100">Trên 100,000 VNĐ</a>
+            </form>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="btn-sec">{{$product_highlights->links('vendor.pagination.bootstrap-4')}}</div>
+                <div class="btn-sec">{{$product_highlights->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
             </div>
         </div>
     </div>
