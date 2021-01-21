@@ -76,25 +76,25 @@ class PageRepository
     }
     // sách hoạt động
 
-    public function getAllproductNew()
+    public function getAllproductNew($request)
     {
         if (isset($_GET['sort_by'])) {
             $sort_by = $_GET['sort_by'];
             if ($sort_by == 'giam_dan') {
-                $product = Product::where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+                $product = Product::where('status', 1)->orderBy('unit_price', 'DESC')->with('store')->paginate(20);
             } elseif ($sort_by == 'tang_dan') {
-                $product = Product::where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+                $product = Product::where('status', 1)->orderBy('unit_price', 'ASC')->with('store')->paginate(20);
             } elseif ($sort_by == 'duoi_70') {
-                $product = Product::where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+                $product = Product::where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->with('store')->paginate(20);
             } elseif ($sort_by == '70-100') {
-                $product = Product::where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+                $product = Product::where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->with('store')->paginate(20);
             } elseif ($sort_by == 'tren_100') {
-                $product = Product::where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+                $product = Product::where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->with('store')->paginate(20);
             }
         } else {
             $product = Product::orderBy('created_at', 'desc')
                 ->where('status', 1)
-                ->latest()
+                ->with('store')
                 ->paginate(10);
         }
         return $product;

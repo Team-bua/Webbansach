@@ -70,9 +70,6 @@
         <div id="page-mode">
         <label><input type="hidden" min="1" max="8" disabled=""></label>
       </div>
-      <div id="page-mode">
-        <label><input type="hidden" min="1" max="8" disabled=""></label>
-      </div>
     </div>
     <div id="viewport-container">
       <div role="main" id="viewport" ></div>

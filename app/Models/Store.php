@@ -11,7 +11,7 @@ class Store extends Model
 
     protected $table = "store";
 
-    protected $fillable = ['all_product_in_store','stored_product','sold_product'];
+    protected $fillable = ['all_product_in_store','stored_product','sold_product', 'id_product'];
 
     public function productinbill()
     {

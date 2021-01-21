@@ -26,7 +26,7 @@
                     </div>&nbsp;
                     @if (Auth::check())
                     @if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2)
-                    <div class="dropdown" style="float: right;margin: 4%;">
+                    <div class="dropdown" style="float: right;">
                         <button class="dropbtn"><i class="fa fa-user-circle"></i>&nbsp;{{ Auth::user()->full_name }} </button>
                         <div class="dropdown-content">
                             <a href="{{ route('admin') }}">{{ __('Information') }}</a>
