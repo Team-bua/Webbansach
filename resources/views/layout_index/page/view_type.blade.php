@@ -3,15 +3,15 @@
 <section class="deltai">
     <div class="container">
         <div class="sidebar-widget tag">
-
-            <h2 class="title">{{ __("Request To Choose") }}</h2>
-            <a href="#">{{ __("New Product") }}</a>
-            <a href="#">{{ __("A To Z") }}</a>
-            <a href="#">{{ __("Price Low To High") }}</a>
-            <a href="#">{{ __("Price High To Low") }}</a>
-            <a href="#">{{ __("Discounts High To Low") }}</a>
-            <a href="#">{{ __("Discount From Low To High") }}</a>
-
+            <form action="" id="sort_by" name="sort_by">
+                @csrf
+                <h2 class="title">Lựa chọn :</h2>
+                <a href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>
+                <a href="{{Request::url()}}?sort_by=tang_dan">Giá tăng dần</a>
+                <a href="{{Request::url()}}?sort_by=duoi_70">Dưới 70,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=70-100">Từ 70,000 - 100,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=tren_100">Trên 100,000 VNĐ</a>
+            </form>
         </div>
     </div>
 
@@ -72,7 +72,7 @@
                     @endforeach
                 </div>
                 <div class="btn-sec">
-                    <div class="btn-sec">{{$product_types->links('vendor.pagination.bootstrap-4')}}</div>
+                    <div class="btn-sec">{{$product_types->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
                 </div>
             </div>
         </div>

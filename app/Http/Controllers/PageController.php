@@ -83,7 +83,6 @@ class PageController extends Controller
     {
         $product_new = $this->repository->getAllproductNew();
         $product_type = $this->repository->getProductType();
-
         return view('layout_index.page.view_all_new', compact('product_type', 'product_new'));
     }
     public function getAllSale()

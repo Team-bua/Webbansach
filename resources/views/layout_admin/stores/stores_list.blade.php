@@ -5,7 +5,6 @@
     <section class="content-header">
         <h1>
             Quản lý Kho Hàng
-
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Hệ thống</a></li>
@@ -25,10 +24,10 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Tên sản phẩm </th>
-                                    <th>Tổng sản phẩm</th>
-                                    <th>Số lượng sản phẩm tồn kho</th>
-                                    <th>Số lượng sản phẩm bán ra</th>
+                                    <th>Tên sách </th>
+                                    <th>Tổng sách nhập trong ngày</th>
+                                    <th>Tổng sách tồn kho</th>
+                                    <th>Tổng sách bán ra</th>
 
                                     <th>Tùy chọn</th>
                                 </tr>
@@ -46,7 +45,7 @@
                                                 <button style="float:right" class="btn btn-warning btn-sm" id="edit-{{ $st->id }}" onclick="editStore(this)"><i class="fa fa-pencil"></i></button>
                                             </div>
                                             <div class="btn-group mr-2" role="group">
-                                            <button class="btn btn-danger delStore btn-sm   " data-url="{{route('store_del',$st->id)}}"> Xóa </button>
+                                                <button class="btn btn-danger delStore btn-sm   " data-url="{{route('store_del',$st->id)}}"> Xóa </button>
                                             </div>
                                         </div>
                                     </td>
@@ -68,14 +67,12 @@
                                         <input type="hidden" name="id" id="id" />
                                         <div class="form-group">
                                             <label for="name">
-                                                <h4>Tổng sản phẩm: </h4>
+                                                <h4>Tổng sách nhập trong ngày: </h4>
                                             </label>
                                             <input style="width:250px" type="text" id="total" name="total" class="form-control">
                                         </div>
                                         <button style="border-color: #4a4235;background-color:#4a4235" type="submit" id="editsubmit " class="btn btn-success"> Cập nhật </button>
-
                                 </div>
-
                                 </form>
                             </div>
 
@@ -88,11 +85,11 @@
 
         </div>
     </section><!-- /.content -->
-
+</div>
     @endsection
     @section('js')
     <!-- SlimScroll -->
-    
+
     <script type="text/javascript">
         $('#example1').dataTable({
             "bPaginate": true,
@@ -128,66 +125,64 @@
             });
         }
         $('#bookEditForm').submit(function(e) {
-                e.preventDefault();
-                let id = $("#id").val();
-                let total = $("#total").val();
-                let qtyTon = $("#qtyTon").val();
-                $.ajax({
-                    url: "{{ route('store_update') }}",
-                    type: "POST",
-                    data: {
-                        id: id,
-                        total: total,
-                        qtyTon: qtyTon
-                    },
-                    success: function(response) {
-                        let store_update = JSON.parse(response)['store'];
-                        $("#bookeditmodal").modal('hide');
-                        $("#total-" + store_update['id']).html(store_update['all_product_in_store']);
-                        $("#qtyTon-" + store_update['id']).html(store_update['stored_product']);
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Cập nhật thành công',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                });
+            e.preventDefault();
+            let id = $("#id").val();
+            let total = $("#total").val();
+            $.ajax({
+                url: "{{ route('store_update') }}",
+                type: "POST",
+                data: {
+                    id: id,
+                    total: total,
+                },
+                success: function(response) {
+                    let store_update = JSON.parse(response)['store'];
+                    $("#bookeditmodal").modal('hide');
+                    $("#total-" + store_update['id']).html(store_update['all_product_in_store']);
+                    $("#qtyTon-" + store_update['id']).html(store_update['stored_product']);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cập nhật thành công',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             });
-    $(document).on('click', '.delStore', DelProduct);
-
-    function DelProduct(e) {
-        e.preventDefault();
-        let urlRequest = $(this).data('url');
-        let that = $(this);
-        Swal.fire({
-            title: 'Xóa sản phẩm',
-            text: "Bạn có muốn xóa không!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Có, muốn xóa!',
-            cancelButtonText: 'Không xóa',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    url: urlRequest,
-                    type: 'GET',
-                    success: function(data) {
-                        if (data.code == 200) {
-                            that.parent().parent().parent().parent().remove();
-                            Swal.fire(
-                                'Xóa!',
-                                'Xóa thành công.',
-                                'success'
-                            )
-                        }
-                    }
-                });
-            }
         });
-    }
+        $(document).on('click', '.delStore', DelProduct);
+
+        function DelProduct(e) {
+            e.preventDefault();
+            let urlRequest = $(this).data('url');
+            let that = $(this);
+            Swal.fire({
+                title: 'Xóa sản phẩm',
+                text: "Bạn có muốn xóa không!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Có, muốn xóa!',
+                cancelButtonText: 'Không xóa',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: urlRequest,
+                        type: 'GET',
+                        success: function(data) {
+                            if (data.code == 200) {
+                                that.parent().parent().parent().parent().remove();
+                                Swal.fire(
+                                    'Xóa!',
+                                    'Xóa thành công.',
+                                    'success'
+                                )
+                            }
+                        }
+                    });
+                }
+            });
+        }
     </script>
 
     @stop

@@ -34,11 +34,6 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function updateStoredInDay()
-    {
-        $history_stored = $this->repository->updateStoredInDay();
-        return redirect('store');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -103,7 +98,7 @@ class StoreController extends Controller
 
     public function getEdit(Request $request)
     {   
-        $store = Store::find($request->id);         
+        $store = Store::find($request->id);     
         return json_encode((object)['store'=>$store]);
     }
 }

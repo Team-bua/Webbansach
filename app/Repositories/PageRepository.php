@@ -20,8 +20,6 @@ use App\Models\News;
 use App\Models\Store;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 
 class PageRepository
 {
@@ -32,66 +30,131 @@ class PageRepository
      */
     public function getAll()
     {
-        $company_id= GetSession::getCompanyId();
+        $company_id = GetSession::getCompanyId();
         return User::where('id_company', $company_id)->orderBy('created_at', 'desc')->paginate(10);
     }
 
-    public function allBookAdm(){
-        $company_id= GetSession::getCompanyId();
+    public function allBookAdm()
+    {
+        $company_id = GetSession::getCompanyId();
         return Product::where('id_company', $company_id)->get();
     }
 
     public function getAllproductbook()
     {
-        return  Product::orderBy('created_at', 'desc')->paginate(20);
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::orderBy('created_at', 'desc')->paginate(20);
+        }
+        return $product;
     }
 
     public function getAllCompany()
     {
-        $company_id= GetSession::getCompanyId();
+        $company_id = GetSession::getCompanyId();
         return  Company::where('id', $company_id)->value('name');
     }
 
     public function getAllstore()
     {
-        $company_id= GetSession::getCompanyId();
+        $company_id = GetSession::getCompanyId();
         return  Store::join('product', 'store.id_product', '=', 'product.id')
-                            ->where('product.id_company', $company_id)
-                            ->sum('store.stored_product');
+            ->where('product.id_company', $company_id)
+            ->sum('store.stored_product');
     }
     // sách hoạt động
 
     public function getAllproductNew()
     {
-        return Product::orderBy('created_at', 'desc')
-            ->where('status', 1)
-            ->latest()
-            ->paginate(10);
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::orderBy('created_at', 'desc')
+                ->where('status', 1)
+                ->latest()
+                ->paginate(10);
+        }
+        return $product;
     }
     // sach mới
 
     public function getBillByCompanyId()
     {
-        $company_id= GetSession::getCompanyId();
+        $company_id = GetSession::getCompanyId();
         return  BillDetail::join('product', 'bill_detail.id_product', '=', 'product.id')
-                    ->where('product.id_company', $company_id)
-                    ->count('bill_detail.id');
+            ->where('product.id_company', $company_id)
+            ->count('bill_detail.id');
     }
     // sach mới
 
     public function getAllProductSale()
     {
-        return  Product::where('promotion_price', '<>', 0)->where('status', 1)
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::where('promotion_price', '<>', 0)->where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::where('promotion_price', '<>', 0)->where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('promotion_price', '<>', 0)->where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::where('promotion_price', '<>', 0)->where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('promotion_price', '<>', 0)->where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::where('promotion_price', '<>', 0)->where('status', 1)
             ->latest()
             ->paginate(10);
+        }
+        return $product;
     }
     // sách giảm giá
 
     public function getAllproductHighlights()
     {
-        return  Product::where('new', 1)->where('status', 1)
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::where('new', 1)->where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::where('new', 1)->where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('new', 1)->where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::where('new', 1)->where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('new', 1)->where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::where('new', 1)->where('status', 1)
             ->latest()
             ->paginate(10);
+        }
+        return $product;
     }
     //sách nổi bật
 
@@ -146,22 +209,19 @@ class PageRepository
 
     public function getRating($id)
     {
-        $ra_5 = Rating::where('ra_number',5)->where('id_product', $id)->count();
-        $ra_4 = Rating::where('ra_number',4)->where('id_product', $id)->count();
-        $ra_3 = Rating::where('ra_number',3)->where('id_product', $id)->count();
-        $ra_2 = Rating::where('ra_number',2)->where('id_product', $id)->count();
-        $ra_1 = Rating::where('ra_number',1)->where('id_product', $id)->count();
+        $ra_5 = Rating::where('ra_number', 5)->where('id_product', $id)->count();
+        $ra_4 = Rating::where('ra_number', 4)->where('id_product', $id)->count();
+        $ra_3 = Rating::where('ra_number', 3)->where('id_product', $id)->count();
+        $ra_2 = Rating::where('ra_number', 2)->where('id_product', $id)->count();
+        $ra_1 = Rating::where('ra_number', 1)->where('id_product', $id)->count();
         $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
         $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
-        return ['ra_date'=>$ra_date, 
-                'product'=>$product, 
-                'ra_5'=>$ra_5,
-                'ra_4'=>$ra_4, 
-                'ra_3'=>$ra_3, 
-                'ra_2'=>$ra_2, 
-                'ra_1'=>$ra_1,
-                'count_ra'=>$count_ra];
+        return [
+            'ra_date' => $ra_date, 'product' => $product, 'ra_5' => $ra_5,
+            'ra_4' => $ra_4, 'ra_3' => $ra_3, 'ra_2' => $ra_2, 'ra_1' => $ra_1,
+            'count_ra' => $count_ra
+        ];
     }
 
     public function postRating($id, $request)
@@ -181,12 +241,44 @@ class PageRepository
 
     public function getProductTypeID($id)
     {
-        return Product::where('id_type', $id)->where('status', 1)->paginate(10);
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::where('id_type', $id)->where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::where('id_type', $id)->where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('id_type', $id)->where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::where('id_type', $id)->where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('id_type', $id)->where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::where('id_type', $id)->where('status', 1)->paginate(10);
+        }
+        return $product;
     }
 
     public function getProductCompanyID($id)
     {
-        return Product::where('id_company', $id)->where('status', 1)->paginate(10);
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if ($sort_by == 'giam_dan') {
+                $product = Product::where('id_company', $id)->where('status', 1)->orderBy('unit_price', 'DESC')->paginate(20);
+            } elseif ($sort_by == 'tang_dan') {
+                $product = Product::where('id_company', $id)->where('status', 1)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'duoi_70') {
+                $product = Product::where('id_company', $id)->where('status', 1)->where('unit_price', '<=', 70000)->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == '70-100') {
+                $product = Product::where('id_company', $id)->where('status', 1)->whereBetween('unit_price', [70000, 100000])->orderBy('unit_price', 'ASC')->paginate(20);
+            } elseif ($sort_by == 'tren_100') {
+                $product = Product::where('id_company', $id)->where('status', 1)->where('unit_price', '>=', 100000)->orderBy('unit_price', 'ASC')->paginate(20);
+            }
+        } else {
+            $product = Product::where('id_company', $id)->where('status', 1)->paginate(10);
+        }
+        return $product;
     }
 
     public function getSlide()
@@ -197,19 +289,19 @@ class PageRepository
     public function getAddCart(Request $request, $id)
     {
         $store = Store::where('id_product', $request->id)->first();
-        if($store && $store->stored_product != 0){
+        if ($store && $store->stored_product != 0) {
             $product = Product::find($id);
             $oldcart = Session('cart') ? Session::get('cart') : null;
             $cart = new Cart($oldcart);
             $cart->add($product, $id);
             $request->session()->put('cart', $cart);
             return response()->json(array('cart' => $cart));
-        }else{
+        } else {
             return response()->json([
                 'code' => 500,
                 'message' => 'error',
             ], 500);
-        }        
+        }
     }
 
     public function postCart(Request $request)
@@ -336,5 +428,4 @@ class PageRepository
     {
         return News::orderBy('id', 'desc')->where('status', 1)->first();
     }
-
 }
