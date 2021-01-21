@@ -30,10 +30,10 @@
                                 <tr style=" font-size:18px;">
                                     <th> Tên người dùng</th>
                                     <th>Tên tài khoản</th>
-                                    @if(isset( $users->companys->name))
                                     <th>Thuộc</th>
-                                    @endif
+                                    @if(isset($users->companys->name))
                                     <th>Quyền</th>
+                                    @endif
                                     <th>Tùy chọn</th>
                                 </tr>
                             </thead>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>{{ $users->full_name }}</td>
                                     <td>{{ $users->username }}</td>
-                                    @if(isset( $users->companys->name))
+                                    @if(isset($users->companys->name))
                                     <td>{{ $users->companys->name }}</td>
                                     @endif
                                     <td>{{ $users->role->display_name }}</td>

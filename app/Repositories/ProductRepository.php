@@ -98,7 +98,7 @@ class ProductRepository
        $product->image=$image;
        $product->imagedetail=$imgdetail;
        $product->save();
-       
+       return redirect(route('book.index'));
     }
 
     /**

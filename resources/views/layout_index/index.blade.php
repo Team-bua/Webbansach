@@ -25,7 +25,8 @@
                 <div class="col-md-3">
                     <div class="single_product">
                         <div class="item">
-                            <div class="new">new</div>
+                            <div class="new">new </div>
+                             <div class="Out">Hết Hàng</div>
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
                             @if($pro->promotion_price == 0)
@@ -125,6 +126,7 @@
                         <div class="item">
                             @if ($pro->new == 1)
                             <div class="new">Hot</div>
+
                             @endif
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <div class="content">

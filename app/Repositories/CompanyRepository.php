@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Company;
+use App\Services\GetSession;
 use Illuminate\Http\Request;
 
 class CompanyRepository
@@ -14,7 +15,16 @@ class CompanyRepository
      */
     public function getAll()
     {   
-        return Company::orderBy('created_at', 'desc')->paginate(10);
+        $company_id= GetSession::getCompanyId();
+        if ($company_id > 0) 
+        {
+            $company = Company::where('id', $company_id)->get();
+        }
+        else
+        {
+            $company = Company::orderBy('created_at', 'desc')->paginate(10);
+        }
+        return $company;
     }
 
     public function getcompanies($id)

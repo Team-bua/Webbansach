@@ -92,6 +92,7 @@
     @endsection
     @section('js')
     <!-- SlimScroll -->
+    
     <script type="text/javascript">
         $('#example1').dataTable({
             "bPaginate": true,

@@ -15,6 +15,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\MemberController;
 
 
 
@@ -110,9 +111,9 @@ Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD thong tin user
-Route::resource('user',UserController::class)->middleware('sessionuser');
-Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole')->middleware('sessionuser');
-Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole')->middleware('sessionuser');
+Route::resource('user',UserController::class)->middleware('usercheck');
+Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole')->middleware('usercheck');
+Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole')->middleware('usercheck');
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class)->middleware('sessionuser');
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
@@ -131,7 +132,7 @@ Route::resource('slide',SlideController::class)->middleware('sessionuser');
 Route::get('slide_on/{id}',[SlideController::class,'getOn'])->name('slide_on');
 Route::get('slide_off/{id}',[SlideController::class,'getOff'])->name('slide_off');
 ///------>Trang dành cho nhà xuất bản
-Route::resource('publisher',PublisherController::class);
+Route::resource('member',MemberController::class);
 
 Route::resource('companies',CompanyController::class);
 Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->name('product_company');
@@ -139,6 +140,7 @@ Route::get('product_company/{type}',[PageController::class,'getMenuCompany'])->n
 Route::post('/slidebar/getcompany', [SessionController::class, 'getCompanyIdSession'])->name('slidebar_companyid');
 ///------>Trang kho
 Route::resource('store', StoreController::class)->middleware('sessionuser');
+Route::post('store/historystored',[StoreController::class,'updateStoredInDay'])->name('history_stored');
 Route::post('store_edit/edit',[StoreController::class,'getEdit'])->name('store_edit')->middleware('sessionuser');
 Route::post('store_update',[StoreController::class,'getUpdate'])->name('store_update')->middleware('sessionuser');
 Route::get('store_del/{id}',[StoreController::class,'delete'])->name('store_del')->middleware('sessionuser');;

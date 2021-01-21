@@ -134,7 +134,7 @@
                     <br>
                     <div class="text-center">
 
-                        <input style="border:none; background-color:#4a4235;" type="submit" name="submit" value="Thêm" class="btn  btn-warning btnthem btn-lg">
+                        <input style="border:none; background-color:#4a4235;" onclick="AddProduct()" type="submit" name="submit" value="Thêm" class="btn  btn-warning btnthem btn-lg">
 
                     </div>
             </form>
@@ -144,7 +144,6 @@
 
 @endsection
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
     $(function() {
         // Replace the <textarea id="editor1"> with a CKEditor

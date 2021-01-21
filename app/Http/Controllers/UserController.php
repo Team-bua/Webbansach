@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\ChangePassRequest;
 use App\Models\Company;
 use App\Models\Role;
 use App\Models\User;
@@ -45,7 +46,7 @@ class UserController extends Controller
             ->where('username', $username)
             ->orderBy('created_at', 'desc')->paginate(10);
         }
-        elseif($company_id != '' && Auth::user()->id_role == 1)
+        elseif($company_id != '' && $company_id != 0 && Auth::user()->id_role == 1)
         {
             $user = User::where('id_company', $company_id)
             ->orderBy('created_at', 'desc')->paginate(10);     
@@ -75,7 +76,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         return $this->repository->create($request);
     }
@@ -110,7 +111,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(ChangePassRequest $request, $id)
     {
         $this->repository->update($request, $id);
         return redirect()->back();

@@ -32,7 +32,8 @@ class PageRepository
      */
     public function getAll()
     {
-        return User::orderBy('created_at', 'desc')->paginate(10);
+        $company_id= GetSession::getCompanyId();
+        return User::where('id_company', $company_id)->orderBy('created_at', 'desc')->paginate(10);
     }
 
     public function allBookAdm(){
@@ -153,8 +154,13 @@ class PageRepository
         $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
         $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
-        return ['ra_date'=>$ra_date, 'product'=>$product, 'ra_5'=>$ra_5,
-                'ra_4'=>$ra_4, 'ra_3'=>$ra_3, 'ra_2'=>$ra_2, 'ra_1'=>$ra_1,
+        return ['ra_date'=>$ra_date, 
+                'product'=>$product, 
+                'ra_5'=>$ra_5,
+                'ra_4'=>$ra_4, 
+                'ra_3'=>$ra_3, 
+                'ra_2'=>$ra_2, 
+                'ra_1'=>$ra_1,
                 'count_ra'=>$count_ra];
     }
 

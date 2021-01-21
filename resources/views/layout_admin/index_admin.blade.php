@@ -201,15 +201,6 @@
                     data-money-done="{{$arrRevenueMonthDone}}"
                     data-money-pending="{{$arrRevenueMonthPending}}"></canvas>
                 
-                <div class="box box-primary">
-                <div class="box-header">
-                  <h3 class="box-title">Area Chart</h3>
-                </div>
-                <div class="box-body chart-responsive">
-                  <div class="chart" id="revenue-chart" data-list-day="{{$listDay}}" 
-                    data-money-done="{{$arrRevenueMonthDone}}"
-                    data-money-pending="{{$arrRevenueMonthPending}}" style="height: 300px;"></div>
-                </div><!-- /.box-body -->
               </div><!-- /.box -->
 
                 </div><!-- ./box-body -->
