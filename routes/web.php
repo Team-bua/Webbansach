@@ -111,9 +111,9 @@ Route::get('book_del/{id}',[ProductTypeController::class,'delete'])->name('book_
 ////----->trang admin_CRUD nha cung cap
 Route::resource('supplier',SuppliersController::class);
 ///------>trang admin_CRUD thong tin user
-Route::resource('user',UserController::class)->middleware('sessionuser');
-Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole')->middleware('sessionuser');
-Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole')->middleware('sessionuser');
+Route::resource('user',UserController::class)->middleware('usercheck');
+Route::get('/getrole/{id}',[UserController::class,'getRole'])->name('getrole')->middleware('usercheck');
+Route::post('/changerole/{id}',[UserController::class,'changeRole'])->name('changerole')->middleware('usercheck');
 ///------>trang admin_CRUD thong tin bill
 Route::resource('bill',BillController::class)->middleware('sessionuser');
 Route::get('bill_processing/{id}',[BillController::class,'getProcessing'])->name('bill_processing');
