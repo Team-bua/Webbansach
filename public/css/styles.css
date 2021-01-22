@@ -346,7 +346,7 @@ header .cart .quntity {
 
 #menu>ul>li>a {
     font-family: 'Source Sans Pro', Arial;
-    font-size: 16px;
+    font-size: 18px;
     color: #FFF;
     float: left;
     font-weight: 600;
@@ -418,7 +418,7 @@ header .cart .quntity {
 
 #menu>ul>li ul>li>a {
     line-height: 18px;
-    font-size: 16px;
+    font-size: 18px;
     float: none;
     font-family: 'Source Sans Pro', Arial;
     font-weight: normal;
@@ -1509,15 +1509,18 @@ li.com-title span {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
+
+
 /*-------------------------------Out of stock-------------------------------------*/
-.Out{
+
+.Out {
     display: block;
     position: absolute;
     top: 108px;
-    padding:0px 13px;
+    padding: 0px 13px;
     width: 190px;
     font-size: 20px;
-    color:#FFF;
+    color: #FFF;
     text-align: center;
     text-transform: uppercase;
     -moz-transform: rotate(45deg);
@@ -1525,7 +1528,7 @@ li.com-title span {
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     background-color: #C1272C;
-    z-index: 999;
+    z-index: 100;
     right: 0px;
     height: 28px;
     line-height: 30px;
@@ -1535,6 +1538,7 @@ li.com-title span {
     font-weight: 700;
     font-family: 'Source Sans Pro', Arial;
 }
+
 
 /*---------------------------------checkout---------------------------------*/
 
@@ -1661,7 +1665,7 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-    transform: translateX(-5%) translateY(35px);
+    transform: translateX(-5%) translateY(10px);
 }
 
 
@@ -1723,7 +1727,7 @@ img {
 /* layouts */
 
 header .header-top {
-    background: #fcba68;
+    background: #f5a200;
     color: #fff;
     padding: 7px 0 7px;
 }
