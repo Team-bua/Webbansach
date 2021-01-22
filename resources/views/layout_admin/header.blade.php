@@ -39,7 +39,7 @@
 
 <header class="main-header  ">
     <!-- Logo -->
-    <a href="{{ url('index') }}" class="logo"><b><img style=" padding-right:35px;" src="{{ asset('images/icon/backg.png') }}" class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
+    <a href="{{ url('index') }}" class="logo"><b><img src="{{ asset('images/icon/book.png') }}" class="user-image" alt="User Image" height="48px" width="200px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
