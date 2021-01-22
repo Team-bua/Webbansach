@@ -49,7 +49,7 @@ class PageController extends Controller
         $product_new = $this->repository->getAllproductNew();
         $product_type = $this->repository->getProductType();
         return view('layout_index.index',compact('product_new', 'product_type', 
-                                                'slide', 'product_sale', 'product_hightlights',)
+                                                'slide', 'product_sale', 'product_hightlights')
         );
     }
 

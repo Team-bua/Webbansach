@@ -1356,7 +1356,7 @@ li.com-title span {
 }
 
 #slide-wrapper {
-    width: 1110px;
+    width: 1100px;
     height: 400px;
     position: relative;
     float: right;
@@ -1369,7 +1369,7 @@ li.com-title span {
 }
 
 #slide-wrapper ul {
-    width: 1110px;
+    width: 1100px;
     height: 400px;
 }
 
@@ -2059,7 +2059,6 @@ header .cart .quntity {
 
 .recent-book-sec .item {
     text-align: left;
-    margin-bottom: 45px;
 }
 
 .recent-book-sec .item img {

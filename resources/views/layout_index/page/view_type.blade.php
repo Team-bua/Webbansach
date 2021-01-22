@@ -39,7 +39,9 @@
                                 @else
                                 <span class="sale">new</span>
                                 @endif
-
+                                @if($books->store && $books->store->stored_product == 0)
+                                <div class="Out">Hết Hàng</div>
+                                @endif
                                 <a href="{{ route('detail', $books->id) }}"><img src="{{ asset('images/product/' . $books->image) }}" alt="image" /></a>
 
                                 <div class="content">
