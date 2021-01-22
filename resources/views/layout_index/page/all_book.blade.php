@@ -31,8 +31,8 @@
                 <div class="row" id="load" style="position: relative;">
                     @foreach ($product_all as $books)
                     <div class="col-md-3">
-                        <div class="item">
-                            <div class="single_product">
+                        <div class="single_product">
+                            <div class="item">
                                 @if ($books->promotion_price != 0)
                                 <div class="new">sale</div>
                                 @else

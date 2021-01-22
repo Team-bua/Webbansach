@@ -2,7 +2,7 @@
 @section('content')
 <style>
       .aa {
-      margin-left:400px;
+        margin-left:350px;
         width: 400px;
        
        
@@ -60,7 +60,7 @@
                                     <button type="submit" class="btn btn-primary" style="background-color: #4a4235;border: #4a4235">Cập nhật</button>
                                 </div>
                                 @if(count($errors) > 0)
-                                <div class="alert alert-danger" style="width:350px; margin-left:450px; ">
+                                <div class="alert alert-danger" style="width:350px; margin-left:380px; ">
                                     @foreach($errors->all() as $err)
                                     {{$err}}
                                     @endforeach
