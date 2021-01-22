@@ -41,11 +41,16 @@
 
 
 <body>
-<style>
-    .font{
-        color: #895A89;
-    }
-</style>
+    <style>
+        .font {
+            color: #895A89;
+        }
+
+        .tag .active {
+            background: #ff6f61 !important;
+            color: #fff !important;
+        }
+    </style>
     @include('layout_index.header')
     @yield('content')
     @include('layout_index.footer')
@@ -90,21 +95,21 @@
                 url: 'addcart/' + id,
                 type: 'GET',
                 success: function(response) {
-                        $('.quntity').html(response['cart']['totalQty']);
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Đã thêm vào giỏ hàng',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })  
-                },
-                error: function(response){
+                    $('.quntity').html(response['cart']['totalQty']);
                     Swal.fire({
-                            icon: 'error',
-                            title: 'Sách đã hết hàng',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })  
+                        icon: 'success',
+                        title: 'Đã thêm vào giỏ hàng',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                error: function(response) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Sách đã hết hàng',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             })
         }
