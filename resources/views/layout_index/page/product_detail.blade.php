@@ -287,6 +287,10 @@
                     </ul>
                     @endforeach
                 </div>
+                <br>
+                <div class="btn-sec">
+                    <div class="btn-sec">{{$rating['ra_date']->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
+                </div>
             </div>
         </div>
 </div>
