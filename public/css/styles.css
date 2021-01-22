@@ -1665,7 +1665,7 @@ li.com-title span {
 .item:hover .content {
     visibility: visible;
     opacity: 1;
-    transform: translateX(-5%) translateY(10px);
+    transform: translateX(-5%) translateY(30px);
 }
 
 

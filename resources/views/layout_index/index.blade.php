@@ -26,7 +26,7 @@
                     <div class="single_product">
                         <div class="item">
                             <div class="new">new </div>
-                            @if($pro->store && $pro->store->stored_product= 0)
+                            @if($pro->store && $pro->store->stored_product == 0)
                              <div class="Out">Hết Hàng</div>
                              @endif
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
@@ -79,6 +79,9 @@
                     <div class="single_product">
                         <div class="item">
                             <div class="sale">sale</div>
+                            @if($pro->store && $pro->store->stored_product == 0)
+                             <div class="Out">Hết Hàng</div>
+                             @endif
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <h3><a href="#">{{ $pro->name }}</a></h3>
                             @if($pro->promotion_price == 0)
@@ -128,8 +131,10 @@
                         <div class="item">
                             @if ($pro->new == 1)
                             <div class="new">Hot</div>
-
                             @endif
+                            @if($pro->store && $pro->store->stored_product == 0)
+                             <div class="Out">Hết Hàng</div>
+                             @endif
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
                             <div class="content">
                                 <div class="body">
