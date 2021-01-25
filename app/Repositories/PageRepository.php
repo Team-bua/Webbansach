@@ -42,8 +42,8 @@ class PageRepository
 
     public function getAllproductbook()
     {
-        if (isset($_POST['sort_by'])) {
-            $sort_by = $_POST['sort_by'];
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
             if ($sort_by == 'giam_dan') {
                 $product = Product::orderBy('unit_price', 'DESC')->with('store')->paginate(20);
             } elseif ($sort_by == 'tang_dan') {
@@ -231,7 +231,7 @@ class PageRepository
         $ra_1 = Rating::where('ra_number', 1)->where('id_product', $id)->count();
         $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
-        $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(5);
+        $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
         return [
             'ra_date' => $ra_date, 'product' => $product, 'ra_5' => $ra_5,
             'ra_4' => $ra_4, 'ra_3' => $ra_3, 'ra_2' => $ra_2, 'ra_1' => $ra_1,
@@ -369,7 +369,6 @@ class PageRepository
             $bill_detail->unit_price = ($value['price'] / $value['qty']);
             $bill_detail->save();
         }
-        
         Session::forget('cart');
     }
 

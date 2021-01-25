@@ -3,7 +3,7 @@
 <section class="static about-sec">
 	<div class="container">
 		@if($errors->any())
-		<div id="error" style="color: red">{{$errors->first()}}</div>
+		<div style="color: red">{{$errors->first()}}</div>
 		@endif
 		<table id="cart" class="table table-hover table-condensed" style="margin-bottom: 2em;">
 			<thead>
@@ -94,7 +94,6 @@
 								'success'
 							)
 						}
-						$('#error').html('');
 					}
 				});
 			}
@@ -105,26 +104,16 @@
 	function changeQuantity(inputQuantity) {
 		let [x, id] = inputQuantity.id.split('-');
 		let _token = document.getElementById('_token');
-		let qty = inputQuantity.value;
 		requestCart(base_url + '/cart', JSON.stringify({
 			'_token': _token.value,
 			'id': id,
 			'quantity': inputQuantity.value
 		}), function(data) {
 			data = JSON.parse(data);
-			if (qty > 0) {
-				$('#total-' + data['id']).html(Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
-				$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
-				$('.quntity').html(data['cart']['totalQty']);
-			} else {
-				Swal.fire({
-					icon: 'error',
-					title: 'Số lượng phải lớn hơn 0',
-					showConfirmButton: false,
-					timer: 1500
-				})
-				inputQuantity.value = data['cart']['items'][data['id']]['qty'];
-			}
+			console.log(data);
+			$('#total-'+ data['id']).html(Number(data['cart']['items'][data['id']]['price']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+			$('#totalPrice').html('Tổng tiền : ' + Number(data['cart']['totalPrice']).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' VNĐ');
+			$('.quntity').html(data['cart']['totalQty']);
 		});
 	}
 

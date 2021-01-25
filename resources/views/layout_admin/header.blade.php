@@ -147,6 +147,9 @@
         <!-- Thống kê -->
         <ul class="sidebar-menu">
             @if($company_id != '' && $company_id != '0')
+            <li class="header ">
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
+            </li>
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">

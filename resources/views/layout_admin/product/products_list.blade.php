@@ -43,7 +43,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            <th></th>   
                             <th></th>
                             <th style="width: 120px">Tùy chọn</th>
                             <th></th>
@@ -62,16 +62,18 @@
                             </td>
 
                             <td><img style="width:100px;height:100px;" src="{{ asset('images/product/' . $pro->image) }}"></td>
-                            <td id="off_on-{{$pro->id}}">
+                            <td>
 
                                 @if ($pro->status == 1)
-
-                                <button type="button" onclick="Off('{{$pro->id}}')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn ">
-                                    <i class="fa fa-pause"></i> </button>
-
+                                <a href="{{ route('product_off', [$pro['id']]) }}">
+                                    <button type="button" onclick="return confirm('Bạn có muốn ngừng kinh doanh không')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn ">
+                                        <i class="fa fa-pause"></i> </button>
+                                </a>
                                 @else
-                                <button type="button" onclick="On('{{$pro->id}}')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn ">
+                                <a href="{{ route('product_on', [$pro['id']]) }}">
+                                    <button type="button" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn ">
                                         <i class="fa fa-play"></i> </button>
+                                </a>
                                 @endif
                             </td>
                             <td>{!! $pro->description !!}</td>
@@ -92,7 +94,7 @@
                                         </i> </button>
                                 </a>
                                 @endcan
-                                <button style="margin-right:5px;float: left;" class='btn btn-flat btn-info btn1'><i class='fa fa-eye'></i></button>
+                                <button style="margin-right:5px;float: left;" class='btn btn-flat btn-info btn1' ><i class='fa fa-eye'></i></button>
                             </td>
                             <td></td>
                         </tr>
@@ -145,11 +147,12 @@
             // adding a more info button at the end
             "targets": -1,
             "data": null,
-            "defaultContent": "<button class='btn btn-info btn1' ><i class='fa fa-eye'></i></button>",
+            "defaultContent": "<button class='btn btn-info btn1' ><i class='fa fa-eye'></i></button>",                               
         }]
     });
     $('#example1 tbody').on('click', '.btn1', function() {
         var data = table.row($(this).parents('tr')).data(); // getting target row data
+        console.log(data)
         $('.showProduct').html(
             // Adding and structuring the full data
             '<table class="table dtr-details" width="100%"><h4 class="text-center" style="color:blue">Thông tin sách</h4><tbody><tr><td style="width:100px">Tên sách<td><td>' + data[0] + '</td></tr><tr><td>Mô Tả<td><td style="text-align:justify">' + data[7] + '</td></tr><tr><td>Số trang<td><td>' + data[8] +
@@ -159,29 +162,6 @@
         $('#myModal').modal('show'); // calling the bootstrap modal
     });
 </script>
-<script>
-    function Off(id) {
-        $.ajax({
-            url: 'product_off/' + id,
-            type: 'GET',
-            success: function(response) {
-                let book = JSON.parse(response)['off'];
-                $('#off_on-' +book['id']).html('<button type="button" onclick="On('+book['id']+')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn "><i class="fa fa-play"></i> </button>');
-            }
-        })
-    }
-</script>
-<script>
-    function On(id) {
-        $.ajax({
-            url: 'product_on/' + id,
-            type: 'GET',
-            success: function(response) {
-                let book = JSON.parse(response)['on'];
-                $('#off_on-'+book['id']).html('<button type="button" onclick="Off('+book['id']+')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn "><i class="fa fa-pause"></i> </button>');
 
-            }
-        })
-    }
-</script>
+
 @stop
