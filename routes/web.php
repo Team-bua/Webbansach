@@ -16,6 +16,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MailController;
 
 
 
@@ -161,6 +162,3 @@ Route::get('/send-mail',[MailController::class,'sendEmail'])->name('send_email')
     echo "vip pro";
 });*/
 
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

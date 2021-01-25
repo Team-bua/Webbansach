@@ -253,10 +253,8 @@
 <script>
     let listDay = $("#buyers").attr('data-list-day');
     listDay = JSON.parse(listDay);
-
     let dataMoneyDone = $("#buyers").attr('data-money-done');
     dataMoneyDone = JSON.parse(dataMoneyDone);
-
     let dataMoneyPending = $("#buyers").attr('data-money-pending');
     dataMoneyPending = JSON.parse(dataMoneyPending);
     // line chart data

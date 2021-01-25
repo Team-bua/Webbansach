@@ -117,14 +117,14 @@ class ProductController extends Controller
         $on= Product::find($id);
         $on->status = Product::statusOn;
         $on->save();
-        return redirect()->back();
+        return json_encode((object)['on'=>$on]);
     }
 
     public function getStopSell($id){
         $off=Product::find($id);
         $off->status = Product::statusOff;
         $off->save();
-        return redirect()->back();
+        return json_encode((object)['off'=>$off]);
     }
 
 

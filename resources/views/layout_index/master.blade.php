@@ -45,6 +45,11 @@
         .font {
             color: #895A89;
         }
+
+        .tag .active {
+            background: #ff6f61 !important;
+            color: #fff !important;
+        }
     </style>
     @include('layout_index.header')
     @yield('content')
