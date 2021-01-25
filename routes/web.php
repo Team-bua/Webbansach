@@ -60,7 +60,8 @@ Route::post('login',[LoginController::class,'postLogin'])->name('login');
 //----->đăng xuất
 Route::get('logout',[LoginController::class,'postLogout'])->name('logout');
 //----->đăng ký
-Auth::routes();
+Route::get('signup',[PageController::class,'getSignup'])->name('signup');
+Route::post('signup',[PageController::class,'postSignup'])->name('signup');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');

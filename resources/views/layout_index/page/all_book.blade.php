@@ -3,7 +3,7 @@
 <section class="deltai">
     <div class="container">
         <div class="sidebar-widget tag">
-            <form action="" id="sort_by" name="sort_by" method="POST">
+            <form action="" id="sort_by" name="sort_by">
                 @csrf
                 <h2 class="title">Lựa chọn :</h2>
                 <a class="{{Request::get('sort_by') == 'giam_dan' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>

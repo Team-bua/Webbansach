@@ -42,8 +42,8 @@ class PageRepository
 
     public function getAllproductbook()
     {
-        if (isset($_POST['sort_by'])) {
-            $sort_by = $_POST['sort_by'];
+        if (isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
             if ($sort_by == 'giam_dan') {
                 $product = Product::orderBy('unit_price', 'DESC')->with('store')->paginate(20);
             } elseif ($sort_by == 'tang_dan') {
@@ -356,7 +356,6 @@ class PageRepository
             $bill_detail->unit_price = ($value['price'] / $value['qty']);
             $bill_detail->save();
         }
-        
         Session::forget('cart');
     }
 
