@@ -231,7 +231,7 @@ class PageRepository
         $ra_1 = Rating::where('ra_number', 1)->where('id_product', $id)->count();
         $count_ra = Rating::where('id_product', $id)->get();
         $product =  Product::find($id);
-        $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(5);
+        $ra_date = $product->ratings()->orderBy('rating.created_at', 'desc')->paginate(10);
         return [
             'ra_date' => $ra_date, 'product' => $product, 'ra_5' => $ra_5,
             'ra_4' => $ra_4, 'ra_3' => $ra_3, 'ra_2' => $ra_2, 'ra_1' => $ra_1,

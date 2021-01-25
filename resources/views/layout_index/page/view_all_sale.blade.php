@@ -3,14 +3,14 @@
 <section class="deltai">
     <div class="container">
         <div class="sidebar-widget tag">
-            <form action="" id="sort_by" name="sort_by">
+        <form action="" id="sort_by" name="sort_by">
                 @csrf
                 <h2 class="title">Lựa chọn :</h2>
-                <a class="{{Request::get('sort_by') == 'giam_dan' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>
-                <a class="{{Request::get('sort_by') == 'tang_dan' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=tang_dan">Giá tăng dần</a>
-                <a class="{{Request::get('sort_by') == 'duoi_70' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=duoi_70">Dưới 70,000 VNĐ</a>
-                <a class="{{Request::get('sort_by') == '70-100' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=70-100">Từ 70,000 - 100,000 VNĐ</a>
-                <a class="{{Request::get('sort_by') == 'tren_100' ? 'active' : ''}}" href="{{Request::url()}}?sort_by=tren_100">Trên 100,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=giam_dan">Giá giảm dần</a>
+                <a href="{{Request::url()}}?sort_by=tang_dan">Giá tăng dần</a>
+                <a href="{{Request::url()}}?sort_by=duoi_70">Dưới 70,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=70-100">Từ 70,000 - 100,000 VNĐ</a>
+                <a href="{{Request::url()}}?sort_by=tren_100">Trên 100,000 VNĐ</a>
             </form>
         </div>
     </div>

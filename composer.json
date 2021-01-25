@@ -16,11 +16,15 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "laravel/ui": "^3.2",
         "snowfire/beautymail": "^1.1",
 =======
         "laravel/ui": "^3.1",
 >>>>>>> parent of da755a3... sdsds
+=======
+        "laravel/ui": "^3.1",
+>>>>>>> parent of a7d9eb0... live chat
         "spatie/laravel-analytics": "^3.10"
     },
     "require-dev": {
