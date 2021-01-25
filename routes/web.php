@@ -150,7 +150,6 @@ Route::get('content/{id}',[NewsController::class,'getDetail'])->name('newcontent
 Route::get('new_on/{id}',[NewsController::class,'getOnNews'])->name('news_on');
 Route::get('new_off/{id}',[NewsController::class,'getStopNews'])->name('news_off');
 
-<<<<<<< HEAD
 Route::get('/send-mail',[MailController::class,'sendEmail'])->name('send_email');
 /*Route::get('/send-mail', function ()
 {
@@ -165,5 +164,3 @@ Route::get('/send-mail',[MailController::class,'sendEmail'])->name('send_email')
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
->>>>>>> parent of da755a3... sdsds
