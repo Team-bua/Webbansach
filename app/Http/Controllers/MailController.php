@@ -16,4 +16,14 @@ class MailController extends Controller
         \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details));
         trans('passwords.throttled');
     }
+
+    public static function sendSignupEmail($name, $email, $verification_code){
+
+        $data= [
+            'name' => $name,
+            'verification_code' => $verification_code
+        ];
+
+        Mail::to()->send(new SignupEmail());
+    }
 }

@@ -60,8 +60,7 @@ Route::post('login',[LoginController::class,'postLogin'])->name('login');
 //----->đăng xuất
 Route::get('logout',[LoginController::class,'postLogout'])->name('logout');
 //----->đăng ký
-Route::get('signup',[PageController::class,'getSignup'])->name('signup');
-Route::post('signup',[PageController::class,'postSignup'])->name('signup');
+Auth::routes();
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
@@ -162,3 +161,7 @@ Route::get('/send-mail',[MailController::class,'sendEmail'])->name('send_email')
     echo "vip pro";
 });*/
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,11 +4,17 @@
         <div class="container">
             <h1>Đăng Ký Tài Khoản </h1>         
             <div class="form">     
-                <form action="{{url('signup')}}" method="post" class="form" id="myform">
+                <form action="{{ route('register') }}" method="post" class="form" id="myform">
                 @csrf  
-                @if(Session::has('thongbao'))
-                    <div class="alert alert-success">{{Session::get('thongbao')}} </div>
-                @endif
+
+                <div class="flash-message">
+                    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                        @if(Session::has('alert-' . $msg))
+                            <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                        @endif
+                    @endforeach
+                </div>
+
                 <div class="row  justify-content-md-center">             
                     <div class="col-6">
                         <input type="text" name="fullname" class="@error('fullname') isvalid @enderror" placeholder="Họ Tên . . . . . " >
