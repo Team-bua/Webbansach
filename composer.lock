@@ -6,6 +6,7 @@
     ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "5947d43d9abf181ad3c182c3d849578d",
 =======
     "content-hash": "27898e2e9eb23e14d7bc3a60dcfc6b63",
@@ -13,6 +14,9 @@
 =======
     "content-hash": "27898e2e9eb23e14d7bc3a60dcfc6b63",
 >>>>>>> parent of a7d9eb0... live chat
+=======
+    "content-hash": "27898e2e9eb23e14d7bc3a60dcfc6b63",
+>>>>>>> parent of da755a3... sdsds
     "packages": [
         {
             "name": "asm89/stack-cors",
