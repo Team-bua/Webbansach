@@ -20,8 +20,8 @@
 
 <section class="static about-sec">
     <div class="container">
-        <h6><span>{{ $company_name->name }}</span>
-        </h6>
+        <h2><span>{{ $company_name->name }}</span>
+        </h2>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm..." aria-label="Search">
             <span class="fa fa-search"></span>

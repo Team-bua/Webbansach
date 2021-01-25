@@ -115,6 +115,13 @@
                         &emsp;<h6 class="badge badge-success" style="font-size: 14px;">Còn hàng&ensp;</h6>
                         @endif
                     </li>
+                    <li>
+                    
+                        <span class="name">Lượt Xem&ensp; <i class="fa fa-eye" aria-hidden="true"></i></span><span class="clm">:</span>
+                        <span class="price final" style="color:black">{{$product_detail->product_view}}</span>
+
+                    </li>
+                    
                 </ul>
                 <div class="btn-sec">
 
@@ -275,7 +282,7 @@
                             $ra_show = $ra->pivot->ra_number;
                         }
                         ?>
-                        <div class="col-md-12 gedf-main">
+                        <div class="col-md-12 gedf-main" style="margin-right: 18%">
                             <div class="card gedf-card">
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -285,7 +292,7 @@
                                             </div>
                                             <div class="ml-2">
                                                 <div class="h7 text-muted">{{$ra->full_name}}</div>
-                                                @for($i=1; $i<=5; $i++) <span class="float-right"><i class="fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i></span>@endfor
+                                                @for($i=1; $i<=5; $i++) <span class="float-right"><i class="text-warning fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i></span>@endfor
                                             </div>
                                         </div>
                                     </div>
@@ -313,6 +320,7 @@
                     <div class="col-sm-12">
                         <form method="post" action="{{url('login')}}">
                             @csrf
+                            <h3 class="text-center text-info">Đăng Nhập</h3>
                             <div class="form-group">
                                 <input type="email" name="username" class="form-control" placeholder="Email . . . . ." required />
                             </div>
@@ -330,6 +338,42 @@
     </div>
 </div>
 </section>
+
+<section class="static about-sec">
+    <div class="container">
+        <h2>Sản Phẩm Liên Quan
+        </h2>
+        <hr>
+        <div class="recent-book-sec">
+            <div class="row" id="load" style="position: relative;">
+                @foreach ($product_related as $pro)
+                <div class="col-md-3">
+                    <div class="single_product">
+                        <div class="item">
+                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+<a href="#" class="bck"></a>
 @endsection
 @section('speak')
 <script type="text/javascript">

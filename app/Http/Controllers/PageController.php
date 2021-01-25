@@ -56,11 +56,13 @@ class PageController extends Controller
     public function getDetail($id)
     {
         $product_detail = $this->repository->getProduct($id);
+        $product_related = $this->repository->getProductRelated($id);
+        $this->repository->ProductView($id);
         $image_detail = count($product_detail->imagedetail);
         $comments = $this->repository->getComment($id);
         $store = $this->repository->store($id);
         $rating = $this->repository->getRating($id);
-        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','store' ));
+        return view('layout_index.page.product_detail', compact('comments', 'product_detail', 'image_detail', 'rating','store','product_related' ));
     }
 
 

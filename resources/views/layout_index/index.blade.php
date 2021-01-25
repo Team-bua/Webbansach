@@ -16,8 +16,8 @@
 </section>
 <section class="static about-sec">
     <div class="container">
-        <h6><span>{{ __("newbook") }}</span>
-        </h6>
+        <h2><span>{{ __("newbook") }}</span>
+        </h2>
         <hr>
         <div class="recent-book-sec">
             <div class="row" id="load" style="position: relative;">
@@ -26,7 +26,7 @@
                     <div class="single_product">
                         <div class="item">
                             <div class="new">new </div>
-                            @if($pro->store && $pro->store->stored_product= 0)
+                            @if($pro->store && $pro->store->stored_product== 0)
                              <div class="Out">Hết Hàng</div>
                              @endif
                             <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
@@ -50,7 +50,7 @@
                                     &nbsp;<i class="fa fa-book"></i> : <b class="font">{{$pro->productType->name}}</b> <br>
                                     &nbsp;<i class="fa fa-clone"></i> : <b class="font">{{$pro->pagenumber}} trang</b><br>
                                     &nbsp;<i class="fa fa-home"></i> : <b class="font">{{$pro->productCompany->name}}</b> <br>
-                                    &nbsp;<a href="{{route('Read',$pro->id)}}"><button class="btnR">Đọc ONLINE</button></a>
+                                    &nbsp;<a href="{{route('Read',$pro->id)}}" ><button class="btnR" >Đọc ONLINE</button></a>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +69,8 @@
 </section>
 <section class="static about-sec">
     <div class="container">
-        <h6><span>{{ __("salebook") }}</span>
-        </h6>
+        <h2><span>{{ __("salebook") }}</span>
+        </h2>
         <hr>
         <div class="recent-book-sec">
             <div class="row" id="load" style="position: relative;">
@@ -117,8 +117,8 @@
 </section>
 <section class="static about-sec">
     <div class="container">
-        <h6><span>{{ __("hotbook") }}</span>
-        </h6>
+        <h2><span>{{ __("hotbook") }}</span>
+        </h2>
         <hr>
         <div class="recent-book-sec">
             <div class="row" id="load" style="position: relative;">
