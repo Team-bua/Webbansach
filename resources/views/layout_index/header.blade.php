@@ -43,7 +43,7 @@
                     </div>
                     @endif
                     @else
-                    <div class="dropdown" style="float: right;margin: 4%;">
+                    <div class="dropdown" style="float: right">
                         <a href="{{ route('login') }}"><button class="dropbtn">{{ __('login') }}</button></a>
                     </div>
                     @endif

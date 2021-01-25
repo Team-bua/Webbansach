@@ -89,7 +89,7 @@
 							$('.quntity').html(data['cart']['totalQty']);
 							that.parent().parent().remove();
 							Swal.fire(
-								'Xóa!',
+								'Đã xóa!',
 								'Xóa thành công.',
 								'success'
 							)
