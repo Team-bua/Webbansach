@@ -17,13 +17,7 @@ class UserRepository
      */
     public function getAll()
     {   
-        return User::where('id_role', '!=', '1')
-        ->orderBy('created_at', 'desc')->paginate(10);
-    }
-
-    public function getRole()
-    {   
-        return Role::orderBy('created_at', 'desc')->paginate(10);
+        //
     }
 
     public function getuser($id)
@@ -33,11 +27,22 @@ class UserRepository
     
     public function create(Request $request)
     {
-
+        $user = new User();
+        $user->full_name = $request->input('fullname');
+        $user->username = $request->input('username');
+        $user->email = $request->input('username');
+        $user->password = hash::make($request->input('password'));
+        $user->phone = $request->input('phone');
+        $user->address = $request->input('address');
+        $user->id_company = $request->input('cate');
+        $user->id_role = 2;
+        $user->save();
+        return redirect(route('user.index'));
        
     }
 
-    public function update($request, $id) {
+    public function update(Request $request, $id) 
+    {
         if(hash::check($request->password_old, Auth::user()->password)){
             $user = User::find($id);
             $user->password = hash::make($request->input('new_password'));
@@ -49,19 +54,8 @@ class UserRepository
     }
 
     public function destroy($id) {
-       $user = User::find($id);
-       $user->delete();
       
-    }
-
-    public function search($request) {
-
-        $search = $request->table_search;
-        return User::where(function ($query) use ($search) {
-                $query->where('name', 'like', "%$search%")
-                        ->orWhere('email', 'like', "%$search%")
-                        ->orWhere('phone', 'like', "%$search%");
-            })->paginate(10);
+      
     }
 
 }

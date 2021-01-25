@@ -1,26 +1,44 @@
 @extends('layout_index.master')
 @section('content')
+<style type="text/css">
+    .area {
+        font-size: 15px;
+        border: 2px solid #EF5050;
+        padding: 2rem 1rem;
+        min-height: 3em;
+        resize: none;
+        background: #ffd73e33;
+    }
+
+    .active {
+        color: #ff9705 !important;
+    }
+
+    /*-------------------------------------------------------*/
+</style>
 <section class="product-sec">
     <div class="container">
 
-        <h1>{{$product_detail->name}}</h1>
+        <h1>{{ $product_detail->name }}</h1>
         <div class="row">
             <div class="col-md-6 slider-sec">
 
                 <div id="myCarousel" class="carousel slide">
                     <!-- main slider carousel items -->
                     <div class="carousel-inner">
-                        <div class="sale">- %20</div>
+                        @if ($product_detail->promotion_price != 0)
+                        <div class="sale">Sale</div>
+                        @endif
                         <div class="active item carousel-item" data-slide-number="0">
                             <img id="image-main" style="height:505px" src=" {{ asset('images/product/' . $product_detail->image) }}" class="img-fluid">
                         </div>
                     </div>
                     <!-- main slider carousel nav controls -->
-                    @if($product_detail->imagedetail)
+                    @if ($product_detail->imagedetail)
                     <ul class="carousel-indicators list-inline">
-                        @for($i=0; $i<$image_detail; $i++) <li class="list-inline-item active">
+                        @for ($i = 0; $i < $image_detail; $i++) <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
-                                <img style="height:160px;width:120px;" src="{{ asset('images/product_detail/'.$product_detail->imagedetail[$i]) }}" class="img-fluid">
+                                <img style="height:160px;width:120px;" src="{{ asset('images/product_detail/' . $product_detail->imagedetail[$i]) }}" class="img-fluid">
                             </a>
                             </li>
                             @endfor
@@ -37,225 +55,343 @@
                         let src = this.src;
                         imageMain.src = src;
                     });
-                    
+
                 });
             </script>
 
             <div class="col-md-6 slider-content">
-                <p style="text-align:justify">{!! $product_detail->description  !!}</p>
+                <textarea class="area" type="text" rows="7" cols="63" id="text" disabled>
+                {!! $product_detail->description !!}
+            </textarea>
+                <!--                 <audio id="myAudio">
+                    <source src="images/music/oke.mp3.mp3" type="audio/mpeg">
+                </audio> -->
+                <br>
+                <br>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <select id="gender" class="form-control">
+                            <option value="Vietnamese Female" style="text-decoration: blink;">Tiếng Việt</option>
+                        </select>
+                    </div>
+                </div>
                 <ul>
-                    @if($product_detail->promotion_price == 0)
+                    @if ($product_detail->promotion_price == 0)
                     <li>
                         <span class="name">Giá Bán</span><span class="clm">:</span>
-                        <span class="price final" style="color:black">{{number_format($product_detail->unit_price,0,"",",")}}VNĐ</span>
+                        <span class="price final" style="color:black">{{ number_format($product_detail->unit_price, 0, '', ',') }}VNĐ</span>
 
                     </li>
                     @else
                     <li>
                         <span class="name">Giá Bán</span><span class="clm">:</span>
-                        <span class="price">{{number_format($product_detail->unit_price,0,"",",")}}VNĐ</span>
+                        <span class="price">{{ number_format($product_detail->unit_price, 0, '', ',') }}VNĐ</span>
+                    </li>
+                    <li>
                         <span class="name">Giá Khuyến mãi</span><span class="clm">:</span>
-                        <span class="price final">{{number_format($product_detail->promotion_price,0,"",",")}}VNĐ</span>
+                        <span class="price final">{{ number_format($product_detail->promotion_price, 0, '', ',') }}VNĐ</span>
 
                     </li>
                     @endif
-                </ul>
+                    <li>
+                        <span class="name">Đánh giá</span><span class="clm">:</span> &nbsp; &nbsp;
+                        @if($rating['product'])
+                        <?php
+                        $product_ra = 0;
+                        if ($rating['product']->total_ra) {
+                            $product_ra = round($rating['product']->total_number / $rating['product']->total_ra, 2);
+                        }
 
-                <form action="" class="cart">
-                    <div class="quantity">
-                        <span class="name">Số Lượng</span><span class="clm"> : </span> <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                    </div>
-                </form>
+                        ?>
+                        @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
+                            @endfor
+                            @endif
+                    </li>
+                    <li>
+                        <span class="name">Trạng thái</span><span class="clm">:</span>
+                        @if($store && $store->stored_product == 0)
+                        &emsp;<h6 class="badge badge-danger" style="font-size: 14px;">Hết hàng&ensp;</h6>
+                        @else
+                        &emsp;<h6 class="badge badge-success" style="font-size: 14px;">Còn hàng&ensp;</h6>
+                        @endif
+                    </li>
+                    <li>
+                    
+                        <span class="name">Lượt Xem&ensp; <i class="fa fa-eye" aria-hidden="true"></i></span><span class="clm">:</span>
+                        <span class="price final" style="color:black">{{$product_detail->product_view}}</span>
+
+                    </li>
+                    
+                </ul>
                 <div class="btn-sec">
-                    <a href="javascript:"><button class="btn" onclick="AddCart('{{$product_detail->id}}')">Thêm Vào Giỏ Hàng</button></a>
-                    <button class="btn " data-toggle="modal" data-target="#product_view">Mua Ngay</button>
-                    <a href="{{route('Read')}}"><button class="btn black">Đọc ONLINE</button></a>
+
+                    <button class="btn btn-success btn-lg" id="btPlay" onclick="playAudio()"><i class="fa fa-play"></i></button>
+                    <button class="btn btn-success btn-lg" id="btPause" onclick="pauseAudio()"><i class="fa fa-stop"></i></button>
+                    <button class="btn black" onclick="AddCart('{{ $product_detail->id }}')">{{ __('addcart') }}</button>
+                    <a href="{{ route('Read', $product_detail->id) }}"><button class="btn black">{{ __('read online') }}</button></a>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </section>
 <div class="container">
-    <div class="modal fade product_view" id="product_view">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6 product_img">
-                        <img src="{{ asset('images/product/' . $product_detail->image) }}" class="img-responsive" width="200px">
-                    </div>
-                    <div class="col-md-6 product_content">
-                        <h4>{{ $product_detail->name }}</h4>
-                        @if($product_detail->promotion_price == 0)
-                        <h3 class="cost">
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ 
-                         @else
-                        <small class="pre-cost">
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->unit_price,0,"",",")}}VNĐ
-                        </small>
-                        <span class="glyphicon glyphicon-usd"></span> {{number_format($product_detail->promotion_price,0,"",",")}}VNĐ
-                        </h3>
-                        @endif
-                        <div class="space-ten"></div>
-                        <div class="btn-ground">
-                            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán</button>
-                        </div>
-                    </div>
+    <section class="comment">
+        <div class="container">
+            <div id="comment-wrapper">
+                <div id="tabs" class="htabs">
+                    <a href="#tab-specification">Đánh Giá</a>
+                    <a href="#tab-information">Thông Tin</a>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<section class="comment">
-    <div class="container">
-        <div id="comment-wrapper">
-            <div id="tabs" class="htabs">
-                <a href="#tab-specification">Đánh Giá</a>
-                <a href="#tab-review">Bình Luận</a>
-                <a href="#tab-information">Thông Tin</a>
-            </div>
-            <div id="tab-specification" class="tab-content">
-                <div class="cpt_product_description ">
-                    <div>
+                <div id="tab-specification" class="tab-content">
+                    @if(Auth::check())
+                    <form action="{{route('rating',$product_detail->id)}}" method="post">
+                        @csrf
+                        @method('put')
+                        <div class="cpt_product_description ">
+                            <div class="rating-card">
+                                <div style="height: 40px">
+                                    <h1>Đánh Giá</h1>
+                                </div>
+                                <div class="rating">
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh Giá</p>
+                                </div>
+                                <div class="rating-process">
+                                    <div class="rating-right-part">
+                                        5<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_5']}} đánh giá
+                                    </div>
+                                    <div class="rating-right-part">
+                                        4<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_4']}} đánh giá
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                        3<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_3']}} đánh giá
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                        2<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_2']}} đánh giá
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                        1<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_1']}} đánh giá
+
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                        <div class="rating1">
+                            <input type="radio" name="rating" value="5" id="5">
+                            <label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4">
+                            <label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3">
+                            <label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2">
+                            <label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1">
+                            <label for="1">☆</label>
+                        </div>
+                        <center>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                                </div>
+                                <textarea style="resize: none;" rows="3" cols="50" class="form-control" placeholder="Nội dung đánh giá . . . . ." name="body" required></textarea>
+                            </div>
+                        </center>
+                        <br>
+                        <div class="text-center">
+                            <input type="submit" value="Gửi" class="btn btn-info btn-block">
+                        </div>
+                    </form>
+                    @else
+                    <div class="cpt_product_description ">
                         <div class="rating-card">
-                            <div>
-                                <h1>Rating Card</h1>
+                            <div style="height: 40px">
+                                <h1>Đánh Giá</h1>
                             </div>
                             <div class="rating">
-                                <h2>4.0</h2>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star"></i>
-                                <i aria-hidden="true" class="fa fa-star-o"></i>
-                                <p><i class="fa fa-user" aria-hidden="true"></i> 0 Review</p>
+                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh Giá</p>
                             </div>
                             <div class="rating-process">
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 80%</p>
-                                    <div class="progress"></div>
+                                    5<i aria-hidden="true" class="fa fa-star"></i>
+                                    Có {{$rating['ra_5']}} đánh giá
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 60%</p>
-                                    <div class="progress-2"></div>
+                                    4<i aria-hidden="true" class="fa fa-star"></i>
+                                    Có {{$rating['ra_4']}} đánh giá
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 40%</p>
-                                    <div class="progress-3"></div>
+                                    3<i aria-hidden="true" class="fa fa-star"></i>
+                                    Có {{$rating['ra_3']}} đánh giá
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 20%</p>
-                                    <div class="progress-4"></div>
+                                    2<i aria-hidden="true" class="fa fa-star"></i>
+                                    Có {{$rating['ra_2']}} đánh giá
+
                                 </div>
                                 <div class="rating-right-part">
-                                    <p><i aria-hidden="true" class="fa fa-star"></i> 10%</p>
-                                    <div class="progress-5"></div>
+                                    1<i aria-hidden="true" class="fa fa-star"></i>
+                                    Có {{$rating['ra_1']}} đánh giá
+
                                 </div>
                             </div>
                             <div style="clear:both;"></div>
                         </div>
-                        <br>
-                        Chỉ có thành viên mới có thể nhận xét. Vui <a href="{{route('login')}}">Đăng nhập</a> hoặc<a href="{{route('signup')}}"> Đăng Ký</a>
-                    </div>
-                    <div class="rating1">
-                        <input type="radio" name="rating" value="5" id="5">
-                        <label for="5">☆</label>
-                        <input type="radio" name="rating" value="4" id="4">
-                        <label for="4">☆</label>
-                        <input type="radio" name="rating" value="3" id="3">
-                        <label for="3">☆</label>
-                        <input type="radio" name="rating" value="2" id="2">
-                        <label for="2">☆</label>
-                        <input type="radio" name="rating" value="1" id="1">
-                        <label for="1">☆</label>
+                    </div><br>
+                    <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}" data-toggle="modal" data-target="#tab-info">Đăng nhập</a> hoặc<a href="{{ route('signup') }}"> Đăng Ký</a></div>
+                    @endif
+                </div>
+                <div id="tab-information" class="tab-content">
+                    <div class="cpt_product_description ">
+                        <div>
+                            <section class="features">
+                                <ul>
+                                    <li><i class="fas fa-check"></i>Tác Giả:{{ $product_detail->publisher  }}</li>
+                                    <li><i class="fas fa-check"></i>Nhà Phát Hành: {{ $product_detail->publisher  }}</li>
+                                    <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
+                                    <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
+                                    <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
+                                    <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }} Cm</li>
+                                    <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }} Trang</li>
+                                </ul>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="tab-review" class="tab-content">
-                <div class="rating-card">
-                    <form action="" method="post">
-                        <div class="card border-primary rounded-0">
-                            <div class="card-body p-3">
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-user text-info"></i></div>
+        </div>
+        <div class="container">
+            <div id="last-product-wrapper">
+                <div class="container-fluid gedf-wrapper">
+                    <div class="row">
+                        @foreach($rating['ra_date'] as $ra)
+                        <?php
+                        $ra_show = 0;
+                        if ($ra->pivot->ra_number) {
+                            $ra_show = $ra->pivot->ra_number;
+                        }
+                        ?>
+                        <div class="col-md-12 gedf-main" style="margin-right: 18%">
+                            <div class="card gedf-card">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="mr-2">
+                                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                                            </div>
+                                            <div class="ml-2">
+                                                <div class="h7 text-muted">{{$ra->full_name}}</div>
+                                                @for($i=1; $i<=5; $i++) <span class="float-right"><i class="text-warning fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i></span>@endfor
+                                            </div>
                                         </div>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="user name" required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope text-info"></i></div>
-                                        </div>
-                                        <input type="email" class="form-control" id="nombre" name="email" placeholder="abc@gmail.com" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
-                                        </div>
-                                        <textarea style="resize: none;" rows="4" cols="30" class="form-control" placeholder="messenger" required></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="text-center">
-                                    <input type="submit" value="Gửi" class="btn btn-info btn-block rounded-0 py-2">
+                                <div class="card-body">
+                                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{$ra->pivot->created_at->format('d/m/Y')}}</div>
+                                    <p class="card-text">
+                                        {{$ra->pivot->body}}
+                                    </p>
                                 </div>
                             </div>
-                            <br>
-
                         </div>
-                    </form>
-                    <div style="clear:both;"></div>
+                        @endforeach
+                    </div>
                 </div>
+
             </div>
-            <div id="tab-information" class="tab-content">
-                <div class="cpt_product_description ">
-                    <div>
-                        <section class="features">
-                            <ul>
-                                <li><i class="fas fa-check"></i>Tác Giả:{{ $product_detail->publisher  }}</li>
-                                <li><i class="fas fa-check"></i>Nhà Phát Hành: {{ $product_detail->publisher  }}</li>
-                                <li><i class="fas fa-check"></i>Định Dạng: {{ $product_detail->format }}</li>
-                                <li><i class="fas fa-check"></i>Ngày Phát Hành:{{ $product_detail->releasedate }}</li>
-                                <li><i class="fas fa-check"></i>Ngôn Ngữ:{{ $product_detail->language }}</li>
-                                <li><i class="fas fa-check"></i>Kích Thước:{{ $product_detail->size  }}</li>
-                                <li><i class="fas fa-check"></i>Số Trang:{{ $product_detail->pagenumber  }}</li>
-                            </ul>
-                        </section>
+        </div>
+</div>
+<div class="modal fade product_view" id="tab-info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form method="post" action="{{url('login')}}">
+                            @csrf
+                            <h3 class="text-center text-info">Đăng Nhập</h3>
+                            <div class="form-group">
+                                <input type="email" name="username" class="form-control" placeholder="Email . . . . ." required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password . . . . ." required />
+                            </div>
+                            <div class="col-3">
+                                <button class="btn black">Đăng Nhập </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div id="last-product-wrapper">
-            <div id="comment-list">
-                <ul>
-                    <li class="com-title">
-                        Team bùa
-                        <br>
-                        <span>2020-19-01 10:00:00</span>
-                    </li>
-                    <li class="com-details">
-                        Nếu bạn đọc bình luận này thì bố mẹ bạn sẽ chết trong vòng 5 năm . Để tránh khỏi điều này bạn phải copy và gửi nó vào 5 truyện khác . Tôi vô cùng vô cung xin lỗi khong thể lấy mạng cha mẹ ra cược được, làm ơn tha thứ cho tôi
-                    </li>
-                </ul>
+</div>
+</section>
 
+<section class="static about-sec">
+    <div class="container">
+        <h2>Sản Phẩm Liên Quan
+        </h2>
+        <hr>
+        <div class="recent-book-sec">
+            <div class="row" id="load" style="position: relative;">
+                @foreach ($product_related as $pro)
+                <div class="col-md-3">
+                    <div class="single_product">
+                        <div class="item">
+                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
+                            <h3><a href="#">{{ $pro->name }}</a></h3>
+                            @if($pro->promotion_price == 0)
+                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
+                            @else
+                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
+                            </span>
+                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
+                            </span>
+                            @endif
+                            <br>
+                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
+                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
+                            </h6>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
 </section>
 <a href="#" class="bck"></a>
 @endsection
-
-@section('script')
-<script>
-    let varName = document.getElementById('elementId');
+@section('speak')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btPlay").click(function() {
+            var text = $("#text").val();
+            var gender = $("#gender").val();
+            responsiveVoice.speak(text, gender, {
+                rate: 1
+            });
+        });
+        $("#btPause").click(function() {
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.pause();
+            } else {
+                responsiveVoice.resume();
+            }
+        });
+    });
 </script>
 @stop

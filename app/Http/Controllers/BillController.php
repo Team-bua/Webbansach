@@ -34,6 +34,30 @@ class BillController extends Controller
         $bill = $this->repository->getAll();
         return view('layout_admin.bookbill.list_bill',compact('bill'));
     }
+    public function NotReceived()
+    {
+        $bill = $this->repository-> getAllNotReceiving();
+        return view('layout_admin.bookbill.order_not_received',compact('bill'));
+    }
+    public function  Received()
+    {
+        $bill = $this->repository-> getAllReceiving();
+        return view('layout_admin.bookbill.order_received',compact('bill'));
+    }
+
+    public function Complete()
+    {
+        $bill = $this->repository-> getAllComplete();
+        return view('layout_admin.bookbill.order_complete',compact('bill'));
+    }
+
+    public function Fails()
+    {
+        $bill = $this->repository-> getAllFail();
+        return view('layout_admin.bookbill.order_fail',compact('bill'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -118,6 +142,12 @@ class BillController extends Controller
         $dg = Bill::find($id);
         $dg->status = Bill::delivered;
         $dg->save();
+        return redirect()->back();
+    }
+    public function getFail($id){
+        $tb = Bill::find($id);
+        $tb->status = Bill::fail;
+        $tb->save();
         return redirect()->back();
     }
 }

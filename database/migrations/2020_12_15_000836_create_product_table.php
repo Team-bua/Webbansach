@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->increments('id');
             $table->integer('id_type')->unsigned();
             $table->integer('id_user')->unsigned();
+            $table->integer('id_company')->unsigned();
             $table->string('name');
             $table->integer('unit_price');
             $table->integer('promotion_price')->nullable();
@@ -26,6 +27,7 @@ class CreateProductTable extends Migration
             $table->string('publisher')->nullable();
             $table->string('format')->nullable();
             $table->integer('new')->nullable();
+            $table->integer('status')->nullable();
             $table->string('language')->nullable();
             $table->string('pagenumber')->nullable();
             $table->string('size')->nullable();

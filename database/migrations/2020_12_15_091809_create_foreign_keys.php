@@ -113,6 +113,20 @@ class CreateForeignKeys extends Migration
                 ->onDelete(self::PROPERTIES_CASCADE)
                 ->onUpdate(self::PROPERTIES_CASCADE);
         });
+        Schema::table('store', function (Blueprint $table) {
+            $table->foreign('id_product')
+                ->references('id')
+                ->on('product')
+                ->onDelete(self::PROPERTIES_CASCADE)
+                ->onUpdate(self::PROPERTIES_CASCADE);
+        });
+        Schema::table('history_stored_in_day', function (Blueprint $table) {
+            $table->foreign('id_store')
+                ->references('id')
+                ->on('store')
+                ->onDelete(self::PROPERTIES_CASCADE)
+                ->onUpdate(self::PROPERTIES_CASCADE);
+        });
     }
 
     /**
@@ -153,6 +167,12 @@ class CreateForeignKeys extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_id_role_in_foreign');
             $table->dropForeign('users_id_permission_in_foreign');
+        });
+        Schema::table('store', function (Blueprint $table) {
+            $table->dropForeign('store_id_product_in_foreign');
+        });
+        Schema::table('history_stored_in_day', function (Blueprint $table) {
+            $table->dropForeign('history_stored_in_day_id_store_in_foreign');
         });
     }
 }

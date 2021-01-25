@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
-
+use App\Models\Product;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -47,7 +48,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    { 
         $product = $this->repository->getTypeAll();
         return view('layout_admin.product.products_create', compact('product'));
     }
@@ -60,8 +61,8 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $this->repository->create($request);
-        return redirect(route('book.index'));
+        return $this->repository->create($request);
+        
     }
 
     /**
@@ -95,7 +96,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $this->repository->update($request, $id);
         return redirect(route('book.index'));
@@ -112,7 +113,19 @@ class ProductController extends Controller
         $this->repository->destroy($product);
         return redirect()->back();
     }
-    
+    public function getSell($id){
+        $on= Product::find($id);
+        $on->status = Product::statusOn;
+        $on->save();
+        return redirect()->back();
+    }
+
+    public function getStopSell($id){
+        $off=Product::find($id);
+        $off->status = Product::statusOff;
+        $off->save();
+        return redirect()->back();
+    }
 
 
     }

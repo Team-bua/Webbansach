@@ -1,7 +1,7 @@
 <style>
     .wordart {
         font-family: Arial, sans-serif;
-        font-size: 34px;
+        font-size: 32px;
         font-weight: bold;
         position: relative;
         z-index: 1;
@@ -34,63 +34,62 @@
         z-index: -1;
         text-shadow: 0.01em 0em 0 #161616, 0em 0.01em 0 #8d8d8d, 0.02em 0.01em 0 #161616, 0.01em 0.02em 0 #8d8d8d, 0.03em 0.02em 0 #161616, 0.02em 0.03em 0 #8d8d8d, 0.04em 0.03em 0 #161616, 0.03em 0.04em 0 #8d8d8d, 0.05em 0.04em 0 #161616, 0.04em 0.05em 0 #8d8d8d, 0.06em 0.05em 0 #161616, 0.05em 0.06em 0 #8d8d8d, 0.07em 0.06em 0 #161616, 0.06em 0.07em 0 #8d8d8d, 0.08em 0.07em 0 #161616, 0.07em 0.08em 0 #8d8d8d, 0.09em 0.08em 0 #161616, 0.08em 0.09em 0 #8d8d8d, 0.1em 0.09em 0 #161616, 0.09em 0.1em 0 #8d8d8d;
     }
-
 </style>
 
 
-<header  class="main-header  " >
+<header class="main-header  ">
     <!-- Logo -->
-    <a href="{{ url('index') }}" class="logo" ><b><img style=" padding-right:35px;" src="{{asset('images/icon/backg.png')}}"
-        class="user-image" alt="User Image" height="50px" width="250px" /></b></a>
+    <a href="{{ url('index') }}" class="logo"><b><img src="{{ asset('images/icon/book.png') }}" class="user-image" alt="User Image" height="48px" width="200px" /></b></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <div class="wordart horizon">
-            <span class="text">Hệ thống quản lý trang bán sách </span>
+            <span class="text">{{ __('book') }}</span>
         </div>
         <a href="" class="sidebar-toggle " data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
-            <ul  class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                        <img style="background-color: #ffffff" src="{{asset('images/icon/adminicon.png')}}" class="user-image" alt="User Image" />
+                        <img style="background-color: #ffffff" src="{{ asset('images/icon/adminicon.png') }}" class="user-image" alt="User Image" />
                         <span class="hidden-xs">{{ Auth::user()->full_name }}</span>
                     </a>
-                    <ul  class="dropdown-menu" style="padding-top: 7px;" >
+                    <ul class="dropdown-menu" style="padding-top: 7px;">
                         <!-- User image -->
-                        <li style="background-color: #ecc518" class="user-header">
-                            <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                        <li style="background-color: #8b7b61" class="user-header">
+                            <img style="background-color: #ffffff" src="{{ asset('images/icon/admin.png')  }}" class="img-circle" alt="User Image" />
                             <p style="color: #ffffff">
                                 {{ Auth::user()->full_name }} ({{ Auth::user()->role->display_name }})
                                 <small>{{ Auth::user()->email }}</small>
                             </p>
                         </li>
-
-
-
-
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="{{route('user.edit',Auth::user()->id)}}" class="btn btn-danger btn-flat">Đổi mật khẩu</a>
+                            <div class="text-center">
+                                <a href="{{ route('user.edit', Auth::user()->id) }}" class="btn btn-danger btn-flat">Đổi
+                                    mật khẩu</a>
                             </div>
-                            <div class="pull-right">
-                                <a href="{{ url('logout') }}" class="btn btn-primary btn-flat">Đăng Xuất</a>
-                            </div>
+
                         </li>
                     </ul>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('images/icon/tiengviet.png')}}" height="16px" width="25px">
+                    <a href="{!! route('user.language', ['vi']) !!}" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-language fa-lg"></i>
                     </a>
-                    <ul class="dropdown-menu" 
-                    style="margin-top:7px;min-width:55px;
-                     min-height:50px;padding-left:29%;background-color:#ffffff;line-height:35px;">
-                        <li >
-                            <img src="{{asset('images/icon/tienganh.png')}}" height="16px" width="25px">
+                    <ul class="dropdown-menu" style="margin-top:7px;min-width:55px;
+                     min-height:50px;margin-right:-10px;background-color:#ffffff;line-height:35px;">
+                        <li>
+                            <a href="{!! route('user.language', ['en']) !!}">
+                                <img src="{{ asset('images/icon/tienganh.png') }}" height="16px" width="25px">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{!! route('user.language', ['vi']) !!}">
+                                <img src="{{ asset('images/icon/tiengviet.png') }}" height="16px" width="25px">
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -107,7 +106,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img style="background-color: #ffffff" src="{{asset('images/icon/admin.png')}}" class="img-circle" alt="User Image" />
+                <img style="background-color: #ffffff" src="{{ asset('images/icon/tuanrau_phagame.png') }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->full_name }}</p>
@@ -117,161 +116,145 @@
         </div>
         <!-- search form -->
 
+        <?php
+
+        use App\Models\Company;
+        use App\Services\GetSession;
+        use Illuminate\Support\Facades\Session;
+
+        $companies = Company::all();
+        $company_id =  GetSession::getCompanyId();
+        $sessionCompany = Session::get('select_companyid');
+        ?>     
+        @can('admin')
+        <form action="{{ route('slidebar_companyid') }}" method="post" class="sidebar-form" style="border: none;">
+            @csrf
+            <div class="input-group">
+                <select class="form-control" name="select_companyid" id="select_companyid">
+                    <option value="" selected>Tất cả nhà xuất bản</option>
+                    @foreach($companies as $cp)
+                    <option value="{{$cp->id}}" {{$sessionCompany == $cp->id ? 'selected' : ''}}>{{$cp->name}}</option>
+                    @endforeach
+                </select>
+                <span class="input-group-btn">
+                    <button style="border: none; margin-left:2px" type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
+        @endcan
+        <!-- Thống kê -->
         <ul class="sidebar-menu">
+            @if($company_id != '' && $company_id != '0')
             <li class="header ">
-                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ CỬA HÀNG </span>
+                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> QUẢN LÝ </span>
             </li>
-
             <!-- Thống kê -->
             <li class="treeview">
                 <a href="{{ url('admin') }}">
-                    <i class="fa fa-pie-chart fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Tổng Quan</span>
+                    <i style="color:#8b7b61" class="fa fa-pie-chart fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('dashboard') }}</span>
                 </a>
             </li>
-
-
+            @endif
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ SÁCH</span>
+            </li>
+            @can('admin')
+            <!-- CRUD  nhà cung cấp -->
+            <li class=" treeview">
+                <a href="{{ route('companies.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-briefcase fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('companies') }}</span>
+                </a>
+            </li>
+            @endcan
+            <!-- CRUD  sách -->
+            @if($company_id != '' && $company_id != '0')
             <li class=" treeview">
                 <a href="{{ route('book.index') }}">
-                    <i class="fa fa-book fa-lg text-warning"></i>
-                    <span style="font-size:16px ;"> Sách</span>
-                    
+                    <i style="color:#8b7b61" class="fa fa-book fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> {{ __('listbook') }}</span>
                 </a>
 
             </li>
+            @can('admin')
             <!-- CRUD thể loại sách -->
             <li class="treeview">
                 <a href="{{ route('book_type.index') }}">
-                    <i class="fa fa-edit  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Loại sách</span>
-                    
-
-                </a>
-
-            </li>
-            <!-- CRUD  nhà cung cấp -->
-            <li class=" treeview">
-                <a href="{{ route('supplier.index') }}">
-                    <i class="fa fa-briefcase fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Nhà cung cấp</span>
+                    <i style="color:#8b7b61" class="fa fa-edit  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> {{ __('listtype') }}</span>
                 </a>
             </li>
-
-
+            @endcan
             <li class="header ">
                 <span style="font-size:20px ;color:rgb(238, 238, 238)"> QUẢN LÝ BÁN HÀNG </span>
             </li>
             <!-- Đơn hàng -->
             <li class="treeview">
                 <a href="{{ route('bill.index') }}">
-                    <i class="fa fa-inbox fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Đơn hàng</span>
-                    
+                    <i style="color:#8b7b61" class="fa fa-inbox fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('bills') }}</span>
                 </a>
-
             </li>
             <!-- Quản lý kho hàng -->
             <li class="treeview">
-                <a href="{{ route('archive.index') }}">
-                    <i class="fa fa-archive  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Kho hàng</span>
-                   
+                <a>
+                    <i style="color:#8b7b61" class="fa fa-archive  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;"> {{ __('store') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
-
+                <ul class="treeview-menu" style="display: none;">
+                    <li> <a href="{{ route('store.index') }}"><i class="fa fa-list-alt"></i> {{ __('store') }} </a></li>
+                </ul>
+            </li>
+            @can('admin')
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> THIẾT LẬP</span>
             </li>
             <!-- Quản lý slide -->
             <li class="treeview">
                 <a href="{{ route('slide.index') }}">
-                    <i class="fa fa-list-alt  fa-lg text-warning"></i>
-                    <span>Bìa</span>
+                    <i style="color:#8b7b61" class="fa fa-list-alt  fa-lg text-warning"></i>
+                    <span>{{ __('banner') }}</span>
                 </a>
 
-            </li>
-            @if(Auth::check())
-                @if(Auth::user()->id_role == 1)
-            <li class="header ">
-                <span style="font-size:20px ;padding:22px;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
-            </li>
 
+            <li class="treeview">
+                <a href="{{ route('thenews.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-thumbs-o-up  fa-lg text-warning"></i>
+                    <span>{{ __('news') }}</span>
+                </a>
+            @endcan
+            @endif
+            <li class="header ">
+                <span style="font-size:20px ;color:rgb(238, 238, 238)"> PHÂN QUYỀN </span>
+            </li>
+            @can('admin')
             <li class="treeview">
                 <a href="{{ route('user.index') }}">
-                    <i class="fa fa-desktop  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Tài Khoản</span>
+                    <i style="color:#8b7b61" class="fa fa-desktop  fa-lg"></i>
+                    <span style="font-size:16px ;"> {{ __('acc') }}</span>
 
                 </a>
-
             </li>
+            <li class="treeview">
+                <a href="{{ route('member.index') }}">
+                    <i style="color:#8b7b61" class="fa fa-user  fa-lg"></i>
+                    <span style="font-size:16px ;"> {{ __('user') }}</span>
+
+                </a>
+            </li>
+            @endcan
             <li class="treeview">
                 <a href="{{ url('logout') }}">
-                    <i class="fa fa-sign-out  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Thoát</span>
+                    <i style="color:#8b7b61" class="fa fa-sign-out  fa-lg text-warning"></i>
+                    <span style="font-size:16px ;">{{ __('exit') }}</span>
 
                 </a>
-
             </li>
-            <!--
-                 <li class="treeview">
-                <a href="">
-                    <i class="fa fa-user  fa-lg text-warning"></i>
-                    <span style="font-size:16px ;">Vai trò</span>
-
-                </a>
-
-            </li>
-            @endif
-            @else
-                return redirect('login');
-            @endif
-           
-            <li class="treeview">
-              <a href="">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-                <span class="label label-primary pull-right">4</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="pages/widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-              </a>
-            </li> -->
-
         </ul>
     </section>
 
 </aside>
-
-<!-- <script>
-    $("tr input").hide();
-    $("#btnsave").hide();
-
-   
-    $("#btnedit").click(function() {
-        $("#btnsave").hide();
-        $("#infull,#inuser,#indis").toggle();
-    });
-    $("#btnsave").click(function() {
-        $("#infull,#inuser,#indis").toggle();
-        $("#btnedit").hide();
-
-        var obj = {};
-                        var elems = $("tr").eq(index).find("label, input");
-                        
-                        elems.each(function(i, el) {
-                            if ($(el).is("label")) {
-                                obj[el.textContent] = elems[i + 1].value
-                            }
-                        });
-    
-});
-
-</script> -->

@@ -26,7 +26,7 @@ class Cart
 			}
 		}
 		$giohang['qty']++;
-		$giohang['price'] = $item->promotion_price==0?$item->unit_price:$item->promotion_price * $giohang['qty'];
+		$giohang['price'] = ($item->promotion_price==0?$item->unit_price:$item->promotion_price) * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
 		$this->totalPrice += $item->promotion_price==0?$item->unit_price:$item->promotion_price;
@@ -47,5 +47,18 @@ class Cart
 		$this->totalPrice -= $this->items[$id]['price'];
 		unset($this->items[$id]);
 	}
+
+	public function changeItem($id,$quantity){
+		$quantitys=(int)$quantity;
+		$this->totalQty -= $this->items[$id]['qty'];
+		$this->totalPrice -= $this->items[$id]['price'];
+
+		$this->items[$id]['qty'] = $quantitys;
+		$this->items[$id]['price'] = $quantitys*($this->items[$id]['item']->promotion_price==0?$this->items[$id]['item']->unit_price:$this->items[$id]['item']->promotion_price);
+		
+		$this->totalQty += $this->items[$id]['qty'];
+		$this->totalPrice += $this->items[$id]['price'];
+	}
+	
 
 }

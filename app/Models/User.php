@@ -17,8 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'id_role','id_company',
+        'full_name', 'username',
+        'email', 'address', 'phone',
         'password',
     ];
 
@@ -53,17 +54,23 @@ class User extends Authenticatable
 
     public function productComments()
     {
-        return $this->belongsToMany(Product::class, 'comment','id_user', 'id_product');
+        return $this->belongsToMany(Product::class, 'comment','id_user', 'id_product')->withPivot('body')->withTimestamps();
     }
 
     public function ratings()
     {
-        return $this->belongsToMany(Product::class, 'rating','id_user', 'id_product');
+        return $this->belongsToMany(Product::class, 'rating','id_user', 'id_product')->withPivot('body','ra_number')->withTimestamps();
     }
 
     public function role()
     {
         return $this->belongsTo(Role::class,'id_role', 'id');
     }
+
+    public function companys()
+    {
+        return $this->belongsTo(Company::class,'id_company', 'id');
+    }
+
 
 }

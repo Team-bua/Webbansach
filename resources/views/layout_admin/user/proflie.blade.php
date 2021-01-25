@@ -1,8 +1,8 @@
-@extends('layout_admin.master2')
+@extends('layout_admin.master')
 @section('content')
 <style>
       .aa {
-      margin-left:400px;
+        margin-left:350px;
         width: 400px;
        
        
@@ -39,32 +39,28 @@
                             @csrf
                             @method('put')
                             <div class="box-body">
-                                <!-- Date range -->
-                              
-
-
+                                <!-- Date range -->                   
                                 <h4> Mật khẩu cũ </h4>
                                 <div class="input-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">
+                                    <input required name="password_old" type="password" class="form-control" placeholder="Mật khẩu cũ. . . . . . . . .">      
                                 </div>
                                 <h4> Mật khẩu mới:</h4>
                                 <div class="input-group aa ">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
+                                    <input required name="new_password" type="password" class="form-control" placeholder="Mật khẩu mới. . . . . . . . .">
                                 </div>
                                 <h4> Xác nhận mật khẩu: </h4>
                                 <div class="input-group aa">
                                     <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-                                    <input  name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
+                                    <input required name="re_password" type="password" class="form-control" placeholder="Xác nhận mật khẩu. . . . . . . . .">
                                 </div>
-
-                              
+                                <br>                      
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    <button type="submit" class="btn btn-primary" style="background-color: #4a4235;border: #4a4235">Cập nhật</button>
                                 </div>
                                 @if(count($errors) > 0)
-                                <div class="alert alert-danger" style="width:350px; margin-left:450px; ">
+                                <div class="alert alert-danger" style="width:350px; margin-left:380px; ">
                                     @foreach($errors->all() as $err)
                                     {{$err}}
                                     @endforeach

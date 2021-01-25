@@ -45,7 +45,7 @@
                 <h4> Số điện thoại </h4>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input required type="text" name="phone" class="form-control" placeholder="Số điện thoại . . . . . . . . .">
+                    <input class="form-control"name="phone"  id="cc" type="text" data-inputmask="'mask': '999-999-9999'" placeholder="Số điện thoại . . . . . . . . ." >
                 </div>
                 <div class="form-group">
                 <h4 for="exampleInputFile">Ảnh đại diện</h4>
@@ -54,10 +54,19 @@
                 </div>
                 <br>
                 <div class="text-center">
-                    <button class=" btn  btn-success btn-lg"> Thêm </button>
+                    <button  style="border-color: #4a4235;background-color:#4a4235;"class=" btn  btn-success btn-lg"> Thêm </button>
                 </div>
             </form>
             </div>
     </section><!-- /.content -->
 </div>
 @endsection
+@section('js')
+    
+    <script type="text/javascript">
+      $(":input").inputmask();
+
+
+    </script>
+
+@stop

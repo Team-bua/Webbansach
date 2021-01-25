@@ -8,9 +8,8 @@
             Cập nhật slide
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Sách</a></li>
-            <li class="active">Thêm sách</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Thể loại</a></li>
+            <li class="active"><a href="#">Banner</a></li>
         </ol>
     </section>
 
@@ -49,3 +48,26 @@
     </section><!-- /.content -->
 </div>
 @endsection
+@section('js')
+<script type="text/javascript">
+
+    function changeImg(input) {
+        //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            //Sự kiện file đã được load vào website
+            reader.onload = function(e) {
+                //Thay đổi đường dẫn ảnh
+                $('#avatar').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+            $('#avatar').show();
+        }
+    }
+    $(document).ready(function() {
+        $('#avatar').click(function() {
+            $('#imgbook').click();
+        });
+    });
+</script>
+@stop

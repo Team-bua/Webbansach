@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+  
+
     protected $table = "product";
+    const statusOn = 1;
+    const statusOff = 0;
 
     protected $guarded = ['name'];
     
@@ -16,7 +21,7 @@ class Product extends Model
         'imagedetail' => 'array'
     ];   
 
-    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail' ,'publisher', 'new'];
+    protected $fillable = ['id_type', 'id_user', 'name', 'unit_price', 'promotion_price	', 'description', 'image', 'imagedetail', 'total_ra', 'total_number' ,'publisher', 'new', 'link'];
 
     public function productType()
     {
@@ -38,14 +43,24 @@ class Product extends Model
         return $this->belongsTo(User::class,'id_user', 'id');
     }
     
-    public function users()
+    public function userComments()
     {
-        return $this->belongsToMany(User::class, 'comment', 'id_product', 'id_user');
+        return $this->belongsToMany(User::class, 'comment', 'id_product', 'id_user')->withPivot('body')->withTimestamps();
     }
 
     public function ratings()
     {
-        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user');
+        return $this->belongsToMany(User::class, 'rating','id_product', 'id_user')->withPivot('body','ra_number')->withTimestamps();
+    }
+
+    public function productCompany()
+    {
+        return $this->belongsTo(Company::class,'id_company', 'id');
+    }
+
+    public function store()
+    {
+        return $this->hasOne(Store::class, 'id_product', 'id');
     }
 
 }

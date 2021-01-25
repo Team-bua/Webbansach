@@ -58,9 +58,13 @@ class ProductTypeRepository
     public function destroy($id)
     {
         $product_type = ProductType::find($id);
-        $product_type->delete();
-        return redirect(route('book_type.index'));
-      
+        $types = $product_type->products;
+        $count_products = count($types);
+        if($count_products == 0){
+            return true;
+        }else{
+            return false;
+        }     
     }
     /**
      * search  member.
