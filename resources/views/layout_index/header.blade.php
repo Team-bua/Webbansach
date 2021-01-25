@@ -34,8 +34,8 @@
                         </div>
                     </div>
                     @else
-                    <div class="dropdown">
-                        <button class="dropbtn"><i class="fa fa-user-circle"></i>&nbsp;{{ Auth::user()->full_name }}</button>
+                    <div class="dropdown"style="float: right;">
+                        <button class="dropbtn" ><i class="fa fa-user-circle"></i>&nbsp;{{ Auth::user()->full_name }}</button>
                         <div class="dropdown-content">
                             <a href="{{ route('info',Auth::user()->id) }}">{{ __('Information') }}</a>
                             <a href="{{ url('logout') }}">{{ __('logout') }}</a>
@@ -43,7 +43,7 @@
                     </div>
                     @endif
                     @else
-                    <div class="dropdown" style="float: right;margin: 4%;">
+                    <div class="dropdown" style="float: right;">
                         <a href="{{ route('login') }}"><button class="dropbtn">{{ __('login') }}</button></a>
                     </div>
                     @endif
@@ -75,7 +75,6 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('catelory') }}</a>
                                 <div class="sub_menu">
-                                    <div class="bubble"></div>
                                     <div class="sub_menu_block" style="width:75px">
                                         <ul>
                                             @for($i = 0; $i < count($product_n); $i++) <li><a href="{{ route('product_type', $types_id[$i]) }}">{{ $types_name[$i] }} ({{ $product_n[$i] }})</a>
@@ -90,7 +89,6 @@
                 <li class="menu_item down"><a href="{{ route('news') }}">{{ __('newws') }}</a></li>
                 <li class="menu_item down"><a href="{{ route('all_book') }}">{{ __('all') }}</a>
                     <div class="sub_menu">
-                        <div class="bubble"></div>
                         <div class="sub_menu_block" style="width:25px">
                             <ul>
                                 <li><a href="{{ route('allnew') }}">{{ __("newbook") }}</a>
@@ -106,7 +104,6 @@
                 </li>
                 <li class="menu_item down"><a href="#"><i class="fa fa-bars"></i> {{ __('company') }}</a>
                     <div class="sub_menu">
-                        <div class="bubble"></div>
                         <div class="sub_menu_block" style="width:50px">
                             <ul>
                                 @foreach ($company as $com)
