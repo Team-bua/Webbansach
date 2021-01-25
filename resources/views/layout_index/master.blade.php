@@ -142,7 +142,7 @@
             width: 50px;
             height: 50px;
             text-align: center;
-            bottom: 150px;
+            bottom: 80px;
             border: 0;
             outline: 0;
             border-radius: 60px;
@@ -257,7 +257,7 @@
         <div class="fb-widget">
             <div class="ctrlq fb-close"></div>
             <div class="fb-page" data-href="https://www.facebook.com/websitebookstore" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false"> </div>
-            <div class="fb-credit"> <a href="https://hoaky68.com" target="_blank" rel="noopener noreferrer">Powered by Hoaky68</a> </div>
+            <div class="fb-credit"> <a href="https://hoaky68.com" target="_blank" rel="noopener noreferrer">Book Store</a> </div>
             <div id="fb-root"></div>
         </div><a href="https://m.me/&#039; + link_mobile + &#039;" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button" rel="nofollow" target="_blank">
             <div class="bubble-msg">Bạn cần hỗ trợ gì không?</div>

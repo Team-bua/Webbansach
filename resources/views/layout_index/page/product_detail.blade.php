@@ -13,8 +13,6 @@
     .active {
         color: #ff9705 !important;
     }
-
-    /*-------------------------------------------------------*/
 </style>
 <section class="product-sec">
     <div class="container">
@@ -103,9 +101,10 @@
                         }
 
                         ?>
-                        @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
-                            @endfor
-                            @endif
+                        @for($i=1; $i<=5; $i++) 
+                            <i class="fa fa-star {{$i <= $product_ra ? 'active' : ''}}" style="color:#999"></i>
+                        @endfor
+                        @endif
                     </li>
                     <li>
                         <span class="name">Trạng thái</span><span class="clm">:</span>
@@ -115,13 +114,6 @@
                         &emsp;<h6 class="badge badge-success" style="font-size: 14px;">Còn hàng&ensp;</h6>
                         @endif
                     </li>
-                    <li>
-                    
-                        <span class="name">Lượt Xem&ensp; <i class="fa fa-eye" aria-hidden="true"></i></span><span class="clm">:</span>
-                        <span class="price final" style="color:black">{{$product_detail->product_view}}</span>
-
-                    </li>
-                    
                 </ul>
                 <div class="btn-sec">
 
@@ -159,27 +151,27 @@
                                 </div>
                                 <div class="rating-process">
                                     <div class="rating-right-part">
-                                        5<i aria-hidden="true" class="fa fa-star"></i>
-                                        Có {{$rating['ra_5']}} đánh giá
+                                        5<i aria-hidden="true" class="fa fa-star"></i>                                       
+                                        Có {{$rating['ra_5']}} đánh giá 
                                     </div>
                                     <div class="rating-right-part">
                                         4<i aria-hidden="true" class="fa fa-star"></i>
-                                        Có {{$rating['ra_4']}} đánh giá
+                                        Có {{$rating['ra_4']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
                                         3<i aria-hidden="true" class="fa fa-star"></i>
-                                        Có {{$rating['ra_3']}} đánh giá
+                                        Có {{$rating['ra_3']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
                                         2<i aria-hidden="true" class="fa fa-star"></i>
-                                        Có {{$rating['ra_2']}} đánh giá
+                                        Có {{$rating['ra_2']}} đánh giá 
 
                                     </div>
                                     <div class="rating-right-part">
-                                        1<i aria-hidden="true" class="fa fa-star"></i>
-                                        Có {{$rating['ra_1']}} đánh giá
+                                       1<i aria-hidden="true" class="fa fa-star"></i>
+                                       Có {{$rating['ra_1']}} đánh giá 
 
                                     </div>
                                 </div>
@@ -212,44 +204,44 @@
                         </div>
                     </form>
                     @else
-                    <div class="cpt_product_description ">
-                        <div class="rating-card">
-                            <div style="height: 40px">
-                                <h1>Đánh Giá</h1>
+                 <div class="cpt_product_description ">
+                            <div class="rating-card">
+                                <div style="height: 40px">
+                                    <h1>Đánh Giá</h1>
+                                </div>
+                                <div class="rating">
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh Giá</p>
+                                </div>
+                                <div class="rating-process">
+                                    <div class="rating-right-part">
+                                        5<i aria-hidden="true" class="fa fa-star"></i>                                       
+                                        Có {{$rating['ra_5']}} đánh giá 
+                                    </div>
+                                    <div class="rating-right-part">
+                                        4<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_4']}} đánh giá 
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                        3<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_3']}} đánh giá 
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                        2<i aria-hidden="true" class="fa fa-star"></i>
+                                        Có {{$rating['ra_2']}} đánh giá 
+
+                                    </div>
+                                    <div class="rating-right-part">
+                                       1<i aria-hidden="true" class="fa fa-star"></i>
+                                       Có {{$rating['ra_1']}} đánh giá 
+
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
                             </div>
-                            <div class="rating">
-                                <p><i class="fa fa-user" aria-hidden="true"></i> {{count($rating['count_ra'])}} Đánh Giá</p>
-                            </div>
-                            <div class="rating-process">
-                                <div class="rating-right-part">
-                                    5<i aria-hidden="true" class="fa fa-star"></i>
-                                    Có {{$rating['ra_5']}} đánh giá
-                                </div>
-                                <div class="rating-right-part">
-                                    4<i aria-hidden="true" class="fa fa-star"></i>
-                                    Có {{$rating['ra_4']}} đánh giá
-
-                                </div>
-                                <div class="rating-right-part">
-                                    3<i aria-hidden="true" class="fa fa-star"></i>
-                                    Có {{$rating['ra_3']}} đánh giá
-
-                                </div>
-                                <div class="rating-right-part">
-                                    2<i aria-hidden="true" class="fa fa-star"></i>
-                                    Có {{$rating['ra_2']}} đánh giá
-
-                                </div>
-                                <div class="rating-right-part">
-                                    1<i aria-hidden="true" class="fa fa-star"></i>
-                                    Có {{$rating['ra_1']}} đánh giá
-
-                                </div>
-                            </div>
-                            <div style="clear:both;"></div>
-                        </div>
-                    </div><br>
-                    <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}" data-toggle="modal" data-target="#tab-info">Đăng nhập</a> hoặc<a href="{{ route('signup') }}"> Đăng Ký</a></div>
+                        </div><br>
+                    <div style="float: left"> Chỉ có thành viên mới có thể nhận xét. Vui lòng <a href="{{ route('login') }}"  data-toggle="modal" data-target="#tab-info">Đăng nhập</a> hoặc<a href="{{ route('signup') }}"> Đăng Ký</a></div>
                     @endif
                 </div>
                 <div id="tab-information" class="tab-content">
@@ -273,114 +265,60 @@
         </div>
         <div class="container">
             <div id="last-product-wrapper">
-                <div class="container-fluid gedf-wrapper">
-                    <div class="row">
-                        @foreach($rating['ra_date'] as $ra)
-                        <?php
-                        $ra_show = 0;
-                        if ($ra->pivot->ra_number) {
-                            $ra_show = $ra->pivot->ra_number;
-                        }
-                        ?>
-                        <div class="col-md-12 gedf-main" style="margin-right: 18%">
-                            <div class="card gedf-card">
-                                <div class="card-header">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="mr-2">
-                                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
-                                            </div>
-                                            <div class="ml-2">
-                                                <div class="h7 text-muted">{{$ra->full_name}}</div>
-                                                @for($i=1; $i<=5; $i++) <span class="float-right"><i class="text-warning fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i></span>@endfor
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{$ra->pivot->created_at->format('d/m/Y')}}</div>
-                                    <p class="card-text">
-                                        {{$ra->pivot->body}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
+                <div id="comment-list">
+                    @foreach($rating['ra_date'] as $ra)
+                    <?php
+                    $ra_show = 0;
+                    if ($ra->pivot->ra_number) {
+                        $ra_show = $ra->pivot->ra_number;
+                    }
+                    ?>
+                    <ul>
+                        <li class="com-title">
+                            {{$ra->full_name}} &nbsp;
+                            @for($i=1; $i<=5; $i++) <i class="fa fa-star {{$i <= $ra_show ? 'active' : ''}}" style="color:#999"></i>
+                                @endfor
+                                <br>
+                                <span>{{$ra->pivot->created_at->format('d/m/Y')}}</span>
+                        </li>
+                        <li class="com-details">
+                            {{$ra->pivot->body}}
+                        </li>
+                    </ul>
+                    @endforeach
                 </div>
-<<<<<<< HEAD
-
-=======
                 <br>
                 <div class="btn-sec">
                     <div class="btn-sec">{{$rating['ra_date']->appends(request()->input())->links('vendor.pagination.bootstrap-4')}}</div>
                 </div>
->>>>>>> 4bee00649254da46bca481011021c3191e768b5d
             </div>
         </div>
 </div>
 <div class="modal fade product_view" id="tab-info">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <form method="post" action="{{url('login')}}">
-                            @csrf
-                            <h3 class="text-center text-info">Đăng Nhập</h3>
-                            <div class="form-group">
-                                <input type="email" name="username" class="form-control" placeholder="Email . . . . ." required />
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form method="post" action="{{url('login')}}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="email" name="username" class="form-control" placeholder="Email . . . . ." required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Password . . . . ." required />
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn black">Đăng Nhập </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <input type="password" name="password" class="form-control" placeholder="Password . . . . ." required />
-                            </div>
-                            <div class="col-3">
-                                <button class="btn black">Đăng Nhập </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<section class="static about-sec">
-    <div class="container">
-        <h2>Sản Phẩm Liên Quan
-        </h2>
-        <hr>
-        <div class="recent-book-sec">
-            <div class="row" id="load" style="position: relative;">
-                @foreach ($product_related as $pro)
-                <div class="col-md-3">
-                    <div class="single_product">
-                        <div class="item">
-                            <a href="{{ route('detail', $pro->id) }}"><img src="{{ asset('images/product/' . $pro->image) }}" alt="image" /></a>
-                            <h3><a href="#">{{ $pro->name }}</a></h3>
-                            @if($pro->promotion_price == 0)
-                            <span class="price-new">{{number_format($pro->unit_price,0,"",",")}} VNĐ </span>
-                            @else
-                            <span class="price-old">{{number_format($pro->unit_price,0,"",",")}} VNĐ
-                            </span>
-                            <span class="price-new">{{number_format($pro->promotion_price,0,"",",")}} VNĐ
-                            </span>
-                            @endif
-                            <br>
-                            <h6><a href="javascript:"><i onclick="AddCart('{{$pro->id}}')" class="fa fa-cart-arrow-down"></i></a> /
-                                <a class="beta-btn primary" href="{{url('detail',$pro->id)}}">{{ __("detail") }} <i class="fa fa-chevron-right"></i></a>
-                            </h6>
                         </div>
                     </div>
-                    <br>
                 </div>
-                @endforeach
             </div>
         </div>
-    </div>
 </section>
-<a href="#" class="bck"></a>
 @endsection
 @section('speak')
 <script type="text/javascript">
@@ -400,5 +338,18 @@
             }
         });
     });
+</script>
+@stop
+@section('music')
+<script>
+    var x = document.getElementById("myAudio");
+
+    function playAudio() {
+        x.play();
+    }
+
+    function pauseAudio() {
+        x.pause();
+    }
 </script>
 @stop
