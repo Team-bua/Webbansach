@@ -62,6 +62,7 @@ Route::get('logout',[LoginController::class,'postLogout'])->name('logout');
 //----->đăng ký
 Route::get('signup',[PageController::class,'getSignup'])->name('signup');
 Route::post('signup',[PageController::class,'postSignup'])->name('signup');
+Route::get('/signup/{id}',[PageController::class,'postVerifyAccount'])->name('postVerifyAccount');
 //----->giỏ hàng
 Route::get('cart',[PageController::class,'getCart'])->name('cart');
 Route::get('/addcart/{id}',[PageController::class,'getAddcart'])->name('addcart');
@@ -152,13 +153,5 @@ Route::get('new_on/{id}',[NewsController::class,'getOnNews'])->name('news_on');
 Route::get('new_off/{id}',[NewsController::class,'getStopNews'])->name('news_off');
 
 Route::get('/send-mail',[MailController::class,'sendEmail'])->name('send_email');
-/*Route::get('/send-mail', function ()
-{
-    $details = [
-        'title' => 'Mail form me',
-        'body' => 'This is vip pro'
-    ];
-    \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details));
-    echo "vip pro";
-});*/
+
 

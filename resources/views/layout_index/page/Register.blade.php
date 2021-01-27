@@ -6,8 +6,8 @@
             <div class="form">     
                 <form action="{{url('signup')}}" method="post" class="form" id="myform">
                 @csrf  
-                @if(Session::has('thongbao'))
-                    <div class="alert alert-success">{{Session::get('thongbao')}} </div>
+                @if(Session::has('flag'))
+                    <div class="alert alert-{{Session::get('flag')}}">{{Session::get('message')}} </div>
                 @endif
                 <div class="row  justify-content-md-center">             
                     <div class="col-6">

@@ -196,7 +196,13 @@ class PageController extends Controller
     public function postSignup(PageRequest $request)
     {
         $this->repository->createuser($request);
-        return redirect()->back()->with('thongbao', 'Đăng ký thành công');
+        return redirect()->back()->with(['flag' => 'warning', 'message' => 'Một mail yêu cầu xát nhận tài khoản đã được gửi đến Gmail của bạn.']);
+    }
+
+    public function postVerifyAccount($id)
+    {
+        $this->repository->VerifyAccount($id);
+        return redirect('signup')->with(['flag' => 'success', 'message' => 'Đăng ký thành công.']);
     }
 
     public function getRead($id)
@@ -245,7 +251,7 @@ class PageController extends Controller
     {
         try {
             $this->repository->postCheckout($request);
-            return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công']);
+            return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công, một Mail đã được gửi đến Gmail của quý khách!!!']);
         } catch (Exception $exception) {
             return redirect()->back()->with(['flag' => 'danger', 'messege' => 'Không tồn tại sản phẩm']);
         }

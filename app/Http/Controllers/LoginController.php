@@ -27,18 +27,29 @@ class LoginController extends Controller
     {
         if (Auth::check()) {
            
-            if (Auth::user()->id_role == 1) {
+            if (Auth::user()->id_role == 1 && Auth::user()->is_verified == 1) 
+            {
                 return redirect(route('companies.index'));
-            }elseif (Auth::user()->id_role == 2) {
+            }
+            elseif (Auth::user()->id_role == 2 && Auth::user()->is_verified == 1)
+            {
                 $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
                 GetSession::putCompanyId($company_id['company_id']);
                 //dd($company_id);
                 return redirect('index');
-            } else {
+            } 
+            elseif(Auth::user()->id_role == 3 && Auth::user()->is_verified == 1) 
+            {
                 $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
                 GetSession::putCompanyId($company_id['company_id']);
                 //dd($company_id);
                 return redirect('index');
+            }
+            else
+            {
+                Auth::logout();
+                Session::forget('select_companyid');
+                return redirect('/login')->with(['flag'=>'danger','messege'=>'Tài khoản của bạn chưa được kích hoạt']);
             }
             
         } else {
@@ -66,22 +77,16 @@ class LoginController extends Controller
             'password' => $request->password
         );
         
-        if (Auth::attempt($login, true)) {
+        if (Auth::attempt($login, true) && Auth::user()->is_verified == 1) {
             $company_id = DecentralizationRepository::getDecentralization(Auth::user()->username);
             GetSession::putCompanyId($company_id['company_id']);
             $this->clearLoginAttempts($request);
-            /* Cookie::queue('username', Auth::user()->username , 10);
-            Cookie::queue('pass', $request->password , 10); */
-            //print (request()->cookie('username'));
             
-            /* if (Auth::user()->admin_system == 1) {
-                return redirect(route('companies.index'));
-            } else { */
-            
-            return back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);
-            
-        } else {
-            return back()->with(['flag'=>'danger','messege'=>'Đăng nhập không thành công']);
+            return back()->with(['flag'=>'success','messege'=>'Đăng nhập thành công']);    
+        } 
+        else 
+        {
+            return back()->with(['flag'=>'danger','messege'=>'Sai tên tài khoản hoặc mật khẩu']);
         }
     }
 

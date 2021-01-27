@@ -23,7 +23,8 @@ class SessionMiddleware
         {    
                  return redirect(route('companies.index'));
              
-        }elseif($companyid == '0')
+        }
+        elseif($companyid == '0')
         {
                 return redirect(route('companies.index'));
         }

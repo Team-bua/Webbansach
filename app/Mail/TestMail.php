@@ -11,18 +11,24 @@ class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
-    public $body;
+    public $image_products;
+    public $name_products;
+    public $quantity_products;
+    public $price;
+    public $id_account;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details, $body)
+    public function __construct($image_products, $name_products, $quantity_products, $price, $id_account)
     {
-        $this->details = $details;
-        $this->body = $body;
+        $this->image_products = $image_products;
+        $this->name_products = $name_products;
+        $this->quantity_products = $quantity_products;
+        $this->price = $price;
+        $this->id_account = $id_account;
     }
 
     /**

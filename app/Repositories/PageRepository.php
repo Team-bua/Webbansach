@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
@@ -18,6 +19,7 @@ use App\Models\Company;
 use App\Models\Rating;
 use App\Models\News;
 use App\Models\Store;
+use App\Mail\RegisterEmail;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
 
@@ -109,6 +111,13 @@ class PageRepository
             ->count('bill_detail.id');
     }
     // sach mới
+
+    public function VerifyAccount($id)
+    {
+        $user= User::find($id);
+        $user->is_verified = 1;
+        $user->save();
+    }
 
     public function getAllProductSale()
     {
@@ -348,6 +357,11 @@ class PageRepository
     public function postCheckout(Request $request)
     {
         $cart = Session::get('cart');
+        $image_products = [];
+        $name_products = [];
+        $quantity_products = [];
+        $price = [];
+        $id_account = Auth::user()->id;
 
         $bill = new Bill();
         $bill->id_user = Auth::user()->id;
@@ -363,27 +377,32 @@ class PageRepository
 
         foreach ($cart->items as $key => $value) {
             $bill_detail = new BillDetail();
+
+            $i = Product::where('id', $key)
+                            ->value('image');
+            $n = Product::where('id', $key)
+                            ->value('name');
+            $q = $value['qty'];
+            $p = $value['price'];
+            $image_products[] = $i;
+            $name_products[] = $n;
+            $quantity_products[] = $q;
+            $price[] = $p;
+
             $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
             $bill_detail->quantity = $value['qty'];
-            $bill_detail->unit_price = ($value['price'] / $value['qty']);
+            $bill_detail->unit_price = ($value['price'] / $value['qty']);           
             $bill_detail->save();
         }
-        $details = [
-            'title' => 'Xin Chào',
-            'body' => 'Ngon lắm',
-            'url' => 'http://localhost:8000/index',
-        ];
-        $body = [
-            'title' => 'vip pro'
-        ];
-        \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details, $body));
+        \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($image_products, $name_products, $quantity_products, $price, $id_account));
         Session::forget('cart');
     }
 
     public function createUser(Request $request)
     {
         $user = new User();
+        $user_name = $request->input('username');
         $user->full_name = $request->input('fullname');
         $user->username = $request->input('username');
         $user->email = $request->input('username');
@@ -391,6 +410,10 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
+        $add = User::where('username', $user_name)
+                    ->value('id');
+        dd(new \App\Mail\RegisterEmail($add));
+        \Mail::to($user_name)->send(new \App\Mail\RegisterEmail($add));   
     }
 
     public function getInfo($id)
