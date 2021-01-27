@@ -165,6 +165,19 @@ class PageRepository
         return Product::find($id);
     }
 
+    public function getProductRelated($id){
+        $product=Product::find($id);
+        return Product::where(['id_type'=>$product->id_type])->paginate(5);
+    }
+
+    public function ProductView($id)
+    {
+        $product = Product::where('id',$id)->first();
+        $product->product_view += 1;
+        $product->save();
+        
+    }
+
     public function getSearch($req)
     {
         $product = Product::where('status', 1)

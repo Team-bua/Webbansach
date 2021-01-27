@@ -2,8 +2,8 @@
 @section('content')
 <div class="container">
     <br>
-      <h6><span>Thông Tin</span>
-        </h6>
+      <h1><span>Thông Tin</span>
+        </h1>
     <hr>
     <div class="btn-sec">
         <button class="btn " data-toggle="modal" data-target="#tab-info">Thông Tin</button>

@@ -45,7 +45,7 @@ Route::get('index',[PageController::class,'getIndex'])->name('index');
 //----->tất cả sản phẩm đang có
 Route::get('all_book',[PageController::class,'AllBook'])->name('all_book');
 //----->tất cả sản phẩm theo mục
-Route::get('new',[PageController::class,'getAllNew'])->name('allnew');
+Route::get('newbook',[PageController::class,'getAllNew'])->name('allnew');
 Route::get('sale',[PageController::class,'getAllSale'])->name('allsale');
 Route::get('highlights',[PageController::class,'getAllHighlights'])->name('allhighlights');
 //----->gioithieu
@@ -96,8 +96,7 @@ Route::group(['middleware' => 'App\Http\Middleware\LoginMiddleware'], function()
 
 
 Route::group(['middleware' => 'App\Http\Middleware\Locale'], function() {
-    Route::get('language/{language}',
-     [PageController::class,'changeLanguage'])->name('user.language');
+    Route::get('language/{language}',[PageController::class,'changeLanguage'])->name('user.language');
 });
 
 ////----->trang admin_CRUD san pham

@@ -28,22 +28,7 @@
                 <div class="col-md-5">
                     <div class="form">
                         <h3>Liên hệ nhanh với chúng tôi</h3>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input placeholder="Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" placeholder="Email" required>
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea placeholder="Messege"></textarea>
-                                </div>
-                                <div class="col-md-12">
-                                    <button class="btn black">Gửi</button>
-                                </div>
-                            </div>
-                        </form>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4850745445833!2d106.7019817142155!3d10.77411129232313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46eae30399%3A0x637b9183f6a8e0a7!2sFahasa!5e0!3m2!1svi!2s!4v1611296931856!5m2!1svi!2s" width="500" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>

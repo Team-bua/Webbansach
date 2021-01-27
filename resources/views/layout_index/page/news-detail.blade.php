@@ -1,111 +1,6 @@
 @extends('layout_index.master')
 @section('content')
 <style type="text/css">
-    .clear {
-        clear: both;
-    }
-
-    br.clear {
-        clear: both;
-        margin-top: -15px;
-    }
-
-    a {
-        outline: none;
-        text-decoration: none;
-
-    }
-
-    .fl_left,
-    .imgl {
-        float: left;
-    }
-
-    .fl_right,
-    .imgr {
-        float: right;
-    }
-
-    img {
-        display: block;
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-
-    .imgl,
-    .imgr {
-        border: 1px solid #C7C5C8;
-        padding: 5px;
-    }
-
-    .imgl {
-        margin: 0 8px 8px 0;
-        clear: left;
-    }
-
-    .imgr {
-        margin: 0 0 8px 8px;
-        clear: right;
-    }
-
-    /* ----------------------------------------------Wrapper------------------------------------- */
-
-    div.wrapper {
-        display: block;
-        width: 100%;
-        margin: 0;
-        text-align: left;
-    }
-
-    div.wrapper h1,
-    div.wrapper h2,
-    div.wrapper h3,
-    div.wrapper h4,
-    div.wrapper h5,
-    div.wrapper h6 {
-        margin: 0 0 15px 0;
-        padding: 0;
-        font-size: 20px;
-        font-weight: normal;
-        line-height: normal;
-    }
-
-    .col1 {
-        color: #666666;
-        background-color: #000000;
-    }
-
-    .col2 {
-        color: #E5E5E5;
-        background-color: #839B05;
-    }
-
-    .col3 {
-        color: #E5E5E5;
-        background-color: #000000;
-        padding: 20px 0;
-        border-bottom: 1px solid #839B05;
-    }
-
-    .col5 {
-        color: #E5E5E5;
-        background-color: #000000;
-    }
-
-    .col6 {
-        color: #E5E5E5;
-        background-color: #000000;
-        border-top: 1px solid #839B05;
-        border-bottom: 1px solid #839B05;
-    }
-
-    .col7,
-    .col7 a {
-        color: #666666;
-        background-color: #151515;
-    }
-
     /* ----------------------------------------------Generalise------------------------------------- */
 
     #header,
@@ -263,6 +158,7 @@
         @foreach ($content_detail as $con)
             <p style="font-size:12px;text-align: justify;"> {!! $con->content !!} </p>
         @endforeach
+        <br>
         <div id="hpage_latest">
             @foreach ($content as $con)
                 <ul>

@@ -39,7 +39,6 @@
                             <th width="10%">Giá (VNĐ)</th>
                             <th>Giá Khuyến Mãi (VNĐ)</th>
                             <th>Hình ảnh</th>
-                            <th>Trạng thái</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -62,24 +61,12 @@
                             </td>
 
                             <td><img style="width:100px;height:100px;" src="{{ asset('images/product/' . $pro->image) }}"></td>
-                            <td id="off_on-{{$pro->id}}">
-
-                                @if ($pro->status == 1)
-
-                                <button type="button" onclick="Off('{{$pro->id}}')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn ">
-                                    <i class="fa fa-pause"></i> </button>
-
-                                @else
-                                <button type="button" onclick="On('{{$pro->id}}')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn ">
-                                        <i class="fa fa-play"></i> </button>
-                                @endif
-                            </td>
                             <td>{!! $pro->description !!}</td>
                             <td>{{ $pro->pagenumber }}</td>
                             <td>{{ $pro->size }}</td>
                             <td>{{ $pro->language }}</td>
                             <td>{{ $pro->productCompany->name }}</td>
-                            <td>
+                            <td id="off_on-{{$pro->id}}">
                                 @can('user')
                                 <form style="margin-right:5px;float: left;" method="post" action="{{ route('book.destroy', [$pro['id']]) }}" enctype="multipart/form-data" name="form1" id="form1">
                                     @csrf
@@ -92,7 +79,16 @@
                                         </i> </button>
                                 </a>
                                 @endcan
-                                <button style="margin-right:5px;float: left;" class='btn btn-flat btn-info btn1'><i class='fa fa-eye'></i></button>
+                                @can('admin')
+                                @if ($pro->status == 1)
+                                <button type="button" onclick="Off('{{$pro->id}}')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn ">
+                                    <i class="fa fa-pause"></i> </button>
+                                @else
+                                <button type="button" onclick="On('{{$pro->id}}')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn ">
+                                        <i class="fa fa-play"></i> </button>
+                                @endif
+                                @endcan
+                                <button style="border-radius: 4px;" class='btn btn-flat btn-info btn1'><i class='fa fa-eye'></i></button>
                             </td>
                             <td></td>
                         </tr>
@@ -139,7 +135,7 @@
         "order": [],
         "bAutoWidth": true,
         "columnDefs": [{
-            "targets": [7, 8, 9, 10, 11, 13],
+            "targets": [6, 7, 8, 9, 10, 12],
             "visible": false
         }, {
             // adding a more info button at the end
@@ -152,8 +148,8 @@
         var data = table.row($(this).parents('tr')).data(); // getting target row data
         $('.showProduct').html(
             // Adding and structuring the full data
-            '<table class="table dtr-details" width="100%"><h4 class="text-center" style="color:blue">Thông tin sách</h4><tbody><tr><td style="width:100px">Tên sách<td><td>' + data[0] + '</td></tr><tr><td>Mô Tả<td><td style="text-align:justify">' + data[7] + '</td></tr><tr><td>Số trang<td><td>' + data[8] +
-            '</td></tr><tr><td>Kích thước<td><td>' + data[9] + '</td></tr><tr><td>Ngôn ngữ<td><td>' + data[10] + '</td></tr><tr><td>Nhà xuất bản<td><td>' + data[11] + '</td></tr></tbody></table>'
+            '<table class="table dtr-details" width="100%"><h4 class="text-center" style="color:blue">Thông tin sách</h4><tbody><tr><td style="width:100px">Tên sách<td><td>' + data[0] + '</td></tr><tr><td>Mô Tả<td><td style="text-align:justify">' + data[6] + '</td></tr><tr><td>Số trang<td><td>' + data[7] +
+            '</td></tr><tr><td>Kích thước<td><td>' + data[8] + '</td></tr><tr><td>Ngôn ngữ<td><td>' + data[9] + '</td></tr><tr><td>Nhà xuất bản<td><td>' + data[10] + '</td></tr></tbody></table>'
 
         );
         $('#myModal').modal('show'); // calling the bootstrap modal
@@ -166,7 +162,8 @@
             type: 'GET',
             success: function(response) {
                 let book = JSON.parse(response)['off'];
-                $('#off_on-' +book['id']).html('<button type="button" onclick="On('+book['id']+')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn "><i class="fa fa-play"></i> </button>');
+                $('#off_on-' +book['id']).html('<button type="button" onclick="On('+book['id']+')" style="background-color:rgb(0, 255, 0);border:none;" class="btn btn-warning btn "><i class="fa fa-play"></i> </button>'+
+                                                ' <button style="border-radius: 4px;" class="btn btn-flat btn-info btn1"><i class="fa fa-eye"></i></button>');
             }
         })
     }
@@ -178,7 +175,8 @@
             type: 'GET',
             success: function(response) {
                 let book = JSON.parse(response)['on'];
-                $('#off_on-'+book['id']).html('<button type="button" onclick="Off('+book['id']+')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn "><i class="fa fa-pause"></i> </button>');
+                $('#off_on-'+book['id']).html('<button type="button" onclick="Off('+book['id']+')" style="background-color:rgb(114, 109, 109);border:none;" class="btn btn-warning btn "><i class="fa fa-pause"></i> </button>'+
+                                            ' <button style="border-radius: 4px;" class="btn btn-flat btn-info btn1"><i class="fa fa-eye"></i></button>');
 
             }
         })
