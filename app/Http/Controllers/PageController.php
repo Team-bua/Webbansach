@@ -245,11 +245,6 @@ class PageController extends Controller
     {
         try {
             $this->repository->postCheckout($request);
-            $details = [
-                'title' => 'Xin Chào',
-                'body' => 'Ngon lắm',
-            ];
-            \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details));
             return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công']);
         } catch (Exception $exception) {
             return redirect()->back()->with(['flag' => 'danger', 'messege' => 'Không tồn tại sản phẩm']);

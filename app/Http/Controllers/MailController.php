@@ -13,7 +13,10 @@ class MailController extends Controller
             'title' => 'Xin Chào',
             'body' => 'Ngon lắm',
         ];
-        \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details));
+        $body = [
+            'title' => 'vip pro'
+        ];
+        \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details, $body));
         trans('passwords.throttled');
     }
 }
