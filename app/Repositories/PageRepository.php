@@ -22,6 +22,7 @@ use App\Models\Store;
 use App\Mail\RegisterEmail;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageRepository
 {
@@ -182,7 +183,7 @@ class PageRepository
     public function ProductView($id)
     {
         $product = Product::where('id',$id)->first();
-        $product->product_view = $product->product_view + 1;
+        $product->product_view += 1;
         $product->save();
         
     }

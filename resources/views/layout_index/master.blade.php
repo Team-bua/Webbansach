@@ -51,77 +51,7 @@
             color: #fff !important;
         }
     </style>
-    @include('layout_index.header')
-    @yield('content')
-    @include('layout_index.footer')
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <!------------------------------------------------------------------------>
-    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
-    <script type="text/javascript" src="js/jquery.selectBox.js"></script>
-    <script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
-    <script type="text/JavaScript" src="js/cuties.js"></script>
-
-    <!---------------------------back to top--------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        $(function() {
-            $('.bck').backToTop();
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#myInput').on('keyup', function(event) {
-                event.preventDefault();
-                /* Act on the event */
-                var tukhoa = $(this).val().toLowerCase();
-                $('#myTable div').filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
-                });
-            });
-        });
-    </script>
-    <!-------------------------------------------------------------------------------------->
-    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-    <script>
-        function AddCart(id) {
-            $.ajax({
-                url: 'addcart/' + id,
-                type: 'GET',
-                success: function(response) {
-                    $('.quntity').html(response['cart']['totalQty']);
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Đã thêm vào giỏ hàng',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                },
-                error: function(response) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Sách đã hết hàng',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            })
-        }
-    </script>
-    <!---------------------------------------------------------------------------------------->
-    <!---------------------------------------------------------------------------------------->
-    @yield('script')
-    @yield('js')
-    @yield('show')
-    @yield('speak')
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
-    <style>
+        <style>
         .fb-livechat,
         .fb-widget {
             display: none
@@ -263,7 +193,76 @@
             <div class="bubble-msg">Bạn cần hỗ trợ gì không?</div>
         </a>
     </div>
+    @include('layout_index.header')
+    @yield('content')
+    @include('layout_index.footer')
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <!------------------------------------------------------------------------>
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+    <script type="text/javascript" src="js/jquery.selectBox.js"></script>
+    <script type="text/JavaScript" src="js/cloud-zoom.1.0.2.js"></script>
+    <script type="text/JavaScript" src="js/cuties.js"></script>
 
+    <!---------------------------back to top--------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(function() {
+            $('.bck').backToTop();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#myInput').on('keyup', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var tukhoa = $(this).val().toLowerCase();
+                $('#myTable div').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1);
+                });
+            });
+        });
+    </script>
+    <!-------------------------------------------------------------------------------------->
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script>
+        function AddCart(id) {
+            $.ajax({
+                url: 'addcart/' + id,
+                type: 'GET',
+                success: function(response) {
+                    $('.quntity').html(response['cart']['totalQty']);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Đã thêm vào giỏ hàng',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                error: function(response) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Sách đã hết hàng',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+        }
+    </script>
+    <!---------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------->
+    @yield('script')
+    @yield('js')
+    @yield('show')
+    @yield('speak')
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
     <script src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&#038;version=v2.9"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>

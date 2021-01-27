@@ -114,6 +114,10 @@
                         &emsp;<h6 class="badge badge-success" style="font-size: 14px;">Còn hàng&ensp;</h6>
                         @endif
                     </li>
+                    <li>                  
+                        <span class="name">Lượt Xem&ensp; <i class="fa fa-eye" aria-hidden="true"></i></span><span class="clm">:</span>
+                        <span class="price final" style="color:black">{{$product_detail->product_view}}</span>
+                    </li>
                 </ul>
                 <div class="btn-sec">
 

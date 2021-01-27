@@ -1,53 +1,7 @@
 @extends('layout_index.master')
 @section('content')
       <style type="text/css">
-        .clear {
-            clear: both;
-        }
 
-        br.clear {
-            clear: both;
-            margin-top: -15px;
-        }
-
-        a {
-            outline: none;
-            text-decoration: none;
-
-        }
-
-        .fl_left,
-        .imgl {
-            float: left;
-        }
-
-        .fl_right,
-        .imgr {
-            float: right;
-        }
-
-        img {
-            display: block;
-            margin: 0;
-            padding: 0;
-            border: none;
-        }
-
-        .imgl,
-        .imgr {
-            border: 1px solid #C7C5C8;
-            padding: 5px;
-        }
-
-        .imgl {
-            margin: 0 8px 8px 0;
-            clear: left;
-        }
-
-        .imgr {
-            margin: 0 0 8px 8px;
-            clear: right;
-        }
 
         /* ----------------------------------------------Wrapper------------------------------------- */
 
@@ -58,7 +12,6 @@
             text-align: left;
         }
 
-        div.wrapper h1,
         div.wrapper h2,
         div.wrapper h3,
         div.wrapper h4,
@@ -123,10 +76,6 @@
 
         /* ----------------------------------------------Content------------------------------------- */
 
-        #container {
-            padding: 30px 0;
-        }
-
         #content {
             display: block;
             float: left;
@@ -182,24 +131,9 @@
             text-align: right;
         }
 
-        /* Comments */
 
         /* ----------------------------------------------Column------------------------------------- */
 
-        #column {
-            display: block;
-            float: right;
-            width: 300px;
-        }
-
-        #column .holder {
-            display: block;
-            width: 260px;
-            margin-bottom: 20px;
-            padding-left: 10px;
-        }
-
-        #column .holder,
         #column #featured {
             display: block;
             width: 300px;
@@ -292,7 +226,7 @@
                     <ul id="latestnews">
                         <li> 
                             <a href="{{ route('newsdetail', [$con['id']]) }}"><img style="width:80px;height:80px;" src="{{ asset('images/news/' . $con->image) }}"></a>
-                            <p style=""><strong><a href="{{ route('newsdetail', [$con['id']]) }}"> {{ $con->name }}</a></strong></p>
+                            <p><strong><a href="{{ route('newsdetail', [$con['id']]) }}"> {{ $con->name }}</a></strong></p>
                         </li>
                     </ul>
                 @endforeach
