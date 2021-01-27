@@ -20,6 +20,7 @@ use App\Models\News;
 use App\Models\Store;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageRepository
 {
@@ -369,7 +370,15 @@ class PageRepository
             $bill_detail->unit_price = ($value['price'] / $value['qty']);
             $bill_detail->save();
         }
-        
+        $details = [
+            'title' => 'Xin Chào',
+            'body' => 'Ngon lắm',
+            'url' => 'http://localhost:8000/index',
+        ];
+        $body = [
+            'title' => 'vip pro'
+        ];
+        Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details, $body));
         Session::forget('cart');
     }
 

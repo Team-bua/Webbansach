@@ -8,9 +8,9 @@
     <style>
         .header{
             width: 600px; 
-            height: 600px; 
+            height: 620px; 
             background-color:aliceblue;
-            margin-left: 500px;
+            margin-left: 400px;
         }
         .logo{
             width: 100px;
@@ -23,53 +23,119 @@
             font-size: 40px;
             font-family: serif;
         }
-        #customers {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+       .table-wrapper{
+    margin: 10px 15px 30px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
 
-        #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-        }
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
 
-        #customers tr:nth-child(even){
-            background-color: #f2f2f2;
-        }
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
 
-        #customers tr:hover {
-            background-color: #ddd;
-        }
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
 
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #4CAF50;
-            color: white;
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+blockquote {
+    margin-top: 0;
+    line-height: 160%;
+}
+
+blockquote {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 17px;
+}
+a {
+    text-decoration: none;
+    color: #3787DE;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #F16E6E;
+}
+#header h1 {
+    float: left;
+    padding: 0px 0 0 250px;
+    margin-top: 10px;
+    letter-spacing: 0px;
+    font-size: 18px;
+}
+#header h2 {
+    float: right;
+    padding: 0px 0px 0 40px;
+    margin-top: 0px;
+    letter-spacing: -1px;
+    font-size: 18px;
 }
     </style>
 </head>
 <body>
     <div class="header">
-    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAE9klEQVRIS42VW2yURRTH//PtfnvfbXe3hWovi5qYCjFKkLYgYNVAjCQoWgkGqImXVLwkqOVBhDeRF9EHJD4ISlojEcUg+ELEhxJLuNRyC7SBwF7ardvb3vfb3e82Zqa4y3ZLy0mT7sycmd93zvzPGRIJD1IASCYSIITA6XKx4YymqhrC4X/h89UV1u3O+TCKFmQzE1CVPKx2Lx+rShY5KQZNU0CGgwPUaCR8Uzwag8lsgs1uL4Ocv3AR615+nc/X1dWi79xf/LcgGGB31YAQA/9IZjkpjnwuUTiDBP0D1CAADKSpKgc5XC6YLeYSkO/hJ5DP5wtzgdtXYTGLIETgXy+abKBUh5Qeh6rkSvaSocAg1SmF0QAYDASyLCMZj6PS7YZRFAvOzcvXIBgMFcaR8CBMZjssVjeIYICcTyMrRQHKs18OYTMMJBpZ+AQ5SYIkSXB7vYUU6LqO1udfwo0bN3Hoh2+xfv2rMJmd0HUN2cwkv4N7GY+kuEghilN5TadS0FQNFe7KwvJnu3bj4PfdyKSTEAwiFDmDbCbK0zSblUAoKNifyTQFSibi/GIdTicfP7d6Pa5fH+BR5qQoT9H92LRIplJKyFREVKeIx2KwOVzwVNXCVeEBpRRXr5xFtbcY4VygMgjbwECCAVwMRDAjlczAW10Dt6eKn3f01248vWzpXGcXJVx6J3fdDgUcrgpYbZWQ0gmMDN/G44uXc4eWliYcO9p1/5DoZIRmUvFSyRECh8sLs8UORWaVO4m/e8/ilbYtBb+g/yrMpqLEZ714SimdGBtGLpvhfkajCY4KL/+flVJIJSdhEgm+2X8Au/d8ySXd2PgkwuFbuDFw/r6iIQzCtD4WCcFgMMLh9IIIAtKpKHJSiokNTGtvd3yAkydP8UPraocQHmnAcPAaDKxdzGFEkfPUKJqgqgpYA9Q1lX+9IhdbA1OUqqlo27AF/f2X8GxrByYmvsIfx4dhNpdX+HQmGR0J0HkP+Pi8qigYiwR5FU83Blr81Ao0NNTj4sVLePON2xgd9+Dgd5G5AgFJJePUbLFBvNOnUskoErHxGTfWL2jE5f4z6HhvGy5fvoJlLcN4rJFi187JWUEkm83SdDLKIRXuau4ci45iuuLYPIOE/IMgREP9gkXY+u5W/HlqLzreSWLL5lKF3k0lkZEA/T//lZ75cDinKvluxbFxz+lebG5/C0OBQfgDIaxqXYOffjwAh7UZGzYtRNehMFatlGaMqKziq+bVwWK183thilMVmW9c0rQK9fW1OHb0MNauew1+fwA3By/wtSNHCD7/4iGc+H0IPp9SBiqDsIY4r6YBTHGynMN4JMT71YJHFmHHp9ux9sUX0LK8FZf6zsBb5eY9Ttd07P3aip7T1VxxZeqaqa2YTBZU1zTwwmMF+U/fOax8ZjX6L/RiSdMKNDctxS8/d/EaEgjlr6qsyOjs9ELTbdi/b7SEM2ODZB5WmxPe6ge58549u7Fjx06E/AM8IgYP3LrG1zhIYC8rQS6Xw6bNPrQsU7H9k6Li7glhBzhdHq649vZ2dHd346NtH+Ljbe9DUVSI7Bm9Y7pOYRQJWPGHAnm0bXwUnZ0xbGhLco9ZIczB7ZkPu7MSiqIgERst9LjpeZ96vgkEAejp0bBx00Ic+y2E5qbs3BB2WEFxmoax0aLipoM0SnkzFQjQ1SVg334fThwfwn9CQ00RDmT15QAAAABJRU5ErkJggg==" alt="">
-    <h1><b><center>{{ $details['title'] }}</center></b></h1>
-    <p>Quý khách đã đặt hàng thành công sản phẩm:</p>
-    <table id="customers">
+    <img class="logo" src="{{$message->embed(public_path('images/img2.jpg'))}}" alt="">
+    <h1><b><center>Đặt hàng thành công</center></b></h1>
+   <blockquote>
+          <p>Quý khách đã đặt hàng thành công sản phẩm:</p>
+        </blockquote>
+   <div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
         <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
+            <th>Ảnh Sản Phẩm</th>
+            <th>Tên </th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Trạng Thái</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
+            <td>Content 1</td>
+            <td>Content 2</td>
+            <td>Content 3</td>
+            <td>Content 4</td>
+            <td>Content 5</td>
         </tr>
-      </table><br>
-      <p>Để kiểm tra lịch sử đặt hàng, quý khách có thể click vào nút dưới đây để chuyển sang lịch sử đặt hàng của quý khách:</p><br>
-      <a href="http://localhost:8000/index" target="_blank" class="button">Link</a>
+        <tbody>
+    </table>
+</div>
+     <blockquote>
+     <p >&#8220;Hệ thống trang web bán sách sachvui.com trân trọng cảm ơn quý khách đã tin dùng các sản phẩm sách của trang web,
+        xin chúc quý khách có một khoảng thời gian tuyệt vời khi sử dụng sản phẩm của chúng tôi.&#8221;</p>
+         <p  >&#8220;Để kiểm tra đơn hàng, quý khách có thể nhấn vào nút dưới đây để chuyển sang đơn hàng của quý khách:&#8221;</p>
+     </blockquote>
+    <div id="header">
+  <h1><a href="http://localhost:8000/index"  target="_blank">Đơn Hàng</a></h1>
+  <h2>Nếu như quý khách nhấn vào nút trên nhưng không hoạt động, quý khách truy cập trực tiếp vào đường link : <a href="http://localhost:8000/index" target="_blank">http://localhost:8000/cart</a></h2>
+</div>
 
     </div>
       

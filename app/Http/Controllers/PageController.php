@@ -243,15 +243,10 @@ class PageController extends Controller
 
     public function postCheckout(Request $request)
     {
-        try {
+        if(Session::get('cart')){
             $this->repository->postCheckout($request);
-            $details = [
-                'title' => 'Xin Chào',
-                'body' => 'Ngon lắm',
-            ];
-            \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($details));
             return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công']);
-        } catch (Exception $exception) {
+        }else{
             return redirect()->back()->with(['flag' => 'danger', 'messege' => 'Không tồn tại sản phẩm']);
         }
     }
