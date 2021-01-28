@@ -38,6 +38,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Sachvui.vn')->view('emails.TestMail');
+        return $this->subject('bookstore.com')->view('emails.TestMail');
     }
 }

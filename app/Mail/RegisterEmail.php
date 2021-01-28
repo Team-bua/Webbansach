@@ -29,6 +29,6 @@ class RegisterEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Sachvui.vn')->view('emails.RegisterMail');
+        return $this->subject('bookstore.com')->view('emails.RegisterMail');
     }
 }
