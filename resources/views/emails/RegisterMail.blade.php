@@ -79,27 +79,25 @@
 
 <body>
     <div class="header">
-
-        <div class="table-wrapper">
-            <table class="fl-table">
-                <thead>
-                    <tr>
-                        <th>Xác Nhận Tài Khoản</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="btn-group">
-                                <p style="font-size: 15px;">Quý khách vui lòng nhấn vào nút phía bên dưới để kích hoạt tài khoản truy cập tại sachvui.vn: </p>
-                                <center><a href="http://localhost:8000/signup/{{$add}}" target="_blank"><button class="button" onclick="typeWriter()">Xác Nhận</button>
-                                        <p id="demo" style="font-size: 16px;"></p>
-                                    </a></center>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+   
+   <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Xát Nhận Tài Khoản</th>
+                </tr>
+            </thead>
+            <tbody>         
+                <tr>
+                    <td>
+                        <div class="btn-group">
+                            <p style="font-size: 15px;">Quý khách vui lòng nhấn vào nút phía bên dưới để kích hoạt tài khoản truy cập tại sachvui.vn: </p>
+                            <center><a href="{{url('/signup/'.$id)}}" target="_blank"><button class="button" onclick="typeWriter()">Xác Nhận</button><p id="demo" style="font-size: 16px;"></p></a></center>
+                        </div>
+                    </td>
+                </tr>
+             </tbody>
+        </table>  
 </body>
 
 </html>

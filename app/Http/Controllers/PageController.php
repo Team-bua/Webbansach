@@ -196,7 +196,7 @@ class PageController extends Controller
     public function postSignup(PageRequest $request)
     {
         $this->repository->createuser($request);
-        return redirect()->back()->with(['flag' => 'warning', 'message' => 'Một mail yêu cầu xát nhận tài khoản đã được gửi đến Gmail của bạn.']);
+        return redirect()->back()->with(['flag' => 'warning', 'message' => 'Một mail yêu cầu xác nhận tài khoản đã được gửi đến Gmail của bạn.']);
     }
 
     public function postVerifyAccount($id)

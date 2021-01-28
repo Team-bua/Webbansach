@@ -410,9 +410,9 @@ class PageRepository
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
         $user->save();
-        $add = User::where('username', $user_name)
-                    ->value('id');
-        Mail::to($user_name)->send(new \App\Mail\RegisterEmail($add));   
+        $id = User::where('username', $user_name)
+                    ->value('id');               
+        Mail::to($user_name)->send(new \App\Mail\RegisterEmail($id));   
     }
 
     public function getInfo($id)
