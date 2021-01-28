@@ -22,7 +22,6 @@ use App\Models\Store;
 use App\Mail\RegisterEmail;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class PageRepository
 {
@@ -115,7 +114,7 @@ class PageRepository
 
     public function VerifyAccount($id)
     {
-        $user= User::find($id);
+        $user = User::find($id);
         $user->is_verified = 1;
         $user->save();
     }
@@ -396,7 +395,7 @@ class PageRepository
             $bill_detail->unit_price = ($value['price'] / $value['qty']);           
             $bill_detail->save();
         }
-        \Mail::to(Auth::user()->username)->send(new \App\Mail\TestMail($image_products, $name_products, $quantity_products, $price, $id_account));
+        Mail::to(Auth::user()->email)->send(new \App\Mail\TestMail($image_products, $name_products, $quantity_products, $price, $id_account));
         Session::forget('cart');
     }
 
@@ -413,8 +412,7 @@ class PageRepository
         $user->save();
         $add = User::where('username', $user_name)
                     ->value('id');
-        dd(new \App\Mail\RegisterEmail($add));
-        \Mail::to($user_name)->send(new \App\Mail\RegisterEmail($add));   
+        Mail::to($user_name)->send(new \App\Mail\RegisterEmail($add));   
     }
 
     public function getInfo($id)

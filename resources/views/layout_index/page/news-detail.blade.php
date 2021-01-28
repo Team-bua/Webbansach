@@ -156,6 +156,7 @@
 </style>
     <div class="container">
         @foreach ($content_detail as $con)
+            <h1>{{$con->name}}</h1>
             <p style="font-size:12px;text-align: justify;"> {!! $con->content !!} </p>
         @endforeach
         <br>

@@ -42,10 +42,10 @@
                                             @if (Session::has('cart'))
                                             {{ number_format($totalQty) }} @else 0 @endif
                                         </span></p>
-                                    <h2 style="font-family:Times New Roman;">Thành tiền<span>
+                                    <p style="font-family:Times New Roman;">Thành tiền<span>
                                             @if (Session::has('cart'))
                                             {{ number_format($totalPrice) }} @else 0 @endif VNĐ
-                                        </span></h2>
+                                        </span></p>
 
                                 </div>
                                 <div class="checkout-payment">

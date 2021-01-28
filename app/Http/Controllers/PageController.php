@@ -252,7 +252,7 @@ class PageController extends Controller
         if(Session::get('cart')){
             $this->repository->postCheckout($request);
             return redirect()->back()->with(['flag' => 'success', 'messege' => 'Đặt hàng thành công, một Mail đã được gửi đến Gmail của quý khách!!!']);
-        } catch (Exception $exception) {
+        }else {
             return redirect()->back()->with(['flag' => 'danger', 'messege' => 'Không tồn tại sản phẩm']);
         }
     }

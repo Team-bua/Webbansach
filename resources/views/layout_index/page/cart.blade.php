@@ -2,6 +2,7 @@
 @section('content')
 <section class="static about-sec">
 	<div class="container">
+	<h2>Đơn hàng </h2> 
 		@if($errors->any())
 		<div id="error" style="color: red">{{$errors->first()}}</div>
 		@endif
@@ -100,13 +101,12 @@
 			}
 		});
 	}
-	const base_url = window.location.origin;
 
 	function changeQuantity(inputQuantity) {
 		let [x, id] = inputQuantity.id.split('-');
 		let _token = document.getElementById('_token');
 		let qty = inputQuantity.value;
-		requestCart(base_url + '/cart', JSON.stringify({
+		requestCart("{{route('cart')}}", JSON.stringify({
 			'_token': _token.value,
 			'id': id,
 			'quantity': inputQuantity.value

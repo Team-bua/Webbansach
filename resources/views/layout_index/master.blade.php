@@ -51,7 +51,7 @@
             color: #fff !important;
         }
     </style>
-        <style>
+    <style>
         .fb-livechat,
         .fb-widget {
             display: none
@@ -234,7 +234,7 @@
     <script>
         function AddCart(id) {
             $.ajax({
-                url: 'addcart/' + id,
+                url: "{{url('addcart')}}" +'/'+ id,
                 type: 'GET',
                 success: function(response) {
                     $('.quntity').html(response['cart']['totalQty']);
@@ -264,7 +264,7 @@
     @yield('speak')
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=xPvZGVgP"></script>
     <script src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&#038;version=v2.9"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
     <script>
         jQuery(document).ready(function($) {
             function detectmob() {
