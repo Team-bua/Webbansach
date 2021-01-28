@@ -139,10 +139,10 @@ a:hover {
          <p >Để kiểm tra đơn hàng, quý khách có thể nhấn vào nút dưới đây để chuyển sang đơn hàng của quý khách:</p>
 
      </blockquote>
-     <center><h1 style="font-size: 26px;margin-top:10px ;"><a href="http://localhost:8000/info/{{$id_account}}"  target="_blank">Đơn Hàng</a></h1></center>
+     <center><h1 style="font-size: 26px;margin-top:10px ;"><a href="{{url('/info/'.$id_account)}}"  target="_blank">Đơn Hàng</a></h1></center>
      <h2 style="padding:0px 20px 20px 30px;
     letter-spacing: -1px;
-    font-size: 18px;">Nếu như quý khách nhấn vào nút trên nhưng không hoạt động, quý khách truy cập trực tiếp vào đường link : <a href="http://localhost:8000/info/{{$id_account}}" target="_blank">http://localhost:8000/info/{{$id_account}}</a></h2>
+    font-size: 18px;">Nếu như quý khách nhấn vào nút trên nhưng không hoạt động, quý khách truy cập trực tiếp vào đường link : <a href="{{url('/info/'.$id_account)}}" target="_blank">{{url('/info/'.$id_account)}}</a></h2>
     </div>
 </div>
     
