@@ -11,15 +11,15 @@ class RegisterEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $add;
+    public $id;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($add)
+    public function __construct($id)
     {
-        $this->add = $add;
+        $this->id = $id;
     }
 
     /**

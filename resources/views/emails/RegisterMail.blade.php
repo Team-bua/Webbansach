@@ -87,7 +87,7 @@
                     <td>
                         <div class="btn-group">
                             <p style="font-size: 15px;">Quý khách vui lòng nhấn vào nút phía bên dưới để kích hoạt tài khoản truy cập tại sachvui.vn: </p>
-                            <center><a href="http://localhost:8000/signin/{{$add}}" target="_blank"><button class="button" onclick="typeWriter()">Xác Nhận</button><p id="demo" style="font-size: 16px;"></p></a></center>
+                            <center><a href="http://localhost:8000/signup/{{ $id }}" target="_blank"><button class="button" onclick="typeWriter()">Xác Nhận</button><p id="demo" style="font-size: 16px;"></p></a></center>
                         </div>
                     </td>
                 </tr>
